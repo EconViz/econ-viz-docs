@@ -19,6 +19,25 @@
   --md-typeset-a-color:         #181818;
 }
 
+[data-md-color-scheme="default"] .md-header,
+[data-md-color-scheme="default"] .md-tabs {
+  background-color: #f3f3f3;
+  color: #181818;
+}
+
+[data-md-color-scheme="default"] .md-header__title,
+[data-md-color-scheme="default"] .md-header__button,
+[data-md-color-scheme="default"] .md-tabs__link,
+[data-md-color-scheme="default"] .md-search__input::placeholder,
+[data-md-color-scheme="default"] .md-search__icon {
+  color: #181818;
+}
+
+[data-md-color-scheme="default"] .md-search__input {
+  background-color: #e6e6e6;
+  color: #181818;
+}
+
 /* Dark mode — background #181818, text #f3f3f3 */
 [data-md-color-scheme="slate"] {
   --md-primary-fg-color:        #f3f3f3;
