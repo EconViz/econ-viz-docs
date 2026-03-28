@@ -20,7 +20,7 @@ cvs.save("cobb_douglas.png")
 
 ## Step by step
 
-### 1. Choose a model
+### Choose a model
 
 Pick a utility function from `econ_viz.models`. See the [Model catalogue](models/index.md) for the full list.
 
@@ -29,7 +29,7 @@ from econ_viz.models import CobbDouglas
 model = CobbDouglas(alpha=0.5, beta=0.5)
 ```
 
-### 2. Solve for the equilibrium
+### Solve for the equilibrium
 
 `solve()` returns an `Equilibrium` named tuple with fields `x`, `y`, `utility`, and `bundle_type`.
 
@@ -39,21 +39,21 @@ eq = solve(model, px=2.0, py=3.0, income=30.0)
 print(eq.x, eq.y, eq.utility)   # e.g. 7.5  5.0  5.303
 ```
 
-### 3. Choose indifference-curve levels
+### Choose indifference-curve levels
 
 ```python
 from econ_viz import levels
 lvls = levels.around(eq.utility, n=5)   # 5 curves centred on the optimum
 ```
 
-### 4. Build the canvas
+### Build the canvas
 
 ```python
 from econ_viz import Canvas
 cvs = Canvas(x_max=20, y_max=15)
 ```
 
-### 5. Add layers
+### Add layers
 
 `Canvas` methods return `self`, so calls can be chained:
 
@@ -63,14 +63,27 @@ cvs.add_budget(2.0, 3.0, 30.0, fill=True)
 cvs.add_equilibrium(eq, show_ray=True)
 ```
 
-### 6. Export
+### Export
 
-```python
-cvs.save("figure.png")    # raster
-cvs.save("figure.tikz")   # TikZ source for LaTeX
-```
+=== "Raster / vector"
 
-Call `cvs.show()` instead to open an interactive window.
+    ```python
+    cvs.save("figure.png")    # PNG
+    cvs.save("figure.pdf")    # PDF
+    cvs.save("figure.svg")    # SVG
+    ```
+
+=== "LaTeX"
+
+    ```python
+    cvs.save("figure.tikz")   # TikZ source for inclusion in a LaTeX document
+    ```
+
+=== "Interactive"
+
+    ```python
+    cvs.show()   # opens a live matplotlib window
+    ```
 
 ## Using the LaTeX parser
 
