@@ -105,4 +105,4 @@ econ-viz plot --model cobb-douglas --px 2 --py 3 --income 30
 | `--no-budget` | off | Omit the budget line |
 | `--no-equilibrium` | off | Omit the equilibrium point |
 | `--no-curves` | off | Omit indifference curves |
-| `--output`, `-o` | — | Output file (`.png`, `.pdf`, `.svg`, `.tikz`); omit to open an interactive window |
+| `--output`, `-o` | — | Output file (`.png`, `.pdf`, `.svg`, `.tex`); omit to open an interactive window |

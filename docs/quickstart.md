@@ -76,7 +76,7 @@ cvs.add_equilibrium(eq, show_ray=True)
 === "LaTeX"
 
     ```python
-    cvs.save("figure.tikz")   # TikZ source for inclusion in a LaTeX document
+    cvs.save("figure.tex")    # TikZ source for inclusion in a LaTeX document
     ```
 
 === "Interactive"

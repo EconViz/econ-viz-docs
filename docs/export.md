@@ -20,10 +20,9 @@ DPI is clamped to the range 1–1200.
 
 ## TikZ / PGFPlots (LaTeX)
 
-Save with a `.tikz` or `.tex` extension to export TikZ source:
+Save with a `.tex` extension to export TikZ source:
 
 ```python
-cvs.save("figure.tikz")
 cvs.save("figure.tex")
 ```
 
@@ -34,7 +33,7 @@ Include the file in a LaTeX document:
 \pgfplotsset{compat=1.18}
 
 \begin{figure}
-  \input{figure.tikz}
+  \input{figure.tex}
   \caption{Cobb-Douglas indifference map}
 \end{figure}
 ```
