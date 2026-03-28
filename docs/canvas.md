@@ -47,6 +47,7 @@ cvs.add_utility(
     show_rays=False,
     show_kinks=False,
     kink_radius=1.0,
+    show_bliss=True,   # draw ★ at bliss point (Satiation models only)
 )
 ```
 

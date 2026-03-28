@@ -40,6 +40,8 @@ If the bliss point $(x^*, y^*)$ is interior to the budget set (i.e.\ $p_x x^* + 
 !!! note
     `Satiation` is not compatible with `solve()` because the standard budget-tangency optimum may lie outside the bliss ellipse. Use `--no-budget --no-equilibrium` in the CLI, or omit `add_budget` / `add_equilibrium` in Python.
 
+`add_utility()` draws a ★ marker at the bliss point by default (`show_bliss=True`). Pass `show_bliss=False` to hide it.
+
 ## Usage
 
 === "Python"
@@ -57,8 +59,13 @@ If the bliss point $(x^*, y^*)$ is interior to the budget set (i.e.\ $p_x x^* + 
     lvls  = levels.percentile(model(X, Y), n=5)
 
     Canvas(x_max=12, y_max=10, title="Satiation — bliss at $(6, 4)$") \
-        .add_utility(model, levels=lvls) \
+        .add_utility(model, levels=lvls, show_bliss=True) \
         .save("satiation.png")
+
+    # Pass show_bliss=False to hide the marker
+    Canvas(x_max=12, y_max=10) \
+        .add_utility(model, levels=lvls, show_bliss=False) \
+        .save("satiation_no_marker.png")
     ```
 
 === "CLI"
