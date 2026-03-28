@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/EconViz/econ-viz-docs/main/docs/assets/banner.svg" alt="Econ-Viz" width="480">
+</p>
+
 # econ-viz-docs
 
 [![Built with MkDocs](https://img.shields.io/badge/built%20with-MkDocs-4051b5?style=flat-square)](https://www.mkdocs.org)
