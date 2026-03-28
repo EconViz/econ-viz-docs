@@ -4,6 +4,8 @@ $$U(x, y) = f(x) + y \quad \text{or} \quad U(x, y) = x + f(y)$$
 
 One good enters linearly; the other enters through a strictly concave, strictly increasing transformation $f$. Indifference curves have the same shape at every income level — there is no income effect on the non-linear good.
 
+![Quasi-Linear indifference map with budget line and equilibrium](../assets/models/quasi_linear.png)
+
 ## Parameters
 
 | Parameter | Type | Default | Description |

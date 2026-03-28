@@ -12,6 +12,7 @@ All models live in `econ_viz.models` and conform to the `UtilityFunction` protoc
 | [CES](ces.md) | $(\alpha x^\rho + \beta y^\rho)^{1/\rho}$ | `CES` |
 | [Satiation](satiation.md) | $-a(x-x^*)^2 - b(y-y^*)^2$ | `Satiation` |
 | [Quasi-Linear](quasi-linear.md) | $f(x) + y$ or $x + f(y)$ | `QuasiLinear` |
+| [Stone-Geary](stone-geary.md) | $(x-\bar{x})^\alpha(y-\bar{y})^\beta$ | `StoneGeary` |
 
 ## Advanced models
 

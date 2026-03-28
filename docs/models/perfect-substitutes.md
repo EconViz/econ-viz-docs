@@ -4,6 +4,8 @@ $$U(x, y) = ax + by$$
 
 Goods are perfect substitutes with a constant $\mathrm{MRS} = a/b$. Indifference curves are straight lines with slope $-a/b$.
 
+![Perfect Substitutes indifference map with budget line and equilibrium](../assets/models/perfect_substitutes.png)
+
 ## Parameters
 
 | Parameter | Type | Default | Description |

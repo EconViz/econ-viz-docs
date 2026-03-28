@@ -4,6 +4,8 @@ $$U(x, y) = x^\alpha \cdot y^\beta$$
 
 The most common textbook utility function. Indifference curves are smooth, strictly convex, and asymptotic to both axes.
 
+![Cobb-Douglas indifference map with budget line and equilibrium](../assets/models/cobb_douglas.png)
+
 ## Parameters
 
 | Parameter | Type | Default | Description |

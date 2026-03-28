@@ -70,6 +70,7 @@ nav:
       - CES: models/ces.md
       - Satiation: models/satiation.md
       - Quasi-Linear: models/quasi-linear.md
+      - Stone-Geary: models/stone-geary.md
       - Advanced: models/advanced.md
   - Canvas: canvas.md
   - LaTeX Parsing: latex.md

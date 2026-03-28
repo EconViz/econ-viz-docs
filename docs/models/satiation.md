@@ -4,6 +4,8 @@ $$U(x, y) = -a(x - x^*)^2 - b(y - y^*)^2$$
 
 Utility rises toward the bliss point $(x^*, y^*)$ and falls away in all directions. Indifference curves are closed ellipses centred on the bliss point. This violates the standard monotonicity axiom — a consumer can have "too much" of a good.
 
+![Satiation indifference map (bliss point)](../assets/models/satiation.png)
+
 ## Parameters
 
 | Parameter | Type | Default | Description |

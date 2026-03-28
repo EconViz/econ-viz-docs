@@ -4,6 +4,8 @@ $$U(x, y) = \min(ax, by)$$
 
 Goods are consumed in fixed proportions. Indifference curves are L-shaped with a kink along the expansion path $y = \tfrac{a}{b}\,x$.
 
+![Leontief indifference map with budget line and equilibrium](../assets/models/leontief.png)
+
 ## Parameters
 
 | Parameter | Type | Default | Description |

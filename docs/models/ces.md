@@ -10,6 +10,8 @@ The elasticity of substitution is $\sigma = 1/(1-\rho)$. CES nests several speci
 | $\rho \to -\infty$ | $\min(\alpha x, \beta y)$ | Leontief |
 | $\rho = 1$ | $\alpha x + \beta y$ | Perfect Substitutes |
 
+![CES indifference map with budget line and equilibrium](../assets/models/ces.png)
+
 ## Parameters
 
 | Parameter | Type | Default | Description |
