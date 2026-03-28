@@ -1,0 +1,74 @@
+site_name: econ-viz
+site_url: https://econ-viz.org
+site_description: A Python toolkit for producing publication-quality microeconomics diagrams.
+site_author: Anthony Sung
+repo_url: https://github.com/EconViz/econ-viz
+repo_name: EconViz/econ-viz
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - content.code.copy
+    - content.code.annotate
+    - search.highlight
+    - search.suggest
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - attr_list
+  - md_in_html
+
+plugins:
+  - search
+
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Quick Start: quickstart.md
+  - CLI: cli.md
+  - Models:
+    - Overview: models/index.md
+    - Cobb-Douglas: models/cobb-douglas.md
+    - Leontief: models/leontief.md
+    - Perfect Substitutes: models/perfect-substitutes.md
+    - CES: models/ces.md
+    - Satiation: models/satiation.md
+    - Quasi-Linear: models/quasi-linear.md
+    - Advanced: models/advanced.md
+  - Canvas: canvas.md
+  - LaTeX Parsing: latex.md
+  - Themes: themes.md
+  - Export: export.md
