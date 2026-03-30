@@ -18,26 +18,6 @@ cvs = Canvas(x_max=20, y_max=15, dpi=150)   # lower DPI for faster preview
 
 DPI is clamped to the range 1–1200.
 
-## TikZ / PGFPlots (LaTeX)
-
-Save with a `.tex` extension to export TikZ source:
-
-```python
-cvs.save("figure.tex")
-```
-
-Include the file in a LaTeX document:
-
-```latex
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.18}
-
-\begin{figure}
-  \input{figure.tex}
-  \caption{Cobb-Douglas indifference map}
-\end{figure}
-```
-
 ## Interactive window
 
 Call `cvs.show()` to open a live matplotlib window instead of saving:

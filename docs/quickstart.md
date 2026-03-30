@@ -73,12 +73,6 @@ cvs.add_equilibrium(eq, show_ray=True)
     cvs.save("figure.svg")    # SVG
     ```
 
-=== "LaTeX"
-
-    ```python
-    cvs.save("figure.tex")    # TikZ source for inclusion in a LaTeX document
-    ```
-
 === "Interactive"
 
     ```python

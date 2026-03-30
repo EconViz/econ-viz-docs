@@ -2,7 +2,7 @@
 
 ## Requirements
 
-- Python 3.12 or later
+- Python 3.10 or later
 
 ## Install from PyPI
 
@@ -21,6 +21,6 @@ pip install -e ".[dev]"
 ## Verify
 
 ```bash
-python -c "import econ_viz; print(econ_viz.__version__)"
-econ-viz --help
+python -c "import importlib.metadata as m; print(m.version('econ-viz'))"
+econ-viz help
 ```

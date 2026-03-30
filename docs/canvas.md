@@ -105,7 +105,6 @@ cvs.add_point(
 ```python
 cvs.show()               # interactive window
 cvs.save("figure.png")   # raster (.png, .pdf, .svg)
-cvs.save("figure.tex")   # TikZ/PGFPlots source
 ```
 
 ## Method chaining

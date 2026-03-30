@@ -44,9 +44,9 @@ cvs.save("cobb_douglas.png")
 
 <div class="grid cards" markdown>
 
--   :material-shape-outline: **Six built-in utility models**
+-   :material-shape-outline: **Eight built-in utility models**
 
-    Cobb-Douglas, Leontief, Perfect Substitutes, CES, Satiation, and Quasi-Linear — covering the full range of standard microeconomic preferences.
+    Cobb-Douglas, Leontief, Perfect Substitutes, CES, Translog, Satiation, Quasi-Linear, and Stone-Geary — covering the full range of standard microeconomic preferences.
 
     [:octicons-arrow-right-24: Model catalogue](models/index.md)
 
@@ -64,9 +64,15 @@ cvs.save("cobb_douglas.png")
 
 -   :material-export: **Publication-ready export**
 
-    Save as PNG, PDF, or SVG for presentations, or export TikZ/PGFPlots source to embed directly in LaTeX documents.
+    Save as PNG, PDF, or SVG for presentations, papers, and the web.
 
     [:octicons-arrow-right-24: Export formats](export.md)
+
+-   :material-chart-line: **Analysis helpers**
+
+    Compute comparative statics and inspect homogeneity, Euler's theorem, homotheticity, and demand degree-0 behaviour.
+
+    [:octicons-arrow-right-24: Analysis tools](analysis.md)
 
 -   :material-code-braces: **Advanced models**
 
@@ -88,4 +94,4 @@ cvs.save("cobb_douglas.png")
 pip install econ-viz
 ```
 
-Requires Python 3.12 or later.
+Requires Python 3.10 or later.

@@ -69,11 +69,14 @@ nav:
       - Leontief: models/leontief.md
       - Perfect Substitutes: models/perfect-substitutes.md
       - CES: models/ces.md
+      - Translog: models/translog.md
       - Satiation: models/satiation.md
       - Quasi-Linear: models/quasi-linear.md
       - Stone-Geary: models/stone-geary.md
       - Advanced: models/advanced.md
   - Canvas: canvas.md
+  - Analysis: analysis.md
   - LaTeX Parsing: latex.md
   - Themes: themes.md
   - Export: export.md
+  - Changelog: changelog.md
