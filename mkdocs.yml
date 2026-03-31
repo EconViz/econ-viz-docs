@@ -18,7 +18,6 @@ theme:
     text: Inter
     code: JetBrains Mono
   features:
-    - navigation.tabs
     - navigation.sections
     - navigation.top
     - navigation.footer
@@ -60,24 +59,29 @@ plugins:
 
 nav:
   - Home: index.md
-  - Installation: installation.md
-  - Quick Start: quickstart.md
-  - CLI: cli.md
+  - Getting Started:
+      - Installation: installation.md
+      - Quick Start: quickstart.md
+      - CLI: cli.md
+  - Drawing & Teaching:
+      - Canvas: canvas.md
+      - Figures & Demand Diagrams: consumer.md
+      - Themes: themes.md
+      - Export: export.md
   - Models:
       - Overview: models/index.md
-      - Cobb-Douglas: models/cobb-douglas.md
-      - Leontief: models/leontief.md
-      - Perfect Substitutes: models/perfect-substitutes.md
-      - CES: models/ces.md
-      - Translog: models/translog.md
-      - Satiation: models/satiation.md
-      - Quasi-Linear: models/quasi-linear.md
-      - Stone-Geary: models/stone-geary.md
-      - Advanced: models/advanced.md
-  - Canvas: canvas.md
-  - Figures & Demand Diagrams: consumer.md
-  - Analysis: analysis.md
-  - LaTeX Parsing: latex.md
-  - Themes: themes.md
-  - Export: export.md
-  - Changelog: changelog.md
+      - Core Models:
+          - Cobb-Douglas: models/cobb-douglas.md
+          - Leontief: models/leontief.md
+          - Perfect Substitutes: models/perfect-substitutes.md
+          - CES: models/ces.md
+          - Translog: models/translog.md
+          - Satiation: models/satiation.md
+          - Quasi-Linear: models/quasi-linear.md
+          - Stone-Geary: models/stone-geary.md
+      - Advanced Models: models/advanced.md
+  - Tools & Analysis:
+      - Analysis: analysis.md
+      - LaTeX Parsing: latex.md
+  - Project:
+      - Changelog: changelog.md
