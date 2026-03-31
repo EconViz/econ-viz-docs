@@ -94,3 +94,54 @@ Canvas(x_max=20, y_max=15) \
     .add_equilibrium(eq) \
     .save("figure.png")
 ```
+
+## Multi-panel figures
+
+`Figure` lets you compose several `Canvas` panels into one layout.
+
+```python
+from econ_viz import Figure, Layout, levels, solve
+from econ_viz.models import CobbDouglas
+
+fig = Figure(
+    Layout.SIDE_BY_SIDE,
+    x_max=20,
+    y_max=15,
+    x_label="x",
+    y_label="y",
+    title="Before / After Price Change",
+    shared_y=True,
+)
+
+cases = [
+    (CobbDouglas(alpha=0.5, beta=0.5), 2.0, 3.0, 30.0, r"Before: $p_x=2$"),
+    (CobbDouglas(alpha=0.3, beta=0.7), 4.0, 3.0, 30.0, r"After: $p_x=4$"),
+]
+
+for idx, (model, px, py, income, title) in enumerate(cases):
+    eq = solve(model, px=px, py=py, income=income)
+    panel = fig[idx]
+    panel.ax.set_title(title)
+    panel.add_utility(model, levels=levels.around(eq.utility, n=5))
+    panel.add_budget(px, py, income, fill=True)
+    panel.add_equilibrium(eq, show_ray=True)
+
+fig.save("comparison.png")
+```
+
+## Demand diagrams
+
+Use `PricePath` plus `DemandDiagram` to link the goods-space optimum to Marshallian demand.
+
+```python
+from econ_viz import DemandDiagram, LinearBudget, PricePath
+from econ_viz.models import CobbDouglas
+
+model = CobbDouglas(alpha=0.5, beta=0.5)
+budget = LinearBudget(px=2.0, py=2.0, income=40.0)
+path = PricePath(model, budget=budget, price="px", price_range=(0.8, 6.0), n=40)
+
+fig = DemandDiagram(path, title="Demand: Cobb-Douglas")
+fig.add_marshallian_panel(price_markers=[1.5, 4.0])
+fig.save("demand.png")
+```

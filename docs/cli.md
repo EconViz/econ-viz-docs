@@ -9,6 +9,7 @@
 | `econ-viz help [<command>]` | Show help for the CLI or a specific command |
 | `econ-viz models` | List all supported utility models |
 | `econ-viz plot ...` | Generate and export a diagram |
+| `econ-viz solve-tex ...` | Print a closed-form Marshallian demand in plain TeX text |
 
 ## `econ-viz help`
 
@@ -106,3 +107,28 @@ econ-viz plot --model cobb-douglas --px 2 --py 3 --income 30
 | `--no-equilibrium` | off | Omit the equilibrium point |
 | `--no-curves` | off | Omit indifference curves |
 | `--output`, `-o` | — | Output file (`.png`, `.pdf`, `.svg`); omit to open an interactive window |
+
+## `econ-viz solve-tex`
+
+Use `solve-tex` when you want the closed-form Marshallian demand formula without generating a figure.
+
+```bash
+# Numeric parameters
+econ-viz solve-tex --model cobb-douglas --alpha 0.4 --beta 0.6
+
+# Symbolic parameters
+econ-viz solve-tex --model cobb-douglas --symbolic-params
+
+# Custom symbols for prices and income
+econ-viz solve-tex --model leontief --a 2 --b 3 \
+                   --px-symbol p_1 --py-symbol p_2 --income-symbol M
+```
+
+Supported closed-form models currently include:
+
+- `cobb-douglas`
+- `leontief`
+- `perfect-substitutes`
+- LaTeX shortcuts for Cobb-Douglas, Leontief, and Perfect Substitutes
+
+The command prints plain TeX text, so you can drop the output directly into Markdown math, LaTeX, or slide tooling.

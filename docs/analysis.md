@@ -36,6 +36,34 @@ Notes:
 - Default relative step size is `1e-3`
 - Emits warnings for economically unusual sign patterns such as Giffen-style own-price responses or inferior-good income effects
 
+## Slutsky matrix
+
+Use `slutsky_matrix(...)` to compute the two-good substitution matrix implied by the Slutsky equation.
+
+```python
+from econ_viz import slutsky_matrix
+from econ_viz.models import CobbDouglas
+
+S = slutsky_matrix(CobbDouglas(alpha=0.4, beta=0.6), px=2.0, py=3.0, income=60.0)
+
+print(S.s_xx, S.s_xy)
+print(S.s_yx, S.s_yy)
+print(S.as_array())
+```
+
+Returned object:
+
+```python
+SlutskyMatrix(
+    s_xx=...,
+    s_xy=...,
+    s_yx=...,
+    s_yy=...,
+)
+```
+
+Use this when you want compensated price effects rather than just the raw Marshallian derivatives.
+
 ## Homogeneity analysis
 
 Use `HomogeneityAnalyzer` to study whether a utility function is homogeneous or homothetic.

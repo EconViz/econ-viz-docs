@@ -75,6 +75,7 @@ nav:
       - Stone-Geary: models/stone-geary.md
       - Advanced: models/advanced.md
   - Canvas: canvas.md
+  - Figures & Demand Diagrams: consumer.md
   - Analysis: analysis.md
   - LaTeX Parsing: latex.md
   - Themes: themes.md

@@ -56,6 +56,18 @@ cvs.save("cobb_douglas.png")
 
     [:octicons-arrow-right-24: Quick Start](quickstart.md)
 
+-   :material-view-dashboard-outline: **Multi-panel teaching figures**
+
+    Build side-by-side, stacked, and grid layouts with `Figure`, then combine budget lines, indifference curves, and equilibria across panels.
+
+    [:octicons-arrow-right-24: Figures & demand diagrams](consumer.md)
+
+-   :material-chart-bell-curve-cumulative: **Demand-path diagrams**
+
+    Generate `PricePath`, `IncomePath`, and linked `DemandDiagram` views for PCC, ICC, and Marshallian-demand teaching graphics.
+
+    [:octicons-arrow-right-24: Figures & demand diagrams](consumer.md)
+
 -   :material-math-integral: **LaTeX parser**
 
     Pass a LaTeX expression like `x^{0.4} y^{0.6}` directly and get back a fully-configured model instance.
@@ -70,7 +82,7 @@ cvs.save("cobb_douglas.png")
 
 -   :material-chart-line: **Analysis helpers**
 
-    Compute comparative statics and inspect homogeneity, Euler's theorem, homotheticity, and demand degree-0 behaviour.
+    Compute comparative statics, Slutsky matrices, and inspect homogeneity, Euler's theorem, homotheticity, and demand degree-0 behaviour.
 
     [:octicons-arrow-right-24: Analysis tools](analysis.md)
 
@@ -82,7 +94,7 @@ cvs.save("cobb_douglas.png")
 
 -   :material-console: **CLI**
 
-    Generate diagrams from the terminal without writing a single line of Python.
+    Generate diagrams from the terminal and print closed-form Marshallian demand formulas with `solve-tex`.
 
     [:octicons-arrow-right-24: CLI reference](cli.md)
 
