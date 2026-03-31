@@ -1,9 +1,3 @@
----
-hide:
-  - navigation
-  - toc
----
-
 <p align="center">
   <img src="assets/banner.svg" alt="Econ-Viz" style="max-width: 480px; width: 100%; margin: 2rem 0 1rem;">
 </p>
