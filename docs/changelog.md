@@ -10,6 +10,8 @@ This page mirrors the project's release history from `CHANGELOG.md`.
 - Add linked `DemandDiagram` for Marshallian demand teaching figures (closes #31)
 - Add `PricePath` / `IncomePath` helpers and `Canvas.add_path()` for PCC / ICC plots (closes #5)
 
+![v1.2.0 demand-diagram feature](assets/consumer/demand_cobb_douglas.png)
+
 ## v1.1.0 (2026-03-30)
 
 ### Features

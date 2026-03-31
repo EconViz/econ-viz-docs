@@ -2,6 +2,8 @@
 
 Themes control all colours and stroke widths used by the Canvas.
 
+![Default theme example](assets/themes/theme_default.png)
+
 ## Built-in themes
 
 ### Default
@@ -19,6 +21,8 @@ cvs = Canvas(x_max=20, y_max=15, theme=themes.nord)
 ```
 
 The Nord theme uses the [Nord colour palette](https://www.nordtheme.com/) — cool blues and muted tones suitable for academic presentations.
+
+![Nord theme example](assets/themes/theme_nord.png)
 
 ## Custom theme
 

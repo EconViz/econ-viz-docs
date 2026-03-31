@@ -2,6 +2,8 @@
 
 `econ-viz` ships with a command-line interface for generating diagrams without writing Python.
 
+![CLI-generated Cobb-Douglas figure](assets/models/cobb_douglas.png)
+
 ## Commands
 
 | Command | Description |

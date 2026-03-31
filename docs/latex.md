@@ -2,6 +2,8 @@
 
 `parse_latex` converts a LaTeX math string directly into a concrete model instance.
 
+![Parsed Cobb-Douglas from LaTeX](assets/latex/latex_cobb_douglas_u.png)
+
 ```python
 from econ_viz import parse_latex
 
@@ -48,3 +50,7 @@ except ParseError as e:
 ```bash
 econ-viz plot --latex "x^{0.4} y^{0.6}" --px 2 --py 3 --income 30 -o out.png
 ```
+
+![Parsed Leontief from LaTeX](assets/latex/latex_leontief_u.png)
+
+![Parsed Perfect Substitutes from LaTeX](assets/latex/latex_perfect_subs_u.png)

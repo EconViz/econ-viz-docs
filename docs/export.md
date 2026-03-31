@@ -1,5 +1,7 @@
 # Export
 
+![Exported multi-panel figure](assets/consumer/figure_side_by_side.png)
+
 ## Raster formats
 
 Call `cvs.save()` with a `.png`, `.pdf`, or `.svg` extension:

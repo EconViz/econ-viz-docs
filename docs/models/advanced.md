@@ -1,5 +1,7 @@
 # Advanced Models
 
+![Custom utility example](../assets/advanced/advanced_custom.png)
+
 ## Custom Utility
 
 Wrap any vectorised Python callable as a first-class utility model.
@@ -48,6 +50,8 @@ flat = m3.freeze(z=10.0)   # returns a CustomUtility ready for Canvas
 ```
 
 `freeze()` takes keyword arguments for each good not named `x` or `y`, fixes them at the supplied values, and returns a `CustomUtility` over x and y.
+
+![Multi-good Cobb-Douglas projection example](../assets/advanced/advanced_multigd.png)
 
 ### Full example
 

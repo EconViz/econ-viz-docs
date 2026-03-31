@@ -2,6 +2,8 @@
 
 `econ-viz` now includes analysis helpers beyond plotting and equilibrium solving.
 
+![Analysis helpers pair naturally with demand teaching diagrams](assets/consumer/demand_cobb_douglas.png)
+
 ## Comparative statics
 
 Use `comparative_statics(...)` to estimate the six Marshallian demand derivatives numerically:

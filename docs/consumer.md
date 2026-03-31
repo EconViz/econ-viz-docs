@@ -41,6 +41,8 @@ fig[0].show_legend(loc="upper right")
 fig.save("figure_side_by_side.png")
 ```
 
+![Multi-panel side-by-side comparison](assets/consumer/figure_side_by_side.png)
+
 ### Available layouts
 
 - `Layout.SINGLE`
@@ -97,6 +99,8 @@ fig.add_marshallian_panel(
 )
 fig.save("demand_cobb_douglas.png")
 ```
+
+![Linked Marshallian demand diagram](assets/consumer/demand_cobb_douglas.png)
 
 ### Notes
 

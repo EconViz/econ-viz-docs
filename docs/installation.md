@@ -2,7 +2,9 @@
 
 ## Requirements
 
-- Python 3.10 or later
+- Python 3.12 or later
+
+![Cobb-Douglas equilibrium example](assets/models/cobb_douglas.png)
 
 ## Install from PyPI
 
@@ -15,7 +17,7 @@ pip install econ-viz
 ```bash
 git clone https://github.com/EconViz/econ-viz.git
 cd econ-viz
-pip install -e ".[dev]"
+poetry install --with dev
 ```
 
 ## Verify

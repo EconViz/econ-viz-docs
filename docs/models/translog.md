@@ -2,6 +2,8 @@
 
 `Translog` adds a flexible log-quadratic utility specification that can approximate a wide range of smooth preferences.
 
+![Translog example](../assets/models/translog.png)
+
 ```python
 from econ_viz.models import Translog
 

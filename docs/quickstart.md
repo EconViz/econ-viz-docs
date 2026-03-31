@@ -18,6 +18,8 @@ cvs.add_equilibrium(eq, show_ray=True)
 cvs.save("cobb_douglas.png")
 ```
 
+![Quick-start equilibrium diagram](assets/models/cobb_douglas.png)
+
 ## Step by step
 
 ### Choose a model
@@ -145,3 +147,5 @@ fig = DemandDiagram(path, title="Demand: Cobb-Douglas")
 fig.add_marshallian_panel(price_markers=[1.5, 4.0])
 fig.save("demand.png")
 ```
+
+![Quick-start demand diagram](assets/consumer/demand_cobb_douglas.png)
