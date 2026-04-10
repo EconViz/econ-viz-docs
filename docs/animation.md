@@ -59,19 +59,19 @@ These animations answer “how does the preference map itself change?”
 
 <div class="media-grid" markdown>
   <figure class="gif-card">
-    <img src="assets/animation/parameter_sweeps/cobb_douglas_parameter_sweep.gif" alt="Cobb-Douglas parameter sweep GIF">
+    <img src="../assets/animation/parameter_sweeps/cobb_douglas_parameter_sweep.gif" alt="Cobb-Douglas parameter sweep GIF">
     <figcaption>Cobb-Douglas: vary <code>alpha</code> while <code>beta = 1 - alpha</code>.</figcaption>
   </figure>
   <figure class="gif-card">
-    <img src="assets/animation/parameter_sweeps/ces_parameter_sweep.gif" alt="CES parameter sweep GIF">
+    <img src="../assets/animation/parameter_sweeps/ces_parameter_sweep.gif" alt="CES parameter sweep GIF">
     <figcaption>CES: vary <code>rho</code> to change curvature and substitutability.</figcaption>
   </figure>
   <figure class="gif-card">
-    <img src="assets/animation/parameter_sweeps/perfect_substitutes_parameter_sweep.gif" alt="Perfect substitutes parameter sweep GIF">
+    <img src="../assets/animation/parameter_sweeps/perfect_substitutes_parameter_sweep.gif" alt="Perfect substitutes parameter sweep GIF">
     <figcaption>Perfect substitutes: vary <code>a</code> with <code>b</code> fixed.</figcaption>
   </figure>
   <figure class="gif-card">
-    <img src="assets/animation/parameter_sweeps/leontief_parameter_sweep.gif" alt="Leontief parameter sweep GIF">
+    <img src="../assets/animation/parameter_sweeps/leontief_parameter_sweep.gif" alt="Leontief parameter sweep GIF">
     <figcaption>Leontief: vary <code>a</code> with <code>b</code> fixed to move the kink path.</figcaption>
   </figure>
 </div>
@@ -82,23 +82,23 @@ These animations answer “how does equilibrium move when the budget line rotate
 
 <div class="media-grid" markdown>
   <figure class="gif-card">
-    <img src="assets/animation/price_sweeps/cobb_douglas_price_sweep.gif" alt="Cobb-Douglas price sweep GIF">
+    <img src="../assets/animation/price_sweeps/cobb_douglas_price_sweep.gif" alt="Cobb-Douglas price sweep GIF">
     <figcaption>Cobb-Douglas price sweep with <code>p_y</code> fixed.</figcaption>
   </figure>
   <figure class="gif-card">
-    <img src="assets/animation/price_sweeps/ces_price_sweep.gif" alt="CES price sweep GIF">
+    <img src="../assets/animation/price_sweeps/ces_price_sweep.gif" alt="CES price sweep GIF">
     <figcaption>CES price sweep with a fixed utility surface.</figcaption>
   </figure>
   <figure class="gif-card">
-    <img src="assets/animation/price_sweeps/perfect_substitutes_price_sweep.gif" alt="Perfect substitutes price sweep GIF">
+    <img src="../assets/animation/price_sweeps/perfect_substitutes_price_sweep.gif" alt="Perfect substitutes price sweep GIF">
     <figcaption>Perfect substitutes under a rotating budget line.</figcaption>
   </figure>
   <figure class="gif-card">
-    <img src="assets/animation/price_sweeps/leontief_price_sweep.gif" alt="Leontief price sweep GIF">
+    <img src="../assets/animation/price_sweeps/leontief_price_sweep.gif" alt="Leontief price sweep GIF">
     <figcaption>Leontief price sweep with fixed right-angle indifference curves.</figcaption>
   </figure>
   <figure class="gif-card">
-    <img src="assets/animation/price_sweeps/budget_only_price_sweep.gif" alt="Budget-only price sweep GIF">
+    <img src="../assets/animation/price_sweeps/budget_only_price_sweep.gif" alt="Budget-only price sweep GIF">
     <figcaption>Budget-only price sweep for isolating pure rotation of the constraint.</figcaption>
   </figure>
 </div>
@@ -109,23 +109,23 @@ These animations answer “how does equilibrium move when the budget line shifts
 
 <div class="media-grid" markdown>
   <figure class="gif-card">
-    <img src="assets/animation/income_sweeps/cobb_douglas_income_sweep.gif" alt="Cobb-Douglas income sweep GIF">
+    <img src="../assets/animation/income_sweeps/cobb_douglas_income_sweep.gif" alt="Cobb-Douglas income sweep GIF">
     <figcaption>Cobb-Douglas income sweep with fixed prices.</figcaption>
   </figure>
   <figure class="gif-card">
-    <img src="assets/animation/income_sweeps/ces_income_sweep.gif" alt="CES income sweep GIF">
+    <img src="../assets/animation/income_sweeps/ces_income_sweep.gif" alt="CES income sweep GIF">
     <figcaption>CES income sweep with fixed prices and fixed utility function.</figcaption>
   </figure>
   <figure class="gif-card">
-    <img src="assets/animation/income_sweeps/perfect_substitutes_income_sweep.gif" alt="Perfect substitutes income sweep GIF">
+    <img src="../assets/animation/income_sweeps/perfect_substitutes_income_sweep.gif" alt="Perfect substitutes income sweep GIF">
     <figcaption>Perfect substitutes income sweep.</figcaption>
   </figure>
   <figure class="gif-card">
-    <img src="assets/animation/income_sweeps/leontief_income_sweep.gif" alt="Leontief income sweep GIF">
+    <img src="../assets/animation/income_sweeps/leontief_income_sweep.gif" alt="Leontief income sweep GIF">
     <figcaption>Leontief income sweep with fixed prices.</figcaption>
   </figure>
   <figure class="gif-card">
-    <img src="assets/animation/income_sweeps/budget_only_income_sweep.gif" alt="Budget-only income sweep GIF">
+    <img src="../assets/animation/income_sweeps/budget_only_income_sweep.gif" alt="Budget-only income sweep GIF">
     <figcaption>Budget-only income sweep for isolating parallel shifts in the constraint.</figcaption>
   </figure>
 </div>

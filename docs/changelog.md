@@ -17,11 +17,11 @@ This page mirrors the project's release history from `CHANGELOG.md`.
 
 <div class="media-grid" markdown>
   <figure class="gif-card">
-    <img src="assets/animation/price_sweeps/cobb_douglas_price_sweep.gif" alt="Cobb-Douglas price sweep GIF">
+    <img src="../assets/animation/price_sweeps/cobb_douglas_price_sweep.gif" alt="Cobb-Douglas price sweep GIF">
     <figcaption>Cobb-Douglas price sweep with a fixed utility function and moving budget line.</figcaption>
   </figure>
   <figure class="gif-card">
-    <img src="assets/animation/income_sweeps/budget_only_income_sweep.gif" alt="Budget-only income sweep GIF">
+    <img src="../assets/animation/income_sweeps/budget_only_income_sweep.gif" alt="Budget-only income sweep GIF">
     <figcaption>Budget-only income sweep used to isolate pure budget-line motion.</figcaption>
   </figure>
 </div>
