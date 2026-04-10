@@ -74,6 +74,18 @@ cvs.save("cobb_douglas.png")
 
     [:octicons-arrow-right-24: Export formats](export.md)
 
+-   :material-play-box-multiple-outline: **Animated GIF sweeps**
+
+    Render parameter, price, and income animations with `Animator`, including budget-only teaching sweeps for notebook demos and web docs.
+
+    [:octicons-arrow-right-24: Animation](animation.md)
+
+-   :material-tune: **Notebook widgets**
+
+    Use `WidgetViewer` in Jupyter with a slider plus numeric input for each parameter, so students can drag or type exact values.
+
+    [:octicons-arrow-right-24: Interactive widgets](interactive.md)
+
 -   :material-chart-line: **Analysis helpers**
 
     Compute comparative statics, Slutsky matrices, and inspect homogeneity, Euler's theorem, homotheticity, and demand degree-0 behaviour.

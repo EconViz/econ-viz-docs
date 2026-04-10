@@ -66,6 +66,8 @@ nav:
   - Drawing & Teaching:
       - Canvas: canvas.md
       - Figures & Demand Diagrams: consumer.md
+      - Animation: animation.md
+      - Interactive Widgets: interactive.md
       - Themes: themes.md
       - Export: export.md
   - Models:

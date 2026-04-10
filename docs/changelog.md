@@ -2,6 +2,30 @@
 
 This page mirrors the project's release history from `CHANGELOG.md`.
 
+## v1.4.0 (2026-04-10)
+
+### Features
+
+- Add `Animator` GIF export examples for parameter, price, and income sweeps across four standard utility families
+- Add budget-only sweep examples so teaching pages can isolate how the budget constraint moves
+- Add `WidgetViewer` numeric input boxes alongside sliders for notebook use
+
+### Fixes
+
+- Prevent GIF frame stacking by compositing each frame onto a white background before export
+- Improve the Playground notebook install flow for Colab by making the install cell restart-safe
+
+<div class="media-grid" markdown>
+  <figure class="gif-card">
+    <img src="assets/animation/price_sweeps/cobb_douglas_price_sweep.gif" alt="Cobb-Douglas price sweep GIF">
+    <figcaption>Cobb-Douglas price sweep with a fixed utility function and moving budget line.</figcaption>
+  </figure>
+  <figure class="gif-card">
+    <img src="assets/animation/income_sweeps/budget_only_income_sweep.gif" alt="Budget-only income sweep GIF">
+    <figcaption>Budget-only income sweep used to isolate pure budget-line motion.</figcaption>
+  </figure>
+</div>
+
 ## v1.2.0 (2026-03-30)
 
 ### Features

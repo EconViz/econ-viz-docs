@@ -20,6 +20,18 @@ cvs = Canvas(x_max=20, y_max=15, dpi=150)   # lower DPI for faster preview
 
 DPI is clamped to the range 1–1200.
 
+## Animated GIF export
+
+For multi-frame output, use `Animator` instead of `Canvas.save()`:
+
+```python
+from econ_viz.animation import Animator
+
+Animator(draw_frame, frames=frames).save("animation.gif", fps=12, dpi=120)
+```
+
+See the [Animation](animation.md) page for parameter, price, income, and budget-only sweep examples.
+
 ## Interactive window
 
 Call `cvs.show()` to open a live matplotlib window instead of saving:
