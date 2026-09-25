@@ -1,6 +1,6 @@
 ---
 seo_title: "Multi-Panel Figures and Demand Diagrams"
-description: "Build multi-panel teaching figures, price-consumption and income-consumption paths, and linked Marshallian demand diagrams with econ-viz."
+description: "Build multi-panel figures, demand diagrams, price-effect decompositions, and Edgeworth boxes with econ-viz."
 ---
 
 # Figures & Demand Diagrams
@@ -10,6 +10,8 @@ description: "Build multi-panel teaching figures, price-consumption and income-c
 - `Figure` for multi-panel layouts
 - `PricePath` and `IncomePath` for budget / equilibrium sweeps
 - `DemandDiagram` for linked goods-space and Marshallian-demand views
+- `decompose_price_effect(...)` for Hicks and Slutsky decomposition
+- `EdgeworthBox` for two-consumer exchange diagrams
 
 ## Multi-panel figures {#multi-panel-figure data-toc-label="Multi-panel figures"}
 
@@ -133,6 +135,81 @@ Keep these constraints in mind when building demand diagrams:
 - `DemandDiagram` currently expects a `PricePath`
 - it handles smooth, kinked, and corner-demand cases differently so the bottom panel stays economically meaningful
 - `show_pcc=True` overlays the price-consumption curve in the goods-space panel
+
+## Price-effect decomposition
+
+`decompose_price_effect(...)` separates a price change into substitution and
+income effects. Choose `HICKS` to hold the original utility fixed or `SLUTSKY`
+to keep the original bundle affordable.
+
+```python
+from econ_viz import Canvas, DecompositionMethod, levels
+from econ_viz.models import CobbDouglas
+from econ_viz.optimizer import decompose_price_effect
+
+model = CobbDouglas(alpha=0.5, beta=0.5)
+result = decompose_price_effect(
+    model,
+    px=(2.0, 4.0),
+    py=3.0,
+    income=60.0,
+    method=DecompositionMethod.HICKS,
+)
+
+utility_levels = sorted({result.A.utility, result.C.utility})
+
+(
+    Canvas(x_max=25, y_max=25, title="Hicks decomposition")
+    .add_utility(model, levels=utility_levels)
+    .add_decomposition(
+        result,
+        show_arrows=True,
+        label_effects=True,
+        show_x_projections=True,
+    )
+    .save("hicks.png")
+)
+```
+
+`result.A`, `result.B`, and `result.C` are the original, compensated, and
+final bundles. The result also exposes `substitution_effect`, `income_effect`,
+`total_effect`, and `compensated_income`.
+
+![Hicks price-effect decomposition](../assets/consumer/cobb_douglas_hicks.png)
+
+## Edgeworth box
+
+`EdgeworthBox` draws a two-consumer exchange economy. Consumer A is measured
+from the lower-left origin, while consumer B is measured from the upper-right
+origin.
+
+```python
+from econ_viz import EdgeworthBox
+from econ_viz.models import CobbDouglas
+
+box = EdgeworthBox(
+    CobbDouglas(alpha=0.8, beta=0.2),
+    CobbDouglas(alpha=0.2, beta=0.8),
+    total_x=12.0,
+    total_y=10.0,
+    title="Asymmetric Cobb-Douglas",
+)
+
+(
+    box.add_endowment(5.0, 4.0)
+    .add_contract_curve(n=100, method="mrs")
+    .add_core()
+    .add_price_line(px=1.2, py=1.0)
+    .add_walrasian_equilibrium(px=1.2, py=1.0)
+    .show_legend(loc="center left", bbox_to_anchor=(1.02, 0.5))
+    .save("edgeworth.png")
+)
+```
+
+Use `method="mrs"` for smooth preferences. Use `method="pareto"` for models
+with kinks, corners, or custom piecewise utility functions.
+
+![Asymmetric Cobb-Douglas Edgeworth box](../assets/consumer/edgeworth_cobb_asymmetric.png)
 
 ## Draw paths {#canvasadd_path data-toc-label="Draw paths"}
 

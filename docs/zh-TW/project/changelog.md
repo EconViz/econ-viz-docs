@@ -12,6 +12,31 @@ description: "econ-viz Python 套件的版本歷史：每個版本的新功能�
   <tr><th>版本</th><th>更新內容</th></tr>
   </thead>
   <tbody>
+  <tr id="v170">
+    <td class="ev-changelog__version"><strong>v1.7.0</strong><br><span>2026-09-25</span></td>
+    <td>
+      <p class="ev-changelog__type">新功能</p>
+      <ul>
+        <li><code>Canvas</code> 與 <code>Figure</code> 可分別設定座標軸標籤位置、線條樣式與箭頭樣式</li>
+        <li>可為單張圖設定文字與數學字體，不會改動 Matplotlib 的全域設定</li>
+        <li><code>Stroke</code> 統一控制畫布、多面板圖、需求圖與 Edgeworth 箱形圖中的線條粗細、線條樣式、顏色與箭頭樣式</li>
+        <li><code>econ-viz --version</code> 可顯示已安裝的套件版本</li>
+      </ul>
+      <p class="ev-changelog__type">錯誤修正</p>
+      <ul>
+        <li>修正效用模型的參數定義域、非對稱 CES 擴張路徑、Cobb-Douglas 極限，以及所得未用盡時的飽和偏好最適解</li>
+        <li>等高線水準可正確處理零與負效用值</li>
+        <li>比較靜態在價格、所得或最低消費限制附近改用邊界安全的有限差分</li>
+        <li>所有範例腳本皆可從全新 checkout 直接執行</li>
+      </ul>
+      <p class="ev-changelog__type">維護</p>
+      <ul>
+        <li>套件管理與建置流程遷移至 <code>uv</code></li>
+        <li>CI 測試 Python 3.10–3.13、檢查分支覆蓋率，並執行所有可執行範例</li>
+        <li>版本標籤觸發的發佈流程只有在測試通過後才會上傳套件</li>
+      </ul>
+    </td>
+  </tr>
   <tr id="v160">
     <td class="ev-changelog__version"><strong>v1.6.0</strong><br><span>2026-04-24</span></td>
     <td>

@@ -10,7 +10,7 @@ description: "Canvas is the econ-viz drawing surface for textbook-style microeco
 ## Constructor
 
 ```python
-from econ_viz import Canvas
+from econ_viz import ArrowStyle, Canvas, Stroke, themes
 
 cvs = Canvas(
     x_max=20,
@@ -19,8 +19,11 @@ cvs = Canvas(
     y_label="y",
     title=r"Cobb-Douglas $x^{0.5} y^{0.5}$",
     dpi=300,
-    x_label_pos="right",   # "right" or "bottom"
-    y_label_pos="top",     # "top" or "left"
+    x_label_pos="right",   # "top", "right", or "bottom"
+    y_label_pos="top",     # "left", "top", or "right"
+    font="DejaVu Sans",
+    math_font="stix",
+    axis_stroke=Stroke(width=1.0, arrow=ArrowStyle.TRIANGLE),
     theme=themes.default,
 )
 ```
@@ -33,8 +36,13 @@ cvs = Canvas(
 | `y_label` | str | `"Y"` | Label at the tip of the vertical axis |
 | `title` | str or None | None | Figure title |
 | `dpi` | int | 300 | Raster export resolution (clamped to 1–1200) |
-| `x_label_pos` | str | `"right"` | `"right"` places label at axis tip; `"bottom"` uses standard xlabel |
-| `y_label_pos` | str | `"top"` | `"top"` places label at axis tip; `"left"` uses standard ylabel |
+| `x_label_pos` | str or `LabelPosition` | `"right"` | Place the horizontal label above, right of, or below the arrow tip |
+| `y_label_pos` | str or `LabelPosition` | `"top"` | Place the vertical label left of, above, or right of the arrow tip |
+| `font` | str or sequence | None | Font family or fallback list for every text element |
+| `math_font` | str | None | Matplotlib math font: `dejavusans`, `dejavuserif`, `cm`, `stix`, or `stixsans` |
+| `axis_stroke` | `Stroke` | theme default | Shared width, style, colour, and arrowhead for both axes |
+| `x_axis_stroke` | `Stroke` | None | Horizontal-axis override |
+| `y_axis_stroke` | `Stroke` | None | Vertical-axis override |
 | `theme` | Theme | `themes.default` | Colour and style theme |
 
 ## Methods
@@ -55,6 +63,8 @@ cvs.add_utility(
     show_kinks=False,
     kink_radius=1.0,
     show_bliss=True,   # ★ at bliss point (Satiation)
+    stroke=None,
+    ray_stroke=None,
 )
 ```
 
@@ -73,6 +83,7 @@ cvs.add_budget(
     label=None,        # legend label (LaTeX)
     fill=False,        # shade feasible set
     fill_alpha=None,   # default: theme.budget_fill_alpha
+    stroke=None,
 )
 ```
 
@@ -90,6 +101,8 @@ cvs.add_equilibrium(
     label="x^*",
     drop_dashes=True,  # dashed lines to axes
     show_ray=False,    # expansion path
+    drop_stroke=None,
+    ray_stroke=None,
 )
 ```
 
@@ -104,6 +117,7 @@ cvs.add_ray(
     slope,             # dy/dx
     color=None,
     linewidth=None,
+    stroke=None,
 )
 ```
 
@@ -135,6 +149,83 @@ cvs.save("figure.png")   # .png / .pdf / .svg / .tex
 ```
 
 ![Complete diagram ready to save](../assets/canvas/show_save.png){ .ev-figure-sm }
+
+## Styles
+
+Canvas styles are divided into line styles and arrow styles. Set axis styles
+directly with the `x_*` and `y_*` parameters; use `Stroke` to apply the same
+controls to utility curves, budget lines, paths, and other visible lines.
+
+### Line styles
+
+Use `LineStyle.SOLID`, `DASHED`, `DOTTED`, or `DASHDOT` for axis lines.
+The equivalent strings—`solid`, `dashed`, `dotted`, and `dashdot`—are also
+accepted. Use `Stroke(style=...)` to apply the same setting to any other line.
+
+```python
+import matplotlib.pyplot as plt
+
+from econ_viz import Canvas, LineStyle
+
+styles = [
+    LineStyle.SOLID,
+    LineStyle.DASHED,
+    LineStyle.DOTTED,
+    LineStyle.DASHDOT,
+]
+
+fig, axes = plt.subplots(2, 2, figsize=(7, 7))
+for ax, style in zip(axes.flat, styles):
+    Canvas(
+        title=style.value,
+        x_line_style=style,
+        y_line_style=style,
+        fig=fig,
+        ax=ax,
+    )
+
+fig.tight_layout()
+fig.savefig("line_styles.png", dpi=160, transparent=True)
+```
+
+![Available line styles](../assets/canvas/line_styles.png)
+
+### Arrow styles
+
+Use `ArrowStyle.SIMPLE`, `TRIANGLE`, `FANCY`, or `WEDGE` for axis arrowheads.
+Use `Stroke(arrow=...)` to add the same arrowhead to another visible line.
+
+```python
+import matplotlib.pyplot as plt
+
+from econ_viz import ArrowStyle, Canvas
+
+styles = [
+    ArrowStyle.SIMPLE,
+    ArrowStyle.TRIANGLE,
+    ArrowStyle.FANCY,
+    ArrowStyle.WEDGE,
+]
+
+fig, axes = plt.subplots(2, 2, figsize=(7, 7))
+for ax, style in zip(axes.flat, styles):
+    Canvas(
+        title=style.name.title(),
+        x_arrow_style=style,
+        y_arrow_style=style,
+        fig=fig,
+        ax=ax,
+    )
+
+fig.tight_layout()
+fig.savefig("arrow_styles.png", dpi=160, transparent=True)
+```
+
+![Available arrow styles](../assets/canvas/arrow_styles.png)
+
+`Stroke` is also available for paths, decomposition diagrams,
+`DemandDiagram`, `Figure`, and `EdgeworthBox`. Fields left as `None` inherit
+from the active theme.
 
 ## Method chaining
 

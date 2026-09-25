@@ -10,7 +10,7 @@ description: "Canvas 是 econ-viz 的绘图画布，用来画教科书风格的�
 ## 构造函数
 
 ```python
-from econ_viz import Canvas
+from econ_viz import ArrowStyle, Canvas, Stroke, themes
 
 cvs = Canvas(
     x_max=20,
@@ -19,8 +19,11 @@ cvs = Canvas(
     y_label="y",
     title=r"Cobb-Douglas $x^{0.5} y^{0.5}$",
     dpi=300,
-    x_label_pos="right",   # "right" 或 "bottom"
-    y_label_pos="top",     # "top" 或 "left"
+    x_label_pos="right",   # "top"、"right" 或 "bottom"
+    y_label_pos="top",     # "left"、"top" 或 "right"
+    font="DejaVu Sans",
+    math_font="stix",
+    axis_stroke=Stroke(width=1.0, arrow=ArrowStyle.TRIANGLE),
     theme=themes.default,
 )
 ```
@@ -33,8 +36,13 @@ cvs = Canvas(
 | `y_label` | str | `"Y"` | 纵轴末端的标签 |
 | `title` | str 或 None | None | 图形标题 |
 | `dpi` | int | 300 | 位图导出分辨率（限制在 1–1200） |
-| `x_label_pos` | str | `"right"` | `"right"` 把标签放在轴的末端；`"bottom"` 使用一般的 xlabel |
-| `y_label_pos` | str | `"top"` | `"top"` 把标签放在轴的末端；`"left"` 使用一般的 ylabel |
+| `x_label_pos` | str 或 `LabelPosition` | `"right"` | 将横轴标签放在箭头上方、右侧或下方 |
+| `y_label_pos` | str 或 `LabelPosition` | `"top"` | 将纵轴标签放在箭头左侧、上方或右侧 |
+| `font` | str 或序列 | None | 所有文字使用的字体或候选字体列表 |
+| `math_font` | str | None | 数学字体：`dejavusans`、`dejavuserif`、`cm`、`stix` 或 `stixsans` |
+| `axis_stroke` | `Stroke` | 主题默认值 | 同时设置两轴的粗细、线条样式、颜色与箭头样式 |
+| `x_axis_stroke` | `Stroke` | None | 横轴的单独覆盖 |
+| `y_axis_stroke` | `Stroke` | None | 纵轴的单独覆盖 |
 | `theme` | Theme | `themes.default` | 配色与样式主题 |
 
 ## 方法
@@ -55,6 +63,8 @@ cvs.add_utility(
     show_kinks=False,
     kink_radius=1.0,
     show_bliss=True,   # 标出极乐点（Satiation）
+    stroke=None,
+    ray_stroke=None,
 )
 ```
 
@@ -73,6 +83,7 @@ cvs.add_budget(
     label=None,        # 图例标签（LaTeX）
     fill=False,        # 可行集阴影
     fill_alpha=None,   # 默认 theme.budget_fill_alpha
+    stroke=None,
 )
 ```
 
@@ -90,6 +101,8 @@ cvs.add_equilibrium(
     label="x^*",
     drop_dashes=True,  # 到两轴的虚线
     show_ray=False,    # 扩展路径
+    drop_stroke=None,
+    ray_stroke=None,
 )
 ```
 
@@ -104,6 +117,7 @@ cvs.add_ray(
     slope,             # dy/dx
     color=None,
     linewidth=None,
+    stroke=None,
 )
 ```
 
@@ -135,6 +149,76 @@ cvs.save("figure.png")   # .png / .pdf / .svg / .tex
 ```
 
 ![完成的图形](../../assets/canvas/show_save.png){ .ev-figure-sm }
+
+## 样式
+
+Canvas 的样式分为线条样式与箭头样式。坐标轴可直接通过 `x_*` 与 `y_*` 参数设置；无差异曲线、预算线、路径与其他可见线条则通过 `Stroke` 应用相同的控制项目。
+
+### 线条样式
+
+坐标轴可使用 `LineStyle.SOLID`、`DASHED`、`DOTTED` 或 `DASHDOT`。也可以直接传入对应的 `solid`、`dashed`、`dotted` 或 `dashdot` 字符串。其他线条则通过 `Stroke(style=...)` 设置。
+
+```python
+import matplotlib.pyplot as plt
+
+from econ_viz import Canvas, LineStyle
+
+styles = [
+    LineStyle.SOLID,
+    LineStyle.DASHED,
+    LineStyle.DOTTED,
+    LineStyle.DASHDOT,
+]
+
+fig, axes = plt.subplots(2, 2, figsize=(7, 7))
+for ax, style in zip(axes.flat, styles):
+    Canvas(
+        title=style.value,
+        x_line_style=style,
+        y_line_style=style,
+        fig=fig,
+        ax=ax,
+    )
+
+fig.tight_layout()
+fig.savefig("line_styles.png", dpi=160, transparent=True)
+```
+
+![可用的线条样式](../../assets/canvas/line_styles.png)
+
+### 箭头样式
+
+坐标轴可使用 `ArrowStyle.SIMPLE`、`TRIANGLE`、`FANCY` 或 `WEDGE`。其他可见线条则通过 `Stroke(arrow=...)` 添加相同的箭头样式。
+
+```python
+import matplotlib.pyplot as plt
+
+from econ_viz import ArrowStyle, Canvas
+
+styles = [
+    ArrowStyle.SIMPLE,
+    ArrowStyle.TRIANGLE,
+    ArrowStyle.FANCY,
+    ArrowStyle.WEDGE,
+]
+
+fig, axes = plt.subplots(2, 2, figsize=(7, 7))
+for ax, style in zip(axes.flat, styles):
+    Canvas(
+        title=style.name.title(),
+        x_arrow_style=style,
+        y_arrow_style=style,
+        fig=fig,
+        ax=ax,
+    )
+
+fig.tight_layout()
+fig.savefig("arrow_styles.png", dpi=160, transparent=True)
+```
+
+![可用的箭头样式](../../assets/canvas/arrow_styles.png)
+
+路径、效应分解、`DemandDiagram`、`Figure` 与 `EdgeworthBox` 也可以使用 `Stroke`。未指定的字段会沿用当前主题。
 
 ## 串接调用
 
