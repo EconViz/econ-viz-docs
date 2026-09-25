@@ -41,7 +41,7 @@ cvs = Canvas(
 
 All drawing methods return `self`, so calls can be chained.
 
-### `add_utility`
+### Add utility curves: `add_utility` {#add_utility data-toc-label="Add utility curves"}
 
 ```python
 cvs.add_utility(
@@ -56,7 +56,9 @@ cvs.add_utility(
 )
 ```
 
-### `add_budget`
+![Indifference curves drawn with add_utility](assets/canvas/add_utility.png){ .ev-figure-sm }
+
+### Add a budget line: `add_budget` {#add_budget data-toc-label="Add a budget line"}
 
 ```python
 cvs.add_budget(
@@ -70,7 +72,9 @@ cvs.add_budget(
 )
 ```
 
-### `add_equilibrium`
+![Budget line with the shaded feasible set](assets/canvas/add_budget.png){ .ev-figure-sm }
+
+### Add the equilibrium: `add_equilibrium` {#add_equilibrium data-toc-label="Add the equilibrium"}
 
 ```python
 cvs.add_equilibrium(
@@ -83,7 +87,9 @@ cvs.add_equilibrium(
 )
 ```
 
-### `add_ray`
+![Equilibrium point with dashed drop lines](assets/canvas/add_equilibrium.png){ .ev-figure-sm }
+
+### Add a ray: `add_ray` {#add_ray data-toc-label="Add a ray"}
 
 ```python
 cvs.add_ray(
@@ -93,7 +99,9 @@ cvs.add_ray(
 )
 ```
 
-### `add_point`
+![Expansion-path ray through the optimum](assets/canvas/add_ray.png){ .ev-figure-sm }
+
+### Add a point: `add_point` {#add_point data-toc-label="Add a point"}
 
 ```python
 cvs.add_point(
@@ -105,12 +113,16 @@ cvs.add_point(
 )
 ```
 
-### `show` / `save`
+![Labelled point A on the budget line](assets/canvas/add_point.png){ .ev-figure-sm }
+
+### Show and save: `show` / `save` {#show-save data-toc-label="Show and save"}
 
 ```python
 cvs.show()               # interactive window
 cvs.save("figure.png")   # raster (.png, .pdf, .svg)
 ```
+
+![Complete diagram ready to save](assets/canvas/show_save.png){ .ev-figure-sm }
 
 ## Method chaining
 

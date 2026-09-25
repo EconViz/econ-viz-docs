@@ -41,7 +41,7 @@ cvs = Canvas(
 
 所有绘图方法都会返回 `self`，所以可以串接调用。
 
-### `add_utility`
+### 添加效用函数：`add_utility` {#add_utility data-toc-label="添加效用函数"}
 
 ```python
 cvs.add_utility(
@@ -56,7 +56,9 @@ cvs.add_utility(
 )
 ```
 
-### `add_budget`
+![用 add_utility 画出的无差异曲线](../assets/canvas/add_utility.png){ .ev-figure-sm }
+
+### 添加预算线：`add_budget` {#add_budget data-toc-label="添加预算线"}
 
 ```python
 cvs.add_budget(
@@ -70,7 +72,9 @@ cvs.add_budget(
 )
 ```
 
-### `add_equilibrium`
+![加上预算线与可行集阴影](../assets/canvas/add_budget.png){ .ev-figure-sm }
+
+### 添加均衡点：`add_equilibrium` {#add_equilibrium data-toc-label="添加均衡点"}
 
 ```python
 cvs.add_equilibrium(
@@ -83,7 +87,9 @@ cvs.add_equilibrium(
 )
 ```
 
-### `add_ray`
+![加上均衡点与垂直虚线](../assets/canvas/add_equilibrium.png){ .ev-figure-sm }
+
+### 添加射线：`add_ray` {#add_ray data-toc-label="添加射线"}
 
 ```python
 cvs.add_ray(
@@ -93,7 +99,9 @@ cvs.add_ray(
 )
 ```
 
-### `add_point`
+![通过最优点的扩展路径射线](../assets/canvas/add_ray.png){ .ev-figure-sm }
+
+### 添加标记点：`add_point` {#add_point data-toc-label="添加标记点"}
 
 ```python
 cvs.add_point(
@@ -105,12 +113,16 @@ cvs.add_point(
 )
 ```
 
-### `show` / `save`
+![预算线上标记的 A 点](../assets/canvas/add_point.png){ .ev-figure-sm }
+
+### 显示与保存：`show` / `save` {#show-save data-toc-label="显示与保存"}
 
 ```python
 cvs.show()               # interactive window
 cvs.save("figure.png")   # raster (.png, .pdf, .svg)
 ```
+
+![完成的图形](../assets/canvas/show_save.png){ .ev-figure-sm }
 
 ## 串接调用
 

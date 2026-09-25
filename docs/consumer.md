@@ -11,7 +11,7 @@ description: "Build multi-panel teaching figures, price-consumption and income-c
 - `PricePath` and `IncomePath` for budget / equilibrium sweeps
 - `DemandDiagram` for linked goods-space and Marshallian-demand views
 
-## Multi-panel `Figure`
+## Multi-panel figures: `Figure` {#multi-panel-figure}
 
 Use `Figure` when one panel is not enough: before/after comparisons, decomposition diagrams, or classroom slides.
 
@@ -81,7 +81,7 @@ Use these paths to:
 - feed a `DemandDiagram`
 - inspect how bundles move as prices or income vary
 
-## `DemandDiagram`
+## Demand diagrams: `DemandDiagram` {#demanddiagram}
 
 `DemandDiagram` builds a stacked two-panel figure:
 
@@ -113,7 +113,7 @@ fig.save("demand_cobb_douglas.png")
 - it handles smooth, kinked, and corner-demand cases differently so the bottom panel stays economically meaningful
 - `show_pcc=True` overlays the price-consumption curve in the goods-space panel
 
-## `Canvas.add_path(...)`
+## Draw a path: `Canvas.add_path(...)` {#canvasadd_path}
 
 When you do not need a full demand diagram, you can still render a path directly on a `Canvas`.
 

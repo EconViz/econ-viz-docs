@@ -111,3 +111,8 @@
 .md-typeset table code {
   white-space: nowrap;
 }
+
+/* Smaller step-by-step figures, e.g. one per Canvas method */
+.md-typeset p > img:only-child.ev-figure-sm {
+  max-height: 300px;
+}

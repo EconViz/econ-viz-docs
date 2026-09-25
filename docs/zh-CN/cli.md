@@ -18,7 +18,7 @@ description: "用 econ-viz 命令行工具直接在终端产生无差异曲线�
 | `econ-viz plot ...` | 产生并导出图形 |
 | `econ-viz solve-tex ...` | 以纯 TeX 文本输出马歇尔需求的闭式解 |
 
-## `econ-viz help`
+## 显示帮助：`econ-viz help` {#econ-viz-help}
 
 ```bash
 econ-viz help          # top-level help
@@ -26,7 +26,7 @@ econ-viz help plot     # full plot options
 econ-viz help models   # models command help
 ```
 
-## `econ-viz models`
+## 列出模型：`econ-viz models` {#econ-viz-models}
 
 ```bash
 econ-viz models
@@ -34,7 +34,7 @@ econ-viz models
 
 输出所有模型名称与对应参数。
 
-## `econ-viz plot`
+## 绘制图形：`econ-viz plot` {#econ-viz-plot}
 
 ### 选择模型
 
@@ -115,7 +115,7 @@ econ-viz plot --model cobb-douglas --px 2 --py 3 --income 30
 | `--no-curves` | 关闭 | 不画无差异曲线 |
 | `--output`, `-o` | — | 输出文件（`.png`、`.pdf`、`.svg`）；省略时会打开交互窗口 |
 
-## `econ-viz solve-tex`
+## 输出需求公式：`econ-viz solve-tex` {#econ-viz-solve-tex}
 
 只想获得马歇尔需求的闭式解公式、不需要画图时，使用 `solve-tex`。
 

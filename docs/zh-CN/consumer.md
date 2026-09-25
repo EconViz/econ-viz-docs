@@ -11,7 +11,7 @@ description: "用 econ-viz 创建多面板教学图、价格消费曲线与收�
 - `PricePath` 与 `IncomePath`：让预算与均衡随参数移动
 - `DemandDiagram`：联动的商品空间图与马歇尔需求图
 
-## 多面板 `Figure`
+## 多面板图：`Figure` {#multi-panel-figure}
 
 一个面板不够用时就用 `Figure`，例如变动前后的比较、效应分解图或课堂演示文稿。
 
@@ -81,7 +81,7 @@ income_path = IncomePath(model, budget=budget, income_range=(20.0, 80.0), n=30)
 - 传入 `DemandDiagram`
 - 观察价格或收入变动时，消费束如何移动
 
-## `DemandDiagram`
+## 需求图：`DemandDiagram` {#demanddiagram}
 
 `DemandDiagram` 会创建上下两个面板的图：
 
@@ -113,7 +113,7 @@ fig.save("demand_cobb_douglas.png")
 - 平滑、有折点与角点解的需求情况会分别处理，让下方面板在经济意义上保持正确
 - `show_pcc=True` 会在商品空间面板上叠加价格消费曲线
 
-## `Canvas.add_path(...)`
+## 绘制路径：`Canvas.add_path(...)` {#canvasadd_path}
 
 不需要完整的需求图时，也可以直接在 `Canvas` 上画出路径。
 

@@ -18,7 +18,7 @@ Install it as a global command with `uv tool install econ-viz`, or prefix each c
 | `econ-viz plot ...` | Generate and export a diagram |
 | `econ-viz solve-tex ...` | Print a closed-form Marshallian demand in plain TeX text |
 
-## `econ-viz help`
+## Show help: `econ-viz help` {#econ-viz-help}
 
 ```bash
 econ-viz help          # top-level help
@@ -26,7 +26,7 @@ econ-viz help plot     # full plot options
 econ-viz help models   # models command help
 ```
 
-## `econ-viz models`
+## List models: `econ-viz models` {#econ-viz-models}
 
 ```bash
 econ-viz models
@@ -34,7 +34,7 @@ econ-viz models
 
 Prints all model names and their parameters.
 
-## `econ-viz plot`
+## Plot a diagram: `econ-viz plot` {#econ-viz-plot}
 
 ### Model selection
 
@@ -115,7 +115,7 @@ econ-viz plot --model cobb-douglas --px 2 --py 3 --income 30
 | `--no-curves` | off | Omit indifference curves |
 | `--output`, `-o` | — | Output file (`.png`, `.pdf`, `.svg`); omit to open an interactive window |
 
-## `econ-viz solve-tex`
+## Print demand formulas: `econ-viz solve-tex` {#econ-viz-solve-tex}
 
 Use `solve-tex` when you want the closed-form Marshallian demand formula without generating a figure.
 

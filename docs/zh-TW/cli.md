@@ -18,7 +18,7 @@ description: "用 econ-viz 命令列工具直接在終端機產生無異曲線�
 | `econ-viz plot ...` | 產生並匯出圖形 |
 | `econ-viz solve-tex ...` | 以純 TeX 文字印出 Marshall 需求的封閉解 |
 
-## `econ-viz help`
+## 顯示說明：`econ-viz help` {#econ-viz-help}
 
 ```bash
 econ-viz help          # top-level help
@@ -26,7 +26,7 @@ econ-viz help plot     # full plot options
 econ-viz help models   # models command help
 ```
 
-## `econ-viz models`
+## 列出模型：`econ-viz models` {#econ-viz-models}
 
 ```bash
 econ-viz models
@@ -34,7 +34,7 @@ econ-viz models
 
 印出所有模型名稱與對應參數。
 
-## `econ-viz plot`
+## 繪製圖形：`econ-viz plot` {#econ-viz-plot}
 
 ### 選擇模型
 
@@ -115,7 +115,7 @@ econ-viz plot --model cobb-douglas --px 2 --py 3 --income 30
 | `--no-curves` | 關閉 | 不畫無異曲線 |
 | `--output`, `-o` | — | 輸出檔案（`.png`、`.pdf`、`.svg`）；省略時會開啟互動視窗 |
 
-## `econ-viz solve-tex`
+## 輸出需求公式：`econ-viz solve-tex` {#econ-viz-solve-tex}
 
 只想取得 Marshall 需求的封閉解公式、不需要畫圖時，使用 `solve-tex`。
 
