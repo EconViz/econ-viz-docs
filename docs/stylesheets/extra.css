@@ -200,3 +200,40 @@
 .md-typeset p > img:only-child.ev-figure-sm {
   max-height: 300px;
 }
+
+/* Changelog: borderless table, version column only as wide as its content */
+.md-typeset table.ev-changelog {
+  display: table;
+  width: 100%;
+  border: 0;
+  border-collapse: collapse;
+}
+.md-typeset table.ev-changelog th,
+.md-typeset table.ev-changelog td {
+  border: 0;
+  padding: 0.9em 1.2em 0.9em 0;
+  vertical-align: top;
+  text-align: left;
+}
+.md-typeset table.ev-changelog th {
+  padding-bottom: 0.3em;
+  font-weight: 700;
+}
+.md-typeset .ev-changelog__version {
+  width: 1%;
+  white-space: nowrap;
+}
+.md-typeset .ev-changelog__version span {
+  color: var(--md-default-fg-color--light);
+  font-size: 0.85em;
+}
+.md-typeset .ev-changelog__type {
+  margin: 0 0 0.2em;
+  font-weight: 700;
+}
+.md-typeset .ev-changelog ul {
+  margin: 0 0 0.8em;
+}
+.md-typeset .ev-changelog td > ul:last-child {
+  margin-bottom: 0;
+}
