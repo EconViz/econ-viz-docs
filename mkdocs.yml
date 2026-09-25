@@ -76,14 +76,13 @@ extra:
     title: Cookie consent
     description: >-
       We use analytics cookies to understand how the documentation is used
-      and improve it.
+      and improve it, and load repository stats from GitHub.
     actions:
       - accept
       - reject
       - manage
     cookies:
       analytics: Google Analytics
-      github: false
   social:
     - icon: fontawesome/solid/envelope
       link: mailto:contact@econ-viz.org
