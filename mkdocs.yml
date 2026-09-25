@@ -18,7 +18,6 @@ theme:
     text: Inter
     code: JetBrains Mono
   features:
-    - navigation.sections
     - navigation.top
     - navigation.footer
     - content.code.copy
@@ -33,6 +32,8 @@ extra_css:
 
 extra_javascript:
   - javascripts/katex.js
+  - javascripts/model-toc.js
+  - javascripts/analytics-events.js
   - https://unpkg.com/katex@0/dist/katex.min.js
   - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
 
@@ -55,6 +56,34 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 extra:
+  analytics:
+    provider: google
+    property: !ENV [GOOGLE_ANALYTICS_ID, ""]
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/thumb-up-outline
+          name: This page was helpful
+          data: 1
+          note: Thanks for your feedback
+        - icon: material/thumb-down-outline
+          name: This page could be improved
+          data: 0
+          note: >-
+            Thanks for your feedback. Tell us what could be improved in a
+            <a href="https://github.com/EconViz/econ-viz/issues/new?title=[Docs]+{title}&body=Page:+{url}" target="_blank" rel="noopener">GitHub issue</a>.
+  consent:
+    title: Cookie consent
+    description: >-
+      We use analytics cookies to understand how the documentation is used
+      and improve it.
+    actions:
+      - accept
+      - reject
+      - manage
+    cookies:
+      analytics: Google Analytics
+      github: false
   social:
     - icon: fontawesome/solid/envelope
       link: mailto:contact@econ-viz.org
@@ -86,6 +115,34 @@ plugins:
           name: 繁體中文
           build: true
           site_description: 用 Python 繪製出版品質的個體經濟學圖形：無異曲線、預算限制、消費者均衡與 TikZ 匯出。
+          extra:
+            analytics:
+              provider: google
+              property: !ENV [GOOGLE_ANALYTICS_ID, ""]
+              feedback:
+                title: 這頁有幫助嗎？
+                ratings:
+                  - icon: material/thumb-up-outline
+                    name: 這頁有幫助
+                    data: 1
+                    note: 謝謝你的回饋
+                  - icon: material/thumb-down-outline
+                    name: 這頁可以改進
+                    data: 0
+                    note: >-
+                      謝謝你的回饋。歡迎到
+                      <a href="https://github.com/EconViz/econ-viz/issues/new?title=[Docs]+{title}&body=Page:+{url}" target="_blank" rel="noopener">GitHub issue</a>
+                      告訴我們哪裡需要改進。
+            consent:
+              title: Cookie 設定
+              description: 我們使用分析 Cookie 了解文件的使用方式並持續改善內容。
+              actions:
+                - accept
+                - reject
+                - manage
+              cookies:
+                analytics: Google Analytics
+                github: false
           nav_translations:
             Home: 首頁
             Getting Started: 入門
@@ -103,7 +160,6 @@ plugins:
             Overview: 總覽
             Core Models: 核心模型
             Cobb-Douglas: Cobb-Douglas
-            Leontief: Leontief
             Perfect Substitutes: 完全替代
             CES: CES
             Translog: Translog
@@ -122,6 +178,34 @@ plugins:
           theme:
             language: zh
           site_description: 用 Python 绘制出版质量的微观经济学图形：无差异曲线、预算约束、消费者均衡与 TikZ 导出。
+          extra:
+            analytics:
+              provider: google
+              property: !ENV [GOOGLE_ANALYTICS_ID, ""]
+              feedback:
+                title: 这页有帮助吗？
+                ratings:
+                  - icon: material/thumb-up-outline
+                    name: 这页有帮助
+                    data: 1
+                    note: 谢谢你的反馈
+                  - icon: material/thumb-down-outline
+                    name: 这页可以改进
+                    data: 0
+                    note: >-
+                      谢谢你的反馈。欢迎到
+                      <a href="https://github.com/EconViz/econ-viz/issues/new?title=[Docs]+{title}&body=Page:+{url}" target="_blank" rel="noopener">GitHub issue</a>
+                      告诉我们哪里需要改进。
+            consent:
+              title: Cookie 设置
+              description: 我们使用分析 Cookie 了解文档的使用方式并持续改善内容。
+              actions:
+                - accept
+                - reject
+                - manage
+              cookies:
+                analytics: Google Analytics
+                github: false
           nav_translations:
             Home: 首页
             Getting Started: 入门
@@ -139,7 +223,6 @@ plugins:
             Overview: 概览
             Core Models: 核心模型
             Cobb-Douglas: Cobb-Douglas
-            Leontief: Leontief
             Perfect Substitutes: 完全替代
             CES: CES
             Translog: Translog
@@ -156,30 +239,21 @@ plugins:
 nav:
   - Home: index.md
   - Getting Started:
-      - Installation: installation.md
-      - Quick Start: quickstart.md
-      - CLI: cli.md
+      - Installation: getting-started/installation.md
+      - Quick Start: getting-started/quickstart.md
+      - CLI: getting-started/cli.md
   - Drawing & Teaching:
-      - Canvas: canvas.md
-      - Figures & Demand Diagrams: consumer.md
-      - Animation: animation.md
-      - Interactive Widgets: interactive.md
-      - Themes: themes.md
-      - Export: export.md
+      - Canvas: guides/canvas.md
+      - Figures & Demand Diagrams: guides/consumer.md
+      - Animation: guides/animation.md
+      - Interactive Widgets: guides/interactive.md
+      - Themes: guides/themes.md
+      - Export: guides/export.md
   - Models:
-      - Overview: models/index.md
-      - Core Models:
-          - Cobb-Douglas: models/cobb-douglas.md
-          - Leontief: models/leontief.md
-          - Perfect Substitutes: models/perfect-substitutes.md
-          - CES: models/ces.md
-          - Translog: models/translog.md
-          - Satiation: models/satiation.md
-          - Quasi-Linear: models/quasi-linear.md
-          - Stone-Geary: models/stone-geary.md
+      - Core Models: models/index.md
       - Advanced Models: models/advanced.md
   - Tools & Analysis:
-      - Analysis: analysis.md
-      - LaTeX Parsing: latex.md
+      - Analysis: tools/analysis.md
+      - LaTeX Parsing: tools/latex.md
   - Project:
-      - Changelog: changelog.md
+      - Changelog: project/changelog.md

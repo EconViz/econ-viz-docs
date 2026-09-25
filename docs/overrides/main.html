@@ -1,19 +1,17 @@
 {% extends "base.html" %}
 
 {% block htmltitle %}
-  {% if page.meta and page.meta.seo_title %}
-    {% if page.is_homepage %}
-      <title>{{ page.meta.seo_title }}</title>
-    {% else %}
-      <title>{{ page.meta.seo_title }} - {{ config.site_name }}</title>
-    {% endif %}
+  {% set name = page.meta.seo_title if page and page.meta and page.meta.seo_title else (page.title | striptags if page and page.title else "") %}
+  {% if name %}
+    <title>{{ config.site_name }} | {{ name }}</title>
   {% else %}
-    {{ super() }}
+    <title>{{ config.site_name }}</title>
   {% endif %}
 {% endblock %}
 
 {% block extrahead %}
-  {% set title = page.meta.seo_title if page.meta and page.meta.seo_title else (page.title | striptags) or config.site_name %}
+  {% set page_name = page.meta.seo_title if page.meta and page.meta.seo_title else (page.title | striptags) %}
+  {% set title = config.site_name ~ " | " ~ page_name if page_name else config.site_name %}
   {% set description = page.meta.description if page.meta and page.meta.description else config.site_description %}
   {% set image = config.site_url ~ "assets/og-image.png" %}
   {% set locale = i18n_page_locale | default("en") %}

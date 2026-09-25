@@ -1,78 +1,97 @@
 ---
 seo_title: "Custom and Advanced Utility Models"
-description: "Wrap any Python function as a custom utility model in econ-viz and plot its indifference curves, budget constraints, and equilibria."
+description: "Build custom utility functions and multi-good Cobb-Douglas models with econ-viz."
 ---
 
 # Advanced Models
 
-![Custom utility example](../assets/advanced/advanced_custom.png)
+Advanced models extend the built-in utility families with user-defined
+functions or more than two goods.
 
-## Custom Utility
+## Extensible models
 
-Wrap any vectorised Python callable as a first-class utility model.
+Use these models when a predefined two-good utility class is not enough.
 
-```python
-import numpy as np
-from econ_viz.models import CustomUtility
+=== "Custom Utility"
 
-model = CustomUtility(
-    func=lambda x, y: np.log(x) + np.log(y),
-    name="log+log",
-)
-```
+    `CustomUtility` wraps any vectorised Python callable as an econ-viz model.
 
-The callable is validated at construction time against a random NumPy meshgrid. It must accept two array arguments and return an array of the same shape.
+    $$
+    U(x,y)=\ln x+\ln y
+    $$
 
-### Full example
+    The equation above is one example. The callable must accept two NumPy
+    arrays and return an array with the same shape.
 
-```python
-import numpy as np
-from econ_viz import Canvas, levels, solve
-from econ_viz.models import CustomUtility
+    **Parameters**
 
-model = CustomUtility(func=lambda x, y: np.log(x) + np.log(y), name="log+log")
-eq    = solve(model, px=2.0, py=3.0, income=30.0)
-lvls  = levels.around(eq.utility, n=5)
+    | Parameter | Meaning |
+    |-----------|---------|
+    | `func` | Vectorised utility function of $x$ and $y$ |
+    | `name` | Display name for the custom model |
 
-Canvas(x_max=20, y_max=15, title="Custom: $\\ln x + \\ln y$") \
-    .add_utility(model, levels=lvls) \
-    .add_budget(2.0, 3.0, 30.0) \
-    .add_equilibrium(eq) \
-    .save("custom.png")
-```
+    **Example**
 
----
+    ```python
+    import numpy as np
+    from econ_viz import Canvas, levels, solve
+    from econ_viz.models import CustomUtility
 
-## Multi-Good Cobb-Douglas
+    model = CustomUtility(
+        func=lambda x, y: np.log(x) + np.log(y),
+        name="log+log",
+    )
+    eq = solve(model, px=2.0, py=3.0, income=30.0)
 
-Model preferences over $N$ goods and project to a 2-D canvas by freezing all goods except x and y.
+    (
+        Canvas(x_max=20, y_max=15, title="Custom Utility")
+        .add_utility(model, levels=levels.around(eq.utility, n=5))
+        .add_budget(2.0, 3.0, 30.0)
+        .add_equilibrium(eq)
+        .save("custom.png")
+    )
+    ```
 
-```python
-from econ_viz.models import MultiGoodCD
+    ![Custom utility indifference map](../assets/advanced/advanced_custom.png)
 
-m3   = MultiGoodCD({'x': 0.3, 'y': 0.3, 'z': 0.4})
-flat = m3.freeze(z=10.0)   # returns a CustomUtility ready for Canvas
-```
+=== "Multi-Good Cobb-Douglas"
 
-`freeze()` takes keyword arguments for each good not named `x` or `y`, fixes them at the supplied values, and returns a `CustomUtility` over x and y.
+    `MultiGoodCD` represents Cobb-Douglas preferences over $N$ goods.
 
-![Multi-good Cobb-Douglas projection example](../assets/advanced/advanced_multigd.png)
+    $$
+    U(x_1,\ldots,x_N)=\prod_{i=1}^{N}x_i^{\alpha_i}
+    $$
 
-### Full example
+    `freeze()` fixes every good except $x$ and $y$, then returns a
+    `CustomUtility` that can be drawn on a two-dimensional canvas.
 
-```python
-from econ_viz import Canvas, levels, solve
-from econ_viz.models import MultiGoodCD
+    **Parameters**
 
-m3   = MultiGoodCD({'x': 0.3, 'y': 0.3, 'z': 0.4})
-flat = m3.freeze(z=10.0)
+    | Parameter | Meaning |
+    |-----------|---------|
+    | `shares` | Mapping from each good name to its exponent $\alpha_i$ |
+    | `freeze(...)` | Fixed quantities for goods other than $x$ and $y$ |
 
-eq   = solve(flat, px=2.0, py=3.0, income=30.0)
-lvls = levels.around(eq.utility, n=5)
+    **Example**
 
-Canvas(x_max=20, y_max=15, title=r"MultiGoodCD $z=10$") \
-    .add_utility(flat, levels=lvls) \
-    .add_budget(2.0, 3.0, 30.0, fill=True) \
-    .add_equilibrium(eq) \
-    .save("multigood.png")
-```
+    ```python
+    from econ_viz import Canvas, levels, solve
+    from econ_viz.models import MultiGoodCD
+
+    model = MultiGoodCD({"x": 0.3, "y": 0.3, "z": 0.4})
+    two_good_model = model.freeze(z=10.0)
+    eq = solve(two_good_model, px=2.0, py=3.0, income=30.0)
+
+    (
+        Canvas(x_max=20, y_max=15, title="Multi-Good Cobb-Douglas")
+        .add_utility(
+            two_good_model,
+            levels=levels.around(eq.utility, n=5),
+        )
+        .add_budget(2.0, 3.0, 30.0, fill=True)
+        .add_equilibrium(eq)
+        .save("multigood.png")
+    )
+    ```
+
+    ![Multi-good Cobb-Douglas projection](../assets/advanced/advanced_multigd.png)

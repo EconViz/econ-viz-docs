@@ -46,26 +46,92 @@
   color: #f3f3f3 !important;
 }
 
-.media-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1rem;
+/* Keep display equations close to the paragraph that introduces them. */
+.md-typeset div.arithmatex {
+  margin: 0.75rem 0;
+}
+
+.md-typeset div.arithmatex > mjx-container[display="true"] {
+  margin: 0 !important;
+}
+
+/* Model page: collapsible model names under each category in the right TOC. */
+.md-sidebar--secondary .ev-model-toc__item {
+  position: relative;
+}
+
+.md-sidebar--secondary .ev-model-toc__section {
+  padding-right: 1.5rem;
+}
+
+.md-sidebar--secondary .ev-model-toc__section--active {
+  color: var(--md-typeset-a-color);
+  font-weight: 700;
+}
+
+.ev-model-toc__toggle {
+  color: var(--md-default-fg-color--light);
+  cursor: pointer;
+  height: 1.5rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1.5rem;
+}
+
+.ev-model-toc__toggle::before {
+  border-bottom: 0.08rem solid currentColor;
+  border-right: 0.08rem solid currentColor;
+  content: "";
+  display: block;
+  height: 0.35rem;
+  margin: 0.45rem auto;
+  transform: rotate(45deg);
+  transition: transform 150ms ease;
+  width: 0.35rem;
+}
+
+.ev-model-toc__toggle[aria-expanded="true"]::before {
+  transform: rotate(225deg);
+}
+
+.ev-model-toc__children .md-nav__link {
+  padding-left: 0.6rem;
+}
+
+.gif-table {
+  display: table !important;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-radius: 0;
   margin: 1.5rem 0;
+}
+
+.gif-table td {
+  width: 50%;
+  padding: 0.75rem;
+  vertical-align: top;
 }
 
 .gif-card {
   margin: 0;
-  padding: 0.75rem;
-  border: 1px solid rgba(24, 24, 24, 0.12);
-  border-radius: 0.8rem;
-  background: rgba(255, 255, 255, 0.55);
+  padding: 0;
+}
+
+.gif-card__title {
+  display: block;
+  margin-bottom: 0.65rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(24, 24, 24, 0.88);
 }
 
 .gif-card img {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 0.5rem;
+  border-radius: 0;
   background: #ffffff;
 }
 
@@ -73,6 +139,24 @@
   margin-top: 0.65rem;
   font-size: 0.8rem;
   color: rgba(24, 24, 24, 0.72);
+}
+
+.gif-table__empty {
+  background: transparent;
+}
+
+@media screen and (max-width: 44.984375em) {
+  .gif-table,
+  .gif-table tbody,
+  .gif-table tr,
+  .gif-table td {
+    display: block !important;
+    width: 100%;
+  }
+
+  .gif-table__empty {
+    display: none !important;
+  }
 }
 
 /* Heading kept for search engines and screen readers; the banner is the visual title */

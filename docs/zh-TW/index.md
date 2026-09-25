@@ -1,5 +1,5 @@
 ---
-seo_title: "Econ-Viz：繪製個體經濟學圖形的 Python 套件"
+seo_title: "繪製個體經濟學圖形的 Python 套件"
 description: "開源 Python 套件，繪製出版品質的個體經濟學圖形：無異曲線、預算限制、消費者均衡，並可匯出 TikZ。"
 ---
 
@@ -47,7 +47,7 @@ cvs.save("cobb_douglas.png")
 
 -   :material-shape-outline: **八種內建效用模型**
 
-    涵蓋 Cobb-Douglas、Leontief、CES 等教科書常見的效用函數，從完全替代到飽和偏好都能直接畫
+    涵蓋 Cobb-Douglas、完全互補、CES 等教科書常見的效用函數，從完全替代到飽和偏好都能直接畫
 
     [:octicons-arrow-right-24: 模型目錄](models/index.md)
 
@@ -55,49 +55,49 @@ cvs.save("cobb_douglas.png")
 
     給定價格與所得，自動找出消費者的最適組合。無論是內部解、拗折點或是角解，均毋需自己推導
 
-    [:octicons-arrow-right-24: 快速開始](quickstart.md)
+    [:octicons-arrow-right-24: 快速開始](getting-started/quickstart.md)
 
 -   :material-view-dashboard-outline: **多面板教學圖**
 
     將多張圖並排、上下堆疊或排成網格，適合呈現價格變動前後的比較、效果分解，或是直接放進課堂簡報中使用
 
-    [:octicons-arrow-right-24: 多面板圖與需求圖](consumer.md)
+    [:octicons-arrow-right-24: 多面板圖與需求圖](guides/consumer.md)
 
 -   :material-chart-bell-curve-cumulative: **需求路徑圖**
 
     讓價格或所得逐步變動，畫出價格消費曲線與所得消費曲線，並把每個最適點連結到下方的 Marshall 需求曲線
 
-    [:octicons-arrow-right-24: 多面板圖與需求圖](consumer.md)
+    [:octicons-arrow-right-24: 多面板圖與需求圖](guides/consumer.md)
 
 -   :material-math-integral: **LaTeX 解析器**
 
     直接貼上講義或論文裡的 LaTeX 效用函數，就能自動辨識函數形式與參數，建立對應的模型，馬上開始畫圖
 
-    [:octicons-arrow-right-24: LaTeX 解析](latex.md)
+    [:octicons-arrow-right-24: LaTeX 解析](tools/latex.md)
 
 -   :material-export: **出版品質的匯出**
 
     一行程式就能存成 PNG、PDF 或 SVG，向量格式放大也不會失真，可以直接放進論文、簡報與網頁中使用
 
-    [:octicons-arrow-right-24: 匯出格式](export.md)
+    [:octicons-arrow-right-24: 匯出格式](guides/export.md)
 
 -   :material-play-box-multiple-outline: **GIF 動畫**
 
     將參數、價格或所得的變動做成 GIF 動畫，可實際看見均衡點如何隨預算線移動，適合放進簡報或網頁
 
-    [:octicons-arrow-right-24: 動畫](animation.md)
+    [:octicons-arrow-right-24: 動畫](guides/animation.md)
 
 -   :material-tune: **筆記本互動元件**
 
     在 Jupyter 中用滑桿或輸入數值即時調整參數，圖形會跟著更新，學生可以自己動手探索不同情境下的均衡
 
-    [:octicons-arrow-right-24: 互動元件](interactive.md)
+    [:octicons-arrow-right-24: 互動元件](guides/interactive.md)
 
 -   :material-chart-line: **分析工具**
 
     計算比較靜態與 Slutsky 矩陣，並檢查效用函數的齊次性與位似性，把圖形背後的數學性質也一併驗證清楚
 
-    [:octicons-arrow-right-24: 分析工具](analysis.md)
+    [:octicons-arrow-right-24: 分析工具](tools/analysis.md)
 
 -   :material-code-braces: **進階模型**
 
@@ -109,7 +109,7 @@ cvs.save("cobb_douglas.png")
 
     不寫 Python 也能直接在終端機產生圖形，還能輸出 Marshall 需求的封閉解公式，方便貼進 LaTeX 講義
 
-    [:octicons-arrow-right-24: 命令列工具說明](cli.md)
+    [:octicons-arrow-right-24: 命令列工具說明](getting-started/cli.md)
 
 </div>
 

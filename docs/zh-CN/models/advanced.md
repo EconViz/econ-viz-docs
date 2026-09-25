@@ -1,78 +1,95 @@
 ---
 seo_title: "自定义与高级效用模型"
-description: "在 econ-viz 中把任何 Python 函数包装成自定义效用模型，并画出它的无差异曲线、预算约束与均衡点。"
+description: "使用 econ-viz 创建自定义效用函数与多商品 Cobb-Douglas 模型。"
 ---
 
 # 高级模型
 
-![自定义效用函数范例](../../assets/advanced/advanced_custom.png)
+高级模型能以自定义函数或两种以上的商品，扩展内置的效用模型。
 
-## 自定义效用函数 {#custom-utility}
+## 可扩展模型
 
-把任何向量化的 Python 可调用函数，包装成完整的效用模型。
+预先定义的两商品模型不足以描述偏好时，可以使用这组模型。
 
-```python
-import numpy as np
-from econ_viz.models import CustomUtility
+=== "自定义效用函数"
 
-model = CustomUtility(
-    func=lambda x, y: np.log(x) + np.log(y),
-    name="log+log",
-)
-```
+    `CustomUtility` 能把任何向量化的 Python 可调用函数包装成 econ-viz 模型。
 
-创建模型时，会用一组随机的 NumPy 网格检查这个函数。它必须接受两个数组参数，并返回形状相同的数组。
+    $$
+    U(x,y)=\ln x+\ln y
+    $$
 
-### 完整范例
+    上式只是其中一个示例。函数必须接受两个 NumPy 数组，并返回形状相同的数组。
 
-```python
-import numpy as np
-from econ_viz import Canvas, levels, solve
-from econ_viz.models import CustomUtility
+    **参数**
 
-model = CustomUtility(func=lambda x, y: np.log(x) + np.log(y), name="log+log")
-eq    = solve(model, px=2.0, py=3.0, income=30.0)
-lvls  = levels.around(eq.utility, n=5)
+    | 参数 | 含义 |
+    |------|------|
+    | `func` | 以 $x$ 与 $y$ 为变量的向量化效用函数 |
+    | `name` | 自定义模型的显示名称 |
 
-Canvas(x_max=20, y_max=15, title="Custom: $\\ln x + \\ln y$") \
-    .add_utility(model, levels=lvls) \
-    .add_budget(2.0, 3.0, 30.0) \
-    .add_equilibrium(eq) \
-    .save("custom.png")
-```
+    **代码**
 
----
+    ```python
+    import numpy as np
+    from econ_viz import Canvas, levels, solve
+    from econ_viz.models import CustomUtility
 
-## 多商品 Cobb-Douglas {#multi-good-cobb-douglas}
+    model = CustomUtility(
+        func=lambda x, y: np.log(x) + np.log(y),
+        name="log+log",
+    )
+    eq = solve(model, px=2.0, py=3.0, income=30.0)
 
-描述 $N$ 种商品的偏好，并把 x 与 y 以外的商品全部固定，投影到 2 维画布上。
+    (
+        Canvas(x_max=20, y_max=15, title="Custom Utility")
+        .add_utility(model, levels=levels.around(eq.utility, n=5))
+        .add_budget(2.0, 3.0, 30.0)
+        .add_equilibrium(eq)
+        .save("custom.png")
+    )
+    ```
 
-```python
-from econ_viz.models import MultiGoodCD
+    ![自定义效用函数无差异曲线图](../../assets/advanced/advanced_custom.png)
 
-m3   = MultiGoodCD({'x': 0.3, 'y': 0.3, 'z': 0.4})
-flat = m3.freeze(z=10.0)   # returns a CustomUtility ready for Canvas
-```
+=== "多商品 Cobb-Douglas"
 
-`freeze()` 接受 `x`、`y` 以外每种商品的关键字参数，把它们固定在给定的数值，并返回一个以 x 和 y 为变量的 `CustomUtility`。
+    `MultiGoodCD` 描述 $N$ 种商品的 Cobb-Douglas 偏好。
 
-![多商品 Cobb-Douglas 投影范例](../../assets/advanced/advanced_multigd.png)
+    $$
+    U(x_1,\ldots,x_N)=\prod_{i=1}^{N}x_i^{\alpha_i}
+    $$
 
-### 完整范例
+    `freeze()` 会固定 $x$ 与 $y$ 以外的商品，再返回能画在二维画布上的
+    `CustomUtility`。
 
-```python
-from econ_viz import Canvas, levels, solve
-from econ_viz.models import MultiGoodCD
+    **参数**
 
-m3   = MultiGoodCD({'x': 0.3, 'y': 0.3, 'z': 0.4})
-flat = m3.freeze(z=10.0)
+    | 参数 | 含义 |
+    |------|------|
+    | `shares` | 商品名称与指数 $\alpha_i$ 的对应 |
+    | `freeze(...)` | $x$、$y$ 以外商品的固定数量 |
 
-eq   = solve(flat, px=2.0, py=3.0, income=30.0)
-lvls = levels.around(eq.utility, n=5)
+    **代码**
 
-Canvas(x_max=20, y_max=15, title=r"MultiGoodCD $z=10$") \
-    .add_utility(flat, levels=lvls) \
-    .add_budget(2.0, 3.0, 30.0, fill=True) \
-    .add_equilibrium(eq) \
-    .save("multigood.png")
-```
+    ```python
+    from econ_viz import Canvas, levels, solve
+    from econ_viz.models import MultiGoodCD
+
+    model = MultiGoodCD({"x": 0.3, "y": 0.3, "z": 0.4})
+    two_good_model = model.freeze(z=10.0)
+    eq = solve(two_good_model, px=2.0, py=3.0, income=30.0)
+
+    (
+        Canvas(x_max=20, y_max=15, title="Multi-Good Cobb-Douglas")
+        .add_utility(
+            two_good_model,
+            levels=levels.around(eq.utility, n=5),
+        )
+        .add_budget(2.0, 3.0, 30.0, fill=True)
+        .add_equilibrium(eq)
+        .save("multigood.png")
+    )
+    ```
+
+    ![多商品 Cobb-Douglas 投影图](../../assets/advanced/advanced_multigd.png)

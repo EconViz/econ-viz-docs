@@ -1,5 +1,5 @@
 ---
-seo_title: "Econ-Viz: Python Library for Microeconomics Diagrams"
+seo_title: "Python Library for Microeconomics Diagrams"
 description: "Open-source Python library for publication-quality microeconomics diagrams: indifference curves, budget constraints, consumer equilibria, and TikZ export."
 ---
 
@@ -55,49 +55,49 @@ cvs.save("cobb_douglas.png")
 
     Give prices and income and get the consumer's optimal bundle. Interior, kinked, and corner solutions need no manual setup.
 
-    [:octicons-arrow-right-24: Quick Start](quickstart.md)
+    [:octicons-arrow-right-24: Quick Start](getting-started/quickstart.md)
 
 -   :material-view-dashboard-outline: **Multi-panel teaching figures**
 
     Place diagrams side by side, stacked, or in a grid for before-and-after comparisons, decompositions, or lecture slides.
 
-    [:octicons-arrow-right-24: Figures & demand diagrams](consumer.md)
+    [:octicons-arrow-right-24: Figures & demand diagrams](guides/consumer.md)
 
 -   :material-chart-bell-curve-cumulative: **Demand-path diagrams**
 
     Sweep a price or income to trace price- and income-consumption curves, linked to the Marshallian demand curve below.
 
-    [:octicons-arrow-right-24: Figures & demand diagrams](consumer.md)
+    [:octicons-arrow-right-24: Figures & demand diagrams](guides/consumer.md)
 
 -   :material-math-integral: **LaTeX parser**
 
     Paste a utility function written in LaTeX and get a ready-to-plot model with its functional form and parameters detected.
 
-    [:octicons-arrow-right-24: LaTeX parsing](latex.md)
+    [:octicons-arrow-right-24: LaTeX parsing](tools/latex.md)
 
 -   :material-export: **Publication-ready export**
 
     Save to PNG, PDF, or SVG in one line. Vector output stays sharp at any size for papers, slides, and the web.
 
-    [:octicons-arrow-right-24: Export formats](export.md)
+    [:octicons-arrow-right-24: Export formats](guides/export.md)
 
 -   :material-play-box-multiple-outline: **Animated GIF sweeps**
 
     Turn parameter, price, or income changes into GIFs so students can watch the equilibrium move with the budget line.
 
-    [:octicons-arrow-right-24: Animation](animation.md)
+    [:octicons-arrow-right-24: Animation](guides/animation.md)
 
 -   :material-tune: **Notebook widgets**
 
     Tune parameters in Jupyter with sliders or typed values and watch the diagram update as students explore on their own.
 
-    [:octicons-arrow-right-24: Interactive widgets](interactive.md)
+    [:octicons-arrow-right-24: Interactive widgets](guides/interactive.md)
 
 -   :material-chart-line: **Analysis helpers**
 
     Compute comparative statics and Slutsky matrices, and check the homogeneity and homotheticity behind every diagram.
 
-    [:octicons-arrow-right-24: Analysis tools](analysis.md)
+    [:octicons-arrow-right-24: Analysis tools](tools/analysis.md)
 
 -   :material-code-braces: **Advanced models**
 
@@ -109,7 +109,7 @@ cvs.save("cobb_douglas.png")
 
     Generate diagrams from the terminal without writing Python, and print closed-form Marshallian demand ready for LaTeX.
 
-    [:octicons-arrow-right-24: CLI reference](cli.md)
+    [:octicons-arrow-right-24: CLI reference](getting-started/cli.md)
 
 </div>
 
