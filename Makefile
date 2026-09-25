@@ -1,13 +1,13 @@
 .PHONY: install serve build clean
 
 install:
-	poetry install
+	uv sync --frozen
 
 serve:
-	poetry run mkdocs serve
+	uv run --frozen mkdocs serve --livereload
 
 build:
-	poetry run mkdocs build
+	uv run --frozen mkdocs build
 
 clean:
 	rm -rf site/

@@ -1,3 +1,10 @@
+---
+seo_title: "Python Library for Microeconomics Diagrams"
+description: "Open-source Python library for publication-quality microeconomics diagrams: indifference curves, budget constraints, consumer equilibria, and TikZ export."
+---
+
+<h1 class="ev-visually-hidden">Econ-Viz: Python library for microeconomics diagrams</h1>
+
 <p align="center">
   <img src="assets/banner.svg" alt="Econ-Viz" style="max-width: 480px; width: 100%; margin: 2rem 0 1rem;">
 </p>
@@ -13,9 +20,9 @@
 
 ---
 
-**Documentation:** [https://econ-viz.org](https://econ-viz.org)
+:fontawesome-brands-github: **Source Code:** [https://github.com/EconViz/econ-viz](https://github.com/EconViz/econ-viz)
 
-**Source Code:** [https://github.com/EconViz/econ-viz](https://github.com/EconViz/econ-viz)
+:fontawesome-solid-envelope: **Contact:** [contact@econ-viz.org](mailto:contact@econ-viz.org)
 
 ---
 
@@ -40,76 +47,76 @@ cvs.save("cobb_douglas.png")
 
 -   :material-shape-outline: **Eight built-in utility models**
 
-    Cobb-Douglas, Leontief, Perfect Substitutes, CES, Translog, Satiation, Quasi-Linear, and Stone-Geary — covering the full range of standard microeconomic preferences.
+    Cobb-Douglas, Leontief, CES, and other textbook utility functions, from perfect substitutes to satiation, ready to plot.
 
     [:octicons-arrow-right-24: Model catalogue](models/index.md)
 
 -   :material-function: **Automatic equilibrium solving**
 
-    Interior solutions, kinked optima (Leontief), and corner solutions — all handled via SLSQP with no manual setup required.
+    Give prices and income and get the consumer's optimal bundle. Interior, kinked, and corner solutions need no manual setup.
 
-    [:octicons-arrow-right-24: Quick Start](quickstart.md)
+    [:octicons-arrow-right-24: Quick Start](getting-started/quickstart.md)
 
 -   :material-view-dashboard-outline: **Multi-panel teaching figures**
 
-    Build side-by-side, stacked, and grid layouts with `Figure`, then combine budget lines, indifference curves, and equilibria across panels.
+    Place diagrams side by side, stacked, or in a grid for before-and-after comparisons, decompositions, or lecture slides.
 
-    [:octicons-arrow-right-24: Figures & demand diagrams](consumer.md)
+    [:octicons-arrow-right-24: Figures & demand diagrams](guides/consumer.md)
 
 -   :material-chart-bell-curve-cumulative: **Demand-path diagrams**
 
-    Generate `PricePath`, `IncomePath`, and linked `DemandDiagram` views for PCC, ICC, and Marshallian-demand teaching graphics.
+    Sweep a price or income to trace price- and income-consumption curves, linked to the Marshallian demand curve below.
 
-    [:octicons-arrow-right-24: Figures & demand diagrams](consumer.md)
+    [:octicons-arrow-right-24: Figures & demand diagrams](guides/consumer.md)
 
 -   :material-math-integral: **LaTeX parser**
 
-    Pass a LaTeX expression like `x^{0.4} y^{0.6}` directly and get back a fully-configured model instance.
+    Paste a utility function written in LaTeX and get a ready-to-plot model with its functional form and parameters detected.
 
-    [:octicons-arrow-right-24: LaTeX parsing](latex.md)
+    [:octicons-arrow-right-24: LaTeX parsing](tools/latex.md)
 
 -   :material-export: **Publication-ready export**
 
-    Save as PNG, PDF, or SVG for presentations, papers, and the web.
+    Save to PNG, PDF, or SVG in one line. Vector output stays sharp at any size for papers, slides, and the web.
 
-    [:octicons-arrow-right-24: Export formats](export.md)
+    [:octicons-arrow-right-24: Export formats](guides/export.md)
 
 -   :material-play-box-multiple-outline: **Animated GIF sweeps**
 
-    Render parameter, price, and income animations with `Animator`, including budget-only teaching sweeps for notebook demos and web docs.
+    Turn parameter, price, or income changes into GIFs so students can watch the equilibrium move with the budget line.
 
-    [:octicons-arrow-right-24: Animation](animation.md)
+    [:octicons-arrow-right-24: Animation](guides/animation.md)
 
 -   :material-tune: **Notebook widgets**
 
-    Use `WidgetViewer` in Jupyter with a slider plus numeric input for each parameter, so students can drag or type exact values.
+    Tune parameters in Jupyter with sliders or typed values and watch the diagram update as students explore on their own.
 
-    [:octicons-arrow-right-24: Interactive widgets](interactive.md)
+    [:octicons-arrow-right-24: Interactive widgets](guides/interactive.md)
 
 -   :material-chart-line: **Analysis helpers**
 
-    Compute comparative statics, Slutsky matrices, and inspect homogeneity, Euler's theorem, homotheticity, and demand degree-0 behaviour.
+    Compute comparative statics and Slutsky matrices, and check the homogeneity and homotheticity behind every diagram.
 
-    [:octicons-arrow-right-24: Analysis tools](analysis.md)
+    [:octicons-arrow-right-24: Analysis tools](tools/analysis.md)
 
 -   :material-code-braces: **Advanced models**
 
-    Wrap any callable as a utility function, or extend to N goods with 2-D projection via `MultiGoodCD.freeze()`.
+    Wrap any function as a utility model, or project many-good preferences onto a plane to go beyond the textbook cases.
 
     [:octicons-arrow-right-24: Advanced models](models/advanced.md)
 
 -   :material-console: **CLI**
 
-    Generate diagrams from the terminal and print closed-form Marshallian demand formulas with `solve-tex`.
+    Generate diagrams from the terminal without writing Python, and print closed-form Marshallian demand ready for LaTeX.
 
-    [:octicons-arrow-right-24: CLI reference](cli.md)
+    [:octicons-arrow-right-24: CLI reference](getting-started/cli.md)
 
 </div>
 
 ## Install
 
 ```bash
-pip install econ-viz
+uv add econ-viz
 ```
 
 Requires Python 3.10 or later.

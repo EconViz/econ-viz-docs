@@ -13,12 +13,12 @@ Documentation source for [econ-viz](https://github.com/EconViz/econ-viz), a Pyth
 ## Prerequisites
 
 - Python 3.11+
-- [Poetry](https://python-poetry.org)
+- [uv](https://docs.astral.sh/uv/)
 
 ## Setup
 
 ```bash
-poetry install
+uv sync --frozen
 ```
 
 ## Development
@@ -36,3 +36,15 @@ make build
 ```
 
 Outputs the static site to `site/`.
+
+## Analytics
+
+Set the GA4 Measurement ID when previewing or building an analytics-enabled
+site:
+
+```bash
+GOOGLE_ANALYTICS_ID=G-XXXXXXXXXX make build
+```
+
+GitHub Pages reads the same value from the `GOOGLE_ANALYTICS_ID` repository
+variable. When the value is empty, the site does not load Google Analytics.

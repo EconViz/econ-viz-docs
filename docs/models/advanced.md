@@ -1,73 +1,97 @@
-# Advanced Models
-
-![Custom utility example](../assets/advanced/advanced_custom.png)
-
-## Custom Utility
-
-Wrap any vectorised Python callable as a first-class utility model.
-
-```python
-import numpy as np
-from econ_viz.models import CustomUtility
-
-model = CustomUtility(
-    func=lambda x, y: np.log(x) + np.log(y),
-    name="log+log",
-)
-```
-
-The callable is validated at construction time against a random NumPy meshgrid. It must accept two array arguments and return an array of the same shape.
-
-### Full example
-
-```python
-import numpy as np
-from econ_viz import Canvas, levels, solve
-from econ_viz.models import CustomUtility
-
-model = CustomUtility(func=lambda x, y: np.log(x) + np.log(y), name="log+log")
-eq    = solve(model, px=2.0, py=3.0, income=30.0)
-lvls  = levels.around(eq.utility, n=5)
-
-Canvas(x_max=20, y_max=15, title="Custom: $\\ln x + \\ln y$") \
-    .add_utility(model, levels=lvls) \
-    .add_budget(2.0, 3.0, 30.0) \
-    .add_equilibrium(eq) \
-    .save("custom.png")
-```
-
+---
+seo_title: "Custom and Advanced Utility Models"
+description: "Build custom utility functions and multi-good Cobb-Douglas models with econ-viz."
 ---
 
-## Multi-Good Cobb-Douglas
+# Advanced Models
 
-Model preferences over $N$ goods and project to a 2-D canvas by freezing all goods except x and y.
+Advanced models extend the built-in utility families with user-defined
+functions or more than two goods.
 
-```python
-from econ_viz.models import MultiGoodCD
+## Extensible models
 
-m3   = MultiGoodCD({'x': 0.3, 'y': 0.3, 'z': 0.4})
-flat = m3.freeze(z=10.0)   # returns a CustomUtility ready for Canvas
-```
+Use these models when a predefined two-good utility class is not enough.
 
-`freeze()` takes keyword arguments for each good not named `x` or `y`, fixes them at the supplied values, and returns a `CustomUtility` over x and y.
+=== "Custom Utility"
 
-![Multi-good Cobb-Douglas projection example](../assets/advanced/advanced_multigd.png)
+    `CustomUtility` wraps any vectorised Python callable as an econ-viz model.
 
-### Full example
+    $$
+    U(x,y)=\ln x+\ln y
+    $$
 
-```python
-from econ_viz import Canvas, levels, solve
-from econ_viz.models import MultiGoodCD
+    The equation above is one example. The callable must accept two NumPy
+    arrays and return an array with the same shape.
 
-m3   = MultiGoodCD({'x': 0.3, 'y': 0.3, 'z': 0.4})
-flat = m3.freeze(z=10.0)
+    **Parameters**
 
-eq   = solve(flat, px=2.0, py=3.0, income=30.0)
-lvls = levels.around(eq.utility, n=5)
+    | Parameter | Meaning |
+    |-----------|---------|
+    | `func` | Vectorised utility function of $x$ and $y$ |
+    | `name` | Display name for the custom model |
 
-Canvas(x_max=20, y_max=15, title=r"MultiGoodCD $z=10$") \
-    .add_utility(flat, levels=lvls) \
-    .add_budget(2.0, 3.0, 30.0, fill=True) \
-    .add_equilibrium(eq) \
-    .save("multigood.png")
-```
+    **Example**
+
+    ```python
+    import numpy as np
+    from econ_viz import Canvas, levels, solve
+    from econ_viz.models import CustomUtility
+
+    model = CustomUtility(
+        func=lambda x, y: np.log(x) + np.log(y),
+        name="log+log",
+    )
+    eq = solve(model, px=2.0, py=3.0, income=30.0)
+
+    (
+        Canvas(x_max=20, y_max=15, title="Custom Utility")
+        .add_utility(model, levels=levels.around(eq.utility, n=5))
+        .add_budget(2.0, 3.0, 30.0)
+        .add_equilibrium(eq)
+        .save("custom.png")
+    )
+    ```
+
+    ![Custom utility indifference map](../assets/advanced/advanced_custom.png)
+
+=== "Multi-Good Cobb-Douglas"
+
+    `MultiGoodCD` represents Cobb-Douglas preferences over $N$ goods.
+
+    $$
+    U(x_1,\ldots,x_N)=\prod_{i=1}^{N}x_i^{\alpha_i}
+    $$
+
+    `freeze()` fixes every good except $x$ and $y$, then returns a
+    `CustomUtility` that can be drawn on a two-dimensional canvas.
+
+    **Parameters**
+
+    | Parameter | Meaning |
+    |-----------|---------|
+    | `shares` | Mapping from each good name to its exponent $\alpha_i$ |
+    | `freeze(...)` | Fixed quantities for goods other than $x$ and $y$ |
+
+    **Example**
+
+    ```python
+    from econ_viz import Canvas, levels, solve
+    from econ_viz.models import MultiGoodCD
+
+    model = MultiGoodCD({"x": 0.3, "y": 0.3, "z": 0.4})
+    two_good_model = model.freeze(z=10.0)
+    eq = solve(two_good_model, px=2.0, py=3.0, income=30.0)
+
+    (
+        Canvas(x_max=20, y_max=15, title="Multi-Good Cobb-Douglas")
+        .add_utility(
+            two_good_model,
+            levels=levels.around(eq.utility, n=5),
+        )
+        .add_budget(2.0, 3.0, 30.0, fill=True)
+        .add_equilibrium(eq)
+        .save("multigood.png")
+    )
+    ```
+
+    ![Multi-good Cobb-Douglas projection](../assets/advanced/advanced_multigd.png)
