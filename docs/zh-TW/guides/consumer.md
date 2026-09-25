@@ -1,6 +1,6 @@
 ---
 seo_title: "多面板圖與需求圖"
-description: "用 econ-viz 建立多面板教學圖、價格消費曲線與所得消費曲線，以及連動的 Marshall 需求圖。"
+description: "用 econ-viz 建立多面板圖、需求圖、價格效果分解與 Edgeworth 箱形圖。"
 ---
 
 # 多面板圖與需求圖
@@ -10,6 +10,8 @@ description: "用 econ-viz 建立多面板教學圖、價格消費曲線與所�
 - `Figure`：多面板版面
 - `PricePath` 與 `IncomePath`：讓預算與均衡隨參數移動
 - `DemandDiagram`：連動的商品空間圖與 Marshall 需求圖
+- `decompose_price_effect(...)`：Hicks 與 Slutsky 分解
+- `EdgeworthBox`：兩人交換的 Edgeworth 箱形圖
 
 ## 多面板圖 {#multi-panel-figure data-toc-label="多面板圖"}
 
@@ -133,6 +135,74 @@ fig.save("demand_cobb_douglas.png")
 - `DemandDiagram` 目前只接受 `PricePath`
 - 平滑、拗折與角解的需求情況會分別處理，讓下方面板在經濟意義上保持正確
 - `show_pcc=True` 會在商品空間面板上疊加價格消費曲線
+
+## 價格效果分解
+
+`decompose_price_effect(...)` 將價格變動分成替代效果與所得效果。`HICKS` 固定原本的效用水準；`SLUTSKY` 則讓原本的消費組合在新價格下仍買得起。
+
+```python
+from econ_viz import Canvas, DecompositionMethod, levels
+from econ_viz.models import CobbDouglas
+from econ_viz.optimizer import decompose_price_effect
+
+model = CobbDouglas(alpha=0.5, beta=0.5)
+result = decompose_price_effect(
+    model,
+    px=(2.0, 4.0),
+    py=3.0,
+    income=60.0,
+    method=DecompositionMethod.HICKS,
+)
+
+utility_levels = sorted({result.A.utility, result.C.utility})
+
+(
+    Canvas(x_max=25, y_max=25, title="Hicks decomposition")
+    .add_utility(model, levels=utility_levels)
+    .add_decomposition(
+        result,
+        show_arrows=True,
+        label_effects=True,
+        show_x_projections=True,
+    )
+    .save("hicks.png")
+)
+```
+
+`result.A`、`result.B` 與 `result.C` 分別是原始、補償後與最終消費組合。結果也包含 `substitution_effect`、`income_effect`、`total_effect` 與 `compensated_income`。
+
+![Hicks 價格效果分解](../../assets/consumer/cobb_douglas_hicks.png)
+
+## Edgeworth 箱形圖
+
+`EdgeworthBox` 用來畫兩人交換經濟。消費者 A 從左下角原點計量，消費者 B 則從右上角原點計量。
+
+```python
+from econ_viz import EdgeworthBox
+from econ_viz.models import CobbDouglas
+
+box = EdgeworthBox(
+    CobbDouglas(alpha=0.8, beta=0.2),
+    CobbDouglas(alpha=0.2, beta=0.8),
+    total_x=12.0,
+    total_y=10.0,
+    title="Asymmetric Cobb-Douglas",
+)
+
+(
+    box.add_endowment(5.0, 4.0)
+    .add_contract_curve(n=100, method="mrs")
+    .add_core()
+    .add_price_line(px=1.2, py=1.0)
+    .add_walrasian_equilibrium(px=1.2, py=1.0)
+    .show_legend(loc="center left", bbox_to_anchor=(1.02, 0.5))
+    .save("edgeworth.png")
+)
+```
+
+平滑偏好可使用 `method="mrs"`。有折點、角解或自訂分段效用函數時，使用 `method="pareto"`。
+
+![非對稱 Cobb-Douglas Edgeworth 箱形圖](../../assets/consumer/edgeworth_cobb_asymmetric.png)
 
 ## 繪製路徑 {#canvasadd_path data-toc-label="繪製路徑"}
 

@@ -12,6 +12,31 @@ Release history of `econ-viz`. Documentation-only changes are not listed.
   <tr><th>Version</th><th>Changes</th></tr>
   </thead>
   <tbody>
+  <tr id="v170">
+    <td class="ev-changelog__version"><strong>v1.7.0</strong><br><span>2026-09-25</span></td>
+    <td>
+      <p class="ev-changelog__type">Features</p>
+      <ul>
+        <li>Independent axis-label positions, line styles, and arrowhead styles for <code>Canvas</code> and <code>Figure</code></li>
+        <li>Per-figure text and math fonts without changing Matplotlib's global configuration</li>
+        <li><code>Stroke</code> controls line width, style, colour, and arrowheads across canvases, figures, demand diagrams, and Edgeworth boxes</li>
+        <li><code>econ-viz --version</code> prints the installed package version</li>
+      </ul>
+      <p class="ev-changelog__type">Bug fixes</p>
+      <ul>
+        <li>Correct utility-model domains, asymmetric CES expansion paths, Cobb-Douglas limits, and satiation optima with unspent income</li>
+        <li>Robust contour levels around zero and negative utility values</li>
+        <li>Boundary-safe comparative statics near zero prices, income, and subsistence constraints</li>
+        <li>All example scripts run from a clean checkout</li>
+      </ul>
+      <p class="ev-changelog__type">Maintenance</p>
+      <ul>
+        <li>Package management and builds migrated to <code>uv</code></li>
+        <li>CI tests Python 3.10–3.13, enforces branch coverage, and smoke-tests runnable examples</li>
+        <li>Tagged releases publish only after tests pass</li>
+      </ul>
+    </td>
+  </tr>
   <tr id="v160">
     <td class="ev-changelog__version"><strong>v1.6.0</strong><br><span>2026-04-24</span></td>
     <td>
