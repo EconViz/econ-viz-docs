@@ -4,6 +4,9 @@ site_description: A Python toolkit for producing publication-quality microeconom
 site_author: Anthony Sung
 repo_url: https://github.com/EconViz/econ-viz
 repo_name: EconViz/econ-viz
+copyright: >-
+  &copy; 2026 Anthony Sung ·
+  <a href="#__consent">Change cookie settings</a>
 
 theme:
   name: material
@@ -113,6 +116,9 @@ plugins:
           name: 繁體中文
           build: true
           site_description: 用 Python 繪製出版品質的個體經濟學圖形：無異曲線、預算限制、消費者均衡與 TikZ 匯出。
+          copyright: >-
+            &copy; 2026 Anthony Sung ·
+            <a href="#__consent">變更 Cookie 設定</a>
           extra:
             analytics:
               provider: google
@@ -133,14 +139,13 @@ plugins:
                       告訴我們哪裡需要改進。
             consent:
               title: Cookie 設定
-              description: 我們使用分析 Cookie 了解文件的使用方式並持續改善內容。
+              description: 我們使用分析 Cookie 了解文件的使用方式並持續改善內容，也會從 GitHub 載入 repo 數據。
               actions:
                 - accept
                 - reject
                 - manage
               cookies:
                 analytics: Google Analytics
-                github: false
           nav_translations:
             Home: 首頁
             Getting Started: 入門
@@ -176,6 +181,9 @@ plugins:
           theme:
             language: zh
           site_description: 用 Python 绘制出版质量的微观经济学图形：无差异曲线、预算约束、消费者均衡与 TikZ 导出。
+          copyright: >-
+            &copy; 2026 Anthony Sung ·
+            <a href="#__consent">更改 Cookie 设置</a>
           extra:
             analytics:
               provider: google
@@ -196,14 +204,13 @@ plugins:
                       告诉我们哪里需要改进。
             consent:
               title: Cookie 设置
-              description: 我们使用分析 Cookie 了解文档的使用方式并持续改善内容。
+              description: 我们使用分析 Cookie 了解文档的使用方式并持续改善内容，也会从 GitHub 加载仓库数据。
               actions:
                 - accept
                 - reject
                 - manage
               cookies:
                 analytics: Google Analytics
-                github: false
           nav_translations:
             Home: 首页
             Getting Started: 入门
