@@ -1,3 +1,8 @@
+---
+seo_title: "Animate Economics Diagrams as GIFs"
+description: "Export animated GIFs of indifference curves and budget constraints as prices, income, or utility parameters change, using the econ-viz Animator."
+---
+
 # Animation
 
 `econ-viz` v1.4.0 adds a lightweight GIF workflow built around `Animator`. The API stays close to normal plotting: you write a frame factory that returns a fresh `Canvas` or `Figure`, then sweep a numeric frame sequence and save the result as a GIF.
@@ -5,13 +10,13 @@
 ## Install
 
 ```bash
-pip install "econ-viz[animation]"
+uv add "econ-viz[animation]"
 ```
 
 If you also want notebook widgets, install:
 
 ```bash
-pip install "econ-viz[all]"
+uv add "econ-viz[all]"
 ```
 
 ## Minimal example

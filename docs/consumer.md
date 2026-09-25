@@ -1,3 +1,8 @@
+---
+seo_title: "Multi-Panel Figures and Demand Diagrams"
+description: "Build multi-panel teaching figures, price-consumption and income-consumption paths, and linked Marshallian demand diagrams with econ-viz."
+---
+
 # Figures & Demand Diagrams
 
 `econ-viz` now includes higher-level teaching primitives on top of `Canvas`:

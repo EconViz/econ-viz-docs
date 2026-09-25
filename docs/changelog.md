@@ -1,3 +1,8 @@
+---
+seo_title: "Changelog"
+description: "Release history of the econ-viz Python package: new features, fixes, and changes in each version."
+---
+
 # Changelog
 
 This page mirrors the project's release history from `CHANGELOG.md`.

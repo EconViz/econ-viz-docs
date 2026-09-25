@@ -1,3 +1,8 @@
+---
+seo_title: "Stone-Geary Utility Function in Python"
+description: "Plot Stone-Geary utility indifference curves with subsistence quantities and solve the linear expenditure system in Python with econ-viz."
+---
+
 # Stone-Geary
 
 $$U(x, y) = (x - \bar{x})^{\alpha}(y - \bar{y})^{\beta}$$

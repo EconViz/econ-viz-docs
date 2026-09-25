@@ -1,3 +1,8 @@
+---
+seo_title: "CES Utility Function in Python"
+description: "Plot constant elasticity of substitution (CES) utility indifference curves and see how they nest Cobb-Douglas, Leontief, and perfect substitutes."
+---
+
 # CES (Constant Elasticity of Substitution)
 
 $$U(x, y) = \left(\alpha x^\rho + \beta y^\rho\right)^{1/\rho}$$

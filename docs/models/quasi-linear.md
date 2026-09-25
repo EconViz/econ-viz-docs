@@ -1,3 +1,8 @@
+---
+seo_title: "Quasi-Linear Utility Function in Python"
+description: "Plot quasi-linear utility indifference curves with no income effect on the non-linear good, and solve for demand in Python with econ-viz."
+---
+
 # Quasi-Linear
 
 $$U(x, y) = f(x) + y \quad \text{or} \quad U(x, y) = x + f(y)$$

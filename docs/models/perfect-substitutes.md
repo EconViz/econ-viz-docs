@@ -1,3 +1,8 @@
+---
+seo_title: "Perfect Substitutes Utility in Python"
+description: "Plot linear indifference curves for perfect substitutes with a constant MRS and find corner solutions in Python with econ-viz."
+---
+
 # Perfect Substitutes
 
 $$U(x, y) = ax + by$$

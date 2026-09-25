@@ -1,3 +1,8 @@
+---
+seo_title: "Utility Function Models"
+description: "Catalogue of utility functions supported by econ-viz: Cobb-Douglas, Leontief, perfect substitutes, CES, translog, satiation, quasi-linear, and Stone-Geary."
+---
+
 # Model Catalogue
 
 All models live in `econ_viz.models` and conform to the `UtilityFunction` protocol — they are callable dataclasses that evaluate `U(x, y)` element-wise over NumPy arrays.

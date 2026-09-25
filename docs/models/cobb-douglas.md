@@ -1,3 +1,8 @@
+---
+seo_title: "Cobb-Douglas Utility Function in Python"
+description: "Plot Cobb-Douglas utility indifference curves, solve for the optimal consumption bundle, and derive demand in Python with econ-viz."
+---
+
 # Cobb-Douglas
 
 $$U(x, y) = x^\alpha \cdot y^\beta$$

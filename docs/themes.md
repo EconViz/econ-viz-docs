@@ -1,3 +1,8 @@
+---
+seo_title: "Themes for Economics Diagrams"
+description: "Control colours and stroke widths of econ-viz diagrams with built-in themes, including colourblind-friendly defaults, or define your own."
+---
+
 # Themes
 
 Themes control all colours and stroke widths used by the Canvas.

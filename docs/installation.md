@@ -1,15 +1,35 @@
+---
+seo_title: "Install Econ-Viz"
+description: "Install the econ-viz Python package with uv, including optional extras for GIF animation and Jupyter notebook widgets."
+---
+
 # Installation
 
 ## Requirements
 
 - Python 3.12 or later
+- [uv](https://docs.astral.sh/uv/)
 
-![Cobb-Douglas equilibrium example](assets/models/cobb_douglas.png)
-
-## Install from PyPI
+## Install uv
 
 ```bash
-pip install econ-viz
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+On Windows or with other package managers, see the [uv installation guide](https://docs.astral.sh/uv/getting-started/installation/).
+
+## Add econ-viz to a project
+
+```bash
+uv init my-diagrams
+cd my-diagrams
+uv add econ-viz
+```
+
+Run your scripts inside the project environment with `uv run`:
+
+```bash
+uv run python main.py
 ```
 
 ## Optional extras
@@ -17,9 +37,17 @@ pip install econ-viz
 Install only what you need:
 
 ```bash
-pip install "econ-viz[animation]"    # Pillow for GIF export
-pip install "econ-viz[interactive]"  # ipywidgets + IPython for notebooks
-pip install "econ-viz[all]"          # both extras
+uv add "econ-viz[animation]"    # Pillow for GIF export
+uv add "econ-viz[interactive]"  # ipywidgets + IPython for notebooks
+uv add "econ-viz[all]"          # both extras
+```
+
+## Install the CLI as a tool
+
+If you only need the command-line interface, install it globally so `econ-viz` is available in any terminal:
+
+```bash
+uv tool install econ-viz
 ```
 
 ## Install for development
@@ -27,18 +55,18 @@ pip install "econ-viz[all]"          # both extras
 ```bash
 git clone https://github.com/EconViz/econ-viz.git
 cd econ-viz
-poetry install --with dev
+uv sync --all-extras
 ```
 
-If you want the optional notebook and animation tooling in a local editable environment:
+`uv sync` installs the development dependencies by default, and `--all-extras` adds the notebook and animation tooling. Run the test suite with:
 
 ```bash
-poetry run pip install -e ".[all]"
+uv run pytest
 ```
 
 ## Verify
 
 ```bash
-python -c "import importlib.metadata as m; print(m.version('econ-viz'))"
-econ-viz help
+uv tree --package econ-viz --depth 0   # econ-viz v1.6.0
+uv run econ-viz help
 ```

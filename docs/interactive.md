@@ -1,3 +1,8 @@
+---
+seo_title: "Interactive Economics Diagrams in Jupyter"
+description: "Explore utility functions and budget constraints interactively in Jupyter notebooks with econ-viz WidgetViewer sliders and numeric inputs."
+---
+
 # Interactive Widgets
 
 `WidgetViewer` renders an `econ-viz` figure inside a notebook cell and redraws it whenever a control changes. In `v1.4.0`, every parameter gets both a slider and a numeric input box, so users can drag for intuition or type exact values for teaching and demos.
@@ -5,13 +10,13 @@
 ## Install
 
 ```bash
-pip install "econ-viz[interactive]"
+uv add "econ-viz[interactive]"
 ```
 
 If you also want GIF export:
 
 ```bash
-pip install "econ-viz[all]"
+uv add "econ-viz[all]"
 ```
 
 ## Basic usage

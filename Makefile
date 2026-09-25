@@ -4,7 +4,7 @@ install:
 	poetry install
 
 serve:
-	poetry run mkdocs serve
+	poetry run mkdocs serve --livereload
 
 build:
 	poetry run mkdocs build

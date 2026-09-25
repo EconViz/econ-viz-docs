@@ -1,3 +1,8 @@
+---
+seo_title: "Export Diagrams to PNG, PDF, SVG, and GIF"
+description: "Save econ-viz economics diagrams as PNG, PDF, or SVG for papers and slides, export animated GIFs, or open an interactive matplotlib window."
+---
+
 # Export
 
 ![Exported multi-panel figure](assets/consumer/figure_side_by_side.png)

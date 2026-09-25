@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block htmltitle %}
+  {% if page.meta and page.meta.seo_title %}
+    {% if page.is_homepage %}
+      <title>{{ page.meta.seo_title }}</title>
+    {% else %}
+      <title>{{ page.meta.seo_title }} - {{ config.site_name }}</title>
+    {% endif %}
+  {% else %}
+    {{ super() }}
+  {% endif %}
+{% endblock %}
+
+{% block extrahead %}
+  {% set title = page.meta.seo_title if page.meta and page.meta.seo_title else (page.title | striptags) or config.site_name %}
+  {% set description = page.meta.description if page.meta and page.meta.description else config.site_description %}
+  {% set image = config.site_url ~ "assets/og-image.png" %}
+  {% set locale = i18n_page_locale | default("en") %}
+  <meta property="og:locale" content="{{ locale | replace('-', '_') }}">
+  {% if page and page.file and page.file.alternates %}
+    {% for alt_locale, alt_file in page.file.alternates.items() | sort %}
+      {% if alt_file.page and alt_file.page.canonical_url %}
+        {% set alt_href = alt_file.page.canonical_url %}
+      {% elif alt_file.url == "./" %}
+        {% set alt_href = config.site_url %}
+      {% else %}
+        {% set alt_href = config.site_url ~ alt_file.url %}
+      {% endif %}
+  <link rel="alternate" hreflang="{{ alt_locale }}" href="{{ alt_href }}">
+      {% if alt_locale == "en" %}
+  <link rel="alternate" hreflang="x-default" href="{{ alt_href }}">
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+  <meta property="og:type" content="{{ 'website' if page.is_homepage else 'article' }}">
+  <meta property="og:site_name" content="{{ config.site_name }}">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:url" content="{{ page.canonical_url }}">
+  <meta property="og:image" content="{{ image }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Econ-Viz logo">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title }}">
+  <meta name="twitter:description" content="{{ description }}">
+  <meta name="twitter:image" content="{{ image }}">
+  {% if page.is_homepage %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "Econ-Viz",
+    "description": {{ config.site_description | tojson }},
+    "url": {{ config.site_url | tojson }},
+    "codeRepository": "https://github.com/EconViz/econ-viz",
+    "programmingLanguage": "Python",
+    "inLanguage": {{ locale | tojson }},
+    "license": "https://opensource.org/licenses/MIT",
+    "keywords": ["economics", "microeconomics", "indifference curves", "budget constraint", "utility function", "consumer theory", "matplotlib", "TikZ"],
+    "author": {"@type": "Person", "name": {{ config.site_author | tojson }}},
+    "sameAs": ["https://pypi.org/project/econ-viz/", "https://github.com/EconViz"]
+  }
+  </script>
+  {% endif %}
+{% endblock %}

@@ -54,8 +54,103 @@ markdown_extensions:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
+extra:
+  social:
+    - icon: fontawesome/solid/envelope
+      link: mailto:contact@econ-viz.org
+      name: contact@econ-viz.org
+    - icon: fontawesome/brands/github
+      link: https://github.com/EconViz
+      name: EconViz on GitHub
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/econ-viz/
+      name: econ-viz on PyPI
+
+hooks:
+  - hooks/i18n_404.py
+
 plugins:
   - search
+  - i18n:
+      docs_structure: folder
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: zh-TW
+          name: 繁體中文
+          build: true
+          site_description: 用 Python 繪製出版品質的個體經濟學圖形：無異曲線、預算限制、消費者均衡與 TikZ 匯出。
+          nav_translations:
+            Home: 首頁
+            Getting Started: 入門
+            Installation: 安裝
+            Quick Start: 快速開始
+            CLI: 命令列工具
+            Drawing & Teaching: 繪圖與教學
+            Canvas: Canvas 畫布
+            Figures & Demand Diagrams: 多面板圖與需求圖
+            Animation: 動畫
+            Interactive Widgets: 互動元件
+            Themes: 主題
+            Export: 匯出
+            Models: 模型
+            Overview: 總覽
+            Core Models: 核心模型
+            Cobb-Douglas: Cobb-Douglas
+            Leontief: Leontief
+            Perfect Substitutes: 完全替代
+            CES: CES
+            Translog: Translog
+            Satiation: 飽和
+            Quasi-Linear: 準線性
+            Stone-Geary: Stone-Geary
+            Advanced Models: 進階模型
+            Tools & Analysis: 工具與分析
+            Analysis: 分析
+            LaTeX Parsing: LaTeX 解析
+            Project: 專案
+            Changelog: 更新紀錄
+        - locale: zh-CN
+          name: 简体中文
+          build: true
+          theme:
+            language: zh
+          site_description: 用 Python 绘制出版质量的微观经济学图形：无差异曲线、预算约束、消费者均衡与 TikZ 导出。
+          nav_translations:
+            Home: 首页
+            Getting Started: 入门
+            Installation: 安装
+            Quick Start: 快速开始
+            CLI: 命令行工具
+            Drawing & Teaching: 绘图与教学
+            Canvas: Canvas 画布
+            Figures & Demand Diagrams: 多面板图与需求图
+            Animation: 动画
+            Interactive Widgets: 交互组件
+            Themes: 主题
+            Export: 导出
+            Models: 模型
+            Overview: 概览
+            Core Models: 核心模型
+            Cobb-Douglas: Cobb-Douglas
+            Leontief: Leontief
+            Perfect Substitutes: 完全替代
+            CES: CES
+            Translog: Translog
+            Satiation: 饱和
+            Quasi-Linear: 拟线性
+            Stone-Geary: Stone-Geary
+            Advanced Models: 高级模型
+            Tools & Analysis: 工具与分析
+            Analysis: 分析
+            LaTeX Parsing: LaTeX 解析
+            Project: 项目
+            Changelog: 更新日志
 
 nav:
   - Home: index.md

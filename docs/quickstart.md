@@ -1,3 +1,8 @@
+---
+seo_title: "Quick Start: Plot Indifference Curves in Python"
+description: "Draw your first indifference curve map, budget line, and consumer equilibrium in Python with econ-viz in under ten lines of code."
+---
+
 # Quick Start
 
 ## Minimal example

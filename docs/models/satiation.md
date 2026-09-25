@@ -1,3 +1,8 @@
+---
+seo_title: "Satiation (Bliss Point) Utility in Python"
+description: "Plot elliptical indifference curves around a bliss point for satiation preferences, which violate monotonicity, in Python with econ-viz."
+---
+
 # Satiation (Bliss Point)
 
 $$U(x, y) = -a(x - x^*)^2 - b(y - y^*)^2$$

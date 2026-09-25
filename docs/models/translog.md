@@ -1,3 +1,8 @@
+---
+seo_title: "Translog Utility Function in Python"
+description: "Plot flexible log-quadratic translog utility indifference curves and solve consumer equilibria in Python with econ-viz."
+---
+
 # Translog
 
 `Translog` adds a flexible log-quadratic utility specification that can approximate a wide range of smooth preferences.

@@ -1,3 +1,8 @@
+---
+seo_title: "Canvas: Textbook-Style Economics Diagrams"
+description: "Canvas is the econ-viz drawing surface for textbook-style microeconomics diagrams: first-quadrant axes, arrow tips, LaTeX labels, budget lines, and equilibria."
+---
+
 # Canvas
 
 `Canvas` is the central drawing surface. It manages a single matplotlib figure styled in the convention of microeconomic textbook diagrams: first-quadrant axes, arrow tips, LaTeX-rendered labels, and no numeric tick marks.

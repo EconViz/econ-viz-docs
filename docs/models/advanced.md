@@ -1,3 +1,8 @@
+---
+seo_title: "Custom and Advanced Utility Models"
+description: "Wrap any Python function as a custom utility model in econ-viz and plot its indifference curves, budget constraints, and equilibria."
+---
+
 # Advanced Models
 
 ![Custom utility example](../assets/advanced/advanced_custom.png)

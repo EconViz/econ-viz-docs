@@ -1,6 +1,13 @@
+---
+seo_title: "Econ-Viz Command-Line Interface"
+description: "Generate indifference curve and budget constraint diagrams from the command line with the econ-viz CLI, without writing any Python."
+---
+
 # CLI
 
 `econ-viz` ships with a command-line interface for generating diagrams without writing Python.
+
+Install it as a global command with `uv tool install econ-viz`, or prefix each command with `uv run` inside a uv project. See [Installation](installation.md) for details.
 
 ![CLI-generated Cobb-Douglas figure](assets/models/cobb_douglas.png)
 

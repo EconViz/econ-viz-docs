@@ -1,3 +1,8 @@
+---
+seo_title: "Leontief Utility (Perfect Complements) in Python"
+description: "Plot L-shaped Leontief indifference curves for perfect complements and solve the kinked consumer optimum in Python with econ-viz."
+---
+
 # Leontief (Perfect Complements)
 
 $$U(x, y) = \min(ax, by)$$

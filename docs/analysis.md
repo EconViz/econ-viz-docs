@@ -1,3 +1,8 @@
+---
+seo_title: "Comparative Statics and Slutsky Analysis"
+description: "Compute comparative statics, Marshallian demand derivatives, and Slutsky decompositions numerically with econ-viz analysis helpers."
+---
+
 # Analysis
 
 `econ-viz` now includes analysis helpers beyond plotting and equilibrium solving.

@@ -1,3 +1,8 @@
+---
+seo_title: "Parse LaTeX Utility Functions"
+description: "Convert LaTeX math strings such as x^{0.4} y^{0.6} or \\min(2x, 3y) directly into econ-viz utility function models with parse_latex."
+---
+
 # LaTeX Parsing
 
 `parse_latex` converts a LaTeX math string directly into a concrete model instance.
