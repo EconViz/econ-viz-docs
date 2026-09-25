@@ -56,7 +56,7 @@ Animator(draw, frames=np.linspace(1.0, 6.0, 45)).save(
 The local example script at `examples/animation.py` now generates three separate sweep families:
 
 - Parameter sweeps: move one utility-function parameter while holding prices and income fixed.
-- Price sweeps: hold the utility function fixed and sweep `p_x` while holding `p_y` fixed.
+- Price sweeps: hold the utility function fixed and sweep $p_x$ while holding $p_y$ fixed.
 - Income sweeps: hold the utility function and prices fixed and move only income.
 - Budget-only sweeps: remove the utility layer entirely so students can isolate budget-line motion.
 
