@@ -1,13 +1,11 @@
 ---
 seo_title: "Canvas：教科书风格的经济学图形"
-description: "Canvas 是 econ-viz 的绘图画布，用来画教科书风格的微观经济学图形：第一象限座标轴、箭头、LaTeX 标签、预算线与均衡点。"
+description: "Canvas 是 econ-viz 的绘图画布，用来画教科书风格的微观经济学图形：第一象限坐标轴、箭头、LaTeX 标签、预算线与均衡点。"
 ---
 
 # Canvas 画布
 
-`Canvas` 是内核的绘图画布。它管理一张 matplotlib 图，样式遵循微观经济学教科书的惯例：**只画第一象限**、座标轴末端有箭头、标签用 LaTeX 绘制、**不显示数字刻度**。
-
-![单一面板的 Canvas 输出](../assets/models/cobb_douglas.png)
+`Canvas` 是核心的绘图画布。它管理一张 matplotlib 图，样式遵循微观经济学教科书的惯例：**只画第一象限**、坐标轴末端有箭头、标签用 LaTeX 绘制、**不显示数字刻度**。
 
 ## 构造函数
 

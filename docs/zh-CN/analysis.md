@@ -7,8 +7,6 @@ description: "用 econ-viz 的分析工具，以数值方法计算比较静态�
 
 `econ-viz` 除了绘图与求解均衡，也提供分析工具。
 
-![分析工具很适合搭配需求教学图](../assets/consumer/demand_cobb_douglas.png)
-
 ## 比较静态
 
 用 `comparative_statics(...)` 以数值方法估计马歇尔需求的六个导数：

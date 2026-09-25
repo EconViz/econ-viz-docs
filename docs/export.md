@@ -5,8 +5,6 @@ description: "Save econ-viz economics diagrams as PNG, PDF, or SVG for papers an
 
 # Export
 
-![Exported multi-panel figure](assets/consumer/figure_side_by_side.png)
-
 ## Raster formats
 
 Call `cvs.save()` with a `.png`, `.pdf`, or `.svg` extension:

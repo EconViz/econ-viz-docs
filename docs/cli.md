@@ -9,8 +9,6 @@ description: "Generate indifference curve and budget constraint diagrams from th
 
 Install it as a global command with `uv tool install econ-viz`, or prefix each command with `uv run` inside a uv project. See [Installation](installation.md) for details.
 
-![CLI-generated Cobb-Douglas figure](assets/models/cobb_douglas.png)
-
 ## Commands
 
 | Command | Description |

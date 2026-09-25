@@ -5,7 +5,7 @@ description: "用 econ-viz 的 Animator，把價格、所得或效用參數變�
 
 # 動畫
 
-`econ-viz` v1.4.0 新增了以 `Animator` 為核心的輕量 GIF 流程。API 跟一般繪圖差不多：寫一個**frame factory**，每次回傳一個新的 `Canvas` 或 `Figure`，再掃過一串數值影格，最後存成 GIF。
+`econ-viz` 提供以 `Animator` 為核心的輕量 GIF 流程。API 跟一般繪圖差不多：寫一個**frame factory**，每次回傳一個新的 `Canvas` 或 `Figure`，再掃過一串數值影格，最後存成 GIF。
 
 ## 安裝
 
@@ -83,7 +83,7 @@ Animator(draw, frames=np.linspace(1.0, 6.0, 45)).save(
 
 ## 價格變動
 
-這組動畫回答的問題是：**預算線旋轉時，均衡怎麼移動？** `v1.4.0` 的關鍵設計是：效用函數固定，背景無異曲線的效用水準也固定。
+這組動畫回答的問題是：**預算線旋轉時，均衡怎麼移動？** 關鍵設計是：效用函數固定，背景無異曲線的效用水準也固定。
 
 <div class="media-grid" markdown>
   <figure class="gif-card">

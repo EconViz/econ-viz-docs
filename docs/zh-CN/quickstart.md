@@ -46,7 +46,7 @@ eq = solve(model, px=2.0, py=3.0, income=30.0)
 print(eq.x, eq.y, eq.utility)   # e.g. 7.5  5.0  5.303
 ```
 
-### 选择无差异曲线的效用水准
+### 选择无差异曲线的效用水平
 
 ```python
 from econ_viz import levels

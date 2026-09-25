@@ -67,6 +67,7 @@ extra:
       name: econ-viz on PyPI
 
 hooks:
+  - hooks/changelog.py
   - hooks/i18n_404.py
 
 plugins:

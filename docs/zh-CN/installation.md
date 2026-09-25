@@ -7,7 +7,7 @@ description: "用 uv 安装 econ-viz Python 包，包含 GIF 动画与 Jupyter �
 
 ## 系统需求
 
-- Python 3.12 以上
+- Python 3.10 以上
 - [uv](https://docs.astral.sh/uv/)
 
 ## 安装 uv

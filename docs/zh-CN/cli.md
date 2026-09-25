@@ -9,8 +9,6 @@ description: "用 econ-viz 命令行工具直接在终端产生无差异曲线�
 
 用 `uv tool install econ-viz` 把它安装为全局命令，或在 uv 项目中于每个命令前加上 `uv run`。详见[安装](installation.md)。
 
-![命令行工具产生的 Cobb-Douglas 图](../assets/models/cobb_douglas.png)
-
 ## 指令
 
 | 指令 | 说明 |
@@ -100,8 +98,8 @@ econ-viz plot --model cobb-douglas --px 2 --py 3 --income 30
 | `--a` | 1.0 | a 参数（Leontief / 完全替代 / 饱和） |
 | `--b` | 1.0 | b 参数（Leontief / 完全替代 / 饱和） |
 | `--rho` | 0.5 | 替代参数（CES） |
-| `--bliss-x` | 5.0 | 饱和点的 x 座标（饱和） |
-| `--bliss-y` | 5.0 | 饱和点的 y 座标（饱和） |
+| `--bliss-x` | 5.0 | 饱和点的 x 坐标（饱和） |
+| `--bliss-y` | 5.0 | 饱和点的 y 坐标（饱和） |
 | `--x-max` | 10 | 横轴上限 |
 | `--y-max` | 10 | 纵轴上限 |
 | `--x-label` | `x` | 横轴标签 |

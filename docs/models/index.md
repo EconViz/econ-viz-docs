@@ -7,8 +7,6 @@ description: "Catalogue of utility functions supported by econ-viz: Cobb-Douglas
 
 All models live in `econ_viz.models` and conform to the `UtilityFunction` protocol — they are callable dataclasses that evaluate `U(x, y)` element-wise over NumPy arrays.
 
-![Model catalogue overview](../assets/models/cobb_douglas.png)
-
 ## Parametric models
 
 | Model | Expression | Class |

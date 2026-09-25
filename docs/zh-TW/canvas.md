@@ -7,9 +7,7 @@ description: "Canvas 是 econ-viz 的繪圖畫布，用來畫教科書風格的�
 
 `Canvas` 是核心的繪圖畫布。它管理一張 matplotlib 圖，樣式遵循個體經濟學教科書的慣例：**只畫第一象限**、座標軸末端有箭頭、標籤用 LaTeX 繪製、**不顯示數字刻度**。
 
-![單一面板的 Canvas 輸出](../assets/models/cobb_douglas.png)
-
-## 建構子
+## 建構函式
 
 ```python
 from econ_viz import Canvas

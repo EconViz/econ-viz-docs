@@ -7,8 +7,6 @@ description: "用 econ-viz 的分析工具，以數值方法計算比較靜態�
 
 `econ-viz` 除了繪圖與求解均衡，也提供分析工具。
 
-![分析工具很適合搭配需求教學圖](../assets/consumer/demand_cobb_douglas.png)
-
 ## 比較靜態
 
 用 `comparative_statics(...)` 以數值方法估計 Marshall 需求的六個導數：

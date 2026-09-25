@@ -5,7 +5,7 @@ description: "Explore utility functions and budget constraints interactively in 
 
 # Interactive Widgets
 
-`WidgetViewer` renders an `econ-viz` figure inside a notebook cell and redraws it whenever a control changes. In `v1.4.0`, every parameter gets both a slider and a numeric input box, so users can drag for intuition or type exact values for teaching and demos.
+`WidgetViewer` renders an `econ-viz` figure inside a notebook cell and redraws it whenever a control changes. Every parameter gets both a slider and a numeric input box, so users can drag for intuition or type exact values for teaching and demos.
 
 ## Install
 
@@ -59,7 +59,7 @@ For fresh notebook runtimes, especially in Colab:
 2. Restart the runtime once if `ipywidgets`, `traitlets`, or `IPython` were upgraded.
 3. Skip the install cell after restart and continue from the import cell.
 
-The packaged Playground notebook now follows this flow and avoids reinstalling when `econ-viz 1.4.0` is already present.
+The packaged Playground notebook now follows this flow and avoids reinstalling when `econ-viz` is already installed.
 
 ## When to use widgets vs GIFs
 

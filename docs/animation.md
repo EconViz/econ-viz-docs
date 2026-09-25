@@ -5,7 +5,7 @@ description: "Export animated GIFs of indifference curves and budget constraints
 
 # Animation
 
-`econ-viz` v1.4.0 adds a lightweight GIF workflow built around `Animator`. The API stays close to normal plotting: you write a frame factory that returns a fresh `Canvas` or `Figure`, then sweep a numeric frame sequence and save the result as a GIF.
+`econ-viz` includes a lightweight GIF workflow built around `Animator`. The API stays close to normal plotting: you write a frame factory that returns a fresh `Canvas` or `Figure`, then sweep a numeric frame sequence and save the result as a GIF.
 
 ## Install
 
@@ -83,7 +83,7 @@ These animations answer “how does the preference map itself change?”
 
 ## Price sweeps
 
-These animations answer “how does equilibrium move when the budget line rotates?” The key design choice in `v1.4.0` is that the utility function is held fixed, and the background indifference-map levels are also held fixed.
+These animations answer “how does equilibrium move when the budget line rotates?” The key design choice is that the utility function is held fixed, and the background indifference-map levels are also held fixed.
 
 <div class="media-grid" markdown>
   <figure class="gif-card">

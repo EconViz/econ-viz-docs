@@ -7,7 +7,7 @@ description: "Install the econ-viz Python package with uv, including optional ex
 
 ## Requirements
 
-- Python 3.12 or later
+- Python 3.10 or later
 - [uv](https://docs.astral.sh/uv/)
 
 ## Install uv

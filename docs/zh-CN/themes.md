@@ -58,8 +58,8 @@ cvs = Canvas(x_max=20, y_max=15, theme=my_theme)
 | 属性 | 说明 |
 |-----------|-------------|
 | `name` | 主题名称 |
-| `axis_color` | 座标轴与箭头的颜色 |
-| `label_color` | 座标轴标签与原点标签的颜色 |
+| `axis_color` | 坐标轴与箭头的颜色 |
+| `label_color` | 坐标轴标签与原点标签的颜色 |
 | `ic_color` | 无差异曲线的颜色 |
 | `ic_linewidth` | 无差异曲线的线宽 |
 | `budget_color` | 预算线的颜色 |

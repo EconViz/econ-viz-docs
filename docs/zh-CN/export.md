@@ -5,8 +5,6 @@ description: "把 econ-viz 经济学图形保存为 PNG、PDF 或 SVG 用于论�
 
 # 导出
 
-![导出的多面板图](../assets/consumer/figure_side_by_side.png)
-
 ## 位图与矢量格式
 
 调用 `cvs.save()`，扩展名用 `.png`、`.pdf` 或 `.svg`：

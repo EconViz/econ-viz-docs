@@ -7,8 +7,6 @@ description: "econ-viz 支持的效用函数一览：Cobb-Douglas、Leontief、�
 
 所有模型都放在 `econ_viz.models`，并遵循 `UtilityFunction` 协议：它们都是**可调用的 dataclass**，能对 NumPy 数组逐元素计算 `U(x, y)`。
 
-![模型目录总览](../../assets/models/cobb_douglas.png)
-
 ## 参数化模型
 
 | 模型 | 函数形式 | 类 |

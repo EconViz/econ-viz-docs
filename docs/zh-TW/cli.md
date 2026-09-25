@@ -9,8 +9,6 @@ description: "用 econ-viz 命令列工具直接在終端機產生無異曲線�
 
 用 `uv tool install econ-viz` 把它裝成全域指令，或在 uv 專案中於每個指令前加上 `uv run`。詳見[安裝](installation.md)。
 
-![命令列工具產生的 Cobb-Douglas 圖](../assets/models/cobb_douglas.png)
-
 ## 指令
 
 | 指令 | 說明 |

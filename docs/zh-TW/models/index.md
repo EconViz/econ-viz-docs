@@ -7,8 +7,6 @@ description: "econ-viz 支援的效用函數一覽：Cobb-Douglas、Leontief、�
 
 所有模型都放在 `econ_viz.models`，並遵循 `UtilityFunction` 協定：它們都是**可呼叫的 dataclass**，能對 NumPy 陣列逐元素計算 `U(x, y)`。
 
-![模型目錄總覽](../../assets/models/cobb_douglas.png)
-
 ## 參數化模型
 
 | 模型 | 函數形式 | 類別 |
