@@ -12,6 +12,22 @@ Release history of `econ-viz`. Documentation-only changes are not listed.
   <tr><th>Version</th><th>Changes</th></tr>
   </thead>
   <tbody>
+  <tr id="v1101">
+    <td class="ev-changelog__version"><strong>v1.10.1</strong><br><span>2026-09-26</span></td>
+    <td>
+      <p class="ev-changelog__type">Maintenance</p>
+      <ul>
+        <li>Add Ruff linting and formatting plus Mypy type checking to contributor tooling and CI</li>
+        <li>Publish <code>econ-viz</code> as a PEP 561 typed package with <code>py.typed</code></li>
+        <li>Standardize public exception messages in English</li>
+      </ul>
+      <p class="ev-changelog__type">Bug fixes</p>
+      <ul>
+        <li>Fix a missing NumPy import in contour-level annotations</li>
+        <li>Bind each Edgeworth Pareto-search closure to its own weight</li>
+      </ul>
+    </td>
+  </tr>
   <tr id="v1100">
     <td class="ev-changelog__version"><strong>v1.10.0</strong><br><span>2026-09-26</span></td>
     <td>
