@@ -156,11 +156,8 @@ result = decompose_price_effect(
     method=DecompositionMethod.HICKS,
 )
 
-utility_levels = sorted({result.A.utility, result.C.utility})
-
 (
     Canvas(x_max=25, y_max=25, title="Hicks decomposition")
-    .add_utility(model, levels=utility_levels)
     .add_decomposition(
         result,
         show_arrows=True,
@@ -170,6 +167,11 @@ utility_levels = sorted({result.A.utility, result.C.utility})
     .save("hicks.png")
 )
 ```
+
+`add_decomposition` draws the indifference curves through A and C by
+default, plus the one through B under Slutsky, where B is off the original
+curve. Pass `show_curves=False` when you draw them yourself with
+`add_utility`.
 
 `result.A`, `result.B`, and `result.C` are the original, compensated, and
 final bundles. The result also exposes `substitution_effect`, `income_effect`,
@@ -187,6 +189,20 @@ canvas.add_decomposition(
     substitution=Effect(color="#E67E22", label="SE", label_position="top"),
     income=Effect(color="#27AE60", label="IE"),
     point_label=Label(visible=False),
+)
+```
+
+`curve_stroke` and `curve_label` restyle and label those curves, and `legend`
+places the legend:
+
+```python
+from econ_viz import Label, Legend, Stroke
+
+canvas.add_decomposition(
+    result,
+    curve_stroke=Stroke(opacity=0.6),        # restyle U0, U1 (and U_B)
+    curve_label=Label(position="top"),       # turn on the U0, U1 labels
+    legend=Legend(position="bottom"),        # or Legend(visible=False)
 )
 ```
 
