@@ -19,6 +19,8 @@ from econ_viz import Canvas, themes
 cvs = Canvas(x_max=20, y_max=15, theme=themes.default)
 ```
 
+預設主題的顏色取自一組**色盲友善**的配色\citep{thriveth2014}，可從 `themes.COLORBLIND_CYCLE_HEX` 與 `themes.COLORBLIND_CYCLE_RGB` 取得。經濟學教學大量依賴圖形，因此不應只靠顏色傳達意義，以免視覺障礙的學生無法辨識\citep{kugler1996}。
+
 ### Nord
 
 ```python

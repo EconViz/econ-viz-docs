@@ -12,6 +12,29 @@ description: "econ-viz Python 套件的版本歷史：每個版本的新功能�
   <tr><th>版本</th><th>更新內容</th></tr>
   </thead>
   <tbody>
+  <tr id="v190">
+    <td class="ev-changelog__version"><strong>v1.9.0</strong><br><span>2026-09-26</span></td>
+    <td>
+      <p class="ev-changelog__type">新功能</p>
+      <ul>
+        <li>價格效果分解預設畫出無異曲線：通過 A 的 U<sub>0</sub>、通過 C 的 U<sub>1</sub>，Slutsky 分解還有通過 B 的曲線</li>
+        <li>新增 <code>Haagsma</code> 效用模型，其商品 x 一定是劣等財，所得夠高時成為季芬財</li>
+        <li>新增 <code>Legend</code>，自動放在最不擋到圖形的位置，也可指定角落或圖外的上下左右</li>
+        <li>所有文字都能用 <code>Label</code> 調整：座標軸標籤、原點、標題、效果標籤、Edgeworth 箱形圖文字</li>
+        <li><code>Stroke</code>、<code>Marker</code>、<code>Label</code>、<code>Legend</code>、<code>Effect</code>、<code>Fill</code> 都支援 <code>opacity</code></li>
+      </ul>
+      <p class="ev-changelog__type">變更</p>
+      <ul>
+        <li>既有的效果分解圖會多出無異曲線；傳入 <code>show_curves=False</code> 即可回到原本的圖</li>
+        <li>效果範圍箭頭改為單向，從 A 指向 B、從 B 指向 C</li>
+      </ul>
+      <p class="ev-changelog__type">錯誤修正</p>
+      <ul>
+        <li>提高最適化的精度，比較靜態與 Slutsky 矩陣更準確</li>
+        <li>效用為負值的無異曲線改畫實線</li>
+      </ul>
+    </td>
+  </tr>
   <tr id="v180">
     <td class="ev-changelog__version"><strong>v1.8.0</strong><br><span>2026-09-26</span></td>
     <td>

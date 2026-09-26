@@ -12,6 +12,29 @@ Release history of `econ-viz`. Documentation-only changes are not listed.
   <tr><th>Version</th><th>Changes</th></tr>
   </thead>
   <tbody>
+  <tr id="v190">
+    <td class="ev-changelog__version"><strong>v1.9.0</strong><br><span>2026-09-26</span></td>
+    <td>
+      <p class="ev-changelog__type">Features</p>
+      <ul>
+        <li>Price-effect decompositions draw their indifference curves by default: U<sub>0</sub> through A, U<sub>1</sub> through C, and the curve through B under Slutsky</li>
+        <li><code>Haagsma</code> utility model with an always-inferior good that becomes Giffen at high enough income</li>
+        <li><code>Legend</code> placed automatically where it covers the least of the diagram, or at a chosen corner or side</li>
+        <li><code>Label</code> for every text element: axis labels, origin, titles, effect labels, Edgeworth box text</li>
+        <li><code>opacity</code> on <code>Stroke</code>, <code>Marker</code>, <code>Label</code>, <code>Legend</code>, <code>Effect</code>, and <code>Fill</code></li>
+      </ul>
+      <p class="ev-changelog__type">Changes</p>
+      <ul>
+        <li>Existing decomposition figures now include their indifference curves; <code>show_curves=False</code> restores the previous figure</li>
+        <li>Effect range arrows point one way, from A to B and from B to C</li>
+      </ul>
+      <p class="ev-changelog__type">Bug fixes</p>
+      <ul>
+        <li>Tighter optimisation tolerance, so comparative statics and Slutsky matrices are accurate</li>
+        <li>Indifference curves at negative utility levels are drawn solid</li>
+      </ul>
+    </td>
+  </tr>
   <tr id="v180">
     <td class="ev-changelog__version"><strong>v1.8.0</strong><br><span>2026-09-26</span></td>
     <td>

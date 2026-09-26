@@ -99,6 +99,7 @@ extra:
 
 hooks:
   - hooks/i18n_404.py
+  - hooks/citations.py
 
 plugins:
   - search
@@ -175,6 +176,7 @@ plugins:
             LaTeX Parsing: LaTeX 解析
             Project: 專案
             Changelog: 更新紀錄
+            References: 參考文獻
         - locale: zh-CN
           name: 简体中文
           build: true
@@ -240,6 +242,7 @@ plugins:
             LaTeX Parsing: LaTeX 解析
             Project: 项目
             Changelog: 更新日志
+            References: 参考文献
 
 nav:
   - Home: index.md
@@ -262,3 +265,4 @@ nav:
       - LaTeX Parsing: tools/latex.md
   - Project:
       - Changelog: project/changelog.md
+      - References: project/references.md

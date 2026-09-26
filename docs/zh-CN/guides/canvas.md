@@ -156,6 +156,9 @@ cvs.save("figure.png")   # .png / .pdf / .svg / .tex
 | `Label` | 标签文字、位置、偏移、颜色、大小、是否显示 | `theme.point_label`、`theme.ic_label` 等 |
 | `Fill` | 阴影颜色与透明度 | `theme.budget_fill` |
 | `Axis` | 单个坐标轴的标签、标签位置与线条 | 无 |
+| `Legend` | 图例的位置、大小、外框、列数 | `theme.legend` |
+
+每个对象也都有 `opacity`，从 0（透明）到 1（不透明）。
 
 ```python
 from econ_viz import Canvas, Fill, Label, Marker, Stroke
@@ -164,7 +167,7 @@ from econ_viz import Canvas, Fill, Label, Marker, Stroke
     Canvas(x_max=20, y_max=15)
     .add_utility(model, levels=lvls, ic_label=Label(text="U={:.1f}", position="top"))
     .add_budget(2.0, 3.0, 30.0, stroke=Stroke(color="black"),
-                fill=Fill(color="lightgrey", alpha=0.4))
+                fill=Fill(color="lightgrey", opacity=0.4))
     .add_equilibrium(eq, marker=Marker(color="#C0392B", shape="s"),
                      label=Label(position="bottom-left", offset=8))
     .add_point(12.0, 2.0, label=Label(text="A", position="left"))
@@ -175,6 +178,21 @@ from econ_viz import Canvas, Fill, Label, Marker, Stroke
 ![自定义线条、阴影、标记点与标签](../../assets/canvas/styles.png){ .ev-figure-sm }
 
 **建议用 `Stroke` 设置线条样式**。另外的 `color`、`linewidth`、`linestyle` 参数仍可作为简写使用，画出来的结果相同。标签默认沿用所属点的 `Marker` 颜色，除非另外指定；位置可用 `top`、`bottom`、`left`、`right` 与 `top-right` 等四个角落，`Label(visible=False)` 可隐藏标签。
+
+### 文字与图例
+
+所有文字都能传入 `Label`：坐标轴标签通过 `Axis(label=...)`，原点通过 `origin_label`，标题通过 `title`。图例默认会放在最不遮挡图形的位置，四个角都会遮挡时就移到图外；也可以用 `Legend` 指定图内的角落（`"upper left"` 等），或图外的上下左右（`"top"`、`"bottom"`、`"left"`、`"right"`）。
+
+```python
+from econ_viz import Axis, Canvas, Label, Legend
+
+cvs = Canvas(
+    title=Label(text="Cobb-Douglas", fontsize=13),
+    x_axis=Axis(label=Label(text="x_1", fontsize=16)),
+    origin_label=Label(visible=False),
+)
+cvs.show_legend(legend=Legend(position="bottom", fontsize=10))
+```
 
 下方的线条样式与箭头样式，坐标轴通过 `x_*` 与 `y_*` 参数设置，其他线条则通过 `Stroke` 应用。
 

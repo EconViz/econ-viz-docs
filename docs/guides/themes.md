@@ -19,6 +19,12 @@ from econ_viz import Canvas, themes
 cvs = Canvas(x_max=20, y_max=15, theme=themes.default)
 ```
 
+The default theme draws from a colour-blind-friendly colour cycle
+\citep{thriveth2014}, exposed as `themes.COLORBLIND_CYCLE_HEX` and
+`themes.COLORBLIND_CYCLE_RGB`. Economics teaching relies heavily on graphs, so
+colour alone should not carry meaning for students with impaired vision
+\citep{kugler1996}.
+
 ### Nord
 
 ```python

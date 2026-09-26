@@ -46,13 +46,15 @@
   color: #f3f3f3 !important;
 }
 
-/* Keep display equations close to the paragraph that introduces them. */
+/* Keep display equations close to the paragraph that introduces them.
+   div.arithmatex has overflow:auto, so KaTeX's own 1em display margin would
+   stack on top of the div's margin instead of collapsing into it. */
 .md-typeset div.arithmatex {
-  margin: 0.75rem 0;
+  margin: 0.6em 0;
 }
 
-.md-typeset div.arithmatex > mjx-container[display="true"] {
-  margin: 0 !important;
+.md-typeset div.arithmatex > .katex-display {
+  margin: 0;
 }
 
 /* Model page: collapsible model names under each category in the right TOC. */
@@ -236,4 +238,60 @@
 }
 .md-typeset .ev-changelog td > ul:last-child {
   margin-bottom: 0;
+}
+
+/* APA reference list: hanging indent. */
+.md-typeset .ev-bib-entry {
+  margin: 0 0 0.8em;
+  padding-left: 2em;
+  text-indent: -2em;
+}
+
+.md-typeset .ev-bib-entry p {
+  margin: 0;
+}
+
+/* Site links are near-black, so mark the ones in references and citations. */
+.md-typeset .ev-bib-entry a {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.md-typeset .ev-bib-backrefs {
+  margin-left: 0.4em;
+  font-size: 0.85em;
+  color: var(--md-default-fg-color--light);
+}
+
+.md-typeset a.ev-cite {
+  text-decoration: underline dotted;
+  text-underline-offset: 0.2em;
+}
+
+/* Where a reference or a citation is jumped to. */
+.md-typeset .ev-bib-entry:target,
+.md-typeset a.ev-cite:target {
+  background-color: #939bc9;
+  color: #f2f2f2;
+}
+
+.md-typeset a.ev-cite:target {
+  margin: 0 -0.3em;
+  padding: 0.1em 0.3em;
+}
+
+/* Pad all four sides by 0.5em; the negative margins keep the text in place. */
+.md-typeset .ev-bib-entry:target {
+  margin: -0.5em -0.5em 0.3em;
+  padding: 0.5em 0.5em 0.5em calc(2em + 0.5em);
+}
+
+.md-typeset .ev-bib-entry:target a,
+.md-typeset .ev-bib-entry:target .ev-bib-backrefs {
+  color: #f2f2f2;
+}
+
+.md-typeset .ev-bib-entry,
+.md-typeset a.ev-cite {
+  scroll-margin-top: 4.5rem;
 }

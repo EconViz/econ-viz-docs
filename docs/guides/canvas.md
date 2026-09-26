@@ -156,9 +156,12 @@ theme default, so set only what you want to change.
 |--------|--------|----------------|
 | `Stroke` | Line width, line style, colour, arrowhead | `theme.budget_stroke`, `theme.ic_stroke`, … |
 | `Marker` | Point colour, size, shape | `theme.eq_marker`, `theme.point_marker`, … |
-| `Label` | Label text, position, offset, colour, size, visibility | `theme.point_label`, `theme.ic_label`, … |
+| `Label` | Text, position, offset, colour, size, visibility | `theme.point_label`, `theme.axis_label`, … |
+| `Legend` | Legend position, size, frame, columns | `theme.legend` |
 | `Fill` | Shading colour and opacity | `theme.budget_fill` |
 | `Axis` | One axis's label, label position, and stroke | none |
+
+Every object also takes an `opacity` from 0 (transparent) to 1 (opaque).
 
 ```python
 from econ_viz import Canvas, Fill, Label, Marker, Stroke
@@ -167,7 +170,7 @@ from econ_viz import Canvas, Fill, Label, Marker, Stroke
     Canvas(x_max=20, y_max=15)
     .add_utility(model, levels=lvls, ic_label=Label(text="U={:.1f}", position="top"))
     .add_budget(2.0, 3.0, 30.0, stroke=Stroke(color="black"),
-                fill=Fill(color="lightgrey", alpha=0.4))
+                fill=Fill(color="lightgrey", opacity=0.4))
     .add_equilibrium(eq, marker=Marker(color="#C0392B", shape="s"),
                      label=Label(position="bottom-left", offset=8))
     .add_point(12.0, 2.0, label=Label(text="A", position="left"))
@@ -182,6 +185,25 @@ from econ_viz import Canvas, Fill, Label, Marker, Stroke
 same thing. A label takes its point's `Marker` colour unless it sets its own;
 label positions are `top`, `bottom`, `left`, `right`, and the four corners
 such as `top-right`, and `Label(visible=False)` hides a label.
+
+### Text and legend
+
+Every piece of text takes a `Label`: axis labels through `Axis(label=...)`,
+the origin through `origin_label`, and the title through `title`. Legends go
+where they cover the least of the diagram, moving outside the plot area when
+every corner is taken; a `Legend` chooses an inside corner (`"upper left"`,
+…) or a side outside (`"top"`, `"bottom"`, `"left"`, `"right"`).
+
+```python
+from econ_viz import Axis, Canvas, Label, Legend
+
+cvs = Canvas(
+    title=Label(text="Cobb-Douglas", fontsize=13),
+    x_axis=Axis(label=Label(text="x_1", fontsize=16)),
+    origin_label=Label(visible=False),
+)
+cvs.show_legend(legend=Legend(position="bottom", fontsize=10))
+```
 
 The line and arrow styles below apply to the axes with the `x_*` and `y_*`
 parameters, and to any other line through `Stroke`.

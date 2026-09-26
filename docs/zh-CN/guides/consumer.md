@@ -154,11 +154,8 @@ result = decompose_price_effect(
     method=DecompositionMethod.HICKS,
 )
 
-utility_levels = sorted({result.A.utility, result.C.utility})
-
 (
     Canvas(x_max=25, y_max=25, title="Hicks decomposition")
-    .add_utility(model, levels=utility_levels)
     .add_decomposition(
         result,
         show_arrows=True,
@@ -168,6 +165,8 @@ utility_levels = sorted({result.A.utility, result.C.utility})
     .save("hicks.png")
 )
 ```
+
+`add_decomposition` 默认会画出通过 A 与 C 的无差异曲线；Slutsky 分解的 B 不在原来的曲线上，所以还会多画一条通过 B 的曲线。如果要自己用 `add_utility` 画，传入 `show_curves=False` 即可。
 
 `result.A`、`result.B` 与 `result.C` 分别是原始、补偿后与最终消费组合。结果也包含 `substitution_effect`、`income_effect`、`total_effect` 与 `compensated_income`。
 
@@ -181,6 +180,19 @@ canvas.add_decomposition(
     substitution=Effect(color="#E67E22", label="SE", label_position="top"),
     income=Effect(color="#27AE60", label="IE"),
     point_label=Label(visible=False),
+)
+```
+
+`curve_stroke` 与 `curve_label` 可调整这些曲线的样式并加上标签，`legend` 则决定图例的位置：
+
+```python
+from econ_viz import Label, Legend, Stroke
+
+canvas.add_decomposition(
+    result,
+    curve_stroke=Stroke(opacity=0.6),        # 调整 U0、U1（与 U_B）的样式
+    curve_label=Label(position="top"),       # 显示 U0、U1 标签
+    legend=Legend(position="bottom"),        # 或 Legend(visible=False)
 )
 ```
 
