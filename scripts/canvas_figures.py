@@ -9,7 +9,7 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 
-from econ_viz import ArrowStyle, Canvas, LineStyle, levels, solve
+from econ_viz import ArrowStyle, Canvas, Fill, Label, LineStyle, Marker, Stroke, levels, solve
 from econ_viz.models import CobbDouglas
 
 OUT = Path(__file__).resolve().parent.parent / "docs" / "assets" / "canvas"
@@ -70,3 +70,12 @@ for ax, style in zip(axes.flat, arrow_styles):
 fig.tight_layout()
 fig.savefig(OUT / "arrow_styles.png", dpi=160, transparent=True)
 plt.close(fig)
+
+(
+    Canvas(x_max=20, y_max=15, x_label="x", y_label="y", dpi=140)
+    .add_utility(model, levels=lvls, ic_label=Label(text="U={:.1f}", position="top"))
+    .add_budget(2.0, 3.0, 30.0, stroke=Stroke(color="black"), fill=Fill(color="lightgrey", alpha=0.4))
+    .add_equilibrium(eq, marker=Marker(color="#C0392B", shape="s"), label=Label(position="bottom-left", offset=8))
+    .add_point(12.0, 2.0, label=Label(text="A", position="left"))
+    .save(str(OUT / "styles.png"))
+)

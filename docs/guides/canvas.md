@@ -10,20 +10,18 @@ description: "Canvas is the econ-viz drawing surface for textbook-style microeco
 ## Constructor
 
 ```python
-from econ_viz import ArrowStyle, Canvas, Stroke, themes
+from econ_viz import ArrowStyle, Axis, Canvas, Stroke, themes
 
 cvs = Canvas(
     x_max=20,
     y_max=15,
-    x_label="x",
-    y_label="y",
     title=r"Cobb-Douglas $x^{0.5} y^{0.5}$",
     dpi=300,
-    x_label_pos="right",   # "top", "right", or "bottom"
-    y_label_pos="top",     # "left", "top", or "right"
     font="DejaVu Sans",
     math_font="stix",
     axis_stroke=Stroke(width=1.0, arrow=ArrowStyle.TRIANGLE),
+    x_axis=Axis(label="x", label_position="right"),  # "top", "right", or "bottom"
+    y_axis=Axis(label="y", label_position="top"),    # "left", "top", or "right"
     theme=themes.default,
 )
 ```
@@ -32,18 +30,24 @@ cvs = Canvas(
 |-----------|------|---------|-------------|
 | `x_max` | float | 10 | Upper bound of the horizontal axis |
 | `y_max` | float | 10 | Upper bound of the vertical axis |
-| `x_label` | str | `"X"` | Label at the tip of the horizontal axis |
-| `y_label` | str | `"Y"` | Label at the tip of the vertical axis |
+| `x_axis` | `Axis` | None | Label, label position, and stroke of the horizontal axis |
+| `y_axis` | `Axis` | None | Label, label position, and stroke of the vertical axis |
+| `x_label` | str | `"X"` | Shorthand for `Axis(label=...)` on the horizontal axis |
+| `y_label` | str | `"Y"` | Shorthand for `Axis(label=...)` on the vertical axis |
 | `title` | str or None | None | Figure title |
 | `dpi` | int | 300 | Raster export resolution (clamped to 1–1200) |
-| `x_label_pos` | str or `LabelPosition` | `"right"` | Place the horizontal label above, right of, or below the arrow tip |
-| `y_label_pos` | str or `LabelPosition` | `"top"` | Place the vertical label left of, above, or right of the arrow tip |
+| `x_label_pos` | str or `LabelPosition` | `"right"` | Shorthand for `Axis(label_position=...)`: above, right of, or below the arrow tip |
+| `y_label_pos` | str or `LabelPosition` | `"top"` | Shorthand for `Axis(label_position=...)`: left of, above, or right of the arrow tip |
 | `font` | str or sequence | None | Font family or fallback list for every text element |
 | `math_font` | str | None | Matplotlib math font: `dejavusans`, `dejavuserif`, `cm`, `stix`, or `stixsans` |
 | `axis_stroke` | `Stroke` | theme default | Shared width, style, colour, and arrowhead for both axes |
-| `x_axis_stroke` | `Stroke` | None | Horizontal-axis override |
-| `y_axis_stroke` | `Stroke` | None | Vertical-axis override |
+| `x_axis_stroke` | `Stroke` | None | Horizontal-axis override, shorthand for `Axis(stroke=...)` |
+| `y_axis_stroke` | `Stroke` | None | Vertical-axis override, shorthand for `Axis(stroke=...)` |
 | `theme` | Theme | `themes.default` | Colour and style theme |
+
+When the same setting is given twice, the `Axis` field wins. For the axis
+line, the order from highest to lowest is `Axis.stroke`, `x_axis_stroke`,
+`axis_stroke`, `x_line_style` / `x_arrow_style`, and `theme.axis_stroke`.
 
 ## Methods
 
@@ -57,14 +61,16 @@ Draws indifference curves for a utility model. Pass an integer to `levels` for a
 cvs.add_utility(
     func,
     levels=3,          # count or list of levels
-    color=None,        # default: theme.ic_color
-    linewidth=None,    # default: theme.ic_linewidth
+    stroke=None,       # default: theme.ic_stroke
+    ray_stroke=None,
     show_rays=False,
     show_kinks=False,
     kink_radius=1.0,
     show_bliss=True,   # ★ at bliss point (Satiation)
-    stroke=None,
-    ray_stroke=None,
+    kink_marker=None,  # default: theme.kink_marker
+    bliss_marker=None, # default: theme.bliss_marker
+    ic_label=None,     # Label for utility levels at curve ends
+    bliss_label=None,  # str or Label
 )
 ```
 
@@ -77,13 +83,9 @@ Draws the budget line $p_x x + p_y y = I$. Set `fill=True` to shade the feasible
 ```python
 cvs.add_budget(
     px, py, income,
-    color=None,
-    linewidth=None,
-    linestyle="-",
+    stroke=None,       # default: theme.budget_stroke
     label=None,        # legend label (LaTeX)
-    fill=False,        # shade feasible set
-    fill_alpha=None,   # default: theme.budget_fill_alpha
-    stroke=None,
+    fill=False,        # True, or a Fill; default: theme.budget_fill
 )
 ```
 
@@ -96,9 +98,8 @@ Marks the optimal bundle and drops dashed lines to both axes. Pass the result of
 ```python
 cvs.add_equilibrium(
     eq,                # result of solve()
-    color=None,
-    markersize=None,
-    label="x^*",
+    label="x^*",       # str or Label
+    marker=None,       # default: theme.eq_marker
     drop_dashes=True,  # dashed lines to axes
     show_ray=False,    # expansion path
     drop_stroke=None,
@@ -115,9 +116,7 @@ Draws a dashed ray from the origin with slope `slope` (dy/dx), often used for an
 ```python
 cvs.add_ray(
     slope,             # dy/dx
-    color=None,
-    linewidth=None,
-    stroke=None,
+    stroke=None,       # default: theme.ray_stroke
 )
 ```
 
@@ -125,15 +124,13 @@ cvs.add_ray(
 
 ### Point {#add_point data-toc-label="Point"}
 
-Marks any point, such as a bundle to compare with the optimum. `label` is rendered in LaTeX math mode, and `offset` moves the label in points.
+Marks any point, such as a bundle to compare with the optimum. `label` is rendered in LaTeX math mode; pass a `Label` to move or restyle it.
 
 ```python
 cvs.add_point(
     x, y,
-    label=None,
-    color=None,
-    markersize=6.0,
-    offset=(5, 5),     # label offset (pt)
+    label=None,        # str or Label
+    marker=None,       # default: theme.point_marker
 )
 ```
 
@@ -152,9 +149,42 @@ cvs.save("figure.png")   # .png / .pdf / .svg / .tex
 
 ## Styles
 
-Canvas styles are divided into line styles and arrow styles. Set axis styles
-directly with the `x_*` and `y_*` parameters; use `Stroke` to apply the same
-controls to utility curves, budget lines, paths, and other visible lines.
+Each kind of element has its own style object. Fields left as `None` keep the
+theme default, so set only what you want to change.
+
+| Object | Styles | Theme defaults |
+|--------|--------|----------------|
+| `Stroke` | Line width, line style, colour, arrowhead | `theme.budget_stroke`, `theme.ic_stroke`, … |
+| `Marker` | Point colour, size, shape | `theme.eq_marker`, `theme.point_marker`, … |
+| `Label` | Label text, position, offset, colour, size, visibility | `theme.point_label`, `theme.ic_label`, … |
+| `Fill` | Shading colour and opacity | `theme.budget_fill` |
+| `Axis` | One axis's label, label position, and stroke | none |
+
+```python
+from econ_viz import Canvas, Fill, Label, Marker, Stroke
+
+(
+    Canvas(x_max=20, y_max=15)
+    .add_utility(model, levels=lvls, ic_label=Label(text="U={:.1f}", position="top"))
+    .add_budget(2.0, 3.0, 30.0, stroke=Stroke(color="black"),
+                fill=Fill(color="lightgrey", alpha=0.4))
+    .add_equilibrium(eq, marker=Marker(color="#C0392B", shape="s"),
+                     label=Label(position="bottom-left", offset=8))
+    .add_point(12.0, 2.0, label=Label(text="A", position="left"))
+    .save("styles.png")
+)
+```
+
+![Custom stroke, fill, markers, and labels](../assets/canvas/styles.png){ .ev-figure-sm }
+
+`Stroke` is the preferred way to style lines. The separate `color`,
+`linewidth`, and `linestyle` arguments still work as shorthand and draw the
+same thing. A label takes its point's `Marker` colour unless it sets its own;
+label positions are `top`, `bottom`, `left`, `right`, and the four corners
+such as `top-right`, and `Label(visible=False)` hides a label.
+
+The line and arrow styles below apply to the axes with the `x_*` and `y_*`
+parameters, and to any other line through `Stroke`.
 
 ### Line styles
 

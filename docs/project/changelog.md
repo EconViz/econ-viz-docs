@@ -12,6 +12,30 @@ Release history of `econ-viz`. Documentation-only changes are not listed.
   <tr><th>Version</th><th>Changes</th></tr>
   </thead>
   <tbody>
+  <tr id="v180">
+    <td class="ev-changelog__version"><strong>v1.8.0</strong><br><span>2026-09-26</span></td>
+    <td>
+      <p class="ev-changelog__type">Features</p>
+      <ul>
+        <li><code>Effect</code> sets the colour, range-arrow height, and label of each price-effect decomposition effect</li>
+        <li><code>Marker</code> sets point colour, size, and shape across canvases, demand diagrams, and Edgeworth boxes</li>
+        <li><code>Label</code> sets point-label text, position (four sides and four corners), offset, colour, size, and visibility; decomposition A/B/C labels can be hidden</li>
+        <li><code>Fill</code> gives the budget-set shading its own colour and opacity</li>
+        <li><code>Axis</code> sets one axis's label, label position, and stroke in a single object</li>
+        <li>Theme defaults for markers, labels, and fills, such as <code>theme.eq_marker</code>, <code>theme.point_label</code>, and <code>theme.budget_fill</code></li>
+      </ul>
+      <p class="ev-changelog__type">Changes</p>
+      <ul>
+        <li>Default equilibrium point size reduced from 6 to 4</li>
+        <li><code>Stroke</code> is the preferred way to style lines; separate colour, width, and style arguments remain as shorthand</li>
+      </ul>
+      <p class="ev-changelog__type">Bug fixes</p>
+      <ul>
+        <li>Wedge arrowheads keep a fixed on-screen size instead of stretching along the line</li>
+        <li>Edgeworth equilibrium indifference curves apply <code>stroke_a</code> / <code>stroke_b</code></li>
+      </ul>
+    </td>
+  </tr>
   <tr id="v170">
     <td class="ev-changelog__version"><strong>v1.7.0</strong><br><span>2026-09-25</span></td>
     <td>
