@@ -121,6 +121,6 @@ uv run pytest
 ## Verifying the installation
 
 ```bash
-uv run econ-viz --version   # econ-viz 1.7.0
+uv run econ-viz --version   # econ-viz 1.8.0
 uv run econ-viz help
 ```

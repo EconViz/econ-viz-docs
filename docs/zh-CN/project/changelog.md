@@ -12,6 +12,30 @@ description: "econ-viz Python 包的版本历史：每个版本的新功能、�
   <tr><th>版本</th><th>更新内容</th></tr>
   </thead>
   <tbody>
+  <tr id="v180">
+    <td class="ev-changelog__version"><strong>v1.8.0</strong><br><span>2026-09-26</span></td>
+    <td>
+      <p class="ev-changelog__type">新功能</p>
+      <ul>
+        <li><code>Effect</code> 可设置价格效应分解中每个效应的颜色、范围箭头高度与标签</li>
+        <li><code>Marker</code> 可设置画布、需求图与 Edgeworth 盒状图中点的颜色、大小与形状</li>
+        <li><code>Label</code> 可设置点标签的文字、位置（上下左右与四个角落）、偏移、颜色、大小与是否显示，也能隐藏效应分解的 A/B/C 标签</li>
+        <li><code>Fill</code> 让预算集的阴影可以有自己的颜色与透明度</li>
+        <li><code>Axis</code> 用一个对象设置单个坐标轴的标签、标签位置与线条</li>
+        <li>新增标记点、标签与阴影的主题默认值，例如 <code>theme.eq_marker</code>、<code>theme.point_label</code> 与 <code>theme.budget_fill</code></li>
+      </ul>
+      <p class="ev-changelog__type">变更</p>
+      <ul>
+        <li>均衡点的默认大小从 6 缩小为 4</li>
+        <li>建议用 <code>Stroke</code> 设置线条样式，另外的颜色、粗细与线型参数保留为简写</li>
+      </ul>
+      <p class="ev-changelog__type">错误修复</p>
+      <ul>
+        <li>楔形箭头在画面上保持固定大小，不再沿整条线拉长</li>
+        <li>Edgeworth 盒状图均衡点的无差异曲线会应用 <code>stroke_a</code> / <code>stroke_b</code></li>
+      </ul>
+    </td>
+  </tr>
   <tr id="v170">
     <td class="ev-changelog__version"><strong>v1.7.0</strong><br><span>2026-09-25</span></td>
     <td>

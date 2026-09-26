@@ -171,6 +171,19 @@ utility_levels = sorted({result.A.utility, result.C.utility})
 
 `result.A`、`result.B` 與 `result.C` 分別是原始、補償後與最終消費組合。結果也包含 `substitution_effect`、`income_effect`、`total_effect` 與 `compensated_income`。
 
+用 `Effect` 可設定每個效果的顏色、座標軸下方範圍箭頭的高度，以及旁邊的標籤。`point_label` 可移動或隱藏 A、B、C 標籤：
+
+```python
+from econ_viz import Effect, Label
+
+canvas.add_decomposition(
+    result,
+    substitution=Effect(color="#E67E22", label="SE", label_position="top"),
+    income=Effect(color="#27AE60", label="IE"),
+    point_label=Label(visible=False),
+)
+```
+
 ![Hicks 價格效果分解](../../assets/consumer/cobb_douglas_hicks.png)
 
 ## Edgeworth 箱形圖

@@ -12,6 +12,30 @@ description: "econ-viz Python 套件的版本歷史：每個版本的新功能�
   <tr><th>版本</th><th>更新內容</th></tr>
   </thead>
   <tbody>
+  <tr id="v180">
+    <td class="ev-changelog__version"><strong>v1.8.0</strong><br><span>2026-09-26</span></td>
+    <td>
+      <p class="ev-changelog__type">新功能</p>
+      <ul>
+        <li><code>Effect</code> 可設定價格效果分解中每個效果的顏色、範圍箭頭高度與標籤</li>
+        <li><code>Marker</code> 可設定畫布、需求圖與 Edgeworth 箱形圖中點的顏色、大小與形狀</li>
+        <li><code>Label</code> 可設定點標籤的文字、位置（上下左右與四個角落）、位移、顏色、大小與是否顯示，也能隱藏效果分解的 A/B/C 標籤</li>
+        <li><code>Fill</code> 讓預算集合的陰影可以有自己的顏色與透明度</li>
+        <li><code>Axis</code> 用一個物件設定單一座標軸的標籤、標籤位置與線條</li>
+        <li>新增標記點、標籤與陰影的主題預設值，例如 <code>theme.eq_marker</code>、<code>theme.point_label</code> 與 <code>theme.budget_fill</code></li>
+      </ul>
+      <p class="ev-changelog__type">變更</p>
+      <ul>
+        <li>均衡點的預設大小從 6 縮小為 4</li>
+        <li>建議用 <code>Stroke</code> 設定線條樣式，另外的顏色、粗細與線型參數保留為簡寫</li>
+      </ul>
+      <p class="ev-changelog__type">錯誤修正</p>
+      <ul>
+        <li>楔形箭頭在畫面上維持固定大小，不再沿整條線拉長</li>
+        <li>Edgeworth 箱形圖均衡點的無異曲線會套用 <code>stroke_a</code> / <code>stroke_b</code></li>
+      </ul>
+    </td>
+  </tr>
   <tr id="v170">
     <td class="ev-changelog__version"><strong>v1.7.0</strong><br><span>2026-09-25</span></td>
     <td>

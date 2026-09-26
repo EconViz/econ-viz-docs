@@ -10,20 +10,18 @@ description: "Canvas 是 econ-viz 的绘图画布，用来画教科书风格的�
 ## 构造函数
 
 ```python
-from econ_viz import ArrowStyle, Canvas, Stroke, themes
+from econ_viz import ArrowStyle, Axis, Canvas, Stroke, themes
 
 cvs = Canvas(
     x_max=20,
     y_max=15,
-    x_label="x",
-    y_label="y",
     title=r"Cobb-Douglas $x^{0.5} y^{0.5}$",
     dpi=300,
-    x_label_pos="right",   # "top"、"right" 或 "bottom"
-    y_label_pos="top",     # "left"、"top" 或 "right"
     font="DejaVu Sans",
     math_font="stix",
     axis_stroke=Stroke(width=1.0, arrow=ArrowStyle.TRIANGLE),
+    x_axis=Axis(label="x", label_position="right"),  # "top"、"right" 或 "bottom"
+    y_axis=Axis(label="y", label_position="top"),    # "left"、"top" 或 "right"
     theme=themes.default,
 )
 ```
@@ -32,18 +30,22 @@ cvs = Canvas(
 |-----------|------|---------|-------------|
 | `x_max` | float | 10 | 横轴上限 |
 | `y_max` | float | 10 | 纵轴上限 |
-| `x_label` | str | `"X"` | 横轴末端的标签 |
-| `y_label` | str | `"Y"` | 纵轴末端的标签 |
+| `x_axis` | `Axis` | None | 横轴的标签、标签位置与线条 |
+| `y_axis` | `Axis` | None | 纵轴的标签、标签位置与线条 |
+| `x_label` | str | `"X"` | 横轴 `Axis(label=...)` 的简写 |
+| `y_label` | str | `"Y"` | 纵轴 `Axis(label=...)` 的简写 |
 | `title` | str 或 None | None | 图形标题 |
 | `dpi` | int | 300 | 位图导出分辨率（限制在 1–1200） |
-| `x_label_pos` | str 或 `LabelPosition` | `"right"` | 将横轴标签放在箭头上方、右侧或下方 |
-| `y_label_pos` | str 或 `LabelPosition` | `"top"` | 将纵轴标签放在箭头左侧、上方或右侧 |
+| `x_label_pos` | str 或 `LabelPosition` | `"right"` | `Axis(label_position=...)` 的简写：箭头上方、右侧或下方 |
+| `y_label_pos` | str 或 `LabelPosition` | `"top"` | `Axis(label_position=...)` 的简写：箭头左侧、上方或右侧 |
 | `font` | str 或序列 | None | 所有文字使用的字体或候选字体列表 |
 | `math_font` | str | None | 数学字体：`dejavusans`、`dejavuserif`、`cm`、`stix` 或 `stixsans` |
 | `axis_stroke` | `Stroke` | 主题默认值 | 同时设置两轴的粗细、线条样式、颜色与箭头样式 |
-| `x_axis_stroke` | `Stroke` | None | 横轴的单独覆盖 |
-| `y_axis_stroke` | `Stroke` | None | 纵轴的单独覆盖 |
+| `x_axis_stroke` | `Stroke` | None | 横轴的单独覆盖，是 `Axis(stroke=...)` 的简写 |
+| `y_axis_stroke` | `Stroke` | None | 纵轴的单独覆盖，是 `Axis(stroke=...)` 的简写 |
 | `theme` | Theme | `themes.default` | 配色与样式主题 |
+
+同一项设置给了两次时，以 `Axis` 的字段为准。坐标轴线条的优先顺序由高到低是 `Axis.stroke`、`x_axis_stroke`、`axis_stroke`、`x_line_style` / `x_arrow_style`、`theme.axis_stroke`。
 
 ## 方法
 
@@ -57,14 +59,16 @@ cvs = Canvas(
 cvs.add_utility(
     func,
     levels=3,          # 曲线数或效用值列表
-    color=None,        # 默认 theme.ic_color
-    linewidth=None,    # 默认 theme.ic_linewidth
+    stroke=None,       # 默认 theme.ic_stroke
+    ray_stroke=None,
     show_rays=False,
     show_kinks=False,
     kink_radius=1.0,
     show_bliss=True,   # 标出极乐点（Satiation）
-    stroke=None,
-    ray_stroke=None,
+    kink_marker=None,  # 默认 theme.kink_marker
+    bliss_marker=None, # 默认 theme.bliss_marker
+    ic_label=None,     # 曲线末端效用值的 Label
+    bliss_label=None,  # str 或 Label
 )
 ```
 
@@ -77,13 +81,9 @@ cvs.add_utility(
 ```python
 cvs.add_budget(
     px, py, income,
-    color=None,
-    linewidth=None,
-    linestyle="-",
+    stroke=None,       # 默认 theme.budget_stroke
     label=None,        # 图例标签（LaTeX）
-    fill=False,        # 可行集阴影
-    fill_alpha=None,   # 默认 theme.budget_fill_alpha
-    stroke=None,
+    fill=False,        # True 或 Fill；默认 theme.budget_fill
 )
 ```
 
@@ -96,9 +96,8 @@ cvs.add_budget(
 ```python
 cvs.add_equilibrium(
     eq,                # solve() 的返回值
-    color=None,
-    markersize=None,
-    label="x^*",
+    label="x^*",       # str 或 Label
+    marker=None,       # 默认 theme.eq_marker
     drop_dashes=True,  # 到两轴的虚线
     show_ray=False,    # 扩展路径
     drop_stroke=None,
@@ -115,9 +114,7 @@ cvs.add_equilibrium(
 ```python
 cvs.add_ray(
     slope,             # dy/dx
-    color=None,
-    linewidth=None,
-    stroke=None,
+    stroke=None,       # 默认 theme.ray_stroke
 )
 ```
 
@@ -125,15 +122,13 @@ cvs.add_ray(
 
 ### 标记点 {#add_point data-toc-label="标记点"}
 
-标记任意一点，例如要与最优点比较的消费组合。`label` 会以 LaTeX 数学模式显示，`offset` 用来调整标签的位置，单位是 points。
+标记任意一点，例如要与最优点比较的消费组合。`label` 会以 LaTeX 数学模式显示；要移动标签或改样式时，传入 `Label`。
 
 ```python
 cvs.add_point(
     x, y,
-    label=None,
-    color=None,
-    markersize=6.0,
-    offset=(5, 5),     # 标签偏移（pt）
+    label=None,        # str 或 Label
+    marker=None,       # 默认 theme.point_marker
 )
 ```
 
@@ -152,7 +147,36 @@ cvs.save("figure.png")   # .png / .pdf / .svg / .tex
 
 ## 样式
 
-Canvas 的样式分为线条样式与箭头样式。坐标轴可直接通过 `x_*` 与 `y_*` 参数设置；无差异曲线、预算线、路径与其他可见线条则通过 `Stroke` 应用相同的控制项目。
+每一类元素都有自己的样式对象。没有指定的字段会沿用主题默认值，所以只需设置想改的部分。
+
+| 对象 | 控制项目 | 主题默认值 |
+|------|----------|------------|
+| `Stroke` | 线条粗细、线条样式、颜色、箭头 | `theme.budget_stroke`、`theme.ic_stroke` 等 |
+| `Marker` | 点的颜色、大小、形状 | `theme.eq_marker`、`theme.point_marker` 等 |
+| `Label` | 标签文字、位置、偏移、颜色、大小、是否显示 | `theme.point_label`、`theme.ic_label` 等 |
+| `Fill` | 阴影颜色与透明度 | `theme.budget_fill` |
+| `Axis` | 单个坐标轴的标签、标签位置与线条 | 无 |
+
+```python
+from econ_viz import Canvas, Fill, Label, Marker, Stroke
+
+(
+    Canvas(x_max=20, y_max=15)
+    .add_utility(model, levels=lvls, ic_label=Label(text="U={:.1f}", position="top"))
+    .add_budget(2.0, 3.0, 30.0, stroke=Stroke(color="black"),
+                fill=Fill(color="lightgrey", alpha=0.4))
+    .add_equilibrium(eq, marker=Marker(color="#C0392B", shape="s"),
+                     label=Label(position="bottom-left", offset=8))
+    .add_point(12.0, 2.0, label=Label(text="A", position="left"))
+    .save("styles.png")
+)
+```
+
+![自定义线条、阴影、标记点与标签](../../assets/canvas/styles.png){ .ev-figure-sm }
+
+**建议用 `Stroke` 设置线条样式**。另外的 `color`、`linewidth`、`linestyle` 参数仍可作为简写使用，画出来的结果相同。标签默认沿用所属点的 `Marker` 颜色，除非另外指定；位置可用 `top`、`bottom`、`left`、`right` 与 `top-right` 等四个角落，`Label(visible=False)` 可隐藏标签。
+
+下方的线条样式与箭头样式，坐标轴通过 `x_*` 与 `y_*` 参数设置，其他线条则通过 `Stroke` 应用。
 
 ### 线条样式
 

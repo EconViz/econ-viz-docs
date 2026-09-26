@@ -175,6 +175,21 @@ utility_levels = sorted({result.A.utility, result.C.utility})
 final bundles. The result also exposes `substitution_effect`, `income_effect`,
 `total_effect`, and `compensated_income`.
 
+Use `Effect` to set each effect's colour, the height of its range arrow below
+the axis, and a label beside it. `point_label` moves or hides the A, B, and C
+labels:
+
+```python
+from econ_viz import Effect, Label
+
+canvas.add_decomposition(
+    result,
+    substitution=Effect(color="#E67E22", label="SE", label_position="top"),
+    income=Effect(color="#27AE60", label="IE"),
+    point_label=Label(visible=False),
+)
+```
+
 ![Hicks price-effect decomposition](../assets/consumer/cobb_douglas_hicks.png)
 
 ## Edgeworth box
