@@ -71,10 +71,55 @@ cvs.add_utility(
     bliss_marker=None, # default: theme.bliss_marker
     ic_label=None,     # Label for utility levels at curve ends
     bliss_label=None,  # str or Label
+    highlight_level=None, # nearest level becomes the focal curve
+    secondary_stroke=None,# style of the remaining curves
+    label_style="numeric",# "numeric" or textbook-style "ordinal"
 )
 ```
 
 ![Indifference curves drawn with add_utility](../assets/canvas/add_utility.png){ .ev-figure-sm }
+
+#### Focal and secondary curves
+
+Pass the equilibrium utility to `highlight_level` to emphasize the nearest
+available level without drawing a second contour set yourself. The other
+levels use `theme.secondary_ic_stroke`, or an explicit `secondary_stroke`.
+
+```python
+from econ_viz import Canvas, Stroke, levels, solve
+from econ_viz.models import CobbDouglas
+
+model = CobbDouglas(0.5, 0.5)
+eq = solve(model, px=2, py=3, income=30)
+lvls = levels.around(eq.utility, n=5)
+
+(Canvas(x_max=20, y_max=15)
+ .add_utility(
+     model,
+     levels=lvls,
+     highlight_level=eq.utility,
+     secondary_stroke=Stroke(width=1, opacity=0.35),
+     show_ic_labels=True,
+     label_style="ordinal",
+ )
+ .add_budget(2, 3, 30, fill=True)
+ .add_equilibrium(eq))
+```
+
+`label_style="numeric"` uses the formatted utility values; `"ordinal"`
+produces textbook labels $u_1,u_2,\ldots$. Labels follow the local curve angle
+and are kept away from the visible boundary.
+
+<div class="grid cards" markdown>
+
+- ![Uniform indifference curves before highlighting](../assets/canvas/ic_hierarchy_before.png)
+  **Before** — every level has the same visual weight.
+- ![Focal equilibrium indifference curve with subdued neighbours](../assets/canvas/ic_hierarchy_after.png)
+  **After** — the equilibrium level is focal.
+- ![Ordinal indifference-curve labels](../assets/canvas/ic_hierarchy_ordinal.png)
+  **Ordinal labels** — curves are labelled $u_1,u_2,\ldots$.
+
+</div>
 
 ### Budget line {#add_budget data-toc-label="Budget line"}
 

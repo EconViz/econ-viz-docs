@@ -12,6 +12,32 @@ Release history of `econ-viz`. Documentation-only changes are not listed.
   <tr><th>Version</th><th>Changes</th></tr>
   </thead>
   <tbody>
+  <tr id="v1120">
+    <td class="ev-changelog__version"><strong>v1.12.0</strong><br><span>2026-09-26</span></td>
+    <td>
+      <p class="ev-changelog__type">Features</p>
+      <ul>
+        <li><code>highlight_level</code> emphasizes one focal indifference curve while the remaining levels use a subdued secondary style</li>
+        <li><code>secondary_stroke</code> and theme fields control secondary curve colour, width, and opacity</li>
+        <li>Numeric and ordinal labels (<i>u</i><sub>1</sub>, <i>u</i><sub>2</sub>, ...) follow the local curve angle and avoid the plot boundary</li>
+      </ul>
+      <p class="ev-changelog__type">Changes</p>
+      <ul>
+        <li>Focal and secondary labels share the theme's indifference-curve label style; smooth, linear, kinked, and satiation preferences remain supported</li>
+      </ul>
+    </td>
+  </tr>
+  <tr id="v1110">
+    <td class="ev-changelog__version"><strong>v1.11.0</strong><br><span>2026-09-26</span></td>
+    <td>
+      <p class="ev-changelog__type">Features</p>
+      <ul>
+        <li>Complete theme coverage for diagram backgrounds, labels, strokes, markers, and auxiliary economic lines</li>
+        <li>Add <code>paper</code>, <code>monochrome</code>, <code>presentation</code>, and <code>dark</code> built-in themes</li>
+        <li>Add theme-level <code>background_color</code> and <code>label_scale</code> controls</li>
+      </ul>
+    </td>
+  </tr>
   <tr id="v1101">
     <td class="ev-changelog__version"><strong>v1.10.1</strong><br><span>2026-09-26</span></td>
     <td>

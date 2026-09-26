@@ -12,6 +12,32 @@ description: "econ-viz Python 包的版本历史：每个版本的新功能、�
   <tr><th>版本</th><th>更新内容</th></tr>
   </thead>
   <tbody>
+  <tr id="v1120">
+    <td class="ev-changelog__version"><strong>v1.12.0</strong><br><span>2026-09-26</span></td>
+    <td>
+      <p class="ev-changelog__type">新功能</p>
+      <ul>
+        <li><code>highlight_level</code> 可强调一条主要无差异曲线，其余效用水平会使用淡化的次要样式</li>
+        <li><code>secondary_stroke</code> 与主题字段可控制次要曲线的颜色、线宽与不透明度</li>
+        <li>支持数值与序数标签（<i>u</i><sub>1</sub>、<i>u</i><sub>2</sub>……）；标签会跟随曲线角度并避开图形边界</li>
+      </ul>
+      <p class="ev-changelog__type">变更</p>
+      <ul>
+        <li>主要与次要曲线标签共用主题的无差异曲线标签样式；平滑、线性、折点与饱和偏好仍完整支持</li>
+      </ul>
+    </td>
+  </tr>
+  <tr id="v1110">
+    <td class="ev-changelog__version"><strong>v1.11.0</strong><br><span>2026-09-26</span></td>
+    <td>
+      <p class="ev-changelog__type">新功能</p>
+      <ul>
+        <li>补齐图形背景、标签、线条、标记点与辅助经济线条的主题控制</li>
+        <li>新增 <code>paper</code>、<code>monochrome</code>、<code>presentation</code> 与 <code>dark</code> 四个内置主题</li>
+        <li>新增主题层级的 <code>background_color</code> 与 <code>label_scale</code> 控制</li>
+      </ul>
+    </td>
+  </tr>
   <tr id="v1101">
     <td class="ev-changelog__version"><strong>v1.10.1</strong><br><span>2026-09-26</span></td>
     <td>
