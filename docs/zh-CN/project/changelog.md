@@ -12,6 +12,22 @@ description: "econ-viz Python 包的版本历史：每个版本的新功能、�
   <tr><th>版本</th><th>更新内容</th></tr>
   </thead>
   <tbody>
+  <tr id="v1101">
+    <td class="ev-changelog__version"><strong>v1.10.1</strong><br><span>2026-09-26</span></td>
+    <td>
+      <p class="ev-changelog__type">维护</p>
+      <ul>
+        <li>在开发工具与 CI 中加入 Ruff 代码检查、格式验证及 Mypy 类型检查</li>
+        <li>加入 <code>py.typed</code>，将 <code>econ-viz</code> 发布为 PEP 561 类型包</li>
+        <li>将公开异常信息统一为英文</li>
+      </ul>
+      <p class="ev-changelog__type">错误修复</p>
+      <ul>
+        <li>补上等高线层级类型注解缺少的 NumPy import</li>
+        <li>让 Edgeworth Pareto 搜索的每个 closure 绑定各自的权重</li>
+      </ul>
+    </td>
+  </tr>
   <tr id="v1100">
     <td class="ev-changelog__version"><strong>v1.10.0</strong><br><span>2026-09-26</span></td>
     <td>
