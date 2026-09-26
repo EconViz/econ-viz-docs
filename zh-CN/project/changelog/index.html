@@ -1,0 +1,1727 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="econ-viz Python 包的版本历史：每个版本的新功能、修复与变更。">
+      
+      
+        <meta name="author" content="Anthony Sung">
+      
+      
+        <link rel="canonical" href="https://econ-viz.org/zh-CN/project/changelog/">
+      
+      
+        <link rel="prev" href="../../tools/latex/">
+      
+      
+        <link rel="next" href="../references/">
+      
+      
+        
+          <link rel="alternate" href="../../../project/changelog/" hreflang="en">
+        
+          <link rel="alternate" href="../../../zh-TW/project/changelog/" hreflang="zh-TW">
+        
+          <link rel="alternate" href="./" hreflang="zh-CN">
+        
+      
+      
+      <link rel="icon" href="../../../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+  
+  
+    <title>Econ-Viz | 更新日志</title>
+  
+
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-Q098M03YWD"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-Q098M03YWD",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-Q098M03YWD",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+  
+
+    
+    
+  
+  
+  
+  
+  
+  <meta property="og:locale" content="zh_CN">
+  
+    
+      
+        
+      
+  <link rel="alternate" hreflang="en" href="https://econ-viz.org/project/changelog/">
+      
+  <link rel="alternate" hreflang="x-default" href="https://econ-viz.org/project/changelog/">
+      
+    
+      
+        
+      
+  <link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/project/changelog/">
+      
+    
+      
+        
+      
+  <link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/project/changelog/">
+      
+    
+  
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Econ-Viz">
+  <meta property="og:title" content="Econ-Viz | 更新日志">
+  <meta property="og:description" content="econ-viz Python 包的版本历史：每个版本的新功能、修复与变更。">
+  <meta property="og:url" content="https://econ-viz.org/zh-CN/project/changelog/">
+  <meta property="og:image" content="https://econ-viz.org/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Econ-Viz logo">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Econ-Viz | 更新日志">
+  <meta name="twitter:description" content="econ-viz Python 包的版本历史：每个版本的新功能、修复与变更。">
+  <meta name="twitter:image" content="https://econ-viz.org/assets/og-image.png">
+  
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../" title="Econ-Viz" class="md-header__button md-logo" aria-label="Econ-Viz" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Econ-Viz
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              更新日志
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="选择当前语言">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../project/changelog/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../../zh-TW/project/changelog/" hreflang="zh-TW" class="md-select__link">
+              繁體中文
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="zh-CN" class="md-select__link">
+              简体中文
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/EconViz/econ-viz" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    EconViz/econ-viz
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="Econ-Viz" class="md-nav__button md-logo" aria-label="Econ-Viz" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    Econ-Viz
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/EconViz/econ-viz" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    EconViz/econ-viz
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    入门
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    入门
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    安装
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    快速开始
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    命令行工具
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    绘图与教学
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    绘图与教学
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/canvas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Canvas 画布
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/consumer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    多面板图与需求图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/animation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    动画
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/interactive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    交互组件
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/themes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主题
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    配置文件
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    导出
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    模型
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    模型
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    核心模型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    高级模型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工具与分析
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    工具与分析
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    分析
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/latex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LaTeX 解析
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    项目
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    项目
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    更新日志
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    参考文献
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="_1">更新日志</h1>
+<p><code>econ-viz</code> 的版本历史，不列出仅有文档更新的条目。</p>
+<table class="ev-changelog">
+  <thead>
+  <tr><th>版本</th><th>更新内容</th></tr>
+  </thead>
+  <tbody>
+  <tr id="v1120">
+    <td class="ev-changelog__version"><strong>v1.12.0</strong><br><span>2026-09-26</span></td>
+    <td>
+      <p class="ev-changelog__type">新功能</p>
+      <ul>
+        <li><code>highlight_level</code> 可强调一条主要无差异曲线，其余效用水平会使用淡化的次要样式</li>
+        <li><code>secondary_stroke</code> 与主题字段可控制次要曲线的颜色、线宽与不透明度</li>
+        <li>支持数值与序数标签（<i>u</i><sub>1</sub>、<i>u</i><sub>2</sub>……）；标签会跟随曲线角度并避开图形边界</li>
+      </ul>
+      <p class="ev-changelog__type">变更</p>
+      <ul>
+        <li>主要与次要曲线标签共用主题的无差异曲线标签样式；平滑、线性、折点与饱和偏好仍完整支持</li>
+      </ul>
+    </td>
+  </tr>
+  <tr id="v1110">
+    <td class="ev-changelog__version"><strong>v1.11.0</strong><br><span>2026-09-26</span></td>
+    <td>
+      <p class="ev-changelog__type">新功能</p>
+      <ul>
+        <li>补齐图形背景、标签、线条、标记点与辅助经济线条的主题控制</li>
+        <li>新增 <code>paper</code>、<code>monochrome</code>、<code>presentation</code> 与 <code>dark</code> 四个内置主题</li>
+        <li>新增主题层级的 <code>background_color</code> 与 <code>label_scale</code> 控制</li>
+      </ul>
+    </td>
+  </tr>
+  <tr id="v1101">
+    <td class="ev-changelog__version"><strong>v1.10.1</strong><br><span>2026-09-26</span></td>
+    <td>
+      <p class="ev-changelog__type">维护</p>
+      <ul>
+        <li>在开发工具与 CI 中加入 Ruff 代码检查、格式验证及 Mypy 类型检查</li>
+        <li>加入 <code>py.typed</code>，将 <code>econ-viz</code> 发布为 PEP 561 类型包</li>
+        <li>将公开异常信息统一为英文</li>
+      </ul>
+      <p class="ev-changelog__type">错误修复</p>
+      <ul>
+        <li>补上等高线层级类型注解缺少的 NumPy import</li>
+        <li>让 Edgeworth Pareto 搜索的每个 closure 绑定各自的权重</li>
+      </ul>
+    </td>
+  </tr>
+  <tr id="v1100">
+    <td class="ev-changelog__version"><strong>v1.10.0</strong><br><span>2026-09-26</span></td>
+    <td>
+      <p class="ev-changelog__type">新功能</p>
+      <ul>
+        <li>新增 <code>Config</code>，从 <code>econ-viz.toml</code> 配置文件加载图形设置；<code>Config.load(...).use()</code> 会把它设为默认</li>
+        <li>新增 <code>econ-viz init</code> 生成带注释的配置文件模板，<code>econ-viz plot --config</code> 可读取配置文件</li>
+      </ul>
+      <p class="ev-changelog__type">变更</p>
+      <ul>
+        <li>没有指定 theme 或字体时，图形改用当前生效的 <code>Config</code>；没有配置文件时输出不变</li>
+        <li>Python 3.10 需要安装 <code>tomli</code></li>
+      </ul>
+    </td>
+  </tr>
+  <tr id="v190">
+    <td class="ev-changelog__version"><strong>v1.9.0</strong><br><span>2026-09-26</span></td>
+    <td>
+      <p class="ev-changelog__type">新功能</p>
+      <ul>
+        <li>价格效应分解默认画出无差异曲线：通过 A 的 U<sub>0</sub>、通过 C 的 U<sub>1</sub>，Slutsky 分解还有通过 B 的曲线</li>
+        <li>新增 <code>Haagsma</code> 效用模型，其商品 x 一定是劣等品，收入足够高时成为吉芬商品</li>
+        <li>新增 <code>Legend</code>，自动放在最不遮挡图形的位置，也可指定角落或图外的上下左右</li>
+        <li>所有文字都能用 <code>Label</code> 调整：坐标轴标签、原点、标题、效应标签、Edgeworth 盒状图文字</li>
+        <li><code>Stroke</code>、<code>Marker</code>、<code>Label</code>、<code>Legend</code>、<code>Effect</code>、<code>Fill</code> 都支持 <code>opacity</code></li>
+      </ul>
+      <p class="ev-changelog__type">变更</p>
+      <ul>
+        <li>已有的效应分解图会多出无差异曲线；传入 <code>show_curves=False</code> 即可回到原来的图</li>
+        <li>效应范围箭头改为单向，从 A 指向 B、从 B 指向 C</li>
+      </ul>
+      <p class="ev-changelog__type">错误修复</p>
+      <ul>
+        <li>提高最优化的精度，比较静态与 Slutsky 矩阵更准确</li>
+        <li>效用为负值的无差异曲线改画实线</li>
+      </ul>
+    </td>
+  </tr>
+  <tr id="v180">
+    <td class="ev-changelog__version"><strong>v1.8.0</strong><br><span>2026-09-26</span></td>
+    <td>
+      <p class="ev-changelog__type">新功能</p>
+      <ul>
+        <li><code>Effect</code> 可设置价格效应分解中每个效应的颜色、范围箭头高度与标签</li>
+        <li><code>Marker</code> 可设置画布、需求图与 Edgeworth 盒状图中点的颜色、大小与形状</li>
+        <li><code>Label</code> 可设置点标签的文字、位置（上下左右与四个角落）、偏移、颜色、大小与是否显示，也能隐藏效应分解的 A/B/C 标签</li>
+        <li><code>Fill</code> 让预算集的阴影可以有自己的颜色与透明度</li>
+        <li><code>Axis</code> 用一个对象设置单个坐标轴的标签、标签位置与线条</li>
+        <li>新增标记点、标签与阴影的主题默认值，例如 <code>theme.eq_marker</code>、<code>theme.point_label</code> 与 <code>theme.budget_fill</code></li>
+      </ul>
+      <p class="ev-changelog__type">变更</p>
+      <ul>
+        <li>均衡点的默认大小从 6 缩小为 4</li>
+        <li>建议用 <code>Stroke</code> 设置线条样式，另外的颜色、粗细与线型参数保留为简写</li>
+      </ul>
+      <p class="ev-changelog__type">错误修复</p>
+      <ul>
+        <li>楔形箭头在画面上保持固定大小，不再沿整条线拉长</li>
+        <li>Edgeworth 盒状图均衡点的无差异曲线会应用 <code>stroke_a</code> / <code>stroke_b</code></li>
+      </ul>
+    </td>
+  </tr>
+  <tr id="v170">
+    <td class="ev-changelog__version"><strong>v1.7.0</strong><br><span>2026-09-25</span></td>
+    <td>
+      <p class="ev-changelog__type">新功能</p>
+      <ul>
+        <li><code>Canvas</code> 与 <code>Figure</code> 可分别设置坐标轴标签位置、线条样式与箭头样式</li>
+        <li>可为单张图设置文字与数学字体，不会改动 Matplotlib 的全局设置</li>
+        <li><code>Stroke</code> 统一控制画布、多面板图、需求图与 Edgeworth 盒状图中的线条粗细、线条样式、颜色与箭头样式</li>
+        <li><code>econ-viz --version</code> 可显示已安装的包版本</li>
+      </ul>
+      <p class="ev-changelog__type">错误修复</p>
+      <ul>
+        <li>修正效用模型的参数定义域、非对称 CES 扩展路径、Cobb-Douglas 极限，以及收入未用尽时的饱和偏好最优解</li>
+        <li>等高线水平可正确处理零与负效用值</li>
+        <li>比较静态在价格、收入或最低消费约束附近改用边界安全的有限差分</li>
+        <li>所有示例脚本均可从全新 checkout 直接运行</li>
+      </ul>
+      <p class="ev-changelog__type">维护</p>
+      <ul>
+        <li>包管理与构建流程迁移至 <code>uv</code></li>
+        <li>CI 测试 Python 3.10–3.13、检查分支覆盖率，并运行所有可执行示例</li>
+        <li>版本标签触发的发布流程仅在测试通过后才会上传包</li>
+      </ul>
+    </td>
+  </tr>
+  <tr id="v160">
+    <td class="ev-changelog__version"><strong>v1.6.0</strong><br><span>2026-04-24</span></td>
+    <td>
+      <p class="ev-changelog__type">新功能</p>
+      <ul>
+        <li>默认配色改为色盲友好配色，并提供可复用的 <code>themes.COLORBLIND_CYCLE_RGB</code> 与 <code>themes.COLORBLIND_CYCLE_HEX</code></li>
+        <li>无差异曲线的默认线宽从 <code>2.0</code> 调整为 <code>1.8</code></li>
+      </ul>
+      <p class="ev-changelog__type">维护</p>
+      <ul>
+        <li>动画示例移至 <code>examples/scripts/animation.py</code></li>
+        <li>不再跟踪 <code>examples/output/</code> 下生成的文件</li>
+      </ul>
+      <p class="ev-changelog__type">测试</p>
+      <ul>
+        <li>TikZ 坐标轴回归测试不再依赖颜色索引</li>
+      </ul>
+    </td>
+  </tr>
+  <tr id="v150">
+    <td class="ev-changelog__version"><strong>v1.5.0</strong><br><span>2026-04-21</span></td>
+    <td>
+      <p class="ev-changelog__type">新功能</p>
+      <ul>
+        <li>新增纯 TikZ 导出后端，<code>Canvas.save()</code> 与 <code>Figure.save()</code> 支持 <code>.tex</code></li>
+        <li>新增价格效应分解：<code>decompose_price_effect()</code>、<code>PriceEffectDecomposition</code>，以及绘制 A/B/C 消费组合与替代／收入效应的 <code>Canvas.add_decomposition()</code></li>
+        <li>分解相关 API 可直接从包根目录导入</li>
+        <li>新增分解、需求图、PCC/ICC 路径、多面板布局与 TikZ 导出的示例脚本</li>
+      </ul>
+      <p class="ev-changelog__type">错误修复</p>
+      <ul>
+        <li>笔记本在 Colab 上的安装流程可安全重启</li>
+      </ul>
+      <p class="ev-changelog__type">重构</p>
+      <ul>
+        <li>改进共享面板布局中坐标轴标签的位置与显示控制</li>
+      </ul>
+      <p class="ev-changelog__type">测试</p>
+      <ul>
+        <li>新增 TikZ 导出与价格效应分解的回归测试</li>
+      </ul>
+    </td>
+  </tr>
+  <tr id="v140">
+    <td class="ev-changelog__version"><strong>v1.4.0</strong><br><span>2026-04-09</span></td>
+    <td>
+      <p class="ev-changelog__type">新功能</p>
+      <ul>
+        <li>新增 <code>Animator</code>，通过 Pillow 导出参数变动的 GIF，无需 ffmpeg</li>
+        <li>新增 <code>WidgetViewer</code>，在 Jupyter 笔记本中用滑块调整参数</li>
+        <li>新增可选依赖 <code>animation</code>、<code>interactive</code> 与 <code>all</code></li>
+        <li>新增常见效用函数的参数、价格、收入与仅预算线的 GIF 示例</li>
+        <li>帧先叠加在纯色背景上再导出，GIF 更稳定</li>
+        <li>笔记本交互组件除了滑块，也能直接输入数值</li>
+      </ul>
+      <p class="ev-changelog__type">测试</p>
+      <ul>
+        <li>新增 <code>Animator</code> 与 <code>WidgetViewer</code> 的测试</li>
+      </ul>
+    </td>
+  </tr>
+  <tr id="v132">
+    <td class="ev-changelog__version"><strong>v1.3.2</strong><br><span>2026-04-03</span></td>
+    <td>
+      <p class="ev-changelog__type">错误修复</p>
+      <ul>
+        <li>Edgeworth 契约线与价格线默认为黑色虚线</li>
+      </ul>
+      <p class="ev-changelog__type">维护</p>
+      <ul>
+        <li>发布流程会跳过 PyPI 上已存在的版本</li>
+      </ul>
+    </td>
+  </tr>
+  <tr id="v131">
+    <td class="ev-changelog__version"><strong>v1.3.1</strong><br><span>2026-04-03</span></td>
+    <td>
+      <p class="ev-changelog__type">新功能</p>
+      <ul>
+        <li>Edgeworth 内部拆分为计算、状态与绘图三个模块</li>
+        <li>新增模型注册表（<code>models.registry</code>），命令行工具改由它创建模型</li>
+      </ul>
+      <p class="ev-changelog__type">重构</p>
+      <ul>
+        <li>命令行工具的错误改为抛出 <code>CliConfigError</code>，并统一在 <code>cli.main</code> 处理退出流程</li>
+        <li>等高线水平的共用规则集中到 <code>contours.level_policies</code></li>
+        <li><code>Canvas</code>、<code>Figure</code> 与 <code>EdgeworthBox</code> 共用同一个导出器（<code>io.exporter</code>）</li>
+        <li>Canvas 的绘制逻辑拆分到 <code>canvas.renderers</code> 与 <code>canvas.primitives</code></li>
+        <li>包根目录的导出改为延迟加载，公开 API 不变</li>
+      </ul>
+    </td>
+  </tr>
+  <tr id="v130">
+    <td class="ev-changelog__version"><strong>v1.3.0</strong><br><span>2026-04-03</span></td>
+    <td>
+      <p class="ev-changelog__type">新功能</p>
+      <ul>
+        <li>新增 <code>EdgeworthBox</code> 与 <code>EquilibriumFocusConfig</code>，绘制两人交换的 Edgeworth 盒状图</li>
+        <li>新增契约线、核、Walras 均衡叠加图，以及聚焦于均衡的无差异曲线</li>
+        <li>新增涵盖常见效用函数组合的 <code>examples/edgeworth_box.py</code></li>
+        <li>新增 Edgeworth 专属测试</li>
+      </ul>
+    </td>
+  </tr>
+  <tr id="v123">
+    <td class="ev-changelog__version"><strong>v1.2.3</strong><br><span>2026-03-31</span></td>
+    <td>
+      <p class="ev-changelog__type">新功能</p>
+      <ul>
+        <li><code>SlutskyMatrix</code> 新增对称性、半负定性与齐次性检查，条件不成立时会发出警告</li>
+        <li>命令行工具支持 <code>QuasiLinear</code>、<code>StoneGeary</code> 与 <code>Translog</code></li>
+      </ul>
+    </td>
+  </tr>
+  <tr id="v122">
+    <td class="ev-changelog__version"><strong>v1.2.2</strong><br><span>2026-03-31</span></td>
+    <td>
+      <p class="ev-changelog__type">错误修复</p>
+      <ul>
+        <li>PCC/ICC 路径默认平滑化，端点稍微延伸，标记点默认不显示</li>
+        <li>PCC/ICC 路径改用独立颜色，需求图的商品空间边距加大</li>
+        <li>新增 PCC/ICC 示例生成器与测试</li>
+      </ul>
+    </td>
+  </tr>
+  <tr id="v120">
+    <td class="ev-changelog__version"><strong>v1.2.0</strong><br><span>2026-03-30</span></td>
+    <td>
+      <p class="ev-changelog__type">新功能</p>
+      <ul>
+        <li>新增多面板 <code>Figure</code> 布局与 <code>Layout</code> 枚举</li>
+        <li>新增联动的 <code>DemandDiagram</code>，绘制马歇尔需求</li>
+        <li>新增 <code>PricePath</code>、<code>IncomePath</code> 与 <code>Canvas.add_path()</code>，绘制 PCC/ICC</li>
+      </ul>
+    </td>
+  </tr>
+  <tr id="v110">
+    <td class="ev-changelog__version"><strong>v1.1.0</strong><br><span>2026-03-30</span></td>
+    <td>
+      <p class="ev-changelog__type">新功能</p>
+      <ul>
+        <li>新增比较静态工具 <code>comparative_statics</code></li>
+        <li>分析模块新增 <code>HomogeneityAnalyzer</code> 与 <code>ReturnsToScale</code></li>
+        <li>新增 <code>Translog</code> 模型，并支持图例与无差异曲线标签</li>
+      </ul>
+    </td>
+  </tr>
+  <tr id="v102">
+    <td class="ev-changelog__version"><strong>v1.0.2</strong><br><span>2026-03-29</span></td>
+    <td>
+      <p class="ev-changelog__type">错误修复</p>
+      <ul>
+        <li>数学式坐标轴标签不再被重复包装</li>
+        <li>移除 NumPy 版本上限，避免在 Colab 上发生冲突</li>
+      </ul>
+    </td>
+  </tr>
+  <tr id="v101">
+    <td class="ev-changelog__version"><strong>v1.0.1</strong><br><span>2026-03-29</span></td>
+    <td>
+      <p class="ev-changelog__type">错误修复</p>
+      <ul>
+        <li>锁定 <code>numpy&lt;2</code>，避免在 Colab 与本地安装时 ABI 不兼容</li>
+      </ul>
+      <p class="ev-changelog__type">维护</p>
+      <ul>
+        <li>放宽 Python 与 NumPy 版本限制，<code>pytest</code> 锁定在 8.x</li>
+      </ul>
+    </td>
+  </tr>
+  <tr id="v100">
+    <td class="ev-changelog__version"><strong>v1.0.0</strong><br><span>2026-03-28</span></td>
+    <td>
+      <ul>
+        <li>首次发布</li>
+      </ul>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        这页有帮助吗？
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="这页有帮助" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="这页可以改进" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              谢谢你的反馈
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              谢谢你的反馈。欢迎到 <a href="https://github.com/EconViz/econ-viz/issues/new?title=[Docs]+%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97&body=Page:+/zh-CN/project/changelog/" target="_blank" rel="noopener">GitHub issue</a> 告诉我们哪里需要改进。
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+<h2 id="__comments">评论</h2>
+<script src="https://giscus.app/client.js" data-repo="EconViz/econ-viz-docs" data-repo-id="R_kgDORy8JWQ"
+  data-category="Announcements" data-category-id="DIC_kwDORy8JWc4C5kUA" data-mapping="pathname" data-strict="0"
+  data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="zh-CN"
+  data-loading="lazy" crossorigin="anonymous" async>
+  </script>
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../../tools/latex/" class="md-footer__link md-footer__link--prev" aria-label="上一页: LaTeX 解析">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                LaTeX 解析
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../references/" class="md-footer__link md-footer__link--next" aria-label="下一页: 参考文献">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                参考文献
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2026 Anthony Sung · <a href="#__consent">更改 Cookie 设置</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:contact@econ-viz.org" target="_blank" rel="noopener" title="contact@econ-viz.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l208 156a48 48 0 0 0 57.6 0l208-156c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48zM0 196v188c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V196L313.6 344.8c-34.1 25.6-81.1 25.6-115.2 0z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/EconViz" target="_blank" rel="noopener" title="EconViz on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://pypi.org/project/econ-viz/" target="_blank" rel="noopener" title="econ-viz on PyPI" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6M286.2 444.7a20.4 20.4 0 1 1 0-40.7 20.4 20.4 0 1 1 0 40.7M167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4m-6.6-183.4a20.4 20.4 0 1 1 0 40.8 20.4 20.4 0 1 1 0-40.8"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+
+<h4>Cookie 设置</h4>
+<p>我们使用分析 Cookie 了解文档的使用方式并持续改善内容，也会从 GitHub 加载仓库数据。</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
+      
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="analytics" checked>
+      <span class="task-list-indicator"></span>
+      Google Analytics
+    </label>
+  </li>
+
+      
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">同意</button>
+    
+    
+    
+  
+    
+    
+      <button type="reset" class="md-button md-button--primary">拒绝</button>
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">管理设定</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.top", "navigation.footer", "content.code.copy", "content.code.annotate", "content.tabs.link", "search.highlight", "search.suggest"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="../../../javascripts/model-toc.js"></script>
+      
+        <script src="../../../javascripts/analytics-events.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

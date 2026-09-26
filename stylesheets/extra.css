@@ -1,0 +1,297 @@
+/* Page colours */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:            #181818;
+  --md-primary-fg-color--light:     #383838;
+  --md-primary-fg-color--dark:      #000000;
+  --md-accent-fg-color:             #383838;
+  --md-default-bg-color:            #f3f3f3;
+  --md-default-fg-color:            #181818;
+  --md-default-fg-color--light:     rgba(24, 24, 24, 0.75);
+  --md-default-fg-color--lighter:   rgba(24, 24, 24, 0.50);
+  --md-default-fg-color--lightest:  rgba(24, 24, 24, 0.25);
+  --md-code-bg-color:               #e6e6e6;
+  --md-code-fg-color:               #181818;
+  --md-typeset-a-color:             #383838;
+}
+
+/* Navbar: always dark */
+.md-header,
+.md-tabs {
+  background-color: #181818 !important;
+  color: #f3f3f3 !important;
+}
+
+.md-header__title,
+.md-header__button,
+.md-tabs__link {
+  color: #f3f3f3 !important;
+  opacity: 1 !important;
+}
+
+.md-tabs__link--active,
+.md-tabs__link:hover {
+  color: #ffffff !important;
+}
+
+.md-search__input {
+  background-color: #2c2c2c;
+  color: #f3f3f3;
+}
+
+.md-search__input::placeholder {
+  color: rgba(243, 243, 243, 0.55);
+}
+
+.md-search__icon {
+  color: #f3f3f3 !important;
+}
+
+/* Keep display equations close to the paragraph that introduces them.
+   div.arithmatex has overflow:auto, so KaTeX's own 1em display margin would
+   stack on top of the div's margin instead of collapsing into it. */
+.md-typeset div.arithmatex {
+  margin: 0.6em 0;
+}
+
+.md-typeset div.arithmatex > .katex-display {
+  margin: 0;
+}
+
+/* Model page: collapsible model names under each category in the right TOC. */
+.md-sidebar--secondary .ev-model-toc__item {
+  position: relative;
+}
+
+.md-sidebar--secondary .ev-model-toc__section {
+  padding-right: 1.5rem;
+}
+
+.md-sidebar--secondary .ev-model-toc__section--active {
+  color: var(--md-typeset-a-color);
+  font-weight: 700;
+}
+
+.ev-model-toc__toggle {
+  color: var(--md-default-fg-color--light);
+  cursor: pointer;
+  height: 1.5rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1.5rem;
+}
+
+.ev-model-toc__toggle::before {
+  border-bottom: 0.08rem solid currentColor;
+  border-right: 0.08rem solid currentColor;
+  content: "";
+  display: block;
+  height: 0.35rem;
+  margin: 0.45rem auto;
+  transform: rotate(45deg);
+  transition: transform 150ms ease;
+  width: 0.35rem;
+}
+
+.ev-model-toc__toggle[aria-expanded="true"]::before {
+  transform: rotate(225deg);
+}
+
+.ev-model-toc__children .md-nav__link {
+  padding-left: 0.6rem;
+}
+
+.gif-table {
+  display: table !important;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-radius: 0;
+  margin: 1.5rem 0;
+}
+
+.gif-table td {
+  width: 50%;
+  padding: 0.75rem;
+  vertical-align: top;
+}
+
+.gif-card {
+  margin: 0;
+  padding: 0;
+}
+
+.gif-card__title {
+  display: block;
+  margin-bottom: 0.65rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(24, 24, 24, 0.88);
+}
+
+.gif-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  background: #ffffff;
+}
+
+.gif-card figcaption {
+  margin-top: 0.65rem;
+  font-size: 0.8rem;
+  color: rgba(24, 24, 24, 0.72);
+}
+
+.gif-table__empty {
+  background: transparent;
+}
+
+@media screen and (max-width: 44.984375em) {
+  .gif-table,
+  .gif-table tbody,
+  .gif-table tr,
+  .gif-table td {
+    display: block !important;
+    width: 100%;
+  }
+
+  .gif-table__empty {
+    display: none !important;
+  }
+}
+
+/* Heading kept for search engines and screen readers; the banner is the visual title */
+.ev-visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Feature cards: every description occupies exactly three lines */
+.md-typeset .grid.cards > ul > li > p:nth-child(2) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+  min-height: calc(3 * 1.6em);
+}
+
+/* Standalone content figures: cap the height so square and wide plots keep their proportions */
+.md-typeset p > img:only-child:not([src$=".svg"]) {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 420px;
+  margin: 1.5em auto;
+}
+
+/* Keep inline code in tables on one line; wide tables scroll horizontally instead */
+.md-typeset table code {
+  white-space: nowrap;
+}
+
+/* Smaller step-by-step figures, e.g. one per Canvas method */
+.md-typeset p > img:only-child.ev-figure-sm {
+  max-height: 300px;
+}
+
+/* Changelog: borderless table, version column only as wide as its content */
+.md-typeset table.ev-changelog {
+  display: table;
+  width: 100%;
+  border: 0;
+  border-collapse: collapse;
+}
+.md-typeset table.ev-changelog th,
+.md-typeset table.ev-changelog td {
+  border: 0;
+  padding: 0.9em 1.2em 0.9em 0;
+  vertical-align: top;
+  text-align: left;
+}
+.md-typeset table.ev-changelog th {
+  padding-bottom: 0.3em;
+  font-weight: 700;
+}
+.md-typeset .ev-changelog__version {
+  width: 1%;
+  white-space: nowrap;
+}
+.md-typeset .ev-changelog__version span {
+  color: var(--md-default-fg-color--light);
+  font-size: 0.85em;
+}
+.md-typeset .ev-changelog__type {
+  margin: 0 0 0.2em;
+  font-weight: 700;
+}
+.md-typeset .ev-changelog ul {
+  margin: 0 0 0.8em;
+}
+.md-typeset .ev-changelog td > ul:last-child {
+  margin-bottom: 0;
+}
+
+/* APA reference list: hanging indent. */
+.md-typeset .ev-bib-entry {
+  margin: 0 0 0.8em;
+  padding-left: 2em;
+  text-indent: -2em;
+}
+
+.md-typeset .ev-bib-entry p {
+  margin: 0;
+}
+
+/* Site links are near-black, so mark the ones in references and citations. */
+.md-typeset .ev-bib-entry a {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.md-typeset .ev-bib-backrefs {
+  margin-left: 0.4em;
+  font-size: 0.85em;
+  color: var(--md-default-fg-color--light);
+}
+
+.md-typeset a.ev-cite {
+  text-decoration: underline dotted;
+  text-underline-offset: 0.2em;
+}
+
+/* Where a reference or a citation is jumped to. */
+.md-typeset .ev-bib-entry:target,
+.md-typeset a.ev-cite:target {
+  background-color: #939bc9;
+  color: #f2f2f2;
+}
+
+.md-typeset a.ev-cite:target {
+  margin: 0 -0.3em;
+  padding: 0.1em 0.3em;
+}
+
+/* Pad all four sides by 0.5em; the negative margins keep the text in place. */
+.md-typeset .ev-bib-entry:target {
+  margin: -0.5em -0.5em 0.3em;
+  padding: 0.5em 0.5em 0.5em calc(2em + 0.5em);
+}
+
+.md-typeset .ev-bib-entry:target a,
+.md-typeset .ev-bib-entry:target .ev-bib-backrefs {
+  color: #f2f2f2;
+}
+
+.md-typeset .ev-bib-entry,
+.md-typeset a.ev-cite {
+  scroll-margin-top: 4.5rem;
+}
