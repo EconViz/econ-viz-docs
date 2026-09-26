@@ -17,6 +17,7 @@ description: "用 econ-viz 命令列工具直接在終端機產生無異曲線�
 | `econ-viz models` | 列出所有支援的效用模型 |
 | `econ-viz plot ...` | 產生並匯出圖形 |
 | `econ-viz solve-tex ...` | 以純 TeX 文字印出 Marshall 需求的封閉解 |
+| `econ-viz init [path]` | 產生附註解的[設定檔](../guides/config.md)範本（`--force` 覆蓋既有檔案） |
 
 ## 說明 {#econ-viz-help data-toc-label="說明"}
 
@@ -106,6 +107,7 @@ econ-viz plot --model cobb-douglas --px 2 --py 3 --income 30
 | `--y-label` | `y` | 縱軸標籤 |
 | `--title` | — | 圖形標題 |
 | `--theme` | `default` | 配色主題：`default`、`nord` |
+| `--config` | — | [設定檔](../guides/config.md)（`econ-viz.toml`）；`--theme` 會取代其中的 `base` |
 | `--n-curves` | 5 | 無異曲線數量 |
 | `--dpi` | 300 | 點陣輸出解析度 |
 | `--fill` | 關閉 | 為預算線下方的可行集合加上陰影 |

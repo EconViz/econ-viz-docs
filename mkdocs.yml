@@ -159,6 +159,7 @@ plugins:
             Animation: 動畫
             Interactive Widgets: 互動元件
             Themes: 主題
+            Settings File: 設定檔
             Export: 匯出
             Models: 模型
             Overview: 總覽
@@ -225,6 +226,7 @@ plugins:
             Animation: 动画
             Interactive Widgets: 交互组件
             Themes: 主题
+            Settings File: 配置文件
             Export: 导出
             Models: 模型
             Overview: 概览
@@ -256,6 +258,7 @@ nav:
       - Animation: guides/animation.md
       - Interactive Widgets: guides/interactive.md
       - Themes: guides/themes.md
+      - Settings File: guides/config.md
       - Export: guides/export.md
   - Models:
       - Core Models: models/index.md

@@ -17,6 +17,7 @@ Install it as a global command with `uv tool install econ-viz`, or prefix each c
 | `econ-viz models` | List all supported utility models |
 | `econ-viz plot ...` | Generate and export a diagram |
 | `econ-viz solve-tex ...` | Print a closed-form Marshallian demand in plain TeX text |
+| `econ-viz init [path]` | Write a commented [settings file](../guides/config.md) template (`--force` overwrites) |
 
 ## Help {#econ-viz-help data-toc-label="Help"}
 
@@ -106,6 +107,7 @@ econ-viz plot --model cobb-douglas --px 2 --py 3 --income 30
 | `--y-label` | `y` | Vertical axis label |
 | `--title` | — | Figure title |
 | `--theme` | `default` | Colour theme: `default`, `nord` |
+| `--config` | — | [Settings file](../guides/config.md) (`econ-viz.toml`); `--theme` replaces its `base` |
 | `--n-curves` | 5 | Number of indifference curves |
 | `--dpi` | 300 | Raster output resolution |
 | `--fill` | off | Shade feasible set below the budget line |

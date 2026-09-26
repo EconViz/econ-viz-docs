@@ -12,6 +12,21 @@ Release history of `econ-viz`. Documentation-only changes are not listed.
   <tr><th>Version</th><th>Changes</th></tr>
   </thead>
   <tbody>
+  <tr id="v1100">
+    <td class="ev-changelog__version"><strong>v1.10.0</strong><br><span>2026-09-26</span></td>
+    <td>
+      <p class="ev-changelog__type">Features</p>
+      <ul>
+        <li><code>Config</code> loads diagram settings from an <code>econ-viz.toml</code> file; <code>Config.load(...).use()</code> makes them the default</li>
+        <li><code>econ-viz init</code> writes a commented settings template, and <code>econ-viz plot --config</code> reads it</li>
+      </ul>
+      <p class="ev-changelog__type">Changes</p>
+      <ul>
+        <li>Diagrams take their theme and fonts from the active <code>Config</code> when none is passed; without one the output is unchanged</li>
+        <li><code>tomli</code> is required on Python 3.10</li>
+      </ul>
+    </td>
+  </tr>
   <tr id="v190">
     <td class="ev-changelog__version"><strong>v1.9.0</strong><br><span>2026-09-26</span></td>
     <td>
