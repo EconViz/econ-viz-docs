@@ -35,6 +35,46 @@ The Nord theme uses the [Nord colour palette](https://www.nordtheme.com/) — co
 
 ![Nord theme example](../assets/themes/theme_nord.png)
 
+### Paper
+
+```python
+cvs = Canvas(x_max=20, y_max=15, theme=themes.paper)
+```
+
+The paper theme uses thinner lines, smaller markers, and restrained typography on a transparent background — suitable for print and journal figures where ink and space are at a premium.
+
+![Paper theme example](../assets/themes/theme_paper.png)
+
+### Monochrome
+
+```python
+cvs = Canvas(x_max=20, y_max=15, theme=themes.monochrome)
+```
+
+The monochrome theme drops colour entirely — every element is a shade of gray — and instead distinguishes curves, budget lines, and rays by line style, and markers by shape. Suitable for black-and-white printing or figures viewed by colour-blind readers without relying on colour at all.
+
+![Monochrome theme example](../assets/themes/theme_monochrome.png)
+
+### Presentation
+
+```python
+cvs = Canvas(x_max=20, y_max=15, theme=themes.presentation)
+```
+
+The presentation theme uses larger text, thicker lines, and bigger markers for visibility on a projector screen or in a lecture hall.
+
+![Presentation theme example](../assets/themes/theme_presentation.png)
+
+### Dark
+
+```python
+cvs = Canvas(x_max=20, y_max=15, theme=themes.dark)
+```
+
+The dark theme uses a dark background with light foreground colours, suitable for dark-mode slides or websites.
+
+![Dark theme example](../assets/themes/theme_dark.png)
+
 ## Custom theme
 
 Pass any field to the constructor to override just that value; everything

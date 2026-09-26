@@ -31,6 +31,46 @@ Nord 主题使用 [Nord 配色](https://www.nordtheme.com/)，以冷色蓝与低
 
 ![Nord 主题范例](../../assets/themes/theme_nord.png)
 
+### Paper
+
+```python
+cvs = Canvas(x_max=20, y_max=15, theme=themes.paper)
+```
+
+Paper 主题使用较细的线条、较小的标记，以及节制的字号，背景透明，适合印刷或期刊排版对墨量与版面较敏感的场合。
+
+![Paper 主题范例](../../assets/themes/theme_paper.png)
+
+### Monochrome
+
+```python
+cvs = Canvas(x_max=20, y_max=15, theme=themes.monochrome)
+```
+
+Monochrome 主题完全不使用颜色，所有元素都是灰阶，改以**线条样式**区分曲线、预算线与射线，并以**标记形状**区分不同的点。适合黑白打印，或需要完全不依赖颜色辨识的色盲友好场合。
+
+![Monochrome 主题范例](../../assets/themes/theme_monochrome.png)
+
+### Presentation
+
+```python
+cvs = Canvas(x_max=20, y_max=15, theme=themes.presentation)
+```
+
+Presentation 主题使用较大的文字、较粗的线条与较大的标记，适合投影屏幕或演讲厅等需要远距离辨识的场合。
+
+![Presentation 主题范例](../../assets/themes/theme_presentation.png)
+
+### Dark
+
+```python
+cvs = Canvas(x_max=20, y_max=15, theme=themes.dark)
+```
+
+Dark 主题使用深色背景搭配浅色前景，适合深色模式的幻灯片或网站。
+
+![Dark 主题范例](../../assets/themes/theme_dark.png)
+
 ## 自定义主题
 
 构造函数可以只传入想改的字段，其余保留内置默认值：

@@ -31,6 +31,46 @@ Nord 主題使用 [Nord 配色](https://www.nordtheme.com/)，以冷色藍與低
 
 ![Nord 主題範例](../../assets/themes/theme_nord.png)
 
+### Paper
+
+```python
+cvs = Canvas(x_max=20, y_max=15, theme=themes.paper)
+```
+
+Paper 主題使用較細的線條、較小的標記，以及節制的字級，背景透明，適合印刷或期刊排版對墨量與版面較敏感的場合。
+
+![Paper 主題範例](../../assets/themes/theme_paper.png)
+
+### Monochrome
+
+```python
+cvs = Canvas(x_max=20, y_max=15, theme=themes.monochrome)
+```
+
+Monochrome 主題完全不使用顏色，所有元素都是灰階，改以**線條樣式**區分曲線、預算線與射線，並以**標記形狀**區分不同的點。適合黑白列印，或需要完全不依賴顏色辨識的色盲友善場合。
+
+![Monochrome 主題範例](../../assets/themes/theme_monochrome.png)
+
+### Presentation
+
+```python
+cvs = Canvas(x_max=20, y_max=15, theme=themes.presentation)
+```
+
+Presentation 主題使用較大的文字、較粗的線條與較大的標記，適合投影幕或演講廳等需要遠距離辨識的場合。
+
+![Presentation 主題範例](../../assets/themes/theme_presentation.png)
+
+### Dark
+
+```python
+cvs = Canvas(x_max=20, y_max=15, theme=themes.dark)
+```
+
+Dark 主題使用深色背景搭配淺色前景，適合深色模式的投影片或網站。
+
+![Dark 主題範例](../../assets/themes/theme_dark.png)
+
 ## 自訂主題
 
 建構子可以只傳入想改的欄位，其他保留內建預設值：
