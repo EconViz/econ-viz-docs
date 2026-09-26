@@ -115,6 +115,7 @@ cvs = EdgeworthBox(..., theme=MyTheme(name="my-theme"))
 | `axis_color` | 座標軸與箭頭的顏色 |
 | `label_color` | 座標軸標籤與原點標籤的顏色 |
 | `ic_color`、`ic_linewidth` | 無異曲線的顏色與線寬 |
+| `secondary_ic_color`、`secondary_ic_linewidth`、`secondary_ic_opacity` | 強調主要效用水準時，其餘淡化曲線的顏色、線寬與不透明度 |
 | `path_color`、`path_linewidth` | PCC / ICC 路徑的顏色與線寬 |
 | `budget_color`、`budget_linewidth` | 預算線的顏色與線寬 |
 | `budget_fill_alpha` | 可行集合陰影的不透明度 |
@@ -137,7 +138,7 @@ cvs = EdgeworthBox(..., theme=MyTheme(name="my-theme"))
 
 | 種類 | 屬性 |
 |------|------|
-| Stroke | `ic_stroke`、`budget_stroke`、`ray_stroke`、`path_stroke`、`compensated_budget_stroke`、`final_budget_stroke`、`substitution_stroke`、`income_stroke`、`subsistence_stroke`、`contract_stroke`、`core_stroke`、`price_stroke`、`axis_stroke`、`drop_stroke`、`projection_stroke`、`guide_stroke`、`box_stroke` |
+| Stroke | `ic_stroke`、`secondary_ic_stroke`、`budget_stroke`、`ray_stroke`、`path_stroke`、`compensated_budget_stroke`、`final_budget_stroke`、`substitution_stroke`、`income_stroke`、`subsistence_stroke`、`contract_stroke`、`core_stroke`、`price_stroke`、`axis_stroke`、`drop_stroke`、`projection_stroke`、`guide_stroke`、`box_stroke` |
 | Marker | `eq_marker`、`point_marker`、`kink_marker`、`bliss_marker`、`path_marker`、`core_marker`、`endowment_marker`、`walrasian_marker` |
 | Label | `axis_label`、`origin_label`、`title_label`、`box_label`、`effect_label`、`point_label`、`bundle_label`、`bliss_label`、`ic_label`、`edgeworth_label` |
 | Fill | `budget_fill` |

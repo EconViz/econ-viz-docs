@@ -69,10 +69,51 @@ cvs.add_utility(
     bliss_marker=None, # 默认 theme.bliss_marker
     ic_label=None,     # 曲线末端效用值的 Label
     bliss_label=None,  # str 或 Label
+    highlight_level=None, # 最接近的效用水平成为主要曲线
+    secondary_stroke=None,# 其余曲线的线条样式
+    label_style="numeric",# "numeric" 或教科书式 "ordinal"
 )
 ```
 
 ![用 add_utility 画出的无差异曲线](../../assets/canvas/add_utility.png){ .ev-figure-sm }
+
+#### 主要与次要曲线
+
+把均衡效用传给 `highlight_level`，即可强调最接近的效用水平，不需要自己再画第二组等高线。其余曲线使用 `theme.secondary_ic_stroke`，也可以用 `secondary_stroke` 单独指定。
+
+```python
+from econ_viz import Canvas, Stroke, levels, solve
+from econ_viz.models import CobbDouglas
+
+model = CobbDouglas(0.5, 0.5)
+eq = solve(model, px=2, py=3, income=30)
+lvls = levels.around(eq.utility, n=5)
+
+(Canvas(x_max=20, y_max=15)
+ .add_utility(
+     model,
+     levels=lvls,
+     highlight_level=eq.utility,
+     secondary_stroke=Stroke(width=1, opacity=0.35),
+     show_ic_labels=True,
+     label_style="ordinal",
+ )
+ .add_budget(2, 3, 30, fill=True)
+ .add_equilibrium(eq))
+```
+
+`label_style="numeric"` 显示格式化后的效用值；`"ordinal"` 则使用教科书常见的 $u_1,u_2,\ldots$。标签会跟随曲线在该处的角度，并避开可见范围的边界。
+
+<div class="grid cards" markdown>
+
+- ![强调前，所有无差异曲线的视觉权重相同](../../assets/canvas/ic_hierarchy_before.png)
+  **强调前**——每个效用水平的视觉权重相同。
+- ![强调均衡无差异曲线，其余曲线淡化](../../assets/canvas/ic_hierarchy_after.png)
+  **强调后**——均衡效用水平成为主要曲线。
+- ![无差异曲线的序数标签](../../assets/canvas/ic_hierarchy_ordinal.png)
+  **序数标签**——曲线标为 $u_1,u_2,\ldots$。
+
+</div>
 
 ### 预算线 {#add_budget data-toc-label="预算线"}
 

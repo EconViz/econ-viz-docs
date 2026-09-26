@@ -126,6 +126,7 @@ same precedence a [settings file](config.md) follows.
 | `axis_color` | Colour of axis spines and arrow tips |
 | `label_color` | Colour of axis and origin labels |
 | `ic_color`, `ic_linewidth` | Indifference-curve stroke colour and width |
+| `secondary_ic_color`, `secondary_ic_linewidth`, `secondary_ic_opacity` | Subdued curves shown beside a highlighted focal utility level |
 | `path_color`, `path_linewidth` | PCC / ICC path stroke colour and width |
 | `budget_color`, `budget_linewidth` | Budget-line stroke colour and width |
 | `budget_fill_alpha` | Opacity of the feasible-set shading |
@@ -153,7 +154,7 @@ diagram that doesn't pass its own explicit argument for that role; the
 
 | Kind | Properties |
 |------|------------|
-| Stroke | `ic_stroke`, `budget_stroke`, `ray_stroke`, `path_stroke`, `compensated_budget_stroke`, `final_budget_stroke`, `substitution_stroke`, `income_stroke`, `subsistence_stroke`, `contract_stroke`, `core_stroke`, `price_stroke`, `axis_stroke`, `drop_stroke`, `projection_stroke`, `guide_stroke`, `box_stroke` |
+| Stroke | `ic_stroke`, `secondary_ic_stroke`, `budget_stroke`, `ray_stroke`, `path_stroke`, `compensated_budget_stroke`, `final_budget_stroke`, `substitution_stroke`, `income_stroke`, `subsistence_stroke`, `contract_stroke`, `core_stroke`, `price_stroke`, `axis_stroke`, `drop_stroke`, `projection_stroke`, `guide_stroke`, `box_stroke` |
 | Marker | `eq_marker`, `point_marker`, `kink_marker`, `bliss_marker`, `path_marker`, `core_marker`, `endowment_marker`, `walrasian_marker` |
 | Label | `axis_label`, `origin_label`, `title_label`, `box_label`, `effect_label`, `point_label`, `bundle_label`, `bliss_label`, `ic_label`, `edgeworth_label` |
 | Fill | `budget_fill` |
