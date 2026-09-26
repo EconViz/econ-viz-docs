@@ -12,6 +12,21 @@ description: "econ-viz Python 包的版本历史：每个版本的新功能、�
   <tr><th>版本</th><th>更新内容</th></tr>
   </thead>
   <tbody>
+  <tr id="v1100">
+    <td class="ev-changelog__version"><strong>v1.10.0</strong><br><span>2026-09-26</span></td>
+    <td>
+      <p class="ev-changelog__type">新功能</p>
+      <ul>
+        <li>新增 <code>Config</code>，从 <code>econ-viz.toml</code> 配置文件加载图形设置；<code>Config.load(...).use()</code> 会把它设为默认</li>
+        <li>新增 <code>econ-viz init</code> 生成带注释的配置文件模板，<code>econ-viz plot --config</code> 可读取配置文件</li>
+      </ul>
+      <p class="ev-changelog__type">变更</p>
+      <ul>
+        <li>没有指定 theme 或字体时，图形改用当前生效的 <code>Config</code>；没有配置文件时输出不变</li>
+        <li>Python 3.10 需要安装 <code>tomli</code></li>
+      </ul>
+    </td>
+  </tr>
   <tr id="v190">
     <td class="ev-changelog__version"><strong>v1.9.0</strong><br><span>2026-09-26</span></td>
     <td>

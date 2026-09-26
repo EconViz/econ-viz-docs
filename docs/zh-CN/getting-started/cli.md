@@ -17,6 +17,7 @@ description: "用 econ-viz 命令行工具直接在终端产生无差异曲线�
 | `econ-viz models` | 列出所有支持的效用模型 |
 | `econ-viz plot ...` | 产生并导出图形 |
 | `econ-viz solve-tex ...` | 以纯 TeX 文本输出马歇尔需求的闭式解 |
+| `econ-viz init [path]` | 生成带注释的[配置文件](../guides/config.md)模板（`--force` 覆盖已有文件） |
 
 ## 帮助 {#econ-viz-help data-toc-label="帮助"}
 
@@ -106,6 +107,7 @@ econ-viz plot --model cobb-douglas --px 2 --py 3 --income 30
 | `--y-label` | `y` | 纵轴标签 |
 | `--title` | — | 图形标题 |
 | `--theme` | `default` | 配色主题：`default`、`nord` |
+| `--config` | — | [配置文件](../guides/config.md)（`econ-viz.toml`）；`--theme` 会替换其中的 `base` |
 | `--n-curves` | 5 | 无差异曲线数量 |
 | `--dpi` | 300 | 位图输出分辨率 |
 | `--fill` | 关闭 | 为预算线下方的可行集加上阴影 |
