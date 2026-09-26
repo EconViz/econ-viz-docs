@@ -72,14 +72,14 @@ Animator(draw, frames=np.linspace(1.0, 6.0, 45)).save(
       <td>
   <figure class="gif-card">
     <span class="gif-card__title">Cobb-Douglas</span>
-    <img src="../../assets/animation/parameter_sweeps/cobb_douglas_parameter_sweep.gif" alt="Cobb-Douglas 參數變動 GIF">
+    <img src="../../../assets/animation/parameter_sweeps/cobb_douglas_parameter_sweep.gif" alt="Cobb-Douglas 參數變動 GIF">
     <figcaption>改變 \(\alpha\)，並令 \(\beta = 1 - \alpha\)</figcaption>
   </figure>
       </td>
       <td>
   <figure class="gif-card">
     <span class="gif-card__title">CES</span>
-    <img src="../../assets/animation/parameter_sweeps/ces_parameter_sweep.gif" alt="CES 參數變動 GIF">
+    <img src="../../../assets/animation/parameter_sweeps/ces_parameter_sweep.gif" alt="CES 參數變動 GIF">
     <figcaption>改變 \(\rho\)，調整曲率與替代程度</figcaption>
   </figure>
       </td>
@@ -88,14 +88,14 @@ Animator(draw, frames=np.linspace(1.0, 6.0, 45)).save(
       <td>
   <figure class="gif-card">
     <span class="gif-card__title">完全替代</span>
-    <img src="../../assets/animation/parameter_sweeps/perfect_substitutes_parameter_sweep.gif" alt="完全替代參數變動 GIF">
+    <img src="../../../assets/animation/parameter_sweeps/perfect_substitutes_parameter_sweep.gif" alt="完全替代參數變動 GIF">
     <figcaption>固定 \(b\)，改變 \(a\)</figcaption>
   </figure>
       </td>
       <td>
   <figure class="gif-card">
     <span class="gif-card__title">完全互補</span>
-    <img src="../../assets/animation/parameter_sweeps/leontief_parameter_sweep.gif" alt="完全互補參數變動 GIF">
+    <img src="../../../assets/animation/parameter_sweeps/leontief_parameter_sweep.gif" alt="完全互補參數變動 GIF">
     <figcaption>固定 \(b\)，改變 \(a\)，讓拗折點的路徑移動</figcaption>
   </figure>
       </td>
@@ -113,14 +113,14 @@ Animator(draw, frames=np.linspace(1.0, 6.0, 45)).save(
       <td>
   <figure class="gif-card">
     <span class="gif-card__title">Cobb-Douglas</span>
-    <img src="../../assets/animation/price_sweeps/cobb_douglas_price_sweep.gif" alt="Cobb-Douglas 價格變動 GIF">
+    <img src="../../../assets/animation/price_sweeps/cobb_douglas_price_sweep.gif" alt="Cobb-Douglas 價格變動 GIF">
     <figcaption>價格變動，\(p_y\) 固定</figcaption>
   </figure>
       </td>
       <td>
   <figure class="gif-card">
     <span class="gif-card__title">CES</span>
-    <img src="../../assets/animation/price_sweeps/ces_price_sweep.gif" alt="CES 價格變動 GIF">
+    <img src="../../../assets/animation/price_sweeps/ces_price_sweep.gif" alt="CES 價格變動 GIF">
     <figcaption>價格變動，效用曲面固定</figcaption>
   </figure>
       </td>
@@ -129,14 +129,14 @@ Animator(draw, frames=np.linspace(1.0, 6.0, 45)).save(
       <td>
   <figure class="gif-card">
     <span class="gif-card__title">完全替代</span>
-    <img src="../../assets/animation/price_sweeps/perfect_substitutes_price_sweep.gif" alt="完全替代價格變動 GIF">
+    <img src="../../../assets/animation/price_sweeps/perfect_substitutes_price_sweep.gif" alt="完全替代價格變動 GIF">
     <figcaption>預算線旋轉</figcaption>
   </figure>
       </td>
       <td>
   <figure class="gif-card">
     <span class="gif-card__title">完全互補</span>
-    <img src="../../assets/animation/price_sweeps/leontief_price_sweep.gif" alt="完全互補價格變動 GIF">
+    <img src="../../../assets/animation/price_sweeps/leontief_price_sweep.gif" alt="完全互補價格變動 GIF">
     <figcaption>價格變動，直角無異曲線固定</figcaption>
   </figure>
       </td>
@@ -145,7 +145,7 @@ Animator(draw, frames=np.linspace(1.0, 6.0, 45)).save(
       <td>
   <figure class="gif-card">
     <span class="gif-card__title">只有預算線</span>
-    <img src="../../assets/animation/price_sweeps/budget_only_price_sweep.gif" alt="只有預算線的價格變動 GIF">
+    <img src="../../../assets/animation/price_sweeps/budget_only_price_sweep.gif" alt="只有預算線的價格變動 GIF">
     <figcaption>價格變動，單獨呈現限制式的旋轉</figcaption>
   </figure>
       </td>
@@ -164,14 +164,14 @@ Animator(draw, frames=np.linspace(1.0, 6.0, 45)).save(
       <td>
   <figure class="gif-card">
     <span class="gif-card__title">Cobb-Douglas</span>
-    <img src="../../assets/animation/income_sweeps/cobb_douglas_income_sweep.gif" alt="Cobb-Douglas 所得變動 GIF">
+    <img src="../../../assets/animation/income_sweeps/cobb_douglas_income_sweep.gif" alt="Cobb-Douglas 所得變動 GIF">
     <figcaption>所得變動，價格固定</figcaption>
   </figure>
       </td>
       <td>
   <figure class="gif-card">
     <span class="gif-card__title">CES</span>
-    <img src="../../assets/animation/income_sweeps/ces_income_sweep.gif" alt="CES 所得變動 GIF">
+    <img src="../../../assets/animation/income_sweeps/ces_income_sweep.gif" alt="CES 所得變動 GIF">
     <figcaption>所得變動，價格與效用函數固定</figcaption>
   </figure>
       </td>
@@ -180,14 +180,14 @@ Animator(draw, frames=np.linspace(1.0, 6.0, 45)).save(
       <td>
   <figure class="gif-card">
     <span class="gif-card__title">完全替代</span>
-    <img src="../../assets/animation/income_sweeps/perfect_substitutes_income_sweep.gif" alt="完全替代所得變動 GIF">
+    <img src="../../../assets/animation/income_sweeps/perfect_substitutes_income_sweep.gif" alt="完全替代所得變動 GIF">
     <figcaption>所得變動</figcaption>
   </figure>
       </td>
       <td>
   <figure class="gif-card">
     <span class="gif-card__title">完全互補</span>
-    <img src="../../assets/animation/income_sweeps/leontief_income_sweep.gif" alt="完全互補所得變動 GIF">
+    <img src="../../../assets/animation/income_sweeps/leontief_income_sweep.gif" alt="完全互補所得變動 GIF">
     <figcaption>所得變動，價格固定</figcaption>
   </figure>
       </td>
@@ -196,7 +196,7 @@ Animator(draw, frames=np.linspace(1.0, 6.0, 45)).save(
       <td>
   <figure class="gif-card">
     <span class="gif-card__title">只有預算線</span>
-    <img src="../../assets/animation/income_sweeps/budget_only_income_sweep.gif" alt="只有預算線的所得變動 GIF">
+    <img src="../../../assets/animation/income_sweeps/budget_only_income_sweep.gif" alt="只有預算線的所得變動 GIF">
     <figcaption>所得變動，單獨呈現限制式的平行移動</figcaption>
   </figure>
       </td>
