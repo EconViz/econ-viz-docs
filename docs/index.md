@@ -22,6 +22,8 @@ description: "Open-source Python library for publication-quality microeconomics 
 
 :fontawesome-brands-github: **Source Code:** [https://github.com/EconViz/econ-viz](https://github.com/EconViz/econ-viz)
 
+:material-file-pdf-box: **PDF Manual:** [English, 繁體中文, 简体中文](project/manual.md)
+
 :fontawesome-solid-envelope: **Contact:** [contact@econ-viz.org](mailto:contact@econ-viz.org)
 
 ---

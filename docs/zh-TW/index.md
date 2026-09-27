@@ -22,6 +22,8 @@ description: "開源 Python 套件，繪製出版品質的個體經濟學圖形�
 
 :fontawesome-brands-github: **原始碼：** [https://github.com/EconViz/econ-viz](https://github.com/EconViz/econ-viz)
 
+:material-file-pdf-box: **PDF 手冊：** [繁體中文、简体中文、English](project/manual.md)
+
 :fontawesome-solid-envelope: **聯絡我們：** [contact@econ-viz.org](mailto:contact@econ-viz.org)
 
 ---
