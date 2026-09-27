@@ -1,11 +1,11 @@
 site_name: Econ-Viz
 site_url: https://econ-viz.org
 site_description: A Python toolkit for producing publication-quality microeconomics diagrams.
-site_author: Anthony Sung
+site_author: Pin Yue Sung
 repo_url: https://github.com/EconViz/econ-viz
 repo_name: EconViz/econ-viz
 copyright: >-
-  &copy; 2026 Anthony Sung ·
+  &copy; 2026 Pin Yue Sung ·
   <a href="#__consent">Change cookie settings</a>
 
 theme:
@@ -118,7 +118,7 @@ plugins:
           build: true
           site_description: 用 Python 繪製出版品質的個體經濟學圖形：無異曲線、預算限制、消費者均衡與 TikZ 匯出。
           copyright: >-
-            &copy; 2026 Anthony Sung ·
+            &copy; 2026 Pin Yue Sung ·
             <a href="#__consent">變更 Cookie 設定</a>
           extra:
             analytics:
@@ -186,7 +186,7 @@ plugins:
             language: zh
           site_description: 用 Python 绘制出版质量的微观经济学图形：无差异曲线、预算约束、消费者均衡与 TikZ 导出。
           copyright: >-
-            &copy; 2026 Anthony Sung ·
+            &copy; 2026 Pin Yue Sung ·
             <a href="#__consent">更改 Cookie 设置</a>
           extra:
             analytics:
