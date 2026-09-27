@@ -22,6 +22,8 @@ description: "开源 Python 包，绘制出版质量的微观经济学图形：�
 
 :fontawesome-brands-github: **源代码：** [https://github.com/EconViz/econ-viz](https://github.com/EconViz/econ-viz)
 
+:material-file-pdf-box: **PDF 手册：** [简体中文、繁體中文、English](project/manual.md)
+
 :fontawesome-solid-envelope: **联系我们：** [contact@econ-viz.org](mailto:contact@econ-viz.org)
 
 ---

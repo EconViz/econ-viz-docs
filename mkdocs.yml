@@ -178,6 +178,7 @@ plugins:
             Project: 專案
             Changelog: 更新紀錄
             References: 參考文獻
+            PDF Manual: PDF 手冊
         - locale: zh-CN
           name: 简体中文
           build: true
@@ -245,6 +246,7 @@ plugins:
             Project: 项目
             Changelog: 更新日志
             References: 参考文献
+            PDF Manual: PDF 手册
 
 nav:
   - Home: index.md
@@ -269,3 +271,4 @@ nav:
   - Project:
       - Changelog: project/changelog.md
       - References: project/references.md
+      - PDF Manual: project/manual.md
