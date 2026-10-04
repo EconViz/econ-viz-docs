@@ -2,8 +2,8 @@ site_name: Econ-Viz
 site_url: https://econ-viz.org
 site_description: A Python toolkit for producing publication-quality microeconomics diagrams.
 site_author: Pin Yue Sung
-repo_url: https://github.com/EconViz/econ-viz
-repo_name: EconViz/econ-viz
+repo_url: https://github.com/EconViz/utility-viz
+repo_name: EconViz/utility-viz
 copyright: >-
   &copy; 2026 Pin Yue Sung ·
   <a href="#__consent">Change cookie settings</a>
@@ -74,7 +74,7 @@ extra:
           data: 0
           note: >-
             Thanks for your feedback. Tell us what could be improved in a
-            <a href="https://github.com/EconViz/econ-viz/issues/new?title=[Docs]+{title}&body=Page:+{url}" target="_blank" rel="noopener">GitHub issue</a>.
+            <a href="https://github.com/EconViz/utility-viz/issues/new?title=[Docs]+{title}&body=Page:+{url}" target="_blank" rel="noopener">GitHub issue</a>.
   consent:
     title: Cookie consent
     description: >-
@@ -136,7 +136,7 @@ plugins:
                     data: 0
                     note: >-
                       謝謝你的回饋。歡迎到
-                      <a href="https://github.com/EconViz/econ-viz/issues/new?title=[Docs]+{title}&body=Page:+{url}" target="_blank" rel="noopener">GitHub issue</a>
+                      <a href="https://github.com/EconViz/utility-viz/issues/new?title=[Docs]+{title}&body=Page:+{url}" target="_blank" rel="noopener">GitHub issue</a>
                       告訴我們哪裡需要改進。
             consent:
               title: Cookie 設定
@@ -204,7 +204,7 @@ plugins:
                     data: 0
                     note: >-
                       谢谢你的反馈。欢迎到
-                      <a href="https://github.com/EconViz/econ-viz/issues/new?title=[Docs]+{title}&body=Page:+{url}" target="_blank" rel="noopener">GitHub issue</a>
+                      <a href="https://github.com/EconViz/utility-viz/issues/new?title=[Docs]+{title}&body=Page:+{url}" target="_blank" rel="noopener">GitHub issue</a>
                       告诉我们哪里需要改进。
             consent:
               title: Cookie 设置
