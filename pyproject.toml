@@ -1,7 +1,7 @@
 [project]
 name = "econ-viz-docs"
 version = "0.1.0"
-description = "Documentation for econ-viz"
+description = "Documentation for the EconViz packages"
 authors = [{ name = "Pin Yue Sung" }]
 requires-python = ">=3.11,<4.0"
 dependencies = [

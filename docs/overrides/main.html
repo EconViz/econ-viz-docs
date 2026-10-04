@@ -39,7 +39,7 @@
   <meta property="og:image" content="{{ image }}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Econ-Viz logo">
+  <meta property="og:image:alt" content="EconViz logo">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ title }}">
   <meta name="twitter:description" content="{{ description }}">
@@ -48,17 +48,21 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareSourceCode",
-    "name": "Econ-Viz",
+    "@type": "WebSite",
+    "name": "EconViz",
     "description": {{ config.site_description | tojson }},
     "url": {{ config.site_url | tojson }},
-    "codeRepository": "https://github.com/EconViz/econ-viz",
-    "programmingLanguage": "Python",
     "inLanguage": {{ locale | tojson }},
     "license": "https://opensource.org/licenses/MIT",
-    "keywords": ["economics", "microeconomics", "indifference curves", "budget constraint", "utility function", "consumer theory", "matplotlib", "TikZ"],
     "author": {"@type": "Person", "name": {{ config.site_author | tojson }}},
-    "sameAs": ["https://pypi.org/project/econ-viz/", "https://github.com/EconViz"]
+    "about": [
+      {"@type": "SoftwareSourceCode", "name": "utility-viz", "codeRepository": "https://github.com/EconViz/utility-viz", "programmingLanguage": "Python", "sameAs": "https://pypi.org/project/utility-viz/"},
+      {"@type": "SoftwareSourceCode", "name": "principle-viz", "codeRepository": "https://github.com/EconViz/principle-viz", "programmingLanguage": "Python", "sameAs": "https://pypi.org/project/principle-viz/"},
+      {"@type": "SoftwareSourceCode", "name": "mosaickit", "codeRepository": "https://github.com/EconViz/mosaickit", "programmingLanguage": "Python", "sameAs": "https://pypi.org/project/mosaickit/"},
+      {"@type": "SoftwareSourceCode", "name": "bezierkit", "codeRepository": "https://github.com/EconViz/bezierkit", "programmingLanguage": "Python", "sameAs": "https://pypi.org/project/bezierkit/"}
+    ],
+    "keywords": ["economics", "microeconomics", "principles of economics", "supply and demand", "indifference curves", "utility function", "Bezier curves", "matplotlib", "TikZ"],
+    "sameAs": ["https://github.com/EconViz"]
   }
   </script>
   {% endif %}
