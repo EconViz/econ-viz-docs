@@ -9,7 +9,7 @@ description: "EconViz is a family of open-source Python packages for economics d
   <img src="assets/banner.svg" alt="EconViz" style="max-width: 480px; width: 100%; margin: 2rem 0 1rem;">
 </p>
 
-<p align="center"><em>Open-source Python packages for economics diagrams.</em></p>
+<p align="center"><em>Open-source Python tools for drawing publication-quality economics diagrams.</em></p>
 
 ---
 

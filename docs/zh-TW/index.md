@@ -9,7 +9,7 @@ description: "EconViz 是一組開源 Python 套件，用來繪製經濟學圖�
   <img src="../assets/banner.svg" alt="EconViz" style="max-width: 480px; width: 100%; margin: 2rem 0 1rem;">
 </p>
 
-<p align="center"><em>用 Python 繪製經濟學圖形的開源套件。</em></p>
+<p align="center"><em>用於繪製出版品質經濟學圖形的開源 Python 工具。</em></p>
 
 ---
 
