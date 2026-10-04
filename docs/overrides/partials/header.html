@@ -56,9 +56,9 @@
     {#- PDF manual in the page's language, published by utility-viz-manual. -#}
     {% set manual_locale = i18n_page_locale | default("en") %}
     {% set manual_titles = {
-      "en": "Download the PDF manual",
-      "zh-TW": "下載 PDF 手冊",
-      "zh-CN": "下载 PDF 手册",
+      "en": "Download the utility-viz PDF manual",
+      "zh-TW": "下載 utility-viz PDF 手冊",
+      "zh-CN": "下载 utility-viz PDF 手册",
     } %}
     {% set manual_title = manual_titles.get(manual_locale, manual_titles["en"]) %}
     <a href="{{ ('assets/manual/econ-viz-manual-' ~ manual_locale ~ '.pdf') | url }}" class="md-header__button md-icon" title="{{ manual_title }}" aria-label="{{ manual_title }}" download="econ-viz-manual-{{ manual_locale }}.pdf">

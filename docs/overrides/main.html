@@ -1,5 +1,24 @@
 {% extends "base.html" %}
 
+{# Announcement bar above the header: the econ-viz -> utility-viz rename.
+   The text is chosen with the locale that mkdocs-static-i18n sets for each page,
+   and the link goes to that language's migration guide. Dismissal is remembered
+   by Material (theme feature announce.dismiss), keyed on this markup, so
+   changing the text shows the bar again. #}
+{% block announce %}
+  {% set locale = i18n_page_locale | default("en") %}
+  {% set prefix = "" if locale == "en" else locale ~ "/" %}
+  <a href="{{ base_url }}/{{ prefix }}utility-viz/migrating/">
+    {% if locale == "zh-TW" %}
+      <strong>econ-viz 已改名為 utility-viz</strong>，最新的 2.0 測試版已經發布。查看遷移指南 →
+    {% elif locale == "zh-CN" %}
+      <strong>econ-viz 已更名为 utility-viz</strong>，最新的 2.0 测试版已发布。查看迁移指南 →
+    {% else %}
+      <strong>econ-viz is now utility-viz</strong> and the 2.0 beta is out. Read the migration guide →
+    {% endif %}
+  </a>
+{% endblock %}
+
 {% block htmltitle %}
   {% set name = page.meta.seo_title if page and page.meta and page.meta.seo_title else (page.title | striptags if page and page.title else "") %}
   {% if name %}
@@ -39,7 +58,7 @@
   <meta property="og:image" content="{{ image }}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Econ-Viz logo">
+  <meta property="og:image:alt" content="EconViz logo">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ title }}">
   <meta name="twitter:description" content="{{ description }}">
@@ -48,17 +67,21 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareSourceCode",
-    "name": "Econ-Viz",
+    "@type": "WebSite",
+    "name": "EconViz",
     "description": {{ config.site_description | tojson }},
     "url": {{ config.site_url | tojson }},
-    "codeRepository": "https://github.com/EconViz/econ-viz",
-    "programmingLanguage": "Python",
     "inLanguage": {{ locale | tojson }},
     "license": "https://opensource.org/licenses/MIT",
-    "keywords": ["economics", "microeconomics", "indifference curves", "budget constraint", "utility function", "consumer theory", "matplotlib", "TikZ"],
     "author": {"@type": "Person", "name": {{ config.site_author | tojson }}},
-    "sameAs": ["https://pypi.org/project/econ-viz/", "https://github.com/EconViz"]
+    "about": [
+      {"@type": "SoftwareSourceCode", "name": "utility-viz", "codeRepository": "https://github.com/EconViz/utility-viz", "programmingLanguage": "Python", "sameAs": "https://pypi.org/project/utility-viz/"},
+      {"@type": "SoftwareSourceCode", "name": "principle-viz", "codeRepository": "https://github.com/EconViz/principle-viz", "programmingLanguage": "Python", "sameAs": "https://pypi.org/project/principle-viz/"},
+      {"@type": "SoftwareSourceCode", "name": "mosaickit", "codeRepository": "https://github.com/EconViz/mosaickit", "programmingLanguage": "Python", "sameAs": "https://pypi.org/project/mosaickit/"},
+      {"@type": "SoftwareSourceCode", "name": "bezierkit", "codeRepository": "https://github.com/EconViz/bezierkit", "programmingLanguage": "Python", "sameAs": "https://pypi.org/project/bezierkit/"}
+    ],
+    "keywords": ["economics", "microeconomics", "principles of economics", "supply and demand", "indifference curves", "utility function", "Bezier curves", "matplotlib", "TikZ"],
+    "sameAs": ["https://github.com/EconViz"]
   }
   </script>
   {% endif %}

@@ -295,3 +295,22 @@
 .md-typeset a.ev-cite {
   scroll-margin-top: 4.5rem;
 }
+
+/* Announcement bar: the header is near-black, so a dark bar with Material's
+   default dim text is unreadable. Use the brand's light grey with dark text. */
+.md-banner {
+  background-color: #f3f3f3;
+  color: #181818;
+  border-bottom: 1px solid #c9c9c9;
+}
+.md-banner a,
+.md-banner a:hover,
+.md-banner strong {
+  color: #181818;
+}
+.md-banner a:hover {
+  text-decoration: underline;
+}
+.md-banner__button {
+  color: #181818;
+}

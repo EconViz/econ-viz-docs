@@ -1,124 +1,94 @@
 ---
-seo_title: "Python Library for Microeconomics Diagrams"
-description: "Open-source Python library for publication-quality microeconomics diagrams: indifference curves, budget constraints, consumer equilibria, and TikZ export."
+seo_title: "Python Packages for Economics Diagrams"
+description: "EconViz is a family of open-source Python packages for economics diagrams: utility-viz, principle-viz, mosaickit and bezierkit."
 ---
 
-<h1 class="ev-visually-hidden">Econ-Viz: Python library for microeconomics diagrams</h1>
+<h1 class="ev-visually-hidden">EconViz: Python packages for economics diagrams</h1>
 
 <p align="center">
-  <img src="assets/banner.svg" alt="Econ-Viz" style="max-width: 480px; width: 100%; margin: 2rem 0 1rem;">
+  <img src="assets/banner.svg" alt="EconViz" style="max-width: 480px; width: 100%; margin: 2rem 0 1rem;">
 </p>
 
-<p align="center"><em>A Python toolkit for producing publication-quality microeconomics diagrams.</em></p>
-
-<p align="center">
-  <a href="https://github.com/EconViz/econ-viz/actions"><img alt="Publish" src="https://img.shields.io/github/actions/workflow/status/EconViz/econ-viz/publish.yml?style=flat-square&label=publish&color=181818&labelColor=f3f3f3"></a>
-  <img alt="Coverage" src="https://img.shields.io/badge/coverage-92.63%25-181818?style=flat-square&color=181818&labelColor=f3f3f3">
-  <a href="https://pypi.org/project/econ-viz/"><img alt="PyPI" src="https://img.shields.io/pypi/v/econ-viz?style=flat-square&label=pypi+package&color=181818&labelColor=f3f3f3&cacheSeconds=300"></a>
-  <a href="https://pypi.org/project/econ-viz/"><img alt="Python" src="https://img.shields.io/pypi/pyversions/econ-viz?style=flat-square&color=181818&labelColor=f3f3f3"></a>
-</p>
+<p align="center"><em>Open-source Python packages for economics diagrams.</em></p>
 
 ---
 
-:fontawesome-brands-github: **Source Code:** [https://github.com/EconViz/econ-viz](https://github.com/EconViz/econ-viz)
-
-:material-file-pdf-box: **PDF Manual:** [English, 繁體中文, 简体中文](project/manual.md)
+:fontawesome-brands-github: **Source Code:** [https://github.com/EconViz](https://github.com/EconViz)
 
 :fontawesome-solid-envelope: **Contact:** [contact@econ-viz.org](mailto:contact@econ-viz.org)
 
 ---
 
-```python
-from econ_viz import Canvas, levels, solve
-from econ_viz.models import CobbDouglas
+## Modules
 
-model = CobbDouglas(alpha=0.5, beta=0.5)
-eq    = solve(model, px=2.0, py=3.0, income=30.0)
-lvls  = levels.around(eq.utility, n=5)
-
-cvs = Canvas(x_max=20, y_max=15, title=r"Cobb-Douglas $x^{0.5} y^{0.5}$")
-cvs.add_utility(model, levels=lvls)
-cvs.add_budget(2.0, 3.0, 30.0, fill=True)
-cvs.add_equilibrium(eq, show_ray=True)
-cvs.save("cobb_douglas.png")
-```
-
-## Features
+EconViz is made of four packages. Two draw economics diagrams, and two are general-purpose building blocks they share.
 
 <div class="grid cards" markdown>
 
--   :material-shape-outline: **Eight built-in utility models**
+-   :material-chart-bell-curve-cumulative: **utility-viz**
 
-    Cobb-Douglas, Leontief, CES, and other textbook utility functions, from perfect substitutes to satiation, ready to plot.
+    Publication-quality microeconomics diagrams: indifference curves, budget constraints, consumer equilibria and
+    TikZ export.
 
-    [:octicons-arrow-right-24: Model catalogue](models/index.md)
+    ```bash
+    pip install --pre utility-viz
+    ```
 
--   :material-function: **Automatic equilibrium solving**
+    Version 2.0 is in beta.
 
-    Give prices and income and get the consumer's optimal bundle. Interior, kinked, and corner solutions need no manual setup.
+    [:octicons-arrow-right-24: utility-viz](utility-viz/index.md)
 
-    [:octicons-arrow-right-24: Quick Start](getting-started/quickstart.md)
+-   :material-scale-balance: **principle-viz**
 
--   :material-view-dashboard-outline: **Multi-panel teaching figures**
+    Principles of Economics market analysis and diagrams: equilibrium, taxes, price controls, welfare and trade, built
+    on linear demand and supply.
 
-    Place diagrams side by side, stacked, or in a grid for before-and-after comparisons, decompositions, or lecture slides.
+    ```bash
+    pip install principle-viz
+    ```
 
-    [:octicons-arrow-right-24: Figures & demand diagrams](guides/consumer.md)
+    [:octicons-arrow-right-24: principle-viz](principle-viz/index.md)
 
--   :material-chart-bell-curve-cumulative: **Demand-path diagrams**
+-   :material-view-grid-outline: **mosaickit**
 
-    Sweep a price or income to trace price- and income-consumption curves, linked to the Marshallian demand curve below.
+    A domain-neutral toolkit for assembling two-dimensional diagrams from scenes, layers, styles, parameters and
+    renderers.
 
-    [:octicons-arrow-right-24: Figures & demand diagrams](guides/consumer.md)
+    ```bash
+    pip install mosaickit
+    ```
 
--   :material-math-integral: **LaTeX parser**
+    [:octicons-arrow-right-24: mosaickit](mosaickit/index.md)
 
-    Paste a utility function written in LaTeX and get a ready-to-plot model with its functional form and parameters detected.
+-   :material-vector-bezier: **bezierkit**
 
-    [:octicons-arrow-right-24: LaTeX parsing](tools/latex.md)
+    A small mathematical toolkit for constructing, analyzing and exporting Bézier curves, with native SVG and TikZ
+    output.
 
--   :material-export: **Publication-ready export**
+    ```bash
+    pip install --pre bezierkit
+    ```
 
-    Save to PNG, PDF, or SVG in one line. Vector output stays sharp at any size for papers, slides, and the web.
+    Currently a release candidate (0.5.0rc1).
 
-    [:octicons-arrow-right-24: Export formats](guides/export.md)
-
--   :material-play-box-multiple-outline: **Animated GIF sweeps**
-
-    Turn parameter, price, or income changes into GIFs so students can watch the equilibrium move with the budget line.
-
-    [:octicons-arrow-right-24: Animation](guides/animation.md)
-
--   :material-tune: **Notebook widgets**
-
-    Tune parameters in Jupyter with sliders or typed values and watch the diagram update as students explore on their own.
-
-    [:octicons-arrow-right-24: Interactive widgets](guides/interactive.md)
-
--   :material-chart-line: **Analysis helpers**
-
-    Compute comparative statics and Slutsky matrices, and check the homogeneity and homotheticity behind every diagram.
-
-    [:octicons-arrow-right-24: Analysis tools](tools/analysis.md)
-
--   :material-code-braces: **Advanced models**
-
-    Wrap any function as a utility model, or project many-good preferences onto a plane to go beyond the textbook cases.
-
-    [:octicons-arrow-right-24: Advanced models](models/advanced.md)
-
--   :material-console: **CLI**
-
-    Generate diagrams from the terminal without writing Python, and print closed-form Marshallian demand ready for LaTeX.
-
-    [:octicons-arrow-right-24: CLI reference](getting-started/cli.md)
+    [:octicons-arrow-right-24: bezierkit](bezierkit/index.md)
 
 </div>
 
-## Install
+## How the packages fit together
 
-```bash
-uv add econ-viz
+Each arrow reads "depends on", taken from the packages' declared dependencies:
+
+```text
+utility-viz   ──>  mosaickit
+utility-viz   ──>  bezierkit
+principle-viz ──>  mosaickit
 ```
 
-Requires Python 3.10 or later.
+- **utility-viz** and **principle-viz** render their diagrams with **mosaickit**.
+- **utility-viz** also uses **bezierkit** for curves and TikZ output.
+- **mosaickit** does not depend on bezierkit or on any domain package.
+
+## Coming from econ-viz?
+
+`econ-viz` was renamed to **utility-viz** in 2.0. See [Migrating from econ-viz](utility-viz/migrating.md).

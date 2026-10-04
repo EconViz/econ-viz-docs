@@ -1,9 +1,9 @@
-site_name: Econ-Viz
+site_name: EconViz
 site_url: https://econ-viz.org
-site_description: A Python toolkit for producing publication-quality microeconomics diagrams.
+site_description: "Open-source Python packages for economics diagrams: utility-viz, principle-viz, mosaickit and bezierkit."
 site_author: Pin Yue Sung
-repo_url: https://github.com/EconViz/econ-viz
-repo_name: EconViz/econ-viz
+repo_url: https://github.com/EconViz
+repo_name: EconViz
 copyright: >-
   &copy; 2026 Pin Yue Sung ·
   <a href="#__consent">Change cookie settings</a>
@@ -21,6 +21,8 @@ theme:
     text: Inter
     code: JetBrains Mono
   features:
+    - navigation.tabs
+    - announce.dismiss
     - navigation.top
     - navigation.footer
     - content.code.copy
@@ -74,7 +76,7 @@ extra:
           data: 0
           note: >-
             Thanks for your feedback. Tell us what could be improved in a
-            <a href="https://github.com/EconViz/econ-viz/issues/new?title=[Docs]+{title}&body=Page:+{url}" target="_blank" rel="noopener">GitHub issue</a>.
+            <a href="https://github.com/EconViz/utility-viz/issues/new?title=[Docs]+{title}&body=Page:+{url}" target="_blank" rel="noopener">GitHub issue</a>.
   consent:
     title: Cookie consent
     description: >-
@@ -94,8 +96,8 @@ extra:
       link: https://github.com/EconViz
       name: EconViz on GitHub
     - icon: fontawesome/brands/python
-      link: https://pypi.org/project/econ-viz/
-      name: econ-viz on PyPI
+      link: https://pypi.org/project/utility-viz/
+      name: utility-viz on PyPI
 
 hooks:
   - hooks/i18n_404.py
@@ -116,7 +118,7 @@ plugins:
         - locale: zh-TW
           name: 繁體中文
           build: true
-          site_description: 用 Python 繪製出版品質的個體經濟學圖形：無異曲線、預算限制、消費者均衡與 TikZ 匯出。
+          site_description: "用 Python 繪製經濟學圖形的開源套件：utility-viz、principle-viz、mosaickit 與 bezierkit。"
           copyright: >-
             &copy; 2026 Pin Yue Sung ·
             <a href="#__consent">變更 Cookie 設定</a>
@@ -136,7 +138,7 @@ plugins:
                     data: 0
                     note: >-
                       謝謝你的回饋。歡迎到
-                      <a href="https://github.com/EconViz/econ-viz/issues/new?title=[Docs]+{title}&body=Page:+{url}" target="_blank" rel="noopener">GitHub issue</a>
+                      <a href="https://github.com/EconViz/utility-viz/issues/new?title=[Docs]+{title}&body=Page:+{url}" target="_blank" rel="noopener">GitHub issue</a>
                       告訴我們哪裡需要改進。
             consent:
               title: Cookie 設定
@@ -179,12 +181,13 @@ plugins:
             Changelog: 更新紀錄
             References: 參考文獻
             PDF Manual: PDF 手冊
+            Migrating from econ-viz: 從 econ-viz 遷移
         - locale: zh-CN
           name: 简体中文
           build: true
           theme:
             language: zh
-          site_description: 用 Python 绘制出版质量的微观经济学图形：无差异曲线、预算约束、消费者均衡与 TikZ 导出。
+          site_description: "用 Python 绘制经济学图形的开源包：utility-viz、principle-viz、mosaickit 与 bezierkit。"
           copyright: >-
             &copy; 2026 Pin Yue Sung ·
             <a href="#__consent">更改 Cookie 设置</a>
@@ -204,7 +207,7 @@ plugins:
                     data: 0
                     note: >-
                       谢谢你的反馈。欢迎到
-                      <a href="https://github.com/EconViz/econ-viz/issues/new?title=[Docs]+{title}&body=Page:+{url}" target="_blank" rel="noopener">GitHub issue</a>
+                      <a href="https://github.com/EconViz/utility-viz/issues/new?title=[Docs]+{title}&body=Page:+{url}" target="_blank" rel="noopener">GitHub issue</a>
                       告诉我们哪里需要改进。
             consent:
               title: Cookie 设置
@@ -247,28 +250,98 @@ plugins:
             Changelog: 更新日志
             References: 参考文献
             PDF Manual: PDF 手册
+            Migrating from econ-viz: 从 econ-viz 迁移
+  - redirects:
+      redirect_maps:
+        getting-started/cli.md: utility-viz/getting-started/cli.md
+        getting-started/installation.md: utility-viz/getting-started/installation.md
+        getting-started/quickstart.md: utility-viz/getting-started/quickstart.md
+        guides/animation.md: utility-viz/guides/animation.md
+        guides/canvas.md: utility-viz/guides/canvas.md
+        guides/config.md: utility-viz/guides/config.md
+        guides/consumer.md: utility-viz/guides/consumer.md
+        guides/export.md: utility-viz/guides/export.md
+        guides/interactive.md: utility-viz/guides/interactive.md
+        guides/themes.md: utility-viz/guides/themes.md
+        models/advanced.md: utility-viz/models/advanced.md
+        models/index.md: utility-viz/models/index.md
+        project/changelog.md: utility-viz/project/changelog.md
+        project/manual.md: utility-viz/project/manual.md
+        project/references.md: utility-viz/project/references.md
+        tools/analysis.md: utility-viz/tools/analysis.md
+        tools/latex.md: utility-viz/tools/latex.md
+        zh-TW/getting-started/cli.md: zh-TW/utility-viz/getting-started/cli.md
+        zh-TW/getting-started/installation.md: zh-TW/utility-viz/getting-started/installation.md
+        zh-TW/getting-started/quickstart.md: zh-TW/utility-viz/getting-started/quickstart.md
+        zh-TW/guides/animation.md: zh-TW/utility-viz/guides/animation.md
+        zh-TW/guides/canvas.md: zh-TW/utility-viz/guides/canvas.md
+        zh-TW/guides/config.md: zh-TW/utility-viz/guides/config.md
+        zh-TW/guides/consumer.md: zh-TW/utility-viz/guides/consumer.md
+        zh-TW/guides/export.md: zh-TW/utility-viz/guides/export.md
+        zh-TW/guides/interactive.md: zh-TW/utility-viz/guides/interactive.md
+        zh-TW/guides/themes.md: zh-TW/utility-viz/guides/themes.md
+        zh-TW/models/advanced.md: zh-TW/utility-viz/models/advanced.md
+        zh-TW/models/index.md: zh-TW/utility-viz/models/index.md
+        zh-TW/project/changelog.md: zh-TW/utility-viz/project/changelog.md
+        zh-TW/project/manual.md: zh-TW/utility-viz/project/manual.md
+        zh-TW/project/references.md: zh-TW/utility-viz/project/references.md
+        zh-TW/tools/analysis.md: zh-TW/utility-viz/tools/analysis.md
+        zh-TW/tools/latex.md: zh-TW/utility-viz/tools/latex.md
+        zh-CN/getting-started/cli.md: zh-CN/utility-viz/getting-started/cli.md
+        zh-CN/getting-started/installation.md: zh-CN/utility-viz/getting-started/installation.md
+        zh-CN/getting-started/quickstart.md: zh-CN/utility-viz/getting-started/quickstart.md
+        zh-CN/guides/animation.md: zh-CN/utility-viz/guides/animation.md
+        zh-CN/guides/canvas.md: zh-CN/utility-viz/guides/canvas.md
+        zh-CN/guides/config.md: zh-CN/utility-viz/guides/config.md
+        zh-CN/guides/consumer.md: zh-CN/utility-viz/guides/consumer.md
+        zh-CN/guides/export.md: zh-CN/utility-viz/guides/export.md
+        zh-CN/guides/interactive.md: zh-CN/utility-viz/guides/interactive.md
+        zh-CN/guides/themes.md: zh-CN/utility-viz/guides/themes.md
+        zh-CN/models/advanced.md: zh-CN/utility-viz/models/advanced.md
+        zh-CN/models/index.md: zh-CN/utility-viz/models/index.md
+        zh-CN/project/changelog.md: zh-CN/utility-viz/project/changelog.md
+        zh-CN/project/manual.md: zh-CN/utility-viz/project/manual.md
+        zh-CN/project/references.md: zh-CN/utility-viz/project/references.md
+        zh-CN/tools/analysis.md: zh-CN/utility-viz/tools/analysis.md
+        zh-CN/tools/latex.md: zh-CN/utility-viz/tools/latex.md
+
 
 nav:
   - Home: index.md
-  - Getting Started:
-      - Installation: getting-started/installation.md
-      - Quick Start: getting-started/quickstart.md
-      - CLI: getting-started/cli.md
-  - Drawing & Teaching:
-      - Canvas: guides/canvas.md
-      - Figures & Demand Diagrams: guides/consumer.md
-      - Animation: guides/animation.md
-      - Interactive Widgets: guides/interactive.md
-      - Themes: guides/themes.md
-      - Settings File: guides/config.md
-      - Export: guides/export.md
-  - Models:
-      - Core Models: models/index.md
-      - Advanced Models: models/advanced.md
-  - Tools & Analysis:
-      - Analysis: tools/analysis.md
-      - LaTeX Parsing: tools/latex.md
-  - Project:
-      - Changelog: project/changelog.md
-      - References: project/references.md
-      - PDF Manual: project/manual.md
+  - utility-viz:
+      - Overview: utility-viz/index.md
+      - Getting Started:
+          - Installation: utility-viz/getting-started/installation.md
+          - Quick Start: utility-viz/getting-started/quickstart.md
+          - CLI: utility-viz/getting-started/cli.md
+      - Drawing & Teaching:
+          - Canvas: utility-viz/guides/canvas.md
+          - Figures & Demand Diagrams: utility-viz/guides/consumer.md
+          - Animation: utility-viz/guides/animation.md
+          - Interactive Widgets: utility-viz/guides/interactive.md
+          - Themes: utility-viz/guides/themes.md
+          - Settings File: utility-viz/guides/config.md
+          - Export: utility-viz/guides/export.md
+      - Models:
+          - Core Models: utility-viz/models/index.md
+          - Advanced Models: utility-viz/models/advanced.md
+      - Tools & Analysis:
+          - Analysis: utility-viz/tools/analysis.md
+          - LaTeX Parsing: utility-viz/tools/latex.md
+      - Migrating from econ-viz: utility-viz/migrating.md
+      - Project:
+          - Changelog: utility-viz/project/changelog.md
+          - References: utility-viz/project/references.md
+          - PDF Manual: utility-viz/project/manual.md
+  - principle-viz:
+      - Overview: principle-viz/index.md
+      - Installation: principle-viz/installation.md
+      - Quick Start: principle-viz/quickstart.md
+  - mosaickit:
+      - Overview: mosaickit/index.md
+      - Installation: mosaickit/installation.md
+      - Quick Start: mosaickit/quickstart.md
+  - bezierkit:
+      - Overview: bezierkit/index.md
+      - Installation: bezierkit/installation.md
+      - Quick Start: bezierkit/quickstart.md

@@ -27,7 +27,7 @@ from bibtexparser.bparser import BibTexParser
 from mkdocs.exceptions import PluginError
 
 BIB_FILE = "references.bib"
-REFERENCES_PAGE = "project/references.md"
+REFERENCES_PAGE = "utility-viz/project/references.md"
 
 _CITE = re.compile(r"\\cite(?P<kind>t|p|author|year)(?:\[(?P<note>[^\]]*)\])?\{(?P<keys>[^}]+)\}")
 # Fenced code blocks and inline code are left untouched.
