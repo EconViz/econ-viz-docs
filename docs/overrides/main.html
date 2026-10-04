@@ -1,5 +1,24 @@
 {% extends "base.html" %}
 
+{# Announcement bar above the header: the econ-viz -> utility-viz rename.
+   The text is chosen with the locale that mkdocs-static-i18n sets for each page,
+   and the link goes to that language's migration guide. Dismissal is remembered
+   by Material (theme feature announce.dismiss), keyed on this markup, so
+   changing the text shows the bar again. #}
+{% block announce %}
+  {% set locale = i18n_page_locale | default("en") %}
+  {% set prefix = "" if locale == "en" else locale ~ "/" %}
+  <a href="{{ base_url }}/{{ prefix }}utility-viz/migrating/">
+    {% if locale == "zh-TW" %}
+      <strong>econ-viz 已改名為 utility-viz</strong>，最新的 2.0 測試版已經發布。查看遷移指南 →
+    {% elif locale == "zh-CN" %}
+      <strong>econ-viz 已更名为 utility-viz</strong>，最新的 2.0 测试版已发布。查看迁移指南 →
+    {% else %}
+      <strong>econ-viz is now utility-viz</strong> and the 2.0 beta is out. Read the migration guide →
+    {% endif %}
+  </a>
+{% endblock %}
+
 {% block htmltitle %}
   {% set name = page.meta.seo_title if page and page.meta and page.meta.seo_title else (page.title | striptags if page and page.title else "") %}
   {% if name %}
