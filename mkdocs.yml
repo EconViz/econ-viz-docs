@@ -2,8 +2,8 @@ site_name: EconViz
 site_url: https://econ-viz.org
 site_description: "Open-source Python packages for economics diagrams: utility-viz, principle-viz, mosaickit and bezierkit."
 site_author: Pin Yue Sung
-repo_url: https://github.com/EconViz/utility-viz
-repo_name: EconViz/utility-viz
+repo_url: https://github.com/EconViz
+repo_name: EconViz
 copyright: >-
   &copy; 2026 Pin Yue Sung ·
   <a href="#__consent">Change cookie settings</a>
