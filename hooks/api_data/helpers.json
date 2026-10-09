@@ -1,0 +1,149 @@
+{
+  "helpers.solve": {
+    "name": "solve",
+    "anchor": "solve",
+    "returns": "Equilibrium",
+    "parameters": [
+      {
+        "name": "func",
+        "types": [
+          "UtilityFunction"
+        ],
+        "description": {
+          "en": "Utility model to maximize.",
+          "zh-TW": "欲最大化的效用模型。",
+          "zh-CN": "欲最大化的效用模型。"
+        }
+      },
+      {
+        "name": "px",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Positive price of good X.",
+          "zh-TW": "商品 X 的價格，必須為正。",
+          "zh-CN": "商品 X 的价格，必须为正。"
+        }
+      },
+      {
+        "name": "py",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Positive price of good Y.",
+          "zh-TW": "商品 Y 的價格，必須為正。",
+          "zh-CN": "商品 Y 的价格，必须为正。"
+        }
+      },
+      {
+        "name": "income",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Positive total budget.",
+          "zh-TW": "總預算，必須為正。",
+          "zh-CN": "总预算，必须为正。"
+        }
+      }
+    ]
+  },
+  "helpers.levels_around": {
+    "name": "levels.around",
+    "anchor": "levels-around",
+    "returns": "list[float]",
+    "parameters": [
+      {
+        "name": "anchor",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Reference utility level.",
+          "zh-TW": "參考效用水準。",
+          "zh-CN": "参考效用水平。"
+        }
+      },
+      {
+        "name": "n",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "Number of levels, at least one.",
+          "zh-TW": "水準數量，至少為一。",
+          "zh-CN": "水平数量，至少为一。"
+        },
+        "default": "5"
+      },
+      {
+        "name": "spread",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Half-width as a fraction of the absolute anchor; zero uses unit scale.",
+          "zh-TW": "區間半寬占參考值絕對值的比例；參考值為零時使用單位尺度。",
+          "zh-CN": "区间半宽占参考值绝对值的比例；参考值为零时使用单位尺度。"
+        },
+        "default": "0.5"
+      }
+    ]
+  },
+  "helpers.levels_percentile": {
+    "name": "levels.percentile",
+    "anchor": "levels-percentile",
+    "returns": "list[float]",
+    "parameters": [
+      {
+        "name": "Z",
+        "types": [
+          "ndarray"
+        ],
+        "description": {
+          "en": "Two-dimensional utility values.",
+          "zh-TW": "二維效用值陣列。",
+          "zh-CN": "二维效用值数组。"
+        }
+      },
+      {
+        "name": "n",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "Number of levels.",
+          "zh-TW": "水準數量。",
+          "zh-CN": "水平数量。"
+        },
+        "default": "5"
+      },
+      {
+        "name": "lo",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Lower percentile, from 0 to 100.",
+          "zh-TW": "下界百分位數，介於 0 至 100。",
+          "zh-CN": "下界百分位数，介于 0 至 100。"
+        },
+        "default": "20"
+      },
+      {
+        "name": "hi",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Upper percentile, from 0 to 100.",
+          "zh-TW": "上界百分位數，介於 0 至 100。",
+          "zh-CN": "上界百分位数，介于 0 至 100。"
+        },
+        "default": "80"
+      }
+    ]
+  }
+}

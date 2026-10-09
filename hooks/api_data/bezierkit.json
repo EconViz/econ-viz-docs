@@ -1,0 +1,1690 @@
+{
+  "bezierkit.Point": {
+    "name": "Point",
+    "anchor": "point",
+    "returns": "Point",
+    "parameters": [
+      {
+        "name": "*coords",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Coordinate components, supplied in order.",
+          "zh-TW": "依序傳入各維度的座標分量。",
+          "zh-CN": "依次传入各维度的坐标分量。"
+        }
+      }
+    ]
+  },
+  "bezierkit.Vector": {
+    "name": "Vector",
+    "anchor": "vector",
+    "returns": "Vector",
+    "parameters": [
+      {
+        "name": "*coords",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Coordinate components, supplied in order.",
+          "zh-TW": "依序傳入各維度的座標分量。",
+          "zh-CN": "依次传入各维度的坐标分量。"
+        }
+      }
+    ]
+  },
+  "bezierkit.PointSet": {
+    "name": "PointSet",
+    "anchor": "pointset",
+    "returns": "PointSet",
+    "parameters": [
+      {
+        "name": "values",
+        "types": [
+          "ArrayLike",
+          "Iterable[Point]"
+        ],
+        "description": {
+          "en": "Array of coordinates or iterable of points.",
+          "zh-TW": "座標陣列或可迭代的點集合。",
+          "zh-CN": "坐标数组或可迭代的点集合。"
+        }
+      }
+    ]
+  },
+  "bezierkit.BernsteinBasis": {
+    "name": "BernsteinBasis",
+    "anchor": "bernsteinbasis",
+    "returns": "BernsteinBasis",
+    "parameters": [
+      {
+        "name": "degree",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "Degree of the Bernstein basis.",
+          "zh-TW": "Bernstein 基底的次數。",
+          "zh-CN": "Bernstein 基底的次数。"
+        }
+      }
+    ]
+  },
+  "bezierkit.BernsteinBasis.__call__": {
+    "name": "BernsteinBasis.__call__",
+    "anchor": "bernsteinbasis-__call__",
+    "returns": "np.ndarray",
+    "parameters": [
+      {
+        "name": "t",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Parameter value or values at which to evaluate.",
+          "zh-TW": "要求值的參數值。",
+          "zh-CN": "要求值的参数值。"
+        }
+      }
+    ]
+  },
+  "bezierkit.BernsteinBasis.matrix": {
+    "name": "BernsteinBasis.matrix",
+    "anchor": "bernsteinbasis-matrix",
+    "returns": "np.ndarray",
+    "parameters": [
+      {
+        "name": "t",
+        "types": [
+          "np.ndarray"
+        ],
+        "description": {
+          "en": "Parameter value or values at which to evaluate.",
+          "zh-TW": "要求值的參數值。",
+          "zh-CN": "要求值的参数值。"
+        }
+      }
+    ]
+  },
+  "bezierkit.BezierCurve": {
+    "name": "BezierCurve",
+    "anchor": "beziercurve",
+    "returns": "BezierCurve",
+    "parameters": [
+      {
+        "name": "points",
+        "types": [
+          "ControlPolygon",
+          "PointSet",
+          "Iterable[Point]",
+          "np.ndarray"
+        ],
+        "description": {
+          "en": "Input points, in their original order.",
+          "zh-TW": "依原順序排列的輸入點。",
+          "zh-CN": "依原顺序排列的输入点。"
+        }
+      },
+      {
+        "name": "evaluator",
+        "types": [
+          "Evaluator",
+          "None"
+        ],
+        "description": {
+          "en": "Evaluation strategy; None selects the default.",
+          "zh-TW": "求值策略；None 使用預設策略。",
+          "zh-CN": "求值策略；None 使用默认策略。"
+        },
+        "default": "None",
+        "keyword_only": true
+      }
+    ]
+  },
+  "bezierkit.BezierCurve.linear": {
+    "name": "BezierCurve.linear",
+    "anchor": "beziercurve-linear",
+    "returns": "BezierCurve",
+    "parameters": [
+      {
+        "name": "p0",
+        "types": [
+          "Point"
+        ],
+        "description": {
+          "en": "First control point.",
+          "zh-TW": "第一個控制點。",
+          "zh-CN": "第一个控制点。"
+        }
+      },
+      {
+        "name": "p1",
+        "types": [
+          "Point"
+        ],
+        "description": {
+          "en": "Second control point.",
+          "zh-TW": "第二個控制點。",
+          "zh-CN": "第二个控制点。"
+        }
+      }
+    ]
+  },
+  "bezierkit.BezierCurve.quadratic": {
+    "name": "BezierCurve.quadratic",
+    "anchor": "beziercurve-quadratic",
+    "returns": "BezierCurve",
+    "parameters": [
+      {
+        "name": "p0",
+        "types": [
+          "Point"
+        ],
+        "description": {
+          "en": "First control point.",
+          "zh-TW": "第一個控制點。",
+          "zh-CN": "第一个控制点。"
+        }
+      },
+      {
+        "name": "p1",
+        "types": [
+          "Point"
+        ],
+        "description": {
+          "en": "Second control point.",
+          "zh-TW": "第二個控制點。",
+          "zh-CN": "第二个控制点。"
+        }
+      },
+      {
+        "name": "p2",
+        "types": [
+          "Point"
+        ],
+        "description": {
+          "en": "Third control point.",
+          "zh-TW": "第三個控制點。",
+          "zh-CN": "第三个控制点。"
+        }
+      }
+    ]
+  },
+  "bezierkit.BezierCurve.cubic": {
+    "name": "BezierCurve.cubic",
+    "anchor": "beziercurve-cubic",
+    "returns": "BezierCurve",
+    "parameters": [
+      {
+        "name": "p0",
+        "types": [
+          "Point"
+        ],
+        "description": {
+          "en": "First control point.",
+          "zh-TW": "第一個控制點。",
+          "zh-CN": "第一个控制点。"
+        }
+      },
+      {
+        "name": "p1",
+        "types": [
+          "Point"
+        ],
+        "description": {
+          "en": "Second control point.",
+          "zh-TW": "第二個控制點。",
+          "zh-CN": "第二个控制点。"
+        }
+      },
+      {
+        "name": "p2",
+        "types": [
+          "Point"
+        ],
+        "description": {
+          "en": "Third control point.",
+          "zh-TW": "第三個控制點。",
+          "zh-CN": "第三个控制点。"
+        }
+      },
+      {
+        "name": "p3",
+        "types": [
+          "Point"
+        ],
+        "description": {
+          "en": "Fourth control point.",
+          "zh-TW": "第四個控制點。",
+          "zh-CN": "第四个控制点。"
+        }
+      }
+    ]
+  },
+  "bezierkit.DeCasteljauEvaluator": {
+    "name": "DeCasteljauEvaluator",
+    "anchor": "decasteljauevaluator",
+    "returns": "DeCasteljauEvaluator",
+    "parameters": []
+  },
+  "bezierkit.BernsteinEvaluator": {
+    "name": "BernsteinEvaluator",
+    "anchor": "bernsteinevaluator",
+    "returns": "BernsteinEvaluator",
+    "parameters": []
+  },
+  "bezierkit.BezierCurve.derivative": {
+    "name": "BezierCurve.derivative",
+    "anchor": "beziercurve-derivative",
+    "returns": "BezierCurve",
+    "parameters": [
+      {
+        "name": "order",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "Derivative order.",
+          "zh-TW": "導數階數。",
+          "zh-CN": "导数阶数。"
+        },
+        "default": "1"
+      }
+    ]
+  },
+  "bezierkit.BezierCurve.split": {
+    "name": "BezierCurve.split",
+    "anchor": "beziercurve-split",
+    "returns": "tuple[BezierCurve, BezierCurve]",
+    "parameters": [
+      {
+        "name": "t",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Parameter value or values at which to evaluate.",
+          "zh-TW": "要求值的參數值。",
+          "zh-CN": "要求值的参数值。"
+        }
+      }
+    ]
+  },
+  "bezierkit.BezierCurve.segment": {
+    "name": "BezierCurve.segment",
+    "anchor": "beziercurve-segment",
+    "returns": "BezierCurve",
+    "parameters": [
+      {
+        "name": "t0",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Start of the parameter interval.",
+          "zh-TW": "參數區間的起點。",
+          "zh-CN": "参数区间的起点。"
+        }
+      },
+      {
+        "name": "t1",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "End of the parameter interval.",
+          "zh-TW": "參數區間的終點。",
+          "zh-CN": "参数区间的终点。"
+        }
+      }
+    ]
+  },
+  "bezierkit.CubicBezierSegment": {
+    "name": "CubicBezierSegment",
+    "anchor": "cubicbeziersegment",
+    "returns": "CubicBezierSegment",
+    "parameters": [
+      {
+        "name": "p0",
+        "types": [
+          "Point"
+        ],
+        "description": {
+          "en": "First control point.",
+          "zh-TW": "第一個控制點。",
+          "zh-CN": "第一个控制点。"
+        }
+      },
+      {
+        "name": "p1",
+        "types": [
+          "Point"
+        ],
+        "description": {
+          "en": "Second control point.",
+          "zh-TW": "第二個控制點。",
+          "zh-CN": "第二个控制点。"
+        }
+      },
+      {
+        "name": "p2",
+        "types": [
+          "Point"
+        ],
+        "description": {
+          "en": "Third control point.",
+          "zh-TW": "第三個控制點。",
+          "zh-CN": "第三个控制点。"
+        }
+      },
+      {
+        "name": "p3",
+        "types": [
+          "Point"
+        ],
+        "description": {
+          "en": "Fourth control point.",
+          "zh-TW": "第四個控制點。",
+          "zh-CN": "第四个控制点。"
+        }
+      },
+      {
+        "name": "fit_error",
+        "types": [
+          "float",
+          "None"
+        ],
+        "description": {
+          "en": "Measured fitting error, if available.",
+          "zh-TW": "已量測的擬合誤差，可省略。",
+          "zh-CN": "已测量的拟合误差，可省略。"
+        },
+        "default": "None"
+      }
+    ]
+  },
+  "bezierkit.to_cubic": {
+    "name": "to_cubic",
+    "anchor": "to_cubic",
+    "returns": "CubicBezierSegment",
+    "parameters": [
+      {
+        "name": "curve",
+        "types": [
+          "BezierCurve",
+          "CubicBezierSegment"
+        ],
+        "description": {
+          "en": "Curve or path to process.",
+          "zh-TW": "要處理的曲線或路徑。",
+          "zh-CN": "要处理的曲线或路径。"
+        }
+      }
+    ]
+  },
+  "bezierkit.PiecewiseBezier": {
+    "name": "PiecewiseBezier",
+    "anchor": "piecewisebezier",
+    "returns": "PiecewiseBezier",
+    "parameters": [
+      {
+        "name": "segments",
+        "types": [
+          "Iterable[CubicBezierSegment]"
+        ],
+        "description": {
+          "en": "Cubic segments in path order.",
+          "zh-TW": "依路徑順序排列的三次曲線段。",
+          "zh-CN": "依路径顺序排列的三次曲线段。"
+        }
+      },
+      {
+        "name": "closed",
+        "types": [
+          "bool"
+        ],
+        "description": {
+          "en": "Whether the path is closed.",
+          "zh-TW": "路徑是否閉合。",
+          "zh-CN": "路径是否闭合。"
+        },
+        "default": "False",
+        "keyword_only": true
+      },
+      {
+        "name": "continuity_tolerance",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Tolerance for matching adjacent endpoints.",
+          "zh-TW": "相鄰端點吻合的容許誤差。",
+          "zh-CN": "相邻端点吻合的容许误差。"
+        },
+        "default": "1e-09",
+        "keyword_only": true
+      }
+    ]
+  },
+  "bezierkit.PiecewiseBezier.compound": {
+    "name": "PiecewiseBezier.compound",
+    "anchor": "piecewisebezier-compound",
+    "returns": "PiecewiseBezier",
+    "parameters": [
+      {
+        "name": "paths",
+        "types": [
+          "Iterable[PiecewiseBezier]"
+        ],
+        "description": {
+          "en": "Paths to combine into a compound path.",
+          "zh-TW": "要組合成複合路徑的各條路徑。",
+          "zh-CN": "要组合成复合路径的各条路径。"
+        }
+      }
+    ]
+  },
+  "bezierkit.fit_parametric": {
+    "name": "fit_parametric",
+    "anchor": "fit_parametric",
+    "returns": "PiecewiseBezier",
+    "parameters": [
+      {
+        "name": "function",
+        "types": [
+          "ParametricFunction"
+        ],
+        "description": {
+          "en": "Function to evaluate or fit.",
+          "zh-TW": "要求值或擬合的函數。",
+          "zh-CN": "要求值或拟合的函数。"
+        }
+      },
+      {
+        "name": "derivative",
+        "types": [
+          "DerivativeFunction"
+        ],
+        "description": {
+          "en": "Derivative of the input function.",
+          "zh-TW": "輸入函數的導數。",
+          "zh-CN": "输入函数的导数。"
+        }
+      },
+      {
+        "name": "t0",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Start of the parameter interval.",
+          "zh-TW": "參數區間的起點。",
+          "zh-CN": "参数区间的起点。"
+        },
+        "keyword_only": true
+      },
+      {
+        "name": "t1",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "End of the parameter interval.",
+          "zh-TW": "參數區間的終點。",
+          "zh-CN": "参数区间的终点。"
+        },
+        "keyword_only": true
+      },
+      {
+        "name": "tolerance",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Allowed error, in coordinate units; must be positive",
+          "zh-TW": "容許誤差，單位同座標；必須為正",
+          "zh-CN": "容许误差，单位同坐标；必须为正"
+        },
+        "keyword_only": true
+      },
+      {
+        "name": "max_depth",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "Largest number of halvings of the starting interval",
+          "zh-TW": "起始區間最多可對半的次數",
+          "zh-CN": "起始区间最多可对半的次数"
+        },
+        "default": "20",
+        "keyword_only": true
+      },
+      {
+        "name": "max_segments",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "Largest number of segments in the result",
+          "zh-TW": "結果最多的線段數",
+          "zh-CN": "结果最多的线段数"
+        },
+        "default": "4096",
+        "keyword_only": true
+      },
+      {
+        "name": "error_samples",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "Probe parameters per segment, at least 3",
+          "zh-TW": "每段的量測參數個數，至少 3",
+          "zh-CN": "每段的测量参数个数，至少 3"
+        },
+        "default": "9",
+        "keyword_only": true
+      }
+    ]
+  },
+  "bezierkit.fit_graph": {
+    "name": "fit_graph",
+    "anchor": "fit_graph",
+    "returns": "PiecewiseBezier",
+    "parameters": [
+      {
+        "name": "function",
+        "types": [
+          "Callable[[float], float]"
+        ],
+        "description": {
+          "en": "Function to evaluate or fit.",
+          "zh-TW": "要求值或擬合的函數。",
+          "zh-CN": "要求值或拟合的函数。"
+        }
+      },
+      {
+        "name": "derivative",
+        "types": [
+          "Callable[[float], float]"
+        ],
+        "description": {
+          "en": "Derivative of the input function.",
+          "zh-TW": "輸入函數的導數。",
+          "zh-CN": "输入函数的导数。"
+        }
+      },
+      {
+        "name": "x0",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Horizontal coordinate at the start.",
+          "zh-TW": "起點的水平座標。",
+          "zh-CN": "起点的水平坐标。"
+        },
+        "keyword_only": true
+      },
+      {
+        "name": "x1",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Horizontal coordinate at the end.",
+          "zh-TW": "終點的水平座標。",
+          "zh-CN": "终点的水平坐标。"
+        },
+        "keyword_only": true
+      },
+      {
+        "name": "tolerance",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Allowed geometric error in coordinate units.",
+          "zh-TW": "以座標單位表示的幾何容許誤差。",
+          "zh-CN": "以坐标单位表示的几何容许误差。"
+        },
+        "keyword_only": true
+      },
+      {
+        "name": "max_depth",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "Maximum subdivision depth.",
+          "zh-TW": "最大細分深度。",
+          "zh-CN": "最大细分深度。"
+        },
+        "default": "20",
+        "keyword_only": true
+      },
+      {
+        "name": "max_segments",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "Maximum number of output segments.",
+          "zh-TW": "輸出曲線段的最大數量。",
+          "zh-CN": "输出曲线段的最大数量。"
+        },
+        "default": "4096",
+        "keyword_only": true
+      },
+      {
+        "name": "error_samples",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "Number of error probes per segment, including endpoints.",
+          "zh-TW": "每段的誤差取樣數，包含端點。",
+          "zh-CN": "每段的误差采样数，包含端点。"
+        },
+        "default": "9",
+        "keyword_only": true
+      }
+    ]
+  },
+  "bezierkit.fit_polyline": {
+    "name": "fit_polyline",
+    "anchor": "fit_polyline",
+    "returns": "PiecewiseBezier",
+    "parameters": [
+      {
+        "name": "points",
+        "types": [
+          "Iterable[Point]"
+        ],
+        "description": {
+          "en": "Input points, in their original order.",
+          "zh-TW": "依原順序排列的輸入點。",
+          "zh-CN": "依原顺序排列的输入点。"
+        }
+      },
+      {
+        "name": "tolerance",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Allowed geometric error in coordinate units.",
+          "zh-TW": "以座標單位表示的幾何容許誤差。",
+          "zh-CN": "以坐标单位表示的几何容许误差。"
+        },
+        "keyword_only": true
+      },
+      {
+        "name": "closed",
+        "types": [
+          "bool"
+        ],
+        "description": {
+          "en": "Whether the path is closed.",
+          "zh-TW": "路徑是否閉合。",
+          "zh-CN": "路径是否闭合。"
+        },
+        "default": "False",
+        "keyword_only": true
+      },
+      {
+        "name": "duplicate_tolerance",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Distance threshold for removing duplicate points.",
+          "zh-TW": "移除重複點的距離門檻。",
+          "zh-CN": "移除重复点的距离阈值。"
+        },
+        "default": "1e-12",
+        "keyword_only": true
+      },
+      {
+        "name": "preserve_corners",
+        "types": [
+          "bool"
+        ],
+        "description": {
+          "en": "Keep sharp corners during simplification.",
+          "zh-TW": "簡化時保留尖角。",
+          "zh-CN": "简化时保留尖角。"
+        },
+        "default": "True",
+        "keyword_only": true
+      },
+      {
+        "name": "corner_angle",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Turning-angle threshold for corners, in radians.",
+          "zh-TW": "判定尖角的轉角門檻，單位為弧度。",
+          "zh-CN": "判定尖角的转角阈值，单位为弧度。"
+        },
+        "default": "math.pi / 4.0",
+        "keyword_only": true
+      }
+    ]
+  },
+  "bezierkit.maximum_polyline_deviation": {
+    "name": "maximum_polyline_deviation",
+    "anchor": "maximum_polyline_deviation",
+    "returns": "float",
+    "parameters": [
+      {
+        "name": "points",
+        "types": [
+          "Iterable[Point]"
+        ],
+        "description": {
+          "en": "Input points, in their original order.",
+          "zh-TW": "依原順序排列的輸入點。",
+          "zh-CN": "依原顺序排列的输入点。"
+        }
+      },
+      {
+        "name": "path",
+        "types": [
+          "PiecewiseBezier"
+        ],
+        "description": {
+          "en": "Input path to convert or measure.",
+          "zh-TW": "要轉換或量測的輸入路徑。",
+          "zh-CN": "要转换或测量的输入路径。"
+        }
+      }
+    ]
+  },
+  "bezierkit.trace_implicit": {
+    "name": "trace_implicit",
+    "anchor": "trace_implicit",
+    "returns": "ContourSet",
+    "parameters": [
+      {
+        "name": "function",
+        "types": [
+          "ScalarField"
+        ],
+        "description": {
+          "en": "$F$, called with two floats; it must be finite at every grid point, or `ValueError` is raised",
+          "zh-TW": "$F$，以兩個浮點數呼叫；在每個網格點都必須為有限值，否則拋出 `ValueError`",
+          "zh-CN": "$F$，以两个浮点数调用；在每个网格点都必须为有限值，否则抛出 `ValueError`"
+        }
+      },
+      {
+        "name": "levels",
+        "types": [
+          "float",
+          "Iterable[float]"
+        ],
+        "description": {
+          "en": "One level or an iterable of finite levels",
+          "zh-TW": "單一水準，或由有限水準值組成的可迭代物件",
+          "zh-CN": "单一水准，或由有限水准值组成的可迭代对象"
+        },
+        "keyword_only": true
+      },
+      {
+        "name": "viewport",
+        "types": [
+          "tuple[float, float, float, float]"
+        ],
+        "description": {
+          "en": "Bounds $(x_{\\min}, x_{\\max}, y_{\\min}, y_{\\max})$.",
+          "zh-TW": "範圍 $(x_{\\min}, x_{\\max}, y_{\\min}, y_{\\max})$。",
+          "zh-CN": "范围 $(x_{\\min}, x_{\\max}, y_{\\min}, y_{\\max})$。"
+        },
+        "keyword_only": true
+      },
+      {
+        "name": "resolution",
+        "types": [
+          "tuple[int, int]"
+        ],
+        "description": {
+          "en": "Grid points along $x$ and $y$, at least 2 each",
+          "zh-TW": "沿 $x$ 與 $y$ 的網格點數，各至少 2",
+          "zh-CN": "沿 $x$ 与 $y$ 的网格点数，各至少 2"
+        },
+        "default": "(101, 101)",
+        "keyword_only": true
+      },
+      {
+        "name": "tolerance",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Allowed deviation, in coordinate units, of the simplified and curved segments",
+          "zh-TW": "簡化與彎曲線段的容許偏差，單位同座標",
+          "zh-CN": "简化与弯曲线段的容许偏差，单位同坐标"
+        },
+        "default": "0.01",
+        "keyword_only": true
+      },
+      {
+        "name": "gradient",
+        "types": [
+          "Gradient",
+          "None"
+        ],
+        "description": {
+          "en": "$\\nabla F = (F_x, F_y)$, as a pair or a `Vector`. When given, straight pieces are bent into cubics that follow the curve's tangent",
+          "zh-TW": "$\\nabla F = (F_x, F_y)$，以 tuple 或 `Vector` 回傳。提供時，直線段會彎成沿曲線切線方向的三次曲線",
+          "zh-CN": "$\\nabla F = (F_x, F_y)$，以 tuple 或 `Vector` 返回。提供时，直线段会弯成沿曲线切线方向的三次曲线"
+        },
+        "default": "None",
+        "keyword_only": true
+      }
+    ]
+  },
+  "bezierkit.EndpointDerivatives": {
+    "name": "EndpointDerivatives",
+    "anchor": "endpointderivatives",
+    "returns": "EndpointDerivatives",
+    "parameters": [
+      {
+        "name": "start",
+        "types": [
+          "Point"
+        ],
+        "description": {
+          "en": "Start point.",
+          "zh-TW": "起點。",
+          "zh-CN": "起点。"
+        }
+      },
+      {
+        "name": "end",
+        "types": [
+          "Point"
+        ],
+        "description": {
+          "en": "End point.",
+          "zh-TW": "終點。",
+          "zh-CN": "终点。"
+        }
+      },
+      {
+        "name": "start_derivative",
+        "types": [
+          "Vector"
+        ],
+        "description": {
+          "en": "Derivative vector at the start.",
+          "zh-TW": "起點的導數向量。",
+          "zh-CN": "起点的导数向量。"
+        }
+      },
+      {
+        "name": "end_derivative",
+        "types": [
+          "Vector"
+        ],
+        "description": {
+          "en": "Derivative vector at the end.",
+          "zh-TW": "終點的導數向量。",
+          "zh-CN": "终点的导数向量。"
+        }
+      }
+    ]
+  },
+  "bezierkit.EndpointDerivatives.build": {
+    "name": "EndpointDerivatives.build",
+    "anchor": "endpointderivatives-build",
+    "returns": "BezierCurve",
+    "parameters": []
+  },
+  "bezierkit.TangentDirections": {
+    "name": "TangentDirections",
+    "anchor": "tangentdirections",
+    "returns": "TangentDirections",
+    "parameters": [
+      {
+        "name": "start",
+        "types": [
+          "Point"
+        ],
+        "description": {
+          "en": "Start point.",
+          "zh-TW": "起點。",
+          "zh-CN": "起点。"
+        }
+      },
+      {
+        "name": "end",
+        "types": [
+          "Point"
+        ],
+        "description": {
+          "en": "End point.",
+          "zh-TW": "終點。",
+          "zh-CN": "终点。"
+        }
+      },
+      {
+        "name": "start_direction",
+        "types": [
+          "Vector"
+        ],
+        "description": {
+          "en": "Tangent direction at the start.",
+          "zh-TW": "起點的切線方向。",
+          "zh-CN": "起点的切线方向。"
+        }
+      },
+      {
+        "name": "end_direction",
+        "types": [
+          "Vector"
+        ],
+        "description": {
+          "en": "Tangent direction at the end.",
+          "zh-TW": "終點的切線方向。",
+          "zh-CN": "终点的切线方向。"
+        }
+      },
+      {
+        "name": "start_handle",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Control handle length at the start.",
+          "zh-TW": "起點控制柄的長度。",
+          "zh-CN": "起点控制柄的长度。"
+        },
+        "default": "1.0"
+      },
+      {
+        "name": "end_handle",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Control handle length at the end.",
+          "zh-TW": "終點控制柄的長度。",
+          "zh-CN": "终点控制柄的长度。"
+        },
+        "default": "1.0"
+      }
+    ]
+  },
+  "bezierkit.TangentDirections.build": {
+    "name": "TangentDirections.build",
+    "anchor": "tangentdirections-build",
+    "returns": "BezierCurve",
+    "parameters": []
+  },
+  "bezierkit.PlanarSlopes": {
+    "name": "PlanarSlopes",
+    "anchor": "planarslopes",
+    "returns": "PlanarSlopes",
+    "parameters": [
+      {
+        "name": "start",
+        "types": [
+          "Point"
+        ],
+        "description": {
+          "en": "Start point.",
+          "zh-TW": "起點。",
+          "zh-CN": "起点。"
+        }
+      },
+      {
+        "name": "end",
+        "types": [
+          "Point"
+        ],
+        "description": {
+          "en": "End point.",
+          "zh-TW": "終點。",
+          "zh-CN": "终点。"
+        }
+      },
+      {
+        "name": "start_slope",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Finite planar slope at the start.",
+          "zh-TW": "起點的有限平面斜率。",
+          "zh-CN": "起点的有限平面斜率。"
+        }
+      },
+      {
+        "name": "end_slope",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Finite planar slope at the end.",
+          "zh-TW": "終點的有限平面斜率。",
+          "zh-CN": "终点的有限平面斜率。"
+        }
+      },
+      {
+        "name": "start_handle",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Control handle length at the start.",
+          "zh-TW": "起點控制柄的長度。",
+          "zh-CN": "起点控制柄的长度。"
+        },
+        "default": "1.0"
+      },
+      {
+        "name": "end_handle",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Control handle length at the end.",
+          "zh-TW": "終點控制柄的長度。",
+          "zh-CN": "终点控制柄的长度。"
+        },
+        "default": "1.0"
+      }
+    ]
+  },
+  "bezierkit.PlanarSlopes.build": {
+    "name": "PlanarSlopes.build",
+    "anchor": "planarslopes-build",
+    "returns": "BezierCurve",
+    "parameters": []
+  },
+  "bezierkit.parametric_hermite": {
+    "name": "parametric_hermite",
+    "anchor": "parametric_hermite",
+    "returns": "CubicBezierSegment",
+    "parameters": [
+      {
+        "name": "p0",
+        "types": [
+          "Point"
+        ],
+        "description": {
+          "en": "First control point.",
+          "zh-TW": "第一個控制點。",
+          "zh-CN": "第一个控制点。"
+        }
+      },
+      {
+        "name": "p3",
+        "types": [
+          "Point"
+        ],
+        "description": {
+          "en": "Fourth control point.",
+          "zh-TW": "第四個控制點。",
+          "zh-CN": "第四个控制点。"
+        }
+      },
+      {
+        "name": "derivative0",
+        "types": [
+          "Vector"
+        ],
+        "description": {
+          "en": "Derivative vector at the start of the interval.",
+          "zh-TW": "區間起點的導數向量。",
+          "zh-CN": "区间起点的导数向量。"
+        }
+      },
+      {
+        "name": "derivative1",
+        "types": [
+          "Vector"
+        ],
+        "description": {
+          "en": "Derivative vector at the end of the interval.",
+          "zh-TW": "區間終點的導數向量。",
+          "zh-CN": "区间终点的导数向量。"
+        }
+      },
+      {
+        "name": "t0",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Start of the parameter interval.",
+          "zh-TW": "參數區間的起點。",
+          "zh-CN": "参数区间的起点。"
+        },
+        "default": "0.0",
+        "keyword_only": true
+      },
+      {
+        "name": "t1",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "End of the parameter interval.",
+          "zh-TW": "參數區間的終點。",
+          "zh-CN": "参数区间的终点。"
+        },
+        "default": "1.0",
+        "keyword_only": true
+      }
+    ]
+  },
+  "bezierkit.graph_hermite": {
+    "name": "graph_hermite",
+    "anchor": "graph_hermite",
+    "returns": "CubicBezierSegment",
+    "parameters": [
+      {
+        "name": "x0",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Horizontal coordinate at the start.",
+          "zh-TW": "起點的水平座標。",
+          "zh-CN": "起点的水平坐标。"
+        },
+        "keyword_only": true
+      },
+      {
+        "name": "x1",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Horizontal coordinate at the end.",
+          "zh-TW": "終點的水平座標。",
+          "zh-CN": "终点的水平坐标。"
+        },
+        "keyword_only": true
+      },
+      {
+        "name": "y0",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Function value at the start.",
+          "zh-TW": "起點的函數值。",
+          "zh-CN": "起点的函数值。"
+        },
+        "keyword_only": true
+      },
+      {
+        "name": "y1",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Function value at the end.",
+          "zh-TW": "終點的函數值。",
+          "zh-CN": "终点的函数值。"
+        },
+        "keyword_only": true
+      },
+      {
+        "name": "m0",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Slope at the start.",
+          "zh-TW": "起點的斜率。",
+          "zh-CN": "起点的斜率。"
+        },
+        "keyword_only": true
+      },
+      {
+        "name": "m1",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Slope at the end.",
+          "zh-TW": "終點的斜率。",
+          "zh-CN": "终点的斜率。"
+        },
+        "keyword_only": true
+      }
+    ]
+  },
+  "bezierkit.hermite_error_bound": {
+    "name": "hermite_error_bound",
+    "anchor": "hermite_error_bound",
+    "returns": "float",
+    "parameters": [
+      {
+        "name": "max_fourth_derivative",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Bound on the absolute fourth derivative.",
+          "zh-TW": "四階導數絕對值的上界。",
+          "zh-CN": "四阶导数绝对值的上界。"
+        }
+      },
+      {
+        "name": "t0",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Start of the parameter interval.",
+          "zh-TW": "參數區間的起點。",
+          "zh-CN": "参数区间的起点。"
+        }
+      },
+      {
+        "name": "t1",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "End of the parameter interval.",
+          "zh-TW": "參數區間的終點。",
+          "zh-CN": "参数区间的终点。"
+        }
+      }
+    ]
+  },
+  "bezierkit.UniformSampler": {
+    "name": "UniformSampler",
+    "anchor": "uniformsampler",
+    "returns": "UniformSampler",
+    "parameters": [
+      {
+        "name": "count",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "Number of equally spaced samples, at least two.",
+          "zh-TW": "等距取樣數，至少為 2。",
+          "zh-CN": "等距采样数，至少为 2。"
+        }
+      }
+    ]
+  },
+  "bezierkit.UniformSampler.sample": {
+    "name": "UniformSampler.sample",
+    "anchor": "uniformsampler-sample",
+    "returns": "Sample",
+    "parameters": [
+      {
+        "name": "curve",
+        "types": [
+          "ParametricCurve"
+        ],
+        "description": {
+          "en": "Curve or path to process.",
+          "zh-TW": "要處理的曲線或路徑。",
+          "zh-CN": "要处理的曲线或路径。"
+        }
+      }
+    ]
+  },
+  "bezierkit.dumps": {
+    "name": "dumps",
+    "anchor": "dumps",
+    "returns": "str",
+    "parameters": [
+      {
+        "name": "path",
+        "types": [
+          "PiecewiseBezier"
+        ],
+        "description": {
+          "en": "Input path to convert or measure.",
+          "zh-TW": "要轉換或量測的輸入路徑。",
+          "zh-CN": "要转换或测量的输入路径。"
+        }
+      },
+      {
+        "name": "metadata",
+        "types": [
+          "Mapping[str, Any]",
+          "None"
+        ],
+        "description": {
+          "en": "Optional metadata mapping to include in the document.",
+          "zh-TW": "要附加到文件的可選中繼資料。",
+          "zh-CN": "要附加到文档的可选元数据。"
+        },
+        "default": "None",
+        "keyword_only": true
+      },
+      {
+        "name": "indent",
+        "types": [
+          "int",
+          "None"
+        ],
+        "description": {
+          "en": "JSON indentation width; None produces compact output.",
+          "zh-TW": "JSON 縮排寬度；None 產生緊湊輸出。",
+          "zh-CN": "JSON 缩进宽度；None 生成紧凑输出。"
+        },
+        "default": "None",
+        "keyword_only": true
+      }
+    ]
+  },
+  "bezierkit.loads": {
+    "name": "loads",
+    "anchor": "loads",
+    "returns": "PathDocument",
+    "parameters": [
+      {
+        "name": "value",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "Serialized text to parse.",
+          "zh-TW": "要解析的序列化文字。",
+          "zh-CN": "要解析的序列化文本。"
+        }
+      }
+    ]
+  },
+  "bezierkit.to_svg_path_data": {
+    "name": "to_svg_path_data",
+    "anchor": "to_svg_path_data",
+    "returns": "str",
+    "parameters": [
+      {
+        "name": "path",
+        "types": [
+          "PiecewiseBezier"
+        ],
+        "description": {
+          "en": "Input path to convert or measure.",
+          "zh-TW": "要轉換或量測的輸入路徑。",
+          "zh-CN": "要转换或测量的输入路径。"
+        }
+      },
+      {
+        "name": "precision",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "Decimal places used for exported coordinates.",
+          "zh-TW": "匯出座標使用的小數位數。",
+          "zh-CN": "导出坐标使用的小数位数。"
+        },
+        "default": "6",
+        "keyword_only": true
+      },
+      {
+        "name": "transform",
+        "types": [
+          "CoordinateTransform",
+          "None"
+        ],
+        "description": {
+          "en": "Coordinate transform to apply.",
+          "zh-TW": "要套用的座標轉換。",
+          "zh-CN": "要应用的坐标变换。"
+        },
+        "default": "None",
+        "keyword_only": true
+      }
+    ]
+  },
+  "bezierkit.from_svg_path_data": {
+    "name": "from_svg_path_data",
+    "anchor": "from_svg_path_data",
+    "returns": "PiecewiseBezier",
+    "parameters": [
+      {
+        "name": "value",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "Serialized text to parse.",
+          "zh-TW": "要解析的序列化文字。",
+          "zh-CN": "要解析的序列化文本。"
+        }
+      }
+    ]
+  },
+  "bezierkit.to_tikz": {
+    "name": "to_tikz",
+    "anchor": "to_tikz",
+    "returns": "str",
+    "parameters": [
+      {
+        "name": "path",
+        "types": [
+          "PiecewiseBezier"
+        ],
+        "description": {
+          "en": "Input path to convert or measure.",
+          "zh-TW": "要轉換或量測的輸入路徑。",
+          "zh-CN": "要转换或测量的输入路径。"
+        }
+      },
+      {
+        "name": "precision",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "Decimal places used for exported coordinates.",
+          "zh-TW": "匯出座標使用的小數位數。",
+          "zh-CN": "导出坐标使用的小数位数。"
+        },
+        "default": "6",
+        "keyword_only": true
+      },
+      {
+        "name": "transform",
+        "types": [
+          "CoordinateTransform",
+          "None"
+        ],
+        "description": {
+          "en": "Coordinate transform to apply.",
+          "zh-TW": "要套用的座標轉換。",
+          "zh-CN": "要应用的坐标变换。"
+        },
+        "default": "None",
+        "keyword_only": true
+      },
+      {
+        "name": "options",
+        "types": [
+          "str",
+          "None"
+        ],
+        "description": {
+          "en": "Optional TikZ drawing options.",
+          "zh-TW": "可選的 TikZ 繪圖選項。",
+          "zh-CN": "可选的 TikZ 绘图选项。"
+        },
+        "default": "None",
+        "keyword_only": true
+      }
+    ]
+  },
+  "bezierkit.segment_to_tikz": {
+    "name": "segment_to_tikz",
+    "anchor": "segment_to_tikz",
+    "returns": "str",
+    "parameters": [
+      {
+        "name": "segment",
+        "types": [
+          "CubicBezierSegment"
+        ],
+        "description": {
+          "en": "Cubic segment to export.",
+          "zh-TW": "要匯出的三次曲線段。",
+          "zh-CN": "要导出的三次曲线段。"
+        }
+      },
+      {
+        "name": "precision",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "Decimal places used for exported coordinates.",
+          "zh-TW": "匯出座標使用的小數位數。",
+          "zh-CN": "导出坐标使用的小数位数。"
+        },
+        "default": "6",
+        "keyword_only": true
+      },
+      {
+        "name": "transform",
+        "types": [
+          "CoordinateTransform",
+          "None"
+        ],
+        "description": {
+          "en": "Coordinate transform to apply.",
+          "zh-TW": "要套用的座標轉換。",
+          "zh-CN": "要应用的坐标变换。"
+        },
+        "default": "None",
+        "keyword_only": true
+      },
+      {
+        "name": "include_start",
+        "types": [
+          "bool"
+        ],
+        "description": {
+          "en": "Include the starting coordinate in the output.",
+          "zh-TW": "輸出是否包含起點座標。",
+          "zh-CN": "输出是否包含起点坐标。"
+        },
+        "default": "True",
+        "keyword_only": true
+      }
+    ]
+  },
+  "bezierkit.from_path": {
+    "name": "from_path",
+    "anchor": "from_path",
+    "returns": "PiecewiseBezier",
+    "parameters": [
+      {
+        "name": "path",
+        "types": [
+          "Path"
+        ],
+        "description": {
+          "en": "Input path to convert or measure.",
+          "zh-TW": "要轉換或量測的輸入路徑。",
+          "zh-CN": "要转换或测量的输入路径。"
+        }
+      },
+      {
+        "name": "transform",
+        "types": [
+          "Transform",
+          "None"
+        ],
+        "description": {
+          "en": "Coordinate transform to apply.",
+          "zh-TW": "要套用的座標轉換。",
+          "zh-CN": "要应用的坐标变换。"
+        },
+        "default": "None",
+        "keyword_only": true
+      }
+    ]
+  },
+  "bezierkit.to_path": {
+    "name": "to_path",
+    "anchor": "to_path",
+    "returns": "Path",
+    "parameters": [
+      {
+        "name": "path",
+        "types": [
+          "PiecewiseBezier"
+        ],
+        "description": {
+          "en": "Input path to convert or measure.",
+          "zh-TW": "要轉換或量測的輸入路徑。",
+          "zh-CN": "要转换或测量的输入路径。"
+        }
+      }
+    ]
+  },
+  "bezierkit.approximate_path": {
+    "name": "approximate_path",
+    "anchor": "approximate_path",
+    "returns": "PiecewiseBezier",
+    "parameters": [
+      {
+        "name": "path",
+        "types": [
+          "Path"
+        ],
+        "description": {
+          "en": "Input path to convert or measure.",
+          "zh-TW": "要轉換或量測的輸入路徑。",
+          "zh-CN": "要转换或测量的输入路径。"
+        }
+      },
+      {
+        "name": "transform",
+        "types": [
+          "Transform"
+        ],
+        "description": {
+          "en": "Coordinate transform to apply.",
+          "zh-TW": "要套用的座標轉換。",
+          "zh-CN": "要应用的坐标变换。"
+        }
+      },
+      {
+        "name": "tolerance",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Allowed geometric error in coordinate units.",
+          "zh-TW": "以座標單位表示的幾何容許誤差。",
+          "zh-CN": "以坐标单位表示的几何容许误差。"
+        },
+        "keyword_only": true
+      },
+      {
+        "name": "max_depth",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "Maximum subdivision depth.",
+          "zh-TW": "最大細分深度。",
+          "zh-CN": "最大细分深度。"
+        },
+        "default": "20",
+        "keyword_only": true
+      }
+    ]
+  }
+}

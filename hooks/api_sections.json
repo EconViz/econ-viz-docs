@@ -1,0 +1,261 @@
+[
+  {
+    "page": "utility-viz/models/index.md",
+    "heading": 1,
+    "anchor": "ref-cobbdouglas",
+    "names": [
+      "CobbDouglas",
+      "CES",
+      "Translog"
+    ]
+  },
+  {
+    "page": "utility-viz/models/index.md",
+    "heading": 2,
+    "anchor": "ref-leontief",
+    "names": [
+      "Leontief",
+      "PerfectSubstitutes",
+      "MaximumUtility"
+    ]
+  },
+  {
+    "page": "utility-viz/models/index.md",
+    "heading": 3,
+    "anchor": "ref-quasilinear",
+    "names": [
+      "QuasiLinear",
+      "StoneGeary",
+      "Satiation"
+    ]
+  },
+  {
+    "page": "utility-viz/tools/latex.md",
+    "heading": 0,
+    "anchor": "ref-parse_latex",
+    "names": [
+      "parse_latex"
+    ]
+  },
+  {
+    "page": "utility-viz/tools/latex.md",
+    "heading": 3,
+    "anchor": "ref-parseerror",
+    "names": [
+      "ParseError"
+    ]
+  },
+  {
+    "page": "utility-viz/tools/analysis.md",
+    "heading": 1,
+    "anchor": "ref-comparative_statics",
+    "names": [
+      "comparative_statics"
+    ]
+  },
+  {
+    "page": "utility-viz/tools/analysis.md",
+    "heading": 2,
+    "anchor": "ref-slutsky_matrix",
+    "names": [
+      "slutsky_matrix"
+    ]
+  },
+  {
+    "page": "utility-viz/tools/analysis.md",
+    "heading": 3,
+    "anchor": "ref-homogeneityanalyzer",
+    "names": [
+      "HomogeneityAnalyzer"
+    ]
+  },
+  {
+    "page": "utility-viz/models/advanced.md",
+    "heading": 1,
+    "anchor": "ref-effect",
+    "names": [
+      "Effect",
+      "Haagsma",
+      "CustomUtility",
+      "MultiGoodCD"
+    ]
+  },
+  {
+    "page": "utility-viz/guides/consumer.md",
+    "heading": 1,
+    "anchor": "ref-figure",
+    "names": [
+      "Figure",
+      "Layout"
+    ]
+  },
+  {
+    "page": "utility-viz/guides/consumer.md",
+    "heading": 3,
+    "anchor": "ref-pricepath",
+    "names": [
+      "PricePath",
+      "IncomePath",
+      "LinearBudget"
+    ]
+  },
+  {
+    "page": "utility-viz/guides/consumer.md",
+    "heading": 4,
+    "anchor": "ref-demanddiagram",
+    "names": [
+      "DemandDiagram"
+    ]
+  },
+  {
+    "page": "utility-viz/guides/consumer.md",
+    "heading": 6,
+    "anchor": "ref-decompositionmethod",
+    "names": [
+      "DecompositionMethod",
+      "decompose_price_effect"
+    ]
+  },
+  {
+    "page": "utility-viz/guides/consumer.md",
+    "heading": 7,
+    "anchor": "ref-edgeworthbox",
+    "names": [
+      "EdgeworthBox"
+    ]
+  },
+  {
+    "page": "utility-viz/guides/animation.md",
+    "heading": 2,
+    "anchor": "ref-animator",
+    "names": [
+      "Animator"
+    ]
+  },
+  {
+    "page": "utility-viz/guides/interactive.md",
+    "heading": 2,
+    "anchor": "ref-widgetviewer",
+    "names": [
+      "WidgetViewer"
+    ]
+  },
+  {
+    "page": "utility-viz/guides/canvas.md",
+    "heading": 10,
+    "anchor": "ref-stroke",
+    "names": [
+      "Stroke",
+      "Fill",
+      "Marker",
+      "Axis"
+    ]
+  },
+  {
+    "page": "utility-viz/guides/canvas.md",
+    "heading": 11,
+    "anchor": "ref-label",
+    "names": [
+      "Label",
+      "Legend"
+    ]
+  },
+  {
+    "page": "utility-viz/guides/canvas.md",
+    "heading": 12,
+    "anchor": "ref-linestyle",
+    "names": [
+      "LineStyle"
+    ]
+  },
+  {
+    "page": "utility-viz/guides/canvas.md",
+    "heading": 13,
+    "anchor": "ref-arrowstyle",
+    "names": [
+      "ArrowStyle"
+    ]
+  },
+  {
+    "page": "utility-viz/guides/config.md",
+    "heading": 2,
+    "anchor": "ref-config",
+    "names": [
+      "Config"
+    ]
+  },
+  {
+    "page": "utility-viz/guides/themes.md",
+    "heading": 0,
+    "anchor": "ref-themes",
+    "names": [
+      "themes"
+    ]
+  },
+  {
+    "page": "utility-viz/guides/themes.md",
+    "heading": 8,
+    "anchor": "ref-theme",
+    "names": [
+      "Theme"
+    ]
+  },
+  {
+    "page": "principle-viz/guides/markets.md",
+    "heading": 1,
+    "anchor": "ref-line",
+    "names": [
+      "Line",
+      "line_from_standard"
+    ]
+  },
+  {
+    "page": "principle-viz/guides/taxes.md",
+    "heading": 1,
+    "anchor": "ref-taxon",
+    "names": [
+      "TaxOn",
+      "TaxType"
+    ]
+  },
+  {
+    "page": "principle-viz/guides/taxes.md",
+    "heading": 4,
+    "anchor": "ref-subsidyto",
+    "names": [
+      "SubsidyTo"
+    ]
+  },
+  {
+    "page": "principle-viz/guides/controls.md",
+    "heading": 0,
+    "anchor": "ref-pricecontroltype",
+    "names": [
+      "PriceControlType"
+    ]
+  },
+  {
+    "page": "mosaickit/guides/styles.md",
+    "heading": 4,
+    "anchor": "ref-default_palette",
+    "names": [
+      "DEFAULT_PALETTE"
+    ]
+  },
+  {
+    "page": "mosaickit/guides/themes.md",
+    "heading": 1,
+    "anchor": "ref-default",
+    "names": [
+      "default"
+    ]
+  },
+  {
+    "page": "mosaickit/guides/themes.md",
+    "heading": 4,
+    "anchor": "ref-use_config",
+    "names": [
+      "use_config"
+    ]
+  }
+]

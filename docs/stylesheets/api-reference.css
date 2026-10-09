@@ -1,0 +1,126 @@
+/* Shared API references: signatures and parameter details share these tokens. */
+.md-typeset code.ev-api-inline-code {
+  --api-ink: #181818;
+  --api-link: #405c9a;
+  background: transparent;
+  padding: 0;
+  color: var(--api-ink);
+}
+.md-typeset .ev-api {
+  --api-ink: #181818;
+  --api-link: #405c9a;
+  --api-muted: #666666;
+  color: var(--api-ink);
+  margin: 1.4em 0 2em;
+  scroll-margin-top: 6rem;
+}
+.md-typeset .ev-api__signature {
+  background: #fff;
+  border-radius: 9px;
+  box-shadow: 0 5px 18px rgb(0 0 0 / 8%);
+  padding: 1.2em 1.4em;
+  overflow-x: auto;
+  line-height: 1.95;
+  font-size: .85em;
+  margin: 0 0 1.4em;
+}
+.md-typeset .ev-api__signature > code {
+  background: transparent;
+  color: var(--api-ink);
+  padding: 0;
+  font: inherit;
+  font-family: var(--md-code-font-family);
+}
+.md-typeset .ev-api__type {
+  display: inline-block;
+  padding: .06em .3em;
+  border-radius: 4px;
+  color: var(--api-ink);
+  font-family: var(--md-code-font-family);
+  font-weight: 600;
+  line-height: 1.5;
+}
+.md-typeset .ev-api__type--value { background: #dedede; }
+.md-typeset .ev-api__type--none { background: #eeeeee; color: #595959; }
+.md-typeset .ev-api__type--bool { background: #d3d3d3; }
+.md-typeset .ev-api__python {
+  display: inline-block;
+  font-family: var(--md-code-font-family);
+  font-weight: 600;
+  padding: .02em .28em;
+  border-radius: 4px;
+  color: var(--api-ink);
+  background: color-mix(in srgb, var(--api-python-color) 20%, white);
+  line-height: 1.5;
+}
+.md-typeset .ev-api__python--builtin { --api-python-color: var(--md-code-hl-constant-color); }
+.md-typeset .ev-api__python--keyword { --api-python-color: var(--md-code-hl-keyword-color); }
+.md-typeset .ev-api__python--constant { --api-python-color: var(--md-code-hl-keyword-color); }
+.md-typeset .ev-api__custom {
+  display: inline-block;
+  padding: .02em .28em;
+  border-radius: 4px;
+  font-family: var(--md-code-font-family);
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--api-ink);
+}
+/* Clear pastel fills inspired by Typst's documentation type pills. */
+.md-typeset .ev-api__custom--class { background: #a6ebe6; }
+.md-typeset .ev-api__custom--model { background: #a6eaff; }
+.md-typeset .ev-api__custom--data { background: #d1d4fd; }
+.md-typeset .ev-api__custom--enum { background: #ffedc1; }
+.md-typeset .ev-api__custom--style { background: #f9dfff; }
+.md-typeset .ev-api__custom--error { background: #ffcbc4; }
+.md-typeset .ev-api__custom--warning { background: #ffedc1; }
+.md-typeset .ev-api__method {
+  display: inline-block;
+  padding: .02em .28em;
+  border-radius: 4px;
+  background: #d1d4fd;
+  color: var(--api-link);
+  font-family: var(--md-code-font-family);
+  font-weight: 600;
+  line-height: 1.5;
+}
+.md-typeset .ev-api__function { color: var(--api-link); font-weight: 700; }
+.md-typeset .ev-api__owner,
+.md-typeset .ev-api__constructor { color: var(--api-ink); font-weight: 700; }
+.md-typeset .ev-api__argument,
+.md-typeset .ev-api__name { color: var(--api-ink); }
+.md-typeset .ev-api a:hover { text-decoration: underline; text-underline-offset: .2em; }
+.md-typeset .ev-api a:focus-visible { outline: 2px solid var(--api-link); outline-offset: 3px; }
+.md-typeset .ev-api__parameter {
+  margin: 0 0 1em;
+  padding: .6em .8em;
+  scroll-margin-top: 6rem;
+  border-radius: 0;
+}
+.md-typeset .ev-api__parameter:target { outline: none; }
+.md-typeset .ev-api__parameter.ev-api__parameter--highlight {
+  animation: ev-parameter-highlight 1.5s ease-out forwards;
+}
+@keyframes ev-parameter-highlight {
+  0%, 66.667% { background-color: #ffffff; }
+  100% { background-color: transparent; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .md-typeset .ev-api__parameter.ev-api__parameter--highlight {
+    animation-timing-function: steps(1, end);
+    animation-duration: 1.5s;
+  }
+}
+.md-typeset .ev-api__meta { display: flex; align-items: baseline; flex-wrap: wrap; gap: .45em .9em; }
+.md-typeset .ev-api__name { font-family: var(--md-code-font-family); font-weight: 700; min-width: 3.5em; }
+.md-typeset .ev-api__types { font-size: .87em; overflow-wrap: anywhere; min-width: 0; }
+.md-typeset .ev-api__qualifier { font-size: .8em; font-style: italic; color: var(--api-muted); }
+.md-typeset .ev-api__default { margin-left: auto; font-size: .85em; color: var(--api-muted); overflow-wrap: anywhere; min-width: 0; }
+.md-typeset .ev-api__default code { color: var(--api-ink); background: transparent; padding: 0; }
+.md-typeset .ev-api__or,
+.md-typeset .ev-api__union { color: var(--api-muted); }
+.md-typeset .ev-api__parameter p { margin: .4em 0 0; line-height: 1.7; }
+@media (max-width: 480px) {
+  .md-typeset .ev-api__signature { padding: 1em; font-size: .76em; }
+  .md-typeset .ev-api__meta { gap: .4em .65em; }
+  .md-typeset .ev-api__default { flex-basis: 100%; margin-left: 0; }
+}

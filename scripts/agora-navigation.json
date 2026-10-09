@@ -1,0 +1,238 @@
+{
+  "principle-viz": {
+    "guides/introduction": {
+      "en": "Introduction",
+      "zh-TW": "簡介",
+      "zh-CN": "简介"
+    },
+    "installation": {
+      "en": "Installation",
+      "zh-TW": "安裝",
+      "zh-CN": "安装"
+    },
+    "quickstart": {
+      "en": "Quick start",
+      "zh-TW": "快速開始",
+      "zh-CN": "快速开始"
+    },
+    "guides/markets": {
+      "en": "Linear markets",
+      "zh-TW": "線性市場",
+      "zh-CN": "线性市场"
+    },
+    "guides/discrete": {
+      "en": "Discrete markets",
+      "zh-TW": "離散市場",
+      "zh-CN": "离散市场"
+    },
+    "guides/aggregation": {
+      "en": "Market curves from individuals",
+      "zh-TW": "由個人加總市場曲線",
+      "zh-CN": "由个人加总市场曲线"
+    },
+    "guides/elasticity": {
+      "en": "Elasticity and total revenue",
+      "zh-TW": "彈性與總收益",
+      "zh-CN": "弹性与总收益"
+    },
+    "guides/welfare": {
+      "en": "Welfare",
+      "zh-TW": "福利",
+      "zh-CN": "福利"
+    },
+    "guides/taxes": {
+      "en": "Taxes and subsidies",
+      "zh-TW": "租稅與補貼",
+      "zh-CN": "税收与补贴"
+    },
+    "guides/controls": {
+      "en": "Price controls",
+      "zh-TW": "價格管制",
+      "zh-CN": "价格管制"
+    },
+    "guides/trade": {
+      "en": "International trade",
+      "zh-TW": "國際貿易",
+      "zh-CN": "国际贸易"
+    },
+    "guides/failures": {
+      "en": "Market failures",
+      "zh-TW": "市場失靈",
+      "zh-CN": "市场失灵"
+    },
+    "guides/factor-markets": {
+      "en": "Labor and loanable funds",
+      "zh-TW": "勞動與可貸資金",
+      "zh-CN": "劳动与可贷资金"
+    },
+    "guides/ppf": {
+      "en": "Production possibilities",
+      "zh-TW": "生產可能曲線",
+      "zh-CN": "生产可能性曲线"
+    },
+    "guides/figures": {
+      "en": "Figures",
+      "zh-TW": "圖形",
+      "zh-CN": "图形"
+    },
+    "cli": {
+      "en": "Command-line interface",
+      "zh-TW": "命令列介面",
+      "zh-CN": "命令行界面"
+    },
+    "changelog": {
+      "en": "Change history",
+      "zh-TW": "更新紀錄",
+      "zh-CN": "更新纪录"
+    }
+  },
+  "mosaickit": {
+    "guides/introduction": {
+      "en": "Introduction",
+      "zh-TW": "簡介",
+      "zh-CN": "简介"
+    },
+    "installation": {
+      "en": "Installation",
+      "zh-TW": "安裝",
+      "zh-CN": "安装"
+    },
+    "quickstart": {
+      "en": "Quick start",
+      "zh-TW": "快速入門",
+      "zh-CN": "快速入门"
+    },
+    "guides/canvas": {
+      "en": "Canvases and scenes",
+      "zh-TW": "畫布與場景",
+      "zh-CN": "画布与场景"
+    },
+    "guides/layers": {
+      "en": "Layers and axes",
+      "zh-TW": "圖層與座標軸",
+      "zh-CN": "图层与坐标轴"
+    },
+    "guides/annotations": {
+      "en": "Axis annotations",
+      "zh-TW": "座標軸註記",
+      "zh-CN": "坐标轴注释"
+    },
+    "guides/geometry": {
+      "en": "Layout geometry",
+      "zh-TW": "配置幾何",
+      "zh-CN": "布局几何"
+    },
+    "guides/labels": {
+      "en": "Region and point labels",
+      "zh-TW": "區域標籤與點標籤",
+      "zh-CN": "区域标签与点标签"
+    },
+    "guides/styles": {
+      "en": "Styles and colors",
+      "zh-TW": "樣式與顏色",
+      "zh-CN": "样式与颜色"
+    },
+    "guides/themes": {
+      "en": "Themes and configuration",
+      "zh-TW": "主題與設定",
+      "zh-CN": "主题与配置"
+    },
+    "guides/parameters": {
+      "en": "Parameters, grids and animation",
+      "zh-TW": "參數、網格與動畫",
+      "zh-CN": "参数、网格与动画"
+    },
+    "guides/rendering": {
+      "en": "Rendering",
+      "zh-TW": "繪製",
+      "zh-CN": "绘制"
+    },
+    "project/proofs": {
+      "en": "Proofs",
+      "zh-TW": "證明",
+      "zh-CN": "证明"
+    },
+    "project/changelog": {
+      "en": "Change history",
+      "zh-TW": "更新紀錄",
+      "zh-CN": "更新记录"
+    }
+  },
+  "bezierkit": {
+    "guides/introduction": {
+      "en": "Introduction",
+      "zh-TW": "簡介",
+      "zh-CN": "简介"
+    },
+    "installation": {
+      "en": "Installation",
+      "zh-TW": "安裝",
+      "zh-CN": "安装"
+    },
+    "quickstart": {
+      "en": "Quick start",
+      "zh-TW": "快速開始",
+      "zh-CN": "快速开始"
+    },
+    "guides/geometry": {
+      "en": "Geometry values",
+      "zh-TW": "幾何數值物件",
+      "zh-CN": "几何数值对象"
+    },
+    "guides/curves": {
+      "en": "Bézier curves",
+      "zh-TW": "Bézier 曲線",
+      "zh-CN": "Bézier 曲线"
+    },
+    "guides/operations": {
+      "en": "Derivatives, reversal and subdivision",
+      "zh-TW": "導數、反轉與分割",
+      "zh-CN": "导数、反转与分割"
+    },
+    "guides/paths": {
+      "en": "Cubic segments and paths",
+      "zh-TW": "三次線段與路徑",
+      "zh-CN": "三次线段与路径"
+    },
+    "guides/construction": {
+      "en": "Constructions and Hermite interpolation",
+      "zh-TW": "建構與 Hermite 插值",
+      "zh-CN": "建构与 Hermite 插值"
+    },
+    "guides/fitting": {
+      "en": "Fitting",
+      "zh-TW": "擬合",
+      "zh-CN": "拟合"
+    },
+    "guides/implicit": {
+      "en": "Level sets",
+      "zh-TW": "等值線",
+      "zh-CN": "等值线"
+    },
+    "guides/export": {
+      "en": "Sampling and export",
+      "zh-TW": "取樣與匯出",
+      "zh-CN": "采样与导出"
+    },
+    "cli": {
+      "en": "Command-line interface",
+      "zh-TW": "命令列介面",
+      "zh-CN": "命令行界面"
+    },
+    "project/proofs": {
+      "en": "Proofs",
+      "zh-TW": "證明",
+      "zh-CN": "证明"
+    },
+    "project/proofs-approximation": {
+      "en": "Approximation proofs",
+      "zh-TW": "近似方法的證明",
+      "zh-CN": "近似方法的证明"
+    },
+    "project/changelog": {
+      "en": "Change history",
+      "zh-TW": "更新紀錄",
+      "zh-CN": "更新纪录"
+    }
+  }
+}
