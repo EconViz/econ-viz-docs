@@ -244,6 +244,14 @@
   white-space: nowrap;
 }
 
+/* Manual figures are exported at their TeX size (about 180pt wide); scale the small SVGs up to a readable width */
+.md-typeset p > img:only-child[src*="assets/bezierkit/agora/"][src$=".svg"],
+.md-typeset p > img:only-child[src*="assets/mosaickit/agora/"][src$=".svg"] {
+  width: min(100%, 560px);
+  height: auto;
+  max-height: none;
+}
+
 /* Smaller step-by-step figures, e.g. one per Canvas method */
 .md-typeset p > img:only-child.ev-figure-sm {
   max-height: 300px;
