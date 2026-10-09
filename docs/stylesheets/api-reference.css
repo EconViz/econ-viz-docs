@@ -2,8 +2,6 @@
 .md-typeset code.ev-api-inline-code {
   --api-ink: #181818;
   --api-link: #405c9a;
-  background: transparent;
-  padding: 0;
   color: var(--api-ink);
 }
 .md-typeset .ev-api {
