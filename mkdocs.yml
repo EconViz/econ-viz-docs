@@ -70,6 +70,7 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 extra:
+  pdf_manual_base_url: https://github.com/EconViz/agora/releases/download/v1.0.0b1
   analytics:
     provider: google
     property: !ENV [GOOGLE_ANALYTICS_ID, ""]

@@ -9,8 +9,8 @@ utility-viz 参考手册另有可打印的 PDF 版。内容涵盖与本网站相
 
 | 版本 | 下载 |
 |------|------|
-| 简体中文 | [econ-viz-manual-zh-CN.pdf :material-file-download-outline:](../../../assets/manual/econ-viz-manual-zh-CN.pdf){ download } |
-| 繁體中文 | [econ-viz-manual-zh-TW.pdf :material-file-download-outline:](../../../assets/manual/econ-viz-manual-zh-TW.pdf){ download } |
-| English | [econ-viz-manual-en.pdf :material-file-download-outline:](../../../assets/manual/econ-viz-manual-en.pdf){ download } |
+| 简体中文 | [utility-viz-zh-CN.pdf :material-file-download-outline:](https://github.com/EconViz/agora/releases/download/v1.0.0b1/utility-viz-zh-CN.pdf){ download } |
+| 繁體中文 | [utility-viz-zh-TW.pdf :material-file-download-outline:](https://github.com/EconViz/agora/releases/download/v1.0.0b1/utility-viz-zh-TW.pdf){ download } |
+| English | [utility-viz-en.pdf :material-file-download-outline:](https://github.com/EconViz/agora/releases/download/v1.0.0b1/utility-viz-en.pdf){ download } |
 
-页首的下载按钮会根据当前阅读的语言提供对应版本。手册源代码位于 [GitHub](https://github.com/EconViz/utility-viz-manual)。
+页首的下载按钮会根据当前软件包与阅读语言提供对应版本。四本手册的源代码与 PDF Release 都位于 [Agora](https://github.com/EconViz/agora)。
