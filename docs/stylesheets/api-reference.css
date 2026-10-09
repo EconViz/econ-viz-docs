@@ -4,6 +4,16 @@
   --api-link: #405c9a;
   color: var(--api-ink);
 }
+/* Inline names keep the plain inline-code look; the coloured type pills belong to signature cards. */
+.md-typeset code.ev-api-inline-code > span {
+  display: inline;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
 .md-typeset .ev-api {
   --api-ink: #181818;
   --api-link: #405c9a;
