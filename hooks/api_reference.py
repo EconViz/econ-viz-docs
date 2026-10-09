@@ -34,6 +34,7 @@ _class_categories = {
     'style': set('Stroke Fill Marker Label Legend LegendStyle TextStyle Theme PlotTheme StyleBundle Config Color Palette SaveOptions'.split()),
 }
 _custom_classes = set()
+API_TOKEN_PATTERN = r'''"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|[A-Za-z_]\w*(?:\.[A-Za-z_]\w*)*|(?<![\w.])[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?'''
 # Explicitly selected reference tables; comparison/migration tables stay tabular.
 REFERENCE_TABLES = {
     'utility-viz/guides/canvas.md': {0},
@@ -52,7 +53,14 @@ REFERENCE_TABLES = {
     'bezierkit/guides/geometry.md': {1},
     'bezierkit/guides/export.md': {0},
 }
-TABLE_PATTERN = re.compile(r'^\|.+\n\|[-: |]+\n(?:\|.*(?:\n|$))+', re.M)
+TABLE_PATTERN = re.compile(r'^(?P<indent> *)\|.+\n(?P=indent)\|[-: |]+\n(?:(?P=indent)\|.*(?:\n|$))+', re.M)
+REFERENCE_HEADERS = {
+    'parameter', 'field', 'property', 'attribute', 'method', 'object', 'class',
+    'exception', 'command', 'flag', 'style', 'layer', 'role', 'key', 'name',
+    '參數', '参数', '欄位', '字段', '屬性', '属性', '方法', '物件', '对象',
+    '類別', '类', '例外', '异常', '指令', '命令', '旗標', '标志',
+    '樣式', '样式', '圖層', '图层', '角色', '鍵', '键', '名稱', '名称',
+}
 
 
 def reference_tables(source, src):
@@ -61,10 +69,18 @@ def reference_tables(source, src):
     fenced = list(re.finditer(r'^\s*```[^\n]*\n.*?^\s*```[^\n]*$', source, re.M | re.S))
     matches = [m for m in TABLE_PATTERN.finditer(source)
                if not any(f.start() <= m.start() < f.end() for f in fenced)]
-    for index, match in enumerate(matches):
-        if index in REFERENCE_TABLES.get(plain, set()):
-            rows = [re.split(r'(?<!\\)\|', line.strip().strip('|')) for line in match[0].splitlines()]
-            rows = [[cell.strip() for cell in row] for row in rows]
+    root_index = nested_index = 0
+    for match in matches:
+        if match['indent']:
+            index = f'nested-{nested_index}'
+            nested_index += 1
+        else:
+            index = root_index
+            root_index += 1
+        rows = [re.split(r'(?<!\\)\|', line.strip().strip('|')) for line in match[0].splitlines()]
+        rows = [[cell.strip() for cell in row] for row in rows]
+        is_reference = rows[0][0].strip('`* ').casefold() in REFERENCE_HEADERS
+        if index in REFERENCE_TABLES.get(plain, set()) or (is_reference and not plain.endswith('migrating.md')):
             yield index, match, rows[0], rows[2:]
 
 
@@ -73,6 +89,15 @@ def reference_anchor(index, row):
 
 
 def render_reference_tables(source, src):
+    language = src.split('/')[0] if src.startswith(('zh-TW/', 'zh-CN/')) else 'en'
+    type_headers = {'type', 'types', '型別', '類型', '类型'}
+    default_headers = {'default', 'defaults', 'default value', '預設值', '默认值'}
+    description_headers = {
+        'meaning', 'description', 'checks', 'styles', 'properties', 'values', 'value',
+        'draws', 'raised when', 'raised or emitted when', 'calculation and extra options',
+        '意義', '意义', '含義', '含义', '說明', '说明', '描述', '控制項目', '控制项目',
+        '引發或發出的時機', '引发或发出的时机', '引發時機', '引发时机',
+    }
     for index, match, headers, rows in reversed(list(reference_tables(source, src))):
         sections = ['<div class="ev-api ev-reference-list" markdown="1">\n']
         for row in rows:
@@ -81,12 +106,29 @@ def render_reference_tables(source, src):
             anchor = reference_anchor(index, row)
             label = row[0].strip('`')
             sections.append(f'<section class="ev-api__parameter" id="{anchor}" tabindex="-1" markdown="1">\n')
-            sections.append(f'<div class="ev-api__meta"><a class="ev-api__name" href="#{anchor}">{_reference_name(label)}</a></div>\n')
+            types = ''
+            default = ''
+            description = []
             for heading, cell in zip(headers[1:], row[1:]):
-                sections.append(f'**{heading}** — {cell}\n')
+                kind = heading.strip('`* ').casefold()
+                if kind in type_headers:
+                    values = re.split(r'\s+(?:or|或)\s+|\s*\\?\|\s*', cell)
+                    types = f' <span class="ev-api__or">{LABELS[language][2]}</span> '.join(_type(value.strip('` ')) for value in values)
+                elif kind in default_headers:
+                    value = _python_badges(cell.strip('`'))
+                    default = f'<span class="ev-api__default">{LABELS[language][1]} <code>{value}</code></span>'
+                else:
+                    description.append((heading, cell, kind in description_headers))
+            sections.append(f'<div class="ev-api__meta"><a class="ev-api__name" href="#{anchor}">{_parameter_label(label)}</a>'
+                            f'<span class="ev-api__types">{types}</span>{default}</div>\n')
+            for heading, cell, is_description in description:
+                sections.append((cell if is_description or len(description) == 1 else f'**{heading}** — {cell}') + '\n')
             sections.append('</section>\n')
         sections.append('</div>\n')
-        source = source[:match.start()] + '\n'.join(sections) + source[match.end():]
+        rendered = '\n'.join(sections)
+        indent = match['indent']
+        rendered = '\n'.join(indent + line if line else '' for line in rendered.split('\n'))
+        source = source[:match.start()] + rendered + source[match.end():]
     return source
 
 
@@ -199,6 +241,10 @@ def on_page_content(html, page, config, **kwargs):
                 return text
             value = unescape(value)
             styled = _reference_name(value)
+            # Bare member/parameter references have no call parentheses or type
+            # marker. Give them their own surface without inventing a link.
+            if '<span ' not in styled and re.fullmatch(r'[A-Za-z_]\w*(?:\.[A-Za-z_]\w*)*', value):
+                styled = f'<span class="ev-api__attribute">{styled}</span>'
             if '<span ' in styled:
                 text = f'<code class="ev-api-inline-code">{styled}</code>'
             if 'a' in blocked:
@@ -390,12 +436,14 @@ def _reference_name(value):
     """Style callable names in compact method lists, including overloads."""
     pieces = []
     last = 0
-    for match in re.finditer(r'''"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\b[A-Za-z_]\w*(?:\.[A-Za-z_]\w*)*''', value):
+    for match in re.finditer(API_TOKEN_PATTERN, value):
         word = match[0]
         pieces.append(html.escape(value[last:match.start()]))
         owner, sep, member = word.rpartition('.')
         label = member if sep else word
-        callable_name = value[match.end():].lstrip().startswith('(') or (word == value and word in _symbols)
+        callable_name = value[match.end():].lstrip().startswith('(') or (
+            word == value and any(anchor.startswith('api-') and not anchor.startswith('api-entry-')
+                                  for _, anchor in _symbols.get(word, ())))
         if callable_name and label[:1].islower() and not _python_kind(label):
             prefix = _python_badges(owner) + '.' if sep else ''
             pieces.append(prefix + f'<span class="ev-api__method">{html.escape(label)}</span>')
@@ -405,7 +453,26 @@ def _reference_name(value):
     return ''.join(pieces) + html.escape(value[last:])
 
 
+def _parameter_label(value):
+    assignment = re.fullmatch(r'([A-Za-z_]\w*)\s*=(.*)', value)
+    if assignment:
+        return f'<span class="ev-api__attribute">{html.escape(assignment[1])}</span>=' + _python_badges(assignment[2])
+    if re.fullmatch(r'--?[A-Za-z][\w-]*', value):
+        return f'<span class="ev-api__attribute">{html.escape(value)}</span>'
+    styled = _reference_name(value)
+    if '<span ' not in styled and re.fullmatch(r'\**[A-Za-z_]\w*(?:\.[A-Za-z_]\w*)*', value):
+        return f'<span class="ev-api__attribute">{styled}</span>'
+    return styled
+
+
 def _python_badges(value):
+    # Literal numeric defaults use the Python number highlight color.
+    try:
+        literal = ast.literal_eval(value)
+    except (ValueError, SyntaxError):
+        literal = None
+    if type(literal) in (int, float, complex):
+        return f'<span class="ev-api__python ev-api__python--number">{html.escape(value)}</span>'
     # Strings remain literals, even when they contain a built-in name.
     def replace(match):
         word = match[0]
@@ -448,7 +515,7 @@ def render(symbol, language):
         if p.get("keyword_only") and not keyword_separator:
             signature.append("    *,")
             keyword_separator = True
-        signature.append(f'    <a class="ev-api__argument" href="#{esc(target)}">{esc(name)}</a>{annotation},')
+        signature.append(f'    <a class="ev-api__argument" href="#{esc(target)}">{_parameter_label(name)}</a>{annotation},')
         types_html = f' <span class="ev-api__or">{either}</span> '.join(map(_type, types))
         if "default" in p:
             status = f'<span class="ev-api__default">{default} <code>{_python_badges(p["default"])}</code></span>'
@@ -461,7 +528,7 @@ def render(symbol, language):
         )
         details.append(
             f'<section class="ev-api__parameter" id="{esc(target)}" tabindex="-1">'
-            f'<div class="ev-api__meta"><a class="ev-api__name" href="#{esc(target)}">{esc(name)}</a>'
+            f'<div class="ev-api__meta"><a class="ev-api__name" href="#{esc(target)}">{_parameter_label(name)}</a>'
             f'<span class="ev-api__types">{types_html}</span>{status}</div>{description}</section>'
         )
     name = esc(item["name"])
@@ -490,12 +557,17 @@ def render_manual(item, language):
     anchor = item["anchor"]
     parameters = item["parameters"]
     targets = {p["name"]: f'{anchor}-{i}' for i, p in enumerate(parameters)}
+    signature_parameters = set()
+    for signature in item['signatures']:
+        signature_parameters.update(re.findall(r'(?:\(|,)\s*\**([A-Za-z_]\w*)\s*(?=[=,:)])', signature))
     def token(match):
         word = match[0]
         if _python_kind(word):
             return _python_badges(word)
         if word in targets:
-            return f'<a class="ev-api__argument" href="#{targets[word]}">{esc(word)}</a>'
+            return f'<a class="ev-api__argument" href="#{targets[word]}">{_parameter_label(word)}</a>'
+        if word in signature_parameters and not match.string[match.end():].lstrip().startswith('('):
+            return _parameter_label(word)
         if match.string[match.end():].lstrip().startswith("("):
             owner, sep, member = word.rpartition(".")
             prefix = f'<span class="ev-api__owner">{_python_badges(owner)}.</span>' if sep else ""
@@ -509,7 +581,7 @@ def render_manual(item, language):
         # Escape non-token text separately, including literal defaults.
         pieces = []
         previous = 0
-        for match in re.finditer(r'''"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|[A-Za-z_]\w*(?:\.[A-Za-z_]\w*)*''', signature):
+        for match in re.finditer(API_TOKEN_PATTERN, signature):
             pieces.extend([esc(signature[previous:match.start()]), token(match)])
             previous = match.end()
         pieces.append(esc(signature[previous:]))
@@ -525,7 +597,7 @@ def render_manual(item, language):
         description = md.markdown(p['description'][language], extensions=['pymdownx.arithmatex'],
                                   extension_configs={'pymdownx.arithmatex': {'generic': True}})
         result.append(f'<section class="ev-api__parameter" id="{anchor}-{i}" tabindex="-1">'
-                      f'<div class="ev-api__meta"><a class="ev-api__name" href="#{anchor}-{i}">{_reference_name(p["name"])}</a>'
+                      f'<div class="ev-api__meta"><a class="ev-api__name" href="#{anchor}-{i}">{_parameter_label(p["name"])}</a>'
                       f'<span class="ev-api__types">{badges}</span>{default}</div>{description}</section>')
     result.append('</div>')
     return '\n'.join(result)

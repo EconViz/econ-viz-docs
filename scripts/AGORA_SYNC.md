@@ -45,9 +45,11 @@ them aligned across translations when reorganizing pages. API cards index every
 signature in a group. Tests check all parseable Python examples in every language
 for missing package-import targets, including examples nested in tabs.
 
-`REFERENCE_TABLES` in the API hook explicitly selects reference tables to render
-as linked definition lists. Original Markdown tables remain the content source,
-so future manual imports inherit the same UI. Comparison tables are excluded.
+The API hook detects reference tables by localized column headings, including
+tables nested inside tabs or admonitions. `REFERENCE_TABLES` supplements this
+with selected reference tables whose headings are less specific. Original
+Markdown tables remain the content source, so future manual imports inherit the
+same UI. Comparison tables are excluded.
 Each row keeps every column's localized label and content and receives a stable
 anchor based on its API name; links prefer these rows over broad guide sections.
 

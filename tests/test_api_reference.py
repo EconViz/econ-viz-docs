@@ -108,12 +108,35 @@ class ApiReferenceTests(unittest.TestCase):
         result = api.render_reference_tables(source, 'zh-TW/utility-viz/guides/canvas.md')
         self.assertIn('id="api-entry-0-stroke"', result)
         self.assertIn('ev-api__custom--style">Stroke</span>', result)
-        self.assertIn('**Styles** — Line width', result)
-        self.assertIn('**Defaults** — `theme.stroke`', result)
+        self.assertIn('Line width', result)
+        self.assertIn('ev-api__default">預設值： <code>theme.stroke</code>', result)
+        self.assertNotIn('**Styles**', result)
         self.assertNotIn('| Object |', result)
         self.assertEqual(api.render_reference_tables(source, 'utility-viz/migrating.md'), source)
         fenced = '```markdown\n' + source + '```\n'
         self.assertEqual(api.render_reference_tables(fenced, 'utility-viz/guides/canvas.md'), fenced)
+
+    def test_nested_parameter_tables_convert_in_every_language(self):
+        for locale, heading in [('', 'Parameter'), ('zh-TW/', '參數'), ('zh-CN/', '参数')]:
+            source = f'=== "Translog"\n\n    | {heading} | Default | Meaning |\n    | --- | --- | --- |\n    | `alpha_0` | `0.0` | Intercept |\n'
+            result = api.render_reference_tables(source, locale + 'utility-viz/models/index.md')
+            self.assertIn('    <div class="ev-api ev-reference-list"', result)
+            self.assertIn('id="api-entry-nested-0-alpha-0"', result)
+            self.assertIn('class="ev-api__default"', result)
+            self.assertIn('ev-api__python--number">0.0</span></code></span></div>', result)
+            self.assertIn('ev-api__attribute">alpha_0</span>', result)
+            self.assertNotIn('**Default**', result)
+            self.assertNotIn('| `alpha_0` |', result)
+
+    def test_reference_parameter_metadata_matches_api_layout(self):
+        source = '| Parameter | Type | Default | Meaning |\n| --- | --- | --- | --- |\n| `axis_stroke` | `Stroke` or `None` | `None` | Sets both axes. |\n'
+        result = api.render_reference_tables(source, 'utility-viz/example.md')
+        meta = result.split('class="ev-api__meta"')[1].split('</div>')[0]
+        self.assertIn('ev-api__types', meta)
+        self.assertIn('ev-api__custom--style">Stroke', meta)
+        self.assertIn('ev-api__default', meta)
+        self.assertIn('Sets both axes.', result.split('</div>')[1])
+        self.assertNotIn('**Meaning**', result)
 
     def test_highlighted_calls_and_parameters_preserve_code(self):
         from pygments import highlight
@@ -176,7 +199,7 @@ class ApiReferenceTests(unittest.TestCase):
         self.assertIn('href="../guides/canvas/#mosaickit-guides-canvas-3-0"', result)
         self.assertIn('<pre><code>Canvas</code></pre>', result)
         self.assertIn('<a href="custom"><code class="ev-api-inline-code"><span class="ev-api__custom ev-api__custom--class">Canvas</span></code></a>', result)
-        self.assertIn('<code>not_an_api</code>', result)
+        self.assertIn('ev-api__attribute">not_an_api</span>', result)
         self.assertEqual(result.count('class="ev-api-inline"'), 2)
 
     def test_prose_badges_cover_errors_methods_and_builtins(self):
@@ -186,6 +209,29 @@ class ApiReferenceTests(unittest.TestCase):
         for badge in ('ev-api__custom--error', 'ev-api__method', 'ev-api__python--builtin', 'ev-api__python--constant'):
             self.assertIn(badge, result)
         self.assertIn('<code>lo &lt; hi</code>', result)
+
+    def test_inline_attributes_have_a_surface_in_every_package_and_language(self):
+        for locale in ('', 'zh-TW/', 'zh-CN/'):
+            for package in ('utility-viz', 'principle-viz', 'mosaickit', 'bezierkit'):
+                page = SimpleNamespace(file=SimpleNamespace(src_uri=locale + package + '/guides/canvas.md'))
+                source = ' '.join(f'<code>{name}</code>' for name in
+                                  ('x_range', 'y_range', 'width', 'height', 'dpi', 'x_min', 'theme.ic_stroke'))
+                result = api.on_page_content(source, page, SimpleNamespace(use_directory_urls=True))
+                self.assertEqual(result.count('class="ev-api__attribute"'), 7)
+
+    def test_all_catalog_parameter_labels_have_badges(self):
+        for symbol, item in api._catalog.items():
+            for parameter in item['parameters']:
+                self.assertIn('<span ', api._parameter_label(parameter['name']), (symbol, parameter['name']))
+
+    def test_numeric_prose_and_manual_signatures_share_badges(self):
+        page = SimpleNamespace(file=SimpleNamespace(src_uri='mosaickit/guides/canvas.md'))
+        result = api.on_page_content('<p><code>0.5</code></p>', page, SimpleNamespace(use_directory_urls=True))
+        self.assertIn('ev-api__python--number">0.5</span>', result)
+        result = api.render_manual({'anchor':'test','parameters':[], 'signatures':['CanvasSpec(width=6.0, dpi=300)']}, 'en')
+        self.assertIn('ev-api__attribute">width</span>', result)
+        self.assertIn('ev-api__attribute">dpi</span>', result)
+        self.assertIn('ev-api__python--number">6.0</span>', result)
 
 
 if __name__ == "__main__":

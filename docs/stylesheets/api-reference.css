@@ -64,6 +64,7 @@
 .md-typeset .ev-api__python--builtin { --api-python-color: var(--md-code-hl-constant-color); }
 .md-typeset .ev-api__python--keyword { --api-python-color: var(--md-code-hl-keyword-color); }
 .md-typeset .ev-api__python--constant { --api-python-color: var(--md-code-hl-keyword-color); }
+.md-typeset .ev-api__python--number { --api-python-color: var(--md-code-hl-number-color); }
 .md-typeset .ev-api__custom {
   display: inline-block;
   padding: .02em .28em;
@@ -81,6 +82,16 @@
 .md-typeset .ev-api__custom--style { background: #f9dfff; }
 .md-typeset .ev-api__custom--error { background: #ffcbc4; }
 .md-typeset .ev-api__custom--warning { background: #ffedc1; }
+.md-typeset .ev-api__attribute {
+  display: inline-block;
+  padding: .02em .28em;
+  border-radius: 4px;
+  background: #d1ffe2;
+  color: var(--api-ink);
+  font-family: var(--md-code-font-family);
+  font-weight: 600;
+  line-height: 1.5;
+}
 .md-typeset .ev-api__method {
   display: inline-block;
   padding: .02em .28em;
