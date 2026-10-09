@@ -34,8 +34,10 @@ theme:
 extra_css:
   - https://unpkg.com/katex@0/dist/katex.min.css
   - stylesheets/extra.css
+  - stylesheets/api-reference.css
 
 extra_javascript:
+  - javascripts/api-highlight.js
   - javascripts/katex.js
   - javascripts/model-toc.js
   - javascripts/analytics-events.js
@@ -45,7 +47,14 @@ extra_javascript:
 markdown_extensions:
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.snippets:
+      base_path: docs/assets/diagrams
+      check_paths: true
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
@@ -102,6 +111,7 @@ extra:
 hooks:
   - hooks/i18n_404.py
   - hooks/citations.py
+  - hooks/api_reference.py
 
 plugins:
   - search
@@ -150,8 +160,49 @@ plugins:
               cookies:
                 analytics: Google Analytics
           nav_translations:
+            "Introduction": "簡介"
+            "Quick start": "快速開始"
+            "Linear markets": "線性市場"
+            "Discrete markets": "離散市場"
+            "Market curves from individuals": "由個人加總市場曲線"
+            "Elasticity and total revenue": "彈性與總收益"
+            "Welfare": "福利"
+            "Taxes and subsidies": "租稅與補貼"
+            "Price controls": "價格管制"
+            "International trade": "國際貿易"
+            "Market failures": "市場失靈"
+            "Labor and loanable funds": "勞動與可貸資金"
+            "Production possibilities": "生產可能曲線"
+            "Figures": "圖形"
+            "Command-line interface": "命令列介面"
+            "Change history": "更新紀錄"
+            "Canvases and scenes": "畫布與場景"
+            "Layers and axes": "圖層與座標軸"
+            "Axis annotations": "座標軸註記"
+            "Layout geometry": "配置幾何"
+            "Region and point labels": "區域標籤與點標籤"
+            "Styles and colors": "樣式與顏色"
+            "Themes and configuration": "主題與設定"
+            "Parameters, grids and animation": "參數、網格與動畫"
+            "Rendering": "繪製"
+            "Proofs": "證明"
+            "Geometry values": "幾何數值物件"
+            "Bézier curves": "Bézier 曲線"
+            "Derivatives, reversal and subdivision": "導數、反轉與分割"
+            "Cubic segments and paths": "三次線段與路徑"
+            "Constructions and Hermite interpolation": "建構與 Hermite 插值"
+            "Level sets": "等值線"
+            "Sampling and export": "取樣與匯出"
+            "Approximation proofs": "近似方法的證明"
             Home: 首頁
             Getting Started: 入門
+            Markets & Welfare: 市場與福利
+            Policy & Trade: 政策與貿易
+            Factors & Production: 生產要素與生產
+            Canvas & Layers: 畫布與圖層
+            Annotations & Layout: 標註與配置
+            Styles & Configuration: 樣式與設定
+            Rendering & Animation: 繪製與動畫
             Installation: 安裝
             Quick Start: 快速開始
             CLI: 命令列工具
@@ -181,7 +232,17 @@ plugins:
             Changelog: 更新紀錄
             References: 參考文獻
             PDF Manual: PDF 手冊
-            Migrating from econ-viz: 從 econ-viz 遷移
+            Migration Guide: 遷移指南
+            Curves & Paths: 曲線與路徑
+            Geometry Values: 幾何數值物件
+            Bézier Curves: Bézier 曲線
+            Derivatives & Subdivision: 導數與分割
+            Cubic Paths: 三次線段與路徑
+            Construction & Approximation: 建構與近似
+            Constructions: 建構與 Hermite 插值
+            Fitting: 擬合
+            Level Sets: 等值線
+            Sampling & Export: 取樣與匯出
         - locale: zh-CN
           name: 简体中文
           build: true
@@ -219,8 +280,49 @@ plugins:
               cookies:
                 analytics: Google Analytics
           nav_translations:
+            "Introduction": "简介"
+            "Quick start": "快速开始"
+            "Linear markets": "线性市场"
+            "Discrete markets": "离散市场"
+            "Market curves from individuals": "由个人加总市场曲线"
+            "Elasticity and total revenue": "弹性与总收益"
+            "Welfare": "福利"
+            "Taxes and subsidies": "税收与补贴"
+            "Price controls": "价格管制"
+            "International trade": "国际贸易"
+            "Market failures": "市场失灵"
+            "Labor and loanable funds": "劳动与可贷资金"
+            "Production possibilities": "生产可能性曲线"
+            "Figures": "图形"
+            "Command-line interface": "命令行界面"
+            "Change history": "更新纪录"
+            "Canvases and scenes": "画布与场景"
+            "Layers and axes": "图层与坐标轴"
+            "Axis annotations": "坐标轴注释"
+            "Layout geometry": "布局几何"
+            "Region and point labels": "区域标签与点标签"
+            "Styles and colors": "样式与颜色"
+            "Themes and configuration": "主题与配置"
+            "Parameters, grids and animation": "参数、网格与动画"
+            "Rendering": "绘制"
+            "Proofs": "证明"
+            "Geometry values": "几何数值对象"
+            "Bézier curves": "Bézier 曲线"
+            "Derivatives, reversal and subdivision": "导数、反转与分割"
+            "Cubic segments and paths": "三次线段与路径"
+            "Constructions and Hermite interpolation": "建构与 Hermite 插值"
+            "Level sets": "等值线"
+            "Sampling and export": "采样与导出"
+            "Approximation proofs": "近似方法的证明"
             Home: 首页
             Getting Started: 入门
+            Markets & Welfare: 市场与福利
+            Policy & Trade: 政策与贸易
+            Factors & Production: 生产要素与生产
+            Canvas & Layers: 画布与图层
+            Annotations & Layout: 标注与布局
+            Styles & Configuration: 样式与配置
+            Rendering & Animation: 绘制与动画
             Installation: 安装
             Quick Start: 快速开始
             CLI: 命令行工具
@@ -250,7 +352,17 @@ plugins:
             Changelog: 更新日志
             References: 参考文献
             PDF Manual: PDF 手册
-            Migrating from econ-viz: 从 econ-viz 迁移
+            Migration Guide: 迁移指南
+            Curves & Paths: 曲线与路径
+            Geometry Values: 几何数值对象
+            Bézier Curves: Bézier 曲线
+            Derivatives & Subdivision: 导数与分割
+            Cubic Paths: 三次线段与路径
+            Construction & Approximation: 构造与近似
+            Constructions: 构造与 Hermite 插值
+            Fitting: 拟合
+            Level Sets: 等值线
+            Sampling & Export: 采样与导出
   - redirects:
       redirect_maps:
         getting-started/cli.md: utility-viz/getting-started/cli.md
@@ -328,20 +440,81 @@ nav:
       - Tools & Analysis:
           - Analysis: utility-viz/tools/analysis.md
           - LaTeX Parsing: utility-viz/tools/latex.md
-      - Migrating from econ-viz: utility-viz/migrating.md
+      - Migration Guide: utility-viz/migrating.md
       - Project:
           - Changelog: utility-viz/project/changelog.md
           - References: utility-viz/project/references.md
           - PDF Manual: utility-viz/project/manual.md
   - principle-viz:
       - Overview: principle-viz/index.md
-      - Installation: principle-viz/installation.md
-      - Quick Start: principle-viz/quickstart.md
+      - Getting Started:
+          - Introduction: principle-viz/guides/introduction.md
+          - Installation: principle-viz/installation.md
+          - Quick start: principle-viz/quickstart.md
+          - Command-line interface: principle-viz/cli.md
+      - Markets & Welfare:
+          - Linear markets: principle-viz/guides/markets.md
+          - Discrete markets: principle-viz/guides/discrete.md
+          - Market curves from individuals: principle-viz/guides/aggregation.md
+          - Elasticity and total revenue: principle-viz/guides/elasticity.md
+          - Welfare: principle-viz/guides/welfare.md
+      - Policy & Trade:
+          - Taxes and subsidies: principle-viz/guides/taxes.md
+          - Price controls: principle-viz/guides/controls.md
+          - International trade: principle-viz/guides/trade.md
+          - Market failures: principle-viz/guides/failures.md
+      - Factors & Production:
+          - Labor and loanable funds: principle-viz/guides/factor-markets.md
+          - Production possibilities: principle-viz/guides/ppf.md
+      - Drawing & Teaching:
+          - Figures: principle-viz/guides/figures.md
+      - Migration Guide: principle-viz/migrating.md
+      - Project:
+          - Change history: principle-viz/changelog.md
+          - References: principle-viz/project/references.md
   - mosaickit:
       - Overview: mosaickit/index.md
-      - Installation: mosaickit/installation.md
-      - Quick Start: mosaickit/quickstart.md
+      - Getting Started:
+          - Introduction: mosaickit/guides/introduction.md
+          - Installation: mosaickit/installation.md
+          - Quick start: mosaickit/quickstart.md
+      - Canvas & Layers:
+          - Canvases and scenes: mosaickit/guides/canvas.md
+          - Layers and axes: mosaickit/guides/layers.md
+      - Annotations & Layout:
+          - Axis annotations: mosaickit/guides/annotations.md
+          - Layout geometry: mosaickit/guides/geometry.md
+          - Region and point labels: mosaickit/guides/labels.md
+      - Styles & Configuration:
+          - Styles and colors: mosaickit/guides/styles.md
+          - Themes and configuration: mosaickit/guides/themes.md
+      - Rendering & Animation:
+          - Parameters, grids and animation: mosaickit/guides/parameters.md
+          - Rendering: mosaickit/guides/rendering.md
+      - Project:
+          - Proofs: mosaickit/project/proofs.md
+          - Change history: mosaickit/project/changelog.md
+          - References: mosaickit/project/references.md
   - bezierkit:
       - Overview: bezierkit/index.md
-      - Installation: bezierkit/installation.md
-      - Quick Start: bezierkit/quickstart.md
+      - Getting Started:
+          - Introduction: bezierkit/guides/introduction.md
+          - Installation: bezierkit/installation.md
+          - Quick start: bezierkit/quickstart.md
+          - Command-line interface: bezierkit/cli.md
+      - Curves & Paths:
+          - Geometry values: bezierkit/guides/geometry.md
+          - Bézier curves: bezierkit/guides/curves.md
+          - Derivatives, reversal and subdivision: bezierkit/guides/operations.md
+          - Cubic segments and paths: bezierkit/guides/paths.md
+      - Construction & Approximation:
+          - Constructions and Hermite interpolation: bezierkit/guides/construction.md
+          - Fitting: bezierkit/guides/fitting.md
+          - Level sets: bezierkit/guides/implicit.md
+      - Sampling & Export:
+          - Sampling and export: bezierkit/guides/export.md
+      - Project:
+          - Proofs: bezierkit/project/proofs.md
+          - Approximation proofs: bezierkit/project/proofs-approximation.md
+          - Change history: bezierkit/project/changelog.md
+          - References: bezierkit/project/references.md

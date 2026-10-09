@@ -23,15 +23,18 @@ description: "EconViz is a family of open-source Python packages for economics d
 
 EconViz is made of four packages. Two draw economics diagrams, and two are general-purpose building blocks they share.
 
-<div class="grid cards" markdown>
+### Economics packages
+
+Two packages draw economics diagrams.
+
+<div class="grid cards ev-package-cards" markdown>
 
 -   :material-chart-bell-curve-cumulative: **utility-viz**
 
-    Publication-quality microeconomics diagrams: indifference curves, budget constraints, consumer equilibria and
-    TikZ export.
+    Publication-quality microeconomics diagrams: indifference curves, budget constraints and equilibria.
 
     ```bash
-    pip install --pre utility-viz
+    uv add --prerelease allow utility-viz
     ```
 
     Version 2.0 is in beta.
@@ -40,33 +43,38 @@ EconViz is made of four packages. Two draw economics diagrams, and two are gener
 
 -   :material-scale-balance: **principle-viz**
 
-    Principles of Economics market analysis and diagrams: equilibrium, taxes, price controls, welfare and trade, built
-    on linear demand and supply.
+    Market analysis and diagrams for Principles of Economics: taxes, price controls, welfare and trade.
 
     ```bash
-    pip install principle-viz
+    uv add principle-viz
     ```
 
     [:octicons-arrow-right-24: principle-viz](principle-viz/index.md)
 
+</div>
+
+### Foundation packages
+
+Two general-purpose building blocks that the economics packages share.
+
+<div class="grid cards ev-package-cards" markdown>
+
 -   :material-view-grid-outline: **mosaickit**
 
-    A domain-neutral toolkit for assembling two-dimensional diagrams from scenes, layers, styles, parameters and
-    renderers.
+    A domain-neutral toolkit for assembling two-dimensional diagrams from layers, styles and renderers.
 
     ```bash
-    pip install mosaickit
+    uv add mosaickit
     ```
 
     [:octicons-arrow-right-24: mosaickit](mosaickit/index.md)
 
 -   :material-vector-bezier: **bezierkit**
 
-    A small mathematical toolkit for constructing, analyzing and exporting Bézier curves, with native SVG and TikZ
-    output.
+    A small toolkit for constructing, analyzing and exporting Bézier curves, with SVG and TikZ output.
 
     ```bash
-    pip install --pre bezierkit
+    uv add --prerelease allow bezierkit
     ```
 
     Currently a release candidate (0.5.0rc1).
@@ -74,21 +82,3 @@ EconViz is made of four packages. Two draw economics diagrams, and two are gener
     [:octicons-arrow-right-24: bezierkit](bezierkit/index.md)
 
 </div>
-
-## How the packages fit together
-
-Each arrow reads "depends on", taken from the packages' declared dependencies:
-
-```text
-utility-viz   ──>  mosaickit
-utility-viz   ──>  bezierkit
-principle-viz ──>  mosaickit
-```
-
-- **utility-viz** and **principle-viz** render their diagrams with **mosaickit**.
-- **utility-viz** also uses **bezierkit** for curves and TikZ output.
-- **mosaickit** does not depend on bezierkit or on any domain package.
-
-## Coming from econ-viz?
-
-`econ-viz` was renamed to **utility-viz** in 2.0. See [Migrating from econ-viz](utility-viz/migrating.md).
