@@ -18,8 +18,12 @@ from utility_viz.optimizer import comparative_statics
 model = CobbDouglas(alpha=0.4, beta=0.6)
 cs = comparative_statics(model, px=2.0, py=3.0, income=60.0)
 
-print(round(cs.dx_dpx, 1), round(cs.dx_dpy, 1), round(cs.dx_dI, 1))
-print(round(cs.dy_dpx, 1), round(cs.dy_dpy, 1), round(cs.dy_dI, 1))
+print(
+    round(cs.dx_dpx, 1), round(cs.dx_dpy, 1), round(cs.dx_dI, 1)
+)
+print(
+    round(cs.dy_dpx, 1), round(cs.dy_dpy, 1), round(cs.dy_dI, 1)
+)
 
 # -6.0 0.0 0.2
 # 0.0 -4.0 0.2
@@ -41,7 +45,9 @@ from utility_viz.models import CobbDouglas
 
 S = slutsky_matrix(
     CobbDouglas(alpha=0.4, beta=0.6),
-    px=2.0, py=3.0, income=60.0,
+    px=2.0,
+    py=3.0,
+    income=60.0,
 )
 
 print(round(S.s_xx, 1), round(S.s_xy, 1))
@@ -64,10 +70,12 @@ Use `HomogeneityAnalyzer` to study whether a utility function is homogeneous or 
 
 The analyzer provides four checks:
 
-- `degree()` estimates the homogeneity degree
-- `euler_check(x, y)` evaluates the Euler-theorem residual at a bundle
-- `is_homothetic()` checks whether MRS is invariant to proportional scaling
-- `demand_degree_zero(px, py, income)` verifies Marshallian demand homogeneity of degree 0
+| Method | Checks |
+|------|------|
+| `degree()` | Estimates the homogeneity degree |
+| `euler_check(x, y)` | Evaluates the Euler-theorem residual at a bundle |
+| `is_homothetic()` | Whether MRS is invariant to proportional scaling |
+| `demand_degree_zero(px, py, income)` | Whether Marshallian demand is homogeneous of degree 0 |
 
 ### Example
 
@@ -125,7 +133,11 @@ models = [
 
 for model in models:
     result = HomogeneityAnalyzer(model).degree()
-    degree = None if result.degree is None else round(result.degree, 1)
+    degree = (
+        None
+        if result.degree is None
+        else round(result.degree, 1)
+    )
     print(degree, result.returns_to_scale.name)
 
 # 1.3 INCREASING
@@ -133,3 +145,19 @@ for model in models:
 # 0.7 DECREASING
 # None NOT_HOMOGENEOUS
 ```
+
+## Equilibrium solver {#solve}
+
+Find the utility-maximizing bundle under a linear budget constraint.
+
+<!-- api: helpers.solve -->
+
+## Utility levels {#levels}
+
+<!-- api-target: levels levels -->
+
+`levels` provides utility levels for indifference curves: `around` centers them on a reference value; `percentile` selects them from a utility surface.
+
+<!-- api: helpers.levels_around -->
+
+<!-- api: helpers.levels_percentile -->

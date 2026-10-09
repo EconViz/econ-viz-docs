@@ -23,14 +23,18 @@ description: "EconViz 是一组开源 Python 包，用来绘制经济学图形�
 
 EconViz 由四个包组成：两个负责绘制经济学图形，另外两个是它们共用的通用组件。
 
-<div class="grid cards" markdown>
+### 经济学包
+
+两个负责绘制经济学图形的包。
+
+<div class="grid cards ev-package-cards" markdown>
 
 -   :material-chart-bell-curve-cumulative: **utility-viz**
 
     绘制出版质量的微观经济学图形：无差异曲线、预算约束、消费者均衡，并可导出 TikZ。
 
     ```bash
-    pip install --pre utility-viz
+    uv add --prerelease allow utility-viz
     ```
 
     2.0 版目前处于 Beta 阶段。
@@ -39,30 +43,38 @@ EconViz 由四个包组成：两个负责绘制经济学图形，另外两个是
 
 -   :material-scale-balance: **principle-viz**
 
-    经济学原理的市场分析与图形：均衡、税收、价格管制、福利与贸易，以线性需求和供给为基础。
+    经济学原理的市场分析与图形：均衡、税收、价格管制、福利与贸易，以线性需求与供给为基础。
 
     ```bash
-    pip install principle-viz
+    uv add principle-viz
     ```
 
     [:octicons-arrow-right-24: principle-viz](principle-viz/index.md)
 
+</div>
+
+### 底层包
+
+两个通用的基础组件，由经济学包共用。
+
+<div class="grid cards ev-package-cards" markdown>
+
 -   :material-view-grid-outline: **mosaickit**
 
-    与领域无关的工具包，用场景、图层、样式、参数和渲染器组合出二维图形。
+    与领域无关的工具包，用场景、图层、样式、参数与渲染器组合出二维图形。
 
     ```bash
-    pip install mosaickit
+    uv add mosaickit
     ```
 
     [:octicons-arrow-right-24: mosaickit](mosaickit/index.md)
 
 -   :material-vector-bezier: **bezierkit**
 
-    小巧的数学工具包，用来构造、分析和导出贝塞尔曲线，并原生支持 SVG 与 TikZ 输出。
+    小巧的数学工具包，用来构造、分析与导出贝塞尔曲线，并原生支持 SVG 与 TikZ 输出。
 
     ```bash
-    pip install --pre bezierkit
+    uv add --prerelease allow bezierkit
     ```
 
     目前为候选版本（0.5.0rc1）。
@@ -70,21 +82,3 @@ EconViz 由四个包组成：两个负责绘制经济学图形，另外两个是
     [:octicons-arrow-right-24: bezierkit](bezierkit/index.md)
 
 </div>
-
-## 包之间的关系
-
-箭头表示“依赖”，依据各包声明的依赖整理：
-
-```text
-utility-viz   ──>  mosaickit
-utility-viz   ──>  bezierkit
-principle-viz ──>  mosaickit
-```
-
-- **utility-viz** 和 **principle-viz** 通过 **mosaickit** 渲染图形。
-- **utility-viz** 另外使用 **bezierkit** 生成曲线和 TikZ 输出。
-- **mosaickit** 不依赖 bezierkit，也不依赖任何领域包。
-
-## 从 econ-viz 升级？
-
-`econ-viz` 在 2.0 更名为 **utility-viz**，详见[从 econ-viz 迁移](utility-viz/migrating.md)。

@@ -97,10 +97,16 @@ cvs = Canvas(x_max=20, y_max=15, theme=my_theme)
 ```python
 from utility_viz import ArrowStyle, Stroke, Theme
 
+
 class MyTheme(Theme):
     @property
     def core_stroke(self) -> Stroke:
-        return Stroke(width=3.0, color="#C0392B", arrow=ArrowStyle.TRIANGLE)
+        return Stroke(
+            width=3.0,
+            color="#C0392B",
+            arrow=ArrowStyle.TRIANGLE,
+        )
+
 
 cvs = EdgeworthBox(..., theme=MyTheme(name="my-theme"))
 ```

@@ -1,0 +1,35 @@
+%%{init: {
+  "theme": "base",
+  "flowchart": { "htmlLabels": false, "nodeSpacing": 40, "rankSpacing": 90, "padding": 16 },
+  "themeVariables": {
+    "fontFamily": "JetBrains Mono, SFMono-Regular, Consolas, monospace",
+    "fontSize": "15px",
+    "primaryColor": "#ffffff",
+    "primaryTextColor": "#181818",
+    "primaryBorderColor": "#181818",
+    "lineColor": "#181818"
+  }
+}}%%
+flowchart LR
+    subgraph econ["经济学包"]
+        direction TB
+        U[utility-viz]
+        P[principle-viz]
+    end
+
+    subgraph base["底层包"]
+        direction TB
+        B[bezierkit]
+        M[mosaickit]
+    end
+
+    U --> B
+    U --> M
+    P --> M
+
+    classDef economics fill:#ffffff,stroke:#181818,color:#181818,stroke-width:2px
+    classDef foundation fill:#ffffff,stroke:#181818,color:#181818,stroke-width:2px
+    class U,P economics
+    class B,M foundation
+    style econ fill:#f3f3f3,stroke:#8a8a8a,color:#181818
+    style base fill:#f3f3f3,stroke:#8a8a8a,color:#181818

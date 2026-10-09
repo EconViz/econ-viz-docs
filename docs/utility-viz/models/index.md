@@ -388,7 +388,9 @@ preferred consumption point.
 
     (
         Canvas(x_max=12, y_max=10, title="Satiation")
-        .add_utility(model, levels=levels.percentile(model(X, Y), n=5))
+        .add_utility(
+            model, levels=levels.percentile(model(X, Y), n=5)
+        )
         .save("satiation.png")
     )
     ```

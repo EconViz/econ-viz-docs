@@ -6,7 +6,7 @@ description: "开源 Python 包，绘制出版质量的微观经济学图形：�
 <h1 class="ev-visually-hidden">utility-viz：绘制微观经济学图形的 Python 包</h1>
 
 <p align="center">
-  <img src="../../assets/banner.svg" alt="EconViz" style="max-width: 480px; width: 100%; margin: 2rem 0 1rem;">
+  <img src="../../assets/utility-viz/banner.svg" alt="utility-viz" style="max-width: 480px; width: 100%; margin: 2rem 0 1rem;">
 </p>
 
 <p align="center"><em>用 Python 绘制出版质量的微观经济学图形。</em></p>
@@ -18,30 +18,22 @@ description: "开源 Python 包，绘制出版质量的微观经济学图形：�
   <a href="https://pypi.org/project/utility-viz/"><img alt="Python" src="https://img.shields.io/pypi/pyversions/utility-viz?style=flat-square&color=181818&labelColor=f3f3f3"></a>
 </p>
 
----
-
-:fontawesome-brands-github: **源代码：** [https://github.com/EconViz/utility-viz](https://github.com/EconViz/utility-viz)
-
-:material-file-pdf-box: **PDF 手册：** [简体中文、繁體中文、English](project/manual.md)
-
-:fontawesome-solid-envelope: **联系我们：** [contact@econ-viz.org](mailto:contact@econ-viz.org)
-
----
-
 !!! warning "utility-viz 2.0 目前处于 Beta 阶段"
 
     utility-viz 2.0.0b1 是预发布版本（pre-release）。在 2.0 正式版发布之前，稳定版仍是 `econ-viz` 1.x。
-    从 `econ-viz` 升级？请见[从 econ-viz 迁移](migrating.md)。
+    从 `econ-viz` 升级？请见[迁移指南](migrating.md)。
 
 ```python
 from utility_viz import Canvas, levels, solve
 from utility_viz.models import CobbDouglas
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
-eq    = solve(model, px=2.0, py=3.0, income=30.0)
-lvls  = levels.around(eq.utility, n=5)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
+lvls = levels.around(eq.utility, n=5)
 
-cvs = Canvas(x_max=20, y_max=15, title=r"Cobb-Douglas $x^{0.5} y^{0.5}$")
+cvs = Canvas(
+    x_max=20, y_max=15, title=r"Cobb-Douglas $x^{0.5} y^{0.5}$"
+)
 cvs.add_utility(model, levels=lvls)
 cvs.add_budget(2.0, 3.0, 30.0, fill=True)
 cvs.add_equilibrium(eq, show_ray=True)
@@ -123,7 +115,7 @@ cvs.save("cobb_douglas.png")
 ## 安装
 
 ```bash
-pip install --pre utility-viz
+uv add --prerelease allow utility-viz
 ```
 
 需要 Python 3.10 以上。uv 与可选依赖的安装方式请见[安装](getting-started/installation.md)。

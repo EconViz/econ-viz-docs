@@ -7,11 +7,13 @@ description: "用 utility-viz 建立多面板圖、需求圖、價格效果分�
 
 `utility-viz` 在 `Canvas` 之上提供更高階的教學元件：
 
-- `Figure`：多面板版面
-- `PricePath` 與 `IncomePath`：讓預算與均衡隨參數移動
-- `DemandDiagram`：連動的商品空間圖與 Marshall 需求圖
-- `decompose_price_effect(...)`：Hicks 與 Slutsky 分解
-- `EdgeworthBox`：兩人交換的 Edgeworth 箱形圖
+| 元件 | 用途 |
+|------|------|
+| `Figure` | 多面板版面 |
+| `PricePath`、`IncomePath` | 讓預算與均衡隨參數移動 |
+| `DemandDiagram` | 連動的商品空間圖與 Marshall 需求圖 |
+| `decompose_price_effect(...)` | Hicks 與 Slutsky 分解 |
+| `EdgeworthBox` | 兩人交換的 Edgeworth 箱形圖 |
 
 ## 多面板圖 {#multi-panel-figure data-toc-label="多面板圖"}
 
@@ -32,15 +34,29 @@ fig = Figure(
 )
 
 cases = [
-    (CobbDouglas(alpha=0.5, beta=0.5), 2.0, 3.0, 30.0, r"Before: $p_x=2$"),
-    (CobbDouglas(alpha=0.3, beta=0.7), 4.0, 3.0, 30.0, r"After: $p_x=4$"),
+    (
+        CobbDouglas(alpha=0.5, beta=0.5),
+        2.0,
+        3.0,
+        30.0,
+        r"Before: $p_x=2$",
+    ),
+    (
+        CobbDouglas(alpha=0.3, beta=0.7),
+        4.0,
+        3.0,
+        30.0,
+        r"After: $p_x=4$",
+    ),
 ]
 
 for idx, (model, px, py, income, title) in enumerate(cases):
     eq = solve(model, px=px, py=py, income=income)
     panel = fig[idx]
     panel.ax.set_title(title)
-    panel.add_utility(model, levels=levels.around(eq.utility, n=5), label="IC")
+    panel.add_utility(
+        model, levels=levels.around(eq.utility, n=5), label="IC"
+    )
     panel.add_budget(px, py, income, fill=True, label="BC")
     panel.add_equilibrium(eq, show_ray=True)
 
@@ -54,13 +70,15 @@ fig.save("figure_side_by_side.png")
 
 `Figure` 提供以下版面：
 
-- `Layout.SINGLE`
-- `Layout.STACKED`
-- `Layout.SIDE_BY_SIDE`
-- `Layout.TOP_TWO_BOTTOM_ONE`
-- `Layout.TOP_ONE_BOTTOM_TWO`
-- `Layout.GRID_2X2`
-- `Layout.GRID_3X3`
+| 版面 | 面板數 | 排列方式 |
+|--------|--------|--------|
+| `Layout.SINGLE` | 1 | 單一面板 |
+| `Layout.STACKED` | 2 | 上下兩個面板 |
+| `Layout.SIDE_BY_SIDE` | 2 | 左右兩個面板 |
+| `Layout.TOP_TWO_BOTTOM_ONE` | 3 | 上方兩個、下方一個 |
+| `Layout.TOP_ONE_BOTTOM_TWO` | 3 | 上方一個、下方兩個 |
+| `Layout.GRID_2X2` | 4 | 2 × 2 網格 |
+| `Layout.GRID_3X3` | 9 | 3 × 3 網格 |
 
 `Figure[idx]` 會回傳一個面板 `Canvas`，所以版面建好之後，繪圖 API 完全相同。
 
@@ -177,7 +195,9 @@ from utility_viz import Effect, Label
 
 canvas.add_decomposition(
     result,
-    substitution=Effect(color="#E67E22", label="SE", label_position="top"),
+    substitution=Effect(
+        color="#E67E22", label="SE", label_position="top"
+    ),
     income=Effect(color="#27AE60", label="IE"),
     point_label=Label(visible=False),
 )
@@ -190,9 +210,12 @@ from utility_viz import Label, Legend, Stroke
 
 canvas.add_decomposition(
     result,
-    curve_stroke=Stroke(opacity=0.6),        # 調整 U0、U1（與 U_B）的樣式
-    curve_label=Label(position="top"),       # 顯示 U0、U1 標籤
-    legend=Legend(position="bottom"),        # 或 Legend(visible=False)
+    # 調整 U0、U1（與 U_B）的樣式
+    curve_stroke=Stroke(opacity=0.6),
+    # 顯示 U0、U1 標籤
+    curve_label=Label(position="top"),
+    # 或 Legend(visible=False)
+    legend=Legend(position="bottom"),
 )
 ```
 
@@ -239,8 +262,7 @@ from utility_viz import Canvas, levels
 eq = price_path.equilibria[len(price_path.equilibria) // 2]
 lvls = levels.around(eq.utility, n=5)
 
-Canvas(x_max=25, y_max=20) \
-    .add_utility(model, levels=lvls) \
-    .add_path(price_path, label="PCC") \
-    .save("price_path.png")
+Canvas(x_max=25, y_max=20).add_utility(
+    model, levels=lvls
+).add_path(price_path, label="PCC").save("price_path.png")
 ```

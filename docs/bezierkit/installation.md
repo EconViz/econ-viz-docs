@@ -1,53 +1,31 @@
 ---
-seo_title: "Install bezierkit"
-description: "Install the bezierkit 0.5.0rc1 pre-release with pip or uv, add the optional CLI and Matplotlib extras, and set up a development environment."
+seo_title: "Installation"
 ---
 
 # Installation
 
+<span id="sec-install"></span>
+
 ## Requirements
 
-- [Python](https://www.python.org/downloads/) 3.10 or later
+`bezierkit` requires Python 3.10 or later and
+`NumPy`. Two optional extras add the rest:
 
-bezierkit installs `numpy` as its only required dependency.
+<!-- api: agora.bezierkit.installation_1 -->
 
-## Install
-
-bezierkit 0.5.0rc1 is a pre-release, and pip and uv skip pre-releases by default. Opt in with `--pre`, or pin the
-exact version.
-
-=== ":simple-pypi: pip"
-
-    ```bash
-    pip install --pre bezierkit
-    # or pin the exact version:
-    pip install bezierkit==0.5.0rc1
-    ```
-
-=== ":simple-uv: uv"
-
-    ```bash
-    uv add --prerelease allow bezierkit
-    # or pin the exact version:
-    uv add bezierkit==0.5.0rc1
-    ```
-
-## Optional extras
-
-| Extra | Adds | Install |
-|---|---|---|
-| `cli` | The `bezierkit` command (typer and rich) | `pip install --pre "bezierkit[cli]"` |
-| `matplotlib` | The Matplotlib path adapter | `pip install --pre "bezierkit[matplotlib]"` |
-
-With uv, use `uv add --prerelease allow "bezierkit[cli]"` in the same way.
-
-## Verify the installation
+## Installing the package
 
 ```bash
-python -c "import bezierkit; print(bezierkit.__version__)"
+uv add bezierkit                 # the library
+uv add "bezierkit[cli]"          # with the command-line interface
+uv add "bezierkit[matplotlib]"   # with the Matplotlib adapter
+uv add "bezierkit==1.0.0"        # the version this manual describes
 ```
 
-This prints `0.5.0rc1`. With the `cli` extra installed, `bezierkit --help` lists the commands.
+With `pip`, use `python -m pip install bezierkit` and the same extras.
+Version 1.0.0 is the first stable release: the names exported from
+`bezierkit` and its documented subpackages follow semantic versioning, and
+the JSON path schema stays at version 1.
 
 ## Development setup
 
@@ -56,4 +34,11 @@ git clone https://github.com/EconViz/bezierkit.git
 cd bezierkit
 uv sync --all-extras --dev
 uv run pytest
+uv run ruff check src tests benchmarks
+uv run lint-imports
 ```
+
+The continuous-integration workflow runs the same commands on Python 3.10,
+3.11, 3.12 and 3.13. `lint-imports` checks the package layering: the
+mathematical core imports no renderer, and only the adapters import
+Matplotlib.

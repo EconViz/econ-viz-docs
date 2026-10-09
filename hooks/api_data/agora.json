@@ -1,0 +1,2992 @@
+{
+  "agora.principle_viz.quickstart_1": {
+    "name": "line_from_inverse",
+    "anchor": "principle-viz-quickstart-1",
+    "signatures": [
+      "line_from_inverse(float, float)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.quickstart_2": {
+    "name": "solve_equilibrium",
+    "anchor": "principle-viz-quickstart-2",
+    "signatures": [
+      "solve_equilibrium(demand, supply)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.quickstart_3": {
+    "name": "MarketFigure",
+    "anchor": "principle-viz-quickstart-3",
+    "signatures": [
+      "MarketFigure(\n    x_max=float,\n    y_max=float,\n    ...\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.quickstart_4": {
+    "name": "MarketFigure.add_*",
+    "anchor": "principle-viz-quickstart-4",
+    "signatures": [
+      "MarketFigure.add_*"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.quickstart_5": {
+    "name": "MarketFigure.finalize",
+    "anchor": "principle-viz-quickstart-5",
+    "signatures": [
+      "MarketFigure.finalize",
+      "MarketFigure.save"
+    ],
+    "parameters": [
+      {
+        "name": "q_star",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Equilibrium quantity $Q^*$.",
+          "zh-TW": "均衡數量 $Q^*$。",
+          "zh-CN": "均衡数量 $Q^*$。"
+        }
+      },
+      {
+        "name": "p_star",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Equilibrium price $p^*$.",
+          "zh-TW": "均衡價格 $p^*$。",
+          "zh-CN": "均衡价格 $p^*$。"
+        }
+      },
+      {
+        "name": "is_valid_market",
+        "types": [
+          "bool"
+        ],
+        "description": {
+          "en": "`False` when the equilibrium quantity is negative; a negative price only adds a note.",
+          "zh-TW": "均衡數量為負時為 `False`；價格為負只會加入一則說明。",
+          "zh-CN": "均衡数量为负时为 `False`；价格为负只会加入一则说明。"
+        }
+      },
+      {
+        "name": "notes",
+        "types": [
+          "tuple[str, ...]"
+        ],
+        "description": {
+          "en": "Notes on special cases of the solution.",
+          "zh-TW": "說明解的特殊情況。",
+          "zh-CN": "说明解的特殊情况。"
+        }
+      }
+    ]
+  },
+  "agora.principle_viz.quickstart_6": {
+    "name": "PrincipleVizError",
+    "anchor": "principle-viz-quickstart-6",
+    "signatures": [
+      "PrincipleVizError"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_markets_1": {
+    "name": "Line",
+    "anchor": "principle-viz-guides-markets-1",
+    "signatures": [
+      "Line.from_inverse(float, float)",
+      "Line.from_standard(\n    float,\n    float,\n    float\n)"
+    ],
+    "parameters": [
+      {
+        "name": "p_at(q)",
+        "types": [],
+        "description": {
+          "en": "Price at quantity $q$.",
+          "zh-TW": "數量 $q$ 時的價格。",
+          "zh-CN": "数量 $q$ 时的价格。"
+        }
+      },
+      {
+        "name": "q_at(p)",
+        "types": [],
+        "description": {
+          "en": "Quantity at price $p$.",
+          "zh-TW": "價格 $p$ 時的數量。",
+          "zh-CN": "价格 $p$ 时的数量。"
+        }
+      },
+      {
+        "name": "p_intercept()",
+        "types": [],
+        "description": {
+          "en": "Price at $Q = 0$ (the choke price of a demand curve).",
+          "zh-TW": "$Q = 0$ 時的價格（需求曲線的阻絕價格）。",
+          "zh-CN": "$Q = 0$ 时的价格（需求曲线的阻绝价格）。"
+        }
+      },
+      {
+        "name": "q_intercept()",
+        "types": [],
+        "description": {
+          "en": "Quantity at $p = 0$.",
+          "zh-TW": "$p = 0$ 時的數量。",
+          "zh-CN": "$p = 0$ 时的数量。"
+        }
+      },
+      {
+        "name": "slope()",
+        "types": [],
+        "description": {
+          "en": "$\\mathrm{d} p / \\mathrm{d} Q$.",
+          "zh-TW": "$\\mathrm{d} p / \\mathrm{d} Q$。",
+          "zh-CN": "$\\mathrm{d} p / \\mathrm{d} Q$。"
+        }
+      },
+      {
+        "name": "to_inverse()",
+        "types": [],
+        "description": {
+          "en": "`(a, b)` for $p = a + b Q$.",
+          "zh-TW": "$p = a + b Q$ 的 `(a, b)`。",
+          "zh-CN": "$p = a + b Q$ 的 `(a, b)`。"
+        }
+      },
+      {
+        "name": "shifted()",
+        "types": [],
+        "description": {
+          "en": "A new line with `delta_intercept` ($\\Delta a$) added to the intercept and `delta_slope` ($\\Delta b$) added to the slope.",
+          "zh-TW": "將截距與斜率分別加上 `delta_intercept`（$\\Delta a$）與 `delta_slope`（$\\Delta b$）後的新直線。",
+          "zh-CN": "将截距与斜率分别加上 `delta_intercept`（$\\Delta a$）与 `delta_slope`（$\\Delta b$）后的新直线。"
+        }
+      }
+    ]
+  },
+  "agora.principle_viz.guides_markets_2": {
+    "name": "solve_equilibrium",
+    "anchor": "principle-viz-guides-markets-2",
+    "signatures": [
+      "solve_equilibrium(demand, supply)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_markets_3": {
+    "name": "ShiftSpec",
+    "anchor": "principle-viz-guides-markets-3",
+    "signatures": [
+      "ShiftSpec(delta_intercept=0.0, delta_slope=0.0)",
+      "ShiftScenario(demand_shift=None, supply_shift=None)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_markets_4": {
+    "name": "comparative_statics",
+    "anchor": "principle-viz-guides-markets-4",
+    "signatures": [
+      "comparative_statics(\n    demand,\n    supply,\n    scenario\n)"
+    ],
+    "parameters": [
+      {
+        "name": "baseline_equilibrium",
+        "types": [],
+        "description": {
+          "en": "The `EquilibriumResult` before the shift.",
+          "zh-TW": "移動前的 `EquilibriumResult`。",
+          "zh-CN": "移动前的 `EquilibriumResult`。"
+        }
+      },
+      {
+        "name": "shifted_equilibrium",
+        "types": [],
+        "description": {
+          "en": "The `EquilibriumResult` after the shift.",
+          "zh-TW": "移動後的 `EquilibriumResult`。",
+          "zh-CN": "移动后的 `EquilibriumResult`。"
+        }
+      },
+      {
+        "name": "shifted_market",
+        "types": [],
+        "description": {
+          "en": "The baseline and shifted lines (`baseline_demand`, `shifted_demand`, ...).",
+          "zh-TW": "移動前後的直線（`baseline_demand`、`shifted_demand` 等）。",
+          "zh-CN": "移动前后的直线（`baseline_demand`、`shifted_demand` 等）。"
+        }
+      },
+      {
+        "name": "delta_q",
+        "types": [],
+        "description": {
+          "en": "Change in quantity.",
+          "zh-TW": "數量的變動。",
+          "zh-CN": "数量的变动。"
+        }
+      },
+      {
+        "name": "delta_p",
+        "types": [],
+        "description": {
+          "en": "Change in price.",
+          "zh-TW": "價格的變動。",
+          "zh-CN": "价格的变动。"
+        }
+      },
+      {
+        "name": "direction_q",
+        "types": [],
+        "description": {
+          "en": "Direction of the quantity change: `\"left\"` or `\"right\"` (`\"none\"` when unchanged).",
+          "zh-TW": "數量的變動方向：`\"left\"` 或 `\"right\"`（未變動時為 `\"none\"`）。",
+          "zh-CN": "数量的变动方向：`\"left\"` 或 `\"right\"`（未变动时为 `\"none\"`）。"
+        }
+      },
+      {
+        "name": "direction_p",
+        "types": [],
+        "description": {
+          "en": "Direction of the price change: `\"up\"` or `\"down\"` (`\"none\"` when unchanged).",
+          "zh-TW": "價格的變動方向：`\"up\"` 或 `\"down\"`（未變動時為 `\"none\"`）。",
+          "zh-CN": "价格的变动方向：`\"up\"` 或 `\"down\"`（未变动时为 `\"none\"`）。"
+        }
+      }
+    ]
+  },
+  "agora.principle_viz.guides_markets_5": {
+    "name": "MarketFigure.add_comparative_statics",
+    "anchor": "principle-viz-guides-markets-5",
+    "signatures": [
+      "MarketFigure.add_comparative_statics(\n    result,\n    q_max,\n    *,\n    demand_label=\"$D_1$\",\n    supply_label=\"$S_1$\"\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_discrete_1": {
+    "name": "DiscreteDemand",
+    "anchor": "principle-viz-guides-discrete-1",
+    "signatures": [
+      "DiscreteDemand(values)",
+      "DiscreteSupply(values)"
+    ],
+    "parameters": [
+      {
+        "name": "quantity_at(price)",
+        "types": [],
+        "description": {
+          "en": "Units bought or sold at `price`; a buyer or seller indifferent at the price trades.",
+          "zh-TW": "價格為 `price` 時的成交單位數；在該價格下無差異的買方或賣方會交易。",
+          "zh-CN": "价格为 `price` 时的成交单位数；在该价格下无差异的买方或卖方会交易。"
+        }
+      },
+      {
+        "name": "unit_count",
+        "types": [],
+        "description": {
+          "en": "Number of units in the schedule.",
+          "zh-TW": "表中的單位數。",
+          "zh-CN": "表中的单位数。"
+        }
+      },
+      {
+        "name": "combine(*schedules)",
+        "types": [],
+        "description": {
+          "en": "Merge several individual schedules into a market schedule ([Market curves from individuals](aggregation.md#sec-aggregation)).",
+          "zh-TW": "將多個個人表合併為市場表（詳見[由個人加總市場曲線](aggregation.md#sec-aggregation)）。",
+          "zh-CN": "将多个个人表合并为市场表（详见[由个人加总市场曲线](aggregation.md#sec-aggregation)）。"
+        }
+      }
+    ]
+  },
+  "agora.principle_viz.guides_discrete_2": {
+    "name": "solve_discrete_equilibrium",
+    "anchor": "principle-viz-guides-discrete-2",
+    "signatures": [
+      "solve_discrete_equilibrium(\n    demand,\n    supply,\n    *,\n    price_rule=\"midpoint\"\n)"
+    ],
+    "parameters": [
+      {
+        "name": "q_star",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "Units traded.",
+          "zh-TW": "成交單位數。",
+          "zh-CN": "成交单位数。"
+        }
+      },
+      {
+        "name": "price_low",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Lower end of the supporting price interval.",
+          "zh-TW": "支持均衡的價格區間下限。",
+          "zh-CN": "支持均衡的价格区间下限。"
+        }
+      },
+      {
+        "name": "price_high",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Upper end of the supporting price interval.",
+          "zh-TW": "支持均衡的價格區間上限。",
+          "zh-CN": "支持均衡的价格区间上限。"
+        }
+      },
+      {
+        "name": "price",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "The price chosen from the interval by `price_rule`.",
+          "zh-TW": "依 `price_rule` 從區間中選出的價格。",
+          "zh-CN": "依 `price_rule` 从区间中选出的价格。"
+        }
+      },
+      {
+        "name": "price_rule",
+        "types": [
+          "EquilibriumPriceRule"
+        ],
+        "description": {
+          "en": "`MIDPOINT` (default), `LOWER` or `UPPER`; the strings `\"midpoint\"`, `\"lower\"` and `\"upper\"` work too.",
+          "zh-TW": "`MIDPOINT`（預設）、`LOWER` 或 `UPPER`；也可傳入字串 `\"midpoint\"`、`\"lower\"`、`\"upper\"`。",
+          "zh-CN": "`MIDPOINT`（默认）、`LOWER` 或 `UPPER`；也可传入字符串 `\"midpoint\"`、`\"lower\"`、`\"upper\"`。"
+        }
+      },
+      {
+        "name": "traded_values",
+        "types": [
+          "tuple"
+        ],
+        "description": {
+          "en": "Values of the traded units.",
+          "zh-TW": "成交單位的價值。",
+          "zh-CN": "成交单位的价值。"
+        }
+      },
+      {
+        "name": "traded_costs",
+        "types": [
+          "tuple"
+        ],
+        "description": {
+          "en": "Costs of the traded units.",
+          "zh-TW": "成交單位的成本。",
+          "zh-CN": "成交单位的成本。"
+        }
+      },
+      {
+        "name": "gains_from_trade",
+        "types": [
+          "tuple"
+        ],
+        "description": {
+          "en": "Value minus cost of each traded unit.",
+          "zh-TW": "每個成交單位的價值減成本。",
+          "zh-CN": "每个成交单位的价值减成本。"
+        }
+      },
+      {
+        "name": "is_unique_price",
+        "types": [
+          "bool"
+        ],
+        "description": {
+          "en": "Whether the interval is a single price.",
+          "zh-TW": "區間是否只有單一價格。",
+          "zh-CN": "区间是否只有单一价格。"
+        }
+      }
+    ]
+  },
+  "agora.principle_viz.guides_discrete_3": {
+    "name": "compute_discrete_surplus",
+    "anchor": "principle-viz-guides-discrete-3",
+    "signatures": [
+      "compute_discrete_surplus(result)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_discrete_4": {
+    "name": "MarketFigure.add_discrete_curves",
+    "anchor": "principle-viz-guides-discrete-4",
+    "signatures": [
+      "MarketFigure.add_discrete_curves(\n    demand=None,\n    supply=None,\n    *,\n    demand_label=\"$D$\",\n    supply_label=\"$S$\"\n)",
+      "MarketFigure.add_discrete_equilibrium(result)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_aggregation_1": {
+    "name": "market_demand",
+    "anchor": "principle-viz-guides-aggregation-1",
+    "signatures": [
+      "market_demand(individuals)",
+      "market_supply(\n    individuals,\n    *,\n    p_max\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_aggregation_2": {
+    "name": "PiecewiseLinear",
+    "anchor": "principle-viz-guides-aggregation-2",
+    "signatures": [
+      "PiecewiseLinear(points)"
+    ],
+    "parameters": [
+      {
+        "name": "q_at(p)",
+        "types": [],
+        "description": {
+          "en": "Quantity at a price; a price outside the curve raises `PiecewiseLinearError`.",
+          "zh-TW": "價格對應的數量；超出曲線範圍時拋出 `PiecewiseLinearError`。",
+          "zh-CN": "价格对应的数量；超出曲线范围时抛出 `PiecewiseLinearError`。"
+        }
+      },
+      {
+        "name": "p_at(q)",
+        "types": [],
+        "description": {
+          "en": "Price at a quantity; a quantity outside the curve raises `PiecewiseLinearError`.",
+          "zh-TW": "數量對應的價格；超出曲線範圍時拋出 `PiecewiseLinearError`。",
+          "zh-CN": "数量对应的价格；超出曲线范围时抛出 `PiecewiseLinearError`。"
+        }
+      },
+      {
+        "name": "points",
+        "types": [],
+        "description": {
+          "en": "All vertices.",
+          "zh-TW": "所有頂點。",
+          "zh-CN": "所有顶点。"
+        }
+      },
+      {
+        "name": "kinks",
+        "types": [],
+        "description": {
+          "en": "The interior vertices where the slope changes.",
+          "zh-TW": "斜率改變的內部頂點。",
+          "zh-CN": "斜率改变的内部顶点。"
+        }
+      },
+      {
+        "name": "domain",
+        "types": [],
+        "description": {
+          "en": "Quantity range covered.",
+          "zh-TW": "涵蓋的數量範圍。",
+          "zh-CN": "涵盖的数量范围。"
+        }
+      },
+      {
+        "name": "price_range",
+        "types": [],
+        "description": {
+          "en": "Price range covered.",
+          "zh-TW": "涵蓋的價格範圍。",
+          "zh-CN": "涵盖的价格范围。"
+        }
+      },
+      {
+        "name": "breakpoints()",
+        "types": [],
+        "description": {
+          "en": "Vertex prices in ascending order.",
+          "zh-TW": "頂點價格，由小到大排列。",
+          "zh-CN": "顶点价格，由小到大排列。"
+        }
+      },
+      {
+        "name": "integrate_q()",
+        "types": [],
+        "description": {
+          "en": "Area under $Q(p)$ between the prices `p_low` and `p_high`.",
+          "zh-TW": "`p_low` 與 `p_high` 兩個價格之間 $Q(p)$ 下方的面積。",
+          "zh-CN": "`p_low` 与 `p_high` 两个价格之间 $Q(p)$ 下方的面积。"
+        }
+      }
+    ]
+  },
+  "agora.principle_viz.guides_aggregation_3": {
+    "name": "solve_piecewise_equilibrium",
+    "anchor": "principle-viz-guides-aggregation-3",
+    "signatures": [
+      "solve_piecewise_equilibrium(demand, supply)",
+      "piecewise_surplus(\n    demand,\n    supply,\n    result\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_aggregation_4": {
+    "name": "demand_aggregation_figure",
+    "anchor": "principle-viz-guides-aggregation-4",
+    "signatures": [
+      "demand_aggregation_figure(\n    individuals,\n    *,\n    price,\n    price_label=\"$p_1$\",\n    link_price=False,\n    ...\n)",
+      "supply_aggregation_figure(\n    individuals,\n    *,\n    price,\n    p_max,\n    ...\n)",
+      "discrete_demand_aggregation_figure(\n    individuals,\n    *,\n    price,\n    ...\n)",
+      "discrete_supply_aggregation_figure(\n    individuals,\n    *,\n    price,\n    ...\n)"
+    ],
+    "parameters": [
+      {
+        "name": "link_price",
+        "types": [
+          "bool"
+        ],
+        "description": {
+          "en": "Run the price line across every panel and the gaps between them, marking the price on the first panel only.",
+          "zh-TW": "讓價格線橫跨所有面板及面板間的空隙，只在第一個面板標出價格。",
+          "zh-CN": "让价格线横跨所有面板及面板间的空隙，只在第一个面板标出价格。"
+        },
+        "default": "False"
+      },
+      {
+        "name": "theme",
+        "types": [],
+        "description": {
+          "en": "As for `MarketFigure` ([Palettes and themes](figures.md#sec-palettes)).",
+          "zh-TW": "與 `MarketFigure` 相同（詳見[配色與主題](figures.md#sec-palettes)）。",
+          "zh-CN": "与 `MarketFigure` 相同（详见[配色与主题](figures.md#sec-palettes)）。"
+        }
+      },
+      {
+        "name": "palette",
+        "types": [],
+        "description": {
+          "en": "As for `MarketFigure` ([Palettes and themes](figures.md#sec-palettes)).",
+          "zh-TW": "與 `MarketFigure` 相同（詳見[配色與主題](figures.md#sec-palettes)）。",
+          "zh-CN": "与 `MarketFigure` 相同（详见[配色与主题](figures.md#sec-palettes)）。"
+        }
+      },
+      {
+        "name": "labels",
+        "types": [],
+        "description": {
+          "en": "Label overrides by layer id ([Labels and layers](figures.md#sec-labels)).",
+          "zh-TW": "依圖層 id 覆寫標籤（詳見[標籤與圖層](figures.md#sec-labels)）。",
+          "zh-CN": "依图层 id 覆盖标签（详见[标签与图层](figures.md#sec-labels)）。"
+        }
+      },
+      {
+        "name": "visibility",
+        "types": [],
+        "description": {
+          "en": "Layer visibility by layer id ([Labels and layers](figures.md#sec-labels)).",
+          "zh-TW": "依圖層 id 覆寫圖層的顯示狀態（詳見[標籤與圖層](figures.md#sec-labels)）。",
+          "zh-CN": "依图层 id 覆盖图层的显示状态（详见[标签与图层](figures.md#sec-labels)）。"
+        }
+      }
+    ]
+  },
+  "agora.principle_viz.guides_elasticity_1": {
+    "name": "compute_point_elasticity",
+    "anchor": "principle-viz-guides-elasticity-1",
+    "signatures": [
+      "compute_point_elasticity(demand, quantity)",
+      "compute_arc_elasticity(\n    q0,\n    p0,\n    q1,\n    p1\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_elasticity_2": {
+    "name": "elasticity_revenue_schedule",
+    "anchor": "principle-viz-guides-elasticity-2",
+    "signatures": [
+      "elasticity_revenue_schedule(\n    demand,\n    *,\n    samples=101\n)"
+    ],
+    "parameters": [
+      {
+        "name": "points",
+        "types": [],
+        "description": {
+          "en": "`RevenuePoint`s with `quantity`, `price`, `total_revenue`, `elasticity` and `classification`.",
+          "zh-TW": "`RevenuePoint` 序列，含 `quantity`、`price`、`total_revenue`、`elasticity` 與 `classification`。",
+          "zh-CN": "`RevenuePoint` 串行，含 `quantity`、`price`、`total_revenue`、`elasticity` 与 `classification`。"
+        }
+      },
+      {
+        "name": "unit_elastic_quantity",
+        "types": [],
+        "description": {
+          "en": "Quantity at the midpoint of the line.",
+          "zh-TW": "直線中點的數量。",
+          "zh-CN": "直线中点的数量。"
+        }
+      },
+      {
+        "name": "unit_elastic_price",
+        "types": [],
+        "description": {
+          "en": "Price at the midpoint of the line.",
+          "zh-TW": "直線中點的價格。",
+          "zh-CN": "直线中点的价格。"
+        }
+      },
+      {
+        "name": "maximum_revenue",
+        "types": [],
+        "description": {
+          "en": "Total revenue at that point.",
+          "zh-TW": "該點的總收益。",
+          "zh-CN": "该点的总收益。"
+        }
+      },
+      {
+        "name": "choke_quantity",
+        "types": [],
+        "description": {
+          "en": "The quantity-axis intercept.",
+          "zh-TW": "數量軸截距。",
+          "zh-CN": "数量轴截距。"
+        }
+      },
+      {
+        "name": "choke_price",
+        "types": [],
+        "description": {
+          "en": "The price-axis intercept.",
+          "zh-TW": "價格軸截距。",
+          "zh-CN": "价格轴截距。"
+        }
+      }
+    ]
+  },
+  "agora.principle_viz.guides_elasticity_3": {
+    "name": "elasticity_revenue_canvases",
+    "anchor": "principle-viz-guides-elasticity-3",
+    "signatures": [
+      "elasticity_revenue_canvases(\n    demand,\n    result,\n    *,\n    theme=None,\n    labels=None,\n    visibility=None\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_welfare_1": {
+    "name": "MarketOutcome",
+    "anchor": "principle-viz-guides-welfare-1",
+    "signatures": [
+      "MarketOutcome(\n    quantity,\n    consumer_price,\n    producer_price,\n    label=\"\"\n)"
+    ],
+    "parameters": [
+      {
+        "name": "outcome_from_equilibrium(eq)",
+        "types": [],
+        "description": {
+          "en": "A free market: both prices are $p^*$.",
+          "zh-TW": "自由市場：兩個價格都是 $p^*$。",
+          "zh-CN": "自由市场：两个价格都是 $p^*$。"
+        }
+      },
+      {
+        "name": "outcome_from_tax(tax_eq)",
+        "types": [],
+        "description": {
+          "en": "After a tax ([Taxes and subsidies](taxes.md#sec-taxes)).",
+          "zh-TW": "課稅後（詳見[租稅與補貼](taxes.md#sec-taxes)）。",
+          "zh-CN": "征税后（详见[税收与补贴](taxes.md#sec-taxes)）。"
+        }
+      },
+      {
+        "name": "outcome_from_subsidy(subsidy_eq)",
+        "types": [],
+        "description": {
+          "en": "After a subsidy.",
+          "zh-TW": "補貼後。",
+          "zh-CN": "补贴后。"
+        }
+      },
+      {
+        "name": "outcome_from_control(control)",
+        "types": [],
+        "description": {
+          "en": "Under a price ceiling or floor ([Price controls](controls.md#sec-controls)).",
+          "zh-TW": "價格上限或下限之下（詳見[價格管制](controls.md#sec-controls)）。",
+          "zh-CN": "价格上限或下限之下（详见[价格管制](controls.md#sec-controls)）。"
+        }
+      }
+    ]
+  },
+  "agora.principle_viz.guides_welfare_2": {
+    "name": "compute_surplus",
+    "anchor": "principle-viz-guides-welfare-2",
+    "signatures": [
+      "compute_surplus(\n    demand,\n    supply,\n    outcome,\n    baseline_outcome=None\n)"
+    ],
+    "parameters": [
+      {
+        "name": "consumer_surplus",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Area between demand and the consumer price.",
+          "zh-TW": "需求曲線與消費者價格之間的面積。",
+          "zh-CN": "需求曲线与消费者价格之间的面积。"
+        }
+      },
+      {
+        "name": "producer_surplus",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Area between the producer price and supply.",
+          "zh-TW": "生產者價格與供給曲線之間的面積。",
+          "zh-CN": "生产者价格与供给曲线之间的面积。"
+        }
+      },
+      {
+        "name": "tax_revenue",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Government revenue (negative for a subsidy).",
+          "zh-TW": "政府收入（補貼為負）。",
+          "zh-CN": "政府收入（补贴为负）。"
+        }
+      },
+      {
+        "name": "total_surplus",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "The sum of the three.",
+          "zh-TW": "三者之和。",
+          "zh-CN": "三者之和。"
+        }
+      },
+      {
+        "name": "deadweight_loss",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Surplus lost relative to the baseline.",
+          "zh-TW": "相對於基準損失的剩餘。",
+          "zh-CN": "相对于基准损失的剩余。"
+        }
+      },
+      {
+        "name": "polygons",
+        "types": [
+          "SurplusPolygons"
+        ],
+        "description": {
+          "en": "The corner points of each area, used to draw them.",
+          "zh-TW": "各面積的頂點，供繪圖使用。",
+          "zh-CN": "各面积的顶点，供绘图使用。"
+        }
+      }
+    ]
+  },
+  "agora.principle_viz.guides_welfare_3": {
+    "name": "compare_surplus",
+    "anchor": "principle-viz-guides-welfare-3",
+    "signatures": [
+      "compare_surplus(\n    demand,\n    supply,\n    baseline_outcome,\n    policy_outcome\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_welfare_4": {
+    "name": "MarketFigure.add_welfare",
+    "anchor": "principle-viz-guides-welfare-4",
+    "signatures": [
+      "MarketFigure.add_welfare(\n    result,\n    *,\n    labels=True,\n    regions=None\n)"
+    ],
+    "parameters": [
+      {
+        "name": "labels",
+        "types": [
+          "bool"
+        ],
+        "description": {
+          "en": "`False` shades the regions without naming them.",
+          "zh-TW": "設為 `False` 時只填色、不命名。",
+          "zh-CN": "设为 `False` 时只填色、不命名。"
+        },
+        "default": "True"
+      },
+      {
+        "name": "regions",
+        "types": [
+          "iterable | None"
+        ],
+        "description": {
+          "en": "Limit the shading to some of `\"cs\"`, `\"ps\"`, `\"tax_revenue\"` and `\"dwl\"`.",
+          "zh-TW": "只畫 `\"cs\"`、`\"ps\"`、`\"tax_revenue\"` 與 `\"dwl\"` 中的部分區塊。",
+          "zh-CN": "只画 `\"cs\"`、`\"ps\"`、`\"tax_revenue\"` 与 `\"dwl\"` 中的部分区块。"
+        },
+        "default": "None"
+      }
+    ]
+  },
+  "agora.principle_viz.guides_welfare_5": {
+    "name": "MarketFigure.add_welfare_transition",
+    "anchor": "principle-viz-guides-welfare-5",
+    "signatures": [
+      "MarketFigure.add_welfare_transition(\n    *,\n    baseline_outcome,\n    policy_outcome,\n    surplus\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_welfare_6": {
+    "name": "build_dwl_report",
+    "anchor": "principle-viz-guides-welfare-6",
+    "signatures": [
+      "build_dwl_report(rows)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_taxes_1": {
+    "name": "TaxScenario",
+    "anchor": "principle-viz-guides-taxes-1",
+    "signatures": [
+      "TaxScenario(\n    tax_type,\n    amount,\n    tax_on=TaxOn.PRODUCER,\n    anchor_mode=AnchorMode.NONE\n)"
+    ],
+    "parameters": [
+      {
+        "name": "tax_type",
+        "types": [
+          "TaxType"
+        ],
+        "description": {
+          "en": "`FIXED_TAX` or `PER_UNIT_TAX`: an amount per unit, which shifts a curve by `amount`; `AD_VALOREM_TAX`: a rate on the price, which rotates a curve. The two specific taxes give the same equilibrium.",
+          "zh-TW": "`FIXED_TAX` 或 `PER_UNIT_TAX`：每單位課徵固定金額，曲線平移 `amount`；`AD_VALOREM_TAX`：依價格課徵比率，曲線旋轉。兩種從量形式的均衡相同。",
+          "zh-CN": "`FIXED_TAX` 或 `PER_UNIT_TAX`：每单位征收固定金额，曲线平移 `amount`；`AD_VALOREM_TAX`：依价格征收比率，曲线旋转。两种从量形式的均衡相同。"
+        }
+      },
+      {
+        "name": "amount",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "The tax per unit, or the rate for an ad valorem tax (`0.35` is 35%); a rate must exceed $-1$.",
+          "zh-TW": "每單位稅額，或從價稅的稅率（`0.35` 即 35%）；稅率必須大於 $-1$。",
+          "zh-CN": "每单位税额，或从价税的税率（`0.35` 即 35%）；税率必须大于 $-1$。"
+        }
+      },
+      {
+        "name": "tax_on",
+        "types": [
+          "TaxOn"
+        ],
+        "description": {
+          "en": "Legal incidence: `PRODUCER` shifts supply up, `CONSUMER` shifts demand down.",
+          "zh-TW": "法定納稅人：`PRODUCER` 使供給上移，`CONSUMER` 使需求下移。",
+          "zh-CN": "法定纳税人：`PRODUCER` 使供给上移，`CONSUMER` 使需求下移。"
+        },
+        "default": "PRODUCER"
+      },
+      {
+        "name": "anchor_mode",
+        "types": [
+          "AnchorMode"
+        ],
+        "description": {
+          "en": "For drawing an ad valorem tax: `NONE` rotates the curve about its intercept, `BASELINE_EQUILIBRIUM` about the untaxed equilibrium.",
+          "zh-TW": "繪製從價稅時，`NONE` 以截距為軸旋轉曲線，`BASELINE_EQUILIBRIUM` 以未課稅的均衡點為軸。",
+          "zh-CN": "绘制从价税时，`NONE` 以截距为轴旋转曲线，`BASELINE_EQUILIBRIUM` 以未征税的均衡点为轴。"
+        },
+        "default": "NONE"
+      }
+    ]
+  },
+  "agora.principle_viz.guides_taxes_2": {
+    "name": "solve_tax_equilibrium",
+    "anchor": "principle-viz-guides-taxes-2",
+    "signatures": [
+      "solve_tax_equilibrium(\n    demand,\n    supply,\n    scenario\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_taxes_3": {
+    "name": "compare_tax_scenario",
+    "anchor": "principle-viz-guides-taxes-3",
+    "signatures": [
+      "compare_tax_scenario(\n    demand,\n    supply,\n    scenario\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_taxes_4": {
+    "name": "build_tax_visual_guide",
+    "anchor": "principle-viz-guides-taxes-4",
+    "signatures": [
+      "build_tax_visual_guide(\n    demand,\n    supply,\n    scenario\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_taxes_5": {
+    "name": "MarketFigure.add_tax_transform",
+    "anchor": "principle-viz-guides-taxes-5",
+    "signatures": [
+      "MarketFigure.add_tax_transform(\n    demand,\n    supply,\n    scenario,\n    q_max\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_taxes_6": {
+    "name": "MarketFigure.add_tax_comparison",
+    "anchor": "principle-viz-guides-taxes-6",
+    "signatures": [
+      "MarketFigure.add_tax_comparison(\n    result,\n    *,\n    brace_side=\"outside\",\n    notes=False\n)"
+    ],
+    "parameters": [
+      {
+        "name": "brace_side",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "`\"outside\"` the axis or `\"inside\"` the plot.",
+          "zh-TW": "括號在座標軸外側（`\"outside\"`）或繪圖區內（`\"inside\"`）。",
+          "zh-CN": "括号在坐标轴外侧（`\"outside\"`）或绘图区内（`\"inside\"`）。"
+        },
+        "default": "\"outside\""
+      },
+      {
+        "name": "notes",
+        "types": [
+          "bool"
+        ],
+        "description": {
+          "en": "Explain each mark beside the axis.",
+          "zh-TW": "在座標軸旁說明每個標記。",
+          "zh-CN": "在坐标轴旁说明每个标记。"
+        },
+        "default": "False"
+      }
+    ]
+  },
+  "agora.principle_viz.guides_taxes_7": {
+    "name": "SubsidyScenario",
+    "anchor": "principle-viz-guides-taxes-7",
+    "signatures": [
+      "SubsidyScenario(amount, subsidy_to=SubsidyTo.PRODUCER)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_taxes_8": {
+    "name": "solve_subsidy_equilibrium",
+    "anchor": "principle-viz-guides-taxes-8",
+    "signatures": [
+      "solve_subsidy_equilibrium(\n    demand,\n    supply,\n    scenario\n)",
+      "compare_subsidy_scenario(\n    demand,\n    supply,\n    scenario\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_taxes_9": {
+    "name": "MarketFigure.add_subsidy_comparison",
+    "anchor": "principle-viz-guides-taxes-9",
+    "signatures": [
+      "MarketFigure.add_subsidy_comparison(\n    result,\n    *,\n    brace_side=\"outside\",\n    notes=False\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_controls_1": {
+    "name": "PriceControlScenario",
+    "anchor": "principle-viz-guides-controls-1",
+    "signatures": [
+      "PriceControlScenario(control_type, control_price)",
+      "PriceControlType.CEILING | PriceControlType.FLOOR"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_controls_2": {
+    "name": "evaluate_price_control",
+    "anchor": "principle-viz-guides-controls-2",
+    "signatures": [
+      "evaluate_price_control(\n    demand,\n    supply,\n    scenario\n)"
+    ],
+    "parameters": [
+      {
+        "name": "is_binding",
+        "types": [
+          "bool"
+        ],
+        "description": {
+          "en": "Whether the control changes the outcome.",
+          "zh-TW": "管制是否改變市場結果。",
+          "zh-CN": "管制是否改变市场结果。"
+        }
+      },
+      {
+        "name": "traded_quantity",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Quantity actually traded.",
+          "zh-TW": "實際成交量。",
+          "zh-CN": "实际成交量。"
+        }
+      },
+      {
+        "name": "consumer_price",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Price buyers pay: the controlled price when binding, otherwise the equilibrium price.",
+          "zh-TW": "買方支付的價格：有約束時為管制價格，否則為均衡價格。",
+          "zh-CN": "买方支付的价格：有约束时为管制价格，否则为均衡价格。"
+        }
+      },
+      {
+        "name": "producer_price",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Price sellers receive: the controlled price when binding, otherwise the equilibrium price.",
+          "zh-TW": "賣方收到的價格：有約束時為管制價格，否則為均衡價格。",
+          "zh-CN": "卖方收到的价格：有约束时为管制价格，否则为均衡价格。"
+        }
+      },
+      {
+        "name": "shortage",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Excess demand under a ceiling (zero otherwise).",
+          "zh-TW": "上限下的超額需求（其餘情況為零）。",
+          "zh-CN": "上限下的超额需求（其余情况为零）。"
+        }
+      },
+      {
+        "name": "surplus",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Excess supply under a floor (zero otherwise).",
+          "zh-TW": "下限下的超額供給（其餘情況為零）。",
+          "zh-CN": "下限下的超额供给（其余情况为零）。"
+        }
+      },
+      {
+        "name": "baseline_equilibrium",
+        "types": [
+          "EquilibriumResult"
+        ],
+        "description": {
+          "en": "The uncontrolled market.",
+          "zh-TW": "未管制的市場。",
+          "zh-CN": "未管制的市场。"
+        }
+      }
+    ]
+  },
+  "agora.principle_viz.guides_controls_3": {
+    "name": "MarketFigure.add_price_control",
+    "anchor": "principle-viz-guides-controls-3",
+    "signatures": [
+      "MarketFigure.add_price_control(\n    result,\n    *,\n    gap_brace=\"line\"\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_trade_1": {
+    "name": "TradeScenario",
+    "anchor": "principle-viz-guides-trade-1",
+    "signatures": [
+      "TradeScenario(\n    world_price,\n    tariff=0.0,\n    import_quota=None,\n    quota_rent_recipient=QuotaRentRecipient.DOMESTIC\n)"
+    ],
+    "parameters": [
+      {
+        "name": "quota_rent_recipient",
+        "types": [
+          "QuotaRentRecipient"
+        ],
+        "description": {
+          "en": "Who gains the quota rent: `DOMESTIC` importers or `GOVERNMENT` (both count in national surplus; the government's share is reported as revenue), or `FOREIGN` exporters (it leaves the country).",
+          "zh-TW": "配額租的歸屬：國內進口商（`DOMESTIC`）或政府（`GOVERNMENT`），兩者都計入國民剩餘，政府取得的部分列為收入；或外國出口商（`FOREIGN`），配額租流出國外。",
+          "zh-CN": "配额租的归属：国内进口商（`DOMESTIC`）或政府（`GOVERNMENT`），两者都计入国民剩余，政府获得的部分列为收入；或外国出口商（`FOREIGN`），配额租流出国外。"
+        }
+      }
+    ]
+  },
+  "agora.principle_viz.guides_trade_2": {
+    "name": "analyze_trade",
+    "anchor": "principle-viz-guides-trade-2",
+    "signatures": [
+      "analyze_trade(\n    demand,\n    supply,\n    scenario\n)"
+    ],
+    "parameters": [
+      {
+        "name": "domestic_price",
+        "types": [],
+        "description": {
+          "en": "Price in the home market.",
+          "zh-TW": "國內市場價格。",
+          "zh-CN": "国内市场价格。"
+        }
+      },
+      {
+        "name": "quantity_demanded",
+        "types": [],
+        "description": {
+          "en": "Domestic quantity demanded at that price.",
+          "zh-TW": "該價格下的國內需求量。",
+          "zh-CN": "该价格下的国内需求量。"
+        }
+      },
+      {
+        "name": "quantity_supplied",
+        "types": [],
+        "description": {
+          "en": "Domestic quantity supplied at that price.",
+          "zh-TW": "該價格下的國內供給量。",
+          "zh-CN": "该价格下的国内供给量。"
+        }
+      },
+      {
+        "name": "imports",
+        "types": [],
+        "description": {
+          "en": "Quantity imported.",
+          "zh-TW": "進口量。",
+          "zh-CN": "进口量。"
+        }
+      },
+      {
+        "name": "exports",
+        "types": [],
+        "description": {
+          "en": "Quantity exported.",
+          "zh-TW": "出口量。",
+          "zh-CN": "出口量。"
+        }
+      },
+      {
+        "name": "direction",
+        "types": [],
+        "description": {
+          "en": "`TradeDirection`: `IMPORT`, `EXPORT` or `AUTARKY`.",
+          "zh-TW": "`TradeDirection`：`IMPORT`、`EXPORT` 或 `AUTARKY`。",
+          "zh-CN": "`TradeDirection`：`IMPORT`、`EXPORT` 或 `AUTARKY`。"
+        }
+      },
+      {
+        "name": "consumer_surplus",
+        "types": [],
+        "description": {
+          "en": "Consumer surplus.",
+          "zh-TW": "消費者剩餘。",
+          "zh-CN": "消费者剩余。"
+        }
+      },
+      {
+        "name": "producer_surplus",
+        "types": [],
+        "description": {
+          "en": "Producer surplus.",
+          "zh-TW": "生產者剩餘。",
+          "zh-CN": "生产者剩余。"
+        }
+      },
+      {
+        "name": "government_revenue",
+        "types": [],
+        "description": {
+          "en": "Government revenue.",
+          "zh-TW": "政府收入。",
+          "zh-CN": "政府收入。"
+        }
+      },
+      {
+        "name": "quota_rent",
+        "types": [],
+        "description": {
+          "en": "Rent created by a quota.",
+          "zh-TW": "配額產生的租。",
+          "zh-CN": "配额产生的租。"
+        }
+      },
+      {
+        "name": "national_quota_rent",
+        "types": [],
+        "description": {
+          "en": "The part of the quota rent that stays in the country.",
+          "zh-TW": "配額租中留在國內的部分。",
+          "zh-CN": "配额租中留在国内的部分。"
+        }
+      },
+      {
+        "name": "total_surplus",
+        "types": [],
+        "description": {
+          "en": "National surplus.",
+          "zh-TW": "國民剩餘。",
+          "zh-CN": "国民剩余。"
+        }
+      },
+      {
+        "name": "gains_from_trade",
+        "types": [],
+        "description": {
+          "en": "Gain over autarky.",
+          "zh-TW": "相對於自給自足的增加。",
+          "zh-CN": "相对于自给自足的增加。"
+        }
+      },
+      {
+        "name": "is_policy_binding",
+        "types": [],
+        "description": {
+          "en": "Whether the tariff or quota changes the price.",
+          "zh-TW": "關稅或配額是否改變價格。",
+          "zh-CN": "关税或配额是否改变价格。"
+        }
+      }
+    ]
+  },
+  "agora.principle_viz.guides_trade_3": {
+    "name": "MarketFigure.add_trade",
+    "anchor": "principle-viz-guides-trade-3",
+    "signatures": [
+      "MarketFigure.add_trade(result)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_failures_1": {
+    "name": "ExternalityScenario",
+    "anchor": "principle-viz-guides-failures-1",
+    "signatures": [
+      "ExternalityScenario(\n    marginal_external_cost=0.0,\n    marginal_external_benefit=0.0\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_failures_2": {
+    "name": "analyze_externality",
+    "anchor": "principle-viz-guides-failures-2",
+    "signatures": [
+      "analyze_externality(\n    demand,\n    supply,\n    scenario\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_failures_3": {
+    "name": "MarketFigure.add_externality",
+    "anchor": "principle-viz-guides-failures-3",
+    "signatures": [
+      "MarketFigure.add_externality(result)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_failures_4": {
+    "name": "analyze_common_resource",
+    "anchor": "principle-viz-guides-failures-4",
+    "signatures": [
+      "analyze_common_resource(\n    benefit,\n    cost,\n    *,\n    marginal_congestion_cost\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_failures_5": {
+    "name": "MarketFigure.add_common_resource",
+    "anchor": "principle-viz-guides-failures-5",
+    "signatures": [
+      "MarketFigure.add_common_resource(result)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_failures_6": {
+    "name": "IndividualBenefit",
+    "anchor": "principle-viz-guides-failures-6",
+    "signatures": [
+      "IndividualBenefit(name, marginal_benefit)",
+      "analyze_public_good(\n    individuals,\n    cost,\n    *,\n    samples=101\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_failures_7": {
+    "name": "public_good_canvas",
+    "anchor": "principle-viz-guides-failures-7",
+    "signatures": [
+      "public_good_canvas(\n    result,\n    *,\n    theme=None,\n    labels=None,\n    visibility=None\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_factor_markets_1": {
+    "name": "analyze_minimum_wage",
+    "anchor": "principle-viz-guides-factor-markets-1",
+    "signatures": [
+      "analyze_minimum_wage(\n    demand,\n    supply,\n    minimum_wage\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_factor_markets_2": {
+    "name": "MarketFigure.add_minimum_wage",
+    "anchor": "principle-viz-guides-factor-markets-2",
+    "signatures": [
+      "MarketFigure.add_minimum_wage(\n    result,\n    *,\n    gap_brace=\"line\"\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_factor_markets_3": {
+    "name": "LoanableFundsScenario",
+    "anchor": "principle-viz-guides-factor-markets-3",
+    "signatures": [
+      "LoanableFundsScenario(\n    savings_quantity_shift=0.0,\n    investment_quantity_shift=0.0,\n    government_borrowing=0.0\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_factor_markets_4": {
+    "name": "analyze_loanable_funds",
+    "anchor": "principle-viz-guides-factor-markets-4",
+    "signatures": [
+      "analyze_loanable_funds(\n    savings,\n    investment,\n    scenario\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_factor_markets_5": {
+    "name": "MarketFigure.add_loanable_funds",
+    "anchor": "principle-viz-guides-factor-markets-5",
+    "signatures": [
+      "MarketFigure.add_loanable_funds(result)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_ppf_1": {
+    "name": "ProductionPossibilitiesFrontier",
+    "anchor": "principle-viz-guides-ppf-1",
+    "signatures": [
+      "ProductionPossibilitiesFrontier(\n    x_intercept,\n    y_intercept,\n    curvature=1.0,\n    x_good=\"Good X\",\n    y_good=\"Good Y\"\n)"
+    ],
+    "parameters": [
+      {
+        "name": "y_at(x)",
+        "types": [],
+        "description": {
+          "en": "Output of $y$ when $x$ units of the first good are produced.",
+          "zh-TW": "第一種商品生產 $x$ 單位時 $y$ 的產量。",
+          "zh-CN": "第一种商品生产 $x$ 单位时 $y$ 的产量。"
+        }
+      },
+      {
+        "name": "opportunity_cost_x(x)",
+        "types": [],
+        "description": {
+          "en": "Units of $y$ given up for one more unit of $x$, $\\left| \\mathrm{d} y / \\mathrm{d} x \\right|$.",
+          "zh-TW": "多生產一單位 $x$ 所放棄的 $y$，即 $\\left| \\mathrm{d} y / \\mathrm{d} x \\right|$。",
+          "zh-CN": "多生产一单位 $x$ 所放弃的 $y$，即 $\\left| \\mathrm{d} y / \\mathrm{d} x \\right|$。"
+        }
+      },
+      {
+        "name": "assess(x, y)",
+        "types": [],
+        "description": {
+          "en": "A `PointStatus`: `EFFICIENT` on the frontier, `INEFFICIENT` inside it, `UNATTAINABLE` outside.",
+          "zh-TW": "回傳 `PointStatus`：曲線上為 `EFFICIENT`，曲線內為 `INEFFICIENT`，曲線外為 `UNATTAINABLE`。",
+          "zh-CN": "返回 `PointStatus`：曲线上为 `EFFICIENT`，曲线内为 `INEFFICIENT`，曲线外为 `UNATTAINABLE`。"
+        }
+      }
+    ]
+  },
+  "agora.principle_viz.guides_ppf_2": {
+    "name": "analyze_ppf",
+    "anchor": "principle-viz-guides-ppf-2",
+    "signatures": [
+      "analyze_ppf(\n    frontier,\n    points=(),\n    *,\n    samples=101\n)",
+      "ppf_canvas(\n    result,\n    *,\n    theme=None,\n    labels=None,\n    visibility=None\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_ppf_3": {
+    "name": "PPFGrowthScenario",
+    "anchor": "principle-viz-guides-ppf-3",
+    "signatures": [
+      "PPFGrowthScenario(x_growth_rate=0.0, y_growth_rate=0.0)",
+      "analyze_ppf_growth(\n    frontier,\n    scenario,\n    *,\n    samples=101\n)",
+      "ppf_growth_canvas(\n    result,\n    *,\n    theme=None,\n    labels=None,\n    visibility=None\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_ppf_4": {
+    "name": "compare_linear_ppfs",
+    "anchor": "principle-viz-guides-ppf-4",
+    "signatures": [
+      "compare_linear_ppfs(\n    name_a,\n    frontier_a,\n    name_b,\n    frontier_b\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_figures_1": {
+    "name": "MarketFigure",
+    "anchor": "principle-viz-guides-figures-1",
+    "signatures": [
+      "MarketFigure"
+    ],
+    "parameters": [
+      {
+        "name": "theme",
+        "types": [],
+        "description": {
+          "en": "Colours and line widths ([Palettes and themes](figures.md#sec-palettes)).",
+          "zh-TW": "顏色與線寬（詳見[配色與主題](figures.md#sec-palettes)）。",
+          "zh-CN": "颜色与线宽（详见[配色与主题](figures.md#sec-palettes)）。"
+        }
+      },
+      {
+        "name": "palette",
+        "types": [],
+        "description": {
+          "en": "Shorthand for `PlotTheme.from_palette(palette)`; `theme` takes precedence when both are given.",
+          "zh-TW": "`PlotTheme.from_palette(palette)` 的簡寫；與 `theme` 同時給定時以 `theme` 為準。",
+          "zh-CN": "`PlotTheme.from_palette(palette)` 的简写；与 `theme` 同时给定时以 `theme` 为准。"
+        }
+      },
+      {
+        "name": "labels",
+        "types": [],
+        "description": {
+          "en": "Overrides for built-in labels, by layer id ([Labels and layers](figures.md#sec-labels)).",
+          "zh-TW": "依圖層 id 覆寫內建標籤（詳見[標籤與圖層](figures.md#sec-labels)）。",
+          "zh-CN": "依图层 id 覆盖内建标签（详见[标签与图层](figures.md#sec-labels)）。"
+        }
+      },
+      {
+        "name": "visibility",
+        "types": [],
+        "description": {
+          "en": "Shows or hides layers, by layer id ([Labels and layers](figures.md#sec-labels)).",
+          "zh-TW": "依圖層 id 顯示或隱藏圖層（詳見[標籤與圖層](figures.md#sec-labels)）。",
+          "zh-CN": "依图层 id 显示或隐藏图层（详见[标签与图层](figures.md#sec-labels)）。"
+        }
+      }
+    ]
+  },
+  "agora.principle_viz.guides_figures_2": {
+    "name": "MarketFigure.add_curves",
+    "anchor": "principle-viz-guides-figures-2",
+    "signatures": [
+      "MarketFigure.add_curves(\n    demand,\n    supply,\n    q_max,\n    demand_label=\"$D$\",\n    supply_label=\"$S$\"\n)",
+      "MarketFigure.add_equilibrium(\n    result,\n    label=\"$e^*$\",\n    color=None\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_figures_3": {
+    "name": "MarketFigure.finalize",
+    "anchor": "principle-viz-guides-figures-3",
+    "signatures": [
+      "MarketFigure.finalize(legend=False)",
+      "MarketFigure.save(path, dpi=150)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_figures_4": {
+    "name": "MarketFigure.add_layer",
+    "anchor": "principle-viz-guides-figures-4",
+    "signatures": [
+      "MarketFigure.add_layer(layer)",
+      "MarketFigure.add_layers(layers)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_figures_5": {
+    "name": "MarketFigure.add_metrics",
+    "anchor": "principle-viz-guides-figures-5",
+    "signatures": [
+      "MarketFigure.add_metrics(\n    values,\n    *,\n    title=None,\n    location=\"upper right\"\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_figures_6": {
+    "name": "Label",
+    "anchor": "principle-viz-guides-figures-6",
+    "signatures": [
+      "Label(\n    text=None,\n    visible=None,\n    offset=None\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_figures_7": {
+    "name": "MarketFigure.configure_label",
+    "anchor": "principle-viz-guides-figures-7",
+    "signatures": [
+      "MarketFigure.configure_label(\n    layer id,\n    label=None,\n    *,\n    text=None,\n    visible=None,\n    offset=None\n)",
+      "MarketFigure.configure_layer(\n    layer id,\n    *,\n    visible\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_figures_8": {
+    "name": "ColorModel",
+    "anchor": "principle-viz-guides-figures-8",
+    "signatures": [
+      "ColorModel(\n    name,\n    axis_color,\n    label_color,\n    demand_color,\n    supply_color,\n    ...\n)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_figures_9": {
+    "name": "PlotTheme",
+    "anchor": "principle-viz-guides-figures-9",
+    "signatures": [
+      "PlotTheme(\n    color_model=...,\n    demand_linewidth=3.5,\n    supply_linewidth=3.5,\n    ...\n)",
+      "PlotTheme.from_palette(name, **options)"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_figures_10": {
+    "name": "Canvas",
+    "anchor": "principle-viz-guides-figures-10",
+    "signatures": [
+      "Canvas"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.cli_1": {
+    "name": "--demand-intercept",
+    "anchor": "principle-viz-cli-1",
+    "signatures": [],
+    "parameters": [
+      {
+        "name": "--demand-intercept",
+        "types": [],
+        "description": {
+          "en": "Price intercept $a$ of demand.",
+          "zh-TW": "需求的價格截距 $a$。",
+          "zh-CN": "需求的价格截距 $a$。"
+        }
+      },
+      {
+        "name": "--demand-slope",
+        "types": [],
+        "description": {
+          "en": "Slope $b$ of demand.",
+          "zh-TW": "需求的斜率 $b$。",
+          "zh-CN": "需求的斜率 $b$。"
+        }
+      },
+      {
+        "name": "--supply-intercept",
+        "types": [],
+        "description": {
+          "en": "Price intercept $a$ of supply.",
+          "zh-TW": "供給的價格截距 $a$。",
+          "zh-CN": "供给的价格截距 $a$。"
+        }
+      },
+      {
+        "name": "--supply-slope",
+        "types": [],
+        "description": {
+          "en": "Slope $b$ of supply.",
+          "zh-TW": "供給的斜率 $b$。",
+          "zh-CN": "供给的斜率 $b$。"
+        }
+      },
+      {
+        "name": "--output",
+        "types": [],
+        "description": {
+          "en": "Also write the JSON to this file, creating its directory.",
+          "zh-TW": "另將 JSON 寫入此檔案，並建立所需目錄。",
+          "zh-CN": "另将 JSON 写入此文件，并创建所需目录。"
+        }
+      }
+    ]
+  },
+  "agora.mosaickit.guides_canvas_1": {
+    "name": "CanvasSpec",
+    "anchor": "mosaickit-guides-canvas-1",
+    "signatures": [
+      "CanvasSpec(\n    x_range=(0, 10),\n    y_range=(0, 10),\n    width=6.0,\n    height=6.0,\n    dpi=300,\n    x_label=\"X\",\n    y_label=\"Y\",\n    title=None\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_canvas_2": {
+    "name": "Interval",
+    "anchor": "mosaickit-guides-canvas-2",
+    "signatures": [
+      "Interval(lo, hi)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_canvas_3": {
+    "name": "Canvas",
+    "anchor": "mosaickit-guides-canvas-3",
+    "signatures": [
+      "Canvas(\n    spec=None,\n    theme=None,\n    config=None,\n    renderer=None,\n    *,\n    role_overrides=None\n)"
+    ],
+    "parameters": [
+      {
+        "name": "add(layer), extend(layers)",
+        "types": [],
+        "description": {
+          "en": "Append one layer or several; return the canvas.",
+          "zh-TW": "加入一個或多個圖層；回傳畫布。",
+          "zh-CN": "加入一个或多个图层；返回画布。"
+        }
+      },
+      {
+        "name": "remove(layer_id), clear()",
+        "types": [],
+        "description": {
+          "en": "Remove the layer with that id (searching inside groups) or every layer; return the canvas. An unknown id raises `ConfigurationError`.",
+          "zh-TW": "移除該 id 的圖層（含群組內）或所有圖層；回傳畫布。未知的 id 引發 `ConfigurationError`。",
+          "zh-CN": "移除该 id 的图层（含群组内）或所有图层；返回画布。未知的 id 引发 `ConfigurationError`。"
+        }
+      },
+      {
+        "name": "snapshot()",
+        "types": [],
+        "description": {
+          "en": "The current `Scene`. Later calls to `add()` do not change it.",
+          "zh-TW": "目前的 `Scene`。之後呼叫 `add()` 不會改變它。",
+          "zh-CN": "目前的 `Scene`。之后调用 `add()` 不会改变它。"
+        }
+      },
+      {
+        "name": "copy()",
+        "types": [],
+        "description": {
+          "en": "A new canvas with the same specification, theme, configuration, renderer, overrides, scene and bindings.",
+          "zh-TW": "規格、主題、設定、繪製器、覆寫、場景與綁定都相同的新畫布。",
+          "zh-CN": "规格、主题、配置、渲染器、覆盖、场景与绑定都相同的新画布。"
+        }
+      },
+      {
+        "name": "bind(parameter, value), bind(mapping)",
+        "types": [],
+        "description": {
+          "en": "A new canvas whose scene has those parameters replaced by values ([Parameters, grids and animation](parameters.md#sec-parameters)); the original keeps its parameters.",
+          "zh-TW": "新畫布，其場景中的這些參數換成數值（詳見[參數、網格與動畫](parameters.md#sec-parameters)）；原畫布保留參數。",
+          "zh-CN": "新画布，其场景中的这些参数换成数值（详见[参数、网格与动画](parameters.md#sec-parameters)）；原画布保留参数。"
+        }
+      },
+      {
+        "name": "render(*, renderer=None, cache=None)",
+        "types": [],
+        "description": {
+          "en": "Render the scene and return the renderer's result ([Rendering](rendering.md#sec-rendering)).",
+          "zh-TW": "繪製場景並回傳繪製器的結果（詳見[繪製](rendering.md#sec-rendering)）。",
+          "zh-CN": "绘制场景并返回渲染器的结果（详见[绘制](rendering.md#sec-rendering)）。"
+        }
+      },
+      {
+        "name": "save(target, *, renderer=None, cache=None, **options)",
+        "types": [],
+        "description": {
+          "en": "Render, write `.png`, `.pdf` or `.svg`, close the result and return the written paths. The options are those of `SaveOptions`.",
+          "zh-TW": "繪製、寫出 `.png`、`.pdf` 或 `.svg`、關閉結果並回傳寫出的路徑。選項即 `SaveOptions` 的欄位。",
+          "zh-CN": "绘制、写出 `.png`、`.pdf` 或 `.svg`、关闭结果并返回写出的路径。选项即 `SaveOptions` 的字段。"
+        }
+      }
+    ]
+  },
+  "agora.mosaickit.guides_canvas_4": {
+    "name": "Scene",
+    "anchor": "mosaickit-guides-canvas-4",
+    "signatures": [
+      "Scene(layers=(), metadata={})"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_layers_1": {
+    "name": "Layer",
+    "anchor": "mosaickit-guides-layers-1",
+    "signatures": [
+      "Layer(\n    *,\n    id=uuid,\n    role=\"primary\",\n    z_index=0,\n    visible=True,\n    legend=None,\n    model=None\n)"
+    ],
+    "parameters": [
+      {
+        "name": "id",
+        "types": [],
+        "description": {
+          "en": "A non-empty string, unique within the scene; a random hex string by default. Legends, region labels and `remove()` refer to layers by id.",
+          "zh-TW": "非空字串，在場景中唯一；預設為隨機十六進位字串。圖例、區域標籤與 `remove()` 都透過 id 指定圖層。",
+          "zh-CN": "非空字符串，在场景中唯一；默认为随机十六进制字符串。图例、区域标签与 `remove()` 都通过 id 指定图层。"
+        }
+      },
+      {
+        "name": "role",
+        "types": [],
+        "description": {
+          "en": "A dotted role name such as `\"primary\"` or `\"mypkg.boundary\"`; it selects the layer's style from the theme ([Themes and configuration](themes.md#sec-themes)). Each layer type has its own default and a fallback category consulted last.",
+          "zh-TW": "以點分隔的角色名稱，例如 `\"primary\"` 或 `\"mypkg.boundary\"`；它決定圖層從主題取得的樣式（詳見[主題與設定](themes.md#sec-themes)）。每種圖層都有自己的預設角色，以及最後才會查詢的後備類別。",
+          "zh-CN": "以点分隔的角色名称，例如 `\"primary\"` 或 `\"mypkg.boundary\"`；它决定图层从主题获取的样式（详见[主题与配置](themes.md#sec-themes)）。每种图层都有自己的默认角色，以及最后才会查询的回退类别。"
+        }
+      },
+      {
+        "name": "z_index",
+        "types": [],
+        "description": {
+          "en": "A finite drawing order; higher is drawn later, on top. A group adds its own `z_index` to its children's.",
+          "zh-TW": "有限的繪製順序；數值越大越晚畫、越在上層。群組會把自己的 `z_index` 加到子圖層上。",
+          "zh-CN": "有限的绘制顺序；数值越大越晚画、越在上层。群组会把自己的 `z_index` 加到子图层上。"
+        }
+      },
+      {
+        "name": "visible",
+        "types": [],
+        "description": {
+          "en": "`False` leaves the layer out of the render.",
+          "zh-TW": "`False` 時繪製會略過該圖層。",
+          "zh-CN": "`False` 时绘制会略过该图层。"
+        }
+      },
+      {
+        "name": "legend",
+        "types": [],
+        "description": {
+          "en": "The legend label of the layer; layers without one are not in legends.",
+          "zh-TW": "圖層在圖例中的標籤；沒有標籤的圖層不列入圖例。",
+          "zh-CN": "图层在图例中的标签；没有标签的图层不列入图例。"
+        }
+      },
+      {
+        "name": "model",
+        "types": [],
+        "description": {
+          "en": "Any domain object the layer was built from. It takes part in render caching ([Rendering](rendering.md#sec-rendering)) but not in equality or binding.",
+          "zh-TW": "用來建立該圖層的任意領域物件。它會參與繪製快取（詳見[繪製](rendering.md#sec-rendering)），但不參與相等比較與綁定。",
+          "zh-CN": "用于创建该图层的任意领域对象。它会参与绘制缓存（详见[绘制](rendering.md#sec-rendering)），但不参与相等比较与绑定。"
+        }
+      }
+    ]
+  },
+  "agora.mosaickit.guides_layers_2": {
+    "name": "PathLayer",
+    "anchor": "mosaickit-guides-layers-2",
+    "signatures": [
+      "PathLayer(\n    path,\n    stroke=None,\n    arrow_placement=ArrowPlacement.END,\n    clip=True,\n    *,\n    ...\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_layers_3": {
+    "name": "FillLayer",
+    "anchor": "mosaickit-guides-layers-3",
+    "signatures": [
+      "FillLayer(\n    boundary,\n    fill=None,\n    stroke=None,\n    *,\n    ...\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_layers_4": {
+    "name": "MarkerLayer",
+    "anchor": "mosaickit-guides-layers-4",
+    "signatures": [
+      "MarkerLayer(\n    points,\n    marker=None,\n    *,\n    ...\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_layers_5": {
+    "name": "TextLayer",
+    "anchor": "mosaickit-guides-layers-5",
+    "signatures": [
+      "TextLayer(\n    position,\n    text,\n    style=None,\n    offset=(0, 0),\n    anchor=\"center\",\n    math=False,\n    *,\n    ...\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_layers_6": {
+    "name": "ArrowLayer",
+    "anchor": "mosaickit-guides-layers-6",
+    "signatures": [
+      "ArrowLayer(\n    start,\n    end,\n    stroke=None,\n    label=None,\n    arrow_placement=ArrowPlacement.END,\n    *,\n    ...\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_layers_7": {
+    "name": "LegendLayer",
+    "anchor": "mosaickit-guides-layers-7",
+    "signatures": [
+      "LegendLayer(\n    entries=(),\n    style=None,\n    *,\n    ...\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_layers_8": {
+    "name": "GroupLayer",
+    "anchor": "mosaickit-guides-layers-8",
+    "signatures": [
+      "GroupLayer(\n    children,\n    *,\n    ...\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_layers_9": {
+    "name": "AxisSpec",
+    "anchor": "mosaickit-guides-layers-9",
+    "signatures": [
+      "AxisSpec(\n    extent,\n    arrow=None,\n    label=None\n)",
+      "build_axes(x, y) -> list[Layer]"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_layers_10": {
+    "name": "quadrant_axes",
+    "anchor": "mosaickit-guides-layers-10",
+    "signatures": [
+      "quadrant_axes(x_max, y_max)",
+      "crosshair_axes(x_range, y_range)",
+      "box_frame(total_x, total_y)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_annotations_1": {
+    "name": "AxisMarkLayer",
+    "anchor": "mosaickit-guides-annotations-1",
+    "signatures": [
+      "AxisMarkLayer(\n    axis,\n    value,\n    label,\n    math=False,\n    style=None,\n    *,\n    role=\"axes\",\n    ...\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_annotations_2": {
+    "name": "AxisNoteLayer",
+    "anchor": "mosaickit-guides-annotations-2",
+    "signatures": [
+      "AxisNoteLayer(\n    axis,\n    value,\n    text,\n    style=None,\n    *,\n    role=\"axes.note\",\n    ...\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_annotations_3": {
+    "name": "BraceLayer",
+    "anchor": "mosaickit-guides-annotations-3",
+    "signatures": [
+      "BraceLayer(\n    axis,\n    start,\n    end,\n    label=None,\n    side=\"inside\",\n    *,\n    role=\"axes\",\n    math=False,\n    style=None,\n    stroke=None,\n    ...\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_annotations_4": {
+    "name": "SpanBraceLayer",
+    "anchor": "mosaickit-guides-annotations-4",
+    "signatures": [
+      "SpanBraceLayer(\n    start,\n    end,\n    label=None,\n    side=\"below\",\n    *,\n    role=\"axes\",\n    math=False,\n    style=None,\n    stroke=None,\n    ...\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_annotations_5": {
+    "name": "spread",
+    "anchor": "mosaickit-guides-annotations-5",
+    "signatures": [
+      "mosaickit.layout.stack1d.spread(\n    centers,\n    sizes,\n    gap=0.0\n) -> tuple[float, ...]"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_annotations_6": {
+    "name": "assign_lanes",
+    "anchor": "mosaickit-guides-annotations-6",
+    "signatures": [
+      "mosaickit.layout.stack1d.assign_lanes(\n    intervals,\n    gap=0.0\n) -> tuple[int, ...]"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_annotations_7": {
+    "name": "gutter_columns",
+    "anchor": "mosaickit-guides-annotations-7",
+    "signatures": [
+      "mosaickit.layout.gutter.gutter_columns(\n    mark_width,\n    brace_widths,\n    note_width,\n    *,\n    start,\n    gap\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_geometry_1": {
+    "name": "Rect",
+    "anchor": "mosaickit-guides-geometry-1",
+    "signatures": [
+      "Rect(\n    x0,\n    y0,\n    x1,\n    y1\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_geometry_2": {
+    "name": "segments_intersect",
+    "anchor": "mosaickit-guides-geometry-2",
+    "signatures": [
+      "segments_intersect(\n    a,\n    b,\n    c,\n    d\n) -> bool"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_geometry_3": {
+    "name": "rect_hits_segment",
+    "anchor": "mosaickit-guides-geometry-3",
+    "signatures": [
+      "rect_hits_segment(\n    rect,\n    a,\n    b\n) -> bool"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_geometry_4": {
+    "name": "polygon_edges",
+    "anchor": "mosaickit-guides-geometry-4",
+    "signatures": [
+      "polygon_edges(polygon) -> tuple[Segment, ...]",
+      "distance_to_boundary(point, polygon) -> float"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_geometry_5": {
+    "name": "point_in_polygon",
+    "anchor": "mosaickit-guides-geometry-5",
+    "signatures": [
+      "point_in_polygon(point, polygon) -> bool"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_geometry_6": {
+    "name": "rect_inside_polygon",
+    "anchor": "mosaickit-guides-geometry-6",
+    "signatures": [
+      "rect_inside_polygon(rect, polygon) -> bool",
+      "rect_overlaps_polygon(rect, polygon) -> bool"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_geometry_7": {
+    "name": "ray_exit",
+    "anchor": "mosaickit-guides-geometry-7",
+    "signatures": [
+      "ray_exit(\n    origin,\n    direction,\n    polygon\n) -> float"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_geometry_8": {
+    "name": "polylabel",
+    "anchor": "mosaickit-guides-geometry-8",
+    "signatures": [
+      "polylabel(polygon, precision=1.0) -> Point"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_geometry_9": {
+    "name": "brace_outline",
+    "anchor": "mosaickit-guides-geometry-9",
+    "signatures": [
+      "brace_outline(\n    start,\n    end,\n    *,\n    base,\n    depth,\n    direction,\n    axis=\"y\",\n    samples=12\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_labels_1": {
+    "name": "RegionLabelLayer",
+    "anchor": "mosaickit-guides-labels-1",
+    "signatures": [
+      "RegionLabelLayer(\n    region,\n    text,\n    short_text=None,\n    placement=\"auto\",\n    style=None,\n    stroke=Stroke(width=0.8),\n    *,\n    role=\"text\",\n    ...\n)"
+    ],
+    "parameters": [
+      {
+        "name": "placement=\"auto\"",
+        "types": [],
+        "description": {
+          "en": "Inside the region when the text fits, centred on its pole ([Signed distance and pole](geometry.md#def-pole)), trying `short_text` second; otherwise a callout with `text`.",
+          "zh-TW": "若文字放得下，就以極點為中心置於區域內（參見[有號距離與不可及極點](geometry.md#def-pole)）；若長文字放不下，再嘗試 `short_text`。兩者都放不下時，以 `text` 作引線標註。",
+          "zh-CN": "如果文字放得下，就以极点为中心置于区域内（参见[有符号距离与不可及极点](geometry.md#def-pole)）；如果长文字放不下，再尝试 `short_text`。两者都放不下时，以 `text` 作引线标注。"
+        }
+      },
+      {
+        "name": "placement=\"inside\"",
+        "types": [],
+        "description": {
+          "en": "As `\"auto\"`, but when neither text fits, `short_text` (or `text`) is centred on the pole regardless.",
+          "zh-TW": "與 `\"auto\"` 相同，但兩段文字都放不下時，仍會把 `short_text`（或 `text`）置中於極點。",
+          "zh-CN": "与 `\"auto\"` 相同，但两段文字都放不下时，仍把 `short_text`（或 `text`）置中于极点。"
+        }
+      },
+      {
+        "name": "placement=\"callout\"",
+        "types": [],
+        "description": {
+          "en": "Always a callout: unboxed text outside the region and a thin leader from the pole to the text.",
+          "zh-TW": "一律作引線標註：區域外不加框的文字，以及從極點拉到文字的細引線。",
+          "zh-CN": "一律作引线标注：区域外不加框的文字，以及从极点拉到文字的细引线。"
+        }
+      }
+    ]
+  },
+  "agora.mosaickit.guides_labels_2": {
+    "name": "PointLabelLayer",
+    "anchor": "mosaickit-guides-labels-2",
+    "signatures": [
+      "PointLabelLayer(\n    point,\n    text,\n    style=None,\n    *,\n    role=\"text\",\n    ...\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_labels_3": {
+    "name": "Obstacles",
+    "anchor": "mosaickit-guides-labels-3",
+    "signatures": [
+      "Obstacles(\n    segments=(),\n    rects=(),\n    polygons=()\n)",
+      "Placement(\n    rect,\n    leader,\n    violations\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_labels_4": {
+    "name": "place_callout",
+    "anchor": "mosaickit-guides-labels-4",
+    "signatures": [
+      "place_callout(\n    polygon,\n    size,\n    obstacles,\n    bounds,\n    *,\n    scale=1.0\n) -> Placement"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_labels_5": {
+    "name": "fits_inside",
+    "anchor": "mosaickit-guides-labels-5",
+    "signatures": [
+      "fits_inside(\n    polygon,\n    size,\n    obstacles,\n    bounds\n) -> Rect | None",
+      "place_point_label(\n    footprint,\n    size,\n    obstacles,\n    bounds,\n    *,\n    scale=1.0\n) -> Placement",
+      "place_beside(\n    anchor,\n    size,\n    *,\n    axis,\n    direction,\n    reach,\n    obstacles,\n    bounds,\n    scale=1.0\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_styles_1": {
+    "name": "SparseStyle",
+    "anchor": "mosaickit-guides-styles-1",
+    "signatures": [
+      "style.merged_over(base)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_styles_2": {
+    "name": "Stroke",
+    "anchor": "mosaickit-guides-styles-2",
+    "signatures": [
+      "Stroke(\n    color=None,\n    width=None,\n    dash=None,\n    arrow=None,\n    opacity=None\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_styles_3": {
+    "name": "Fill",
+    "anchor": "mosaickit-guides-styles-3",
+    "signatures": [
+      "Fill(\n    color=None,\n    opacity=None,\n    hatch=None\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_styles_4": {
+    "name": "Marker",
+    "anchor": "mosaickit-guides-styles-4",
+    "signatures": [
+      "Marker(\n    color=None,\n    size=None,\n    shape=None,\n    opacity=None,\n    edge_color=None,\n    edge_width=None\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_styles_5": {
+    "name": "TextStyle",
+    "anchor": "mosaickit-guides-styles-5",
+    "signatures": [
+      "TextStyle(\n    color=None,\n    size=None,\n    family=None,\n    weight=None,\n    opacity=None,\n    rotation=None\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_styles_6": {
+    "name": "LegendStyle",
+    "anchor": "mosaickit-guides-styles-6",
+    "signatures": [
+      "LegendStyle(\n    visible=None,\n    location=None,\n    frame=None,\n    size=None\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_styles_7": {
+    "name": "Color",
+    "anchor": "mosaickit-guides-styles-7",
+    "signatures": [
+      "Color(\n    red,\n    green,\n    blue,\n    alpha=1.0\n)",
+      "Color.from_hex(\"#RGB\" | \"#RRGGBB\" | \"#RRGGBBAA\")"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_styles_8": {
+    "name": "Palette",
+    "anchor": "mosaickit-guides-styles-8",
+    "signatures": [
+      "Palette(name, colors)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_themes_1": {
+    "name": "StyleBundle",
+    "anchor": "mosaickit-guides-themes-1",
+    "signatures": [
+      "StyleBundle(\n    stroke=None,\n    fill=None,\n    marker=None,\n    text=None,\n    legend=None\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_themes_2": {
+    "name": "Theme",
+    "anchor": "mosaickit-guides-themes-2",
+    "signatures": [
+      "Theme(name, roles)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_themes_3": {
+    "name": "ThemeRegistry",
+    "anchor": "mosaickit-guides-themes-3",
+    "signatures": [
+      "ThemeRegistry()"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_themes_4": {
+    "name": "RolePack",
+    "anchor": "mosaickit-guides-themes-4",
+    "signatures": [
+      "expand_roles(pack) -> dict[str, StyleBundle]"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_themes_5": {
+    "name": "Config",
+    "anchor": "mosaickit-guides-themes-5",
+    "signatures": [
+      "Config(\n    theme=default,\n    canvas_spec=CanvasSpec(),\n    renderer=\"matplotlib\",\n    role_overrides={},\n    palette=DEFAULT_PALETTE\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_themes_6": {
+    "name": "use_config",
+    "anchor": "mosaickit-guides-themes-6",
+    "signatures": [
+      "with use_config(config): ..."
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_themes_7": {
+    "name": "Config.load",
+    "anchor": "mosaickit-guides-themes-7",
+    "signatures": [
+      "Config.load(path)",
+      "Config.from_dict(\n    data,\n    *,\n    source=\"<dict>\"\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_parameters_1": {
+    "name": "Parameter",
+    "anchor": "mosaickit-guides-parameters-1",
+    "signatures": [
+      "Parameter(name, value_type=None)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_parameters_2": {
+    "name": "Expression",
+    "anchor": "mosaickit-guides-parameters-2",
+    "signatures": [
+      "Constant(value)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_parameters_3": {
+    "name": "CanvasGrid",
+    "anchor": "mosaickit-guides-parameters-3",
+    "signatures": [
+      "CanvasGrid(\n    cells,\n    rows=None,\n    cols=None,\n    shape=None,\n    links=()\n)",
+      "Span(\n    canvas,\n    rows=1,\n    cols=1\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_parameters_4": {
+    "name": "Layout",
+    "anchor": "mosaickit-guides-parameters-4",
+    "signatures": [
+      "CanvasGrid.from_layout(canvases, layout)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_parameters_5": {
+    "name": "CanvasGrid.sweep",
+    "anchor": "mosaickit-guides-parameters-5",
+    "signatures": [
+      "CanvasGrid.sweep(\n    template,\n    values,\n    *,\n    cols=None\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_parameters_6": {
+    "name": "GridLink",
+    "anchor": "mosaickit-guides-parameters-6",
+    "signatures": [
+      "GridLink(\n    start_cell,\n    start,\n    end_cell,\n    end,\n    role=\"link\",\n    stroke=None\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_parameters_7": {
+    "name": "Animation",
+    "anchor": "mosaickit-guides-parameters-7",
+    "signatures": [
+      "Animation(\n    template,\n    parameter,\n    values,\n    fps=30\n)",
+      "Animation.sweep(\n    canvas,\n    values,\n    *,\n    fps=30\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_rendering_1": {
+    "name": "Renderer",
+    "anchor": "mosaickit-guides-rendering-1",
+    "signatures": [
+      "name: str",
+      "render(scene, context) -> Any",
+      "save(\n    result,\n    target,\n    options\n) -> list[Path]"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_rendering_2": {
+    "name": "RendererRegistry",
+    "anchor": "mosaickit-guides-rendering-2",
+    "signatures": [
+      "RendererRegistry()"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_rendering_3": {
+    "name": "register_builder",
+    "anchor": "mosaickit-guides-rendering-3",
+    "signatures": [
+      "register_builder(layer_type, builder)",
+      "register_pass(layer_type, run)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_rendering_4": {
+    "name": "SaveOptions",
+    "anchor": "mosaickit-guides-rendering-4",
+    "signatures": [
+      "SaveOptions(transparent=False, expand=True)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_rendering_5": {
+    "name": "RenderCache",
+    "anchor": "mosaickit-guides-rendering-5",
+    "signatures": [
+      "RenderCache(max_entries=256)"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.installation_1": {
+    "name": "cli",
+    "anchor": "bezierkit-installation-1",
+    "signatures": [],
+    "parameters": [
+      {
+        "name": "cli",
+        "types": [],
+        "description": {
+          "en": "The `bezierkit` command ([Command-line interface](cli.md#sec-cli)); pulls in `Typer` and `Rich`.",
+          "zh-TW": "`bezierkit` 指令（詳見[命令列介面](cli.md#sec-cli)）；安裝 `Typer` 與 `Rich`。",
+          "zh-CN": "`bezierkit` 命令（详见[命令行界面](cli.md#sec-cli)）；安装 `Typer` 与 `Rich`。"
+        }
+      },
+      {
+        "name": "matplotlib",
+        "types": [],
+        "description": {
+          "en": "Conversion to and from Matplotlib `Path` objects ([Matplotlib](guides/export.md#sec-matplotlib)).",
+          "zh-TW": "與 Matplotlib `Path` 物件互相轉換（詳見[Matplotlib](guides/export.md#sec-matplotlib)）。",
+          "zh-CN": "与 Matplotlib `Path` 对象互相转换（详见[Matplotlib](guides/export.md#sec-matplotlib)）。"
+        }
+      }
+    ]
+  },
+  "agora.bezierkit.guides_geometry_1": {
+    "name": "Point",
+    "anchor": "bezierkit-guides-geometry-1",
+    "signatures": [
+      "Point(float, ...)",
+      "Vector(float, ...)"
+    ],
+    "parameters": [
+      {
+        "name": "coords",
+        "types": [],
+        "description": {
+          "en": "The coordinate tuple.",
+          "zh-TW": "座標 tuple。",
+          "zh-CN": "坐标 tuple。"
+        }
+      },
+      {
+        "name": "dimension",
+        "types": [],
+        "description": {
+          "en": "The dimension $d$.",
+          "zh-TW": "維度 $d$。",
+          "zh-CN": "维度 $d$。"
+        }
+      },
+      {
+        "name": "x",
+        "types": [],
+        "description": {
+          "en": "The first coordinate, when it exists.",
+          "zh-TW": "第一個座標（存在時）。",
+          "zh-CN": "第一个坐标（存在时）。"
+        }
+      },
+      {
+        "name": "y",
+        "types": [],
+        "description": {
+          "en": "The second coordinate, when it exists.",
+          "zh-TW": "第二個座標（存在時）。",
+          "zh-CN": "第二个坐标（存在时）。"
+        }
+      },
+      {
+        "name": "z",
+        "types": [],
+        "description": {
+          "en": "The third coordinate, when it exists.",
+          "zh-TW": "第三個座標（存在時）。",
+          "zh-CN": "第三个坐标（存在时）。"
+        }
+      },
+      {
+        "name": "dot()",
+        "types": [],
+        "description": {
+          "en": "The inner product of two vectors.",
+          "zh-TW": "兩個向量的內積。",
+          "zh-CN": "两个向量的内积。"
+        }
+      },
+      {
+        "name": "norm()",
+        "types": [],
+        "description": {
+          "en": "The Euclidean length of a vector.",
+          "zh-TW": "向量的歐氏長度。",
+          "zh-CN": "向量的欧氏长度。"
+        }
+      },
+      {
+        "name": "normalized()",
+        "types": [],
+        "description": {
+          "en": "The unit vector in the direction of a vector; a zero vector cannot be normalized.",
+          "zh-TW": "與向量同向的單位向量；零向量無法正規化。",
+          "zh-CN": "与向量同向的单位向量；零向量无法归一化。"
+        }
+      }
+    ]
+  },
+  "agora.bezierkit.guides_geometry_2": {
+    "name": "PointSet",
+    "anchor": "bezierkit-guides-geometry-2",
+    "signatures": [
+      "PointSet(points)"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_geometry_3": {
+    "name": "Interval",
+    "anchor": "bezierkit-guides-geometry-3",
+    "signatures": [
+      "Interval"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_geometry_4": {
+    "name": "ParameterValues",
+    "anchor": "bezierkit-guides-geometry-4",
+    "signatures": [
+      "ParameterValues"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_curves_1": {
+    "name": "BernsteinBasis",
+    "anchor": "bezierkit-guides-curves-1",
+    "signatures": [
+      "BernsteinBasis(int)(float)",
+      "BernsteinBasis(int).matrix(values)"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_curves_2": {
+    "name": "BezierCurve",
+    "anchor": "bezierkit-guides-curves-2",
+    "signatures": [
+      "BezierCurve(\n    points,\n    *,\n    evaluator=None\n)",
+      "BezierCurve.linear(p0, p1)",
+      "BezierCurve.quadratic(\n    p0,\n    p1,\n    p2\n)",
+      "BezierCurve.cubic(\n    p0,\n    p1,\n    p2,\n    p3\n)"
+    ],
+    "parameters": [
+      {
+        "name": "degree",
+        "types": [],
+        "description": {
+          "en": "The degree $n$.",
+          "zh-TW": "次數 $n$。",
+          "zh-CN": "次数 $n$。"
+        }
+      },
+      {
+        "name": "dimension",
+        "types": [],
+        "description": {
+          "en": "The dimension $d$.",
+          "zh-TW": "維度 $d$。",
+          "zh-CN": "维度 $d$。"
+        }
+      },
+      {
+        "name": "control_points",
+        "types": [],
+        "description": {
+          "en": "The control points as a `PointSet`.",
+          "zh-TW": "以 `PointSet` 表示的控制點。",
+          "zh-CN": "以 `PointSet` 表示的控制点。"
+        }
+      },
+      {
+        "name": "at()",
+        "types": [],
+        "description": {
+          "en": "$B(t)$ as a `Point`; a curve object is also callable, `curve(t)`.",
+          "zh-TW": "以 `Point` 回傳 $B(t)$；曲線物件也可直接呼叫，`curve(t)`。",
+          "zh-CN": "以 `Point` 返回 $B(t)$；曲线对象也可直接调用，`curve(t)`。"
+        }
+      },
+      {
+        "name": "at_many()",
+        "types": [],
+        "description": {
+          "en": "$B$ at many parameters, as a `PointSet`.",
+          "zh-TW": "以 `PointSet` 回傳多個參數下的值。",
+          "zh-CN": "以 `PointSet` 返回多个参数下的值。"
+        }
+      },
+      {
+        "name": "evaluator",
+        "types": [],
+        "description": {
+          "en": "The evaluation strategy (see below).",
+          "zh-TW": "求值策略（見下文）。",
+          "zh-CN": "求值策略（见下文）。"
+        }
+      }
+    ]
+  },
+  "agora.bezierkit.guides_curves_3": {
+    "name": "DeCasteljauEvaluator",
+    "anchor": "bezierkit-guides-curves-3",
+    "signatures": [
+      "DeCasteljauEvaluator"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_curves_4": {
+    "name": "BernsteinEvaluator",
+    "anchor": "bezierkit-guides-curves-4",
+    "signatures": [
+      "BernsteinEvaluator"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_operations_1": {
+    "name": "BezierCurve.derivative",
+    "anchor": "bezierkit-guides-operations-1",
+    "signatures": [
+      "BezierCurve.derivative(order=1)"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_operations_2": {
+    "name": "BezierCurve.reversed",
+    "anchor": "bezierkit-guides-operations-2",
+    "signatures": [
+      "BezierCurve.reversed"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_operations_3": {
+    "name": "BezierCurve.split",
+    "anchor": "bezierkit-guides-operations-3",
+    "signatures": [
+      "BezierCurve.split(float)",
+      "BezierCurve.segment(t0, t1)"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_paths_1": {
+    "name": "CubicBezierSegment",
+    "anchor": "bezierkit-guides-paths-1",
+    "signatures": [
+      "CubicBezierSegment(\n    p0,\n    p1,\n    p2,\n    p3,\n    *,\n    fit_error=None\n)"
+    ],
+    "parameters": [
+      {
+        "name": "fit_error",
+        "types": [
+          "float | None"
+        ],
+        "description": {
+          "en": "The measured error of a fitted segment ([Fitting](fitting.md#sec-fitting)); kept through split, segment and reversal, and ignored by equality.",
+          "zh-TW": "擬合線段的實測誤差（詳見[擬合](fitting.md#sec-fitting)）；分割、截取與反轉後保留，判斷相等時忽略。",
+          "zh-CN": "拟合线段的实测误差（详见[拟合](fitting.md#sec-fitting)）；分割、截取与反转后保留，判断相等时忽略。"
+        },
+        "default": "None"
+      },
+      {
+        "name": "as_curve()",
+        "types": [],
+        "description": {
+          "en": "Convert to a degree-3 `BezierCurve` without changing a control point.",
+          "zh-TW": "轉為 3 次 `BezierCurve`，不改變任何控制點。",
+          "zh-CN": "转为 3 次 `BezierCurve`，不改变任何控制点。"
+        }
+      },
+      {
+        "name": "from_curve(curve)",
+        "types": [],
+        "description": {
+          "en": "Convert a degree-3 `BezierCurve` without changing a control point.",
+          "zh-TW": "由 3 次 `BezierCurve` 轉換，不改變任何控制點。",
+          "zh-CN": "由 3 次 `BezierCurve` 转换，不改变任何控制点。"
+        }
+      },
+      {
+        "name": "from_line()",
+        "types": [],
+        "description": {
+          "en": "The exact cubic of a line ([Lines and quadratics as cubics](paths.md#prop-elevation)).",
+          "zh-TW": "直線的精確三次表示（詳見[直線與二次曲線的三次表示](paths.md#prop-elevation)）。",
+          "zh-CN": "直线的精确三次表示（详见[直线与二次曲线的三次表示](paths.md#prop-elevation)）。"
+        }
+      },
+      {
+        "name": "from_quadratic()",
+        "types": [],
+        "description": {
+          "en": "The exact cubic of a quadratic ([Lines and quadratics as cubics](paths.md#prop-elevation)).",
+          "zh-TW": "二次曲線的精確三次表示（詳見[直線與二次曲線的三次表示](paths.md#prop-elevation)）。",
+          "zh-CN": "二次曲线的精确三次表示（详见[直线与二次曲线的三次表示](paths.md#prop-elevation)）。"
+        }
+      }
+    ]
+  },
+  "agora.bezierkit.guides_paths_2": {
+    "name": "CubicBezierSegment.bounding_box",
+    "anchor": "bezierkit-guides-paths-2",
+    "signatures": [
+      "CubicBezierSegment.bounding_box"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_paths_3": {
+    "name": "to_cubic",
+    "anchor": "bezierkit-guides-paths-3",
+    "signatures": [
+      "to_cubic(curve)"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_paths_4": {
+    "name": "line_to_cubic",
+    "anchor": "bezierkit-guides-paths-4",
+    "signatures": [
+      "line_to_cubic(p0, p3)"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_paths_5": {
+    "name": "quadratic_to_cubic",
+    "anchor": "bezierkit-guides-paths-5",
+    "signatures": [
+      "quadratic_to_cubic(\n    p0,\n    control,\n    p3\n)"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_paths_6": {
+    "name": "PiecewiseBezier",
+    "anchor": "bezierkit-guides-paths-6",
+    "signatures": [
+      "PiecewiseBezier(\n    segments,\n    *,\n    closed=False,\n    continuity_tolerance=1e-9\n)",
+      "PiecewiseBezier.compound(paths)"
+    ],
+    "parameters": [
+      {
+        "name": "segments",
+        "types": [],
+        "description": {
+          "en": "The segments in order.",
+          "zh-TW": "依序排列的線段。",
+          "zh-CN": "依序排列的线段。"
+        }
+      },
+      {
+        "name": "control_points",
+        "types": [],
+        "description": {
+          "en": "Their control points.",
+          "zh-TW": "其控制點。",
+          "zh-CN": "其控制点。"
+        }
+      },
+      {
+        "name": "subpaths",
+        "types": [],
+        "description": {
+          "en": "The `BezierSubpath`s.",
+          "zh-TW": "各 `BezierSubpath`。",
+          "zh-CN": "各 `BezierSubpath`。"
+        }
+      },
+      {
+        "name": "at(t)",
+        "types": [],
+        "description": {
+          "en": "Evaluate under the uniform parameterization.",
+          "zh-TW": "依均勻參數化求值。",
+          "zh-CN": "依均匀参数化求值。"
+        }
+      },
+      {
+        "name": "at_many(values)",
+        "types": [],
+        "description": {
+          "en": "Evaluate at many parameters.",
+          "zh-TW": "在多個參數上求值。",
+          "zh-CN": "在多个参数上求值。"
+        }
+      },
+      {
+        "name": "split(t)",
+        "types": [],
+        "description": {
+          "en": "Divide the path at `t`; a parameter inside a segment splits that segment ([Subdivision](operations.md#thm-subdivision)).",
+          "zh-TW": "在 `t` 分割路徑；參數落在某段內時會分割該段（詳見[分割](operations.md#thm-subdivision)）。",
+          "zh-CN": "在 `t` 分割路径；参数落在某段内时会分割该段（详见[分割](operations.md#thm-subdivision)）。"
+        }
+      },
+      {
+        "name": "segment(t0, t1)",
+        "types": [],
+        "description": {
+          "en": "Keep the part between two parameters.",
+          "zh-TW": "保留兩個參數之間的部分。",
+          "zh-CN": "保留两个参数之间的部分。"
+        }
+      },
+      {
+        "name": "reversed()",
+        "types": [],
+        "description": {
+          "en": "Reverse the order of the segments and each segment.",
+          "zh-TW": "反轉線段順序與每一段。",
+          "zh-CN": "反转线段顺序与每一段。"
+        }
+      },
+      {
+        "name": "closed",
+        "types": [],
+        "description": {
+          "en": "Closure flag.",
+          "zh-TW": "封閉旗標。",
+          "zh-CN": "封闭旗标。"
+        }
+      },
+      {
+        "name": "is_compound",
+        "types": [],
+        "description": {
+          "en": "Whether there are several subpaths.",
+          "zh-TW": "是否含多條子路徑。",
+          "zh-CN": "是否含多条子路径。"
+        }
+      },
+      {
+        "name": "dimension",
+        "types": [],
+        "description": {
+          "en": "The dimension $d$.",
+          "zh-TW": "維度 $d$。",
+          "zh-CN": "维度 $d$。"
+        }
+      }
+    ]
+  },
+  "agora.bezierkit.guides_construction_1": {
+    "name": "EndpointDerivatives",
+    "anchor": "bezierkit-guides-construction-1",
+    "signatures": [
+      "EndpointDerivatives(\n    start,\n    end,\n    start_derivative,\n    end_derivative\n).build()"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_construction_2": {
+    "name": "TangentDirections",
+    "anchor": "bezierkit-guides-construction-2",
+    "signatures": [
+      "TangentDirections(\n    start,\n    end,\n    start_direction,\n    end_direction,\n    start_handle=1.0,\n    end_handle=1.0\n).build()"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_construction_3": {
+    "name": "PlanarSlopes",
+    "anchor": "bezierkit-guides-construction-3",
+    "signatures": [
+      "PlanarSlopes(\n    start,\n    end,\n    start_slope,\n    end_slope,\n    start_handle=1.0,\n    end_handle=1.0\n).build()"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_construction_4": {
+    "name": "parametric_hermite",
+    "anchor": "bezierkit-guides-construction-4",
+    "signatures": [
+      "parametric_hermite(\n    p0,\n    p3,\n    derivative0,\n    derivative1,\n    *,\n    t0=0.0,\n    t1=1.0\n)"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_construction_5": {
+    "name": "graph_hermite",
+    "anchor": "bezierkit-guides-construction-5",
+    "signatures": [
+      "graph_hermite(\n    *,\n    x0,\n    x1,\n    y0,\n    y1,\n    m0,\n    m1\n)"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_construction_6": {
+    "name": "hermite_error_bound",
+    "anchor": "bezierkit-guides-construction-6",
+    "signatures": [
+      "hermite_error_bound(\n    max_fourth_derivative,\n    t0,\n    t1\n)"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_fitting_1": {
+    "name": "fit_parametric",
+    "anchor": "bezierkit-guides-fitting-1",
+    "signatures": [
+      "fit_parametric(\n    function,\n    derivative,\n    *,\n    t0,\n    t1,\n    tolerance,\n    max_depth=20,\n    max_segments=4096,\n    error_samples=9\n)"
+    ],
+    "parameters": [
+      {
+        "name": "tolerance",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Allowed error, in coordinate units; must be positive.",
+          "zh-TW": "容許誤差，單位同座標；必須為正。",
+          "zh-CN": "容许误差，单位同坐标；必须为正。"
+        }
+      },
+      {
+        "name": "max_depth",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "Largest number of halvings of the starting interval.",
+          "zh-TW": "起始區間最多可對半的次數。",
+          "zh-CN": "起始区间最多可对半的次数。"
+        },
+        "default": "20"
+      },
+      {
+        "name": "max_segments",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "Largest number of segments in the result.",
+          "zh-TW": "結果最多的線段數。",
+          "zh-CN": "结果最多的线段数。"
+        },
+        "default": "4096"
+      },
+      {
+        "name": "error_samples",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "Probe parameters per segment, at least 3.",
+          "zh-TW": "每段的量測參數個數，至少 3。",
+          "zh-CN": "每段的量测参数个数，至少 3。"
+        },
+        "default": "9"
+      }
+    ]
+  },
+  "agora.bezierkit.guides_fitting_2": {
+    "name": "fit_graph",
+    "anchor": "bezierkit-guides-fitting-2",
+    "signatures": [
+      "fit_graph(\n    function,\n    derivative,\n    *,\n    x0,\n    x1,\n    tolerance,\n    ...\n)"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_fitting_3": {
+    "name": "fit_polyline",
+    "anchor": "bezierkit-guides-fitting-3",
+    "signatures": [
+      "fit_polyline(\n    points,\n    *,\n    tolerance,\n    closed=False,\n    duplicate_tolerance=1e-12,\n    preserve_corners=True,\n    corner_angle=pi/4\n)"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_fitting_4": {
+    "name": "maximum_polyline_deviation",
+    "anchor": "bezierkit-guides-fitting-4",
+    "signatures": [
+      "maximum_polyline_deviation(points, path)"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_implicit_1": {
+    "name": "trace_implicit",
+    "anchor": "bezierkit-guides-implicit-1",
+    "signatures": [
+      "trace_implicit(\n    function,\n    *,\n    levels,\n    viewport,\n    resolution=(101, 101),\n    tolerance=1e-2,\n    gradient=None\n)"
+    ],
+    "parameters": [
+      {
+        "name": "function",
+        "types": [],
+        "description": {
+          "en": "$F$, called with two floats; it must be finite at every grid point, or `ValueError` is raised.",
+          "zh-TW": "$F$，以兩個浮點數呼叫；在每個網格點都必須為有限值，否則拋出 `ValueError`。",
+          "zh-CN": "$F$，以两个浮点数调用；在每个网格点都必须为有限值，否则抛出 `ValueError`。"
+        }
+      },
+      {
+        "name": "levels",
+        "types": [],
+        "description": {
+          "en": "One level or an iterable of finite levels.",
+          "zh-TW": "單一水準，或由有限水準值組成的可迭代物件。",
+          "zh-CN": "单一水平，或由有限水平值组成的可迭代对象。"
+        }
+      },
+      {
+        "name": "resolution",
+        "types": [
+          "(int, int)"
+        ],
+        "description": {
+          "en": "Grid points along $x$ and $y$, at least 2 each.",
+          "zh-TW": "沿 $x$ 與 $y$ 的網格點數，各至少 2。",
+          "zh-CN": "沿 $x$ 与 $y$ 的网格点数，各至少 2。"
+        },
+        "default": "(101, 101)"
+      },
+      {
+        "name": "tolerance",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Allowed deviation, in coordinate units, of the simplified and curved segments.",
+          "zh-TW": "簡化與彎曲線段的容許偏差，單位同座標。",
+          "zh-CN": "简化与弯曲线段的容许偏差，单位同坐标。"
+        },
+        "default": "1e-2"
+      },
+      {
+        "name": "gradient",
+        "types": [
+          "callable | None"
+        ],
+        "description": {
+          "en": "$\\nabla F = (F_x, F_y)$, as a pair or a `Vector`. When given, straight pieces are bent into cubics that follow the curve's tangent.",
+          "zh-TW": "$\\nabla F = (F_x, F_y)$，以 tuple 或 `Vector` 回傳。提供時，直線段會彎成沿曲線切線方向的三次曲線。",
+          "zh-CN": "$\\nabla F = (F_x, F_y)$，以 tuple 或 `Vector` 回传。提供时，直线段会弯成沿曲线切线方向的三次曲线。"
+        },
+        "default": "None"
+      }
+    ]
+  },
+  "agora.bezierkit.guides_implicit_2": {
+    "name": "ContourSet",
+    "anchor": "bezierkit-guides-implicit-2",
+    "signatures": [
+      "ContourSet"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_implicit_3": {
+    "name": "LevelContours",
+    "anchor": "bezierkit-guides-implicit-3",
+    "signatures": [
+      "LevelContours"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_export_1": {
+    "name": "UniformSampler",
+    "anchor": "bezierkit-guides-export-1",
+    "signatures": [
+      "UniformSampler(int).sample(curve)"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_export_2": {
+    "name": "Sample",
+    "anchor": "bezierkit-guides-export-2",
+    "signatures": [
+      "Sample"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_export_3": {
+    "name": "dumps",
+    "anchor": "bezierkit-guides-export-3",
+    "signatures": [
+      "dumps(\n    path,\n    *,\n    metadata=None,\n    indent=None\n)"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_export_4": {
+    "name": "loads",
+    "anchor": "bezierkit-guides-export-4",
+    "signatures": [
+      "loads(str)"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_export_5": {
+    "name": "PathDocument",
+    "anchor": "bezierkit-guides-export-5",
+    "signatures": [
+      "PathDocument"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_export_6": {
+    "name": "to_svg_path_data",
+    "anchor": "bezierkit-guides-export-6",
+    "signatures": [
+      "to_svg_path_data(\n    path,\n    *,\n    precision=6,\n    transform=None\n)",
+      "from_svg_path_data(str)"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_export_7": {
+    "name": "to_tikz",
+    "anchor": "bezierkit-guides-export-7",
+    "signatures": [
+      "to_tikz(\n    path,\n    *,\n    precision=6,\n    transform=None,\n    options=None\n)",
+      "segment_to_tikz(\n    segment,\n    *,\n    precision=6,\n    transform=None,\n    include_start=True\n)"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_export_8": {
+    "name": "from_path",
+    "anchor": "bezierkit-guides-export-8",
+    "signatures": [
+      "from_path(\n    path,\n    *,\n    transform=None\n)",
+      "to_path(path)",
+      "approximate_path(\n    path,\n    transform,\n    *,\n    tolerance,\n    max_depth=20\n)"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.cli_1": {
+    "name": "evaluate",
+    "anchor": "bezierkit-cli-1",
+    "signatures": [
+      "bezierkit evaluate --t values [--points ...] [--order int] [--json]"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.cli_2": {
+    "name": "sample",
+    "anchor": "bezierkit-cli-2",
+    "signatures": [
+      "bezierkit sample [--points ...] [--count int] [--format table|csv|json] [--output path]"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.cli_3": {
+    "name": "construct slopes",
+    "anchor": "bezierkit-cli-3",
+    "signatures": [
+      "bezierkit construct slopes --start point --end point --start-slope float --end-slope float [--start-handle --end-handle]",
+      "bezierkit construct tangents --start ... --end ... --start-direction vector --end-direction vector [...]"
+    ],
+    "parameters": []
+  }
+}

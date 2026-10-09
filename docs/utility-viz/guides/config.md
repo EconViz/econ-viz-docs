@@ -74,13 +74,17 @@ lists the valid choices.
 ```python
 from utility_viz import Canvas, Config
 
-Config.load("utility-viz.toml").use()     # diagrams created from now on
-Canvas(x_max=20, y_max=15)             # uses the file's settings
+# diagrams created from now on
+Config.load("utility-viz.toml").use()
+# uses the file's settings
+Canvas(x_max=20, y_max=15)
 
 theme = Config.load("utility-viz.toml").theme
-Canvas(theme=theme)                    # or one diagram only
+# or one diagram only
+Canvas(theme=theme)
 
-Config.reset()                         # back to the built-in defaults
+# back to the built-in defaults
+Config.reset()
 ```
 
 Arguments passed to a method still win over the file: with the settings above,

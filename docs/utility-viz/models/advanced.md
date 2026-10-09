@@ -145,10 +145,15 @@ from utility_viz import Canvas, Effect
 from utility_viz.models import Haagsma
 from utility_viz.optimizer import decompose_price_effect
 
-model = Haagsma(alpha_x=1.0, alpha_y=2.0, gamma_x=2.0, gamma_y=27.0)
-model.is_giffen(px=2.0, py=1.0, income=28.0)  # True
+model = Haagsma(
+    alpha_x=1.0, alpha_y=2.0, gamma_x=2.0, gamma_y=27.0
+)
+# True
+model.is_giffen(px=2.0, py=1.0, income=28.0)
 
-result = decompose_price_effect(model, px=(2.0, 1.0), py=1.0, income=28.0, method="hicks")
+result = decompose_price_effect(
+    model, px=(2.0, 1.0), py=1.0, income=28.0, method="hicks"
+)
 
 (
     Canvas(x_max=16, y_max=32, title="Haagsma: Giffen good")

@@ -1,123 +1,56 @@
 ---
-seo_title: "bezierkit Quick Start"
-description: "Evaluate and split a cubic Bézier curve, build one from slopes, export SVG and TikZ, and use the bezierkit command line."
+seo_title: "Quick start"
 ---
 
-# Quick Start
+# Quick start
 
-Every output below comes from running the code with bezierkit 0.5.0rc1.
+<span id="sec-quickstart"></span>
 
-## Evaluate, split and sample a curve
+## A cubic curve
 
-```python
-from bezierkit import BezierCurve, Point
-from bezierkit.sampling import UniformSampler
-
-curve = BezierCurve.cubic(
-    Point(0, 0),
-    Point(1, 2),
-    Point(3, 2),
-    Point(4, 0),
-)
-
-print(curve.at(0.5))
-print(curve.derivative().at(0.5))
-
-left, right = curve.split(0.3)
-print(left.at(1.0) == right.at(0.0))
-
-sample = UniformSampler(200).sample(curve)
-print(len(sample.points), "sample points")
-```
-
-Output:
-
-```text
-Point(coords=(2.0, 1.5))
-Point(coords=(4.5, 0.0))
-True
-200 sample points
-```
-
-`curve.at(t)` evaluates the curve at parameter `t` in `[0, 1]`, `curve.derivative()` returns the derivative curve, and
-`split` cuts the curve in two. The sample also exposes its `t`, `x` and `y` arrays.
-
-## Build a curve from slopes
-
-`PlanarSlopes` constructs a cubic from two end points and the slope (dy/dx) wanted at each end.
+The curve used throughout this manual is the cubic with control points
+$(0, 0)$, $(1, 2)$, $(3, 2)$ and $(4, 0)$ ([The cubic of [Quick start](quickstart.md#sec-quickstart), its control polygon and convex hull.](quickstart.md#fig-quickstart)).
 
 ```python
-from bezierkit import Point
-from bezierkit.construction import PlanarSlopes
-
-demand = PlanarSlopes(
-    start=Point(0, 5),
-    end=Point(5, 0),
-    start_slope=-2,
-    end_slope=-0.3,
-).build()
-
-print(demand.at(0.0), demand.at(1.0))
-
-# The tangent at each end follows the requested slope (dy/dx).
-d = demand.derivative()
-for t in (0.0, 1.0):
-    dx, dy = d.at(t).coords
-    print(f"t={t}: dy/dx = {dy / dx:.2f}")
-```
-
-Output:
-
-```text
-Point(coords=(0.0, 5.0)) Point(coords=(5.0, 0.0))
-t=0.0: dy/dx = -2.00
-t=1.0: dy/dx = -0.30
-```
-
-## Export to SVG and TikZ
-
-A `PiecewiseBezier` joins cubic segments end to end. The SVG and TikZ exporters write the cubic geometry natively,
-without flattening it.
-
-```python
-from bezierkit import CubicBezierSegment, PiecewiseBezier, Point
-from bezierkit.export.svg import to_svg_path_data
+from bezierkit import BezierCurve, PiecewiseBezier, Point
+from bezierkit.bezier import to_cubic
 from bezierkit.export.tikz import to_tikz
 
-path = PiecewiseBezier([
-    CubicBezierSegment.from_line(Point(0, 0), Point(2, 0)),
-    CubicBezierSegment.from_line(Point(2, 0), Point(2, 4)),
-])
-print(path.at(0.75))
-print(to_svg_path_data(path, precision=5))
-print(to_tikz(path, precision=5, options="thick"))
+curve = BezierCurve.cubic(
+    Point(0, 0), Point(1, 2), Point(3, 2), Point(4, 0)
+)
+# Point(coords=(2.0, 1.5))
+print(curve.at(0.5))
+# Point(coords=(4.5, 0.0))
+print(curve.derivative().at(0.5))
+# two cubics that together trace curve
+left, right = curve.split(0.4)
+
+path = PiecewiseBezier([to_cubic(curve)])
+print(to_tikz(path, precision=2, options="thick"))
+# \draw[thick] (0.00,0.00) .. controls (1.00,2.00) and (3.00,2.00) .. (4.00,0.00);
 ```
 
-Output:
+<span id="fig-quickstart"></span>
 
-```text
-Point(coords=(2.0, 2.0))
-M 0.00000 0.00000 C 0.66667 0.00000 1.33333 0.00000 2.00000 0.00000 C 2.00000 1.33333 2.00000 2.66667 2.00000 4.00000
-\draw[thick] (0.00000,0.00000) .. controls (0.66667,0.00000) and (1.33333,0.00000) .. (2.00000,0.00000) .. controls (2.00000,1.33333) and (2.00000,2.66667) .. (2.00000,4.00000);
-```
+![The cubic of [Quick start](quickstart.md#sec-quickstart), its control polygon and convex hull.](../assets/bezierkit/agora/curves/cubic.svg){ .ev-figure-sm }
 
-## Command line
+The curve starts at $P_0$ and ends at $P_3$, leaves $P_0$ towards $P_1$ and
+arrives at $P_3$ from $P_2$, and never leaves the shaded hull of its control
+points ([Convex hull](guides/curves.md#cor-hull)). The last line is the curve as a TikZ path, ready to paste
+into a LaTeX document.
 
-With the `cli` extra installed, the same curve can be sampled from the shell:
+## The pieces
 
-```bash
-bezierkit sample \
-  --points "0,0" --points "1,2" --points "3,2" --points "4,0" \
-  --count 5 --format csv
-```
-
-```text
-t,x,y
-0.0,0.0,0.0
-0.25,0.90625,1.125
-0.5,2.0,1.5
-0.75,3.09375,1.125
-1.0,4.0,0.0
-```
-
-Run `bezierkit --help` for the complete command tree.
+- *Values.* `Point`, `Vector` and `PointSet` are immutable and
+  dimension-checked ([Geometry values](guides/geometry.md#sec-geometry)).
+- *Curves.* `BezierCurve` has any degree and dimension;
+  `CubicBezierSegment` is the cubic that renderers consume; a
+  `PiecewiseBezier` joins cubics into a path ([Bézier curves](guides/curves.md#sec-curves), [Cubic segments and paths](guides/paths.md#sec-paths)).
+- *Constructions.* Endpoint conditions, slopes, derivatives or Hermite data
+  become control points ([Constructions and Hermite interpolation](guides/construction.md#sec-construction)).
+- *Approximation.* Smooth functions, sampled points and level sets
+  $F(x, y) = c$ become cubic paths with a stated error ([Fitting](guides/fitting.md#sec-fitting),
+  [Level sets](guides/implicit.md#sec-implicit)).
+- *Output.* Samples, JSON, SVG path data and TikZ, and Matplotlib paths
+  ([Sampling and export](guides/export.md#sec-export)).

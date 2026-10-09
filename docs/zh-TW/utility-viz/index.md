@@ -6,7 +6,7 @@ description: "開源 Python 套件，繪製出版品質的個體經濟學圖形�
 <h1 class="ev-visually-hidden">utility-viz：繪製個體經濟學圖形的 Python 套件</h1>
 
 <p align="center">
-  <img src="../../assets/banner.svg" alt="EconViz" style="max-width: 480px; width: 100%; margin: 2rem 0 1rem;">
+  <img src="../../assets/utility-viz/banner.svg" alt="utility-viz" style="max-width: 480px; width: 100%; margin: 2rem 0 1rem;">
 </p>
 
 <p align="center"><em>用 Python 繪製高品質的個體經濟學圖形。</em></p>
@@ -18,30 +18,22 @@ description: "開源 Python 套件，繪製出版品質的個體經濟學圖形�
   <a href="https://pypi.org/project/utility-viz/"><img alt="Python" src="https://img.shields.io/pypi/pyversions/utility-viz?style=flat-square&color=181818&labelColor=f3f3f3"></a>
 </p>
 
----
-
-:fontawesome-brands-github: **原始碼：** [https://github.com/EconViz/utility-viz](https://github.com/EconViz/utility-viz)
-
-:material-file-pdf-box: **PDF 手冊：** [繁體中文、简体中文、English](project/manual.md)
-
-:fontawesome-solid-envelope: **聯絡我們：** [contact@econ-viz.org](mailto:contact@econ-viz.org)
-
----
-
 !!! warning "utility-viz 2.0 目前為 Beta 版"
 
     utility-viz 2.0.0b1 是預先發行版（pre-release）。在 2.0 正式版釋出之前，穩定版仍是 `econ-viz` 1.x。
-    從 `econ-viz` 升級？請見[從 econ-viz 遷移](migrating.md)。
+    從 `econ-viz` 升級？請見[遷移指南](migrating.md)。
 
 ```python
 from utility_viz import Canvas, levels, solve
 from utility_viz.models import CobbDouglas
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
-eq    = solve(model, px=2.0, py=3.0, income=30.0)
-lvls  = levels.around(eq.utility, n=5)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
+lvls = levels.around(eq.utility, n=5)
 
-cvs = Canvas(x_max=20, y_max=15, title=r"Cobb-Douglas $x^{0.5} y^{0.5}$")
+cvs = Canvas(
+    x_max=20, y_max=15, title=r"Cobb-Douglas $x^{0.5} y^{0.5}$"
+)
 cvs.add_utility(model, levels=lvls)
 cvs.add_budget(2.0, 3.0, 30.0, fill=True)
 cvs.add_equilibrium(eq, show_ray=True)
@@ -123,7 +115,7 @@ cvs.save("cobb_douglas.png")
 ## 安裝
 
 ```bash
-pip install --pre utility-viz
+uv add --prerelease allow utility-viz
 ```
 
 需要 Python 3.10 以上。uv 與選用依賴的安裝方式請見[安裝](getting-started/installation.md)。

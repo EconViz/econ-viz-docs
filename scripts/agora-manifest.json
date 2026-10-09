@@ -1,0 +1,554 @@
+{
+  "docs/principle-viz/guides/introduction.md": {
+    "source": "packages/principle-viz/chapters/en/01-introduction.typ",
+    "sha256": "5a88b9a5a356904355fec46048f44d698d06b680c011d583ddf9cd7cc708df6e"
+  },
+  "docs/principle-viz/installation.md": {
+    "source": "packages/principle-viz/chapters/en/02-installation.typ",
+    "sha256": "d6ec14a4e8e547cd0a040b65602238c4b3d0d23e4fa06ee64a03a1c7e6f080e8"
+  },
+  "docs/principle-viz/quickstart.md": {
+    "source": "packages/principle-viz/chapters/en/03-quickstart.typ",
+    "sha256": "825714eea2f7acfe8e27db13a16545b73acad919a1b2f8b427a7bb358783107e"
+  },
+  "docs/principle-viz/guides/markets.md": {
+    "source": "packages/principle-viz/chapters/en/04-markets.typ",
+    "sha256": "5fa9548d4bc4e927d780a29dccdd020ae40118e6262c42ce00eaf16479194a7a"
+  },
+  "docs/principle-viz/guides/discrete.md": {
+    "source": "packages/principle-viz/chapters/en/05-discrete.typ",
+    "sha256": "7fab27691708d780f3c5322b220ed0a292653d1f34d6f6f2c1ceaf2d7285b1e5"
+  },
+  "docs/principle-viz/guides/aggregation.md": {
+    "source": "packages/principle-viz/chapters/en/06-aggregation.typ",
+    "sha256": "cd0b6de311a807e357605145c27dfa1fc20cc798a7fb0d9828ee3204b4882728"
+  },
+  "docs/principle-viz/guides/elasticity.md": {
+    "source": "packages/principle-viz/chapters/en/07-elasticity.typ",
+    "sha256": "dde6b393213eefe8902c4f563bacff6462458b4c0db4f7e4c78baab173e7f05f"
+  },
+  "docs/principle-viz/guides/welfare.md": {
+    "source": "packages/principle-viz/chapters/en/08-welfare.typ",
+    "sha256": "f43f758d788ca86402207abac1d59059e6069a4cb0e4716f6af736c277593957"
+  },
+  "docs/principle-viz/guides/taxes.md": {
+    "source": "packages/principle-viz/chapters/en/09-taxes.typ",
+    "sha256": "d7e274c0ce1a100193143fc3db0209d3e11aabf70e1e7af73e42935c853c1eca"
+  },
+  "docs/principle-viz/guides/controls.md": {
+    "source": "packages/principle-viz/chapters/en/10-controls.typ",
+    "sha256": "e43aecc693ac95709e15444953e1cd4510f72e2c77c4387c81de1455ec81ec1c"
+  },
+  "docs/principle-viz/guides/trade.md": {
+    "source": "packages/principle-viz/chapters/en/11-trade.typ",
+    "sha256": "fe326b77be3c82c2ab8ddc8220cd605650db774f520d57db9edf157744c8a037"
+  },
+  "docs/principle-viz/guides/failures.md": {
+    "source": "packages/principle-viz/chapters/en/12-failures.typ",
+    "sha256": "2886003101a3856188267b0ad1636ed76dab17eb3d9198605d729dff0c18beb5"
+  },
+  "docs/principle-viz/guides/factor-markets.md": {
+    "source": "packages/principle-viz/chapters/en/13-factor-markets.typ",
+    "sha256": "92797d47986fd398d23d57d1dff5e5aec0c9c13edc9b6a6409771114fa14bf12"
+  },
+  "docs/principle-viz/guides/ppf.md": {
+    "source": "packages/principle-viz/chapters/en/14-ppf.typ",
+    "sha256": "203c479c3d3663dc16562035b1d09dc981e4802fcff76e2704f294c4c6cc12dc"
+  },
+  "docs/principle-viz/guides/figures.md": {
+    "source": "packages/principle-viz/chapters/en/15-figures.typ",
+    "sha256": "6fe95316dbe4a080189e00484c441dbac18a8c33d686da659516c224a85224d4"
+  },
+  "docs/principle-viz/cli.md": {
+    "source": "packages/principle-viz/chapters/en/16-cli.typ",
+    "sha256": "b3d3f3ddd25c102387e6d0cacae2d7f4f3f55fba777bb4770182a1eac7d0d912"
+  },
+  "docs/principle-viz/changelog.md": {
+    "source": "packages/principle-viz/chapters/en/17-changelog.typ",
+    "sha256": "6d6fc9f41fb5bfd41bf536707eba5f6fc5e5b48801181443e55dc19b6f2534e1"
+  },
+  "docs/zh-TW/principle-viz/guides/introduction.md": {
+    "source": "packages/principle-viz/chapters/zh-TW/01-introduction.typ",
+    "sha256": "7e5072bdfb79d630b9618257586d708125497f53c32603a6a14da5f066c8d8ef"
+  },
+  "docs/zh-TW/principle-viz/installation.md": {
+    "source": "packages/principle-viz/chapters/zh-TW/02-installation.typ",
+    "sha256": "7d658f42d35c1692552321d724c9162869672ad3eca819180420d8a5b7d8b540"
+  },
+  "docs/zh-TW/principle-viz/quickstart.md": {
+    "source": "packages/principle-viz/chapters/zh-TW/03-quickstart.typ",
+    "sha256": "65b1e42c45ece4d87e636ecc9b795e25114a5ae8b255d68238a7810a1cd33ae3"
+  },
+  "docs/zh-TW/principle-viz/guides/markets.md": {
+    "source": "packages/principle-viz/chapters/zh-TW/04-markets.typ",
+    "sha256": "665b64c05f659b3e8bcd344061642b3650ff40f356c638457cef6abbe3cc7a75"
+  },
+  "docs/zh-TW/principle-viz/guides/discrete.md": {
+    "source": "packages/principle-viz/chapters/zh-TW/05-discrete.typ",
+    "sha256": "4b4c2695b18cd821cd8fe6734f22c46fe12bd9fdbbb51d7761be6bb17f7cefc7"
+  },
+  "docs/zh-TW/principle-viz/guides/aggregation.md": {
+    "source": "packages/principle-viz/chapters/zh-TW/06-aggregation.typ",
+    "sha256": "a295aefbad7de81e508124b9d19d9d88b1516f077f28c2c25db4eb13983d3444"
+  },
+  "docs/zh-TW/principle-viz/guides/elasticity.md": {
+    "source": "packages/principle-viz/chapters/zh-TW/07-elasticity.typ",
+    "sha256": "c2fe449e18cf6dc835dbcbdb5019a2098e62dfb7745e11dcb737620df42ce5f0"
+  },
+  "docs/zh-TW/principle-viz/guides/welfare.md": {
+    "source": "packages/principle-viz/chapters/zh-TW/08-welfare.typ",
+    "sha256": "be0fe9eff9196396931e966607b63b6c8c69d363ebcee1e0d21063d4130b9042"
+  },
+  "docs/zh-TW/principle-viz/guides/taxes.md": {
+    "source": "packages/principle-viz/chapters/zh-TW/09-taxes.typ",
+    "sha256": "2cc48ac3a24a8ca6064cf79889ec2ee0213212158d7f546e62504576b536e81b"
+  },
+  "docs/zh-TW/principle-viz/guides/controls.md": {
+    "source": "packages/principle-viz/chapters/zh-TW/10-controls.typ",
+    "sha256": "9f02465af7eff5e63ed49f9e15de08c4abbe0a3fe42167ae37c57b8cb2d6a0a8"
+  },
+  "docs/zh-TW/principle-viz/guides/trade.md": {
+    "source": "packages/principle-viz/chapters/zh-TW/11-trade.typ",
+    "sha256": "74507e8e753430ea0b277b7d919a3cb375988b95386877d0ae30a22980c479ef"
+  },
+  "docs/zh-TW/principle-viz/guides/failures.md": {
+    "source": "packages/principle-viz/chapters/zh-TW/12-failures.typ",
+    "sha256": "74521b988e5ff880e3aaee8efe19f5776456f32a48465bec4599cab60f2aa36a"
+  },
+  "docs/zh-TW/principle-viz/guides/factor-markets.md": {
+    "source": "packages/principle-viz/chapters/zh-TW/13-factor-markets.typ",
+    "sha256": "24c1d6ec9cb9294410210999679a1ca526da685741738187a05444a1e446c246"
+  },
+  "docs/zh-TW/principle-viz/guides/ppf.md": {
+    "source": "packages/principle-viz/chapters/zh-TW/14-ppf.typ",
+    "sha256": "0f0c841c27c52fdf37ea2877c95d76bedc2f5b14a3feebab7486cc1200e7d1d3"
+  },
+  "docs/zh-TW/principle-viz/guides/figures.md": {
+    "source": "packages/principle-viz/chapters/zh-TW/15-figures.typ",
+    "sha256": "a50445f3bd4c3c42226f93885415ac2c2f92cd716d8541e7f253668b7eecbe14"
+  },
+  "docs/zh-TW/principle-viz/cli.md": {
+    "source": "packages/principle-viz/chapters/zh-TW/16-cli.typ",
+    "sha256": "282bccf8bc6a5160842d3f231ce846afb1a46c7fc8452792e39b15cd1b6f9809"
+  },
+  "docs/zh-TW/principle-viz/changelog.md": {
+    "source": "packages/principle-viz/chapters/zh-TW/17-changelog.typ",
+    "sha256": "8adfa678ab0ead928413c91f62661d87c55989f98c4b8d1f6611d41db5969417"
+  },
+  "docs/zh-CN/principle-viz/guides/introduction.md": {
+    "source": "packages/principle-viz/chapters/zh-CN/01-introduction.typ",
+    "sha256": "669856dbcd36f547922bc60e6bcc3b993fec9f31af929e0b28ab34647cf6c43d"
+  },
+  "docs/zh-CN/principle-viz/installation.md": {
+    "source": "packages/principle-viz/chapters/zh-CN/02-installation.typ",
+    "sha256": "d08107ac9a4d6110e75a160a92cd0ff403a1e5298e117ab5651196427d92fe99"
+  },
+  "docs/zh-CN/principle-viz/quickstart.md": {
+    "source": "packages/principle-viz/chapters/zh-CN/03-quickstart.typ",
+    "sha256": "7c8d643be7bf02ed0d3eac5a14aff674ac105fe057bb4700cf190f65cd387709"
+  },
+  "docs/zh-CN/principle-viz/guides/markets.md": {
+    "source": "packages/principle-viz/chapters/zh-CN/04-markets.typ",
+    "sha256": "1c468097f0ba453b86776ae2f7665efc0f3ba9ba566f389ecccf687d4cde7dd7"
+  },
+  "docs/zh-CN/principle-viz/guides/discrete.md": {
+    "source": "packages/principle-viz/chapters/zh-CN/05-discrete.typ",
+    "sha256": "5705c065fab49d95aef56380e4cc1e5a533e4430b3082caec274a242e066abec"
+  },
+  "docs/zh-CN/principle-viz/guides/aggregation.md": {
+    "source": "packages/principle-viz/chapters/zh-CN/06-aggregation.typ",
+    "sha256": "42d6bd39bf107a36466974e00e68dec2d09ee5258464e1262ed63dc7d3141e79"
+  },
+  "docs/zh-CN/principle-viz/guides/elasticity.md": {
+    "source": "packages/principle-viz/chapters/zh-CN/07-elasticity.typ",
+    "sha256": "a5cb49bb9e12a34977104450a7732e7c778787de84b438dbd20818978a82d611"
+  },
+  "docs/zh-CN/principle-viz/guides/welfare.md": {
+    "source": "packages/principle-viz/chapters/zh-CN/08-welfare.typ",
+    "sha256": "6b74d23ead3dc1ab0437e1e15c1375da704ea0ceb812ab941e135a2fb86b0695"
+  },
+  "docs/zh-CN/principle-viz/guides/taxes.md": {
+    "source": "packages/principle-viz/chapters/zh-CN/09-taxes.typ",
+    "sha256": "8635fffbd288d404ddc58fa75de920cb86999bbc785479107d81041e1a4ccf7a"
+  },
+  "docs/zh-CN/principle-viz/guides/controls.md": {
+    "source": "packages/principle-viz/chapters/zh-CN/10-controls.typ",
+    "sha256": "e164aaccd8c070245e0fb6b8667122681d970c33587d28ae072e971ad6860f18"
+  },
+  "docs/zh-CN/principle-viz/guides/trade.md": {
+    "source": "packages/principle-viz/chapters/zh-CN/11-trade.typ",
+    "sha256": "0bfcb8936fcead9cce6f2b646a4cfd2e8f90d5ad5377f5b86d01bae482c5dd78"
+  },
+  "docs/zh-CN/principle-viz/guides/failures.md": {
+    "source": "packages/principle-viz/chapters/zh-CN/12-failures.typ",
+    "sha256": "c8cde6b677a82002486665b057c6724c700339d63c1d6379026e256d1603bb13"
+  },
+  "docs/zh-CN/principle-viz/guides/factor-markets.md": {
+    "source": "packages/principle-viz/chapters/zh-CN/13-factor-markets.typ",
+    "sha256": "75f2de4b0d0b6b97d2df5316fcb56321c40f55c69b22ae002689f2319fd2eee7"
+  },
+  "docs/zh-CN/principle-viz/guides/ppf.md": {
+    "source": "packages/principle-viz/chapters/zh-CN/14-ppf.typ",
+    "sha256": "01f7a6af3ab70ee000248435b3671edfeacf858c7311285809f9143decec5cbd"
+  },
+  "docs/zh-CN/principle-viz/guides/figures.md": {
+    "source": "packages/principle-viz/chapters/zh-CN/15-figures.typ",
+    "sha256": "d4ab080e080fba3b67cf19a42465677e3b699e6b093b82190ab042e23de3876b"
+  },
+  "docs/zh-CN/principle-viz/cli.md": {
+    "source": "packages/principle-viz/chapters/zh-CN/16-cli.typ",
+    "sha256": "9b2b976c4cefc18a14e6e7704efac92bd11b42add6af502c302bf66ce0723e49"
+  },
+  "docs/zh-CN/principle-viz/changelog.md": {
+    "source": "packages/principle-viz/chapters/zh-CN/17-changelog.typ",
+    "sha256": "d78a61112cc98bb2a4e1143e129e6b430e01bf4ea65e76fcd293760d34b46ccc"
+  },
+  "docs/mosaickit/guides/introduction.md": {
+    "source": "packages/mosaickit/chapters/en/01-introduction.typ",
+    "sha256": "811633ab00b8401b3885f2a02588d137d86944d479d85570cd4000c583a3b9e3"
+  },
+  "docs/mosaickit/installation.md": {
+    "source": "packages/mosaickit/chapters/en/02-installation.typ",
+    "sha256": "f3e3c15cd3af87ccf7aeb179efdddf809657719bc59898820dbb7b79e92b5fdd"
+  },
+  "docs/mosaickit/quickstart.md": {
+    "source": "packages/mosaickit/chapters/en/03-quickstart.typ",
+    "sha256": "02339be3f6471b0ee7991abf11aaaaf97d7badc83cb9c79685ce7860d3d42746"
+  },
+  "docs/mosaickit/guides/canvas.md": {
+    "source": "packages/mosaickit/chapters/en/04-canvas.typ",
+    "sha256": "8f946e983d9a36160d695bb5e0a077e735473cca310d8d0764be0641e983b836"
+  },
+  "docs/mosaickit/guides/layers.md": {
+    "source": "packages/mosaickit/chapters/en/05-layers.typ",
+    "sha256": "45d1918986f6f512b3b03cef0f69d1ca42f8f518a26ca0e07b719082e2b6d614"
+  },
+  "docs/mosaickit/guides/annotations.md": {
+    "source": "packages/mosaickit/chapters/en/06-annotations.typ",
+    "sha256": "29f4fa3dca724c6ba2022296d416986ebe601146c355fa145df12ebfc72c8b78"
+  },
+  "docs/mosaickit/guides/geometry.md": {
+    "source": "packages/mosaickit/chapters/en/07-geometry.typ",
+    "sha256": "6913450b3c82cf5d9bdfe23061c188ef1aaabead7c472767dca0c46037cdcb6a"
+  },
+  "docs/mosaickit/guides/labels.md": {
+    "source": "packages/mosaickit/chapters/en/08-labels.typ",
+    "sha256": "2c952951fb07d763b36b001129a176ab3b7740fa59b2474bb98823bc70e6dc26"
+  },
+  "docs/mosaickit/guides/styles.md": {
+    "source": "packages/mosaickit/chapters/en/09-styles.typ",
+    "sha256": "1baa206427fd784cdfb0109cfaecb988cc0bf801ab656beababb96afdb8865e6"
+  },
+  "docs/mosaickit/guides/themes.md": {
+    "source": "packages/mosaickit/chapters/en/10-themes.typ",
+    "sha256": "5e62e278b2b50c64ec3738f4edf815cc240913b1ce87dfb22a5fbc4018e887a5"
+  },
+  "docs/mosaickit/guides/parameters.md": {
+    "source": "packages/mosaickit/chapters/en/11-parameters.typ",
+    "sha256": "4cd1325cce542a076eb69f7562365f78c38c286ac31623a36d61a36cedf1d575"
+  },
+  "docs/mosaickit/guides/rendering.md": {
+    "source": "packages/mosaickit/chapters/en/12-rendering.typ",
+    "sha256": "af06fac901bd50342ed8842d0aae6a589f638639847fe7df403f69b41f46d43f"
+  },
+  "docs/mosaickit/project/proofs.md": {
+    "source": "packages/mosaickit/chapters/en/a-proofs.typ",
+    "sha256": "8f53bb5758b5495c99a0faee644820216857208f335cc026e13859ae45e6810f"
+  },
+  "docs/mosaickit/project/changelog.md": {
+    "source": "packages/mosaickit/chapters/en/changelog.typ",
+    "sha256": "b44a7bdca020e7edb5bd2ae80f561d212c7e305a9dd8c345f82cafc56efa2234"
+  },
+  "docs/zh-TW/mosaickit/guides/introduction.md": {
+    "source": "packages/mosaickit/chapters/zh-TW/01-introduction.typ",
+    "sha256": "919a57ddd44aee8c9b6bb3c8dcdb8ae10a3668570c01aedae41b650c04064a0c"
+  },
+  "docs/zh-TW/mosaickit/installation.md": {
+    "source": "packages/mosaickit/chapters/zh-TW/02-installation.typ",
+    "sha256": "ca580b402072113f1a7f20eab1402776b40f2497d1fbd731751cb207dd94eac1"
+  },
+  "docs/zh-TW/mosaickit/quickstart.md": {
+    "source": "packages/mosaickit/chapters/zh-TW/03-quickstart.typ",
+    "sha256": "f635c76f81b97dad943a84f331faaf581ebdd54e3686b09378a1ce9500d4924a"
+  },
+  "docs/zh-TW/mosaickit/guides/canvas.md": {
+    "source": "packages/mosaickit/chapters/zh-TW/04-canvas.typ",
+    "sha256": "af32a8adffd24515f0098998f2456051eaef7521c0bea70730108cc02a663946"
+  },
+  "docs/zh-TW/mosaickit/guides/layers.md": {
+    "source": "packages/mosaickit/chapters/zh-TW/05-layers.typ",
+    "sha256": "a4620ba8a71e6495163ca9ec2113234086525b442e3dbb796cc47737510cb810"
+  },
+  "docs/zh-TW/mosaickit/guides/annotations.md": {
+    "source": "packages/mosaickit/chapters/zh-TW/06-annotations.typ",
+    "sha256": "434db2d32ca2684fd8a154650ac1521073501af9519fcca5e4a4a0769de8324d"
+  },
+  "docs/zh-TW/mosaickit/guides/geometry.md": {
+    "source": "packages/mosaickit/chapters/zh-TW/07-geometry.typ",
+    "sha256": "07232ad20ea5e59c19f80b1b3090d2e9737b88aa2e67c5db81025e759e6bc1a0"
+  },
+  "docs/zh-TW/mosaickit/guides/labels.md": {
+    "source": "packages/mosaickit/chapters/zh-TW/08-labels.typ",
+    "sha256": "2fd1b3d5c7b8557898cf47cdc146abd73a7a42048eadbb0c369740de8a3cb5e4"
+  },
+  "docs/zh-TW/mosaickit/guides/styles.md": {
+    "source": "packages/mosaickit/chapters/zh-TW/09-styles.typ",
+    "sha256": "f034db31f32fc20517b8336d4fdec089a7d5b8739734249285a3b91297573e67"
+  },
+  "docs/zh-TW/mosaickit/guides/themes.md": {
+    "source": "packages/mosaickit/chapters/zh-TW/10-themes.typ",
+    "sha256": "bae59283398bb54a21d699a69cc862d772e12452bb36174467e207cc69b6079e"
+  },
+  "docs/zh-TW/mosaickit/guides/parameters.md": {
+    "source": "packages/mosaickit/chapters/zh-TW/11-parameters.typ",
+    "sha256": "ecff063224cb688c2c43a1bf18fa612e60563616d864a7453b7e2231f6e42dac"
+  },
+  "docs/zh-TW/mosaickit/guides/rendering.md": {
+    "source": "packages/mosaickit/chapters/zh-TW/12-rendering.typ",
+    "sha256": "05bf2545370c05846b4de8ff404ddd185f57c61872898c93039e96485a51e240"
+  },
+  "docs/zh-TW/mosaickit/project/proofs.md": {
+    "source": "packages/mosaickit/chapters/zh-TW/a-proofs.typ",
+    "sha256": "c2ae137ea79fb11c0f6468451caba300ac2a70f9e1202e3434ca60a864d2a0e8"
+  },
+  "docs/zh-TW/mosaickit/project/changelog.md": {
+    "source": "packages/mosaickit/chapters/zh-TW/changelog.typ",
+    "sha256": "8a4c89254eeb85700399364f239309b71897b98089e4c6b705a381f3b075dfed"
+  },
+  "docs/zh-CN/mosaickit/guides/introduction.md": {
+    "source": "packages/mosaickit/chapters/zh-CN/01-introduction.typ",
+    "sha256": "3648e62fbf6c3a3eb0013ce6962a895d2a3855b9d215c057dedeec84a86f6081"
+  },
+  "docs/zh-CN/mosaickit/installation.md": {
+    "source": "packages/mosaickit/chapters/zh-CN/02-installation.typ",
+    "sha256": "0413af43cbb8bb7477c169ab04c7cc00848bd0596466fa921dbe5aab095cabcd"
+  },
+  "docs/zh-CN/mosaickit/quickstart.md": {
+    "source": "packages/mosaickit/chapters/zh-CN/03-quickstart.typ",
+    "sha256": "df65dd5a54204c6422e42d16b24cddbdd9122d0944d79798e791db9b8ef7a043"
+  },
+  "docs/zh-CN/mosaickit/guides/canvas.md": {
+    "source": "packages/mosaickit/chapters/zh-CN/04-canvas.typ",
+    "sha256": "564a375184d980ffbb79c96edd032f6f69a5cc7c1a11050b6a25f3a3e2534a51"
+  },
+  "docs/zh-CN/mosaickit/guides/layers.md": {
+    "source": "packages/mosaickit/chapters/zh-CN/05-layers.typ",
+    "sha256": "8aca9499660752ce72474b0f38d7b0f3550b12acde4fbe74f0a034d8c0963d5e"
+  },
+  "docs/zh-CN/mosaickit/guides/annotations.md": {
+    "source": "packages/mosaickit/chapters/zh-CN/06-annotations.typ",
+    "sha256": "a1377c80ad887d447be1009dcb6f1ea4771731d69cf7d5d55ef64fcc6712abd3"
+  },
+  "docs/zh-CN/mosaickit/guides/geometry.md": {
+    "source": "packages/mosaickit/chapters/zh-CN/07-geometry.typ",
+    "sha256": "9d58706af7f3b3f7a756d7aa83a3c311d6ec37c1fe009aa2ecee5b8283b810f2"
+  },
+  "docs/zh-CN/mosaickit/guides/labels.md": {
+    "source": "packages/mosaickit/chapters/zh-CN/08-labels.typ",
+    "sha256": "790784e047484927a85eefe6e91215f04efd677351577223f965a96707307a95"
+  },
+  "docs/zh-CN/mosaickit/guides/styles.md": {
+    "source": "packages/mosaickit/chapters/zh-CN/09-styles.typ",
+    "sha256": "229074690c0e1eb954cb1a7e5b03e1e27014c0e5c8b516ff77fa4d0ba57e8fce"
+  },
+  "docs/zh-CN/mosaickit/guides/themes.md": {
+    "source": "packages/mosaickit/chapters/zh-CN/10-themes.typ",
+    "sha256": "c6d5d88d069ae07088cf9273f6fe142f90c3ab6a675c6e0f8599af0d6afe2f21"
+  },
+  "docs/zh-CN/mosaickit/guides/parameters.md": {
+    "source": "packages/mosaickit/chapters/zh-CN/11-parameters.typ",
+    "sha256": "57ab8436150fd17c5e8253fd2f42b9540f17e294324cde96eca7d70b465a8481"
+  },
+  "docs/zh-CN/mosaickit/guides/rendering.md": {
+    "source": "packages/mosaickit/chapters/zh-CN/12-rendering.typ",
+    "sha256": "ea8f93ab371cb2f356ae4ddb43989c230722f23a1402b7c3f4a4b0535216cd3f"
+  },
+  "docs/zh-CN/mosaickit/project/proofs.md": {
+    "source": "packages/mosaickit/chapters/zh-CN/a-proofs.typ",
+    "sha256": "434d2b054d3e351ea85a8cac3b94ec3543b1d2151f6fa8656078dffc9d39b333"
+  },
+  "docs/zh-CN/mosaickit/project/changelog.md": {
+    "source": "packages/mosaickit/chapters/zh-CN/changelog.typ",
+    "sha256": "8f51fc98054778687c116507546c81db1089039d287ba584438c3b538ad61726"
+  },
+  "docs/bezierkit/guides/introduction.md": {
+    "source": "packages/bezierkit/chapters/en/01-introduction.typ",
+    "sha256": "529f615d0dba299921e7cf34d63a037b1a3454e590c139e2b9f7bde4750dd47f"
+  },
+  "docs/bezierkit/installation.md": {
+    "source": "packages/bezierkit/chapters/en/02-installation.typ",
+    "sha256": "aceae9920a2b2572d6da2db8e87a6fac6f4b413fc7747d38ac57831d328fc33d"
+  },
+  "docs/bezierkit/quickstart.md": {
+    "source": "packages/bezierkit/chapters/en/03-quickstart.typ",
+    "sha256": "06c0895617029461737e1baf13be1a0c560a664c07f6e7ed38eeb9d6e3de1fb8"
+  },
+  "docs/bezierkit/guides/geometry.md": {
+    "source": "packages/bezierkit/chapters/en/04-geometry.typ",
+    "sha256": "0d911268868197834e9b54d82b10b2795f0c0ca367d8a412061acf75db9232ad"
+  },
+  "docs/bezierkit/guides/curves.md": {
+    "source": "packages/bezierkit/chapters/en/05-curves.typ",
+    "sha256": "b2e7ab95dd0dfbf58bfca2821c0c03cc99ce02d59ad622281d842180252a1480"
+  },
+  "docs/bezierkit/guides/operations.md": {
+    "source": "packages/bezierkit/chapters/en/06-operations.typ",
+    "sha256": "635f425a2f27482ed41dc1aafeb302ad5573553f34886457a85cc53e60f1401e"
+  },
+  "docs/bezierkit/guides/paths.md": {
+    "source": "packages/bezierkit/chapters/en/07-paths.typ",
+    "sha256": "c60240462931d29655714700e54bf5ed8175fe62d30c9c8de43f71a3a566c99d"
+  },
+  "docs/bezierkit/guides/construction.md": {
+    "source": "packages/bezierkit/chapters/en/08-construction.typ",
+    "sha256": "a1ac476c57731dd9d97a2b1a46eaff5978b943331bdfdaf9fe1c3c9dd8785baf"
+  },
+  "docs/bezierkit/guides/fitting.md": {
+    "source": "packages/bezierkit/chapters/en/09-fitting.typ",
+    "sha256": "2878ce8d2f2a575a92b1a469e60e53782ab7c5eafad199460ea6a6d75a01fc73"
+  },
+  "docs/bezierkit/guides/implicit.md": {
+    "source": "packages/bezierkit/chapters/en/10-implicit.typ",
+    "sha256": "37449ef452159d66d32cfe17f4869c127b279850b3997bcd16422680546c34ad"
+  },
+  "docs/bezierkit/guides/export.md": {
+    "source": "packages/bezierkit/chapters/en/11-export.typ",
+    "sha256": "dbf92b72bd818824a7d1332544a05bf125a5c5916faa3ef3bc3590673d1e12fb"
+  },
+  "docs/bezierkit/cli.md": {
+    "source": "packages/bezierkit/chapters/en/12-cli.typ",
+    "sha256": "afe916dcc28ac77f14a2c7171bd3172de05d52ce8df8cc3553ed3cfb52d735c4"
+  },
+  "docs/bezierkit/project/proofs.md": {
+    "source": "packages/bezierkit/chapters/en/a-proofs.typ",
+    "sha256": "70e8c354c78f9ed03272f8f6c563ce3071c4ef2000851fbecdaf2d57fd84a2e9"
+  },
+  "docs/bezierkit/project/proofs-approximation.md": {
+    "source": "packages/bezierkit/chapters/en/a-proofs-b.typ",
+    "sha256": "470e90d86a69e71106e239ef4b9f368e195c5dd45dc3a0f8f19c9e4009c7cff1"
+  },
+  "docs/bezierkit/project/changelog.md": {
+    "source": "packages/bezierkit/chapters/en/changelog.typ",
+    "sha256": "152f7d0bb1611332b3e1bed51a0c00da551b6791524f2bc729f554de8b7e6e1c"
+  },
+  "docs/zh-TW/bezierkit/guides/introduction.md": {
+    "source": "packages/bezierkit/chapters/zh-TW/01-introduction.typ",
+    "sha256": "630b6329e6ca85afb557545bf7f7c061e2eac71765b9ca7b80cd2c818694ad40"
+  },
+  "docs/zh-TW/bezierkit/installation.md": {
+    "source": "packages/bezierkit/chapters/zh-TW/02-installation.typ",
+    "sha256": "586d0417bec8186c73b6daf8f76c1053903906d2d107a1a9be239675df5967f9"
+  },
+  "docs/zh-TW/bezierkit/quickstart.md": {
+    "source": "packages/bezierkit/chapters/zh-TW/03-quickstart.typ",
+    "sha256": "59cee4c7af29797d8248a37f721a01c85f533cce3384a38ba046f37a87f9baee"
+  },
+  "docs/zh-TW/bezierkit/guides/geometry.md": {
+    "source": "packages/bezierkit/chapters/zh-TW/04-geometry.typ",
+    "sha256": "782a11a4c08c293eb7b02f76c8d02efbbff4a0c990510122cc08be75b788bd67"
+  },
+  "docs/zh-TW/bezierkit/guides/curves.md": {
+    "source": "packages/bezierkit/chapters/zh-TW/05-curves.typ",
+    "sha256": "9535df2102f215663a874a4a990e600e9aba9b6a0ebe963e5737ff120a4217c8"
+  },
+  "docs/zh-TW/bezierkit/guides/operations.md": {
+    "source": "packages/bezierkit/chapters/zh-TW/06-operations.typ",
+    "sha256": "7518c9d6aa4047e431289009c59fec614a9df3b20352a5f28f75cd2e0409af7b"
+  },
+  "docs/zh-TW/bezierkit/guides/paths.md": {
+    "source": "packages/bezierkit/chapters/zh-TW/07-paths.typ",
+    "sha256": "df2253a163987d4f93c2ba36ac2c71e53510435d09723593936412d6a0878fce"
+  },
+  "docs/zh-TW/bezierkit/guides/construction.md": {
+    "source": "packages/bezierkit/chapters/zh-TW/08-construction.typ",
+    "sha256": "bf34a35d2cc9059518d57978476d2cdad41a529c1b3a58ec24db27c79d74af87"
+  },
+  "docs/zh-TW/bezierkit/guides/fitting.md": {
+    "source": "packages/bezierkit/chapters/zh-TW/09-fitting.typ",
+    "sha256": "8a8a31a6a038c81b7e24baba7f1a267fa7054923ed0347d2c46fc11ca8869838"
+  },
+  "docs/zh-TW/bezierkit/guides/implicit.md": {
+    "source": "packages/bezierkit/chapters/zh-TW/10-implicit.typ",
+    "sha256": "dace7959a2d35d3dd9309165da7413e2ebf6f63a51095753cb963267da8d4edc"
+  },
+  "docs/zh-TW/bezierkit/guides/export.md": {
+    "source": "packages/bezierkit/chapters/zh-TW/11-export.typ",
+    "sha256": "21bdb4c1f851ea198a505223854c3b3ec11f718584d8563416dc7a3d88d3474d"
+  },
+  "docs/zh-TW/bezierkit/cli.md": {
+    "source": "packages/bezierkit/chapters/zh-TW/12-cli.typ",
+    "sha256": "5586bac840571d59e6d90a84bc6e1146ce2449b4a262b2836a2d04c0bee22bee"
+  },
+  "docs/zh-TW/bezierkit/project/proofs.md": {
+    "source": "packages/bezierkit/chapters/zh-TW/a-proofs.typ",
+    "sha256": "5c7ad35e81cef7b7ff4f3cf58439d26dfdcf92a772d396be43fed88cfbffeb49"
+  },
+  "docs/zh-TW/bezierkit/project/proofs-approximation.md": {
+    "source": "packages/bezierkit/chapters/zh-TW/a-proofs-b.typ",
+    "sha256": "3ecf3a95d4e7083a83c1e5f281360b23b00e00e9998f6b682b31c4d8aec693ca"
+  },
+  "docs/zh-TW/bezierkit/project/changelog.md": {
+    "source": "packages/bezierkit/chapters/zh-TW/changelog.typ",
+    "sha256": "de14a0deb611ce7886c6e71a111837ee63cfecf4c3c7861fa73da6ffce34b28e"
+  },
+  "docs/zh-CN/bezierkit/guides/introduction.md": {
+    "source": "packages/bezierkit/chapters/zh-CN/01-introduction.typ",
+    "sha256": "1134464a312d538cfa6810fb15aad71c74c5e52b0ac2185c1c4ba09f67024334"
+  },
+  "docs/zh-CN/bezierkit/installation.md": {
+    "source": "packages/bezierkit/chapters/zh-CN/02-installation.typ",
+    "sha256": "cf28da9a4a6692c4fca006c245cb6a8c1845b37d4e57c47aee54f73cdbb211cc"
+  },
+  "docs/zh-CN/bezierkit/quickstart.md": {
+    "source": "packages/bezierkit/chapters/zh-CN/03-quickstart.typ",
+    "sha256": "fd25c97d98c23d343d5b77b032825143c4a749cd4b91672080a89738217686b3"
+  },
+  "docs/zh-CN/bezierkit/guides/geometry.md": {
+    "source": "packages/bezierkit/chapters/zh-CN/04-geometry.typ",
+    "sha256": "4eba28cdb07af57b9b329a99bbc84ba2860b9cadf9d94a94703e13625cb4ade5"
+  },
+  "docs/zh-CN/bezierkit/guides/curves.md": {
+    "source": "packages/bezierkit/chapters/zh-CN/05-curves.typ",
+    "sha256": "3d2c823d1138e33363b6c17d42db5d7ca9405feb778b32b458262bae42836dc6"
+  },
+  "docs/zh-CN/bezierkit/guides/operations.md": {
+    "source": "packages/bezierkit/chapters/zh-CN/06-operations.typ",
+    "sha256": "c4fc6ee378d2a3d93bb01b30b7ff6f341d764a763aa8d848f0b95a14d9e44292"
+  },
+  "docs/zh-CN/bezierkit/guides/paths.md": {
+    "source": "packages/bezierkit/chapters/zh-CN/07-paths.typ",
+    "sha256": "05806590367051bbb50d84dd533d2aa45456fbd501065948df8231b04ef4317d"
+  },
+  "docs/zh-CN/bezierkit/guides/construction.md": {
+    "source": "packages/bezierkit/chapters/zh-CN/08-construction.typ",
+    "sha256": "5d407c96690ded7b86742e791d3e48ed519ed62086c4f681cca8f69d65045356"
+  },
+  "docs/zh-CN/bezierkit/guides/fitting.md": {
+    "source": "packages/bezierkit/chapters/zh-CN/09-fitting.typ",
+    "sha256": "796166eb36eb9e848ffff35853231e3c4990038c76dc249b2788901d7b78b31b"
+  },
+  "docs/zh-CN/bezierkit/guides/implicit.md": {
+    "source": "packages/bezierkit/chapters/zh-CN/10-implicit.typ",
+    "sha256": "0bfa7b56fe4d2ce58c5d3172d7f036ff6866e8fce6d5c21908002277ee1b6527"
+  },
+  "docs/zh-CN/bezierkit/guides/export.md": {
+    "source": "packages/bezierkit/chapters/zh-CN/11-export.typ",
+    "sha256": "c8edaf4a9c35fc08594bcc5992d56f73dbdd240b5ba5a14edc6ff7e4eff138bf"
+  },
+  "docs/zh-CN/bezierkit/cli.md": {
+    "source": "packages/bezierkit/chapters/zh-CN/12-cli.typ",
+    "sha256": "ca781d1dac3f27e3a25c53c4c996340a5a04d9a8807e376b0b2440e8bdc45026"
+  },
+  "docs/zh-CN/bezierkit/project/proofs.md": {
+    "source": "packages/bezierkit/chapters/zh-CN/a-proofs.typ",
+    "sha256": "4bff9d42b1594278b883553b31dd782d5147bfe2920442a7c2a34d171fc08c0e"
+  },
+  "docs/zh-CN/bezierkit/project/proofs-approximation.md": {
+    "source": "packages/bezierkit/chapters/zh-CN/a-proofs-b.typ",
+    "sha256": "2eac10ed7884156f68ec4b0cef8e0b8631da4de4fad91723e512f3d0f727eeea"
+  },
+  "docs/zh-CN/bezierkit/project/changelog.md": {
+    "source": "packages/bezierkit/chapters/zh-CN/changelog.typ",
+    "sha256": "b18c3c7226704a49ade9c4f19f6336ba184e5f61875e7643f026bc5289a2ea7d"
+  }
+}

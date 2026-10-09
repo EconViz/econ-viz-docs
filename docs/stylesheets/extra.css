@@ -184,6 +184,20 @@
   min-height: calc(3 * 1.6em);
 }
 
+/* Documentation examples share the site's grayscale palette, including SVGs
+   and animated GIFs. Keep branding assets outside the figure treatment. */
+.md-typeset img[src*="assets/"]:not([src*="banner"]):not([src*="logo"]):not([src*="favicon"]):not([src*="og-image"]) {
+  filter: grayscale(1);
+}
+
+/* Center standalone figures in every format, including linked images and SVGs. */
+.md-typeset p > img:only-child,
+.md-typeset p > a:only-child > img:only-child,
+.md-typeset figure img {
+  display: block;
+  margin-inline: auto;
+}
+
 /* Standalone content figures: cap the height so square and wide plots keep their proportions */
 .md-typeset p > img:only-child:not([src$=".svg"]) {
   display: block;
@@ -193,9 +207,49 @@
   margin: 1.5em auto;
 }
 
+/* Examples share the API card surface while retaining syntax token colors. */
+.md-typeset .highlight {
+  background: #fff;
+  border-radius: 9px;
+  box-shadow: 0 5px 18px rgb(0 0 0 / 8%);
+}
+.md-typeset .highlight pre {
+  background: transparent;
+  border-radius: inherit;
+}
+.md-typeset .highlight pre > code {
+  background: transparent;
+  padding: 1.2em 1.4em;
+  line-height: 1.8;
+}
+.md-typeset .highlight .md-code__button {
+  background: #fff;
+  border-radius: 4px;
+}
+.md-typeset .highlight a.ev-code-link { color: inherit; }
+.md-typeset .highlight a.ev-code-link:hover {
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+.md-typeset .highlight a.ev-code-link:focus-visible {
+  outline: 2px solid #405c9a;
+  outline-offset: 2px;
+}
+@media (max-width: 480px) {
+  .md-typeset .highlight pre > code { padding: 1em; }
+}
+
 /* Keep inline code in tables on one line; wide tables scroll horizontally instead */
 .md-typeset table code {
   white-space: nowrap;
+}
+
+/* Manual figures are exported at their TeX size (about 180pt wide); scale the small SVGs up to a readable width */
+.md-typeset p > img:only-child[src*="assets/bezierkit/agora/"][src$=".svg"],
+.md-typeset p > img:only-child[src*="assets/mosaickit/agora/"][src$=".svg"] {
+  width: min(100%, 400px);
+  height: auto;
+  max-height: none;
 }
 
 /* Smaller step-by-step figures, e.g. one per Canvas method */
@@ -313,4 +367,101 @@
 }
 .md-banner__button {
   color: #181818;
+}
+
+/* Navbar dropdowns: the package tabs open a menu on hover or keyboard focus. */
+.md-tabs,
+.md-tabs__list {
+  overflow: visible;
+  contain: none;
+}
+
+.ev-tabs-dropdown {
+  position: relative;
+}
+
+.ev-tabs-dropdown__menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -0.6rem;
+  z-index: 5;
+  min-width: 11rem;
+  margin: 0;
+  padding: 0.3rem 0;
+  list-style: none;
+  background-color: #181818;
+  border-radius: 0 0 0.2rem 0.2rem;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.3);
+}
+
+.ev-tabs-dropdown:hover .ev-tabs-dropdown__menu,
+.ev-tabs-dropdown:focus-within .ev-tabs-dropdown__menu {
+  display: block;
+}
+
+.ev-tabs-dropdown__link {
+  display: block;
+  padding: 0.45rem 0.9rem;
+  color: #f3f3f3;
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
+
+.ev-tabs-dropdown__link:hover,
+.ev-tabs-dropdown__link--active {
+  color: #ffffff;
+  background-color: #2c2c2c;
+}
+
+/* Home sidebar: collapsible package groups, closed by default. */
+.ev-nav-group__label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.ev-nav-group__label::-webkit-details-marker {
+  display: none;
+}
+
+.ev-nav-group__label::after {
+  content: "";
+  width: 0.4rem;
+  height: 0.4rem;
+  margin-right: 0.3rem;
+  border-right: 2px solid currentcolor;
+  border-bottom: 2px solid currentcolor;
+  transform: rotate(-45deg);
+  transition: transform 0.2s;
+}
+
+.ev-nav-group details[open] > .ev-nav-group__label::after {
+  transform: rotate(45deg);
+}
+
+.ev-nav-group .md-nav__list {
+  padding-left: 0.6rem;
+}
+
+/* Centre Mermaid diagrams. */
+.md-typeset .mermaid {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Package cards on the home page: every description takes three lines, so the
+   code blocks and links line up across a row. */
+.md-typeset .ev-package-cards > ul > li > p:nth-child(2) {
+  min-height: calc(3 * 1.6em);
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
 }

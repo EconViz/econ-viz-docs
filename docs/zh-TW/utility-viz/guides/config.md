@@ -69,13 +69,17 @@ fontsize = 10
 ```python
 from utility_viz import Canvas, Config
 
-Config.load("utility-viz.toml").use()     # 之後建立的圖
-Canvas(x_max=20, y_max=15)             # 套用設定檔
+# 之後建立的圖
+Config.load("utility-viz.toml").use()
+# 套用設定檔
+Canvas(x_max=20, y_max=15)
 
 theme = Config.load("utility-viz.toml").theme
-Canvas(theme=theme)                    # 或只套用在這張圖
+# 或只套用在這張圖
+Canvas(theme=theme)
 
-Config.reset()                         # 回到內建預設值
+# 回到內建預設值
+Config.reset()
 ```
 
 方法明確傳入的參數仍然優先於設定檔：以上面的設定為例，`add_budget(..., stroke=Stroke(width=1))` 會畫出 1 pt 粗、其餘沿用設定檔樣式的線。

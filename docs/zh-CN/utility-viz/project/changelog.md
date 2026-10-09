@@ -1,6 +1,6 @@
 ---
 seo_title: "更新日志"
-description: "econ-viz Python 包的版本历史：每个版本的新功能、修复与变更。"
+description: "utility-viz Python 包（原名 econ-viz）的版本历史：每个版本的新功能、修复与变更。"
 ---
 
 # 更新日志
@@ -12,6 +12,26 @@ description: "econ-viz Python 包的版本历史：每个版本的新功能、�
   <tr><th>版本</th><th>更新内容</th></tr>
   </thead>
   <tbody>
+  <tr id="v200b1">
+    <td class="ev-changelog__version"><strong>v2.0.0b1</strong><br><span>2026-10-04</span></td>
+    <td>
+      <p class="ev-changelog__type">变更</p>
+      <ul>
+        <li>由 <code>econ-viz</code> 更名为 <code>utility-viz</code>：发行包、<code>utility_viz</code> 导入、<code>utility-viz</code> 命令与 <code>utility-viz.toml</code> 配置文件（分节名称不变）</li>
+        <li>这是预发布版本，安装时需要加上 <code>--prerelease allow</code></li>
+      </ul>
+      <p class="ev-changelog__type">新功能</p>
+      <ul>
+        <li><code>utility-viz init --migrate</code> 会依据 <code>econ-viz.toml</code> 生成 <code>utility-viz.toml</code>，并保留旧文件</li>
+        <li>配置文件依次查找显式指定的路径、<code>utility-viz.toml</code>，最后是旧版 <code>econ-viz.toml</code>（会发出警告）</li>
+      </ul>
+      <p class="ev-changelog__type">兼容性</p>
+      <ul>
+        <li><code>econ-viz</code> 2.x 是轻量的兼容发行包，会安装同版本的 <code>utility-viz</code></li>
+        <li><code>econ_viz</code> 与 <code>econ-viz</code> 命令仍可使用，但会发出弃用警告，并将在 3.0.0 移除</li>
+      </ul>
+    </td>
+  </tr>
   <tr id="v1120">
     <td class="ev-changelog__version"><strong>v1.12.0</strong><br><span>2026-09-26</span></td>
     <td>
@@ -19,7 +39,7 @@ description: "econ-viz Python 包的版本历史：每个版本的新功能、�
       <ul>
         <li><code>highlight_level</code> 可强调一条主要无差异曲线，其余效用水平会使用淡化的次要样式</li>
         <li><code>secondary_stroke</code> 与主题字段可控制次要曲线的颜色、线宽与不透明度</li>
-        <li>支持数值与序数标签（<i>u</i><sub>1</sub>、<i>u</i><sub>2</sub>……）；标签会跟随曲线角度并避开图形边界</li>
+        <li>支持数值与序数标签（$u_1$、$u_2$……）；标签会跟随曲线角度并避开图形边界</li>
       </ul>
       <p class="ev-changelog__type">变更</p>
       <ul>
@@ -74,7 +94,7 @@ description: "econ-viz Python 包的版本历史：每个版本的新功能、�
     <td>
       <p class="ev-changelog__type">新功能</p>
       <ul>
-        <li>价格效应分解默认画出无差异曲线：通过 A 的 U<sub>0</sub>、通过 C 的 U<sub>1</sub>，Slutsky 分解还有通过 B 的曲线</li>
+        <li>价格效应分解默认画出无差异曲线：通过 A 的 $U_0$、通过 C 的 $U_1$，Slutsky 分解还有通过 B 的曲线</li>
         <li>新增 <code>Haagsma</code> 效用模型，其商品 x 一定是劣等品，收入足够高时成为吉芬商品</li>
         <li>新增 <code>Legend</code>，自动放在最不遮挡图形的位置，也可指定角落或图外的上下左右</li>
         <li>所有文字都能用 <code>Label</code> 调整：坐标轴标签、原点、标题、效应标签、Edgeworth 盒状图文字</li>

@@ -69,13 +69,17 @@ fontsize = 10
 ```python
 from utility_viz import Canvas, Config
 
-Config.load("utility-viz.toml").use()     # 之后创建的图
-Canvas(x_max=20, y_max=15)             # 应用配置文件
+# 之后创建的图
+Config.load("utility-viz.toml").use()
+# 应用配置文件
+Canvas(x_max=20, y_max=15)
 
 theme = Config.load("utility-viz.toml").theme
-Canvas(theme=theme)                    # 或只应用于这张图
+# 或只应用于这张图
+Canvas(theme=theme)
 
-Config.reset()                         # 回到内置默认值
+# 回到内置默认值
+Config.reset()
 ```
 
 方法显式传入的参数仍然优先于配置文件：以上面的设置为例，`add_budget(..., stroke=Stroke(width=1))` 会画出 1 pt 粗、其余沿用配置文件样式的线。

@@ -10,15 +10,19 @@ description: "Save utility-viz economics diagrams as PNG, PDF, or SVG for papers
 Call `cvs.save()` with a `.png`, `.pdf`, or `.svg` extension:
 
 ```python
-cvs.save("figure.png")   # PNG, canvas DPI (default 300)
-cvs.save("figure.pdf")   # PDF (vector)
-cvs.save("figure.svg")   # SVG (vector)
+# PNG, canvas DPI (default 300)
+cvs.save("figure.png")
+# PDF (vector)
+cvs.save("figure.pdf")
+# SVG (vector)
+cvs.save("figure.svg")
 ```
 
 The `dpi` parameter on `Canvas` controls raster resolution:
 
 ```python
-cvs = Canvas(x_max=20, y_max=15, dpi=150)   # lower DPI, faster preview
+# lower DPI, faster preview
+cvs = Canvas(x_max=20, y_max=15, dpi=150)
 ```
 
 DPI is clamped to the range 1–1200.
@@ -30,7 +34,9 @@ For multi-frame output, use `Animator` instead of `Canvas.save()`:
 ```python
 from utility_viz.animation import Animator
 
-Animator(draw_frame, frames=frames).save("animation.gif", fps=12, dpi=120)
+Animator(draw_frame, frames=frames).save(
+    "animation.gif", fps=12, dpi=120
+)
 ```
 
 See the [Animation](animation.md) page for parameter, price, income, and budget-only sweep examples.

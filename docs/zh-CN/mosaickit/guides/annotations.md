@@ -1,0 +1,128 @@
+---
+seo_title: "坐标轴注释"
+---
+
+# 坐标轴注释
+
+<span id="sec-annotations"></span>
+
+y 轴位于绘图区左缘，x 轴位于下缘，两轴外侧的空间称为*边栏*。其中三种图层放置在边栏中，第四种则在绘图区内画出大括号。
+
+## 标记、注释与大括号
+
+<!-- api: agora.mosaickit.guides_annotations_1 -->
+
+在轴 `"x"` 或 `"y"` 的 `value` 处、绘图区外的短符号，例如 $a_0$ 或 $p^*$。
+
+<!-- api: agora.mosaickit.guides_annotations_2 -->
+
+用于说明 `value` 的文字，可以分成多行，位于边栏最外侧的一栏。在默认主题中，`axes.note` 角色会让注释比标记更小、更淡（9 pt、`grey-600`）。
+
+<!-- api: agora.mosaickit.guides_annotations_3 -->
+
+覆盖轴上 `start`..`end` 的大括号，可加上标签。`side="outside"` 会画在边栏中、标记之外；`"inside"` 则画在绘图区内侧，标签会避开所有线、点、区域与文字，尖端外没有空位时便改用引线拉出。
+
+<!-- api: agora.mosaickit.guides_annotations_4 -->
+
+绘图区内两点之间的大括号。跨距必须是水平（`side` 为 `"above"` 或 `"below"`）或垂直（`"left"` 或 `"right"`）；大括号会朝 `side` 凸出，与两点相距 4 pt、深 8 pt。标签位于尖端之外，并会避开其他所有内容（详见[区域标签与点标签](labels.md#sec-labels)）。
+
+```python
+from mosaickit import (
+    AxisMarkLayer,
+    AxisNoteLayer,
+    BraceLayer,
+    Canvas,
+    quadrant_axes,
+)
+
+canvas = Canvas().extend(quadrant_axes(10, 10))
+for value, symbol, note in [
+    (7, "a_1", "Upper\nvalue"),
+    (5, "a_0", "Lower\nvalue"),
+]:
+    canvas.add(AxisMarkLayer("y", value, symbol, math=True))
+    canvas.add(AxisNoteLayer("y", value, note))
+canvas.add(BraceLayer("y", 5, 7, "Span", side="outside"))
+canvas.add(AxisMarkLayer("x", 6, "b", math=True))
+```
+
+<span id="fig-gutter"></span>
+
+![y 轴边栏的标记、注释与大括号。](../../../assets/mosaickit/agora/annotations/gutter.svg){ .ev-figure-sm }
+
+<span id="fig-span"></span>
+
+![两点之间的跨距大括号。](../../../assets/mosaickit/agora/annotations/span.svg){ .ev-figure-sm }
+
+## 边栏的字段
+
+各栏从轴线向外排列，第一栏与轴线相距 5 pt，各栏彼此相距 8 pt。顺序依次是标记、每条外侧大括号轨道各一栏，以及注释。每栏宽度取其中最宽的内容；空栏不占空间，也不增加间距（参见[y 轴边栏的标记、注释与大括号。](annotations.md#fig-gutter)，图中另加了辅助线）。随后还要处理两个问题：同一栏中相邻的文字不能重叠，以及哪些大括号可以共用一条轨道。
+
+## 沿轴分散文字
+
+同一栏中的每段文字都对应轴上的一个区间，并以其标示的值为中心。区间重叠时，系统会在维持顺序的前提下将它们分开，并使各项位移的平方和最小。
+
+<span id="def-packing"></span>
+
+!!! abstract "定义 · 保序排列"
+
+    设 $c_1, \ldots, c_n$ 为中心、$s_1, \ldots, s_n \ge 0$ 为大小、$g \ge 0$ 为间距，编号使 $c_1 \le \cdots \le c_n$（相等者按输入顺序）。*排列*是满足
+
+    $$
+    x_{k+1} - x_k \ge (s_k + s_{k+1}) / 2 + g, \quad k = 1, \ldots, n - 1
+    $$
+
+    的向量 $x \in \mathbb{R}^n$；*保序排列问题*是在所有排列中最小化 $\sum_k (x_k - c_k)^2$。
+
+<!-- api: agora.mosaickit.guides_annotations_5 -->
+
+求解此问题：将连续且重叠的项目合并成组，每组紧密排列在所有成员目标位置的平均值周围；只要某组碰到前一组，就再次合并。结果按输入顺序返回。长度不一致或大小为负时会引发 `ValueError`。
+
+<span id="thm-spread"></span>
+
+!!! abstract "定理 · 分散为最佳解"
+
+    `spread` 返回[保序排列](annotations.md#def-packing)保序排列问题的唯一解。
+
+这个程序采用保序回归的合并相邻违反者算法（pool-adjacent-violators algorithm，PAVA）[Ayer (1955)](../project/references.md#ayer1955)：扣除紧密排列的位移后，间距限制就会变成 $y_1 \le \cdots \le y_n$。
+
+<span id="cor-spread"></span>
+
+!!! abstract "推论 · 分散结果的性质"
+
+    设 $x$ 为 `spread` 的结果，则
+    (i) 任两项 $i \ne j$ 满足 $|x_i - x_j| \ge (s_i + s_j) / 2 + g$；
+    (ii) 若各中心本身已构成排列，则 $x = c$；
+    (iii) 每群的位移总和为零，因此群的平均位置等于其成员的平均目标。
+
+<span id="fig-spread"></span>
+
+![目标（上）与分散结果（下）。](../../../assets/mosaickit/agora/geometry/spread.svg){ .ev-figure-sm }
+
+[目标（上）与分散结果（下）。](annotations.md#fig-spread)中的前三项因重叠而形成一组，该组的位置以各项目标位置的平均值为中心；其余两项原本就已分开，因此不会移动。
+
+## 大括号的轨道
+
+跨距（连同标签）彼此太近的大括号必须放在不同轨道，也就是与轴线不同的距离。
+
+<span id="def-conflict"></span>
+
+!!! abstract "定义 · 冲突区间"
+
+    对间距 $g \ge 0$，若 $b + g \le a'$ 与 $b' + g \le a$ 都不成立，则区间 $[a, b]$ 与 $[a', b']$ *冲突*。*轨道分配*为每个区间指定一个轨道编号，使冲突的区间不共用轨道。
+
+<!-- api: agora.mosaickit.guides_annotations_6 -->
+
+首次适配：按输入顺序处理区间，把每个区间放进与已有区间都不冲突的最低轨道。端点可按任一顺序给出。
+
+<span id="thm-lanes"></span>
+
+!!! abstract "定理 · 首次适配使用最少轨道"
+
+    `assign_lanes` 一定返回轨道分配。若区间按下端递增的顺序给出，且每个都满足 $b - a + g > 0$，则它恰好使用 $\omega$ 条轨道，其中 $\omega$ 为两两冲突的区间数的最大值；没有任何轨道分配能用得更少。
+
+如果输入不是上述顺序，首次适配可能使用超过必要数量的轨道。因此，可能重叠的大括号应按数值从低到高加入。
+
+<!-- api: agora.mosaickit.guides_annotations_7 -->
+
+负责边栏分栏布局的纯函数：返回 `GutterColumns`，其中包含 `marks`、`braces`（每条轨道一个 `Band`，由内而外）与 `notes`。每个栏都是从轴线向外量得的 `Band(near, far)`，另有最远边缘 `extent`。

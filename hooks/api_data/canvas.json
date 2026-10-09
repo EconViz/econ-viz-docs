@@ -1,0 +1,919 @@
+{
+  "canvas.constructor": {
+    "name": "Canvas",
+    "anchor": "canvas-constructor",
+    "returns": "Canvas",
+    "parameters": [
+      {
+        "name": "x_max",
+        "types": [
+          "float"
+        ],
+        "default": "10.0",
+        "description": {
+          "en": "Upper bound of the horizontal axis",
+          "zh-TW": "橫軸上限",
+          "zh-CN": "横轴上限"
+        }
+      },
+      {
+        "name": "y_max",
+        "types": [
+          "float"
+        ],
+        "default": "10.0",
+        "description": {
+          "en": "Upper bound of the vertical axis",
+          "zh-TW": "縱軸上限",
+          "zh-CN": "纵轴上限"
+        }
+      },
+      {
+        "name": "x_label",
+        "types": [
+          "str"
+        ],
+        "default": "'X'",
+        "description": {
+          "en": "Shorthand for `Axis(label=...)` on the horizontal axis",
+          "zh-TW": "橫軸 `Axis(label=...)` 的簡寫",
+          "zh-CN": "横轴 `Axis(label=...)` 的简写"
+        }
+      },
+      {
+        "name": "y_label",
+        "types": [
+          "str"
+        ],
+        "default": "'Y'",
+        "description": {
+          "en": "Shorthand for `Axis(label=...)` on the vertical axis",
+          "zh-TW": "縱軸 `Axis(label=...)` 的簡寫",
+          "zh-CN": "纵轴 `Axis(label=...)` 的简写"
+        }
+      },
+      {
+        "name": "title",
+        "types": [
+          "str",
+          "Label",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Figure title",
+          "zh-TW": "圖形標題",
+          "zh-CN": "图形标题"
+        }
+      },
+      {
+        "name": "dpi",
+        "types": [
+          "int"
+        ],
+        "default": "300",
+        "description": {
+          "en": "Raster export resolution (clamped to 1–1200)",
+          "zh-TW": "點陣匯出解析度（限制在 1–1200）",
+          "zh-CN": "位图导出分辨率（限制在 1–1200）"
+        }
+      },
+      {
+        "name": "x_label_pos",
+        "types": [
+          "LabelPosition",
+          "str"
+        ],
+        "default": "LabelPosition.RIGHT",
+        "description": {
+          "en": "Shorthand for `Axis(label_position=...)`: above, right of, or below the arrow tip",
+          "zh-TW": "`Axis(label_position=...)` 的簡寫：箭頭上方、右側或下方",
+          "zh-CN": "`Axis(label_position=...)` 的简写：箭头上方、右侧或下方"
+        }
+      },
+      {
+        "name": "y_label_pos",
+        "types": [
+          "LabelPosition",
+          "str"
+        ],
+        "default": "LabelPosition.TOP",
+        "description": {
+          "en": "Shorthand for `Axis(label_position=...)`: left of, above, or right of the arrow tip",
+          "zh-TW": "`Axis(label_position=...)` 的簡寫：箭頭左側、上方或右側",
+          "zh-CN": "`Axis(label_position=...)` 的简写：箭头左侧、上方或右侧"
+        }
+      },
+      {
+        "name": "theme",
+        "types": [
+          "Theme",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Colour and style theme",
+          "zh-TW": "配色與樣式主題",
+          "zh-CN": "配色与样式主题"
+        }
+      },
+      {
+        "name": "font",
+        "types": [
+          "str",
+          "Sequence[str]",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Font family or fallback list for every text element",
+          "zh-TW": "所有文字使用的字體或候補字體列表",
+          "zh-CN": "所有文字使用的字体或候选字体列表"
+        }
+      },
+      {
+        "name": "math_font",
+        "types": [
+          "str",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Matplotlib math font: `dejavusans`, `dejavuserif`, `cm`, `stix`, or `stixsans`",
+          "zh-TW": "數學字體：`dejavusans`、`dejavuserif`、`cm`、`stix` 或 `stixsans`",
+          "zh-CN": "数学字体：`dejavusans`、`dejavuserif`、`cm`、`stix` 或 `stixsans`"
+        }
+      },
+      {
+        "name": "axis_stroke",
+        "types": [
+          "Stroke",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Shared width, style, colour, and arrowhead for both axes",
+          "zh-TW": "同時設定兩軸的粗細、線條樣式、顏色與箭頭樣式",
+          "zh-CN": "同时设置两轴的粗细、线条样式、颜色与箭头样式"
+        }
+      },
+      {
+        "name": "x_axis_stroke",
+        "types": [
+          "Stroke",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Horizontal-axis override, shorthand for `Axis(stroke=...)`",
+          "zh-TW": "橫軸的個別覆寫，是 `Axis(stroke=...)` 的簡寫",
+          "zh-CN": "横轴的单独覆盖，是 `Axis(stroke=...)` 的简写"
+        }
+      },
+      {
+        "name": "y_axis_stroke",
+        "types": [
+          "Stroke",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Vertical-axis override, shorthand for `Axis(stroke=...)`",
+          "zh-TW": "縱軸的個別覆寫，是 `Axis(stroke=...)` 的簡寫",
+          "zh-CN": "纵轴的单独覆盖，是 `Axis(stroke=...)` 的简写"
+        }
+      },
+      {
+        "name": "x_axis",
+        "types": [
+          "Axis",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Label, label position, and stroke of the horizontal axis",
+          "zh-TW": "橫軸的標籤、標籤位置與線條",
+          "zh-CN": "横轴的标签、标签位置与线条"
+        }
+      },
+      {
+        "name": "y_axis",
+        "types": [
+          "Axis",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Label, label position, and stroke of the vertical axis",
+          "zh-TW": "縱軸的標籤、標籤位置與線條",
+          "zh-CN": "纵轴的标签、标签位置与线条"
+        }
+      }
+    ]
+  },
+  "canvas.add_utility": {
+    "name": "Canvas.add_utility",
+    "anchor": "add_utility",
+    "returns": "Canvas",
+    "parameters": [
+      {
+        "name": "func",
+        "types": [
+          "Callable"
+        ],
+        "description": {
+          "en": "Utility model to draw.",
+          "zh-TW": "要繪製的效用模型。",
+          "zh-CN": "要绘制的效用模型。"
+        }
+      },
+      {
+        "name": "levels",
+        "types": [
+          "int",
+          "list"
+        ],
+        "default": "3",
+        "description": {
+          "en": "Number of curves, or an explicit list of utility levels.",
+          "zh-TW": "曲線數量，或指定的效用水準列表。",
+          "zh-CN": "曲线数量，或指定的效用水平列表。"
+        }
+      },
+      {
+        "name": "color",
+        "types": [
+          "str",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Colour override; otherwise uses the theme.",
+          "zh-TW": "覆寫顏色；未指定時沿用主題。",
+          "zh-CN": "覆盖颜色；未指定时沿用主题。"
+        }
+      },
+      {
+        "name": "linewidth",
+        "types": [
+          "float",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Line width override; otherwise uses the theme.",
+          "zh-TW": "覆寫線條粗細；未指定時沿用主題。",
+          "zh-CN": "覆盖线条粗细；未指定时沿用主题。"
+        }
+      },
+      {
+        "name": "show_rays",
+        "types": [
+          "bool"
+        ],
+        "default": "False",
+        "description": {
+          "en": "Draw kink-locus rays for kinked utility models.",
+          "zh-TW": "為具有折點的效用模型畫出折點軌跡射線。",
+          "zh-CN": "为具有折点的效用模型画出折点轨迹射线。"
+        }
+      },
+      {
+        "name": "show_kinks",
+        "types": [
+          "bool"
+        ],
+        "default": "False",
+        "description": {
+          "en": "Mark kink points on each indifference curve.",
+          "zh-TW": "標出各條無異曲線的折點。",
+          "zh-CN": "标出各条无差异曲线的折点。"
+        }
+      },
+      {
+        "name": "kink_radius",
+        "types": [
+          "float"
+        ],
+        "default": "1.0",
+        "description": {
+          "en": "Size factor for kink markers.",
+          "zh-TW": "折點標記的大小倍率。",
+          "zh-CN": "折点标记的大小倍率。"
+        }
+      },
+      {
+        "name": "show_bliss",
+        "types": [
+          "bool"
+        ],
+        "default": "True",
+        "description": {
+          "en": "Mark the bliss point when the model provides one.",
+          "zh-TW": "若模型具有極樂點，顯示其標記。",
+          "zh-CN": "若模型具有餍足点，显示其标记。"
+        }
+      },
+      {
+        "name": "label",
+        "types": [
+          "str",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Optional label in LaTeX math notation.",
+          "zh-TW": "可選的 LaTeX 數學標籤。",
+          "zh-CN": "可选的 LaTeX 数学标签。"
+        }
+      },
+      {
+        "name": "show_ic_labels",
+        "types": [
+          "bool"
+        ],
+        "default": "False",
+        "description": {
+          "en": "Show utility labels at curve ends.",
+          "zh-TW": "在曲線末端顯示效用標籤。",
+          "zh-CN": "在曲线末端显示效用标签。"
+        }
+      },
+      {
+        "name": "ic_label_fmt",
+        "types": [
+          "str"
+        ],
+        "default": "'{:.2g}'",
+        "description": {
+          "en": "Format string for numeric utility labels.",
+          "zh-TW": "數值效用標籤的格式字串。",
+          "zh-CN": "数值效用标签的格式字符串。"
+        }
+      },
+      {
+        "name": "stroke",
+        "types": [
+          "Stroke",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Line style; overrides individual colour, width, and style shortcuts.",
+          "zh-TW": "線條樣式，優先於個別的顏色、粗細與線型簡寫。",
+          "zh-CN": "线条样式，优先于单独的颜色、粗细与线型简写。"
+        }
+      },
+      {
+        "name": "ray_stroke",
+        "types": [
+          "Stroke",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Style of the rays; otherwise uses the theme.",
+          "zh-TW": "射線的線條樣式；未指定時沿用主題。",
+          "zh-CN": "射线的线条样式；未指定时沿用主题。"
+        }
+      },
+      {
+        "name": "kink_marker",
+        "types": [
+          "Marker",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Style of kink markers; otherwise uses the theme.",
+          "zh-TW": "折點標記樣式；未指定時沿用主題。",
+          "zh-CN": "折点标记样式；未指定时沿用主题。"
+        }
+      },
+      {
+        "name": "bliss_marker",
+        "types": [
+          "Marker",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Style of the bliss-point marker; otherwise uses the theme.",
+          "zh-TW": "極樂點標記樣式；未指定時沿用主題。",
+          "zh-CN": "餍足点标记样式；未指定时沿用主题。"
+        }
+      },
+      {
+        "name": "ic_label",
+        "types": [
+          "Label",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Style of labels at indifference-curve ends.",
+          "zh-TW": "無異曲線末端標籤的樣式。",
+          "zh-CN": "无差异曲线末端标签的样式。"
+        }
+      },
+      {
+        "name": "bliss_label",
+        "types": [
+          "str",
+          "Label",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Text or Label object for the bliss point.",
+          "zh-TW": "極樂點的文字或 Label 物件。",
+          "zh-CN": "餍足点的文字或 Label 对象。"
+        }
+      },
+      {
+        "name": "highlight_level",
+        "types": [
+          "float",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Emphasize the curve nearest this utility level.",
+          "zh-TW": "強調最接近此效用水準的曲線。",
+          "zh-CN": "强调最接近此效用水平的曲线。"
+        }
+      },
+      {
+        "name": "secondary_stroke",
+        "types": [
+          "Stroke",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Style of curves other than the highlighted curve.",
+          "zh-TW": "主要曲線以外的次要曲線樣式。",
+          "zh-CN": "主要曲线以外的次要曲线样式。"
+        }
+      },
+      {
+        "name": "label_style",
+        "types": [
+          "str"
+        ],
+        "default": "'numeric'",
+        "description": {
+          "en": "Use `numeric` values or `ordinal` textbook labels.",
+          "zh-TW": "使用 `numeric` 數值或 `ordinal` 教科書式序數標籤。",
+          "zh-CN": "使用 `numeric` 数值或 `ordinal` 教科书式序数标签。"
+        }
+      },
+      {
+        "name": "**kwargs",
+        "types": [],
+        "description": {
+          "en": "Additional options forwarded to the underlying renderer or exporter.",
+          "zh-TW": "傳給底層繪圖或匯出函式的其他選項。",
+          "zh-CN": "传给底层绘图或导出函数的其他选项。"
+        }
+      }
+    ]
+  },
+  "canvas.add_budget": {
+    "name": "Canvas.add_budget",
+    "anchor": "add_budget",
+    "returns": "Canvas",
+    "parameters": [
+      {
+        "name": "px",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Price of good X; must be positive.",
+          "zh-TW": "商品 X 的價格，必須大於 0。",
+          "zh-CN": "商品 X 的价格，必须大于 0。"
+        }
+      },
+      {
+        "name": "py",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Price of good Y; must be positive.",
+          "zh-TW": "商品 Y 的價格，必須大於 0。",
+          "zh-CN": "商品 Y 的价格，必须大于 0。"
+        }
+      },
+      {
+        "name": "income",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Total budget; must be positive.",
+          "zh-TW": "總預算，必須大於 0。",
+          "zh-CN": "总预算，必须大于 0。"
+        }
+      },
+      {
+        "name": "color",
+        "types": [
+          "str",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Colour override; otherwise uses the theme.",
+          "zh-TW": "覆寫顏色；未指定時沿用主題。",
+          "zh-CN": "覆盖颜色；未指定时沿用主题。"
+        }
+      },
+      {
+        "name": "linewidth",
+        "types": [
+          "float",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Line width override; otherwise uses the theme.",
+          "zh-TW": "覆寫線條粗細；未指定時沿用主題。",
+          "zh-CN": "覆盖线条粗细；未指定时沿用主题。"
+        }
+      },
+      {
+        "name": "linestyle",
+        "types": [
+          "str",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Matplotlib line style; otherwise uses the theme.",
+          "zh-TW": "Matplotlib 線條樣式；未指定時沿用主題。",
+          "zh-CN": "Matplotlib 线条样式；未指定时沿用主题。"
+        }
+      },
+      {
+        "name": "label",
+        "types": [
+          "str",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Optional label in LaTeX math notation.",
+          "zh-TW": "可選的 LaTeX 數學標籤。",
+          "zh-CN": "可选的 LaTeX 数学标签。"
+        }
+      },
+      {
+        "name": "fill",
+        "types": [
+          "bool",
+          "Fill"
+        ],
+        "default": "False",
+        "description": {
+          "en": "Shade the feasible set with `True`, or supply a `Fill` for colour and opacity.",
+          "zh-TW": "設為 `True` 填滿可行集合，或傳入 `Fill` 指定顏色與透明度。",
+          "zh-CN": "设为 `True` 填满可行集，或传入 `Fill` 指定颜色与透明度。"
+        }
+      },
+      {
+        "name": "fill_alpha",
+        "types": [
+          "float",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Shading opacity; a supplied `Fill` opacity takes precedence.",
+          "zh-TW": "填色透明度；`Fill` 中的透明度設定優先。",
+          "zh-CN": "填色透明度；`Fill` 中的透明度设置优先。"
+        }
+      },
+      {
+        "name": "stroke",
+        "types": [
+          "Stroke",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Line style; overrides individual colour, width, and style shortcuts.",
+          "zh-TW": "線條樣式，優先於個別的顏色、粗細與線型簡寫。",
+          "zh-CN": "线条样式，优先于单独的颜色、粗细与线型简写。"
+        }
+      }
+    ]
+  },
+  "canvas.add_equilibrium": {
+    "name": "Canvas.add_equilibrium",
+    "anchor": "add_equilibrium",
+    "returns": "Canvas",
+    "parameters": [
+      {
+        "name": "eq",
+        "types": [
+          "Equilibrium"
+        ],
+        "description": {
+          "en": "Equilibrium returned by `solve()`.",
+          "zh-TW": "`solve()` 回傳的均衡結果。",
+          "zh-CN": "`solve()` 返回的均衡结果。"
+        }
+      },
+      {
+        "name": "color",
+        "types": [
+          "str",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Colour override; otherwise uses the theme.",
+          "zh-TW": "覆寫顏色；未指定時沿用主題。",
+          "zh-CN": "覆盖颜色；未指定时沿用主题。"
+        }
+      },
+      {
+        "name": "markersize",
+        "types": [
+          "float",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Marker size; otherwise uses the theme.",
+          "zh-TW": "標記大小；未指定時沿用主題。",
+          "zh-CN": "标记大小；未指定时沿用主题。"
+        }
+      },
+      {
+        "name": "label",
+        "types": [
+          "str",
+          "Label",
+          "None"
+        ],
+        "default": "'x^*'",
+        "description": {
+          "en": "Optional label in LaTeX math notation.",
+          "zh-TW": "可選的 LaTeX 數學標籤。",
+          "zh-CN": "可选的 LaTeX 数学标签。"
+        }
+      },
+      {
+        "name": "drop_dashes",
+        "types": [
+          "bool"
+        ],
+        "default": "True",
+        "description": {
+          "en": "Draw perpendicular guides to both axes.",
+          "zh-TW": "畫出通往兩軸的垂直輔助線。",
+          "zh-CN": "画出通往两轴的垂直辅助线。"
+        }
+      },
+      {
+        "name": "show_ray",
+        "types": [
+          "bool"
+        ],
+        "default": "False",
+        "description": {
+          "en": "Draw the ray from the origin through the equilibrium.",
+          "zh-TW": "畫出從原點通過均衡點的射線。",
+          "zh-CN": "画出从原点通过均衡点的射线。"
+        }
+      },
+      {
+        "name": "drop_stroke",
+        "types": [
+          "Stroke",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Style of the guides to both axes.",
+          "zh-TW": "通往兩軸的輔助線樣式。",
+          "zh-CN": "通往两轴的辅助线样式。"
+        }
+      },
+      {
+        "name": "ray_stroke",
+        "types": [
+          "Stroke",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Style of the rays; otherwise uses the theme.",
+          "zh-TW": "射線的線條樣式；未指定時沿用主題。",
+          "zh-CN": "射线的线条样式；未指定时沿用主题。"
+        }
+      },
+      {
+        "name": "marker",
+        "types": [
+          "Marker",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Marker colour, size, and shape; otherwise uses the theme.",
+          "zh-TW": "標記的顏色、大小與形狀；未指定時沿用主題。",
+          "zh-CN": "标记的颜色、大小与形状；未指定时沿用主题。"
+        }
+      }
+    ]
+  },
+  "canvas.add_ray": {
+    "name": "Canvas.add_ray",
+    "anchor": "add_ray",
+    "returns": "Canvas",
+    "parameters": [
+      {
+        "name": "slope",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Ray slope, expressed as $\\mathrm{d}y/\\mathrm{d}x$.",
+          "zh-TW": "射線斜率，以 $\\mathrm{d}y/\\mathrm{d}x$ 表示。",
+          "zh-CN": "射线斜率，以 $\\mathrm{d}y/\\mathrm{d}x$ 表示。"
+        }
+      },
+      {
+        "name": "color",
+        "types": [
+          "str",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Colour override; otherwise uses the theme.",
+          "zh-TW": "覆寫顏色；未指定時沿用主題。",
+          "zh-CN": "覆盖颜色；未指定时沿用主题。"
+        }
+      },
+      {
+        "name": "linewidth",
+        "types": [
+          "float",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Line width override; otherwise uses the theme.",
+          "zh-TW": "覆寫線條粗細；未指定時沿用主題。",
+          "zh-CN": "覆盖线条粗细；未指定时沿用主题。"
+        }
+      },
+      {
+        "name": "stroke",
+        "types": [
+          "Stroke",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Line style; overrides individual colour, width, and style shortcuts.",
+          "zh-TW": "線條樣式，優先於個別的顏色、粗細與線型簡寫。",
+          "zh-CN": "线条样式，优先于单独的颜色、粗细与线型简写。"
+        }
+      }
+    ]
+  },
+  "canvas.add_point": {
+    "name": "Canvas.add_point",
+    "anchor": "add_point",
+    "returns": "Canvas",
+    "parameters": [
+      {
+        "name": "x",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Horizontal coordinate of the point.",
+          "zh-TW": "點的水平座標。",
+          "zh-CN": "点的水平坐标。"
+        }
+      },
+      {
+        "name": "y",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Vertical coordinate of the point.",
+          "zh-TW": "點的垂直座標。",
+          "zh-CN": "点的垂直坐标。"
+        }
+      },
+      {
+        "name": "label",
+        "types": [
+          "str",
+          "Label",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Optional label in LaTeX math notation.",
+          "zh-TW": "可選的 LaTeX 數學標籤。",
+          "zh-CN": "可选的 LaTeX 数学标签。"
+        }
+      },
+      {
+        "name": "color",
+        "types": [
+          "str",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Colour override; otherwise uses the theme.",
+          "zh-TW": "覆寫顏色；未指定時沿用主題。",
+          "zh-CN": "覆盖颜色；未指定时沿用主题。"
+        }
+      },
+      {
+        "name": "markersize",
+        "types": [
+          "float",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Marker size; otherwise uses the theme.",
+          "zh-TW": "標記大小；未指定時沿用主題。",
+          "zh-CN": "标记大小；未指定时沿用主题。"
+        }
+      },
+      {
+        "name": "offset",
+        "types": [
+          "tuple[float, float]",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Label offset `(dx, dy)` in points. A `Label` position or offset takes precedence.",
+          "zh-TW": "標籤位移 `(dx, dy)`，單位為點；`Label` 的位置或位移設定優先。",
+          "zh-CN": "标签位移 `(dx, dy)`，单位为点；`Label` 的位置或位移设置优先。"
+        }
+      },
+      {
+        "name": "marker",
+        "types": [
+          "Marker",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Marker colour, size, and shape; otherwise uses the theme.",
+          "zh-TW": "標記的顏色、大小與形狀；未指定時沿用主題。",
+          "zh-CN": "标记的颜色、大小与形状；未指定时沿用主题。"
+        }
+      }
+    ]
+  },
+  "canvas.show": {
+    "name": "Canvas.show",
+    "anchor": "show",
+    "returns": "None",
+    "parameters": []
+  },
+  "canvas.save": {
+    "name": "Canvas.save",
+    "anchor": "save",
+    "returns": "None",
+    "parameters": [
+      {
+        "name": "path",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "Destination path; its extension selects PNG, PDF, SVG, or TikZ output.",
+          "zh-TW": "輸出路徑；副檔名決定 PNG、PDF、SVG 或 TikZ 格式。",
+          "zh-CN": "输出路径；扩展名决定 PNG、PDF、SVG 或 TikZ 格式。"
+        }
+      },
+      {
+        "name": "**kwargs",
+        "types": [],
+        "description": {
+          "en": "Additional options forwarded to the underlying renderer or exporter.",
+          "zh-TW": "傳給底層繪圖或匯出函式的其他選項。",
+          "zh-CN": "传给底层绘图或导出函数的其他选项。"
+        }
+      }
+    ]
+  }
+}
