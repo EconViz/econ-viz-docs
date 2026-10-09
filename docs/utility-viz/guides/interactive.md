@@ -26,20 +26,26 @@ from utility_viz import Canvas, levels, solve
 from utility_viz.interactive import WidgetViewer
 from utility_viz.models import CobbDouglas
 
+
 def draw(alpha: float, px: float) -> Canvas:
     model = CobbDouglas(alpha=alpha, beta=1.0 - alpha)
     eq = solve(model, px=px, py=2.0, income=20.0)
 
     return (
         Canvas(
-            x_max=14, y_max=12,
-            x_label="X_1", y_label="X_2",
-            title="Interactive equilibrium"
+            x_max=14,
+            y_max=12,
+            x_label="X_1",
+            y_label="X_2",
+            title="Interactive equilibrium",
         )
-        .add_utility(model, levels=levels.around(eq.utility, n=5))
+        .add_utility(
+            model, levels=levels.around(eq.utility, n=5)
+        )
         .add_budget(px=px, py=2.0, income=20.0, fill=True)
         .add_equilibrium(eq, show_ray=True, drop_dashes=True)
     )
+
 
 WidgetViewer(
     draw,
@@ -71,5 +77,7 @@ The packaged Playground notebook now follows this flow and avoids reinstalling w
 
 Choose the output that fits the teaching setting:
 
-- Use `WidgetViewer` when students need to type or drag parameters and inspect one state at a time.
-- Use `Animator` when you want a fixed, repeatable narrative sweep for slides, docs, or the project website.
+| Tool | Use it when |
+|------|------|
+| `WidgetViewer` | Students need to type or drag parameters and inspect one state at a time |
+| `Animator` | You want a fixed, repeatable narrative sweep for slides, docs, or the project website |

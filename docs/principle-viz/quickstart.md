@@ -1,94 +1,122 @@
 ---
-seo_title: "principle-viz Quick Start"
-description: "Solve a linear market equilibrium, compare a per-unit tax, and draw a supply and demand figure with principle-viz."
+seo_title: "Quick start"
 ---
 
-# Quick Start
+# Quick start
 
-Every output below comes from running the code with principle-viz 0.10.0.
+<span id="sec-quickstart"></span>
 
-## Solve and draw a market
+## A minimal example
 
-Demand is `P = 10 - Q` and supply is `P = 2 + Q`. `Line.from_inverse(intercept, slope)` builds a line from its
-inverse form `P = intercept + slope * Q`.
+This chapter uses one market, which later chapters reuse:
+
+$$
+\begin{aligned}\text{demand:} & \quad p = 10 - Q, \\ \text{supply:} & \quad p = 2 + Q.\end{aligned}
+$$
 
 ```python
-from principle_viz.core.equilibrium import solve_equilibrium
-from principle_viz.core.line import Line
-from principle_viz.plot.figure import MarketFigure
+from principle_viz import (
+    MarketFigure,
+    line_from_inverse,
+    solve_equilibrium,
+)
 
-demand = Line.from_inverse(10.0, -1.0)  # P = 10 - Q
-supply = Line.from_inverse(2.0, 1.0)  # P = 2 + Q
+# p = 10 - Q
+demand = line_from_inverse(10.0, -1.0)
+# p = 2 + Q
+supply = line_from_inverse(2.0, 1.0)
 eq = solve_equilibrium(demand, supply)
-print(eq)
+# 4.0 6.0
+print(eq.q_star, eq.p_star)
 
-fig = MarketFigure(x_max=12, y_max=12, title="Basic Equilibrium")
+fig = MarketFigure(
+    x_max=12, y_max=12, title="Basic Equilibrium"
+)
 fig.add_curves(demand, supply, q_max=10)
 fig.add_equilibrium(eq)
 fig.finalize()
 fig.save("basic_equilibrium.png")
-fig.close()
 ```
 
-Output:
+<span id="fig-quickstart"></span>
 
-```text
-EquilibriumResult(q_star=4.0, p_star=6.0, is_valid_market=True, notes=())
-```
+![The market of this chapter (title omitted).](../assets/principle-viz/agora/quickstart/equilibrium.svg){ .ev-figure-sm }
 
-![Basic equilibrium figure](../assets/principle-viz/basic_equilibrium.png){ width="360" }
+$10 - Q = 2 + Q$ gives $Q^* = 4$ and $p^* = 6$. The output is shown in
+[The market of this chapter (title omitted).](quickstart.md#fig-quickstart).
 
-## Compare a tax
+## Step by step
 
-`compare_tax_scenario` solves the market before and after the tax. This one is a per-unit tax of 1 on producers.
+Every figure goes through four steps: describe the market, solve, draw, and
+finish and save.
+
+<!-- api: agora.principle_viz.quickstart_1 -->
+
+Describe the market. `line_from_inverse(a, b)` builds the line
+$p = a + b Q$ ([Linear markets](guides/markets.md#sec-markets)).
+
+<!-- api: agora.principle_viz.quickstart_2 -->
+
+Solve. `solve_equilibrium()` and the other solvers return a frozen
+dataclass of numbers. Nothing is drawn at this step.
+
+<!-- api: agora.principle_viz.quickstart_3 -->
+
+Draw. `MarketFigure` is a square diagram with a price axis and a quantity
+axis. The axis ranges only set the visible area and do not enter any
+calculation; when the equilibrium point is missing from the figure, check
+whether `eq.q_star` and `eq.p_star` exceed the ranges, then raise the axis
+limits.
+
+<!-- api: agora.principle_viz.quickstart_4 -->
+
+The `add_*` methods take curves and results and add the matching layers.
+Each method returns the figure, so calls can be chained.
+
+<!-- api: agora.principle_viz.quickstart_5 -->
+
+Finish and save. `finalize()` hides guide lines that would cut a shaded
+area in two; `save()` writes PNG, SVG or PDF according to the file
+extension and creates missing directories ([Figures](guides/figures.md#sec-figures)).
+
+Calculation and drawing are independent: a result can be printed, compared
+or exported without drawing it, and the same result can be drawn on several
+figures.
+
+## Results
+
+Results are immutable dataclasses whose fields are floats, strings and
+tuples. `solve_equilibrium()` returns an `EquilibriumResult`:
+
+## Input errors and solver failures
+
+<!-- api: agora.principle_viz.quickstart_6 -->
+
+Every exception the package raises derives from `PrincipleVizError` in
+`principle_viz.exceptions`; catching it handles all of them (see
+[Errors](guides/markets.md#sec-errors)).
+
+Parallel lines have no equilibrium. `solve_equilibrium()` raises
+`ParallelLinesError` and never returns an invalid result:
 
 ```python
-from principle_viz.core.line import Line
-from principle_viz.policy.analysis import compare_tax_scenario
-from principle_viz.policy.tax import TaxOn, TaxScenario, TaxType
+from principle_viz import line_from_inverse, solve_equilibrium
+from principle_viz.exceptions import PrincipleVizError
 
-demand = Line.from_inverse(10.0, -1.0)
-supply = Line.from_inverse(2.0, 1.0)
+demand = line_from_inverse(10.0, -1.0)
+# parallel to demand
+supply = line_from_inverse(8.0, -1.0)
 
-scenario = TaxScenario(tax_type=TaxType.PER_UNIT_TAX, amount=1.0, tax_on=TaxOn.PRODUCER)
-result = compare_tax_scenario(demand, supply, scenario)
+try:
+    eq = solve_equilibrium(demand, supply)
+except PrincipleVizError as error:
+    print(type(error).__name__)
+else:
+    print(eq.q_star, eq.p_star)
 
-print(f"before tax: Q = {result.baseline_equilibrium.q_star}, P = {result.baseline_equilibrium.p_star}")
-print(f"after tax:  Q = {result.post_tax.q_star}")
-print(f"buyers pay {result.post_tax.consumer_price}, sellers keep {result.post_tax.producer_price}")
-print(f"tax revenue = {result.post_tax.tax_revenue}")
+# ParallelLinesError
 ```
 
-Output:
-
-```text
-before tax: Q = 4.0, P = 6.0
-after tax:  Q = 3.5
-buyers pay 6.5, sellers keep 5.5
-tax revenue = 3.5
-```
-
-`TaxType` also offers `FIXED_TAX` and `AD_VALOREM_TAX`; `TaxOn` is `CONSUMER` or `PRODUCER`. To draw the tax on a
-figure, use `MarketFigure.add_tax_transform`.
-
-## From the command line
-
-The same market, solved without writing Python:
-
-```bash
-principle-viz equilibrium \
-  --demand-intercept 10 --demand-slope -1 \
-  --supply-intercept 2 --supply-slope 1
-```
-
-```json
-{
-  "q_star": 4.0,
-  "p_star": 6.0,
-  "is_valid_market": true,
-  "notes": []
-}
-```
-
-The tax scenario above is `principle-viz tax` with `--tax-type per_unit --amount 1 --tax-on producer`; it prints
-the baseline and post-tax equilibrium as JSON.
+A negative equilibrium quantity raises no exception; it sets
+`is_valid_market` to `False`. Check `is_valid_market` and `notes` before
+using a result.

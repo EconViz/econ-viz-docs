@@ -1,52 +1,27 @@
 ---
-seo_title: "安装 bezierkit"
-description: "用 pip 或 uv 安装 bezierkit 0.5.0rc1 预发布版本，加装可选的 CLI 与 Matplotlib 功能，并设置开发环境。"
+seo_title: "安装"
 ---
 
 # 安装
 
-## 环境要求
+<span id="sec-install"></span>
 
-- [Python](https://www.python.org/downloads/) 3.10 以上
+## 系统需求
 
-bezierkit 唯一必要的依赖是 `numpy`。
+`bezierkit` 需要 Python 3.10 以上版本与 `NumPy`。另有两组可选依赖：
+
+<!-- api: agora.bezierkit.installation_1 -->
 
 ## 安装软件包
 
-bezierkit 0.5.0rc1 是预发布版本，pip 与 uv 默认都会略过预发布版本。请加上 `--pre` 表示接受，或直接指定完整版本。
-
-=== ":simple-pypi: pip"
-
-    ```bash
-    pip install --pre bezierkit
-    # 或指定完整版本：
-    pip install bezierkit==0.5.0rc1
-    ```
-
-=== ":simple-uv: uv"
-
-    ```bash
-    uv add --prerelease allow bezierkit
-    # 或指定完整版本：
-    uv add bezierkit==0.5.0rc1
-    ```
-
-## 可选的额外依赖
-
-| 额外依赖 | 加入内容 | 安装命令 |
-|---|---|---|
-| `cli` | `bezierkit` 命令（typer 与 rich） | `pip install --pre "bezierkit[cli]"` |
-| `matplotlib` | Matplotlib 路径适配器 | `pip install --pre "bezierkit[matplotlib]"` |
-
-使用 uv 时，同样写成 `uv add --prerelease allow "bezierkit[cli]"`。
-
-## 验证安装
-
 ```bash
-python -c "import bezierkit; print(bezierkit.__version__)"
+uv add bezierkit                 # the library
+uv add "bezierkit[cli]"          # with the command-line interface
+uv add "bezierkit[matplotlib]"   # with the Matplotlib adapter
+uv add "bezierkit==1.0.0"        # the version this manual describes
 ```
 
-会打印出 `0.5.0rc1`。安装 `cli` 额外依赖后，运行 `bezierkit --help` 可列出所有命令。
+使用 `pip` 时，运行 `python -m pip install bezierkit`，可选依赖的写法相同。1.0.0 是第一个正式版：`bezierkit` 及其文档所列子包导出的名称按语义化版本管理，JSON 路径格式维持第 1 版。
 
 ## 开发环境设置
 
@@ -55,4 +30,8 @@ git clone https://github.com/EconViz/bezierkit.git
 cd bezierkit
 uv sync --all-extras --dev
 uv run pytest
+uv run ruff check src tests benchmarks
+uv run lint-imports
 ```
+
+持续整合流程在 Python 3.10、3.11、3.12 与 3.13 上运行相同命令。`lint-imports` 检查软件包分层：数学核心不导入任何绘图端，只有适配器导入 Matplotlib。

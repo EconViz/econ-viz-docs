@@ -1,15 +1,12 @@
 ---
-seo_title: "mosaickit Quick Start"
-description: "Build a diagram from mosaickit layers, save it as SVG, and lay out a parameter sweep as a grid."
+seo_title: "Quick start"
 ---
 
-# Quick Start
+# Quick start
 
-Every output below comes from running the code with mosaickit 0.5.1.
+<span id="sec-quickstart"></span>
 
-## Build a diagram from layers
-
-A `Canvas` holds layers. `quadrant_axes(10, 10)` supplies the two axes, and each `add()` call appends one layer.
+A diagram needs a canvas, its layers and a call to save it:
 
 ```python
 from mosaickit import (
@@ -39,47 +36,26 @@ canvas.add(
     )
 )
 canvas.add(MarkerLayer([(4, 3)], id="point"))
-canvas.add(TextLayer((4, 3), "A", offset=(8, 8)))
-canvas.save("diagram.svg")
-
-scene = canvas.snapshot()
-print(type(scene).__name__, len(scene.layers), "layers")
+canvas.add(TextLayer((4, 3), "A", offset=(6, 6)))
+canvas.save("diagram.pdf")
 ```
 
-Output:
+<span id="fig-quickstart"></span>
 
-```text
-Scene 6 layers
-```
+![The quick-start diagram.](../assets/mosaickit/agora/quickstart/diagram.svg){ .ev-figure-sm }
 
-The six layers are the two axes plus the four you added. `canvas.snapshot()` returns an immutable `Scene`, so you can
-inspect what will be drawn without rendering it.
+`quadrant_axes(10, 10)` returns ordinary layers: two arrowed paths and their
+titles. The fill sits below everything else because `z_index=-1`. The path is
+the straight polyline through its points. `mosaickit` constructs no
+curves of its own, so a smooth curve must be supplied as a sequence of points
+or built and sampled by a geometry package. The text is offset 6 pt up and to the right
+of the point. Nothing is drawn until `save()`. That method renders the scene
+with the canvas's renderer (Matplotlib unless configured otherwise), writes
+the file and returns the paths it wrote.
 
-![The saved diagram](../assets/mosaickit/diagram.svg){ width="360" }
-
-`save()` picks the format from the file extension: PNG, SVG and PDF use the built-in Matplotlib renderer.
-
-## Sweep a parameter across a grid
-
-A `Parameter` can stand in for a coordinate. `CanvasGrid.sweep` renders the same template once per value.
-
-```python
-from mosaickit import Canvas, CanvasGrid, Parameter, TextLayer, quadrant_axes
-
-position = Parameter("position", value_type=float)
-template = Canvas().extend(quadrant_axes(10, 10))
-template.add(TextLayer((position, 5), "moving"))
-
-values = position.values([1.0, 3.0, 5.0])
-CanvasGrid.sweep(template, values, cols=3).save("sweep.svg")
-print("wrote sweep.svg")
-```
-
-Output:
-
-```text
-wrote sweep.svg
-```
-
-`Animation.sweep(template, values, fps=2).save("sweep.gif")` turns the same template into a GIF (see
-[Installation](installation.md) for GIF and MP4 requirements).
+The same canvas can be changed and saved again. `add()`, `extend()`,
+`remove()` and `clear()` return the canvas, so calls can be chained, while
+every earlier snapshot remains unchanged ([Canvases and scenes](guides/canvas.md#sec-canvas)). Labels that must not
+cover anything are also layers: replace the `TextLayer` with
+`PointLabelLayer((4, 3), "A")` and the renderer chooses the side
+([Region and point labels](guides/labels.md#sec-labels)).

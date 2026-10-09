@@ -1,0 +1,133 @@
+---
+seo_title: "主题与配置"
+---
+
+# 主题与配置
+
+<span id="sec-themes"></span>
+
+## 样式组与主题
+
+<!-- api: agora.mosaickit.guides_themes_1 -->
+
+每个槽位包含一个稀疏样式。槽位内类型错误时，会引发 `ConfigurationError`。`merged_over(base)` 会逐槽位合并（参见[稀疏合并](styles.md#def-merge)）。
+
+<!-- api: agora.mosaickit.guides_themes_2 -->
+
+名称，以及从角色名称到样式组的不可变对应。角色名称是非空、以点分隔的字符串（`"axes"`、`"axes.note"`、`"mypkg.boundary"`）。`with_roles(**patch)` 返回新主题，每个修补的角色合并在原样式组之上；关键字名称不能含点，因此带点的角色写成 `with_roles(**{"mypkg.line": bundle})`。`resolve(role, fallback_category=...)` 仅按主题解析角色。
+
+<span id="tab-default-theme"></span>
+
+| 角色 | 样式组 |
+| --- | --- |
+| `primary` | 线条 `blue` |
+| `secondary` | 线条 `red` |
+| `accent` | 线条 `teal` |
+| `guide` | 线条 `grey-400`、虚线 |
+| `axes` | 线条 `grey-800`、宽 1 |
+| `axes.note` | 文字 9 pt、`grey-600` |
+| `canvas` | 填色 `white`、不透明度 1（背景） |
+
+其余的值都来自[基本默认值](styles.md#tab-primitive)的基本默认值。此主题为 `mosaickit.themes.default`。
+
+## 角色解析
+
+解析图层角色时，会依次查看该角色及其上层角色，最后才查看图层类型的回退类别。该过程按字段进行；只有该角色与所有上层角色都未提供某字段的值时，才会使用回退类别的值。
+
+<span id="def-chain"></span>
+
+!!! abstract "定义 · 角色链"
+
+    对回退类别为 $\phi$ 的角色 $\rho = \rho_1.\rho_2 \cdots \rho_m$，其*链*为序列
+
+    $$
+    \kappa(\rho) = (\rho_1 \cdots \rho_m, \, \rho_1 \cdots \rho_{m-1}, \, \ldots, \, \rho_1, \, \phi),
+    $$
+
+    由最具体到最一般，重复的键只保留第一次出现。
+
+例如，文字图层的 `"axes.note"` 角色链为（`axes.note`, `axes`, `text`）。回退类别包括 `primary`（路径、群组）、`region`（填色）、`point`（标记）、`text`（文字、标签、坐标轴标记、注释、大括号）、`annotation`（箭头）与 `legend`。
+
+<span id="thm-resolution"></span>
+
+!!! abstract "定理 · 解析顺序"
+
+    设某图层的自带样式为 $E$、角色链为 $\kappa = (k_1, \ldots, k_n)$，画在角色覆盖为 $C$ 的画布上，所在配置的角色覆盖为 $G$、主题角色为 $T$，并令 $D$ 为基本默认值。则图层解析后样式的每个字段，是序列
+
+    $$
+    E, \quad C[k_1], \ldots, C[k_n], \quad G[k_1], \ldots, G[k_n], \quad T[k_1], \ldots, T[k_n], \quad D
+    $$
+
+    中第一个不是 `None` 的值，其中不存在的角色视为空样式组。
+
+<span id="cor-override"></span>
+
+!!! abstract "推论 · 覆盖优先于具体程度"
+
+    画布或配置对一般角色的覆盖，优先于主题对较具体角色的设置：若 $G[\text{text}]$ 设置了文字大小，且[解析顺序](themes.md#thm-resolution)序列中在它之前没有来源设置大小，则角色为 `axes.note` 的文字图层采用该大小，而非主题的 9 pt。
+
+本手册的图就依赖[覆盖优先于具体程度](themes.md#cor-override)：它们同时覆盖 `text`、`axes` 与 `axes.note` 的文字大小，因为只覆盖 `text` 也会放大注释。
+
+## 注册领域角色
+
+<!-- api: agora.mosaickit.guides_themes_3 -->
+
+主题注册表，一开始就含有 `default`。`register(theme)` 加入主题（名称已被使用时引发 `ConfigurationError`），`get(name)` 查询主题，`register_roles(name, roles)` 把带点的领域角色合并到已注册的主题并返回它；不带点的角色引发 `ConfigurationError`，因此领域软件包无法遮蔽内置角色。
+
+<!-- api: agora.mosaickit.guides_themes_4 -->
+
+以类型描述领域软件包角色的方式。`RolePack` 是带有类变量 `_namespace` 的 dataclass；每个不为 `None` 的字段成为角色 `namespace.field`，字段名称中的底线转为点。
+
+```python
+from dataclasses import dataclass
+from typing import ClassVar
+from mosaickit import Stroke, StyleBundle, Theme, expand_roles
+from mosaickit.themes import default
+
+
+@dataclass(frozen=True)
+class MyRoles:
+    _namespace: ClassVar[str] = "mypkg"
+    line: StyleBundle | None = StyleBundle(
+        stroke=Stroke(color="blue", width=2)
+    )
+    line_dashed: StyleBundle | None = None
+
+
+# {"mypkg.line": ...}
+roles = expand_roles(MyRoles())
+mytheme = Theme("mypkg", {**default.roles, **roles})
+```
+
+## 配置
+
+<span id="sec-config"></span>
+
+<!-- api: agora.mosaickit.guides_themes_5 -->
+
+新画布的运行时默认值：主题、规格、渲染器（名称或 `Renderer`）、在主题之后应用的角色覆盖（[解析顺序](themes.md#thm-resolution)中的 $G$），以及调色板。
+
+<!-- api: agora.mosaickit.guides_themes_6 -->
+
+在块内使 `config` 成为生效的配置。此值存于上下文变量（context variable），因此每个线程与异步任务各自看到自己的配置，而传给 `Canvas` 的参数一律优先。
+
+<!-- api: agora.mosaickit.guides_themes_7 -->
+
+读取严格的 TOML 配置。最上层的键为 `theme`（只能是 `"default"`；自定义主题须在 Python 中传入）、`canvas`（`CanvasSpec` 的字段）、`renderer`（只能是 `"matplotlib"`）、`palette` 与 `styles`。其他键、未知的样式、错误的值或无法读取的文件，都引发指明文件与键的 `ConfigurationError`。
+
+```toml
+[canvas]
+x_range = [0, 20]
+dpi = 150
+
+[palette]
+blue = "#0072B2"     # override a default color
+accent = "#984EA3"   # add a new name
+
+[styles."mypkg.boundary".stroke]
+color = "accent"     # a palette name or a "#hex" value
+width = 2
+dash = "dashed"
+```
+
+`[palette]` 表叠加在 `DEFAULT_PALETTE` 之上，因此在此覆盖 `blue` 会改变 `primary` 以及所有引用 `blue` 的地方。样式的 `color` 与 `edge_color` 可以是调色板名称；未知名称在加载文件时（任何画布绘制之前）就引发指明文件与键的 `ConfigurationError`。

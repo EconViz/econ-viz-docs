@@ -12,11 +12,16 @@ from utility_viz import Canvas, levels, solve
 from utility_viz.models import CobbDouglas
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
-eq    = solve(model, px=2.0, py=3.0, income=30.0)
-lvls  = levels.around(eq.utility, n=5)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
+lvls = levels.around(eq.utility, n=5)
 
-cvs = Canvas(x_max=20, y_max=15, x_label="x", y_label="y",
-             title=r"Cobb-Douglas $x^{0.5} y^{0.5}$")
+cvs = Canvas(
+    x_max=20,
+    y_max=15,
+    x_label="x",
+    y_label="y",
+    title=r"Cobb-Douglas $x^{0.5} y^{0.5}$",
+)
 cvs.add_utility(model, levels=lvls)
 cvs.add_budget(2.0, 3.0, 30.0, fill=True)
 cvs.add_equilibrium(eq, show_ray=True)
@@ -33,6 +38,7 @@ cvs.save("cobb_douglas.png")
 
 ```python
 from utility_viz.models import CobbDouglas
+
 model = CobbDouglas(alpha=0.5, beta=0.5)
 ```
 
@@ -42,6 +48,7 @@ model = CobbDouglas(alpha=0.5, beta=0.5)
 
 ```python
 from utility_viz import solve
+
 eq = solve(model, px=2.0, py=3.0, income=30.0)
 print(eq.x, eq.y, round(eq.utility, 3))
 
@@ -52,13 +59,16 @@ print(eq.x, eq.y, round(eq.utility, 3))
 
 ```python
 from utility_viz import levels
-lvls = levels.around(eq.utility, n=5)   # 以最优点为中心的 5 条曲线
+
+# 以最优点为中心的 5 条曲线
+lvls = levels.around(eq.utility, n=5)
 ```
 
 ### 创建画布
 
 ```python
 from utility_viz import Canvas
+
 cvs = Canvas(x_max=20, y_max=15)
 ```
 
@@ -77,15 +87,19 @@ cvs.add_equilibrium(eq, show_ray=True)
 === "位图 / 矢量"
 
     ```python
-    cvs.save("figure.png")    # PNG
-    cvs.save("figure.pdf")    # PDF
-    cvs.save("figure.svg")    # SVG
+    # PNG
+    cvs.save("figure.png")
+    # PDF
+    cvs.save("figure.pdf")
+    # SVG
+    cvs.save("figure.svg")
     ```
 
 === "交互"
 
     ```python
-    cvs.show()   # 交互窗口
+    # 交互窗口
+    cvs.show()
     ```
 
 ## LaTeX 解析
@@ -94,14 +108,14 @@ cvs.add_equilibrium(eq, show_ray=True)
 from utility_viz import parse_latex, Canvas, levels, solve
 
 model = parse_latex(r"x^{0.4} y^{0.6}")
-eq    = solve(model, px=2.0, py=3.0, income=30.0)
-lvls  = levels.around(eq.utility, n=5)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
+lvls = levels.around(eq.utility, n=5)
 
-Canvas(x_max=20, y_max=15) \
-    .add_utility(model, levels=lvls) \
-    .add_budget(2.0, 3.0, 30.0) \
-    .add_equilibrium(eq) \
-    .save("figure.png")
+Canvas(x_max=20, y_max=15).add_utility(
+    model, levels=lvls
+).add_budget(2.0, 3.0, 30.0).add_equilibrium(eq).save(
+    "figure.png"
+)
 ```
 
 ## 多面板图
@@ -123,15 +137,29 @@ fig = Figure(
 )
 
 cases = [
-    (CobbDouglas(alpha=0.5, beta=0.5), 2.0, 3.0, 30.0, r"Before: $p_x=2$"),
-    (CobbDouglas(alpha=0.3, beta=0.7), 4.0, 3.0, 30.0, r"After: $p_x=4$"),
+    (
+        CobbDouglas(alpha=0.5, beta=0.5),
+        2.0,
+        3.0,
+        30.0,
+        r"Before: $p_x=2$",
+    ),
+    (
+        CobbDouglas(alpha=0.3, beta=0.7),
+        4.0,
+        3.0,
+        30.0,
+        r"After: $p_x=4$",
+    ),
 ]
 
 for idx, (model, px, py, income, title) in enumerate(cases):
     eq = solve(model, px=px, py=py, income=income)
     panel = fig[idx]
     panel.ax.set_title(title)
-    panel.add_utility(model, levels=levels.around(eq.utility, n=5))
+    panel.add_utility(
+        model, levels=levels.around(eq.utility, n=5)
+    )
     panel.add_budget(px, py, income, fill=True)
     panel.add_equilibrium(eq, show_ray=True)
 

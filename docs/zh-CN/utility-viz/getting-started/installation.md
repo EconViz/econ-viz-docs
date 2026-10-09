@@ -75,14 +75,8 @@ description: "用 uv 安装 utility-viz Python 包，包含 GIF 动画与 Jupyte
 !!! warning "utility-viz 2.0 目前处于 Beta 阶段"
 
     utility-viz 2.0.0b1 是预发布版本（pre-release）。在 2.0 正式版发布之前，稳定版仍是 `econ-viz` 1.x。
-    预发布版本默认会被跳过，因此下面的命令加上了 `--pre`（pip）或 `--prerelease allow`（uv）。
-    从 `econ-viz` 升级？请见[从 econ-viz 迁移](../migrating.md)。
-
-使用 pip：
-
-```bash
-pip install --pre utility-viz
-```
+    预发布版本默认会被跳过，因此下面的命令加上了 `--prerelease allow`。
+    从 `econ-viz` 升级？请见[迁移指南](../migrating.md)。
 
 使用 uv，创建项目并将 `utility-viz` 添加为依赖：
 

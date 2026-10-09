@@ -10,9 +10,12 @@ description: "用 parse_latex 把 x^{0.4} y^{0.6} 或 \\min(2x, 3y) 这类 LaTeX
 ```python
 from utility_viz import parse_latex
 
-model = parse_latex(r"x^{0.4} y^{0.6}")  # CobbDouglas(alpha=0.4, beta=0.6)
-model = parse_latex(r"\min(2x, 3y)")     # 完全互补模型，a=2.0，b=3.0
-model = parse_latex(r"2x + 3y")          # PerfectSubstitutes(a=2.0, b=3.0)
+# CobbDouglas(alpha=0.4, beta=0.6)
+model = parse_latex(r"x^{0.4} y^{0.6}")
+# 完全互补模型，a=2.0，b=3.0
+model = parse_latex(r"\min(2x, 3y)")
+# PerfectSubstitutes(a=2.0, b=3.0)
+model = parse_latex(r"2x + 3y")
 ```
 
 ## 支持的形式

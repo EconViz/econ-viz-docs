@@ -1,15 +1,12 @@
 ---
-seo_title: "mosaickit 快速开始"
-description: "用 mosaickit 图层组出图形并保存为 SVG，再把参数扫描排成网格。"
+seo_title: "快速入门"
 ---
 
-# 快速开始
+# 快速入门
 
-以下输出都是以 mosaickit 0.5.1 实际运行代码的结果。
+<span id="sec-quickstart"></span>
 
-## 用图层组出图形
-
-`Canvas` 负责存放图层。`quadrant_axes(10, 10)` 提供两条坐标轴，每调用一次 `add()` 就加入一个图层。
+一张图由画布、一组图层与一次保存构成：
 
 ```python
 from mosaickit import (
@@ -39,47 +36,14 @@ canvas.add(
     )
 )
 canvas.add(MarkerLayer([(4, 3)], id="point"))
-canvas.add(TextLayer((4, 3), "A", offset=(8, 8)))
-canvas.save("diagram.svg")
-
-scene = canvas.snapshot()
-print(type(scene).__name__, len(scene.layers), "layers")
+canvas.add(TextLayer((4, 3), "A", offset=(6, 6)))
+canvas.save("diagram.pdf")
 ```
 
-输出：
+<span id="fig-quickstart"></span>
 
-```text
-Scene 6 layers
-```
+![快速入门的图。](../../assets/mosaickit/agora/quickstart/diagram.svg){ .ev-figure-sm }
 
-六个图层是两条坐标轴，加上你加入的四个。`canvas.snapshot()` 会返回不可变的 `Scene`，
-不必渲染就能查看即将绘制的内容。
+`quadrant_axes(10, 10)` 返回一般图层：两条带箭头的路径及其标题。填色图层以 `z_index=-1` 放在最底层。路径是通过各点的折线；`mosaickit` 本身不直接绘制曲线。如果要呈现平滑曲线，必须传入大量采样点，或先用几何软件包构造曲线再采样。文字从该点向右上偏移 6 pt。调用 `save()` 之前不会进行任何绘制；`save()` 会用画布的渲染器（未另行设置时为 Matplotlib）绘制场景、写出文件，并返回输出路径。
 
-![保存的图形](../../assets/mosaickit/diagram.svg){ width="360" }
-
-`save()` 根据扩展名决定格式：PNG、SVG 与 PDF 都由内置的 Matplotlib 渲染器处理。
-
-## 把参数扫描排成网格
-
-`Parameter` 可以代替坐标值。`CanvasGrid.sweep` 会对每个值各渲染一次同一份模板。
-
-```python
-from mosaickit import Canvas, CanvasGrid, Parameter, TextLayer, quadrant_axes
-
-position = Parameter("position", value_type=float)
-template = Canvas().extend(quadrant_axes(10, 10))
-template.add(TextLayer((position, 5), "moving"))
-
-values = position.values([1.0, 3.0, 5.0])
-CanvasGrid.sweep(template, values, cols=3).save("sweep.svg")
-print("wrote sweep.svg")
-```
-
-输出：
-
-```text
-wrote sweep.svg
-```
-
-`Animation.sweep(template, values, fps=2).save("sweep.gif")` 可以把同一份模板变成 GIF
-（GIF 与 MP4 的需求请见[安装](installation.md)）。
+同一个画布可在修改后再次保存：`add()`、`extend()`、`remove()` 与 `clear()` 都会返回画布本身，因此可以链式调用；先前获取的快照则维持原状（详见[画布与场景](guides/canvas.md#sec-canvas)）。能自动避让其他内容的标签也是图层：将 `TextLayer` 换成 `PointLabelLayer((4, 3), "A")`，渲染器就会自行选择放置方向（详见[区域标签与点标签](guides/labels.md#sec-labels)）。

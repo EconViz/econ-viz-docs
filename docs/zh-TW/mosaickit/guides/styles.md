@@ -1,0 +1,127 @@
+---
+seo_title: "樣式與顏色"
+---
+
+# 樣式與顏色
+
+<span id="sec-styles"></span>
+
+## 稀疏樣式
+
+每個樣式都是凍結的 dataclass，且所有欄位都可以是 `None`。`None` 表示繼承：欄位值取自較低優先序的樣式（詳見[主題與設定](themes.md#sec-themes)）。假值不等於 `None`，因此 `opacity=0`、`width=0` 與 `LegendStyle(visible=False)` 都是明確的覆寫。
+
+<span id="def-merge"></span>
+
+!!! abstract "定義 · 稀疏合併"
+
+    設 $a$、$b$ 為同型別、欄位集合為 $F$ 的樣式。樣式 $a \triangleright b$（`a.merged_over(b)`）對每個 $\phi \in F$ 滿足
+
+    $$
+    (a \triangleright b)_\phi = \begin{cases}\begin{aligned}a_\phi & \text{if} a_\phi \ne \text{None}\end{aligned} \\\ \begin{aligned}b_\phi & \text{otherwise}.\end{aligned}\end{cases}
+    $$
+
+    空樣式 $\epsilon$ 的每個欄位都是 `None`。樣式組逐槽合併，`None` 槽視同 $\epsilon$。
+
+<span id="prop-monoid"></span>
+
+!!! abstract "命題 · 合併構成么半群"
+
+    對同型別的樣式 $a, b, c$，
+    (i) $(a \triangleright b) \triangleright c = a \triangleright (b \triangleright c)$；
+    (ii) $\epsilon \triangleright a = a \triangleright \epsilon = a$；
+    (iii) $a \triangleright a = a$。
+    逐欄來看，$a_1 \triangleright \cdots \triangleright a_n$ 取第一個不是 `None` 的值。
+
+因此，多個樣式無論如何分組合併，結果都一樣。可將它們視為一份優先順序清單：某欄位的值取自第一個設定該欄位的來源。
+
+<!-- api: agora.mosaickit.guides_styles_1 -->
+
+[稀疏合併](styles.md#def-merge)的合併。不同型別的樣式引發 `TypeError`。
+
+## 樣式型別
+
+<!-- api: agora.mosaickit.guides_styles_2 -->
+
+線條樣式。`width` 以點為單位；`dash` 為 `DashStyle`（`SOLID`、`DASHED`、`DOTTED`、`DASHDOT`）；`arrow` 為 `ArrowStyle`（`OPEN`、`TRIANGLE`、`FANCY`、`WEDGE`），畫在圖層的 `ArrowPlacement`（`START`、`END`、`BOTH`）處。
+
+<!-- api: agora.mosaickit.guides_styles_3 -->
+
+區域內部的填色樣式；`hatch` 為 Matplotlib 的網紋樣式，例如 `"//"`，`""` 表示無網紋。
+
+<!-- api: agora.mosaickit.guides_styles_4 -->
+
+點標記樣式。`size` 是以平方點計的面積，與 Matplotlib 的 `scatter` 相同（36 對應 6 pt 圓點）；`shape` 為 Matplotlib 標記，例如 `"o"`、`"s"` 或 `"X"`。
+
+<!-- api: agora.mosaickit.guides_styles_5 -->
+
+文字樣式。`size` 以點為單位，`family` 為字型家族名稱，`weight` 例如 `"bold"`，`rotation` 為逆時針旋轉的角度（度）。
+
+<!-- api: agora.mosaickit.guides_styles_6 -->
+
+圖例樣式：包括 Matplotlib 的位置名稱（例如 `"best"` 或 `"upper right"`）、外框與字級。
+
+建立樣式時會檢查大小、寬度與透明度：大小必須是有限的非負數，透明度必須在 $[0, 1]$ 內，旋轉角度也必須是有限值。
+
+<span id="tab-primitive"></span>
+
+| 樣式 | 值 |
+| --- | --- |
+| `Stroke` | `grey-800`、寬 1.5、實線、透明度 1 |
+| `Fill` | `grey-200`、透明度 0.3、無網紋 |
+| `Marker` | `grey-800`、大小 36、`"o"`、透明度 1、邊框 `grey-800` 寬 0 |
+| `TextStyle` | `grey-900`、12 pt、DejaVu Sans、一般字重、透明度 1、不旋轉 |
+| `LegendStyle` | 顯示、位置 `"best"`、無外框、10 pt |
+
+## 顏色
+
+<!-- api: agora.mosaickit.guides_styles_7 -->
+
+不可變的 RGBA 顏色，各通道在 $[0, 1]$ 內。`channels` 回傳四個值，`from_channels()` 建立顏色，`to_hex(include_alpha=None)` 寫出 `#RRGGBB`，當 `include_alpha` 為真、或預設情況下 alpha 不為 1 時加上 `AA`。`TRANSPARENT` 為 `Color(0, 0, 0, 0)`。
+
+<span id="prop-hex"></span>
+
+!!! abstract "命題 · 十六進位往返"
+
+    對每個由十六進位數字組成、形如 `#RRGGBB` 或 `#RRGGBBAA` 的字串 $h$，`Color.from_hex(h).to_hex(include_alpha=len(h) == 9)` 等於 $h$ 的大寫形式。三位數的 `#RGB` 讀作 `#RRGGBB`。
+
+樣式的 `color` 或 `edge_color` 接受 `Color`、`"#hex"` 字串（立即解析），或其他任何字串，後者保留為*色盤名稱*。
+
+## 色盤
+
+<!-- api: agora.mosaickit.guides_styles_8 -->
+
+具名的顏色表。值可以是 `Color` 或十六進位字串；`palette[name]` 用來查詢顏色，名稱不存在時會引發指名該色盤的 `ConfigurationError`；`name in palette` 用來檢查名稱是否存在。
+
+<span id="tab-palette"></span>
+
+| 名稱 | 值 | 預設主題中的用途 |
+| --- | --- | --- |
+| `grey-900` | `#222222` | 文字 |
+| `grey-800` | `#333333` | 線條、標記、座標軸 |
+| `grey-600` | `#666666` | 座標軸註記 |
+| `grey-400` | `#999999` | 輔助線 |
+| `grey-200` | `#CCCCCC` | 填色 |
+| `grey-100` | `#E6E6E6` |  |
+| `white` | `#FFFFFF` | 畫布背景 |
+| `blue` | `#01A2D9` | `primary` |
+| `red` | `#E3120B` | `secondary` |
+| `teal` | `#00887D` | `accent` |
+
+主題與樣式以名稱指定顏色。畫布建立繪製計畫時，才會從生效的色盤（`Config.palette`）中查詢這些名稱，因此繪製器只會收到具體顏色。只要在色盤中修改一次顏色，所有指定該顏色的角色都會隨之改變。色盤若缺少某個名稱，繪製時會引發 `ConfigurationError`，訊息會指明角色、樣式欄位與色盤。Python 的 `Palette` 會取代預設色盤，因此應以 `DEFAULT_PALETTE.colors` 為基礎建立，才能保留內建主題所用的名稱：
+
+```python
+from mosaickit import (
+    DEFAULT_PALETTE,
+    Canvas,
+    Config,
+    Palette,
+    use_config,
+)
+
+brand = Palette(
+    "brand", {**DEFAULT_PALETTE.colors, "blue": "#0072B2"}
+)
+with use_config(Config(palette=brand)):
+    # primary now draws in #0072B2
+    canvas = Canvas()
+```

@@ -1,50 +1,37 @@
 ---
-seo_title: "安裝 mosaickit"
-description: "用 pip 或 uv 安裝 mosaickit，了解 GIF 與 MP4 輸出的需求，並設定開發環境。"
+seo_title: "安裝"
 ---
 
 # 安裝
 
+<span id="sec-install"></span>
+
 ## 系統需求
 
-- [Python](https://www.python.org/downloads/) 3.10 以上（專案支援 3.10 至 3.13）
-
-安裝 mosaickit 時會一併安裝 `numpy` 與 `matplotlib`，Python 3.10 另外會安裝 `tomli`。
+`mosaickit` 需要 Python 3.10 以上、`NumPy` 1.24 以上與 `Matplotlib` 3.6 以上（4 以下）；在 Python 3.10 上還會安裝 `tomli` 來讀取 TOML。GIF 輸出使用 `Pillow`，Matplotlib 本身已依賴此套件；MP4 輸出則需要 `PATH` 中有 `ffmpeg`。
 
 ## 安裝套件
 
-=== ":simple-pypi: pip"
-
-    ```bash
-    pip install mosaickit
-    ```
-
-=== ":simple-uv: uv"
-
-    ```bash
-    uv add mosaickit
-    ```
-
-本頁對應 mosaickit 0.5.1。
-
-## 動畫輸出
-
-`Animation` 以 Pillow 輸出 GIF，而 Pillow 會隨 Matplotlib 一起安裝，所以正常安裝後就能輸出 GIF。
-輸出 MP4 則需要 `PATH` 中有 `ffmpeg`。
-
-## 驗證安裝
-
 ```bash
-python -c "import mosaickit; print(mosaickit.__version__)"
+uv add mosaickit                 # the library
+uv add "mosaickit==0.5.1"        # the version this manual describes
 ```
 
-本文件對應的版本會印出 `0.5.1`。
+若使用 `pip`，請執行 `python -m pip install mosaickit`。匯入 `mosaickit` 時不會一併匯入 Matplotlib：內建繪製器要到畫布第一次繪製時，才會依名稱載入（詳見[繪製](guides/rendering.md#sec-rendering)）。
 
-## 開發環境設定
+## 開發環境
 
 ```bash
 git clone https://github.com/EconViz/mosaickit.git
 cd mosaickit
 uv sync --locked
+uv run pre-commit install
 uv run pytest
+uv run ruff check .
+uv run ruff format --check .
+uv run mypy
+uv run lint-imports
+uv build
 ```
+
+鎖定檔固定了所有開發相依套件的版本。持續整合流程會在 Python 3.10、3.11、3.12 與 3.13 上執行相同命令，再將建置完成的 wheel 安裝到乾淨環境，確認其中不含 `bezierkit`，最後以該 wheel 執行測試。匯入規則維持分層：場景、樣式、主題與參數模組不會匯入繪製與畫布模組，核心也不會匯入任何領域套件。

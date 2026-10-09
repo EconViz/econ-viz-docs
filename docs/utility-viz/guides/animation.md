@@ -28,6 +28,7 @@ from utility_viz import Canvas, levels, solve
 from utility_viz.animation import Animator
 from utility_viz.models import CobbDouglas
 
+
 def draw(px: float) -> Canvas:
     model = CobbDouglas(alpha=0.5, beta=0.5)
     eq = solve(model, px=px, py=2.0, income=20.0)
@@ -35,14 +36,17 @@ def draw(px: float) -> Canvas:
 
     return (
         Canvas(
-            x_max=14, y_max=12,
-            x_label="X_1", y_label="X_2",
-            title="Price sweep"
+            x_max=14,
+            y_max=12,
+            x_label="X_1",
+            y_label="X_2",
+            title="Price sweep",
         )
         .add_utility(model, levels=lvls)
         .add_budget(px=px, py=2.0, income=20.0, fill=True)
         .add_equilibrium(eq, show_ray=True, drop_dashes=True)
     )
+
 
 Animator(draw, frames=np.linspace(1.0, 6.0, 45)).save(
     "price_sweep.gif",

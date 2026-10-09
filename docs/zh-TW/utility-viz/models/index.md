@@ -378,7 +378,9 @@ description: "比較 utility-viz 支援的核心效用模型，包含公式、�
 
     (
         Canvas(x_max=12, y_max=10, title="Satiation")
-        .add_utility(model, levels=levels.percentile(model(X, Y), n=5))
+        .add_utility(
+            model, levels=levels.percentile(model(X, Y), n=5)
+        )
         .save("satiation.png")
     )
     ```

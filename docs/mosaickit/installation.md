@@ -1,44 +1,29 @@
 ---
-seo_title: "Install mosaickit"
-description: "Install mosaickit with pip or uv, enable GIF and MP4 output, and set up a development environment."
+seo_title: "Installation"
 ---
 
 # Installation
 
+<span id="sec-install"></span>
+
 ## Requirements
 
-- [Python](https://www.python.org/downloads/) 3.10 or later (the project supports 3.10 to 3.13)
+`mosaickit` requires Python 3.10 or later, `NumPy`
+1.24 or later and `Matplotlib` 3.6 or later (below 4). On Python 3.10,
+it also installs `tomli` to read TOML. GIF output uses `Pillow`,
+which Matplotlib already depends on. MP4 output needs `ffmpeg` on the
+`PATH`.
 
-mosaickit installs `numpy` and `matplotlib` as dependencies, plus `tomli` on Python 3.10.
-
-## Install
-
-=== ":simple-pypi: pip"
-
-    ```bash
-    pip install mosaickit
-    ```
-
-=== ":simple-uv: uv"
-
-    ```bash
-    uv add mosaickit
-    ```
-
-This page describes mosaickit 0.5.1.
-
-## Animation output
-
-`Animation` writes GIF files with Pillow, which comes along with Matplotlib, so GIF output works after a plain
-install. MP4 output requires `ffmpeg` on your `PATH`.
-
-## Verify the installation
+## Installing the package
 
 ```bash
-python -c "import mosaickit; print(mosaickit.__version__)"
+uv add mosaickit                 # the library
+uv add "mosaickit==0.5.1"        # the version this manual describes
 ```
 
-This prints `0.5.1` for the version described here.
+With `pip`, use `python -m pip install mosaickit`. Importing
+`mosaickit` does not import Matplotlib: the built-in renderer is loaded by
+name the first time a canvas renders ([Rendering](guides/rendering.md#sec-rendering)).
 
 ## Development setup
 
@@ -46,5 +31,18 @@ This prints `0.5.1` for the version described here.
 git clone https://github.com/EconViz/mosaickit.git
 cd mosaickit
 uv sync --locked
+uv run pre-commit install
 uv run pytest
+uv run ruff check .
+uv run ruff format --check .
+uv run mypy
+uv run lint-imports
+uv build
 ```
+
+The lockfile pins every development dependency. The continuous-integration
+workflow runs the same commands on Python 3.10, 3.11, 3.12 and 3.13. It then
+installs the built wheel into a clean environment, checks that `bezierkit`
+is absent, and runs the test suite against the wheel. Import contracts enforce
+the module boundaries: scenes, styles, themes and parameters never import the
+rendering or canvas modules, and the core never imports a domain package.

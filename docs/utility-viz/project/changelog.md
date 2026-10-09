@@ -1,17 +1,37 @@
 ---
 seo_title: "Changelog"
-description: "Release history of the econ-viz Python package: new features, fixes, and changes in each version."
+description: "Release history of the utility-viz Python package (formerly econ-viz): new features, fixes, and changes in each version."
 ---
 
 # Changelog
 
-Release history of `econ-viz`. Documentation-only changes are not listed.
+Release history of `utility-viz`, formerly `econ-viz`. Documentation-only changes are not listed.
 
 <table class="ev-changelog">
   <thead>
   <tr><th>Version</th><th>Changes</th></tr>
   </thead>
   <tbody>
+  <tr id="v200b1">
+    <td class="ev-changelog__version"><strong>v2.0.0b1</strong><br><span>2026-10-04</span></td>
+    <td>
+      <p class="ev-changelog__type">Changes</p>
+      <ul>
+        <li>Renamed from <code>econ-viz</code> to <code>utility-viz</code>: distribution, <code>utility_viz</code> import, <code>utility-viz</code> command, and <code>utility-viz.toml</code> config file (section names unchanged)</li>
+        <li>This is a pre-release; install it with <code>--prerelease allow</code></li>
+      </ul>
+      <p class="ev-changelog__type">Features</p>
+      <ul>
+        <li><code>utility-viz init --migrate</code> writes <code>utility-viz.toml</code> from <code>econ-viz.toml</code> and keeps the old file</li>
+        <li>Config lookup tries an explicit path, then <code>utility-viz.toml</code>, then legacy <code>econ-viz.toml</code> (with a warning)</li>
+      </ul>
+      <p class="ev-changelog__type">Compatibility</p>
+      <ul>
+        <li><code>econ-viz</code> 2.x is a thin compatibility distribution that installs <code>utility-viz</code> of the same version</li>
+        <li><code>econ_viz</code> and the <code>econ-viz</code> command keep working and emit deprecation warnings; they are removed in 3.0.0</li>
+      </ul>
+    </td>
+  </tr>
   <tr id="v1120">
     <td class="ev-changelog__version"><strong>v1.12.0</strong><br><span>2026-09-26</span></td>
     <td>
@@ -19,7 +39,7 @@ Release history of `econ-viz`. Documentation-only changes are not listed.
       <ul>
         <li><code>highlight_level</code> emphasizes one focal indifference curve while the remaining levels use a subdued secondary style</li>
         <li><code>secondary_stroke</code> and theme fields control secondary curve colour, width, and opacity</li>
-        <li>Numeric and ordinal labels (<i>u</i><sub>1</sub>, <i>u</i><sub>2</sub>, ...) follow the local curve angle and avoid the plot boundary</li>
+        <li>Numeric and ordinal labels ($u_1$, $u_2$, ...) follow the local curve angle and avoid the plot boundary</li>
       </ul>
       <p class="ev-changelog__type">Changes</p>
       <ul>
@@ -74,7 +94,7 @@ Release history of `econ-viz`. Documentation-only changes are not listed.
     <td>
       <p class="ev-changelog__type">Features</p>
       <ul>
-        <li>Price-effect decompositions draw their indifference curves by default: U<sub>0</sub> through A, U<sub>1</sub> through C, and the curve through B under Slutsky</li>
+        <li>Price-effect decompositions draw their indifference curves by default: $U_0$ through A, $U_1$ through C, and the curve through B under Slutsky</li>
         <li><code>Haagsma</code> utility model with an always-inferior good that becomes Giffen at high enough income</li>
         <li><code>Legend</code> placed automatically where it covers the least of the diagram, or at a chosen corner or side</li>
         <li><code>Label</code> for every text element: axis labels, origin, titles, effect labels, Edgeworth box text</li>

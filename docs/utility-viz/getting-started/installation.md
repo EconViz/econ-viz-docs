@@ -75,14 +75,8 @@ Alternatively, use a package manager:
 !!! warning "utility-viz 2.0 is in beta"
 
     utility-viz 2.0.0b1 is a pre-release. The stable line stays `econ-viz` 1.x until 2.0 final is released.
-    Pre-releases are skipped by default, so the commands below pass `--pre` (pip) or `--prerelease allow` (uv).
-    Coming from `econ-viz`? See [Migrating from econ-viz](../migrating.md).
-
-With pip:
-
-```bash
-pip install --pre utility-viz
-```
+    Pre-releases are skipped by default, so the commands below pass `--prerelease allow`.
+    Coming from `econ-viz`? See [Migration guide](../migrating.md).
 
 With uv, create a project and add it as a dependency:
 

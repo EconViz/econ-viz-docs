@@ -26,20 +26,26 @@ from utility_viz import Canvas, levels, solve
 from utility_viz.interactive import WidgetViewer
 from utility_viz.models import CobbDouglas
 
+
 def draw(alpha: float, px: float) -> Canvas:
     model = CobbDouglas(alpha=alpha, beta=1.0 - alpha)
     eq = solve(model, px=px, py=2.0, income=20.0)
 
     return (
         Canvas(
-            x_max=14, y_max=12,
-            x_label="X_1", y_label="X_2",
-            title="Interactive equilibrium"
+            x_max=14,
+            y_max=12,
+            x_label="X_1",
+            y_label="X_2",
+            title="Interactive equilibrium",
         )
-        .add_utility(model, levels=levels.around(eq.utility, n=5))
+        .add_utility(
+            model, levels=levels.around(eq.utility, n=5)
+        )
         .add_budget(px=px, py=2.0, income=20.0, fill=True)
         .add_equilibrium(eq, show_ray=True, drop_dashes=True)
     )
+
 
 WidgetViewer(
     draw,
@@ -71,5 +77,7 @@ WidgetViewer(
 
 根据教学场景选择合适的呈现方式：
 
-- 学生需要输入或拖动参数、一次检查一个状态时，用 `WidgetViewer`。
-- 想在演示文稿、文文件或项目网站中呈现固定、可重复播放的变动过程时，用 `Animator`。
+| 工具 | 适用情境 |
+|------|------|
+| `WidgetViewer` | 学生需要输入或拖动参数、一次检查一个状态 |
+| `Animator` | 想在演示文稿、文文件或项目网站中呈现固定、可重复播放的变动过程 |

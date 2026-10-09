@@ -3,33 +3,80 @@ seo_title: "mosaickit：与领域无关的图形场景与渲染工具包"
 description: "mosaickit 是与领域无关的 Python 工具包，用场景、图层、样式、参数与渲染器组合出二维图形。"
 ---
 
-# mosaickit
+<h1 class="ev-visually-hidden">mosaickit：与领域无关的图形场景与渲染</h1>
 
-`mosaickit` 是与领域无关的工具包，用可复用的场景、图层、样式、参数与渲染器组合出二维图形。
+<p align="center">
+  <img src="../../assets/mosaickit/banner.svg" alt="mosaickit" style="max-width: 480px; width: 100%; margin: 2rem 0 1rem;">
+</p>
 
-领域包负责定义自己的模型与语义角色，mosaickit 则负责组合它们的视觉图层并完成渲染。
-mosaickit 对任何领域一无所知，也不依赖模型包或曲线拟合包。
+<p align="center"><em>与领域无关的 Python 工具包，用来组合二维图形。</em></p>
 
-![用 mosaickit 图层组成的图形](../../assets/mosaickit/diagram.svg){ width="360" }
+<p align="center">
+  <a href="https://pypi.org/project/mosaickit/"><img alt="PyPI" src="https://img.shields.io/pypi/v/mosaickit?style=flat-square&label=pypi+package&color=181818&labelColor=f3f3f3&cacheSeconds=300"></a>
+  <a href="https://pypi.org/project/mosaickit/"><img alt="Python" src="https://img.shields.io/pypi/pyversions/mosaickit?style=flat-square&color=181818&labelColor=f3f3f3"></a>
+  <a href="https://opensource.org/licenses/MIT"><img alt="License" src="https://img.shields.io/badge/License-MIT-181818?style=flat-square&color=181818&labelColor=f3f3f3"></a>
+</p>
 
-| | |
-|---|---|
-| 本文档对应版本 | 0.5.1 |
-| Python | 3.10 以上（项目支持 3.10 至 3.13） |
-| 依赖 | numpy、matplotlib（Python 3.10 另需 tomli） |
-| 被谁使用 | [utility-viz](../utility-viz/index.md)、[principle-viz](../principle-viz/index.md) |
-| 源代码 | [github.com/EconViz/mosaickit](https://github.com/EconViz/mosaickit) |
-| 许可证 | MIT |
+```python
+from mosaickit import (
+    Canvas,
+    Fill,
+    FillLayer,
+    MarkerLayer,
+    PathLayer,
+    Stroke,
+    TextLayer,
+    quadrant_axes,
+)
 
-## 功能范围
+canvas = Canvas().extend(quadrant_axes(10, 10))
+canvas.add(
+    FillLayer(
+        [(1, 1), (1, 7), (8, 1)],
+        fill=Fill(color="#377EB8", opacity=0.12),
+        z_index=-1,
+    )
+)
+canvas.add(
+    PathLayer(
+        [(1, 8), (2, 5), (4, 3), (7, 1.5), (9, 1)],
+        stroke=Stroke(color="#984EA3", width=2),
+    )
+)
+canvas.add(MarkerLayer([(4, 3)]))
+canvas.add(TextLayer((4, 3), "A", offset=(8, 8)))
+canvas.save("diagram.svg")
+```
 
-- 精简的场景图：`PathLayer`、`FillLayer`、`MarkerLayer`、`TextLayer`、`ArrowLayer`、`LegendLayer` 与 `GroupLayer`
-- 不会盖住其他元素的标签（`RegionLabelLayer`、`PointLabelLayer`），以及坐标轴上的标注
-  （`AxisMarkLayer`、`AxisNoteLayer`、`BraceLayer`、`SpanBraceLayer`）
-- 坐标轴辅助函数，例如 `quadrant_axes()`、`crosshair_axes()` 与 `box_frame()`
-- 样式、主题与调色板，颜色可以用名称指定
-- 参数与表达式、`CanvasGrid` 网格布局，以及 `Animation` 动画扫描
-- 内置的 Matplotlib 渲染器（输出 PNG、SVG、PDF），并提供 `Renderer` 协议以接入其他后端
+## 功能特色
+
+<div class="grid cards" markdown>
+
+-   :material-layers-outline: **精简的场景图**
+
+    `PathLayer`、`FillLayer`、`MarkerLayer`、`TextLayer`、`ArrowLayer`、`LegendLayer` 与 `GroupLayer`。
+
+-   :material-label-outline: **不遮住图形的标签**
+
+    `RegionLabelLayer` 与 `PointLabelLayer` 自动避开图形，另有轴上标记、注记与大括号。
+
+-   :material-axis-arrow: **坐标轴辅助函数**
+
+    `quadrant_axes()`、`crosshair_axes()` 与 `box_frame()` 快速建立常见的坐标框架。
+
+-   :material-palette-outline: **样式与主题**
+
+    样式、主题与调色板，颜色可直接用名称指定。
+
+-   :material-view-grid-outline: **参数与网格排版**
+
+    参数与表达式、`CanvasGrid` 布局与 `Animation` 扫描。
+
+-   :material-file-image-outline: **可替换的渲染器**
+
+    内置 Matplotlib 渲染器输出 PNG、SVG 与 PDF，并提供 `Renderer` 协议供其他后端使用。
+
+</div>
 
 ## 范围
 
@@ -37,20 +84,33 @@ mosaickit 负责与领域无关的场景组合、样式、主题、参数绑定�
 以及静态与动态输出。领域语义则属于构造在它之上的包。曲线构造与原生 TikZ 路径生成，
 属于 [bezierkit](../bezierkit/index.md) 这类几何包的工作。
 
-## 接下来
+## 安装
 
-<div class="grid cards" markdown>
+```bash
+uv add mosaickit
+```
 
--   :material-download: **安装**
+需要 Python 3.10 以上。可选功能与开发环境请见[安装](installation.md)，或直接看[快速入门](quickstart.md)。
 
-    用 pip 或 uv 安装包。
+<!-- agora-navigation -->
 
-    [:octicons-arrow-right-24: 安装](installation.md)
+## 文档导航
 
--   :material-rocket-launch-outline: **快速开始**
+以下章节涵盖 mosaickit 0.5.1。
 
-    用图层组出画布，并保存为 SVG。
+- [简介](guides/introduction.md)
+- [安装](installation.md)
+- [快速入门](quickstart.md)
+- [画布与场景](guides/canvas.md)
+- [图层与坐标轴](guides/layers.md)
+- [坐标轴注释](guides/annotations.md)
+- [布局几何](guides/geometry.md)
+- [区域标签与点标签](guides/labels.md)
+- [样式与颜色](guides/styles.md)
+- [主题与配置](guides/themes.md)
+- [参数、网格与动画](guides/parameters.md)
+- [绘制](guides/rendering.md)
+- [证明](project/proofs.md)
+- [更新记录](project/changelog.md)
 
-    [:octicons-arrow-right-24: 快速开始](quickstart.md)
-
-</div>
+<!-- /agora-navigation -->

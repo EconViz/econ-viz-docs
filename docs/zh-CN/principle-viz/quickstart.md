@@ -1,94 +1,103 @@
 ---
-seo_title: "principle-viz 快速开始"
-description: "用 principle-viz 求解线性市场均衡、比较从量税的效果，并画出供需图。"
+seo_title: "快速开始"
 ---
 
 # 快速开始
 
-以下输出都是以 principle-viz 0.10.0 实际运行代码的结果。
+<span id="sec-quickstart"></span>
 
-## 求解并绘制市场
+## 基本范例
 
-需求为 `P = 10 - Q`，供给为 `P = 2 + Q`。`Line.from_inverse(intercept, slope)` 以反函数形式
-`P = intercept + slope * Q` 创建直线。
+本章以一个市场说明完整流程，后续各章也沿用这个市场：
+
+$$
+\begin{aligned}\text{需求：} & \quad p = 10 - Q, \\ \text{供给：} & \quad p = 2 + Q.\end{aligned}
+$$
 
 ```python
-from principle_viz.core.equilibrium import solve_equilibrium
-from principle_viz.core.line import Line
-from principle_viz.plot.figure import MarketFigure
+from principle_viz import (
+    MarketFigure,
+    line_from_inverse,
+    solve_equilibrium,
+)
 
-demand = Line.from_inverse(10.0, -1.0)  # P = 10 - Q
-supply = Line.from_inverse(2.0, 1.0)  # P = 2 + Q
+# p = 10 - Q
+demand = line_from_inverse(10.0, -1.0)
+# p = 2 + Q
+supply = line_from_inverse(2.0, 1.0)
 eq = solve_equilibrium(demand, supply)
-print(eq)
+# 4.0 6.0
+print(eq.q_star, eq.p_star)
 
-fig = MarketFigure(x_max=12, y_max=12, title="Basic Equilibrium")
+fig = MarketFigure(
+    x_max=12, y_max=12, title="Basic Equilibrium"
+)
 fig.add_curves(demand, supply, q_max=10)
 fig.add_equilibrium(eq)
 fig.finalize()
 fig.save("basic_equilibrium.png")
-fig.close()
 ```
 
-输出：
+<span id="fig-quickstart"></span>
 
-```text
-EquilibriumResult(q_star=4.0, p_star=6.0, is_valid_market=True, notes=())
-```
+![本章的市场（省略标题）。](../../assets/principle-viz/agora/quickstart/equilibrium.svg){ .ev-figure-sm }
 
-![基本均衡图](../../assets/principle-viz/basic_equilibrium.png){ width="360" }
+由 $10 - Q = 2 + Q$ 得 $Q^* = 4$、$p^* = 6$。输出参见[本章的市场（省略标题）。](quickstart.md#fig-quickstart)。
 
-## 比较税收效果
+## 逐步说明
 
-`compare_tax_scenario` 会分别求解征税前后的市场。这里是对生产者征收每单位 1 的从量税。
+每张图依序经过描述市场、求解、绘图、完成并保存四个步骤。
+
+<!-- api: agora.principle_viz.quickstart_1 -->
+
+描述市场。`line_from_inverse(a, b)` 创建直线 $p = a + b Q$（详见[线性市场](guides/markets.md#sec-markets)）。
+
+<!-- api: agora.principle_viz.quickstart_2 -->
+
+求解。`solve_equilibrium()` 等求解函数返回由数值组成的不可变 dataclass，此时尚未绘图。
+
+<!-- api: agora.principle_viz.quickstart_3 -->
+
+绘图。`MarketFigure` 是含价格轴与数量轴的正方形图。坐标范围只控制显示区域，不参与计算；均衡点未出现在图中时，检查 `eq.q_star` 与 `eq.p_star` 是否超出范围，再调整坐标上限。
+
+<!-- api: agora.principle_viz.quickstart_4 -->
+
+`add_*` 方法接收曲线与结果，加入对应的图层；每个方法都返回图形本身，可串接调用。
+
+<!-- api: agora.principle_viz.quickstart_5 -->
+
+完成并保存。`finalize()` 隐藏会把阴影面积切成两半的辅助线；`save()` 依扩展名写出 PNG、SVG 或 PDF，并创建不存在的目录（详见[图形](guides/figures.md#sec-figures)）。
+
+计算与绘图互不依赖：结果可以不经绘图直接打印、比较或导出，同一个结果也可以画在多张图上。
+
+## 结果
+
+结果是不可变的 dataclass，字段为浮点数、字符串与 tuple。`solve_equilibrium()` 返回 `EquilibriumResult`：
+
+## 检查输入与求解失败
+
+<!-- api: agora.principle_viz.quickstart_6 -->
+
+软件包抛出的所有异常都继承自 `principle_viz.exceptions` 中的 `PrincipleVizError`，捕获它即可一并处理（各异常详见[异常](guides/markets.md#sec-errors)）。
+
+两条直线平行时没有均衡，`solve_equilibrium()` 抛出 `ParallelLinesError`，不会返回无效的结果：
 
 ```python
-from principle_viz.core.line import Line
-from principle_viz.policy.analysis import compare_tax_scenario
-from principle_viz.policy.tax import TaxOn, TaxScenario, TaxType
+from principle_viz import line_from_inverse, solve_equilibrium
+from principle_viz.exceptions import PrincipleVizError
 
-demand = Line.from_inverse(10.0, -1.0)
-supply = Line.from_inverse(2.0, 1.0)
+demand = line_from_inverse(10.0, -1.0)
+# parallel to demand
+supply = line_from_inverse(8.0, -1.0)
 
-scenario = TaxScenario(tax_type=TaxType.PER_UNIT_TAX, amount=1.0, tax_on=TaxOn.PRODUCER)
-result = compare_tax_scenario(demand, supply, scenario)
+try:
+    eq = solve_equilibrium(demand, supply)
+except PrincipleVizError as error:
+    print(type(error).__name__)
+else:
+    print(eq.q_star, eq.p_star)
 
-print(f"before tax: Q = {result.baseline_equilibrium.q_star}, P = {result.baseline_equilibrium.p_star}")
-print(f"after tax:  Q = {result.post_tax.q_star}")
-print(f"buyers pay {result.post_tax.consumer_price}, sellers keep {result.post_tax.producer_price}")
-print(f"tax revenue = {result.post_tax.tax_revenue}")
+# ParallelLinesError
 ```
 
-输出：
-
-```text
-before tax: Q = 4.0, P = 6.0
-after tax:  Q = 3.5
-buyers pay 6.5, sellers keep 5.5
-tax revenue = 3.5
-```
-
-`TaxType` 另有 `FIXED_TAX`（定额）与 `AD_VALOREM_TAX`（从价）；`TaxOn` 为 `CONSUMER` 或 `PRODUCER`。
-若要把税收画在图上，请使用 `MarketFigure.add_tax_transform`。
-
-## 命令行
-
-不写 Python 也能求解同一个市场：
-
-```bash
-principle-viz equilibrium \
-  --demand-intercept 10 --demand-slope -1 \
-  --supply-intercept 2 --supply-slope 1
-```
-
-```json
-{
-  "q_star": 4.0,
-  "p_star": 6.0,
-  "is_valid_market": true,
-  "notes": []
-}
-```
-
-上面的税收情境对应 `principle-viz tax`，加上 `--tax-type per_unit --amount 1 --tax-on producer`，
-会以 JSON 输出征税前后的均衡。
+均衡数量为负时不抛出异常，而是将 `is_valid_market` 设为 `False`。使用结果前，先检查 `is_valid_market` 与 `notes`。

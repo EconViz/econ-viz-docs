@@ -7,11 +7,13 @@ description: "Build multi-panel figures, demand diagrams, price-effect decomposi
 
 `utility-viz` now includes higher-level teaching primitives on top of `Canvas`:
 
-- `Figure` for multi-panel layouts
-- `PricePath` and `IncomePath` for budget / equilibrium sweeps
-- `DemandDiagram` for linked goods-space and Marshallian-demand views
-- `decompose_price_effect(...)` for Hicks and Slutsky decomposition
-- `EdgeworthBox` for two-consumer exchange diagrams
+| Tool | Use it for |
+|------|------|
+| `Figure` | Multi-panel layouts |
+| `PricePath`, `IncomePath` | Budget / equilibrium sweeps |
+| `DemandDiagram` | Linked goods-space and Marshallian-demand views |
+| `decompose_price_effect(...)` | Hicks and Slutsky decomposition |
+| `EdgeworthBox` | Two-consumer exchange diagrams |
 
 ## Multi-panel figures {#multi-panel-figure data-toc-label="Multi-panel figures"}
 
@@ -32,15 +34,29 @@ fig = Figure(
 )
 
 cases = [
-    (CobbDouglas(alpha=0.5, beta=0.5), 2.0, 3.0, 30.0, r"Before: $p_x=2$"),
-    (CobbDouglas(alpha=0.3, beta=0.7), 4.0, 3.0, 30.0, r"After: $p_x=4$"),
+    (
+        CobbDouglas(alpha=0.5, beta=0.5),
+        2.0,
+        3.0,
+        30.0,
+        r"Before: $p_x=2$",
+    ),
+    (
+        CobbDouglas(alpha=0.3, beta=0.7),
+        4.0,
+        3.0,
+        30.0,
+        r"After: $p_x=4$",
+    ),
 ]
 
 for idx, (model, px, py, income, title) in enumerate(cases):
     eq = solve(model, px=px, py=py, income=income)
     panel = fig[idx]
     panel.ax.set_title(title)
-    panel.add_utility(model, levels=levels.around(eq.utility, n=5), label="IC")
+    panel.add_utility(
+        model, levels=levels.around(eq.utility, n=5), label="IC"
+    )
     panel.add_budget(px, py, income, fill=True, label="BC")
     panel.add_equilibrium(eq, show_ray=True)
 
@@ -54,13 +70,15 @@ fig.save("figure_side_by_side.png")
 
 `Figure` supports these layouts:
 
-- `Layout.SINGLE`
-- `Layout.STACKED`
-- `Layout.SIDE_BY_SIDE`
-- `Layout.TOP_TWO_BOTTOM_ONE`
-- `Layout.TOP_ONE_BOTTOM_TWO`
-- `Layout.GRID_2X2`
-- `Layout.GRID_3X3`
+| Layout | Panels | Arrangement |
+|--------|--------|--------|
+| `Layout.SINGLE` | 1 | One full-size panel |
+| `Layout.STACKED` | 2 | Two panels, one above the other |
+| `Layout.SIDE_BY_SIDE` | 2 | Two panels, left and right |
+| `Layout.TOP_TWO_BOTTOM_ONE` | 3 | Two panels on top, one below |
+| `Layout.TOP_ONE_BOTTOM_TWO` | 3 | One panel on top, two below |
+| `Layout.GRID_2X2` | 4 | 2 × 2 grid |
+| `Layout.GRID_3X3` | 9 | 3 × 3 grid |
 
 `Figure[idx]` returns a panel `Canvas`, so the drawing API is the same once the layout exists.
 
@@ -186,7 +204,9 @@ from utility_viz import Effect, Label
 
 canvas.add_decomposition(
     result,
-    substitution=Effect(color="#E67E22", label="SE", label_position="top"),
+    substitution=Effect(
+        color="#E67E22", label="SE", label_position="top"
+    ),
     income=Effect(color="#27AE60", label="IE"),
     point_label=Label(visible=False),
 )
@@ -200,9 +220,12 @@ from utility_viz import Label, Legend, Stroke
 
 canvas.add_decomposition(
     result,
-    curve_stroke=Stroke(opacity=0.6),        # restyle U0, U1 (and U_B)
-    curve_label=Label(position="top"),       # turn on the U0, U1 labels
-    legend=Legend(position="bottom"),        # or Legend(visible=False)
+    # restyle U0, U1 (and U_B)
+    curve_stroke=Stroke(opacity=0.6),
+    # turn on the U0, U1 labels
+    curve_label=Label(position="top"),
+    # or Legend(visible=False)
+    legend=Legend(position="bottom"),
 )
 ```
 
@@ -252,8 +275,7 @@ from utility_viz import Canvas, levels
 eq = price_path.equilibria[len(price_path.equilibria) // 2]
 lvls = levels.around(eq.utility, n=5)
 
-Canvas(x_max=25, y_max=20) \
-    .add_utility(model, levels=lvls) \
-    .add_path(price_path, label="PCC") \
-    .save("price_path.png")
+Canvas(x_max=25, y_max=20).add_utility(
+    model, levels=lvls
+).add_path(price_path, label="PCC").save("price_path.png")
 ```

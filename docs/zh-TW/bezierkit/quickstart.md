@@ -1,122 +1,45 @@
 ---
-seo_title: "bezierkit 快速開始"
-description: "計算並分割三次貝茲曲線、由斜率建構曲線、匯出 SVG 與 TikZ，以及使用 bezierkit 命令列。"
+seo_title: "快速開始"
 ---
 
 # 快速開始
 
-以下輸出都是以 bezierkit 0.5.0rc1 實際執行程式碼的結果。
+<span id="sec-quickstart"></span>
 
-## 求值、分割與取樣
+## 一條三次曲線
 
-```python
-from bezierkit import BezierCurve, Point
-from bezierkit.sampling import UniformSampler
-
-curve = BezierCurve.cubic(
-    Point(0, 0),
-    Point(1, 2),
-    Point(3, 2),
-    Point(4, 0),
-)
-
-print(curve.at(0.5))
-print(curve.derivative().at(0.5))
-
-left, right = curve.split(0.3)
-print(left.at(1.0) == right.at(0.0))
-
-sample = UniformSampler(200).sample(curve)
-print(len(sample.points), "sample points")
-```
-
-輸出：
-
-```text
-Point(coords=(2.0, 1.5))
-Point(coords=(4.5, 0.0))
-True
-200 sample points
-```
-
-`curve.at(t)` 在參數 `t`（範圍 `[0, 1]`）求出曲線上的點，`curve.derivative()` 回傳導數曲線，
-`split` 則把曲線切成兩段。取樣結果也提供 `t`、`x` 與 `y` 陣列。
-
-## 由斜率建構曲線
-
-`PlanarSlopes` 根據兩個端點，以及兩端各自想要的斜率（dy/dx）建構三次曲線。
+本手冊通篇使用的曲線，是控制點為 $(0, 0)$、$(1, 2)$、$(3, 2)$、$(4, 0)$ 的三次曲線（參見[三次曲線及其控制凸包。](quickstart.md#fig-quickstart)）。
 
 ```python
-from bezierkit import Point
-from bezierkit.construction import PlanarSlopes
-
-demand = PlanarSlopes(
-    start=Point(0, 5),
-    end=Point(5, 0),
-    start_slope=-2,
-    end_slope=-0.3,
-).build()
-
-print(demand.at(0.0), demand.at(1.0))
-
-# 兩端的切線斜率（dy/dx）與指定值一致。
-d = demand.derivative()
-for t in (0.0, 1.0):
-    dx, dy = d.at(t).coords
-    print(f"t={t}: dy/dx = {dy / dx:.2f}")
-```
-
-輸出：
-
-```text
-Point(coords=(0.0, 5.0)) Point(coords=(5.0, 0.0))
-t=0.0: dy/dx = -2.00
-t=1.0: dy/dx = -0.30
-```
-
-## 匯出 SVG 與 TikZ
-
-`PiecewiseBezier` 把多段三次曲線首尾相接。SVG 與 TikZ 匯出器直接輸出三次曲線的幾何，不會先把它壓平。
-
-```python
-from bezierkit import CubicBezierSegment, PiecewiseBezier, Point
-from bezierkit.export.svg import to_svg_path_data
+from bezierkit import BezierCurve, PiecewiseBezier, Point
+from bezierkit.bezier import to_cubic
 from bezierkit.export.tikz import to_tikz
 
-path = PiecewiseBezier([
-    CubicBezierSegment.from_line(Point(0, 0), Point(2, 0)),
-    CubicBezierSegment.from_line(Point(2, 0), Point(2, 4)),
-])
-print(path.at(0.75))
-print(to_svg_path_data(path, precision=5))
-print(to_tikz(path, precision=5, options="thick"))
+curve = BezierCurve.cubic(
+    Point(0, 0), Point(1, 2), Point(3, 2), Point(4, 0)
+)
+# Point(coords=(2.0, 1.5))
+print(curve.at(0.5))
+# Point(coords=(4.5, 0.0))
+print(curve.derivative().at(0.5))
+# two cubics that together trace curve
+left, right = curve.split(0.4)
+
+path = PiecewiseBezier([to_cubic(curve)])
+print(to_tikz(path, precision=2, options="thick"))
+# \draw[thick] (0.00,0.00) .. controls (1.00,2.00) and (3.00,2.00) .. (4.00,0.00);
 ```
 
-輸出：
+<span id="fig-quickstart"></span>
 
-```text
-Point(coords=(2.0, 2.0))
-M 0.00000 0.00000 C 0.66667 0.00000 1.33333 0.00000 2.00000 0.00000 C 2.00000 1.33333 2.00000 2.66667 2.00000 4.00000
-\draw[thick] (0.00000,0.00000) .. controls (0.66667,0.00000) and (1.33333,0.00000) .. (2.00000,0.00000) .. controls (2.00000,1.33333) and (2.00000,2.66667) .. (2.00000,4.00000);
-```
+![三次曲線及其控制凸包。](../../assets/bezierkit/agora/curves/cubic.svg){ .ev-figure-sm }
 
-## 命令列
+曲線由 $P_0$ 出發、在 $P_3$ 結束，離開 $P_0$ 時朝向 $P_1$，抵達 $P_3$ 時來自 $P_2$ 的方向，且始終位於控制點的凸包內（詳見[凸包](guides/curves.md#cor-hull)）。最後一行是這條曲線的 TikZ 路徑，可直接貼進 LaTeX 文件。
 
-安裝 `cli` 額外功能後，可以直接在 shell 對同一條曲線取樣：
+## 主要元件
 
-```bash
-bezierkit sample \
-  --points "0,0" --points "1,2" --points "3,2" --points "4,0" \
-  --count 5 --format csv
-```
-
-```text
-t,x,y
-0.0,0.0,0.0
-0.25,0.90625,1.125
-0.5,2.0,1.5
-0.75,3.09375,1.125
-1.0,4.0,0.0
-```
-
-執行 `bezierkit --help` 可查看完整的指令樹。
+- *數值物件。*`Point`、`Vector` 與 `PointSet` 不可變，並檢查維度（詳見[幾何數值物件](guides/geometry.md#sec-geometry)）。
+- *曲線。*`BezierCurve` 可為任意次數與維度；`CubicBezierSegment` 是繪圖端使用的三次曲線；`PiecewiseBezier` 將三次曲線連接成路徑（詳見[Bézier 曲線](guides/curves.md#sec-curves)、[三次線段與路徑](guides/paths.md#sec-paths)）。
+- *建構。*把端點條件、斜率、導數或 Hermite 資料轉為控制點（詳見[建構與 Hermite 插值](guides/construction.md#sec-construction)）。
+- *近似。*把平滑函數、取樣點與等值線 $F(x, y) = c$ 轉為誤差已知的三次路徑（詳見[擬合](guides/fitting.md#sec-fitting)、[等值線](guides/implicit.md#sec-implicit)）。
+- *輸出。*取樣、JSON、SVG 路徑資料、TikZ，以及 Matplotlib 路徑（詳見[取樣與匯出](guides/export.md#sec-export)）。

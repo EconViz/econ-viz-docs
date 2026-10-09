@@ -1,17 +1,37 @@
 ---
 seo_title: "更新紀錄"
-description: "econ-viz Python 套件的版本歷史：每個版本的新功能、修正與變更。"
+description: "utility-viz Python 套件（原名 econ-viz）的版本歷史：每個版本的新功能、修正與變更。"
 ---
 
 # 更新紀錄
 
-`econ-viz` 的版本歷史，不列出只有文件更新的項目。
+`utility-viz`（原名 `econ-viz`）的版本歷史，不列出只有文件更新的項目。
 
 <table class="ev-changelog">
   <thead>
   <tr><th>版本</th><th>更新內容</th></tr>
   </thead>
   <tbody>
+  <tr id="v200b1">
+    <td class="ev-changelog__version"><strong>v2.0.0b1</strong><br><span>2026-10-04</span></td>
+    <td>
+      <p class="ev-changelog__type">變更</p>
+      <ul>
+        <li>由 <code>econ-viz</code> 更名為 <code>utility-viz</code>：發行套件、<code>utility_viz</code> 匯入、<code>utility-viz</code> 指令與 <code>utility-viz.toml</code> 設定檔（區段名稱不變）</li>
+        <li>這是預先發行版，安裝時需要加上 <code>--prerelease allow</code></li>
+      </ul>
+      <p class="ev-changelog__type">新功能</p>
+      <ul>
+        <li><code>utility-viz init --migrate</code> 會依據 <code>econ-viz.toml</code> 產生 <code>utility-viz.toml</code>，並保留舊檔案</li>
+        <li>設定檔依序查找明確指定的路徑、<code>utility-viz.toml</code>，最後是舊版 <code>econ-viz.toml</code>（會發出警告）</li>
+      </ul>
+      <p class="ev-changelog__type">相容性</p>
+      <ul>
+        <li><code>econ-viz</code> 2.x 是輕量的相容發行套件，會安裝同版本的 <code>utility-viz</code></li>
+        <li><code>econ_viz</code> 與 <code>econ-viz</code> 指令仍可使用，但會發出棄用警告，並將在 3.0.0 移除</li>
+      </ul>
+    </td>
+  </tr>
   <tr id="v1120">
     <td class="ev-changelog__version"><strong>v1.12.0</strong><br><span>2026-09-26</span></td>
     <td>
@@ -19,7 +39,7 @@ description: "econ-viz Python 套件的版本歷史：每個版本的新功能�
       <ul>
         <li><code>highlight_level</code> 可強調一條主要無異曲線，其餘效用水準會使用淡化的次要樣式</li>
         <li><code>secondary_stroke</code> 與主題欄位可控制次要曲線的顏色、線寬與不透明度</li>
-        <li>支援數值與序數標籤（<i>u</i><sub>1</sub>、<i>u</i><sub>2</sub>……）；標籤會跟隨曲線角度並避開圖形邊界</li>
+        <li>支援數值與序數標籤（$u_1$、$u_2$……）；標籤會跟隨曲線角度並避開圖形邊界</li>
       </ul>
       <p class="ev-changelog__type">變更</p>
       <ul>
@@ -74,7 +94,7 @@ description: "econ-viz Python 套件的版本歷史：每個版本的新功能�
     <td>
       <p class="ev-changelog__type">新功能</p>
       <ul>
-        <li>價格效果分解預設畫出無異曲線：通過 A 的 U<sub>0</sub>、通過 C 的 U<sub>1</sub>，Slutsky 分解還有通過 B 的曲線</li>
+        <li>價格效果分解預設畫出無異曲線：通過 A 的 $U_0$、通過 C 的 $U_1$，Slutsky 分解還有通過 B 的曲線</li>
         <li>新增 <code>Haagsma</code> 效用模型，其商品 x 一定是劣等財，所得夠高時成為季芬財</li>
         <li>新增 <code>Legend</code>，自動放在最不擋到圖形的位置，也可指定角落或圖外的上下左右</li>
         <li>所有文字都能用 <code>Label</code> 調整：座標軸標籤、原點、標題、效果標籤、Edgeworth 箱形圖文字</li>

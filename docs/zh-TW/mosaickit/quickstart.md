@@ -1,15 +1,12 @@
 ---
-seo_title: "mosaickit 快速開始"
-description: "用 mosaickit 圖層組出圖形並存成 SVG，再把參數掃描排成網格。"
+seo_title: "快速入門"
 ---
 
-# 快速開始
+# 快速入門
 
-以下輸出都是以 mosaickit 0.5.1 實際執行程式碼的結果。
+<span id="sec-quickstart"></span>
 
-## 用圖層組出圖形
-
-`Canvas` 負責存放圖層。`quadrant_axes(10, 10)` 提供兩條座標軸，每呼叫一次 `add()` 就加入一個圖層。
+一張圖由畫布、一組圖層與一次儲存構成：
 
 ```python
 from mosaickit import (
@@ -39,47 +36,14 @@ canvas.add(
     )
 )
 canvas.add(MarkerLayer([(4, 3)], id="point"))
-canvas.add(TextLayer((4, 3), "A", offset=(8, 8)))
-canvas.save("diagram.svg")
-
-scene = canvas.snapshot()
-print(type(scene).__name__, len(scene.layers), "layers")
+canvas.add(TextLayer((4, 3), "A", offset=(6, 6)))
+canvas.save("diagram.pdf")
 ```
 
-輸出：
+<span id="fig-quickstart"></span>
 
-```text
-Scene 6 layers
-```
+![快速入門的圖。](../../assets/mosaickit/agora/quickstart/diagram.svg){ .ev-figure-sm }
 
-六個圖層是兩條座標軸，加上你加入的四個。`canvas.snapshot()` 會回傳不可變的 `Scene`，
-不必渲染就能檢視即將繪出的內容。
+`quadrant_axes(10, 10)` 回傳一般圖層：兩條帶箭頭的路徑及其標題。填色圖層以 `z_index=-1` 放在最底層。路徑是通過各點的折線；`mosaickit` 本身不直接繪製曲線。若要呈現平滑曲線，必須傳入大量取樣點，或先用幾何套件建構曲線再取樣。文字從該點向右上偏移 6 pt。呼叫 `save()` 之前不會進行任何繪製；`save()` 會用畫布的繪製器（未另行設定時為 Matplotlib）繪製場景、寫出檔案，並回傳輸出路徑。
 
-![存下來的圖形](../../assets/mosaickit/diagram.svg){ width="360" }
-
-`save()` 依副檔名決定格式：PNG、SVG 與 PDF 都由內建的 Matplotlib 渲染器處理。
-
-## 把參數掃描排成網格
-
-`Parameter` 可以代替座標值。`CanvasGrid.sweep` 會對每個值各渲染一次同一份範本。
-
-```python
-from mosaickit import Canvas, CanvasGrid, Parameter, TextLayer, quadrant_axes
-
-position = Parameter("position", value_type=float)
-template = Canvas().extend(quadrant_axes(10, 10))
-template.add(TextLayer((position, 5), "moving"))
-
-values = position.values([1.0, 3.0, 5.0])
-CanvasGrid.sweep(template, values, cols=3).save("sweep.svg")
-print("wrote sweep.svg")
-```
-
-輸出：
-
-```text
-wrote sweep.svg
-```
-
-`Animation.sweep(template, values, fps=2).save("sweep.gif")` 可以把同一份範本變成 GIF
-（GIF 與 MP4 的需求請見[安裝](installation.md)）。
+同一個畫布可在修改後再次儲存：`add()`、`extend()`、`remove()` 與 `clear()` 都會回傳畫布本身，因此可以串接呼叫；先前取得的快照則維持原狀（詳見[畫布與場景](guides/canvas.md#sec-canvas)）。能自動避讓其他內容的標籤也是圖層：將 `TextLayer` 換成 `PointLabelLayer((4, 3), "A")`，繪製器就會自行選擇擺放方向（詳見[區域標籤與點標籤](guides/labels.md#sec-labels)）。

@@ -18,8 +18,12 @@ from utility_viz.optimizer import comparative_statics
 model = CobbDouglas(alpha=0.4, beta=0.6)
 cs = comparative_statics(model, px=2.0, py=3.0, income=60.0)
 
-print(round(cs.dx_dpx, 1), round(cs.dx_dpy, 1), round(cs.dx_dI, 1))
-print(round(cs.dy_dpx, 1), round(cs.dy_dpy, 1), round(cs.dy_dI, 1))
+print(
+    round(cs.dx_dpx, 1), round(cs.dx_dpy, 1), round(cs.dx_dI, 1)
+)
+print(
+    round(cs.dy_dpx, 1), round(cs.dy_dpy, 1), round(cs.dy_dI, 1)
+)
 
 # -6.0 0.0 0.2
 # 0.0 -4.0 0.2
@@ -41,7 +45,9 @@ from utility_viz.models import CobbDouglas
 
 S = slutsky_matrix(
     CobbDouglas(alpha=0.4, beta=0.6),
-    px=2.0, py=3.0, income=60.0,
+    px=2.0,
+    py=3.0,
+    income=60.0,
 )
 
 print(round(S.s_xx, 1), round(S.s_xy, 1))
@@ -64,10 +70,12 @@ print(S.as_array().round(1))
 
 分析器提供以下四項檢查：
 
-- `degree()` 估計齊次的次數
-- `euler_check(x, y)` 計算某個消費組合上的 Euler 定理殘差
-- `is_homothetic()` 檢查邊際替代率（MRS）在等比例縮放下是否不變
-- `demand_degree_zero(px, py, income)` 驗證 Marshall 需求是否為**零次齊次**
+| 方法 | 檢查內容 |
+|------|------|
+| `degree()` | 估計齊次的次數 |
+| `euler_check(x, y)` | 計算某個消費組合上的 Euler 定理殘差 |
+| `is_homothetic()` | 邊際替代率（MRS）在等比例縮放下是否不變 |
+| `demand_degree_zero(px, py, income)` | Marshall 需求是否為**零次齊次** |
 
 ### 程式碼範例
 
@@ -124,7 +132,11 @@ models = [
 
 for model in models:
     result = HomogeneityAnalyzer(model).degree()
-    degree = None if result.degree is None else round(result.degree, 1)
+    degree = (
+        None
+        if result.degree is None
+        else round(result.degree, 1)
+    )
     print(degree, result.returns_to_scale.name)
 
 # 1.3 INCREASING
@@ -132,3 +144,19 @@ for model in models:
 # 0.7 DECREASING
 # None NOT_HOMOGENEOUS
 ```
+
+## 均衡求解 {#solve}
+
+求出線性預算限制下，使效用最大的消費組合。
+
+<!-- api: helpers.solve -->
+
+## 效用水準 {#levels}
+
+<!-- api-target: levels levels -->
+
+`levels` 提供無異曲線的效用水準：`around` 以參考值為中心，`percentile` 從效用值陣列選取百分位數。
+
+<!-- api: helpers.levels_around -->
+
+<!-- api: helpers.levels_percentile -->

@@ -1,122 +1,45 @@
 ---
-seo_title: "bezierkit 快速开始"
-description: "计算并分割三次贝塞尔曲线、由斜率构造曲线、导出 SVG 与 TikZ，以及使用 bezierkit 命令行。"
+seo_title: "快速开始"
 ---
 
 # 快速开始
 
-以下输出都是以 bezierkit 0.5.0rc1 实际运行代码的结果。
+<span id="sec-quickstart"></span>
 
-## 求值、分割与采样
+## 一条三次曲线
 
-```python
-from bezierkit import BezierCurve, Point
-from bezierkit.sampling import UniformSampler
-
-curve = BezierCurve.cubic(
-    Point(0, 0),
-    Point(1, 2),
-    Point(3, 2),
-    Point(4, 0),
-)
-
-print(curve.at(0.5))
-print(curve.derivative().at(0.5))
-
-left, right = curve.split(0.3)
-print(left.at(1.0) == right.at(0.0))
-
-sample = UniformSampler(200).sample(curve)
-print(len(sample.points), "sample points")
-```
-
-输出：
-
-```text
-Point(coords=(2.0, 1.5))
-Point(coords=(4.5, 0.0))
-True
-200 sample points
-```
-
-`curve.at(t)` 在参数 `t`（范围 `[0, 1]`）算出曲线上的点，`curve.derivative()` 返回导数曲线，
-`split` 则把曲线切成两段。采样结果也提供 `t`、`x` 与 `y` 数组。
-
-## 由斜率构造曲线
-
-`PlanarSlopes` 根据两个端点，以及两端各自想要的斜率（dy/dx）构造三次曲线。
+本手册通篇使用的曲线，是控制点为 $(0, 0)$、$(1, 2)$、$(3, 2)$、$(4, 0)$ 的三次曲线（参见[三次曲线及其控制凸包。](quickstart.md#fig-quickstart)）。
 
 ```python
-from bezierkit import Point
-from bezierkit.construction import PlanarSlopes
-
-demand = PlanarSlopes(
-    start=Point(0, 5),
-    end=Point(5, 0),
-    start_slope=-2,
-    end_slope=-0.3,
-).build()
-
-print(demand.at(0.0), demand.at(1.0))
-
-# 两端的切线斜率（dy/dx）与指定值一致。
-d = demand.derivative()
-for t in (0.0, 1.0):
-    dx, dy = d.at(t).coords
-    print(f"t={t}: dy/dx = {dy / dx:.2f}")
-```
-
-输出：
-
-```text
-Point(coords=(0.0, 5.0)) Point(coords=(5.0, 0.0))
-t=0.0: dy/dx = -2.00
-t=1.0: dy/dx = -0.30
-```
-
-## 导出 SVG 与 TikZ
-
-`PiecewiseBezier` 把多段三次曲线首尾相接。SVG 与 TikZ 导出器直接输出三次曲线的几何，不会先把它压平。
-
-```python
-from bezierkit import CubicBezierSegment, PiecewiseBezier, Point
-from bezierkit.export.svg import to_svg_path_data
+from bezierkit import BezierCurve, PiecewiseBezier, Point
+from bezierkit.bezier import to_cubic
 from bezierkit.export.tikz import to_tikz
 
-path = PiecewiseBezier([
-    CubicBezierSegment.from_line(Point(0, 0), Point(2, 0)),
-    CubicBezierSegment.from_line(Point(2, 0), Point(2, 4)),
-])
-print(path.at(0.75))
-print(to_svg_path_data(path, precision=5))
-print(to_tikz(path, precision=5, options="thick"))
+curve = BezierCurve.cubic(
+    Point(0, 0), Point(1, 2), Point(3, 2), Point(4, 0)
+)
+# Point(coords=(2.0, 1.5))
+print(curve.at(0.5))
+# Point(coords=(4.5, 0.0))
+print(curve.derivative().at(0.5))
+# two cubics that together trace curve
+left, right = curve.split(0.4)
+
+path = PiecewiseBezier([to_cubic(curve)])
+print(to_tikz(path, precision=2, options="thick"))
+# \draw[thick] (0.00,0.00) .. controls (1.00,2.00) and (3.00,2.00) .. (4.00,0.00);
 ```
 
-输出：
+<span id="fig-quickstart"></span>
 
-```text
-Point(coords=(2.0, 2.0))
-M 0.00000 0.00000 C 0.66667 0.00000 1.33333 0.00000 2.00000 0.00000 C 2.00000 1.33333 2.00000 2.66667 2.00000 4.00000
-\draw[thick] (0.00000,0.00000) .. controls (0.66667,0.00000) and (1.33333,0.00000) .. (2.00000,0.00000) .. controls (2.00000,1.33333) and (2.00000,2.66667) .. (2.00000,4.00000);
-```
+![三次曲线及其控制凸包。](../../assets/bezierkit/agora/curves/cubic.svg){ .ev-figure-sm }
 
-## 命令行
+曲线由 $P_0$ 出发、在 $P_3$ 结束，离开 $P_0$ 时朝向 $P_1$，抵达 $P_3$ 时来自 $P_2$ 的方向，且始终位于控制点的凸包内（详见[凸包](guides/curves.md#cor-hull)）。最后一行是这条曲线的 TikZ 路径，可直接粘贴到 LaTeX 文档。
 
-安装 `cli` 额外依赖后，可以直接在 shell 对同一条曲线采样：
+## 主要元件
 
-```bash
-bezierkit sample \
-  --points "0,0" --points "1,2" --points "3,2" --points "4,0" \
-  --count 5 --format csv
-```
-
-```text
-t,x,y
-0.0,0.0,0.0
-0.25,0.90625,1.125
-0.5,2.0,1.5
-0.75,3.09375,1.125
-1.0,4.0,0.0
-```
-
-运行 `bezierkit --help` 可查看完整的命令树。
+- *数值对象。*`Point`、`Vector` 与 `PointSet` 不可变，并检查维度（详见[几何数值对象](guides/geometry.md#sec-geometry)）。
+- *曲线。*`BezierCurve` 可为任意次数与维度；`CubicBezierSegment` 是绘图端使用的三次曲线；`PiecewiseBezier` 将三次曲线连接成路径（详见[Bézier 曲线](guides/curves.md#sec-curves)、[三次线段与路径](guides/paths.md#sec-paths)）。
+- *构造。*把端点条件、斜率、导数或 Hermite 数据转为控制点（详见[建构与 Hermite 插值](guides/construction.md#sec-construction)）。
+- *近似。*把平滑函数、采样点与等值线 $F(x, y) = c$ 转为误差已知的三次路径（详见[拟合](guides/fitting.md#sec-fitting)、[等值线](guides/implicit.md#sec-implicit)）。
+- *输出。*采样、JSON、SVG 路径数据、TikZ，以及 Matplotlib 路径（详见[采样与导出](guides/export.md#sec-export)）。

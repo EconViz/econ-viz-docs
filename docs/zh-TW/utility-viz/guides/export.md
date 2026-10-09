@@ -10,15 +10,19 @@ description: "把 utility-viz 經濟學圖形存成 PNG、PDF 或 SVG 用於論�
 呼叫 `cvs.save()`，副檔名用 `.png`、`.pdf` 或 `.svg`：
 
 ```python
-cvs.save("figure.png")   # PNG．依畫布 DPI（預設 300）
-cvs.save("figure.pdf")   # PDF（向量）
-cvs.save("figure.svg")   # SVG（向量）
+# PNG．依畫布 DPI（預設 300）
+cvs.save("figure.png")
+# PDF（向量）
+cvs.save("figure.pdf")
+# SVG（向量）
+cvs.save("figure.svg")
 ```
 
 `Canvas` 的 `dpi` 參數控制點陣圖的解析度：
 
 ```python
-cvs = Canvas(x_max=20, y_max=15, dpi=150)   # 降低 DPI 加快預覽
+# 降低 DPI 加快預覽
+cvs = Canvas(x_max=20, y_max=15, dpi=150)
 ```
 
 DPI 會限制在 1–1200 之間。
@@ -30,7 +34,9 @@ DPI 會限制在 1–1200 之間。
 ```python
 from utility_viz.animation import Animator
 
-Animator(draw_frame, frames=frames).save("animation.gif", fps=12, dpi=120)
+Animator(draw_frame, frames=frames).save(
+    "animation.gif", fps=12, dpi=120
+)
 ```
 
 參數、價格、所得與只有預算線的變動範例，請見[動畫](animation.md)頁面。

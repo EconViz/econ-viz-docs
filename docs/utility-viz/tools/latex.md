@@ -10,9 +10,12 @@ description: "Convert LaTeX math strings such as x^{0.4} y^{0.6} or \\min(2x, 3y
 ```python
 from utility_viz import parse_latex
 
-model = parse_latex(r"x^{0.4} y^{0.6}")  # CobbDouglas(alpha=0.4, beta=0.6)
-model = parse_latex(r"\min(2x, 3y)")     # Leontief(a=2.0, b=3.0)
-model = parse_latex(r"2x + 3y")          # PerfectSubstitutes(a=2.0, b=3.0)
+# CobbDouglas(alpha=0.4, beta=0.6)
+model = parse_latex(r"x^{0.4} y^{0.6}")
+# Leontief(a=2.0, b=3.0)
+model = parse_latex(r"\min(2x, 3y)")
+# PerfectSubstitutes(a=2.0, b=3.0)
+model = parse_latex(r"2x + 3y")
 ```
 
 ## Supported forms

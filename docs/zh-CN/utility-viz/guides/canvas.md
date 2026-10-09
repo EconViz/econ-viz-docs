@@ -9,41 +9,30 @@ description: "Canvas 是 utility-viz 的绘图画布，用来画教科书风格�
 
 ## 构造函数
 
-```python
-from utility_viz import ArrowStyle, Axis, Canvas, Stroke, themes
+<!-- api: canvas.constructor -->
 
-cvs = Canvas(
-    x_max=20,
-    y_max=15,
-    title=r"Cobb-Douglas $x^{0.5} y^{0.5}$",
-    dpi=300,
-    font="DejaVu Sans",
-    math_font="stix",
-    axis_stroke=Stroke(width=1.0, arrow=ArrowStyle.TRIANGLE),
-    x_axis=Axis(label="x", label_position="right"),  # "top"、"right" 或 "bottom"
-    y_axis=Axis(label="y", label_position="top"),    # "left"、"top" 或 "right"
-    theme=themes.default,
-)
-```
+??? example "查看示例"
 
-| 参数 | 类型 | 默认值 | 说明 |
-|-----------|------|---------|-------------|
-| `x_max` | float | 10 | 横轴上限 |
-| `y_max` | float | 10 | 纵轴上限 |
-| `x_axis` | `Axis` | None | 横轴的标签、标签位置与线条 |
-| `y_axis` | `Axis` | None | 纵轴的标签、标签位置与线条 |
-| `x_label` | str | `"X"` | 横轴 `Axis(label=...)` 的简写 |
-| `y_label` | str | `"Y"` | 纵轴 `Axis(label=...)` 的简写 |
-| `title` | str 或 None | None | 图形标题 |
-| `dpi` | int | 300 | 位图导出分辨率（限制在 1–1200） |
-| `x_label_pos` | str 或 `LabelPosition` | `"right"` | `Axis(label_position=...)` 的简写：箭头上方、右侧或下方 |
-| `y_label_pos` | str 或 `LabelPosition` | `"top"` | `Axis(label_position=...)` 的简写：箭头左侧、上方或右侧 |
-| `font` | str 或序列 | None | 所有文字使用的字体或候选字体列表 |
-| `math_font` | str | None | 数学字体：`dejavusans`、`dejavuserif`、`cm`、`stix` 或 `stixsans` |
-| `axis_stroke` | `Stroke` | 主题默认值 | 同时设置两轴的粗细、线条样式、颜色与箭头样式 |
-| `x_axis_stroke` | `Stroke` | None | 横轴的单独覆盖，是 `Axis(stroke=...)` 的简写 |
-| `y_axis_stroke` | `Stroke` | None | 纵轴的单独覆盖，是 `Axis(stroke=...)` 的简写 |
-| `theme` | Theme | `themes.default` | 配色与样式主题 |
+    ```python
+    from utility_viz import ArrowStyle, Axis, Canvas, Stroke, themes
+
+    cvs = Canvas(
+        x_max=20,
+        y_max=15,
+        title=r"Cobb-Douglas $x^{0.5} y^{0.5}$",
+        dpi=300,
+        font="DejaVu Sans",
+        math_font="stix",
+        axis_stroke=Stroke(width=1.0, arrow=ArrowStyle.TRIANGLE),
+        # "top"、"right" 或 "bottom"
+        x_axis=Axis(label="x", label_position="right"),
+        # "left"、"top" 或 "right"
+        y_axis=Axis(label="y", label_position="top"),
+        theme=themes.default,
+    )
+    ```
+
+
 
 同一项设置给了两次时，以 `Axis` 的字段为准。坐标轴线条的优先顺序由高到低是 `Axis.stroke`、`x_axis_stroke`、`axis_stroke`、`x_line_style` / `x_arrow_style`、`theme.axis_stroke`。
 
@@ -55,25 +44,7 @@ cvs = Canvas(
 
 画出效用函数的无差异曲线。`levels` 传入整数会自动决定曲线的间距，也可以传入一组效用值，例如用 `levels.around(eq.utility, n=5)` 让曲线分布在最优点周围。
 
-```python
-cvs.add_utility(
-    func,
-    levels=3,          # 曲线数或效用值列表
-    stroke=None,       # 默认 theme.ic_stroke
-    ray_stroke=None,
-    show_rays=False,
-    show_kinks=False,
-    kink_radius=1.0,
-    show_bliss=True,   # 标出极乐点（Satiation）
-    kink_marker=None,  # 默认 theme.kink_marker
-    bliss_marker=None, # 默认 theme.bliss_marker
-    ic_label=None,     # 曲线末端效用值的 Label
-    bliss_label=None,  # str 或 Label
-    highlight_level=None, # 最接近的效用水平成为主要曲线
-    secondary_stroke=None,# 其余曲线的线条样式
-    label_style="numeric",# "numeric" 或教科书式 "ordinal"
-)
-```
+<!-- api: canvas.add_utility -->
 
 ![用 add_utility 画出的无差异曲线](../../../assets/canvas/add_utility.png){ .ev-figure-sm }
 
@@ -89,17 +60,19 @@ model = CobbDouglas(0.5, 0.5)
 eq = solve(model, px=2, py=3, income=30)
 lvls = levels.around(eq.utility, n=5)
 
-(Canvas(x_max=20, y_max=15)
- .add_utility(
-     model,
-     levels=lvls,
-     highlight_level=eq.utility,
-     secondary_stroke=Stroke(width=1, opacity=0.35),
-     show_ic_labels=True,
-     label_style="ordinal",
- )
- .add_budget(2, 3, 30, fill=True)
- .add_equilibrium(eq))
+(
+    Canvas(x_max=20, y_max=15)
+    .add_utility(
+        model,
+        levels=lvls,
+        highlight_level=eq.utility,
+        secondary_stroke=Stroke(width=1, opacity=0.35),
+        show_ic_labels=True,
+        label_style="ordinal",
+    )
+    .add_budget(2, 3, 30, fill=True)
+    .add_equilibrium(eq)
+)
 ```
 
 `label_style="numeric"` 显示格式化后的效用值；`"ordinal"` 则使用教科书常见的 $u_1,u_2,\ldots$。标签会跟随曲线在该处的角度，并避开可见范围的边界。
@@ -119,14 +92,7 @@ lvls = levels.around(eq.utility, n=5)
 
 画出预算线 $p_x x + p_y y = I$。设置 `fill=True` 会在预算线下方的可行集加上阴影。
 
-```python
-cvs.add_budget(
-    px, py, income,
-    stroke=None,       # 默认 theme.budget_stroke
-    label=None,        # 图例标签（LaTeX）
-    fill=False,        # True 或 Fill；默认 theme.budget_fill
-)
-```
+<!-- api: canvas.add_budget -->
 
 ![加上预算线与可行集阴影](../../../assets/canvas/add_budget.png){ .ev-figure-sm }
 
@@ -134,30 +100,15 @@ cvs.add_budget(
 
 在最优消费组合画上均衡点，并画出到两轴的垂直虚线。`eq` 传入 `solve()` 的返回值；`show_ray=True` 会同时画出通过原点的扩展路径。
 
-```python
-cvs.add_equilibrium(
-    eq,                # solve() 的返回值
-    label="x^*",       # str 或 Label
-    marker=None,       # 默认 theme.eq_marker
-    drop_dashes=True,  # 到两轴的虚线
-    show_ray=False,    # 扩展路径
-    drop_stroke=None,
-    ray_stroke=None,
-)
-```
+<!-- api: canvas.add_equilibrium -->
 
 ![加上均衡点与垂直虚线](../../../assets/canvas/add_equilibrium.png){ .ev-figure-sm }
 
 ### 射线 {#add_ray data-toc-label="射线"}
 
-从原点画一条斜率为 `slope`（dy/dx）的虚线射线，常用来表示扩展路径或固定的消费比例。
+从原点画一条斜率为 `slope`（$\mathrm{d}y/\mathrm{d}x$）的虚线射线，常用来表示扩展路径或固定的消费比例。
 
-```python
-cvs.add_ray(
-    slope,             # dy/dx
-    stroke=None,       # 默认 theme.ray_stroke
-)
-```
+<!-- api: canvas.add_ray -->
 
 ![通过最优点的扩展路径射线](../../../assets/canvas/add_ray.png){ .ev-figure-sm }
 
@@ -165,13 +116,7 @@ cvs.add_ray(
 
 标记任意一点，例如要与最优点比较的消费组合。`label` 会以 LaTeX 数学模式显示；要移动标签或改样式时，传入 `Label`。
 
-```python
-cvs.add_point(
-    x, y,
-    label=None,        # str 或 Label
-    marker=None,       # 默认 theme.point_marker
-)
-```
+<!-- api: canvas.add_point -->
 
 ![预算线上标记的 A 点](../../../assets/canvas/add_point.png){ .ev-figure-sm }
 
@@ -179,9 +124,15 @@ cvs.add_point(
 
 `show()` 会打开交互窗口。`save()` 根据扩展名决定格式，支持 `.png`、`.pdf`、`.svg`，以及输出 TikZ 的 `.tex`。`save()` 也会释放 matplotlib 的资源，所以要放在最后调用。
 
+<!-- api: canvas.show -->
+
+<!-- api: canvas.save -->
+
 ```python
-cvs.show()               # 交互窗口
-cvs.save("figure.png")   # .png / .pdf / .svg / .tex
+# 交互窗口
+cvs.show()
+# .png / .pdf / .svg / .tex
+cvs.save("figure.png")
 ```
 
 ![完成的图形](../../../assets/canvas/show_save.png){ .ev-figure-sm }
@@ -206,12 +157,26 @@ from utility_viz import Canvas, Fill, Label, Marker, Stroke
 
 (
     Canvas(x_max=20, y_max=15)
-    .add_utility(model, levels=lvls, ic_label=Label(text="U={:.1f}", position="top"))
-    .add_budget(2.0, 3.0, 30.0, stroke=Stroke(color="black"),
-                fill=Fill(color="lightgrey", opacity=0.4))
-    .add_equilibrium(eq, marker=Marker(color="#C0392B", shape="s"),
-                     label=Label(position="bottom-left", offset=8))
-    .add_point(12.0, 2.0, label=Label(text="A", position="left"))
+    .add_utility(
+        model,
+        levels=lvls,
+        ic_label=Label(text="U={:.1f}", position="top"),
+    )
+    .add_budget(
+        2.0,
+        3.0,
+        30.0,
+        stroke=Stroke(color="black"),
+        fill=Fill(color="lightgrey", opacity=0.4),
+    )
+    .add_equilibrium(
+        eq,
+        marker=Marker(color="#C0392B", shape="s"),
+        label=Label(position="bottom-left", offset=8),
+    )
+    .add_point(
+        12.0, 2.0, label=Label(text="A", position="left")
+    )
     .save("styles.png")
 )
 ```
@@ -306,9 +271,11 @@ fig.savefig("arrow_styles.png", dpi=160, transparent=True)
 ## 串接调用
 
 ```python
-Canvas(x_max=20, y_max=15) \
-    .add_utility(model, levels=lvls) \
-    .add_budget(2.0, 3.0, 30.0, fill=True) \
-    .add_equilibrium(eq, show_ray=True) \
-    .save("figure.png")
+Canvas(x_max=20, y_max=15).add_utility(
+    model, levels=lvls
+).add_budget(2.0, 3.0, 30.0, fill=True).add_equilibrium(
+    eq, show_ray=True
+).save(
+    "figure.png"
+)
 ```

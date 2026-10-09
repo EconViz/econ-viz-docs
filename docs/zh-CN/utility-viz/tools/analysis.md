@@ -18,8 +18,12 @@ from utility_viz.optimizer import comparative_statics
 model = CobbDouglas(alpha=0.4, beta=0.6)
 cs = comparative_statics(model, px=2.0, py=3.0, income=60.0)
 
-print(round(cs.dx_dpx, 1), round(cs.dx_dpy, 1), round(cs.dx_dI, 1))
-print(round(cs.dy_dpx, 1), round(cs.dy_dpy, 1), round(cs.dy_dI, 1))
+print(
+    round(cs.dx_dpx, 1), round(cs.dx_dpy, 1), round(cs.dx_dI, 1)
+)
+print(
+    round(cs.dy_dpx, 1), round(cs.dy_dpy, 1), round(cs.dy_dI, 1)
+)
 
 # -6.0 0.0 0.2
 # 0.0 -4.0 0.2
@@ -41,7 +45,9 @@ from utility_viz.models import CobbDouglas
 
 S = slutsky_matrix(
     CobbDouglas(alpha=0.4, beta=0.6),
-    px=2.0, py=3.0, income=60.0,
+    px=2.0,
+    py=3.0,
+    income=60.0,
 )
 
 print(round(S.s_xx, 1), round(S.s_xy, 1))
@@ -64,10 +70,12 @@ print(S.as_array().round(1))
 
 分析器提供以下四项检查：
 
-- `degree()` 估计齐次的次数
-- `euler_check(x, y)` 计算某个消费束上的 Euler 定理残差
-- `is_homothetic()` 检查边际替代率（MRS）在等比例缩放下是否不变
-- `demand_degree_zero(px, py, income)` 验证马歇尔需求是否为**零次齐次**
+| 方法 | 检查内容 |
+|------|------|
+| `degree()` | 估计齐次的次数 |
+| `euler_check(x, y)` | 计算某个消费束上的 Euler 定理残差 |
+| `is_homothetic()` | 边际替代率（MRS）在等比例缩放下是否不变 |
+| `demand_degree_zero(px, py, income)` | 马歇尔需求是否为**零次齐次** |
 
 ### 代码示例
 
@@ -124,7 +132,11 @@ models = [
 
 for model in models:
     result = HomogeneityAnalyzer(model).degree()
-    degree = None if result.degree is None else round(result.degree, 1)
+    degree = (
+        None
+        if result.degree is None
+        else round(result.degree, 1)
+    )
     print(degree, result.returns_to_scale.name)
 
 # 1.3 INCREASING
@@ -132,3 +144,19 @@ for model in models:
 # 0.7 DECREASING
 # None NOT_HOMOGENEOUS
 ```
+
+## 均衡求解 {#solve}
+
+求出线性预算约束下，使效用最大的消费组合。
+
+<!-- api: helpers.solve -->
+
+## 效用水平 {#levels}
+
+<!-- api-target: levels levels -->
+
+`levels` 提供无差异曲线的效用水平：`around` 以参考值为中心，`percentile` 从效用值数组选取百分位数。
+
+<!-- api: helpers.levels_around -->
+
+<!-- api: helpers.levels_percentile -->

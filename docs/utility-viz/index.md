@@ -6,7 +6,7 @@ description: "Open-source Python library for publication-quality microeconomics 
 <h1 class="ev-visually-hidden">utility-viz: Python library for microeconomics diagrams</h1>
 
 <p align="center">
-  <img src="../assets/banner.svg" alt="EconViz" style="max-width: 480px; width: 100%; margin: 2rem 0 1rem;">
+  <img src="../assets/utility-viz/banner.svg" alt="utility-viz" style="max-width: 480px; width: 100%; margin: 2rem 0 1rem;">
 </p>
 
 <p align="center"><em>A Python toolkit for producing publication-quality microeconomics diagrams.</em></p>
@@ -18,30 +18,22 @@ description: "Open-source Python library for publication-quality microeconomics 
   <a href="https://pypi.org/project/utility-viz/"><img alt="Python" src="https://img.shields.io/pypi/pyversions/utility-viz?style=flat-square&color=181818&labelColor=f3f3f3"></a>
 </p>
 
----
-
-:fontawesome-brands-github: **Source Code:** [https://github.com/EconViz/utility-viz](https://github.com/EconViz/utility-viz)
-
-:material-file-pdf-box: **PDF Manual:** [English, 繁體中文, 简体中文](project/manual.md)
-
-:fontawesome-solid-envelope: **Contact:** [contact@econ-viz.org](mailto:contact@econ-viz.org)
-
----
-
 !!! warning "utility-viz 2.0 is in beta"
 
     utility-viz 2.0.0b1 is a pre-release. `econ-viz` 1.x remains the stable line until 2.0 final is released.
-    Coming from `econ-viz`? See [Migrating from econ-viz](migrating.md).
+    Coming from `econ-viz`? See [Migration guide](migrating.md).
 
 ```python
 from utility_viz import Canvas, levels, solve
 from utility_viz.models import CobbDouglas
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
-eq    = solve(model, px=2.0, py=3.0, income=30.0)
-lvls  = levels.around(eq.utility, n=5)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
+lvls = levels.around(eq.utility, n=5)
 
-cvs = Canvas(x_max=20, y_max=15, title=r"Cobb-Douglas $x^{0.5} y^{0.5}$")
+cvs = Canvas(
+    x_max=20, y_max=15, title=r"Cobb-Douglas $x^{0.5} y^{0.5}$"
+)
 cvs.add_utility(model, levels=lvls)
 cvs.add_budget(2.0, 3.0, 30.0, fill=True)
 cvs.add_equilibrium(eq, show_ray=True)
@@ -123,7 +115,7 @@ cvs.save("cobb_douglas.png")
 ## Install
 
 ```bash
-pip install --pre utility-viz
+uv add --prerelease allow utility-viz
 ```
 
 Requires Python 3.10 or later. See [Installation](getting-started/installation.md) for uv and optional extras.
