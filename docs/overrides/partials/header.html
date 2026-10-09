@@ -56,25 +56,29 @@
     {#- PDF manual for the package and language currently being read. -#}
     {% set manual_locale = i18n_page_locale | default("en") %}
     {% set page_source = "/" ~ (page.file.src_uri if page and page.file else "") %}
-    {% if "/principle-viz/" in page_source %}
+    {% if "/utility-viz/" in page_source %}
+      {% set manual_package = "utility-viz" %}
+    {% elif "/principle-viz/" in page_source %}
       {% set manual_package = "principle-viz" %}
     {% elif "/mosaickit/" in page_source %}
       {% set manual_package = "mosaickit" %}
     {% elif "/bezierkit/" in page_source %}
       {% set manual_package = "bezierkit" %}
     {% else %}
-      {% set manual_package = "utility-viz" %}
+      {% set manual_package = none %}
     {% endif %}
-    {% set manual_titles = {
-      "en": "Download the " ~ manual_package ~ " PDF manual",
-      "zh-TW": "下載 " ~ manual_package ~ " PDF 手冊",
-      "zh-CN": "下载 " ~ manual_package ~ " PDF 手册",
-    } %}
-    {% set manual_title = manual_titles.get(manual_locale, manual_titles["en"]) %}
-    {% set manual_filename = manual_package ~ "-" ~ manual_locale ~ ".pdf" %}
-    <a href="{{ config.extra.pdf_manual_base_url }}/{{ manual_filename }}" class="md-header__button md-icon" title="{{ manual_title }}" aria-label="{{ manual_title }}" download="{{ manual_filename }}">
-      {% include ".icons/material/file-pdf-box.svg" %}
-    </a>
+    {% if manual_package %}
+      {% set manual_titles = {
+        "en": "Download the " ~ manual_package ~ " PDF manual",
+        "zh-TW": "下載 " ~ manual_package ~ " PDF 手冊",
+        "zh-CN": "下载 " ~ manual_package ~ " PDF 手册",
+      } %}
+      {% set manual_title = manual_titles.get(manual_locale, manual_titles["en"]) %}
+      {% set manual_filename = manual_package ~ "-" ~ manual_locale ~ ".pdf" %}
+      <a href="{{ config.extra.pdf_manual_base_url }}/{{ manual_filename }}" class="md-header__button md-icon" title="{{ manual_title }}" aria-label="{{ manual_title }}" download="{{ manual_filename }}">
+        {% include ".icons/material/file-pdf-box.svg" %}
+      </a>
+    {% endif %}
     {% if config.extra.alternate %}
       {% include "partials/alternate.html" %}
     {% endif %}
