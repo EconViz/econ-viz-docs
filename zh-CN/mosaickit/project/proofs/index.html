@@ -1,0 +1,4772 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="用 Python 绘制经济学图形的开源包：utility-viz、principle-viz、mosaickit 与 bezierkit。">
+      
+      
+        <meta name="author" content="Pin Yue Sung">
+      
+      
+        <link rel="canonical" href="https://econ-viz.org/zh-CN/mosaickit/project/proofs/">
+      
+      
+        <link rel="prev" href="../../guides/rendering/">
+      
+      
+        <link rel="next" href="../changelog/">
+      
+      
+        
+          <link rel="alternate" href="../../../../mosaickit/project/proofs/" hreflang="en">
+        
+          <link rel="alternate" href="../../../../zh-TW/mosaickit/project/proofs/" hreflang="zh-TW">
+        
+          <link rel="alternate" href="./" hreflang="zh-CN">
+        
+      
+      
+      <link rel="icon" href="../../../../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+  
+  
+  
+    <title>EconViz | 证明</title>
+  
+
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../../stylesheets/api-reference.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-Q098M03YWD"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-Q098M03YWD",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-Q098M03YWD",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+  
+
+    
+    
+  
+  
+  
+  
+  
+  <meta property="og:locale" content="zh_CN">
+  
+    
+      
+        
+      
+  <link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/project/proofs/">
+      
+  <link rel="alternate" hreflang="x-default" href="https://econ-viz.org/mosaickit/project/proofs/">
+      
+    
+      
+        
+      
+  <link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/project/proofs/">
+      
+    
+      
+        
+      
+  <link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/project/proofs/">
+      
+    
+  
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="EconViz">
+  <meta property="og:title" content="EconViz | 证明">
+  <meta property="og:description" content="用 Python 绘制经济学图形的开源包：utility-viz、principle-viz、mosaickit 与 bezierkit。">
+  <meta property="og:url" content="https://econ-viz.org/zh-CN/mosaickit/project/proofs/">
+  <meta property="og:image" content="https://econ-viz.org/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="EconViz logo">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="EconViz | 证明">
+  <meta name="twitter:description" content="用 Python 绘制经济学图形的开源包：utility-viz、principle-viz、mosaickit 与 bezierkit。">
+  <meta name="twitter:image" content="https://econ-viz.org/assets/og-image.png">
+  
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="不再显示此消息">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+  
+  
+  <a href="../../../../zh-CN/utility-viz/migrating/">
+    
+      <strong>econ-viz 已更名为 utility-viz</strong>，最新的 2.0 测试版已发布。查看迁移指南 →
+    
+  </a>
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../" title="EconViz" class="md-header__button md-logo" aria-label="EconViz" data-md-component="logo">
+      
+  <img src="../../../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            EconViz
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              证明
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+    
+      
+    
+    
+      
+      
+      
+      <a href="https://github.com/EconViz/agora/releases/download/v1.0.0b1/mosaickit-zh-CN.pdf" class="md-header__button md-icon" title="下载 mosaickit PDF 手册" aria-label="下载 mosaickit PDF 手册" download="mosaickit-zh-CN.pdf">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2m-9.5 8.5c0 .8-.7 1.5-1.5 1.5H7v2H5.5V9H8c.8 0 1.5.7 1.5 1.5zm5 2c0 .8-.7 1.5-1.5 1.5h-2.5V9H13c.8 0 1.5.7 1.5 1.5zm4-3H17v1h1.5V13H17v2h-1.5V9h3zm-6.5 0h1v3h-1zm-5 0h1v1H7z"/></svg>
+      </a>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="选择当前语言">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../../mosaickit/project/proofs/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../../../zh-TW/mosaickit/project/proofs/" hreflang="zh-TW" class="md-select__link">
+              繁體中文
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="zh-CN" class="md-select__link">
+              简体中文
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/EconViz" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    EconViz
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+
+
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+        
+          
+        
+          
+        
+        
+          
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+        
+      
+        
+        
+          
+            
+          
+        
+          
+        
+        
+          
+          
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+          
+            
+          
+          
+          
+            
+          
+            
+          
+          <li class="md-tabs__item ev-tabs-dropdown">
+            <a href="../../../utility-viz/" class="md-tabs__link" aria-haspopup="true">
+              经济学包
+            </a>
+            <ul class="ev-tabs-dropdown__menu">
+              
+                <li>
+                  <a href="../../../utility-viz/"
+                     class="ev-tabs-dropdown__link">
+                    utility-viz
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="../../../principle-viz/"
+                     class="ev-tabs-dropdown__link">
+                    principle-viz
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+      
+        
+        
+          
+            
+          
+        
+          
+        
+        
+      
+        
+        
+          
+        
+          
+            
+          
+        
+        
+          
+          
+            
+          
+            
+          
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+          
+          
+            
+              
+            
+          
+            
+          
+          <li class="md-tabs__item ev-tabs-dropdown">
+            <a href="../../" class="md-tabs__link" aria-haspopup="true">
+              底层包
+            </a>
+            <ul class="ev-tabs-dropdown__menu">
+              
+                <li>
+                  <a href="../../"
+                     class="ev-tabs-dropdown__link ev-tabs-dropdown__link--active">
+                    mosaickit
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="../../../bezierkit/"
+                     class="ev-tabs-dropdown__link">
+                    bezierkit
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+      
+        
+        
+          
+        
+          
+            
+          
+        
+        
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+  
+    
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../" title="EconViz" class="md-nav__button md-logo" aria-label="EconViz" data-md-component="logo">
+      
+  <img src="../../../../assets/logo.svg" alt="logo">
+
+    </a>
+    EconViz
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/EconViz" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    EconViz
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    utility-viz
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    utility-viz
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    入门
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    入门
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    安装
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/getting-started/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    快速开始
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/getting-started/cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    命令行工具
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    绘图与教学
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    绘图与教学
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/guides/canvas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Canvas 画布
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/guides/consumer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    多面板图与需求图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/guides/animation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    动画
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/guides/interactive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    交互组件
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/guides/themes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主题
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/guides/config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    配置文件
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/guides/export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    导出
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    模型
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    模型
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    核心模型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/models/advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    高级模型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工具与分析
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    工具与分析
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/tools/analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    分析
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/tools/latex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LaTeX 解析
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/migrating/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    迁移指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    项目
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    项目
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/project/changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    更新日志
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/project/references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    参考文献
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/project/manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PDF 手册
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    principle-viz
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    principle-viz
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    入门
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    入门
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/guides/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    简介
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    安装
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    快速开始
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    命令行界面
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    市场与福利
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    市场与福利
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/guides/markets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    线性市场
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/guides/discrete/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    离散市场
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/guides/aggregation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    由个人加总市场曲线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/guides/elasticity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    弹性与总收益
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/guides/welfare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    福利
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    政策与贸易
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    政策与贸易
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/guides/taxes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    税收与补贴
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/guides/controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    价格管制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/guides/trade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    国际贸易
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/guides/failures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    市场失灵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    生产要素与生产
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    生产要素与生产
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/guides/factor-markets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    劳动与可贷资金
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/guides/ppf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    生产可能性曲线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    绘图与教学
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    绘图与教学
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/guides/figures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    图形
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/migrating/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    迁移指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    项目
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    项目
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    更新纪录
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/project/references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    参考文献
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mosaickit
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    mosaickit
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    入门
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    入门
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    简介
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    安装
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    快速开始
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    画布与图层
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    画布与图层
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/canvas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    画布与场景
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/layers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    图层与坐标轴
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    标注与布局
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    标注与布局
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/annotations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    坐标轴注释
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/geometry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    布局几何
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/labels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    区域标签与点标签
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    样式与配置
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    样式与配置
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    样式与颜色
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/themes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主题与配置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    绘制与动画
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    绘制与动画
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/parameters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    参数、网格与动画
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/rendering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    绘制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    项目
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    项目
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    证明
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    证明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        排列与轨道
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        矩形、线段与多边形
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        不可及极点
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        标签
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        样式、主题与绑定
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    更新纪录
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    参考文献
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    bezierkit
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    bezierkit
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bezierkit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    入门
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    入门
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bezierkit/guides/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    简介
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bezierkit/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    安装
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bezierkit/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    快速开始
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bezierkit/cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    命令行界面
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    曲线与路径
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    曲线与路径
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bezierkit/guides/geometry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    几何数值对象
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bezierkit/guides/curves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bézier 曲线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bezierkit/guides/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    导数、反转与分割
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bezierkit/guides/paths/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    三次线段与路径
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    构造与近似
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    构造与近似
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bezierkit/guides/construction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    建构与 Hermite 插值
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bezierkit/guides/fitting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    拟合
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bezierkit/guides/implicit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    等值线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    采样与导出
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    采样与导出
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bezierkit/guides/export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    采样与导出
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    项目
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    项目
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bezierkit/project/proofs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    证明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bezierkit/project/proofs-approximation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    近似方法的证明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bezierkit/project/changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    更新纪录
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bezierkit/project/references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    参考文献
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        排列与轨道
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        矩形、线段与多边形
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        不可及极点
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        标签
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        样式、主题与绑定
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+  
+
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="_1">证明</h1>
+<p><span id="app-proofs"></span></p>
+<p>本附录按各章出现的顺序，证明其中的引理、命题、定理与推论。以下假设精确算术。代码以浮点数计算相同的量，因此若某个几何构型与退化情形的差异仅在舍入误差范围内（例如点落在边上，或三点几乎共线），代码可能将它判定为任一种结果。平面向量 <span class="arithmatex">\(u, v\)</span> 的外积记为 <span class="arithmatex">\(u \times v = u_x v_y - u_y v_x\)</span>。</p>
+<h2 id="_2">排列与轨道</h2>
+<details class="note">
+<summary>证明</summary>
+<p><a href="../../guides/annotations/#thm-spread">分散为最佳解</a></p>
+<p><em>变量代换。</em>令 <span class="arithmatex">\(o_k = \sum_{j &lt; k} (s_j + g) + s_k / 2\)</span>、<span class="arithmatex">\(y_k = x_k - o_k\)</span>、<span class="arithmatex">\(z_k = c_k - o_k\)</span>。由于 <span class="arithmatex">\(o_{k+1} - o_k = (s_k + s_{k+1}) / 2 + g\)</span>，<a href="../../guides/annotations/#def-packing">保序排列</a>的限制条件即 <span class="arithmatex">\(y_1 \le \cdots \le y_n\)</span>，目标函数为 <span class="arithmatex">\(\sum_k (y_k - z_k)^2\)</span>。因此问题是在最小二乘意义下，找出最接近 <span class="arithmatex">\(z\)</span> 的非递减向量。</p>
+<p><em>代码的计算。</em>考察从第 <span class="arithmatex">\(i\)</span> 项开始、起点为 <span class="arithmatex">\(S_B\)</span> 的连续项目组 <span class="arithmatex">\(B\)</span>。对于 <span class="arithmatex">\(k \in B\)</span>，代码将它放在</p>
+<div class="arithmatex">\[
+x_k = S_B + \sum_{i \le l &lt; k} (s_l + g) + s_k / 2 = S_B + o_k - O_i
+\]</div>
+<p>其中 <span class="arithmatex">\(O_i = \sum_{l &lt; i} (s_l + g)\)</span>。因此 <span class="arithmatex">\(y_k = S_B - O_i =: Y_B\)</span> 在 <span class="arithmatex">\(B\)</span> 上为常数。代码取 <span class="arithmatex">\(S_B\)</span> 为 <span class="arithmatex">\(c_k - (o_k - O_i)\)</span> 的平均，使 <span class="arithmatex">\(Y_B\)</span> 成为 <span class="arithmatex">\(z_k\)</span> 在 <span class="arithmatex">\(B\)</span> 上的平均；新加入的单一项目则有 <span class="arithmatex">\(Y = z_k\)</span>。组 <span class="arithmatex">\(A\)</span> 与后续组 <span class="arithmatex">\(B\)</span> 在 <span class="arithmatex">\(S_A + \text{length}(A) + g \le S_B\)</span> 时保持分开。由于 <span class="arithmatex">\(\text{length}(A) + g = O_{i_B} - O_{i_A}\)</span>，此条件等价于 <span class="arithmatex">\(Y_A \le Y_B\)</span>。因此，代码实现的就是 PAVA：将 <span class="arithmatex">\(z_k\)</span> 加入为一个块；只要最后两个块的平均递减，就以它们的并集（取其平均）取代。</p>
+<p><em>不变式。</em> (a) 相邻块的平均非递减：最后一对顺序正确时合并即停止，较早的块对不受影响。(b) 在平均为 <span class="arithmatex">\(\mu_B\)</span> 的每个块 <span class="arithmatex">\(B\)</span> 中，每个起始片段的平均至少为 <span class="arithmatex">\(\mu_B\)</span>。单一项目满足 (b)。<span class="arithmatex">\(A\)</span> 与 <span class="arithmatex">\(B\)</span> 合并时 <span class="arithmatex">\(\mu_A &gt; \mu_B\)</span>，合并后的平均 <span class="arithmatex">\(\mu\)</span> 严格介于两者之间。<span class="arithmatex">\(A\)</span> 内的起始片段平均至少为 <span class="arithmatex">\(\mu_A &gt; \mu\)</span>。其他起始片段是 <span class="arithmatex">\(A\)</span> 接上 <span class="arithmatex">\(B\)</span> 的起始片段 <span class="arithmatex">\(B'\)</span>；若 <span class="arithmatex">\(B'\)</span> 为整个 <span class="arithmatex">\(B\)</span>，其平均为 <span class="arithmatex">\(\mu\)</span>；否则 <span class="arithmatex">\(B\)</span> 的其余部分 <span class="arithmatex">\(B''\)</span> 由 <span class="arithmatex">\(B\)</span> 的 (b) 知平均最多 <span class="arithmatex">\(\mu_B &lt; \mu\)</span>，而该片段是平均为 <span class="arithmatex">\(\mu\)</span> 的集合中 <span class="arithmatex">\(B''\)</span> 的补集，平均至少为 <span class="arithmatex">\(\mu\)</span>。</p>
+<p><em>最佳性。</em>目标函数严格凸、限制条件 <span class="arithmatex">\(y_k - y_{k+1} \le 0\)</span> 为线性，因此满足 Karush–Kuhn–Tucker 条件的点即唯一的最小解 <a href="../references/#boyd2004">Boyd (2004)</a>。对 <span class="arithmatex">\(k = 0, \ldots, n\)</span> 令 <span class="arithmatex">\(\lambda_k = 2 \sum_{l \le k} (z_l - y_l)\)</span>。平稳条件 <span class="arithmatex">\(2 (y_k - z_k) + \lambda_k - \lambda_{k-1} = 0\)</span> 由构造成立。块内的偏差 <span class="arithmatex">\(z_l - Y_B\)</span> 总和为零，因此 <span class="arithmatex">\(\lambda\)</span> 在每个块末端为零，包括 <span class="arithmatex">\(\lambda_n = 0\)</span>。在由第 <span class="arithmatex">\(i\)</span> 项起的块内，由 (b) 得 <span class="arithmatex">\(\lambda_k = 2 \sum_{l=i}^k (z_l - Y_B) \ge 0\)</span>。最后，<span class="arithmatex">\(\lambda_k &gt; 0\)</span> 只发生在 <span class="arithmatex">\(k\)</span> 与 <span class="arithmatex">\(k + 1\)</span> 属于同一块时，此时 <span class="arithmatex">\(y_k = y_{k+1}\)</span>，限制条件取等号。加上 (a) 给出的可行性，所有条件都成立。</p>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p><a href="../../guides/annotations/#cor-spread">分散结果的性质</a></p>
+<p>(i) 按排序后的顺序编号，并设 <span class="arithmatex">\(i &lt; j\)</span>。把第 <span class="arithmatex">\(i\)</span> 到第 <span class="arithmatex">\(j - 1\)</span> 条限制相加，得</p>
+<div class="arithmatex">\[
+x_j - x_i \ge \sum_{k=i}^{j-1} ((s_k + s_{k+1}) / 2 + g) \ge (s_i + s_j) / 2 + g
+\]</div>
+<p>因为每项都非负，且首末两项分别贡献 <span class="arithmatex">\(s_i / 2\)</span> 与 <span class="arithmatex">\(s_j / 2\)</span>。(ii) 若 <span class="arithmatex">\(c\)</span> 是排列，它使目标函数为 <span class="arithmatex">\(0\)</span>，因此是<a href="../../guides/annotations/#thm-spread">分散为最佳解</a>的唯一最小解。(iii) 沿用该证明的记号，</p>
+<div class="arithmatex">\[
+\sum_{k \in B} (x_k - c_k) = \sum_{k \in B} (y_k - z_k) = |B| Y_B - \sum_{k \in B} z_k = 0
+\]</div>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p><a href="../../guides/annotations/#thm-lanes">首次适配使用最少轨道</a></p>
+<p>区间只在与某轨道上所有区间都不冲突时才加入该轨道，之后不再移动，因此结果是轨道分配。任何轨道分配都必须把 <span class="arithmatex">\(\omega\)</span> 个两两冲突的区间放在 <span class="arithmatex">\(\omega\)</span> 条不同轨道，所以至少需要 <span class="arithmatex">\(\omega\)</span> 条轨道。</p>
+<p>反过来，记 <span class="arithmatex">\(J = [a_J, b_J]\)</span>，并设区间按 <span class="arithmatex">\(a\)</span> 递增的顺序给出。由<a href="../../guides/annotations/#def-conflict">冲突区间</a>，<span class="arithmatex">\(I\)</span> 与 <span class="arithmatex">\(J\)</span> 冲突恰好等价于半开区间 <span class="arithmatex">\([a_I, b_I + g)\)</span> 与 <span class="arithmatex">\([a_J, b_J + g)\)</span> 相交。设 <span class="arithmatex">\(I\)</span> 被放在所用的最高轨道 <span class="arithmatex">\(k\)</span>。<span class="arithmatex">\(I\)</span> 到来时，每条轨道 <span class="arithmatex">\(j &lt; k\)</span> 上都有与 <span class="arithmatex">\(I\)</span> 冲突的区间 <span class="arithmatex">\(J_j\)</span>。每个 <span class="arithmatex">\(J_j\)</span> 较早到来，故 <span class="arithmatex">\(a_{J_j} \le a_I\)</span>；又与 <span class="arithmatex">\(I\)</span> 冲突，故 <span class="arithmatex">\(b_{J_j} + g &gt; a_I\)</span>。因此每个 <span class="arithmatex">\([a_{J_j}, b_{J_j} + g)\)</span> 都含 <span class="arithmatex">\(a_I\)</span>，而 <span class="arithmatex">\(b_I - a_I + g &gt; 0\)</span> 使 <span class="arithmatex">\([a_I, b_I + g)\)</span> 也含 <span class="arithmatex">\(a_I\)</span>。有共同点的半开区间两两相交，所以 <span class="arithmatex">\(J_0, \ldots, J_{k-1}, I\)</span> 是 <span class="arithmatex">\(k + 1\)</span> 个两两冲突的区间，<span class="arithmatex">\(k + 1 \le \omega\)</span>。</p>
+</details>
+<h2 id="_3">矩形、线段与多边形</h2>
+<details class="note">
+<summary>证明</summary>
+<p><a href="../../guides/geometry/#lem-nearest">矩形上的最近点</a></p>
+<p><span class="arithmatex">\(|q - p|^2 = (q_x - p_x)^2 + (q_y - p_y)^2\)</span>，而 <span class="arithmatex">\(R\)</span> 是 <span class="arithmatex">\([x_0, x_1]\)</span> 与 <span class="arithmatex">\([y_0, y_1]\)</span> 的乘积，因此两个坐标可分别最小化。在区间上，<span class="arithmatex">\(t |\to (t - p_x)^2\)</span> 严格凸，无限制的最小值在 <span class="arithmatex">\(p_x\)</span>，所以它在 <span class="arithmatex">\([x_0, x_1]\)</span> 上的最小值只在 <span class="arithmatex">\(\min(\max(p_x, x_0), x_1)\)</span> 获取；<span class="arithmatex">\(y\)</span> 亦同。</p>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p><a href="../../guides/geometry/#lem-orient">方向测试</a></p>
+<p>将其他行减去第一行，得</p>
+<div class="arithmatex">\[
+\text{orient}(a, b, c) = \det \begin{pmatrix}1 &amp; a_x &amp; a_y \\\ 1 &amp; b_x &amp; b_y \\\ 1 &amp; c_x &amp; c_y\end{pmatrix}.
+\]</div>
+<p>列的循环置换为偶置换，交换两行为奇置换，由此得到对称性。又</p>
+<div class="arithmatex">\[
+\text{orient}(a, b, c) = (b - a) \times (c - a) = |b - a| |c - a| \sin \theta
+\]</div>
+<p>其中 <span class="arithmatex">\(\theta\)</span> 为从 <span class="arithmatex">\(b - a\)</span> 到 <span class="arithmatex">\(c - a\)</span> 的有号角；它为正恰好在 <span class="arithmatex">\(\theta \in (0, \pi)\)</span>，即 <span class="arithmatex">\(c\)</span> 位于有向直线左侧时，位于右侧时为负，而在两向量平行或其一为零，即三点共线时为零。</p>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p><a href="../../guides/geometry/#thm-segments">线段相交</a></p>
+<p>先说明：若 <span class="arithmatex">\(\text{orient}(c, d, p) = 0\)</span> 且 <span class="arithmatex">\(p\)</span> 位于 <span class="arithmatex">\([c, d]\)</span> 的外接矩形内，则 <span class="arithmatex">\(p \in [c, d]\)</span>。事实上，若 <span class="arithmatex">\(c = d\)</span>，外接矩形就是点 <span class="arithmatex">\(c\)</span>；否则由共线性，对某实数 <span class="arithmatex">\(t\)</span> 有 <span class="arithmatex">\(p = c + t (d - c)\)</span>，而在 <span class="arithmatex">\(d - c\)</span> 不为零的坐标上，外接矩形条件迫使 <span class="arithmatex">\(t \in [0, 1]\)</span>。</p>
+<p><em>充分性。</em>设 <span class="arithmatex">\(d_1 d_2 &lt; 0\)</span> 且 <span class="arithmatex">\(d_3 d_4 &lt; 0\)</span>。<span class="arithmatex">\(\text{orient}(c, d, \cdot)\)</span> 沿 <span class="arithmatex">\([a, b]\)</span> 为仿射函数且变号，因此 <span class="arithmatex">\([a, b]\)</span> 与直线 <span class="arithmatex">\(L_{c d}\)</span> 交于一点；同理 <span class="arithmatex">\([c, d]\)</span> 与 <span class="arithmatex">\(L_{a b}\)</span> 交于一点。由于 <span class="arithmatex">\(a\)</span>、<span class="arithmatex">\(b\)</span> 位于 <span class="arithmatex">\(L_{c d}\)</span> 两侧，两直线不平行，恰有一个共同点 <span class="arithmatex">\(z\)</span>；两个交点都等于 <span class="arithmatex">\(z\)</span>，因此 <span class="arithmatex">\(z\)</span> 同时位于两线段上。另一种情形是某个 <span class="arithmatex">\(d_i = 0\)</span> 且其端点位于另一线段的外接矩形内，由上述说明，该端点位于另一线段上。</p>
+<p><em>必要性。</em>设 <span class="arithmatex">\(z\)</span> 为共同点。若 <span class="arithmatex">\(d_1 d_2 &gt; 0\)</span>，则 <span class="arithmatex">\(a\)</span>、<span class="arithmatex">\(b\)</span> 严格位于 <span class="arithmatex">\(L_{c d}\)</span> 的同一侧，整个 <span class="arithmatex">\([a, b]\)</span> 亦然，与 <span class="arithmatex">\(z \in L_{c d}\)</span> 矛盾；所以 <span class="arithmatex">\(d_1 d_2 \le 0\)</span>，同理 <span class="arithmatex">\(d_3 d_4 \le 0\)</span>。若两者皆为负则得证。否则某个 <span class="arithmatex">\(d_i\)</span> 为零；不妨设 <span class="arithmatex">\(d_1 = 0\)</span>，其余情形对称。若 <span class="arithmatex">\(d_2 \ne 0\)</span>，<span class="arithmatex">\([a, b]\)</span> 只在 <span class="arithmatex">\(a\)</span> 与 <span class="arithmatex">\(L_{c d}\)</span> 相交，故 <span class="arithmatex">\(z = a\)</span> 且 <span class="arithmatex">\(a \in [c, d]\)</span>：<span class="arithmatex">\(d_1\)</span> 的测试成立。若 <span class="arithmatex">\(d_2 = 0\)</span>，四点共线，两线段是同一直线上重叠的区间，其中一条的端点位于另一条内，因此四个测试之一成立。</p>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p><a href="../../guides/geometry/#lem-rect-segment">线段与矩形</a></p>
+<p><span class="arithmatex">\(R\)</span> 的边都在 <span class="arithmatex">\(R\)</span> 内，因此任一测试成立都给出共同点（参见<a href="../../guides/geometry/#thm-segments">线段相交</a>）。反之，设 <span class="arithmatex">\([a, b]\)</span> 与 <span class="arithmatex">\(R\)</span> 相交但两端点都不在 <span class="arithmatex">\(R\)</span> 内。线段是连通的，同时含有 <span class="arithmatex">\(R\)</span> 内与 <span class="arithmatex">\(R\)</span> 外的点，因此与 <span class="arithmatex">\(R\)</span> 的边界相交，而边界是四条边的联集；<a href="../../guides/geometry/#thm-segments">线段相交</a>会检测到该边。</p>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p><a href="../../guides/geometry/#lem-segment-distance">到线段的距离</a></p>
+<p><span class="arithmatex">\(t |\to |a + t (b - a) - p|^2\)</span> 是凸二次函数，无限制的最小值在 <span class="arithmatex">\((p - a) \cdot (b - a) / |b - a|^2\)</span>；如<a href="../../guides/geometry/#lem-nearest">矩形上的最近点</a>的证明，它在 <span class="arithmatex">\([0, 1]\)</span> 上的最小值位于该值的截断处。</p>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p><a href="../../guides/geometry/#prop-even-odd">奇偶规则</a></p>
+<p>记 <span class="arithmatex">\(p = (x, y)\)</span>，取 <span class="arithmatex">\(\epsilon &gt; 0\)</span> 小于所有顶点高度与 <span class="arithmatex">\(y\)</span> 的正差值 <span class="arithmatex">\(|y_i - y|\)</span>，且小到使 <span class="arithmatex">\(p_\epsilon = (x, y + \epsilon)\)</span> 与 <span class="arithmatex">\(p\)</span> 位于 <span class="arithmatex">\(\mathbb{R}^2 \setminus \partial P\)</span> 的同一连通分量（因 <span class="arithmatex">\(p \notin \partial P\)</span> 且各分量为开集，此为可行）。直线 <span class="arithmatex">\(Y = y + \epsilon\)</span> 上没有顶点，且对每个顶点，<span class="arithmatex">\(y_i &gt; y\)</span> 当且仅当 <span class="arithmatex">\(y_i &gt; y + \epsilon\)</span>。因此一条边通过代码的高度测试，恰好等价于它穿过直线 <span class="arithmatex">\(Y = y + \epsilon\)</span>，交点横坐标为</p>
+<div class="arithmatex">\[
+X_\epsilon = x_0 + (y + \epsilon - y_0)(x_1 - x_0) / (y_1 - y_0)
+\]</div>
+<p>代码比较的是 <span class="arithmatex">\(x\)</span> 与 <span class="arithmatex">\(X_0\)</span>。若 <span class="arithmatex">\(x = X_0\)</span>，由于高度测试使 <span class="arithmatex">\(y\)</span> 介于两端点高度之间，点 <span class="arithmatex">\((X_0, y)\)</span> 位于该边上，即 <span class="arithmatex">\(p \in \partial P\)</span>，与假设矛盾；所以 <span class="arithmatex">\(x \ne X_0\)</span>，由连续性，对够小的 <span class="arithmatex">\(\epsilon\)</span>，<span class="arithmatex">\(x &lt; X_0\)</span> 当且仅当 <span class="arithmatex">\(x &lt; X_\epsilon\)</span>。因此代码计算的正是从 <span class="arithmatex">\(p_\epsilon\)</span> 向右、不经过任何顶点的射线所穿过的边。每次穿越都使射线在内部与外部之间切换，而射线在最右方位于外部，所以计数为奇数恰好在 <span class="arithmatex">\(p_\epsilon \in \text{int} P\)</span>，即 <span class="arithmatex">\(p \in \text{int} P\)</span> 时 <a href="../references/#haines1994">Haines (1994)</a>。</p>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p><a href="../../guides/geometry/#thm-rect-inside">多边形内的矩形</a></p>
+<p>若 <span class="arithmatex">\(R \subset \text{int} P\)</span>，则 <span class="arithmatex">\(R\)</span> 与 <span class="arithmatex">\(\partial P\)</span> 不相交，因此没有边碰到它（参见<a href="../../guides/geometry/#lem-rect-segment">线段与矩形</a>），而它的角位于 <span class="arithmatex">\(\text{int} P\)</span> 且不在边界上，因此通过奇偶测试（参见<a href="../../guides/geometry/#prop-even-odd">奇偶规则</a>）。反之，若没有边碰到 <span class="arithmatex">\(R\)</span>，则 <span class="arithmatex">\(R \cap \partial P = \emptyset\)</span>（参见<a href="../../guides/geometry/#lem-rect-segment">线段与矩形</a>）；特别是各角不在边界上，通过测试即表示它们位于 <span class="arithmatex">\(\text{int} P\)</span>。<span class="arithmatex">\(R\)</span> 是连通的且与 <span class="arithmatex">\(\partial P\)</span> 不相交，因此位于 <span class="arithmatex">\(\mathbb{R}^2 \setminus \partial P\)</span> 的一个分量内；它含有一个位于 <span class="arithmatex">\(\text{int} P\)</span> 的角，所以 <span class="arithmatex">\(R \subset \text{int} P\)</span>。</p>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p><a href="../../guides/geometry/#cor-rect-overlap">与多边形重叠的矩形</a></p>
+<p>若有一个角通过测试，它不在边界上时位于 <span class="arithmatex">\(\text{int} P\)</span>（参见<a href="../../guides/geometry/#prop-even-odd">奇偶规则</a>），否则位于 <span class="arithmatex">\(\partial P\)</span>；无论哪种情形都有 <span class="arithmatex">\(R \cap \overline{P} \ne \emptyset\)</span>。若有一条边碰到 <span class="arithmatex">\(R\)</span>，则 <span class="arithmatex">\(R\)</span> 与 <span class="arithmatex">\(\partial P\)</span> 相交。反之，设 <span class="arithmatex">\(R\)</span> 与 <span class="arithmatex">\(\overline{P}\)</span> 相交。若它与 <span class="arithmatex">\(\partial P\)</span> 相交，就有某条边碰到它。否则 <span class="arithmatex">\(R\)</span> 与 <span class="arithmatex">\(\partial P\)</span> 不相交而与 <span class="arithmatex">\(\text{int} P\)</span> 相交；由连通性得 <span class="arithmatex">\(R \subset \text{int} P\)</span>，其各角通过测试。</p>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p><a href="../../guides/geometry/#prop-ray-exit">永久离开多边形</a></p>
+<p>设对某个 <span class="arithmatex">\(t &gt; T\)</span>，<span class="arithmatex">\(p = o + t r \in \partial P\)</span>，位于边 <span class="arithmatex">\(e\)</span> 上。若 <span class="arithmatex">\(e\)</span> 不平行于 <span class="arithmatex">\(r\)</span>，代码对 <span class="arithmatex">\(e\)</span> 解 <span class="arithmatex">\(o + t r = a + u (b - a)\)</span>，得到这个 <span class="arithmatex">\(t \ge 0\)</span> 与 <span class="arithmatex">\(u \in [0, 1]\)</span>，因此 <span class="arithmatex">\(T \ge t\)</span>，矛盾。若 <span class="arithmatex">\(e\)</span> 平行于 <span class="arithmatex">\(r\)</span>，它位于射线所在直线 <span class="arithmatex">\(\ell\)</span> 上。取包含 <span class="arithmatex">\(e\)</span>、位于 <span class="arithmatex">\(\ell\)</span> 上的极大连续边段。它不是整个 <span class="arithmatex">\(P\)</span>（<span class="arithmatex">\(P\)</span> 的顶点不全共线），所以边段两端都是与某条不在 <span class="arithmatex">\(\ell\)</span> 上、因而不平行于 <span class="arithmatex">\(r\)</span> 的边共用的顶点。边段中相邻的边不会折返，因为从同一顶点沿 <span class="arithmatex">\(\ell\)</span> 同向出发的两条边会重叠，与 <span class="arithmatex">\(P\)</span> 为简单多边形矛盾；因此边段是 <span class="arithmatex">\(\ell\)</span> 上的一段，其在 <span class="arithmatex">\(r\)</span> 方向的远端是端点顶点 <span class="arithmatex">\(v = o + t_v r\)</span>，且 <span class="arithmatex">\(t_v \ge t &gt; T\)</span>。相邻的不平行边含有 <span class="arithmatex">\(v\)</span>（<span class="arithmatex">\(u \in \lbrace 0, 1\rbrace\)</span>），因此 <span class="arithmatex">\(T \ge t_v\)</span>，同样矛盾。所以 <span class="arithmatex">\(\lbrace o + t r : t &gt; T\rbrace\)</span> 与 <span class="arithmatex">\(\partial P\)</span> 不相交；它连通且无界，因此位于外部。</p>
+</details>
+<h2 id="_4">不可及极点</h2>
+<details class="note">
+<summary>证明</summary>
+<p><a href="../../guides/geometry/#lem-lipschitz">有符号距离为 1-Lipschitz</a></p>
+<p>对任意集合 <span class="arithmatex">\(S\)</span>，由三角不等式得 <span class="arithmatex">\(|d(p, S) - d(q, S)| \le |p - q|\)</span>，这就处理了 <span class="arithmatex">\(p\)</span>、<span class="arithmatex">\(q\)</span> 在同一侧的情形。设 <span class="arithmatex">\(p \in \overline{P}\)</span>、<span class="arithmatex">\(q \notin \overline{P}\)</span>，并令 <span class="arithmatex">\(z\)</span> 为从 <span class="arithmatex">\(p\)</span> 到 <span class="arithmatex">\(q\)</span> 的线段上，属于 <span class="arithmatex">\(\overline{P}\)</span> 的最后一点（<span class="arithmatex">\(\overline{P}\)</span> 为闭集，故存在）。紧接在 <span class="arithmatex">\(z\)</span> 之后的点都在外面，因此 <span class="arithmatex">\(z \notin \text{int} P\)</span>，即 <span class="arithmatex">\(z \in \partial P\)</span>。于是</p>
+<div class="arithmatex">\[
+|f(p) - f(q)| = d(p, \partial P) + d(q, \partial P) \le |p - z| + |z - q| = |p - q|
+\]</div>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p><a href="../../guides/geometry/#thm-polylabel">不可及极点</a></p>
+<p>代码精确计算 <span class="arithmatex">\(f\)</span>：不在边界上时，由<a href="../../guides/geometry/#prop-even-odd">奇偶规则</a>符号正确；在边界上时距离为 <span class="arithmatex">\(0\)</span>。记 <span class="arithmatex">\(b\)</span> 为目前的最佳值；它只会增加，且始终是某个已求值中心的 <span class="arithmatex">\(f\)</span> 值。</p>
+<p><em>结束性。</em>每次分割使半边长 <span class="arithmatex">\(h\)</span> 减半。取出 <span class="arithmatex">\(h \sqrt{2} \le \epsilon\)</span> 的单元时，更新后 <span class="arithmatex">\(b \ge f(c)\)</span>，因此其上界最多比 <span class="arithmatex">\(b\)</span> 多 <span class="arithmatex">\(h \sqrt{2} \le \epsilon\)</span>，单元被舍弃而不分割。所以单元构成有限树，每格各推入与取出一次。</p>
+<p><em>不变式。</em>外接矩形的每一点都位于某格的闭正方形内，该格要不在队列中，要不在被舍弃当时满足 <span class="arithmatex">\(f(c) + h \sqrt{2} \le b + \epsilon\)</span>。初始正方形从左下角起以短边为步长铺设，直到越过远端边缘，覆盖了外接矩形；舍弃按舍弃规则保持不变式；分割把一个正方形换成覆盖它的四个正方形。</p>
+<p><em>结论。</em>结束时队列为空。设 <span class="arithmatex">\(p^*\)</span> 为极点；它位于 <span class="arithmatex">\(\overline{P}\)</span> 中、外接矩形内，落在某个被舍弃、中心为 <span class="arithmatex">\(c\)</span>、半边长为 <span class="arithmatex">\(h\)</span> 的单元内。由<a href="../../guides/geometry/#lem-lipschitz">有符号距离为 1-Lipschitz</a>与 <span class="arithmatex">\(|p^* - c| \le h \sqrt{2}\)</span>，</p>
+<div class="arithmatex">\[
+f^* = f(p^*) \le f(c) + h \sqrt{2} \le b + \epsilon \le f(q) + \epsilon,
+\]</div>
+<p>其中 <span class="arithmatex">\(q\)</span> 为返回的点，<span class="arithmatex">\(f(q)\)</span> 为最终的 <span class="arithmatex">\(b\)</span>。若 <span class="arithmatex">\(f^* &gt; \epsilon\)</span>，则 <span class="arithmatex">\(f(q) &gt; 0\)</span>，故 <span class="arithmatex">\(q\)</span> 位于 <span class="arithmatex">\(\overline{P}\)</span> 内且与 <span class="arithmatex">\(\partial P\)</span> 距离为正，即 <span class="arithmatex">\(q \in \text{int} P\)</span>。</p>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p><a href="../../guides/geometry/#prop-brace">大括号的形状</a></p>
+<p>记半径为 <span class="arithmatex">\(r\)</span>，拉伸倍率为 <span class="arithmatex">\(\sigma = \delta / 2r \ge 1\)</span>。拉伸之前，曲线由以下部分组成：圆心 <span class="arithmatex">\((0, \ell + r)\)</span>、从 <span class="arithmatex">\(-90 degree\)</span> 到 <span class="arithmatex">\(0 degree\)</span> 的圆弧 <span class="arithmatex">\(A_1\)</span>；从 <span class="arithmatex">\(v = \ell + r\)</span> 到 <span class="arithmatex">\(v = m - r\)</span> 的线段 <span class="arithmatex">\(u = r\)</span>；圆心 <span class="arithmatex">\((2 r, m - r)\)</span>、从 <span class="arithmatex">\(180 degree\)</span> 到 <span class="arithmatex">\(90 degree\)</span> 的圆弧 <span class="arithmatex">\(A_2\)</span>；圆心 <span class="arithmatex">\((2 r, m + r)\)</span>、从 <span class="arithmatex">\(270 degree\)</span> 到 <span class="arithmatex">\(180 degree\)</span> 的圆弧 <span class="arithmatex">\(A_3\)</span>；从 <span class="arithmatex">\(m + r\)</span> 到 <span class="arithmatex">\(h - r\)</span> 的线段 <span class="arithmatex">\(u = r\)</span>；以及圆心 <span class="arithmatex">\((0, h - r)\)</span>、从 <span class="arithmatex">\(0 degree\)</span> 到 <span class="arithmatex">\(90 degree\)</span> 的圆弧 <span class="arithmatex">\(A_4\)</span>。（当 <span class="arithmatex">\(r = (h - \ell) / 4\)</span> 时两线段长度为零。）曲线起于 <span class="arithmatex">\((0, \ell)\)</span>、终于 <span class="arithmatex">\((0, h)\)</span>，<span class="arithmatex">\(A_2\)</span> 与 <span class="arithmatex">\(A_3\)</span> 交于 <span class="arithmatex">\((2 r, m)\)</span>，拉伸 <span class="arithmatex">\((u, v) |\to (\sigma u, v)\)</span> 把它送到 <span class="arithmatex">\((\delta, m)\)</span>。</p>
+<p>(i) 在 <span class="arithmatex">\(A_1\)</span> 与 <span class="arithmatex">\(A_4\)</span> 上 <span class="arithmatex">\(u \in [0, r]\)</span>；在两线段上 <span class="arithmatex">\(u = r\)</span>；在 <span class="arithmatex">\(A_2\)</span> 与 <span class="arithmatex">\(A_3\)</span> 上 <span class="arithmatex">\(u \in [r, 2 r]\)</span>。拉伸后 <span class="arithmatex">\(u \in [0, \delta]\)</span>。</p>
+<p>(ii) 反射 <span class="arithmatex">\(v |\to \ell + h - v\)</span> 交换 <span class="arithmatex">\(A_1\)</span> 与 <span class="arithmatex">\(A_4\)</span>、<span class="arithmatex">\(A_2\)</span> 与 <span class="arithmatex">\(A_3\)</span> 的圆心，并把角度 <span class="arithmatex">\(\theta\)</span> 变为 <span class="arithmatex">\(-\theta\)</span>，因此把 <span class="arithmatex">\(A_1\)</span> 映到 <span class="arithmatex">\(A_4\)</span>、<span class="arithmatex">\(A_2\)</span> 映到 <span class="arithmatex">\(A_3\)</span>，两线段互换。</p>
+<p>(iii) 沿角度递增方向走圆弧时，运动方向为 <span class="arithmatex">\((-\sin \theta, \cos \theta)\)</span>；沿递减方向时为 <span class="arithmatex">\((\sin \theta, -\cos \theta)\)</span>。在 <span class="arithmatex">\(A_1\)</span> 终点（<span class="arithmatex">\(\theta = 0\)</span>）与 <span class="arithmatex">\(A_2\)</span> 起点（<span class="arithmatex">\(\theta = 180 degree\)</span>）两者都是 <span class="arithmatex">\((0, 1)\)</span>，即两者间线段的方向；<span class="arithmatex">\(A_3\)</span> 终点与 <span class="arithmatex">\(A_4\)</span> 起点亦同。在尖端，<span class="arithmatex">\(A_2\)</span> 以方向 <span class="arithmatex">\((1, 0)\)</span> 抵达（<span class="arithmatex">\(\theta = 90 degree\)</span>），<span class="arithmatex">\(A_3\)</span> 以 <span class="arithmatex">\((-1, 0)\)</span> 离开（<span class="arithmatex">\(\theta = 270 degree\)</span>）：形成尖点。拉伸与最后的放置都是可逆仿射映射，会带着切线方向且保持其非零，因此连续性与尖点都得以保留。</p>
+</details>
+<h2 id="_5">标签</h2>
+<details class="note">
+<summary>证明</summary>
+<p><a href="../../guides/labels/#lem-crossing">交叉点</a></p>
+<p>共同点满足 <span class="arithmatex">\(a + t r = c + u s\)</span>，其中 <span class="arithmatex">\(r = b - a\)</span>、<span class="arithmatex">\(s = d - c\)</span>。两边与 <span class="arithmatex">\(s\)</span> 作外积可消去 <span class="arithmatex">\(u\)</span>：<span class="arithmatex">\(t (r \times s) = (c - a) \times s\)</span>。真正交叉使 <span class="arithmatex">\(a\)</span>、<span class="arithmatex">\(b\)</span> 严格位于 <span class="arithmatex">\(L_{c d}\)</span> 两侧，因此两直线不平行，<span class="arithmatex">\(r \times s \ne 0\)</span>，交点唯一。由于 <span class="arithmatex">\(\text{orient}(c, d, \cdot)\)</span> 沿 <span class="arithmatex">\([a, b]\)</span> 为仿射函数且两端异号，其零点位于某个 <span class="arithmatex">\(t \in (0, 1)\)</span>。</p>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p><a href="../../guides/labels/#prop-callout">引线标注的选择</a></p>
+<p>代码保留一个最佳候选，只在遇到键值严格较小的候选时才替换，因此在枚举的任何前段之后，它保存的是目前为止键值最小的第一个候选。近环结束后，若最小代价为 <span class="arithmatex">\(0\)</span>，最小键值为 <span class="arithmatex">\((0, \ell_{\min})\)</span>，搜索停止：结果是引线最短的第一个零代价候选。否则以同一个最佳候选继续枚举远环，结果是两环中键值最小的第一个候选。每个步骤都是参数（极点、离开距离、开阔区域、交叉点）的函数，没有随机性，枚举顺序固定。</p>
+</details>
+<h2 id="_6">样式、主题与绑定</h2>
+<details class="note">
+<summary>证明</summary>
+<p><a href="../../guides/styles/#prop-monoid">合并构成幺半群</a></p>
+<p>逐栏来看，合并是运算：<span class="arithmatex">\(x \ne \text{None}\)</span> 时 <span class="arithmatex">\(x \circ y = x\)</span>，否则为 <span class="arithmatex">\(y\)</span>。<span class="arithmatex">\((x \circ y) \circ z\)</span> 与 <span class="arithmatex">\(x \circ (y \circ z)\)</span> 都等于 <span class="arithmatex">\(x, y, z\)</span> 中第一个不是 <code class="ev-api-inline-code"><span class="ev-api__python ev-api__python--constant">None</span></code> 的值（或 <code class="ev-api-inline-code"><span class="ev-api__python ev-api__python--constant">None</span></code>），<code class="ev-api-inline-code"><span class="ev-api__python ev-api__python--constant">None</span></code> 是双边单位元，且 <span class="arithmatex">\(x \circ x = x\)</span>。样式在各栏相等时相等，由此得 (i)–(iii)，再由归纳法得到第一个非 <code class="ev-api-inline-code"><span class="ev-api__python ev-api__python--constant">None</span></code> 值的描述。样式组逐槽同理，<code class="ev-api-inline-code"><span class="ev-api__python ev-api__python--constant">None</span></code> 槽的行为如同空样式。</p>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p><a href="../../guides/styles/#prop-hex">十六进制往返</a></p>
+<p>一对十六进制数字 <span class="arithmatex">\(k \in \lbrace 0, \ldots, 255\rbrace\)</span> 读为 <span class="arithmatex">\(k / 255\)</span>，写出时取 <span class="arithmatex">\(\text{round}(255 \cdot k / 255)\)</span> 的两位大写数字。在双精度下，计算出的乘积与 <span class="arithmatex">\(k\)</span> 相差最多 <span class="arithmatex">\(255 \cdot 2^{-52} &lt; 1 / 2\)</span>，因此舍入为 <span class="arithmatex">\(k\)</span>。<code class="ev-api-inline-code"><span class="ev-api__attribute">include_alpha</span></code> 为真，即九个字符的形式时，才写出 alpha 那一对。三位数形式在读取前先把每位数字重复一次。</p>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p><a href="../../guides/themes/#thm-resolution">解析顺序</a></p>
+<p>以 <span class="arithmatex">\(\triangleright\)</span> 表示合并。解析从 <span class="arithmatex">\(D\)</span> 开始，按 <span class="arithmatex">\(T\)</span>、<span class="arithmatex">\(G\)</span>、<span class="arithmatex">\(C\)</span> 的顺序，对每个对应依次把 <span class="arithmatex">\(M[k_n], \ldots, M[k_1]\)</span>（由最一般到最具体）合并到结果之上，不存在的键给出空样式组；最后合并图层自带的样式组 <span class="arithmatex">\(E\)</span>，它由 <code class="ev-api-inline-code"><span class="ev-api__attribute">style_slots</span></code> 指出的字段构成。展开并以结合律（参见<a href="../../guides/styles/#prop-monoid">合并构成幺半群</a>）去掉括号，解析后的样式组为</p>
+<div class="arithmatex">\[
+E \triangleright C[k_1] \triangleright \cdots \triangleright C[k_n] \triangleright G[k_1] \triangleright \cdots \triangleright T[k_n] \triangleright D,
+\]</div>
+<p>其各字段为据此顺序第一个不是 <code class="ev-api-inline-code"><span class="ev-api__python ev-api__python--constant">None</span></code> 的值。之后绑定调色板只把颜色名称换成颜色，不影响其他字段。</p>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p><a href="../../guides/themes/#cor-override">覆盖优先于具体程度</a></p>
+<p>角色为 <a class="ev-api-inline" href="../../guides/themes/#api-entry-0-axes-note"><code class="ev-api-inline-code"><span class="ev-api__attribute">axes.note</span></code></a> 的文字图层，其链为（<a class="ev-api-inline" href="../../guides/themes/#api-entry-0-axes-note"><code class="ev-api-inline-code"><span class="ev-api__attribute">axes.note</span></code></a>, <a class="ev-api-inline" href="../../guides/themes/#api-entry-0-axes"><code class="ev-api-inline-code"><span class="ev-api__attribute">axes</span></code></a>, <code class="ev-api-inline-code"><span class="ev-api__attribute">text</span></code>），在<a href="../../guides/themes/#thm-resolution">解析顺序</a>的序列中 <span class="arithmatex">\(G[\text{text}]\)</span> 位于 <span class="arithmatex">\(T[\text{axes.note}]\)</span> 之前。由假设，更早的项目都没有设置大小，因此第一个非 <code class="ev-api-inline-code"><span class="ev-api__python ev-api__python--constant">None</span></code> 的大小来自 <span class="arithmatex">\(G[\text{text}]\)</span>。</p>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p><a href="../../guides/parameters/#thm-binding">部分绑定</a></p>
+<p>对 <span class="arithmatex">\(e\)</span> 作归纳。若 <span class="arithmatex">\(\text{free}(e) \subseteq \text{dom} \beta\)</span>（特别是常数，以及属于 <span class="arithmatex">\(\text{dom} \beta\)</span> 的参数），<span class="arithmatex">\(\text{bind}(e, \beta)\)</span> 是一般值 <span class="arithmatex">\(e(\beta)\)</span>：它没有自由参数，符合 (i)，且求值为 <span class="arithmatex">\(e(\beta) = e(\beta \cup \gamma)\)</span>，因为表达式的值只取决于其自由参数的值。若 <span class="arithmatex">\(e\)</span> 是参数 <span class="arithmatex">\(p \notin \text{dom} \beta\)</span>，结果为 <span class="arithmatex">\(p\)</span>，<span class="arithmatex">\(\text{free} = \lbrace p\rbrace = \text{free}(e) \setminus \text{dom} \beta\)</span>，值为 <span class="arithmatex">\(\gamma(p) = (\beta \cup \gamma)(p)\)</span>。否则 <span class="arithmatex">\(e = e_1 \circ e_2\)</span>，结果为 <span class="arithmatex">\(\text{bind}(e_1, \beta) \circ \text{bind}(e_2, \beta)\)</span>（一般值包装为常数）。其自由参数为</p>
+<div class="arithmatex">\[
+(\text{free}(e_1) \setminus \text{dom} \beta) \cup (\text{free}(e_2) \setminus \text{dom} \beta) = \text{free}(e) \setminus \text{dom} \beta
+\]</div>
+<p>而 <span class="arithmatex">\(\gamma\)</span> 绑定了两部分各自的自由参数，由归纳假设其值为</p>
+<div class="arithmatex">\[
+e_1(\beta \cup \gamma) \circ e_2(\beta \cup \gamma) = e(\beta \cup \gamma)
+\]</div>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p><a href="../../guides/parameters/#cor-stages">分阶段绑定</a></p>
+<p>两次应用<a href="../../guides/parameters/#thm-binding">部分绑定</a> (i)，两者的自由参数都是 <span class="arithmatex">\(\text{free}(e) \setminus \text{dom} (\beta_1 \cup \beta_2)\)</span>。对这些参数的绑定 <span class="arithmatex">\(\gamma\)</span>（与 <span class="arithmatex">\(\beta_1\)</span>、<span class="arithmatex">\(\beta_2\)</span> 不相交），两次应用 (ii) 得</p>
+<div class="arithmatex">\[
+\text{bind}(\text{bind}(e, \beta_1), \beta_2)(\gamma) = \text{bind}(e, \beta_1)(\beta_2 \cup \gamma) = e(\beta_1 \cup \beta_2 \cup \gamma) = \text{bind}(e, \beta_1 \cup \beta_2)(\gamma)
+\]</div>
+<p>画布以这种方式绑定其场景中的每个表达式。</p>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p><a href="../../guides/parameters/#prop-grid-shape">推断的网格形状</a></p>
+<p>由 <span class="arithmatex">\(r = \left\lceil n / c \right\rceil\)</span> 得 <span class="arithmatex">\(r c \ge n &gt; (r - 1) c\)</span>，因此前 <span class="arithmatex">\(r - 1\)</span> 行是满的，最后一行有 <span class="arithmatex">\(n - (r - 1) c \in [1, c]\)</span> 格，空格数 <span class="arithmatex">\(r c - n &lt; c\)</span>。由 <span class="arithmatex">\(c = \left\lceil \sqrt\lbrace n\rbrace \right\rceil\)</span> 得 <span class="arithmatex">\(n \le c^2\)</span>，所以 <span class="arithmatex">\(n / c \le c\)</span>，<span class="arithmatex">\(r \le c\)</span>。</p>
+</details>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        这页有帮助吗？
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="这页有帮助" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="这页可以改进" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              谢谢你的反馈
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              谢谢你的反馈。欢迎到 <a href="https://github.com/EconViz/utility-viz/issues/new?title=[Docs]+%E8%AF%81%E6%98%8E&body=Page:+/zh-CN/mosaickit/project/proofs/" target="_blank" rel="noopener">GitHub issue</a> 告诉我们哪里需要改进。
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+<h2 id="__comments">评论</h2>
+<script src="https://giscus.app/client.js" data-repo="EconViz/econ-viz-docs" data-repo-id="R_kgDORy8JWQ"
+  data-category="Announcements" data-category-id="DIC_kwDORy8JWc4C5kUA" data-mapping="pathname" data-strict="0"
+  data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="zh-CN"
+  data-loading="lazy" crossorigin="anonymous" async>
+  </script>
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../../guides/rendering/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 绘制">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                绘制
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../changelog/" class="md-footer__link md-footer__link--next" aria-label="下一页: 更新纪录">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                更新纪录
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2026 Pin Yue Sung · <a href="#__consent">更改 Cookie 设置</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:contact@econ-viz.org" target="_blank" rel="noopener" title="contact@econ-viz.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l208 156a48 48 0 0 0 57.6 0l208-156c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48zM0 196v188c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V196L313.6 344.8c-34.1 25.6-81.1 25.6-115.2 0z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/EconViz" target="_blank" rel="noopener" title="EconViz on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://pypi.org/project/utility-viz/" target="_blank" rel="noopener" title="utility-viz on PyPI" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6M286.2 444.7a20.4 20.4 0 1 1 0-40.7 20.4 20.4 0 1 1 0 40.7M167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4m-6.6-183.4a20.4 20.4 0 1 1 0 40.8 20.4 20.4 0 1 1 0-40.8"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+
+<h4>Cookie 设置</h4>
+<p>我们使用分析 Cookie 了解文档的使用方式并持续改善内容，也会从 GitHub 加载仓库数据。</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
+      
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="analytics" checked>
+      <span class="task-list-indicator"></span>
+      Google Analytics
+    </label>
+  </li>
+
+      
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">同意</button>
+    
+    
+    
+  
+    
+    
+      <button type="reset" class="md-button md-button--primary">拒绝</button>
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">管理设定</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "announce.dismiss", "navigation.top", "navigation.footer", "content.code.copy", "content.code.annotate", "content.tabs.link", "search.highlight", "search.suggest"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../../javascripts/api-highlight.js"></script>
+      
+        <script src="../../../../javascripts/katex.js"></script>
+      
+        <script src="../../../../javascripts/model-toc.js"></script>
+      
+        <script src="../../../../javascripts/analytics-events.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

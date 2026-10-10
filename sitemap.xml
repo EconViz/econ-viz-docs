@@ -1,0 +1,1755 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://econ-viz.org/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/bezierkit/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/bezierkit/cli/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/cli/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/cli/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/cli/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/bezierkit/installation/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/installation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/installation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/installation/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/bezierkit/quickstart/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/quickstart/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/bezierkit/guides/construction/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/guides/construction/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/guides/construction/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/guides/construction/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/bezierkit/guides/curves/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/guides/curves/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/guides/curves/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/guides/curves/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/bezierkit/guides/export/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/guides/export/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/guides/export/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/guides/export/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/bezierkit/guides/fitting/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/guides/fitting/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/guides/fitting/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/guides/fitting/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/bezierkit/guides/geometry/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/guides/geometry/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/guides/geometry/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/guides/geometry/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/bezierkit/guides/implicit/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/guides/implicit/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/guides/implicit/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/guides/implicit/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/bezierkit/guides/introduction/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/guides/introduction/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/guides/introduction/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/guides/introduction/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/bezierkit/guides/operations/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/guides/operations/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/guides/operations/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/guides/operations/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/bezierkit/guides/paths/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/guides/paths/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/guides/paths/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/guides/paths/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/bezierkit/project/changelog/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/project/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/project/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/project/changelog/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/bezierkit/project/proofs-approximation/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/project/proofs-approximation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/project/proofs-approximation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/project/proofs-approximation/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/bezierkit/project/proofs/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/project/proofs/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/project/proofs/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/project/proofs/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/bezierkit/project/references/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/project/references/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/project/references/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/project/references/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/mosaickit/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/mosaickit/installation/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/installation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/installation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/installation/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/mosaickit/quickstart/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/quickstart/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/mosaickit/guides/annotations/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/guides/annotations/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/guides/annotations/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/guides/annotations/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/mosaickit/guides/canvas/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/guides/canvas/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/guides/canvas/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/guides/canvas/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/mosaickit/guides/geometry/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/guides/geometry/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/guides/geometry/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/guides/geometry/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/mosaickit/guides/introduction/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/guides/introduction/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/guides/introduction/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/guides/introduction/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/mosaickit/guides/labels/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/guides/labels/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/guides/labels/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/guides/labels/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/mosaickit/guides/layers/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/guides/layers/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/guides/layers/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/guides/layers/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/mosaickit/guides/parameters/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/guides/parameters/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/guides/parameters/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/guides/parameters/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/mosaickit/guides/rendering/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/guides/rendering/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/guides/rendering/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/guides/rendering/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/mosaickit/guides/styles/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/guides/styles/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/guides/styles/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/guides/styles/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/mosaickit/guides/themes/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/guides/themes/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/guides/themes/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/guides/themes/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/mosaickit/project/changelog/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/project/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/project/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/project/changelog/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/mosaickit/project/proofs/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/project/proofs/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/project/proofs/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/project/proofs/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/mosaickit/project/references/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/project/references/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/project/references/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/project/references/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/principle-viz/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/principle-viz/changelog/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/changelog/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/principle-viz/cli/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/cli/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/cli/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/cli/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/principle-viz/installation/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/installation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/installation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/installation/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/principle-viz/migrating/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/migrating/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/migrating/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/migrating/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/principle-viz/quickstart/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/quickstart/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/principle-viz/guides/aggregation/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/aggregation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/aggregation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/aggregation/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/principle-viz/guides/controls/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/controls/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/controls/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/controls/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/principle-viz/guides/discrete/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/discrete/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/discrete/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/discrete/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/principle-viz/guides/elasticity/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/elasticity/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/elasticity/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/elasticity/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/principle-viz/guides/factor-markets/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/factor-markets/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/factor-markets/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/factor-markets/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/principle-viz/guides/failures/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/failures/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/failures/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/failures/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/principle-viz/guides/figures/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/figures/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/figures/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/figures/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/principle-viz/guides/introduction/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/introduction/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/introduction/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/introduction/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/principle-viz/guides/markets/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/markets/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/markets/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/markets/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/principle-viz/guides/ppf/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/ppf/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/ppf/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/ppf/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/principle-viz/guides/taxes/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/taxes/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/taxes/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/taxes/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/principle-viz/guides/trade/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/trade/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/trade/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/trade/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/principle-viz/guides/welfare/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/welfare/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/welfare/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/welfare/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/principle-viz/project/references/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/project/references/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/project/references/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/project/references/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/utility-viz/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/utility-viz/migrating/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/migrating/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/migrating/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/migrating/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/utility-viz/getting-started/cli/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/getting-started/cli/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/getting-started/cli/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/getting-started/cli/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/utility-viz/getting-started/installation/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/getting-started/installation/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/utility-viz/getting-started/quickstart/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/getting-started/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/getting-started/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/getting-started/quickstart/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/utility-viz/guides/animation/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/guides/animation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/guides/animation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/guides/animation/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/utility-viz/guides/canvas/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/guides/canvas/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/guides/canvas/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/guides/canvas/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/utility-viz/guides/config/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/guides/config/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/guides/config/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/guides/config/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/utility-viz/guides/consumer/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/guides/consumer/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/guides/consumer/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/guides/consumer/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/utility-viz/guides/export/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/guides/export/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/guides/export/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/guides/export/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/utility-viz/guides/interactive/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/guides/interactive/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/guides/interactive/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/guides/interactive/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/utility-viz/guides/themes/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/guides/themes/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/guides/themes/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/guides/themes/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/utility-viz/models/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/models/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/models/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/models/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/utility-viz/models/advanced/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/models/advanced/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/models/advanced/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/models/advanced/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/utility-viz/project/changelog/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/project/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/project/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/project/changelog/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/utility-viz/project/manual/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/project/manual/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/project/manual/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/project/manual/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/utility-viz/project/references/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/project/references/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/project/references/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/project/references/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/utility-viz/tools/analysis/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/tools/analysis/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/tools/analysis/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/tools/analysis/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/utility-viz/tools/latex/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/tools/latex/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/tools/latex/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/tools/latex/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/bezierkit/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/bezierkit/cli/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/cli/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/cli/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/cli/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/bezierkit/installation/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/installation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/installation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/installation/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/bezierkit/quickstart/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/quickstart/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/bezierkit/guides/construction/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/guides/construction/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/guides/construction/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/guides/construction/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/bezierkit/guides/curves/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/guides/curves/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/guides/curves/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/guides/curves/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/bezierkit/guides/export/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/guides/export/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/guides/export/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/guides/export/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/bezierkit/guides/fitting/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/guides/fitting/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/guides/fitting/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/guides/fitting/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/bezierkit/guides/geometry/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/guides/geometry/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/guides/geometry/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/guides/geometry/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/bezierkit/guides/implicit/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/guides/implicit/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/guides/implicit/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/guides/implicit/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/bezierkit/guides/introduction/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/guides/introduction/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/guides/introduction/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/guides/introduction/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/bezierkit/guides/operations/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/guides/operations/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/guides/operations/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/guides/operations/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/bezierkit/guides/paths/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/guides/paths/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/guides/paths/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/guides/paths/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/bezierkit/project/changelog/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/project/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/project/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/project/changelog/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/bezierkit/project/proofs-approximation/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/project/proofs-approximation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/project/proofs-approximation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/project/proofs-approximation/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/bezierkit/project/proofs/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/project/proofs/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/project/proofs/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/project/proofs/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/bezierkit/project/references/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/project/references/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/project/references/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/project/references/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/mosaickit/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/mosaickit/installation/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/installation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/installation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/installation/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/mosaickit/quickstart/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/quickstart/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/mosaickit/guides/annotations/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/guides/annotations/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/guides/annotations/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/guides/annotations/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/mosaickit/guides/canvas/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/guides/canvas/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/guides/canvas/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/guides/canvas/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/mosaickit/guides/geometry/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/guides/geometry/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/guides/geometry/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/guides/geometry/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/mosaickit/guides/introduction/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/guides/introduction/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/guides/introduction/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/guides/introduction/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/mosaickit/guides/labels/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/guides/labels/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/guides/labels/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/guides/labels/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/mosaickit/guides/layers/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/guides/layers/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/guides/layers/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/guides/layers/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/mosaickit/guides/parameters/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/guides/parameters/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/guides/parameters/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/guides/parameters/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/mosaickit/guides/rendering/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/guides/rendering/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/guides/rendering/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/guides/rendering/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/mosaickit/guides/styles/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/guides/styles/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/guides/styles/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/guides/styles/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/mosaickit/guides/themes/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/guides/themes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/guides/themes/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/guides/themes/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/mosaickit/project/changelog/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/project/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/project/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/project/changelog/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/mosaickit/project/proofs/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/project/proofs/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/project/proofs/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/project/proofs/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/mosaickit/project/references/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/project/references/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/project/references/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/project/references/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/principle-viz/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/principle-viz/changelog/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/changelog/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/principle-viz/cli/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/cli/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/cli/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/cli/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/principle-viz/installation/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/installation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/installation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/installation/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/principle-viz/migrating/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/migrating/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/migrating/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/migrating/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/principle-viz/quickstart/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/quickstart/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/principle-viz/guides/aggregation/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/aggregation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/aggregation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/aggregation/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/principle-viz/guides/controls/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/controls/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/controls/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/controls/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/principle-viz/guides/discrete/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/discrete/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/discrete/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/discrete/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/principle-viz/guides/elasticity/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/elasticity/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/elasticity/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/elasticity/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/principle-viz/guides/factor-markets/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/factor-markets/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/factor-markets/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/factor-markets/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/principle-viz/guides/failures/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/failures/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/failures/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/failures/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/principle-viz/guides/figures/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/figures/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/figures/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/figures/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/principle-viz/guides/introduction/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/introduction/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/introduction/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/introduction/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/principle-viz/guides/markets/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/markets/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/markets/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/markets/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/principle-viz/guides/ppf/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/ppf/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/ppf/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/ppf/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/principle-viz/guides/taxes/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/taxes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/taxes/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/taxes/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/principle-viz/guides/trade/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/trade/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/trade/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/trade/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/principle-viz/guides/welfare/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/welfare/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/welfare/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/welfare/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/principle-viz/project/references/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/project/references/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/project/references/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/project/references/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/utility-viz/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/utility-viz/migrating/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/migrating/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/migrating/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/migrating/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/utility-viz/getting-started/cli/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/getting-started/cli/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/getting-started/cli/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/getting-started/cli/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/utility-viz/getting-started/installation/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/getting-started/installation/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/utility-viz/getting-started/quickstart/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/getting-started/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/getting-started/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/getting-started/quickstart/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/utility-viz/guides/animation/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/guides/animation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/guides/animation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/guides/animation/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/utility-viz/guides/canvas/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/guides/canvas/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/guides/canvas/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/guides/canvas/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/utility-viz/guides/config/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/guides/config/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/guides/config/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/guides/config/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/utility-viz/guides/consumer/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/guides/consumer/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/guides/consumer/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/guides/consumer/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/utility-viz/guides/export/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/guides/export/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/guides/export/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/guides/export/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/utility-viz/guides/interactive/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/guides/interactive/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/guides/interactive/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/guides/interactive/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/utility-viz/guides/themes/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/guides/themes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/guides/themes/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/guides/themes/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/utility-viz/models/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/models/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/models/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/models/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/utility-viz/models/advanced/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/models/advanced/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/models/advanced/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/models/advanced/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/utility-viz/project/changelog/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/project/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/project/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/project/changelog/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/utility-viz/project/manual/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/project/manual/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/project/manual/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/project/manual/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/utility-viz/project/references/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/project/references/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/project/references/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/project/references/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/utility-viz/tools/analysis/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/tools/analysis/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/tools/analysis/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/tools/analysis/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-TW/utility-viz/tools/latex/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/tools/latex/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/tools/latex/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/tools/latex/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/bezierkit/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/bezierkit/cli/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/cli/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/cli/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/cli/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/bezierkit/installation/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/installation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/installation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/installation/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/bezierkit/quickstart/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/quickstart/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/bezierkit/guides/construction/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/guides/construction/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/guides/construction/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/guides/construction/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/bezierkit/guides/curves/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/guides/curves/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/guides/curves/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/guides/curves/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/bezierkit/guides/export/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/guides/export/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/guides/export/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/guides/export/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/bezierkit/guides/fitting/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/guides/fitting/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/guides/fitting/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/guides/fitting/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/bezierkit/guides/geometry/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/guides/geometry/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/guides/geometry/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/guides/geometry/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/bezierkit/guides/implicit/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/guides/implicit/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/guides/implicit/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/guides/implicit/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/bezierkit/guides/introduction/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/guides/introduction/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/guides/introduction/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/guides/introduction/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/bezierkit/guides/operations/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/guides/operations/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/guides/operations/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/guides/operations/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/bezierkit/guides/paths/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/guides/paths/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/guides/paths/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/guides/paths/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/bezierkit/project/changelog/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/project/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/project/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/project/changelog/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/bezierkit/project/proofs-approximation/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/project/proofs-approximation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/project/proofs-approximation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/project/proofs-approximation/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/bezierkit/project/proofs/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/project/proofs/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/project/proofs/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/project/proofs/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/bezierkit/project/references/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/project/references/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/project/references/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/project/references/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/mosaickit/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/mosaickit/installation/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/installation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/installation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/installation/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/mosaickit/quickstart/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/quickstart/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/mosaickit/guides/annotations/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/guides/annotations/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/guides/annotations/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/guides/annotations/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/mosaickit/guides/canvas/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/guides/canvas/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/guides/canvas/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/guides/canvas/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/mosaickit/guides/geometry/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/guides/geometry/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/guides/geometry/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/guides/geometry/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/mosaickit/guides/introduction/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/guides/introduction/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/guides/introduction/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/guides/introduction/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/mosaickit/guides/labels/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/guides/labels/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/guides/labels/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/guides/labels/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/mosaickit/guides/layers/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/guides/layers/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/guides/layers/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/guides/layers/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/mosaickit/guides/parameters/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/guides/parameters/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/guides/parameters/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/guides/parameters/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/mosaickit/guides/rendering/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/guides/rendering/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/guides/rendering/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/guides/rendering/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/mosaickit/guides/styles/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/guides/styles/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/guides/styles/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/guides/styles/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/mosaickit/guides/themes/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/guides/themes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/guides/themes/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/guides/themes/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/mosaickit/project/changelog/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/project/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/project/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/project/changelog/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/mosaickit/project/proofs/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/project/proofs/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/project/proofs/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/project/proofs/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/mosaickit/project/references/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/mosaickit/project/references/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/mosaickit/project/references/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/mosaickit/project/references/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/principle-viz/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/principle-viz/changelog/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/changelog/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/principle-viz/cli/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/cli/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/cli/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/cli/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/principle-viz/installation/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/installation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/installation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/installation/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/principle-viz/migrating/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/migrating/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/migrating/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/migrating/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/principle-viz/quickstart/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/quickstart/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/principle-viz/guides/aggregation/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/aggregation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/aggregation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/aggregation/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/principle-viz/guides/controls/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/controls/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/controls/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/controls/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/principle-viz/guides/discrete/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/discrete/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/discrete/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/discrete/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/principle-viz/guides/elasticity/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/elasticity/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/elasticity/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/elasticity/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/principle-viz/guides/factor-markets/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/factor-markets/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/factor-markets/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/factor-markets/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/principle-viz/guides/failures/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/failures/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/failures/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/failures/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/principle-viz/guides/figures/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/figures/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/figures/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/figures/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/principle-viz/guides/introduction/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/introduction/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/introduction/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/introduction/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/principle-viz/guides/markets/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/markets/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/markets/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/markets/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/principle-viz/guides/ppf/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/ppf/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/ppf/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/ppf/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/principle-viz/guides/taxes/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/taxes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/taxes/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/taxes/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/principle-viz/guides/trade/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/trade/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/trade/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/trade/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/principle-viz/guides/welfare/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/guides/welfare/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/guides/welfare/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/guides/welfare/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/principle-viz/project/references/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/principle-viz/project/references/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/principle-viz/project/references/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/principle-viz/project/references/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/utility-viz/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/utility-viz/migrating/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/migrating/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/migrating/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/migrating/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/utility-viz/getting-started/cli/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/getting-started/cli/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/getting-started/cli/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/getting-started/cli/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/utility-viz/getting-started/installation/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/getting-started/installation/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/utility-viz/getting-started/quickstart/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/getting-started/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/getting-started/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/getting-started/quickstart/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/utility-viz/guides/animation/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/guides/animation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/guides/animation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/guides/animation/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/utility-viz/guides/canvas/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/guides/canvas/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/guides/canvas/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/guides/canvas/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/utility-viz/guides/config/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/guides/config/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/guides/config/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/guides/config/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/utility-viz/guides/consumer/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/guides/consumer/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/guides/consumer/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/guides/consumer/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/utility-viz/guides/export/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/guides/export/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/guides/export/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/guides/export/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/utility-viz/guides/interactive/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/guides/interactive/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/guides/interactive/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/guides/interactive/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/utility-viz/guides/themes/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/guides/themes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/guides/themes/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/guides/themes/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/utility-viz/models/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/models/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/models/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/models/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/utility-viz/models/advanced/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/models/advanced/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/models/advanced/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/models/advanced/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/utility-viz/project/changelog/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/project/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/project/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/project/changelog/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/utility-viz/project/manual/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/project/manual/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/project/manual/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/project/manual/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/utility-viz/project/references/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/project/references/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/project/references/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/project/references/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/utility-viz/tools/analysis/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/tools/analysis/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/tools/analysis/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/tools/analysis/"/>
+    </url>
+    <url>
+        <loc>https://econ-viz.org/zh-CN/utility-viz/tools/latex/</loc>
+        <lastmod>2026-10-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/utility-viz/tools/latex/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://econ-viz.org/utility-viz/tools/latex/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/utility-viz/tools/latex/"/>
+    </url>
+</urlset>

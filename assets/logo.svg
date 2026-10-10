@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-label="EconViz icon concept 5">
+  <rect x="10" y="10" width="140" height="140" rx="32" fill="#181818"/>
+  <path d="M28 66L80 37L132 66L80 95Z" fill="#f3f3f3" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M28 86L80 115L132 86" fill="none" stroke="#8a8a8a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M28 105L80 134L132 105" fill="none" stroke="#c9c9c9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M50 69L69 57L83 72L108 51" fill="none" stroke="#181818" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="83" cy="72" r="6" fill="#181818"/>
+</svg>

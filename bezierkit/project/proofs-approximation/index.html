@@ -1,0 +1,4878 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Open-source Python packages for economics diagrams: utility-viz, principle-viz, mosaickit and bezierkit.">
+      
+      
+        <meta name="author" content="Pin Yue Sung">
+      
+      
+        <link rel="canonical" href="https://econ-viz.org/bezierkit/project/proofs-approximation/">
+      
+      
+        <link rel="prev" href="../proofs/">
+      
+      
+        <link rel="next" href="../changelog/">
+      
+      
+        
+          <link rel="alternate" href="./" hreflang="en">
+        
+          <link rel="alternate" href="../../../zh-TW/bezierkit/project/proofs-approximation/" hreflang="zh-TW">
+        
+          <link rel="alternate" href="../../../zh-CN/bezierkit/project/proofs-approximation/" hreflang="zh-CN">
+        
+      
+      
+      <link rel="icon" href="../../../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+  
+  
+  
+    <title>EconViz | Approximation proofs</title>
+  
+
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/api-reference.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-Q098M03YWD"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-Q098M03YWD",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-Q098M03YWD",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+  
+
+    
+    
+  
+  
+  
+  
+  
+  <meta property="og:locale" content="en">
+  
+    
+      
+        
+      
+  <link rel="alternate" hreflang="en" href="https://econ-viz.org/bezierkit/project/proofs-approximation/">
+      
+  <link rel="alternate" hreflang="x-default" href="https://econ-viz.org/bezierkit/project/proofs-approximation/">
+      
+    
+      
+        
+      
+  <link rel="alternate" hreflang="zh-CN" href="https://econ-viz.org/zh-CN/bezierkit/project/proofs-approximation/">
+      
+    
+      
+        
+      
+  <link rel="alternate" hreflang="zh-TW" href="https://econ-viz.org/zh-TW/bezierkit/project/proofs-approximation/">
+      
+    
+  
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="EconViz">
+  <meta property="og:title" content="EconViz | Approximation proofs">
+  <meta property="og:description" content="Open-source Python packages for economics diagrams: utility-viz, principle-viz, mosaickit and bezierkit.">
+  <meta property="og:url" content="https://econ-viz.org/bezierkit/project/proofs-approximation/">
+  <meta property="og:image" content="https://econ-viz.org/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="EconViz logo">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="EconViz | Approximation proofs">
+  <meta name="twitter:description" content="Open-source Python packages for economics diagrams: utility-viz, principle-viz, mosaickit and bezierkit.">
+  <meta name="twitter:image" content="https://econ-viz.org/assets/og-image.png">
+  
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#approximation-proofs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+  
+  
+  <a href="../../../utility-viz/migrating/">
+    
+      <strong>econ-viz is now utility-viz</strong> and the 2.0 beta is out. Read the migration guide →
+    
+  </a>
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="EconViz" class="md-header__button md-logo" aria-label="EconViz" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            EconViz
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Approximation proofs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+    
+      
+    
+    
+      
+      
+      
+      <a href="https://github.com/EconViz/agora/releases/download/v1.0.0b1/bezierkit-en.pdf" class="md-header__button md-icon" title="Download the bezierkit PDF manual" aria-label="Download the bezierkit PDF manual" download="bezierkit-en.pdf">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2m-9.5 8.5c0 .8-.7 1.5-1.5 1.5H7v2H5.5V9H8c.8 0 1.5.7 1.5 1.5zm5 2c0 .8-.7 1.5-1.5 1.5h-2.5V9H13c.8 0 1.5.7 1.5 1.5zm4-3H17v1h1.5V13H17v2h-1.5V9h3zm-6.5 0h1v3h-1zm-5 0h1v1H7z"/></svg>
+      </a>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../../zh-TW/bezierkit/project/proofs-approximation/" hreflang="zh-TW" class="md-select__link">
+              繁體中文
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../../zh-CN/bezierkit/project/proofs-approximation/" hreflang="zh-CN" class="md-select__link">
+              简体中文
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/EconViz" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    EconViz
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+
+
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+        
+          
+        
+          
+        
+        
+          
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+        
+      
+        
+        
+          
+            
+          
+        
+          
+        
+        
+          
+          
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+          
+            
+          
+          
+          
+            
+          
+            
+          
+          <li class="md-tabs__item ev-tabs-dropdown">
+            <a href="../../../utility-viz/" class="md-tabs__link" aria-haspopup="true">
+              Economics packages
+            </a>
+            <ul class="ev-tabs-dropdown__menu">
+              
+                <li>
+                  <a href="../../../utility-viz/"
+                     class="ev-tabs-dropdown__link">
+                    utility-viz
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="../../../principle-viz/"
+                     class="ev-tabs-dropdown__link">
+                    principle-viz
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+      
+        
+        
+          
+            
+          
+        
+          
+        
+        
+      
+        
+        
+          
+        
+          
+            
+          
+        
+        
+          
+          
+            
+          
+            
+          
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+          
+          
+            
+          
+            
+              
+            
+          
+          <li class="md-tabs__item ev-tabs-dropdown">
+            <a href="../../../mosaickit/" class="md-tabs__link" aria-haspopup="true">
+              Foundation packages
+            </a>
+            <ul class="ev-tabs-dropdown__menu">
+              
+                <li>
+                  <a href="../../../mosaickit/"
+                     class="ev-tabs-dropdown__link">
+                    mosaickit
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="../../"
+                     class="ev-tabs-dropdown__link ev-tabs-dropdown__link--active">
+                    bezierkit
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+      
+        
+        
+          
+        
+          
+            
+          
+        
+        
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+  
+    
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="EconViz" class="md-nav__button md-logo" aria-label="EconViz" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    EconViz
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/EconViz" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    EconViz
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    utility-viz
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    utility-viz
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/getting-started/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/getting-started/cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Drawing & Teaching
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Drawing & Teaching
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/guides/canvas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Canvas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/guides/consumer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Figures & Demand Diagrams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/guides/animation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Animation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/guides/interactive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interactive Widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/guides/themes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Themes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/guides/config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings File
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/guides/export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Export
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Models
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Models
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/models/advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools & Analysis
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools & Analysis
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/tools/analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/tools/latex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LaTeX Parsing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/migrating/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/project/changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/project/references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utility-viz/project/manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PDF Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    principle-viz
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    principle-viz
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/guides/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Command-line interface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markets & Welfare
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Markets & Welfare
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/guides/markets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear markets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/guides/discrete/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discrete markets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/guides/aggregation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Market curves from individuals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/guides/elasticity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Elasticity and total revenue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/guides/welfare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welfare
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Policy & Trade
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Policy & Trade
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/guides/taxes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taxes and subsidies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/guides/controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Price controls
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/guides/trade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    International trade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/guides/failures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Market failures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Factors & Production
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Factors & Production
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/guides/factor-markets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Labor and loanable funds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/guides/ppf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Production possibilities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Drawing & Teaching
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Drawing & Teaching
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/guides/figures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Figures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/migrating/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change history
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../principle-viz/project/references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mosaickit
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    mosaickit
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mosaickit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mosaickit/guides/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mosaickit/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mosaickit/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Canvas & Layers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Canvas & Layers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mosaickit/guides/canvas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Canvases and scenes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mosaickit/guides/layers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layers and axes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Annotations & Layout
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Annotations & Layout
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mosaickit/guides/annotations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Axis annotations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mosaickit/guides/geometry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layout geometry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mosaickit/guides/labels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Region and point labels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Styles & Configuration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Styles & Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mosaickit/guides/styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Styles and colors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mosaickit/guides/themes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Themes and configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rendering & Animation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rendering & Animation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mosaickit/guides/parameters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parameters, grids and animation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mosaickit/guides/rendering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rendering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mosaickit/project/proofs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proofs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mosaickit/project/changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change history
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mosaickit/project/references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    bezierkit
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    bezierkit
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Command-line interface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Curves & Paths
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Curves & Paths
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/geometry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geometry values
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/curves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bézier curves
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Derivatives, reversal and subdivision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/paths/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cubic segments and paths
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Construction & Approximation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Construction & Approximation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/construction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Constructions and Hermite interpolation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/fitting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fitting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/implicit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level sets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sampling & Export
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sampling & Export
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sampling and export
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proofs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proofs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Approximation proofs
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Approximation proofs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cubic-segments-and-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cubic segments and paths
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constructions-and-interpolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constructions and interpolation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fitting-and-level-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fitting and level sets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change history
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cubic-segments-and-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cubic segments and paths
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constructions-and-interpolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constructions and interpolation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fitting-and-level-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fitting and level sets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+  
+
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="approximation-proofs">Approximation proofs</h1>
+<h2 id="cubic-segments-and-paths">Cubic segments and paths</h2>
+<details class="note">
+<summary>Proof</summary>
+<p><a href="../../guides/paths/#prop-bbox">Bounding box of a cubic</a></p>
+<p>Multiplying out the cubic Bernstein form gives</p>
+<div class="arithmatex">\[
+\begin{aligned}B(t) &amp;= (1-t)^3 P_0 + 3t(1-t)^2 P_1 + 3t^2(1-t) P_2 + t^3 P_3 \\ &amp;= (1 - 3t + 3t^2 - t^3) P_0 + (3t - 6t^2 + 3t^3) P_1 + (3t^2 - 3t^3) P_2 + t^3 P_3 \\ &amp;= a t^3 + b t^2 + c t + P_0,\end{aligned}
+\]</div>
+<p>with <span class="arithmatex">\(a\)</span>, <span class="arithmatex">\(b\)</span> and <span class="arithmatex">\(c\)</span> as stated, by collecting the powers of <span class="arithmatex">\(t\)</span>.</p>
+<p>Fix a coordinate <span class="arithmatex">\(k\)</span>. The function <span class="arithmatex">\(B_k\)</span> is a polynomial, hence
+continuous on the compact interval <span class="arithmatex">\([0, 1]\)</span>, so it attains a minimum and a
+maximum there. Let <span class="arithmatex">\(t^*\)</span> be a point where it attains one of them. If
+<span class="arithmatex">\(t^* \in (0, 1)\)</span>, then <span class="arithmatex">\(B_k\)</span> is differentiable with an extremum at an
+interior point, so <span class="arithmatex">\(B'_k (t^*) = 0\)</span> (Fermat's theorem). Two cases remain.
+- <span class="arithmatex">\(B'_k\)</span> is not identically zero. It is a polynomial of degree at most 2,
+  so it has at most two roots, and <span class="arithmatex">\(t^*\)</span> is one of them if <span class="arithmatex">\(t^*\)</span> lies in
+  <span class="arithmatex">\((0, 1)\)</span>. In every case <span class="arithmatex">\(t^* \in T_k\)</span>.
+- <span class="arithmatex">\(B'_k\)</span> is identically zero. Then <span class="arithmatex">\(B_k\)</span> is constant, so its extrema are
+  attained at <span class="arithmatex">\(t = 0\)</span> as well, and <span class="arithmatex">\(0 \in T_k\)</span>.
+Therefore the minimum and the maximum of <span class="arithmatex">\(B_k\)</span> over <span class="arithmatex">\([0, 1]\)</span> equal those
+over the finite set <span class="arithmatex">\(T_k \subset [0, 1]\)</span>, which are <span class="arithmatex">\(\alpha_k\)</span> and <span class="arithmatex">\(\beta_k\)</span> as
+stated, since they are the infimum and supremum of <span class="arithmatex">\(B_k\)</span> over the curve.
+By <a href="../../guides/paths/#def-bbox">Axis-aligned bounding box</a>, the bounding box is the product of the intervals
+<span class="arithmatex">\([\alpha_k, \beta_k]\)</span>: a box that contains the curve contains every value
+<span class="arithmatex">\(B_k (t)\)</span>, hence <span class="arithmatex">\(\alpha_k\)</span> and <span class="arithmatex">\(\beta_k\)</span>, and the product of these intervals
+contains the curve.</p>
+</details>
+<details class="note">
+<summary>Proof</summary>
+<p><a href="../../guides/paths/#prop-elevation">Lines and quadratics as cubics</a></p>
+<p><em>Line.</em> The line <span class="arithmatex">\(t |\to (1 - t) P_0 + t P_3\)</span> is a Bézier curve of degree 1
+with controls <span class="arithmatex">\(R_0 = P_0\)</span> and <span class="arithmatex">\(R_1 = P_3\)</span>. By <a href="../../guides/curves/#prop-raise-degree">Degree elevation</a> with
+<span class="arithmatex">\(n = 1\)</span>, it is the quadratic with controls</p>
+<div class="arithmatex">\[
+Q_0 = P_0, \quad Q_1 = 1/2 P_0 + 1/2 P_3, \quad Q_2 = P_3.
+\]</div>
+<p>Applying <a href="../../guides/curves/#prop-raise-degree">Degree elevation</a> again, with <span class="arithmatex">\(n = 2\)</span>, gives the cubic with
+controls</p>
+<div class="arithmatex">\[
+\begin{aligned}S_0 &amp;= Q_0 = P_0, \\ S_1 &amp;= 1/3 Q_0 + 2/3 Q_1 = 2/3 P_0 + 1/3 P_3, \\ S_2 &amp;= 2/3 Q_1 + 1/3 Q_2 = 1/3 P_0 + 2/3 P_3, \\ S_3 &amp;= Q_2 = P_3,\end{aligned}
+\]</div>
+<p>and <span class="arithmatex">\(S_i = P_0 + i/3 (P_3 - P_0)\)</span> for <span class="arithmatex">\(i = 0, \ldots, 3\)</span>.</p>
+<p><em>Quadratic.</em> By <a href="../../guides/curves/#prop-raise-degree">Degree elevation</a> with <span class="arithmatex">\(n = 2\)</span> and controls
+<span class="arithmatex">\(P_0, C, P_3\)</span>, the cubic controls are</p>
+<div class="arithmatex">\[
+Q_0 = P_0, \quad Q_1 = 1/3 P_0 + 2/3 C, \quad Q_2 = 2/3 C + 1/3 P_3, \quad Q_3 = P_3,
+\]</div>
+<p>and <span class="arithmatex">\(Q_1 = P_0 + 2/3 (C - P_0)\)</span>, <span class="arithmatex">\(Q_2 = P_3 + 2/3 (C - P_3)\)</span>.</p>
+<p>Each step is an identity in <span class="arithmatex">\(t\)</span>, so the curve and its parameterization are
+unchanged.</p>
+</details>
+<details class="note">
+<summary>Proof</summary>
+<p><a href="../../guides/paths/#prop-continuity">Continuity of cubic joins</a></p>
+<p>Write <span class="arithmatex">\(B_S\)</span> and <span class="arithmatex">\(B_T\)</span> for the cubic Bézier curves with controls <span class="arithmatex">\(P_i\)</span> and
+<span class="arithmatex">\(Q_i\)</span>, so that <span class="arithmatex">\(S(u) = B_S ((u - u_0 + h_S) / h_S)\)</span> and
+<span class="arithmatex">\(T(u) = B_T ((u - u_0) / h_T)\)</span>. At <span class="arithmatex">\(u = u_0\)</span> the arguments are <span class="arithmatex">\(1\)</span> and
+<span class="arithmatex">\(0\)</span>. By <a href="../../guides/curves/#prop-endpoints">Endpoints</a>, <span class="arithmatex">\(S(u_0) = P_3\)</span> and <span class="arithmatex">\(T(u_0) = Q_0\)</span>. By the chain
+rule and <a href="../../guides/operations/#cor-end-tangents">End tangents</a>,</p>
+<div class="arithmatex">\[
+S'(u_0) = (B'_S (1)) / h_S = (3(P_3 - P_2)) / h_S, \quad T'(u_0) = (B'_T (0)) / h_T = (3(Q_1 - Q_0)) / h_T.
+\]</div>
+<ul>
+<li>By <a href="../../guides/paths/#def-continuity">Parametric continuity</a> with <span class="arithmatex">\(k = 0\)</span>, <span class="arithmatex">\(C\)</span> is <span class="arithmatex">\(C^0\)</span> at <span class="arithmatex">\(u_0\)</span> if and only if
+  <span class="arithmatex">\(S(u_0) = T(u_0)\)</span>, that is <span class="arithmatex">\(P_3 = Q_0\)</span>.</li>
+<li>With <span class="arithmatex">\(P_3 = Q_0\)</span>, <a href="../../guides/paths/#def-continuity">Parametric continuity</a> with <span class="arithmatex">\(k = 1\)</span> adds
+  <span class="arithmatex">\(S'(u_0) = T'(u_0)\)</span>, which is the stated equation after division by 3.</li>
+<li>With <span class="arithmatex">\(P_3 = Q_0\)</span>, by <a href="../../guides/paths/#def-geometric-continuity">Geometric continuity <span class="arithmatex">\(G^1\)</span></a> the join is <span class="arithmatex">\(G^1\)</span> if and
+  only if <span class="arithmatex">\(S'(u_0) \ne 0\)</span>, <span class="arithmatex">\(T'(u_0) \ne 0\)</span>, and <span class="arithmatex">\(T'(u_0) = \lambda S'(u_0)\)</span> for
+  some <span class="arithmatex">\(\lambda &gt; 0\)</span>. The two tangents are non-zero if and only if
+  <span class="arithmatex">\(P_3 \ne P_2\)</span> and <span class="arithmatex">\(Q_1 \ne Q_0\)</span>, and then</li>
+</ul>
+<div class="arithmatex">\[
+Q_1 - Q_0 = (\lambda h_T / h_S) (P_3 - P_2).
+\]</div>
+<p>Conversely, if <span class="arithmatex">\(Q_1 - Q_0 = \mu (P_3 - P_2)\)</span> with <span class="arithmatex">\(\mu &gt; 0\)</span>, then
+  <span class="arithmatex">\(\lambda = \mu h_S / h_T &gt; 0\)</span> gives <span class="arithmatex">\(T'(u_0) = \lambda S'(u_0)\)</span>.
++ A path of <span class="arithmatex">\(m\)</span> segments under the uniform parameterization gives each
+  segment the span <span class="arithmatex">\(1 / m\)</span>, so <span class="arithmatex">\(h_S = h_T\)</span> and the equation in 2
+  reduces to <span class="arithmatex">\(P_3 - P_2 = Q_1 - Q_0\)</span>.</p>
+</details>
+<h2 id="constructions-and-interpolation">Constructions and interpolation</h2>
+<details class="note">
+<summary>Proof</summary>
+<p><a href="../../guides/construction/#prop-endpoint">Endpoint conditions</a></p>
+<p>For the curve <span class="arithmatex">\(B\)</span> with the stated controls, <a href="../../guides/curves/#prop-endpoints">Endpoints</a> gives
+<span class="arithmatex">\(B(0) = P_0\)</span> and <span class="arithmatex">\(B(1) = P_3\)</span>, and <a href="../../guides/operations/#cor-end-tangents">End tangents</a> gives</p>
+<div class="arithmatex">\[
+B'(0) = 3(P_1 - P_0) = D_0, \quad B'(1) = 3(P_3 - P_2) = D_1.
+\]</div>
+<p>Now let <span class="arithmatex">\(\Gamma\)</span> be any polynomial curve of degree at most 3 with
+<span class="arithmatex">\(\Gamma(0) = P_0\)</span>, <span class="arithmatex">\(\Gamma(1) = P_3\)</span>, <span class="arithmatex">\(\Gamma'(0) = D_0\)</span> and <span class="arithmatex">\(\Gamma'(1) = D_1\)</span>.
+By <a href="../../guides/curves/#prop-basis">Bernstein basis</a>, applied to each coordinate, there are unique <span class="arithmatex">\(R_0, \ldots, R_3\)</span>
+with <span class="arithmatex">\(\Gamma(t) = \sum_i b_{i,3}(t) R_i\)</span>. The computation above, applied to
+the controls <span class="arithmatex">\(R_i\)</span>, shows</p>
+<div class="arithmatex">\[
+\Gamma(0) = R_0, \quad \Gamma(1) = R_3, \quad \Gamma'(0) = 3(R_1 - R_0), \quad \Gamma'(1) = 3(R_3 - R_2).
+\]</div>
+<p>Comparing with the four conditions gives <span class="arithmatex">\(R_0 = P_0\)</span>, <span class="arithmatex">\(R_3 = P_3\)</span>,
+<span class="arithmatex">\(R_1 = P_0 + D_0 / 3\)</span> and <span class="arithmatex">\(R_2 = P_3 - D_1 / 3\)</span>. So <span class="arithmatex">\(R_i\)</span> are the
+stated controls and <span class="arithmatex">\(\Gamma = B\)</span>.</p>
+</details>
+<details class="note">
+<summary>Proof</summary>
+<p><a href="../../guides/construction/#prop-hermite-unique">Existence and uniqueness</a></p>
+<p>Put <span class="arithmatex">\(G(s) = H(x_0 + h s)\)</span>. The map <span class="arithmatex">\(H |\to G\)</span> is a bijection of the
+polynomials of degree at most 3 onto themselves, with inverse
+<span class="arithmatex">\(G |\to G((x - x_0) / h)\)</span>. By the chain rule,
+<span class="arithmatex">\(H(x_i) = f_i\)</span> and <span class="arithmatex">\(H'(x_i) = m_i\)</span> for <span class="arithmatex">\(i = 0, 1\)</span> are equivalent to</p>
+<div class="arithmatex">\[
+G(0) = f_0, \quad G(1) = f_1, \quad G'(0) = h m_0, \quad G'(1) = h m_1.
+\]</div>
+<p>By <a href="../../guides/construction/#prop-endpoint">Endpoint conditions</a> with <span class="arithmatex">\(d = 1\)</span>, <span class="arithmatex">\(P_0 = f_0\)</span>, <span class="arithmatex">\(P_3 = f_1\)</span>, <span class="arithmatex">\(D_0 = h m_0\)</span> and
+<span class="arithmatex">\(D_1 = h m_1\)</span>, exactly one polynomial <span class="arithmatex">\(G\)</span> of degree at most 3 satisfies
+these four conditions, and its Bernstein coefficients are
+<span class="arithmatex">\(c_0, \ldots, c_3\)</span>. Hence <span class="arithmatex">\(H\)</span> exists, is unique, and equals
+<span class="arithmatex">\(\sum_i b_{i,3}((x - x_0) / h) c_i\)</span>.</p>
+</details>
+<details class="note">
+<summary>Proof</summary>
+<p><a href="../../guides/construction/#prop-hermite">Hermite interpolation</a></p>
+<p>At <span class="arithmatex">\(t = t_0\)</span> and <span class="arithmatex">\(t = t_1\)</span> the segment is evaluated at <span class="arithmatex">\(s = 0\)</span> and
+<span class="arithmatex">\(s = 1\)</span>, so <span class="arithmatex">\(H(t_0) = P_0\)</span> and <span class="arithmatex">\(H(t_1) = P_3\)</span> by <a href="../../guides/curves/#prop-endpoints">Endpoints</a>. By the
+chain rule <span class="arithmatex">\(H'(t) = B'(s) / h\)</span>. By <a href="../../guides/operations/#cor-end-tangents">End tangents</a>,
+<span class="arithmatex">\(B'(0) = 3(P_1 - P_0) = h D_0\)</span> and <span class="arithmatex">\(B'(1) = 3(P_3 - P_2) = h D_1\)</span>, so
+<span class="arithmatex">\(H'(t_0) = D_0\)</span> and <span class="arithmatex">\(H'(t_1) = D_1\)</span>. Nothing requires <span class="arithmatex">\(h &gt; 0\)</span>.</p>
+</details>
+<details class="note">
+<summary>Proof</summary>
+<p><a href="../../guides/construction/#prop-graph-hermite">Graph form</a></p>
+<p>Write the segment as <span class="arithmatex">\((X(s), Y(s))\)</span>. The controls of <span class="arithmatex">\(X\)</span> are</p>
+<div class="arithmatex">\[
+x_0, \quad x_0 + h/3, \quad x_1 - h/3 = x_0 + 2h/3, \quad x_1,
+\]</div>
+<p>which by <a href="../../guides/paths/#prop-elevation">Lines and quadratics as cubics</a> (the line from <span class="arithmatex">\(x_0\)</span> to <span class="arithmatex">\(x_1\)</span>) are those of the
+line <span class="arithmatex">\(s |\to x_0 + h s\)</span>. Hence <span class="arithmatex">\(X(s) = x_0 + h s\)</span>. The controls of <span class="arithmatex">\(Y\)</span> are
+<span class="arithmatex">\(y_0, y_0 + h m_0 / 3, y_1 - h m_1 / 3, y_1\)</span>, which are the
+coefficients <span class="arithmatex">\(c_0, \ldots, c_3\)</span> of <a href="../../guides/construction/#prop-hermite-unique">Existence and uniqueness</a> for the data
+<span class="arithmatex">\(y_i = f(x_i)\)</span> and <span class="arithmatex">\(m_i = f'(x_i)\)</span>. Hence
+<span class="arithmatex">\(Y(s) = H(x_0 + h s)\)</span>, and the segment is <span class="arithmatex">\(s |\to (x_0 + h s, H(x_0 + h s))\)</span>.</p>
+</details>
+<details class="note">
+<summary>Proof</summary>
+<p><a href="../../guides/construction/#thm-hermite-error">Hermite error bound</a></p>
+<p>The case <span class="arithmatex">\(x \in \lbrace x_0, x_1\rbrace\)</span> is trivial: both sides of the first formula
+vanish, for any <span class="arithmatex">\(\xi\)</span>. Let <span class="arithmatex">\(x_0 &lt; x &lt; x_1\)</span>, and put</p>
+<div class="arithmatex">\[
+E = f - H, \quad w(t) = (t - x_0)^2 (t - x_1)^2, \quad K = E(x) / w(x), \quad g = E - K w.
+\]</div>
+<p>Then <span class="arithmatex">\(w(x) &gt; 0\)</span>, <span class="arithmatex">\(g\)</span> is four times continuously differentiable, and
+<span class="arithmatex">\(g(x_0) = g(x) = g(x_1) = 0\)</span>, because <span class="arithmatex">\(E\)</span> and <span class="arithmatex">\(w\)</span> vanish at <span class="arithmatex">\(x_0\)</span> and
+<span class="arithmatex">\(x_1\)</span>, and <span class="arithmatex">\(g(x) = E(x) - K w(x) = 0\)</span>. Moreover <span class="arithmatex">\(g'(x_0) = g'(x_1) = 0\)</span>:
+<span class="arithmatex">\(E'(x_i) = f'(x_i) - H'(x_i) = 0\)</span> by <a href="../../guides/construction/#def-hermite">Cubic Hermite interpolant</a>, and <span class="arithmatex">\(w\)</span> has a double root
+at each <span class="arithmatex">\(x_i\)</span>, so <span class="arithmatex">\(w'(x_i) = 0\)</span>.</p>
+<p>By Rolle's theorem (Theorem 1.7 of <a href="../references/#burden2011">Burden (2011)</a>), <span class="arithmatex">\(g'\)</span> vanishes at
+some <span class="arithmatex">\(\xi_1 \in (x_0, x)\)</span> and at some <span class="arithmatex">\(\xi_2 \in (x, x_1)\)</span>. So <span class="arithmatex">\(g'\)</span> has the
+four distinct zeros <span class="arithmatex">\(x_0 &lt; \xi_1 &lt; \xi_2 &lt; x_1\)</span>. The function <span class="arithmatex">\(g'\)</span> is
+continuous and three times differentiable, so by the generalized Rolle
+theorem (Theorem 1.10 of <a href="../references/#burden2011">Burden (2011)</a>) there is a
+<span class="arithmatex">\(\xi \in (x_0, x_1)\)</span> with <span class="arithmatex">\(g^{(4)}(\xi) = 0\)</span>. Since <span class="arithmatex">\(H\)</span> has degree at most 3
+and <span class="arithmatex">\(w\)</span> is a monic polynomial of degree 4, <span class="arithmatex">\(H^{(4)} = 0\)</span> and
+<span class="arithmatex">\(w^{(4)} = 24\)</span>, so</p>
+<div class="arithmatex">\[
+0 = g^{(4)}(\xi) = f^{(4)}(\xi) - 24 K, \quad \text{that is} \quad K = (f^{(4)}(\xi)) / 24.
+\]</div>
+<p>Hence <span class="arithmatex">\(f(x) - H(x) = E(x) = K w(x)\)</span>, which is the first formula.</p>
+<p>For the bound, <span class="arithmatex">\((x - x_0)(x_1 - x)\)</span> is a product of two non-negative
+numbers with the sum <span class="arithmatex">\(h\)</span>, so it is at most <span class="arithmatex">\((h / 2)^2\)</span>. Thus
+<span class="arithmatex">\(w(x) \le h^4 / 16\)</span> and</p>
+<div class="arithmatex">\[
+|f(x) - H(x)| \le M / 24 \cdot h^4 / 16 = (M h^4) / 384.
+\]</div>
+</details>
+<h2 id="fitting-and-level-sets">Fitting and level sets</h2>
+<details class="note">
+<summary>Proof</summary>
+<p><a href="../../guides/fitting/#cor-depth">Depth of adaptive fitting</a></p>
+<p>Let <span class="arithmatex">\([a, b]\)</span> be an interval at depth <span class="arithmatex">\(k\)</span>, so <span class="arithmatex">\(b - a = L / 2^k\)</span>. On it,
+each coordinate of the Hermite segment is the cubic Hermite interpolant of
+the same coordinate of <span class="arithmatex">\(C\)</span> (<a href="../../guides/construction/#prop-hermite">Hermite interpolation</a> and <a href="../../guides/construction/#prop-hermite-unique">Existence and uniqueness</a>), so
+<a href="../../guides/construction/#thm-hermite-error">Hermite error bound</a> bounds its error by
+<span class="arithmatex">\(M (b - a)^4 / 384\)</span>. The Euclidean error at any parameter is at most
+<span class="arithmatex">\(\sqrt{d}\)</span> times the largest coordinate error, since
+<span class="arithmatex">\(\left\lVert v \right\rVert_2 \le \sqrt{d} \left\lVert v \right\rVert_\infty\)</span> for <span class="arithmatex">\(v \in \mathbb{R}^d\)</span>: indeed
+<span class="arithmatex">\(\left\lVert v \right\rVert_2^2 = \sum_k v_k^2 \le d \left\lVert v \right\rVert_\infty^2\)</span>. In particular the measured
+error, a maximum over probe parameters, satisfies</p>
+<div class="arithmatex">\[
+e \le \sqrt{d} M L^4 / (384 \cdot 2^{4k}).
+\]</div>
+<p>This is at most <span class="arithmatex">\(\epsilon\)</span> if and only if
+<span class="arithmatex">\(2^{4k} \ge \sqrt{d} M L^4 / (384 \epsilon)\)</span>, that is, if
+<span class="arithmatex">\(k \ge 1/4 \log_2 (\sqrt{d} M L^4 / (384 \epsilon))\)</span>. Every depth
+<span class="arithmatex">\(k \ge k^*\)</span> satisfies this, so every interval at such a depth is accepted.</p>
+<p>Suppose now that <code class="ev-api-inline-code"><span class="ev-api__attribute">max_depth</span></code> <span class="arithmatex">\(\ge k^*\)</span> and <code class="ev-api-inline-code"><span class="ev-api__attribute">max_segments</span></code> <span class="arithmatex">\(\ge 2^{k^*}\)</span>.
+An interval is split only if it fails, which happens only at a depth
+<span class="arithmatex">\(k &lt; k^*\)</span>. So all intervals have depth at most <span class="arithmatex">\(k^*\)</span> and no
+<a class="ev-api-inline" href="../../guides/geometry/#api-entry-1-tolerancenotmet"><code class="ev-api-inline-code"><span class="ev-api__attribute">ToleranceNotMet</span></code></a> is raised for the depth. The accepted intervals are
+disjoint pieces obtained by halving <span class="arithmatex">\([t_0, t_1]\)</span> at most <span class="arithmatex">\(k^*\)</span> times, so
+there are at most <span class="arithmatex">\(2^{k^*}\)</span> of them. A failing interval would give at least
+two accepted segments, so the number of segments accepted so far plus two
+never exceeds this final count, which is at most <code class="ev-api-inline-code"><span class="ev-api__attribute">max_segments</span></code>; the
+segment limit is therefore not exceeded either.</p>
+</details>
+<details class="note">
+<summary>Proof</summary>
+<p><a href="../../guides/fitting/#prop-rdp">Polyline tolerance</a></p>
+<p>Let <code class="ev-api-inline-code"><span class="ev-api__attribute">rdp</span></code><span class="arithmatex">\((i, j)\)</span> denote the recursive step of the algorithm on the indices
+<span class="arithmatex">\(i &lt; j\)</span>, which returns an increasing list of indices from <span class="arithmatex">\(i\)</span> to <span class="arithmatex">\(j\)</span>. We
+show by strong induction on <span class="arithmatex">\(j - i\)</span> that for every two consecutive
+indices <span class="arithmatex">\(u &lt; v\)</span> in the returned list, every index <span class="arithmatex">\(l\)</span> with
+<span class="arithmatex">\(u \le l \le v\)</span> satisfies <span class="arithmatex">\(\text{dist}(v_l, [v_u, v_v]) \le \epsilon\)</span>.</p>
+<p><em>Base case.</em> If <span class="arithmatex">\(j \le i + 1\)</span>, the list is <span class="arithmatex">\((i, j)\)</span>, and the only indices
+between <span class="arithmatex">\(i\)</span> and <span class="arithmatex">\(j\)</span> inclusive are <span class="arithmatex">\(i\)</span> and <span class="arithmatex">\(j\)</span>, whose vertices are the
+chord's end points, at distance zero.</p>
+<p><em>Step.</em> Otherwise let <span class="arithmatex">\(\delta^*\)</span> be the largest distance from a vertex
+strictly between <span class="arithmatex">\(i\)</span> and <span class="arithmatex">\(j\)</span> to <span class="arithmatex">\([v_i, v_j]\)</span>. If <span class="arithmatex">\(\delta^* \le \epsilon\)</span>, the
+list is <span class="arithmatex">\((i, j)\)</span>, and the claim holds by the choice of <span class="arithmatex">\(\delta^*\)</span> and because
+the end points have distance zero. If <span class="arithmatex">\(\delta^* &gt; \epsilon\)</span>, the step chooses
+an index <span class="arithmatex">\(m\)</span> with <span class="arithmatex">\(i &lt; m &lt; j\)</span> and returns the list of <span class="arithmatex">\(\text{rdp}(i, m)\)</span>
+followed by that of <span class="arithmatex">\(\text{rdp}(m, j)\)</span>, with <span class="arithmatex">\(m\)</span> occurring once. Two consecutive
+indices of the result are consecutive in one of the two lists. Since
+<span class="arithmatex">\(m - i\)</span> and <span class="arithmatex">\(j - m\)</span> are smaller than <span class="arithmatex">\(j - i\)</span>, the induction hypothesis
+applies to both.</p>
+<p>Steps 2 and 3 apply <code class="ev-api-inline-code"><span class="ev-api__attribute">rdp</span></code> between every two consecutive kept vertices
+of step 2 and concatenate the results. The output keeps exactly the
+returned indices <span class="arithmatex">\(a_0 &lt; \ldots &lt; a_m\)</span>, and every two consecutive ones
+are consecutive in one of these lists. This proves the inequality. The
+<code class="ev-api-inline-code"><span class="ev-api__attribute">fit_error</span></code> of an output segment is <span class="arithmatex">\(\max_{a_j \le i \le a_{j+1}} \text{dist}(v_i, [v_{a_j}, v_{a_{j+1}}])\)</span>,
+hence at most <span class="arithmatex">\(\epsilon\)</span>.</p>
+</details>
+<details class="note">
+<summary>Proof</summary>
+<p><a href="../../guides/fitting/#cor-rdp-path">Deviation from the polyline</a></p>
+<ol>
+<li>The distance to a convex set is a convex function. For the segment
+<span class="arithmatex">\(K = [a, b]\)</span>, let <span class="arithmatex">\(x_1, x_2\)</span> be points with
+<span class="arithmatex">\(\text{dist}(x_i, K) \le \epsilon\)</span>, attained at <span class="arithmatex">\(y_i \in K\)</span> (the minimum exists by
+compactness), and let <span class="arithmatex">\(\lambda \in [0, 1]\)</span>. Then
+<span class="arithmatex">\(\lambda y_1 + (1 - \lambda) y_2 \in K\)</span> and by the triangle inequality</li>
+</ol>
+<div class="arithmatex">\[
+\left\lVert \lambda x_1 + (1 - \lambda) x_2 - (\lambda y_1 + (1 - \lambda) y_2) \right\rVert_2 \le \lambda \left\lVert x_1 - y_1 \right\rVert_2 + (1 - \lambda) \left\lVert x_2 - y_2 \right\rVert_2 \le \epsilon.
+\]</div>
+<p>So <span class="arithmatex">\(\text{dist}(\lambda x_1 + (1 - \lambda) x_2, K) \le \epsilon\)</span>.</p>
+<p>A point <span class="arithmatex">\(x\)</span> of the polyline lies on an edge <span class="arithmatex">\([v_i, v_{i+1}]\)</span>, so it is
+<span class="arithmatex">\(\lambda v_i + (1 - \lambda) v_{i+1}\)</span>. Choose <span class="arithmatex">\(j\)</span> with <span class="arithmatex">\(a_j \le i &lt; a_{j+1}\)</span>;
+then <span class="arithmatex">\(i + 1 \le a_{j+1}\)</span>, since indices are integers, and both <span class="arithmatex">\(v_i\)</span> and
+<span class="arithmatex">\(v_{i+1}\)</span> are within <span class="arithmatex">\(\epsilon\)</span> of <span class="arithmatex">\([v_{a_j}, v_{a_{j+1}}]\)</span> by
+<a href="../../guides/fitting/#prop-rdp">Polyline tolerance</a>. By the convexity just proved, so is <span class="arithmatex">\(x\)</span>.</p>
+<ol>
+<li>A point left by step 1 is some <span class="arithmatex">\(v_i\)</span>, and <span class="arithmatex">\(v_i\)</span> lies within <span class="arithmatex">\(\epsilon\)</span> of
+a chord by <a href="../../guides/fitting/#prop-rdp">Polyline tolerance</a>. A dropped input point <span class="arithmatex">\(p\)</span> is within <span class="arithmatex">\(\delta\)</span> of the
+vertex kept before it, say <span class="arithmatex">\(v\)</span>; then
+<span class="arithmatex">\(\text{dist}(p, [a, b]) \le \left\lVert p - v \right\rVert_2 + \text{dist}(v, [a, b]) \le \delta + \epsilon\)</span> for a chord <span class="arithmatex">\([a, b]\)</span>
+within <span class="arithmatex">\(\epsilon\)</span> of <span class="arithmatex">\(v\)</span>. The final copy of the first point of a closed
+polyline is dropped under the same condition, with <span class="arithmatex">\(v = v_0\)</span>.</li>
+</ol>
+</details>
+<details class="note">
+<summary>Proof</summary>
+<p><a href="../../guides/implicit/#prop-center">Centre of the bilinear interpolant</a></p>
+<p>Substituting the four corners of <span class="arithmatex">\([0, 1]^2\)</span> into <span class="arithmatex">\(u\)</span> shows that only one of
+the four terms is non-zero at each corner, with the coefficient <span class="arithmatex">\(1\)</span>, so <span class="arithmatex">\(u\)</span>
+takes the corner values. At <span class="arithmatex">\(s = t = 1 / 2\)</span> each of the four products
+of weights equals <span class="arithmatex">\(1/2 \cdot 1/2 = 1/4\)</span>, so
+<span class="arithmatex">\(u(1/2, 1/2) = 1/4 (f_{00} + f_{10} + f_{11} + f_{01})\)</span>.</p>
+</details>
+<details class="note">
+<summary>Proof</summary>
+<p><a href="../../guides/implicit/#thm-gradient">Tangent of a level set</a></p>
+<p>Since <span class="arithmatex">\(\nabla F(p) \ne 0\)</span>, either <span class="arithmatex">\(F_y (p) \ne 0\)</span> or <span class="arithmatex">\(F_x (p) \ne 0\)</span>.</p>
+<p><em>Case <span class="arithmatex">\(F_y (p) \ne 0\)</span>.</em> Apply <a href="../../guides/implicit/#thm-ift">Implicit function theorem</a>: there are <span class="arithmatex">\(I\)</span>, <span class="arithmatex">\(J\)</span> and a <span class="arithmatex">\(C^1\)</span>
+function <span class="arithmatex">\(\phi : I \to J\)</span> with <span class="arithmatex">\(\phi(p_x) = p_y\)</span> and
+<span class="arithmatex">\(L_c \cap (I \times J) = \lbrace (x, \phi(x)) : x \in I\rbrace\)</span>. Put <span class="arithmatex">\(N = I \times J\)</span> and
+<span class="arithmatex">\(\gamma(x) = (x, \phi(x))\)</span>. Differentiating <span class="arithmatex">\(F(x, \phi(x)) = c\)</span> by the chain
+rule gives <span class="arithmatex">\(F_x + F_y \phi' = 0\)</span> at <span class="arithmatex">\(\gamma(x)\)</span>. By continuity of <span class="arithmatex">\(F_y\)</span>, we
+may shrink <span class="arithmatex">\(I\)</span> and <span class="arithmatex">\(J\)</span> so that <span class="arithmatex">\(F_y \ne 0\)</span> on <span class="arithmatex">\(N\)</span>; then</p>
+<div class="arithmatex">\[
+\gamma'(x) = (1, \phi'(x)) = (1, -F_x / F_y) = 1 / F_y (F_y, -F_x),
+\]</div>
+<p>which is non-zero and parallel to <span class="arithmatex">\((F_y, -F_x)\)</span> at <span class="arithmatex">\(\gamma(x)\)</span>.</p>
+<p><em>Case <span class="arithmatex">\(F_x (p) \ne 0\)</span>.</em> Exchange the roles of <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span>: there is a <span class="arithmatex">\(C^1\)</span>
+function <span class="arithmatex">\(\psi\)</span> with <span class="arithmatex">\(L_c \cap N = \lbrace (\psi(y), y)\rbrace\)</span>, curve
+<span class="arithmatex">\(\gamma(y) = (\psi(y), y)\)</span> and <span class="arithmatex">\(\psi' = -F_y / F_x\)</span>, so</p>
+<div class="arithmatex">\[
+\gamma'(y) = (-F_y / F_x, 1) = -1 / F_x (F_y, -F_x),
+\]</div>
+<p>again non-zero and parallel to <span class="arithmatex">\((F_y, -F_x)\)</span>.</p>
+<p>Finally <span class="arithmatex">\(\nabla F \cdot (F_y, -F_x) = F_x F_y - F_y F_x = 0\)</span>.</p>
+</details>
+<h2 id="export">Export</h2>
+<details class="note">
+<summary>Proof</summary>
+<p><a href="../../guides/export/#prop-rounding">Rounding error</a></p>
+<p>The difference of the curves is</p>
+<div class="arithmatex">\[
+\widetilde{B}(t) - B(t) = \sum_{i=0}^n b_{i,n}(t) (\widetilde{P}_i - P_i).
+\]</div>
+<p>By <a href="../../guides/curves/#prop-unity">Partition of unity</a>, the weights <span class="arithmatex">\(b_{i,n}(t)\)</span> are non-negative and sum to 1, so
+for each coordinate</p>
+<div class="arithmatex">\[
+|\widetilde{B}_k (t) - B_k (t)| \le \sum_{i=0}^n b_{i,n}(t) |\widetilde{P}_{i,k} - P_{i,k}| \le \epsilon.
+\]</div>
+<p>Since <span class="arithmatex">\(\left\lVert v \right\rVert_2 \le \sqrt{d} \left\lVert v \right\rVert_\infty\)</span> for <span class="arithmatex">\(v \in \mathbb{R}^d\)</span> (Section 2.2 of
+<a href="../references/#golub2013">Golub (2013)</a>), we get <span class="arithmatex">\(\left\lVert \widetilde{B}(t) - B(t) \right\rVert_2 \le \sqrt{d} \epsilon\)</span>.</p>
+<p>The exporters write each coordinate with Python's fixed-point format
+with <span class="arithmatex">\(p\)</span> decimals, which gives the multiple of <span class="arithmatex">\(10^{-p}\)</span> nearest to the
+coordinate; it differs from the coordinate by at most
+<span class="arithmatex">\(1/2 \cdot 10^{-p}\)</span>. The exporters also write a coordinate whose absolute
+value is less than <span class="arithmatex">\(1/2 \cdot 10^{-p}\)</span> as <span class="arithmatex">\(0\)</span>, which changes it by that
+value, again at most <span class="arithmatex">\(1/2 \cdot 10^{-p}\)</span>.</p>
+</details>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback. Tell us what could be improved in a <a href="https://github.com/EconViz/utility-viz/issues/new?title=[Docs]+Approximation%20proofs&body=Page:+/bezierkit/project/proofs-approximation/" target="_blank" rel="noopener">GitHub issue</a>.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+<h2 id="__comments">Comments</h2>
+<script src="https://giscus.app/client.js" data-repo="EconViz/econ-viz-docs" data-repo-id="R_kgDORy8JWQ"
+  data-category="Announcements" data-category-id="DIC_kwDORy8JWc4C5kUA" data-mapping="pathname" data-strict="0"
+  data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en"
+  data-loading="lazy" crossorigin="anonymous" async>
+  </script>
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../proofs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Proofs">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Proofs
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../changelog/" class="md-footer__link md-footer__link--next" aria-label="Next: Change history">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Change history
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2026 Pin Yue Sung · <a href="#__consent">Change cookie settings</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:contact@econ-viz.org" target="_blank" rel="noopener" title="contact@econ-viz.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l208 156a48 48 0 0 0 57.6 0l208-156c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48zM0 196v188c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V196L313.6 344.8c-34.1 25.6-81.1 25.6-115.2 0z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/EconViz" target="_blank" rel="noopener" title="EconViz on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://pypi.org/project/utility-viz/" target="_blank" rel="noopener" title="utility-viz on PyPI" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6M286.2 444.7a20.4 20.4 0 1 1 0-40.7 20.4 20.4 0 1 1 0 40.7M167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4m-6.6-183.4a20.4 20.4 0 1 1 0 40.8 20.4 20.4 0 1 1 0-40.8"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+
+<h4>Cookie consent</h4>
+<p>We use analytics cookies to understand how the documentation is used and improve it, and load repository stats from GitHub.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
+      
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="analytics" checked>
+      <span class="task-list-indicator"></span>
+      Google Analytics
+    </label>
+  </li>
+
+      
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+      <button type="reset" class="md-button md-button--primary">Reject</button>
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "announce.dismiss", "navigation.top", "navigation.footer", "content.code.copy", "content.code.annotate", "content.tabs.link", "search.highlight", "search.suggest"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/api-highlight.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="../../../javascripts/model-toc.js"></script>
+      
+        <script src="../../../javascripts/analytics-events.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
