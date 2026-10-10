@@ -74,10 +74,10 @@ Two general-purpose building blocks that the economics packages share.
     A small toolkit for constructing, analyzing and exporting Bézier curves, with SVG and TikZ output.
 
     ```bash
-    uv add --prerelease allow bezierkit
+    uv add bezierkit
     ```
 
-    Currently a release candidate (0.5.0rc1).
+    Current stable release: 1.0.1.
 
     [:octicons-arrow-right-24: bezierkit](bezierkit/index.md)
 

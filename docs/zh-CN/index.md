@@ -74,10 +74,10 @@ EconViz 由四个包组成：两个负责绘制经济学图形，另外两个是
     小巧的数学工具包，用来构造、分析与导出贝塞尔曲线，并原生支持 SVG 与 TikZ 输出。
 
     ```bash
-    uv add --prerelease allow bezierkit
+    uv add bezierkit
     ```
 
-    目前为候选版本（0.5.0rc1）。
+    当前稳定版本为 1.0.1。
 
     [:octicons-arrow-right-24: bezierkit](bezierkit/index.md)
 

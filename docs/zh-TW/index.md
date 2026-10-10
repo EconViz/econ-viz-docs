@@ -74,10 +74,10 @@ EconViz 由四個套件組成：兩個負責繪製經濟學圖形，另外兩個
     小巧的數學工具組，用來建構、分析與匯出貝茲曲線，並原生支援 SVG 與 TikZ 輸出。
 
     ```bash
-    uv add --prerelease allow bezierkit
+    uv add bezierkit
     ```
 
-    目前為候選版本（0.5.0rc1）。
+    目前的穩定版本為 1.0.1。
 
     [:octicons-arrow-right-24: bezierkit](bezierkit/index.md)
 
