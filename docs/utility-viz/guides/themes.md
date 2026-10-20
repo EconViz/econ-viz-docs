@@ -77,6 +77,8 @@ cvs.save("theme_default.png")
 
 ![The `default` theme.](../../assets/utility-viz/agora/themes/default.svg){ .ev-figure-sm }
 
+[Download the script](../../assets/utility-viz/agora/themes/default.py){ .ev-download download="" }
+
 ```python
 from dataclasses import replace
 
@@ -109,6 +111,8 @@ cvs.save("theme_nord.png")
 ```
 
 ![The `nord` theme.](../../assets/utility-viz/agora/themes/nord.svg){ .ev-figure-sm }
+
+[Download the script](../../assets/utility-viz/agora/themes/nord.py){ .ev-download download="" }
 
 ```python
 from dataclasses import replace
@@ -143,6 +147,8 @@ cvs.save("theme_paper.png")
 
 ![The `paper` theme.](../../assets/utility-viz/agora/themes/paper.svg){ .ev-figure-sm }
 
+[Download the script](../../assets/utility-viz/agora/themes/paper.py){ .ev-download download="" }
+
 ```python
 from dataclasses import replace
 
@@ -176,6 +182,8 @@ cvs.save("theme_monochrome.png")
 
 ![The `monochrome` theme.](../../assets/utility-viz/agora/themes/monochrome.svg){ .ev-figure-sm }
 
+[Download the script](../../assets/utility-viz/agora/themes/monochrome.py){ .ev-download download="" }
+
 ```python
 from dataclasses import replace
 
@@ -208,6 +216,8 @@ cvs.save("theme_presentation.png")
 ```
 
 ![The `presentation` theme.](../../assets/utility-viz/agora/themes/presentation.svg){ .ev-figure-sm }
+
+[Download the script](../../assets/utility-viz/agora/themes/presentation.py){ .ev-download download="" }
 
 ## Custom themes
 
@@ -419,6 +429,8 @@ offset = 10
 [fill.budget]
 opacity = 0.08
 ```
+
+[Download manual.toml](../../assets/utility-viz/agora/manual.toml){ .ev-download download="" }
 
 ### File lookup
 

@@ -74,3 +74,9 @@ sync again, which copies the SVGs.
 * The Themes page is converted from its chapter (six figures, one per built-in theme).
 * The Animation page is converted from its chapter, and `scripts/supplements/animation.<locale>.md`
   is appended: a gallery of 14 GIFs drawn by `scripts/animation_figures.py` with the same settings.
+
+Each figure's script is offered for download: `make_figures.py` writes the code it ran next to the SVG
+(`<name>.py`), `sync_agora.py` copies it and adds a download link under the figure, and the Themes page
+links `manual.toml` the same way. The figures drawn from MosaicKit layers (`consumer/demand`, `hicks`,
+`edgeworth`) are too long to print, so the manual shows the API call and their scripts live in
+`agora/packages/utility-viz/scripts/scenes/`.

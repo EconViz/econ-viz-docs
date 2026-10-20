@@ -70,6 +70,8 @@ cvs.save("add_utility.png")
 
 ![三条无差异曲线。](../../../assets/utility-viz/agora/canvas/add_utility.svg){ .ev-figure-sm }
 
+[下载绘制脚本](../../../assets/utility-viz/agora/canvas/add_utility.py){ .ev-download download="" }
+
 <!-- api: agora.utility_viz.guides_canvas_3 -->
 
 绘制预算线 $p_x x + p_y y = I$。
@@ -88,6 +90,8 @@ cvs.save("add_budget.png")
 ```
 
 ![预算线与阴影。](../../../assets/utility-viz/agora/canvas/add_budget.svg){ .ev-figure-sm }
+
+[下载绘制脚本](../../../assets/utility-viz/agora/canvas/add_budget.py){ .ev-download download="" }
 
 <!-- api: agora.utility_viz.guides_canvas_4 -->
 
@@ -114,6 +118,8 @@ cvs.save("add_equilibrium.png")
 
 ![均衡点与虚线。](../../../assets/utility-viz/agora/canvas/add_equilibrium.svg){ .ev-figure-sm }
 
+[下载绘制脚本](../../../assets/utility-viz/agora/canvas/add_equilibrium.py){ .ev-download download="" }
+
 <!-- api: agora.utility_viz.guides_canvas_5 -->
 
 绘制通过原点、斜率为 `slope`（$\mathrm{d} y / \mathrm{d} x$）的射线，用于标记扩张路径或固定比例。
@@ -139,6 +145,8 @@ cvs.save("add_ray.png")
 ```
 
 ![扩张路径射线。](../../../assets/utility-viz/agora/canvas/add_ray.svg){ .ev-figure-sm }
+
+[下载绘制脚本](../../../assets/utility-viz/agora/canvas/add_ray.py){ .ev-download download="" }
 
 <!-- api: agora.utility_viz.guides_canvas_6 -->
 
@@ -172,6 +180,8 @@ cvs.save("add_point.png")
 
 ![一条无差异曲线与预算线交于两点 $A$ 与 $B$。](../../../assets/utility-viz/agora/canvas/add_point.svg){ .ev-figure-sm }
 
+[下载绘制脚本](../../../assets/utility-viz/agora/canvas/add_point.py){ .ev-download download="" }
+
 <!-- api: agora.utility_viz.guides_canvas_7 -->
 
 `show()` 打开交互窗口；`save()` 根据扩展名导出文件（详见[导出](export.md#sec-export)），并释放对应的 `matplotlib` 图形，因此应最后调用。
@@ -198,6 +208,8 @@ cvs.save("show_save.png")
 <span id="fig-show-save"></span>
 
 ![完整画布。](../../../assets/utility-viz/agora/canvas/show_save.svg){ .ev-figure-sm }
+
+[下载绘制脚本](../../../assets/utility-viz/agora/canvas/show_save.py){ .ev-download download="" }
 
 ## 样式
 
@@ -251,6 +263,8 @@ fig.savefig("line_styles.png", dpi=160)
 
 ![四种线条样式。](../../../assets/utility-viz/agora/canvas/line_styles.zh-CN.svg){ .ev-figure-sm }
 
+[下载绘制脚本](../../../assets/utility-viz/agora/canvas/line_styles.zh-CN.py){ .ev-download download="" }
+
 ### 箭头样式
 
 <!-- api: agora.utility_viz.guides_canvas_9 -->
@@ -296,6 +310,8 @@ fig.savefig("arrow_styles.png", dpi=160)
 <span id="fig-arrow-styles"></span>
 
 ![四种箭头样式。](../../../assets/utility-viz/agora/canvas/arrow_styles.zh-CN.svg){ .ev-figure-sm }
+
+[下载绘制脚本](../../../assets/utility-viz/agora/canvas/arrow_styles.zh-CN.py){ .ev-download download="" }
 
 ### Stroke
 

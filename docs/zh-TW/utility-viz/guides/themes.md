@@ -67,6 +67,8 @@ cvs.save("theme_default.png")
 
 ![`default` 主題。](../../../assets/utility-viz/agora/themes/default.svg){ .ev-figure-sm }
 
+[下載繪製腳本](../../../assets/utility-viz/agora/themes/default.py){ .ev-download download="" }
+
 ```python
 from dataclasses import replace
 
@@ -99,6 +101,8 @@ cvs.save("theme_nord.png")
 ```
 
 ![`nord` 主題。](../../../assets/utility-viz/agora/themes/nord.svg){ .ev-figure-sm }
+
+[下載繪製腳本](../../../assets/utility-viz/agora/themes/nord.py){ .ev-download download="" }
 
 ```python
 from dataclasses import replace
@@ -133,6 +137,8 @@ cvs.save("theme_paper.png")
 
 ![`paper` 主題。](../../../assets/utility-viz/agora/themes/paper.svg){ .ev-figure-sm }
 
+[下載繪製腳本](../../../assets/utility-viz/agora/themes/paper.py){ .ev-download download="" }
+
 ```python
 from dataclasses import replace
 
@@ -166,6 +172,8 @@ cvs.save("theme_monochrome.png")
 
 ![`monochrome` 主題。](../../../assets/utility-viz/agora/themes/monochrome.svg){ .ev-figure-sm }
 
+[下載繪製腳本](../../../assets/utility-viz/agora/themes/monochrome.py){ .ev-download download="" }
+
 ```python
 from dataclasses import replace
 
@@ -198,6 +206,8 @@ cvs.save("theme_presentation.png")
 ```
 
 ![`presentation` 主題。](../../../assets/utility-viz/agora/themes/presentation.svg){ .ev-figure-sm }
+
+[下載繪製腳本](../../../assets/utility-viz/agora/themes/presentation.py){ .ev-download download="" }
 
 ## 自訂主題
 
@@ -383,6 +393,8 @@ offset = 10
 [fill.budget]
 opacity = 0.08
 ```
+
+[下載 manual.toml](../../../assets/utility-viz/agora/manual.toml){ .ev-download download="" }
 
 ### 設定檔查找順序
 

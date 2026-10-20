@@ -122,6 +122,8 @@ Animator(draw, frames=np.linspace(0.1, 0.9, 45)).save(
 
 ![Parameter sweep: $\alpha$ varies with $\beta = 1 - \alpha$.](../../assets/utility-viz/agora/animation/parameter_sweep.svg){ .ev-figure-lg }
 
+[Download the script](../../assets/utility-viz/agora/animation/parameter_sweep.py){ .ev-download download="" }
+
 Each figure below shows four frames of its GIF, which has 45.
 
 ```python
@@ -162,6 +164,8 @@ Animator(draw, frames=np.linspace(1.0, 6.0, 45)).save(
 
 ![Price sweep with $p_y = 2$ and $I = 20$ fixed.](../../assets/utility-viz/agora/animation/price_sweep.svg){ .ev-figure-lg }
 
+[Download the script](../../assets/utility-viz/agora/animation/price_sweep.py){ .ev-download download="" }
+
 ```python
 import numpy as np
 
@@ -199,6 +203,8 @@ Animator(draw, frames=np.linspace(8.0, 36.0, 45)).save(
 <span id="fig-sweep-income"></span>
 
 ![Income sweep with $p_x = p_y = 2$ fixed.](../../assets/utility-viz/agora/animation/income_sweep.svg){ .ev-figure-lg }
+
+[Download the script](../../assets/utility-viz/agora/animation/income_sweep.py){ .ev-download download="" }
 
 ## Sweep gallery
 

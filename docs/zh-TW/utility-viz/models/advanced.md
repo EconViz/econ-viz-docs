@@ -42,6 +42,8 @@ cvs.save("custom.png")
 
 ![對數自訂模型。](../../../assets/utility-viz/agora/models/custom.svg){ .ev-figure-sm }
 
+[下載繪製腳本](../../../assets/utility-viz/agora/models/custom.py){ .ev-download download="" }
+
 ### 多商品 Cobb-Douglas
 
 <!-- api: agora.utility_viz.models_advanced_2 -->
@@ -76,6 +78,8 @@ cvs.save("multigood.png")
 ```
 
 ![三商品固定 $z=10$。](../../../assets/utility-viz/agora/models/multigood.svg){ .ev-figure-sm }
+
+[下載繪製腳本](../../../assets/utility-viz/agora/models/multigood.py){ .ev-download download="" }
 
 ### 與後端無關的場景
 

@@ -73,6 +73,8 @@ cvs.save("leontief.png")
 
 ![`parse_latex(r"\min(2x, 3y)")`.](../../assets/utility-viz/agora/latex/leontief.svg){ .ev-figure-sm }
 
+[Download the script](../../assets/utility-viz/agora/latex/leontief.py){ .ev-download download="" }
+
 ```python
 from utility_viz import (
     Canvas,
@@ -97,6 +99,8 @@ cvs.save("perfect_substitutes.png")
 ```
 
 ![`parse_latex(r"2x + 3y")`.](../../assets/utility-viz/agora/latex/perfect_substitutes.svg){ .ev-figure-sm }
+
+[Download the script](../../assets/utility-viz/agora/latex/perfect_substitutes.py){ .ev-download download="" }
 
 ## Errors
 

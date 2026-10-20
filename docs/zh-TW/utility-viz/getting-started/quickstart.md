@@ -42,6 +42,8 @@ cvs.save("cobb_douglas.png")
 
 ![消費者均衡。](../../../assets/utility-viz/agora/models/cobb_douglas.svg){ .ev-figure-sm }
 
+[下載繪製腳本](../../../assets/utility-viz/agora/models/cobb_douglas.py){ .ev-download download="" }
+
 執行主程式 `main.py` 後，會在目前工作目錄建立 `cobb_douglas.png`。本例的最適消費量為 $x^* = 7.5$、$y^* = 5$，支出為 $2 \times 7.5 + 3 \times 5 = 30$，恰好等於所得。預算線的兩個軸截距則為 $I / p_x = 15$ 與 $I / p_y = 10$。
 
 ## 逐步說明

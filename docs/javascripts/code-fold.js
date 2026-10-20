@@ -88,7 +88,104 @@
     return match ? match[1] : "";
   };
 
-  const headerText = (line) => line.trim().replace(/[(\[{:,]\s*$/, "") + (/[(\[{]\s*$/.test(line) ? "(…)" : "");
+  /** Say in words what a header line starts, for blocks that have no docstring or comment. */
+  const WORDS = {
+    en: {
+      from: (m) => `Imports from ${m}`,
+      def: (n) => `Defines function ${n}`,
+      cls: (n) => `Defines class ${n}`,
+      loop: "Loops over the items below",
+      cond: "Runs only under a condition",
+      ctx: "Runs inside a context",
+      build: (n) => `Builds ${n}`,
+      define: (n) => `Defines ${n}`,
+      call: (n) => `Calls ${n}`,
+      section: (n) => `Settings of ${n}`,
+      block: "A block of code",
+      layers: "Adds layers",
+      add: (n) => `Adds ${n}`,
+      layer: (n) => `${n} layer`,
+    },
+    "zh-TW": {
+      from: (m) => `從 ${m} 匯入`,
+      def: (n) => `定義函式 ${n}`,
+      cls: (n) => `定義類別 ${n}`,
+      loop: "逐項重複執行",
+      cond: "符合條件時才執行",
+      ctx: "在情境管理中執行",
+      build: (n) => `建立 ${n}`,
+      define: (n) => `定義 ${n}`,
+      call: (n) => `呼叫 ${n}`,
+      section: (n) => `${n} 的設定`,
+      block: "一段程式碼",
+      layers: "加入圖層",
+      add: (n) => `加入${n}`,
+      layer: (n) => `${n}圖層`,
+    },
+    "zh-CN": {
+      from: (m) => `从 ${m} 导入`,
+      def: (n) => `定义函数 ${n}`,
+      cls: (n) => `定义类 ${n}`,
+      loop: "逐项重复执行",
+      cond: "符合条件时才执行",
+      ctx: "在上下文中执行",
+      build: (n) => `创建 ${n}`,
+      define: (n) => `定义 ${n}`,
+      call: (n) => `调用 ${n}`,
+      section: (n) => `${n} 的设置`,
+      block: "一段代码",
+      layers: "加入图层",
+      add: (n) => `加入${n}`,
+      layer: (n) => `${n}图层`,
+    },
+  };
+
+  // the words of a name that the page's language translates; the rest stay as they are
+  const NOUNS = {
+    "zh-TW": { text: "文字", marker: "標記", path: "路徑", arrow: "箭頭", budget: "預算線", indifference: "無異曲線", demand: "需求", panel: "面板" },
+    "zh-CN": { text: "文字", marker: "标记", path: "路径", arrow: "箭头", budget: "预算线", indifference: "无差异曲线", demand: "需求", panel: "面板" },
+  };
+  const humanize = (name) =>
+    name
+      .replace(/([a-z])([A-Z])/g, "$1 $2")
+      .replace(/_+/g, " ")
+      .trim()
+      .toLowerCase()
+      .split(" ")
+      .map((word) => (NOUNS[lang()] && NOUNS[lang()][word]) || word)
+      .join(lang() === "en" ? " " : "");
+
+  const callText = (name) => {
+    const words = WORDS[lang()];
+    if (name === "add" || name === "extend") return words.layers;
+    if (/^add_/.test(name)) return words.add(humanize(name.slice(4)));
+    if (/Layers?$/.test(name)) {
+      const kind = humanize(name.replace(/Layers?$/, ""));
+      return name.endsWith("s") ? words.add(humanize(name)) : words.layer(kind);
+    }
+    if (/_layers$/.test(name)) return words.add(humanize(name.replace(/_layers$/, "")) + (lang() === "en" ? " layers" : "圖層"));
+    return words.call(name);
+  };
+
+  const headerText = (line) => {
+    const words = WORDS[lang()];
+    const text = line.trim();
+    let m;
+    if ((m = /^\[(.+?)\]/.exec(text))) return words.section(m[1]);
+    if ((m = /^from\s+([\w.]+)\s+import/.exec(text))) return words.from(m[1]);
+    if ((m = /^(?:async\s+)?def\s+(\w+)/.exec(text))) return words.def(m[1]);
+    if ((m = /^class\s+(\w+)/.exec(text))) return words.cls(m[1]);
+    if (/^(?:for|while)\b/.test(text)) return words.loop;
+    if (/^(?:if|elif|else|try|except|finally)\b/.test(text)) return words.cond;
+    if (/^with\b/.test(text)) return words.ctx;
+    if ((m = /^([\w.]+(?:\s*,\s*[\w.]+)*)\s*=\s*([\w.]*)\s*[({\[]/.exec(text))) {
+      const target = m[1].replace(/,\s*_\b/g, "");
+      return m[2] ? (/layers?$/i.test(m[2]) ? callText(m[2].split(".").pop()) : words.build(target)) : words.define(target);
+    }
+    if ((m = /^["']([\w ]+)["']\s*:/.exec(text))) return words.define(m[1]);
+    if ((m = /^([\w.]+)\(/.exec(text))) return callText(m[1].split(".").pop());
+    return words.block;
+  };
 
   const lastVisible = (lines, from, to) => {
     let end = to;
@@ -145,7 +242,7 @@
       if (end - start >= MIN_HIDDEN_TOML) {
         regions.set(start, {
           end,
-          text: commentAbove(lines, start) || trailingComment(lines[start]) || lines[start].trim().replace(/\s+#.*$/, ""),
+          text: commentAbove(lines, start) || trailingComment(lines[start]) || headerText(lines[start]),
         });
       }
     });

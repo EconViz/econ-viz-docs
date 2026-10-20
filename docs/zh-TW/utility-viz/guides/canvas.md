@@ -70,6 +70,8 @@ cvs.save("add_utility.png")
 
 ![三條無異曲線。](../../../assets/utility-viz/agora/canvas/add_utility.svg){ .ev-figure-sm }
 
+[下載繪製腳本](../../../assets/utility-viz/agora/canvas/add_utility.py){ .ev-download download="" }
+
 <!-- api: agora.utility_viz.guides_canvas_3 -->
 
 繪製預算線 $p_x x + p_y y = I$。
@@ -88,6 +90,8 @@ cvs.save("add_budget.png")
 ```
 
 ![預算線與陰影。](../../../assets/utility-viz/agora/canvas/add_budget.svg){ .ev-figure-sm }
+
+[下載繪製腳本](../../../assets/utility-viz/agora/canvas/add_budget.py){ .ev-download download="" }
 
 <!-- api: agora.utility_viz.guides_canvas_4 -->
 
@@ -114,6 +118,8 @@ cvs.save("add_equilibrium.png")
 
 ![均衡點與虛線。](../../../assets/utility-viz/agora/canvas/add_equilibrium.svg){ .ev-figure-sm }
 
+[下載繪製腳本](../../../assets/utility-viz/agora/canvas/add_equilibrium.py){ .ev-download download="" }
+
 <!-- api: agora.utility_viz.guides_canvas_5 -->
 
 繪製通過原點、斜率為 `slope`（$\mathrm{d} y / \mathrm{d} x$）的射線，用於標記擴張路徑或固定比例。
@@ -139,6 +145,8 @@ cvs.save("add_ray.png")
 ```
 
 ![擴張路徑射線。](../../../assets/utility-viz/agora/canvas/add_ray.svg){ .ev-figure-sm }
+
+[下載繪製腳本](../../../assets/utility-viz/agora/canvas/add_ray.py){ .ev-download download="" }
 
 <!-- api: agora.utility_viz.guides_canvas_6 -->
 
@@ -172,6 +180,8 @@ cvs.save("add_point.png")
 
 ![一條無異曲線與預算線交於兩點 $A$ 與 $B$。](../../../assets/utility-viz/agora/canvas/add_point.svg){ .ev-figure-sm }
 
+[下載繪製腳本](../../../assets/utility-viz/agora/canvas/add_point.py){ .ev-download download="" }
+
 <!-- api: agora.utility_viz.guides_canvas_7 -->
 
 `show()` 開啟互動視窗；`save()` 依副檔名匯出檔案（詳見[匯出](export.md#sec-export)），並釋放對應的 `matplotlib` 圖形，因此應最後呼叫。
@@ -198,6 +208,8 @@ cvs.save("show_save.png")
 <span id="fig-show-save"></span>
 
 ![完整畫布。](../../../assets/utility-viz/agora/canvas/show_save.svg){ .ev-figure-sm }
+
+[下載繪製腳本](../../../assets/utility-viz/agora/canvas/show_save.py){ .ev-download download="" }
 
 ## 樣式
 
@@ -251,6 +263,8 @@ fig.savefig("line_styles.png", dpi=160)
 
 ![四種線條樣式。](../../../assets/utility-viz/agora/canvas/line_styles.zh-TW.svg){ .ev-figure-sm }
 
+[下載繪製腳本](../../../assets/utility-viz/agora/canvas/line_styles.zh-TW.py){ .ev-download download="" }
+
 ### 箭頭樣式
 
 <!-- api: agora.utility_viz.guides_canvas_9 -->
@@ -296,6 +310,8 @@ fig.savefig("arrow_styles.png", dpi=160)
 <span id="fig-arrow-styles"></span>
 
 ![四種箭頭樣式。](../../../assets/utility-viz/agora/canvas/arrow_styles.zh-TW.svg){ .ev-figure-sm }
+
+[下載繪製腳本](../../../assets/utility-viz/agora/canvas/arrow_styles.zh-TW.py){ .ev-download download="" }
 
 ### Stroke
 

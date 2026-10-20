@@ -43,6 +43,8 @@ cvs.save("cobb_douglas.png")
 
 ![The consumer-equilibrium diagram.](../../assets/utility-viz/agora/models/cobb_douglas.svg){ .ev-figure-sm }
 
+[Download the script](../../assets/utility-viz/agora/models/cobb_douglas.py){ .ev-download download="" }
+
 Running `main.py` writes `cobb_douglas.png` to the current working directory.
 The optimum is $x^* = 7.5$, $y^* = 5$; spending is
 $2 \times 7.5 + 3 \times 5 = 30$, exactly the income. The budget line meets

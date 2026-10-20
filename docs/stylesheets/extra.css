@@ -529,3 +529,17 @@
 .ev-fold-tip[data-visible] {
   display: block;
 }
+.md-typeset .highlight pre > code.ev-numbered {
+  padding-left: .7em;
+}
+
+/* "Download the script" under a figure */
+.md-typeset a.ev-download {
+  display: block;
+  width: fit-content;
+  margin: -.4rem auto 1.2rem;
+  font-size: .72rem;
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset a.ev-download::before { content: "↓ "; }
+.md-typeset a.ev-download:hover { color: #405c9a; }

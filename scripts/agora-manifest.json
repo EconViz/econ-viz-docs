@@ -389,7 +389,7 @@
   },
   "docs/utility-viz/guides/consumer.md": {
     "source": "packages/utility-viz/chapters/en/05-figures.typ",
-    "sha256": "93089579b1552495e6ce1624e8f9e92c619e7783dadeeb7ece5cb45a956f7716"
+    "sha256": "750f89143f8e8eedffada853fb5a9ab83b7b13d4213a48f43e303dce591d007a"
   },
   "docs/utility-viz/models/index.md": {
     "source": "packages/utility-viz/chapters/en/06-models.typ",
@@ -449,7 +449,7 @@
   },
   "docs/zh-TW/utility-viz/guides/consumer.md": {
     "source": "packages/utility-viz/chapters/zh-TW/05-figures.typ",
-    "sha256": "12a36fc57f532af24f25da25f8e44cc984c1b6738b52c3600271f06410eb310f"
+    "sha256": "59f6a9bc40c6aaa34196ac91574952a51f5288bd5f208b6bca6128a8427fbd06"
   },
   "docs/zh-TW/utility-viz/models/index.md": {
     "source": "packages/utility-viz/chapters/zh-TW/06-models.typ",
@@ -509,7 +509,7 @@
   },
   "docs/zh-CN/utility-viz/guides/consumer.md": {
     "source": "packages/utility-viz/chapters/zh-CN/05-figures.typ",
-    "sha256": "1e2b3b143cfe80fbc6005afcc6781163c30fbf8880869565fa1872aa0af4c6a5"
+    "sha256": "0fbd4862ebceab5845dcf149a3a41ab742ed8c1e2d5fbde6c50188a3f7648a26"
   },
   "docs/zh-CN/utility-viz/models/index.md": {
     "source": "packages/utility-viz/chapters/zh-CN/06-models.typ",

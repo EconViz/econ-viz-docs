@@ -24,6 +24,8 @@ ROOT = Path(__file__).resolve().parents[1]
 LANGS = ('en', 'zh-TW', 'zh-CN')
 # Chapters that are still converted (their API groups and labels feed the site pages) but whose site page is
 # written by hand: the GIF gallery, the theme images, and the pages that merge several chapters.
+DOWNLOAD_SCRIPT = {'en': 'Download the script', 'zh-TW': '下載繪製腳本', 'zh-CN': '下载绘制脚本'}
+DOWNLOAD_SETTINGS = {'en': 'Download manual.toml', 'zh-TW': '下載 manual.toml', 'zh-CN': '下载 manual.toml'}
 KEEP_SITE_PAGE = set()
 # Site-only material appended to a converted page: scripts/supplements/<name>.<locale>.md. The animation page's GIF
 # gallery is drawn by scripts/animation_figures.py, which has no place in the manual.
@@ -310,7 +312,12 @@ class Converter:
             url=os.path.relpath(dest,pagepath.parent)
             width=next((int(m[1]) for p in parts if (m:=re.fullmatch(r'width:\s*(\d+)%',p.strip()))),0)
             size='ev-figure-lg' if width>=60 else 'ev-figure-sm'  # wide figures keep more of their height
-            return f'\n\n![{caption}]({url}){{ .{size} }}\n\n'
+            script=original.with_suffix('.py')
+            link=''
+            if script.exists():  # the code that drew the figure, offered next to it
+                shutil.copyfile(script,dest.with_suffix('.py'))
+                link=f'[{DOWNLOAD_SCRIPT[self.locale]}]({os.path.splitext(url)[0]}.py){{ .ev-download download="" }}\n\n'
+            return f'\n\n![{caption}]({url}){{ .{size} }}\n\n'+link
         if name=='api':
             self.counter+=1
             parts=split_args(args)
@@ -476,6 +483,13 @@ def run(agora):
                 header='---\nseo_title: '+json.dumps(title,ensure_ascii=False)+'\n---\n\n'
                 path=base/(destination+'.md'); path.parent.mkdir(parents=True,exist_ok=True)
                 if (package,destination) in KEEP_SITE_PAGE: continue
+                if (package,destination)==('utility-viz','guides/themes'):
+                    settings=agora/'packages'/package/'config'/'manual.toml'
+                    target=ROOT/'docs/assets'/package/'agora'/'manual.toml'
+                    target.parent.mkdir(parents=True,exist_ok=True); shutil.copyfile(settings,target)
+                    url=os.path.relpath(target,path.parent)
+                    body=re.sub(r'(<span id="sec-manual-toml"></span>.*?```toml\n.*?\n```\n)',
+                                lambda m:m[1]+f'\n[{DOWNLOAD_SETTINGS[locale]}]({url}){{ .ev-download download="" }}\n',body,count=1,flags=re.S)
                 if (package,destination) in SUPPLEMENTS:
                     extra=Path(__file__).parent/'supplements'/f'{SUPPLEMENTS[package,destination]}.{locale}.md'
                     body=body.rstrip('\n')+'\n\n'+extra.read_text().strip('\n')
