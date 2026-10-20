@@ -1,50 +1,35 @@
 ---
-seo_title: "Interactive Economics Diagrams in Jupyter"
-description: "Explore utility functions and budget constraints interactively in Jupyter notebooks with utility-viz WidgetViewer sliders and numeric inputs."
+seo_title: "Interactive widgets"
 ---
 
-# Widgets
+# Interactive widgets
 
-`WidgetViewer` renders an `utility-viz` figure inside a notebook cell and redraws it whenever a control changes. Every parameter gets both a slider and a numeric input box, so users can drag for intuition or type exact values for teaching and demos.
+<span id="sec-widgets"></span>
 
-## Install
+`WidgetViewer` provides sliders and numeric input boxes in Jupyter and
+redraws the figure when a parameter changes. It needs the `interactive`
+extra ([Optional dependencies](../getting-started/installation.md#sec-extras)). Import it from `utility_viz.core.interactive`;
+it was `econ_viz.interactive` in 1.x.
 
-```bash
-uv add "utility-viz[interactive]"
-```
+<!-- api: agora.utility_viz.guides_interactive_1 -->
 
-If you also want GIF export:
+Pass a drawing function `draw` and give each parameter's range as
+`(min, max, step)`. Each parameter gets a linked `FloatSlider` and
+`FloatText`; when a value changes, `draw` is called again and its figure
+replaces the old one in the cell.
 
-```bash
-uv add "utility-viz[all]"
-```
-
-## Basic usage
+`draw` follows the same contract as for `Animator` ([Animation](animation.md#sec-animation)), but may
+take several parameters. Starting from the price-sweep example there, let
+`draw()` also take `alpha`:
 
 ```python
-from utility_viz import Canvas, levels, solve
-from utility_viz.interactive import WidgetViewer
-from utility_viz.models import CobbDouglas
+from utility_viz.core.interactive import WidgetViewer
 
 
 def draw(alpha: float, px: float) -> Canvas:
     model = CobbDouglas(alpha=alpha, beta=1.0 - alpha)
-    eq = solve(model, px=px, py=2.0, income=20.0)
-
-    return (
-        Canvas(
-            x_max=14,
-            y_max=12,
-            x_label="X_1",
-            y_label="X_2",
-            title="Interactive equilibrium",
-        )
-        .add_utility(
-            model, levels=levels.around(eq.utility, n=5)
-        )
-        .add_budget(px=px, py=2.0, income=20.0, fill=True)
-        .add_equilibrium(eq, show_ray=True, drop_dashes=True)
-    )
+    # rest as in the animation example
+    ...
 
 
 WidgetViewer(
@@ -54,30 +39,17 @@ WidgetViewer(
 ).show()
 ```
 
-## Widget behavior
-
-The widget layer handles these interactions automatically:
-
-- Builds one `FloatSlider` per parameter.
-- Builds one linked `FloatText` input per parameter.
-- Keeps slider and typed values in sync.
-- Clears the old figure before redrawing, so notebook cells do not accumulate a stack of stale plots.
-
 ## Notebook setup
 
-For fresh notebook runtimes, especially in Colab:
+In a fresh Jupyter or Colab runtime, run the steps in this order (The Playground notebook in the `utility-viz` repository, `notebook/econ-viz Playground.ipynb` (which keeps its historical name), follows this flow; open it in Jupyter, VS Code or Colab. It does not reinstall when `utility-viz` is already present.):
 
-1. Run the install cell once.
-2. Restart the runtime once if `ipywidgets`, `traitlets`, or `IPython` were upgraded.
-3. Skip the install cell after restart and continue from the import cell.
-
-The packaged Playground notebook now follows this flow and avoids reinstalling when `utility-viz` is already installed.
++ Run the install cell.
++ If the install upgraded `ipywidgets`, `traitlets` or
+  `IPython`, restart the runtime.
++ After the restart, continue from the import cell without reinstalling.
 
 ## Widgets or GIFs
 
-Choose the output that fits the teaching setting:
-
-| Tool | Use it when |
-|------|------|
-| `WidgetViewer` | Students need to type or drag parameters and inspect one state at a time |
-| `Animator` | You want a fixed, repeatable narrative sweep for slides, docs, or the project website |
+Use `WidgetViewer` when users should adjust the parameters themselves; use
+`Animator` to export a GIF when a fixed sweep should play in slides or on a
+web page ([Animation](animation.md#sec-animation)).

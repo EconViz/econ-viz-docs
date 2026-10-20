@@ -71,21 +71,75 @@ lists the valid choices.
 
 ## Loading
 
-```python
-from utility_viz import Canvas, Config
+`Config` bundles a theme with the font choices. Read it from a file, then make it the default for every diagram or hand its theme to one `Canvas`.
 
-# diagrams created from now on
-Config.load("utility-viz.toml").use()
-# uses the file's settings
-Canvas(x_max=20, y_max=15)
+### Reading a file {#config_load data-toc-label="Reading a file"}
 
-theme = Config.load("utility-viz.toml").theme
-# or one diagram only
-Canvas(theme=theme)
+Reads one TOML file into a `Config`.
 
-# back to the built-in defaults
-Config.reset()
-```
+<!-- api: config.load -->
+
+??? example "View example"
+
+    ```python
+    from utility_viz import Config
+
+    config = Config.load("utility-viz.toml")
+    theme = config.theme
+    ```
+
+### Finding the file {#config_discover data-toc-label="Finding the file"}
+
+Looks for the file in order: the explicit path, then `utility-viz.toml`, then the built-in defaults. Unlike `Config.load`, it never fails when no file exists.
+
+<!-- api: config.discover -->
+
+??? example "View example"
+
+    ```python
+    from utility_viz import Config
+
+    # falls back to the built-in defaults
+    config = Config.discover()
+    ```
+
+### Applying it {#config_use data-toc-label="Applying it"}
+
+Makes this `Config` the default for diagrams created from now on, and returns it. To affect a single diagram only, pass its `theme` to `Canvas(theme=...)`.
+
+<!-- api: config.use -->
+
+??? example "View example"
+
+    ```python
+    from utility_viz import Canvas, Config
+
+    # diagrams created from now on
+    Config.load("utility-viz.toml").use()
+    # uses the file's settings
+    Canvas(x_max=20, y_max=15)
+
+    theme = Config.load("utility-viz.toml").theme
+    # or one diagram only
+    Canvas(theme=theme)
+    ```
+
+### Going back {#config_reset data-toc-label="Going back"}
+
+Returns to the built-in defaults. `Config.active()` tells which `Config` is in use.
+
+<!-- api: config.reset -->
+
+<!-- api: config.active -->
+
+??? example "View example"
+
+    ```python
+    from utility_viz import Config
+
+    # back to the built-in defaults
+    Config.reset()
+    ```
 
 Arguments passed to a method still win over the file: with the settings above,
 `add_budget(..., stroke=Stroke(width=1))` draws a 1 pt line in the file's style.

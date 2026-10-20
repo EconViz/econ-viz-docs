@@ -1,401 +1,437 @@
 ---
-seo_title: "Utility Function Models"
-description: "Compare the core utility models supported by utility-viz, with equations, parameters, Python examples, and indifference-curve diagrams."
+seo_title: "Core models"
 ---
 
-# Core Models
+# Core models
 
-The core models cover smooth preferences, kinked and linear preferences, and
-preferences with income or reference-point effects. Choose a group, then switch
-between its tabs to compare models.
+<span id="sec-models"></span>
+
+The core models cover smooth, kinked, linear, income-dependent, and
+reference-point preferences. They all live in `utility_viz.models`. This chapter
+gives each model's function, parameters, distinct behaviour, and figure.
 
 ## Smooth preferences
 
-These models produce smooth indifference curves and normally have an interior
-optimum when prices and income are positive.
+These models produce smooth indifference curves and normally have an
+interior optimum when prices and income are positive.
 
-=== "Cobb-Douglas"
+### Cobb-Douglas
 
-    Cobb-Douglas is the standard model for smooth, strictly convex preferences.
+<!-- api: agora.utility_viz.models_index_1 -->
 
-    $$
-    U(x,y)=x^\alpha y^\beta
-    $$
+The standard model for smooth, strictly convex preferences
+[Cobb (1928)](../project/references.md#cobb1928):
 
-    The exponents control the relative weight placed on each good. Its
-    indifference curves approach both axes without touching them.
+$$
+u(x, y) = x^\alpha y^\beta.
+$$
 
-    **Parameters**
+The exponents control the relative weight placed on each good. The
+indifference curves approach both axes without touching them.
 
-    | Parameter | Default | Meaning |
-    |-----------|---------|---------|
-    | `alpha` | `0.5` | Weight on good $x$ |
-    | `beta` | `0.5` | Weight on good $y$ |
+### CES
 
-    **Example**
+<!-- api: agora.utility_viz.models_index_2 -->
 
-    ```python
-    from utility_viz import Canvas, levels, solve
-    from utility_viz.models import CobbDouglas
+Constant elasticity of substitution [Arrow (1961)](../project/references.md#arrow1961): the ease of substitution varies
+while preferences stay smooth,
 
-    model = CobbDouglas(alpha=0.5, beta=0.5)
-    eq = solve(model, px=2.0, py=3.0, income=30.0)
+$$
+u(x, y) = (\alpha x^\rho + \beta y^\rho)^{1 / \rho}.
+$$
 
-    (
-        Canvas(x_max=20, y_max=15, title="Cobb-Douglas")
-        .add_utility(model, levels=levels.around(eq.utility, n=5))
-        .add_budget(2.0, 3.0, 30.0, fill=True)
-        .add_equilibrium(eq, show_ray=True)
-        .save("cobb_douglas.png")
-    )
-    ```
+The elasticity of substitution is $\sigma = 1 / (1 - \rho)$. As $\rho$
+changes, CES approaches Cobb-Douglas ($\rho \to 0$), Leontief
+($\rho \to -infinity$) or perfect substitutes ($\rho \to 1$).
 
-    ![Cobb-Douglas indifference map](../../assets/models/cobb_douglas.png)
+```python
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.models import CES
 
-=== "CES"
+# figure settings
+Config.load("manual.toml").use()
 
-    CES lets the ease of substitution vary while keeping preferences smooth.
+model = CES(alpha=0.5, beta=0.5, rho=-0.5)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
 
-    $$
-    U(x,y)=\left(\alpha x^\rho+\beta y^\rho\right)^{1/\rho}
-    $$
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+cvs.add_utility(model, levels=levels.around(eq.utility, n=5))
+cvs.add_budget(2.0, 3.0, 30.0)
+cvs.add_equilibrium(eq)
+cvs.save("ces.png")
+```
 
-    The substitution elasticity is $\sigma=1/(1-\rho)$. As $\rho$ changes,
-    CES approaches Cobb-Douglas, Leontief, or perfect substitutes.
+<figure class="ev-fig" markdown>
 
-    **Parameters**
+![CES with $\rho = -0.5$](../../assets/utility-viz/agora/models/ces.svg){ .ev-figure-sm }
 
-    | Parameter | Default | Meaning |
-    |-----------|---------|---------|
-    | `alpha` | `0.5` | Weight on good $x$ |
-    | `beta` | `0.5` | Weight on good $y$ |
-    | `rho` | `0.5` | Substitution parameter, with $\rho\ne1$ |
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/ces.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-    **Example**
+<figcaption markdown>CES with $\rho = -0.5$</figcaption>
 
-    ```python
-    from utility_viz import Canvas, levels, solve
-    from utility_viz.models import CES
+</figure>
 
-    model = CES(alpha=0.5, beta=0.5, rho=-0.5)
-    eq = solve(model, px=2.0, py=3.0, income=30.0)
+### Translog
 
-    (
-        Canvas(x_max=20, y_max=15, title="CES")
-        .add_utility(model, levels=levels.around(eq.utility, n=5))
-        .add_budget(2.0, 3.0, 30.0)
-        .add_equilibrium(eq)
-        .save("ces.png")
-    )
-    ```
+<!-- api: agora.utility_viz.models_index_3 -->
 
-    ![CES indifference map](../../assets/models/ces.png)
+A flexible log-quadratic model for smooth preferences
+[Christensen (1975)](../project/references.md#christensen1975):
 
-=== "Translog"
+$$
+\begin{aligned}ln u(x, y) = & \alpha_0 + \alpha_x ln x + \alpha_y ln y \\ & + 1/2 \beta_{x x} (ln x)^2 + 1/2 \beta_{y y} (ln y)^2 + \beta_{x y} ln x ln y.\end{aligned}
+$$
 
-    Translog is a flexible log-quadratic model for smooth preferences.
+The quadratic and interaction terms let the curvature vary across the
+consumption space. With all $\beta$ coefficients zero it reduces to a
+Cobb-Douglas-style log-linear form.
 
-    $$
-    \begin{aligned}
-    \ln U(x,y)={}&\alpha_0+\alpha_x\ln x+\alpha_y\ln y\\
-    &+\tfrac12\beta_{xx}(\ln x)^2
-    +\tfrac12\beta_{yy}(\ln y)^2
-    +\beta_{xy}\ln x\ln y
-    \end{aligned}
-    $$
+```python
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.models import Translog
 
-    The quadratic and interaction terms allow curvature to vary across the
-    consumption space. Setting all $\beta$ coefficients to zero gives a
-    Cobb-Douglas-style log-linear form.
+# figure settings
+Config.load("manual.toml").use()
 
-    **Parameters**
+model = Translog(alpha_x=0.6, alpha_y=0.4, beta_xy=0.12)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
 
-    | Parameter | Default | Meaning |
-    |-----------|---------|---------|
-    | `alpha_0` | `0.0` | Log-utility intercept |
-    | `alpha_x` | `0.5` | First-order weight on $\ln x$ |
-    | `alpha_y` | `0.5` | First-order weight on $\ln y$ |
-    | `beta_xx` | `0.0` | Curvature in $x$ |
-    | `beta_yy` | `0.0` | Curvature in $y$ |
-    | `beta_xy` | `0.0` | Interaction between $x$ and $y$ |
+cvs = Canvas(x_max=18, y_max=12, x_label="$x$", y_label="$y$")
+cvs.add_utility(model, levels=levels.around(eq.utility, n=4))
+cvs.add_budget(2.0, 3.0, 30.0)
+cvs.add_equilibrium(eq)
+cvs.save("translog.png")
+```
 
-    **Example**
+<figure class="ev-fig" markdown>
 
-    ```python
-    from utility_viz import Canvas, levels, solve
-    from utility_viz.models import Translog
+![Translog with $\beta_{x y} = 0.12$](../../assets/utility-viz/agora/models/translog.svg){ .ev-figure-sm }
 
-    model = Translog(alpha_x=0.6, alpha_y=0.4, beta_xy=0.12)
-    eq = solve(model, px=2.0, py=3.0, income=30.0)
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/translog.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-    (
-        Canvas(x_max=18, y_max=12, title="Translog")
-        .add_utility(model, levels=levels.around(eq.utility, n=4))
-        .add_budget(2.0, 3.0, 30.0)
-        .add_equilibrium(eq)
-        .save("translog.png")
-    )
-    ```
+<figcaption markdown>Translog with $\beta_{x y} = 0.12$</figcaption>
 
-    ![Translog indifference map](../../assets/models/translog.png)
+</figure>
 
 ## Kinks and corners
 
-These models show how non-smooth or linear preferences change the location of
-the optimum.
+These models show how non-smooth or linear preferences move the optimum
+to a kink or a corner.
 
-=== "Leontief"
+### Perfect complements
 
-    Leontief preferences describe goods consumed in fixed proportions.
+<!-- api: agora.utility_viz.models_index_4 -->
 
-    $$
-    U(x,y)=\min(ax,by)
-    $$
+Goods consumed in fixed proportions:
 
-    Indifference curves are L-shaped. The optimum lies at the kink where the
-    two weighted quantities are equal.
+$$
+u(x, y) = \min(a x, b y).
+$$
 
-    **Parameters**
+The indifference curves are L-shaped, and the optimum lies at the kink
+where the two weighted quantities are equal.
 
-    | Parameter | Default | Meaning |
-    |-----------|---------|---------|
-    | `a` | `1.0` | Weight on good $x$ |
-    | `b` | `1.0` | Weight on good $y$ |
+The corners are drawn as exact right angles, in image and TikZ
+output alike; this also holds for piecewise `min`/`max` functions built
+with `CustomUtility`.
 
-    **Example**
+```python
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.models import Leontief
 
-    ```python
-    from utility_viz import Canvas, levels, solve
-    from utility_viz.models import Leontief
+# figure settings
+Config.load("manual.toml").use()
 
-    model = Leontief(a=1.0, b=1.0)
-    eq = solve(model, px=2.0, py=3.0, income=30.0)
+model = Leontief(a=1.0, b=1.0)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
 
-    (
-        Canvas(x_max=20, y_max=15, title="Leontief")
-        .add_utility(
-            model,
-            levels=levels.around(eq.utility, n=5),
-            show_rays=True,
-            show_kinks=True,
-        )
-        .add_budget(2.0, 3.0, 30.0)
-        .add_equilibrium(eq)
-        .save("leontief.png")
-    )
-    ```
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+cvs.add_utility(
+    model,
+    levels=levels.around(eq.utility, n=5),
+    show_rays=True,
+    # ray and marker at each kink
+    show_kinks=True,
+)
+cvs.add_budget(2.0, 3.0, 30.0)
+cvs.add_equilibrium(eq)
+cvs.save("leontief.png")
+```
 
-    ![Leontief indifference map](../../assets/models/leontief.png)
+<figure class="ev-fig" markdown>
 
-=== "Perfect Substitutes"
+![Leontief with kink ray](../../assets/utility-viz/agora/models/leontief.svg){ .ev-figure-sm }
 
-    Perfect substitutes provide constant utility trade-offs between goods.
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/leontief.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-    $$
-    U(x,y)=ax+by
-    $$
+<figcaption markdown>Leontief with kink ray</figcaption>
 
-    Indifference curves are straight lines. The consumer normally chooses the
-    good with the greater marginal utility per dollar, producing a corner
-    solution.
+</figure>
 
-    **Parameters**
+### Perfect substitutes
 
-    | Parameter | Default | Meaning |
-    |-----------|---------|---------|
-    | `a` | `1.0` | Marginal utility of good $x$ |
-    | `b` | `1.0` | Marginal utility of good $y$ |
+<!-- api: agora.utility_viz.models_index_5 -->
 
-    **Example**
+A constant rate of trade-off between the goods:
 
-    ```python
-    from utility_viz import Canvas, levels, solve
-    from utility_viz.models import PerfectSubstitutes
+$$
+u(x, y) = a x + b y.
+$$
 
-    model = PerfectSubstitutes(a=1.0, b=2.0)
-    eq = solve(model, px=2.0, py=3.0, income=30.0)
+The indifference curves are straight lines. The consumer normally buys
+only the good with the greater marginal utility per dollar, a corner
+solution.
 
-    (
-        Canvas(x_max=20, y_max=15, title="Perfect Substitutes")
-        .add_utility(model, levels=levels.around(eq.utility, n=5))
-        .add_budget(2.0, 3.0, 30.0)
-        .add_equilibrium(eq)
-        .save("perfect_substitutes.png")
-    )
-    ```
+```python
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.models import PerfectSubstitutes
 
-    ![Perfect Substitutes indifference map](../../assets/models/perfect_substitutes.png)
+# figure settings
+Config.load("manual.toml").use()
 
-=== "Maximum Utility"
+model = PerfectSubstitutes(a=1.0, b=2.0)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
 
-    Maximum utility keeps only the larger weighted quantity in each bundle.
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+cvs.add_utility(model, levels=levels.around(eq.utility, n=5))
+cvs.add_budget(2.0, 3.0, 30.0)
+cvs.add_equilibrium(eq)
+cvs.save("perfect_substitutes.png")
+```
 
-    $$
-    U(x,y)=\max(ax,by)
-    $$
+<figure class="ev-fig" markdown>
 
-    Each indifference curve has two arms that extend toward the axes. The
-    resulting preferences are non-convex, so the optimum on a linear budget
-    normally lies at the intercept with the greater weighted utility.
+![Perfect substitutes corner solution](../../assets/utility-viz/agora/models/perfect_substitutes.svg){ .ev-figure-sm }
 
-    **Parameters**
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/perfect_substitutes.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-    | Parameter | Default | Meaning |
-    |-----------|---------|---------|
-    | `a` | `1.0` | Weight on good $x$ |
-    | `b` | `1.0` | Weight on good $y$ |
+<figcaption markdown>Perfect substitutes corner solution</figcaption>
 
-    **Example**
+</figure>
 
-    ```python
-    import numpy as np
-    from utility_viz import Canvas, levels, solve
-    from utility_viz.models import CustomUtility
+### Maximum utility
 
-    a, b = 1.0, 1.0
-    model = CustomUtility(
-        func=lambda x, y: np.maximum(a * x, b * y),
-        name="maximum",
-    )
-    eq = solve(model, px=2.0, py=3.0, income=30.0)
+<!-- api: agora.utility_viz.models_index_6 -->
 
-    (
-        Canvas(x_max=25, y_max=20, title="Maximum utility")
-        .add_utility(model, levels=levels.around(eq.utility, n=5))
-        .add_budget(2.0, 3.0, 30.0)
-        .add_equilibrium(eq)
-        .save("maximum.png")
-    )
-    ```
+Maximum utility keeps only the larger weighted quantity in each bundle:
 
-    ![Maximum utility indifference map](../../assets/models/maximum.png)
+$$
+u(x, y) = \max(a x, b y).
+$$
+
+Each indifference curve has two arms that extend towards the axes. The
+preferences are non-convex, so on a linear budget the optimum normally
+lies at the intercept with the greater weighted utility. There is no
+dedicated class; the model is built with `CustomUtility`
+([Advanced models](advanced.md#sec-advanced)).
+
+```python
+import numpy as np
+
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.models import CustomUtility
+
+# figure settings
+Config.load("manual.toml").use()
+
+model = CustomUtility(
+    func=lambda x, y: np.maximum(x, y), name="maximum"
+)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
+
+cvs = Canvas(x_max=25, y_max=20, x_label="$x$", y_label="$y$")
+cvs.add_utility(model, levels=levels.around(eq.utility, n=5))
+cvs.add_budget(2.0, 3.0, 30.0)
+cvs.add_equilibrium(eq)
+cvs.save("maximum.png")
+```
+
+<figure class="ev-fig" markdown>
+
+![Maximum utility](../../assets/utility-viz/agora/models/maximum.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/maximum.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>Maximum utility</figcaption>
+
+</figure>
 
 ## Income and reference points
 
-These models add special income effects, subsistence requirements, or a
+These models add special income effects, subsistence requirements or a
 preferred consumption point.
 
-=== "Quasi-Linear"
+### Quasi-linear
 
-    Quasi-linear preferences place one good linearly in utility.
+<!-- api: agora.utility_viz.models_index_7 -->
 
-    $$
-    U(x,y)=f(x)+y
-    $$
+One good enters utility linearly:
 
-    The non-linear good has no income effect once the solution is interior.
-    `linear_in` can reverse the roles of $x$ and $y$.
+$$
+u(x, y) = f(x) + y.
+$$
 
-    **Parameters**
+Once the solution is interior, the non-linear good has no income effect.
+`linear_in` reverses the roles of $x$ and $y$.
 
-    | Parameter | Default | Meaning |
-    |-----------|---------|---------|
-    | `v_func` | `numpy.log` | Increasing, concave function $f$ |
-    | `linear_in` | `"y"` | Good that enters linearly |
+```python
+import numpy as np
 
-    **Example**
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.models import QuasiLinear
 
-    ```python
-    import numpy as np
-    from utility_viz import Canvas, levels, solve
-    from utility_viz.models import QuasiLinear
+# figure settings
+Config.load("manual.toml").use()
 
-    model = QuasiLinear(v_func=np.log, linear_in="y")
-    eq = solve(model, px=2.0, py=1.0, income=20.0)
+model = QuasiLinear(v_func=np.log, linear_in="y")
+eq = solve(model, px=1.0, py=2.0, income=20.0)
 
-    (
-        Canvas(x_max=15, y_max=15, title="Quasi-Linear")
-        .add_utility(model, levels=levels.around(eq.utility, n=5))
-        .add_budget(2.0, 1.0, 20.0)
-        .add_equilibrium(eq)
-        .save("quasi_linear.png")
-    )
-    ```
+cvs = Canvas(x_max=15, y_max=15, x_label="$x$", y_label="$y$")
+cvs.add_utility(model, levels=levels.around(eq.utility, n=5))
+cvs.add_budget(1.0, 2.0, 20.0)
+cvs.add_equilibrium(eq)
+cvs.save("quasi_linear.png")
+```
 
-    ![Quasi-Linear indifference map](../../assets/models/quasi_linear.png)
+<figure class="ev-fig" markdown>
 
-=== "Stone-Geary"
+![Quasi-linear preferences vertically parallel indifference curves](../../assets/utility-viz/agora/models/quasi_linear.svg){ .ev-figure-sm }
 
-    Stone-Geary extends Cobb-Douglas with minimum consumption requirements.
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/quasi_linear.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-    $$
-    U(x,y)=(x-\bar{x})^\alpha(y-\bar{y})^\beta
-    $$
+<figcaption markdown>Quasi-linear preferences vertically parallel indifference curves</figcaption>
 
-    The consumer first covers subsistence quantities $\bar{x}$ and $\bar{y}$,
-    then allocates the remaining income like a Cobb-Douglas consumer.
+</figure>
 
-    **Parameters**
+### Haagsma
 
-    | Parameter | Default | Meaning |
-    |-----------|---------|---------|
-    | `alpha` | `0.5` | Weight on supernumerary $x$ |
-    | `beta` | `0.5` | Weight on supernumerary $y$ |
-    | `bar_x` | `1.0` | Subsistence quantity $\bar{x}$ |
-    | `bar_y` | `1.0` | Subsistence quantity $\bar{y}$ |
+<!-- api: agora.utility_viz.models_index_8 -->
 
-    **Example**
+The [Haagsma (2012)](../project/references.md#haagsma2012) utility function,
 
-    ```python
-    from utility_viz import Canvas, levels, solve
-    from utility_viz.models import StoneGeary
+$$
+u(x, y) = \alpha_x ln(x - \gamma_x) - \alpha_y ln(\gamma_y - y).
+$$
 
-    model = StoneGeary(alpha=0.5, beta=0.5, bar_x=2.0, bar_y=2.0)
-    eq = solve(model, px=2.0, py=3.0, income=30.0)
+It is defined for $x > \gamma_x$ and $0 \le y < \gamma_y$, and requires
+$0 < \alpha_x < \alpha_y$. Marshallian demand for $x$ falls with income, and
+$x$ is a Giffen good when $\gamma_y p_y < I < \gamma_y p_y + \gamma_x p_x$.
 
-    (
-        Canvas(x_max=20, y_max=15, title="Stone-Geary")
-        .add_utility(model, levels=levels.around(eq.utility, n=5))
-        .add_budget(2.0, 3.0, 30.0, fill=True)
-        .add_equilibrium(eq)
-        .save("stone_geary.png")
-    )
-    ```
+Once income reaches $\gamma_y p_y + \gamma_x p_x$, utility has no finite
+maximum on the budget line and the model raises `InvalidParameterError`.
 
-    ![Stone-Geary indifference map](../../assets/models/stone_geary.png)
+```python
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.models import Haagsma
 
-=== "Satiation"
+# figure settings
+Config.load("manual.toml").use()
 
-    Satiation preferences have a bliss point that maximises utility.
+model = Haagsma(gamma_y=10.0)
+eq = solve(model, px=1.0, py=1.0, income=11.0)
 
-    $$
-    U(x,y)=-a(x-x^*)^2-b(y-y^*)^2
-    $$
+cvs = Canvas(x_max=9, y_max=12, x_label="$x$", y_label="$y$")
+cvs.add_utility(model, levels=levels.around(eq.utility, n=4))
+cvs.add_budget(1.0, 1.0, 11.0)
+cvs.add_equilibrium(eq)
+cvs.save("haagsma.png")
+```
 
-    Utility falls in every direction away from $(x^*,y^*)$, so indifference
-    curves form closed ellipses and monotonicity does not hold.
+<figure class="ev-fig" markdown>
 
-    **Parameters**
+![Haagsma with $\gamma_y = 10$](../../assets/utility-viz/agora/models/haagsma.svg){ .ev-figure-sm }
 
-    | Parameter | Default | Meaning |
-    |-----------|---------|---------|
-    | `bliss_x` | `5.0` | Bliss-point coordinate $x^*$ |
-    | `bliss_y` | `5.0` | Bliss-point coordinate $y^*$ |
-    | `a` | `1.0` | Curvature along the $x$-axis |
-    | `b` | `1.0` | Curvature along the $y$-axis |
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/haagsma.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-    **Example**
+<figcaption markdown>Haagsma with $\gamma_y = 10$</figcaption>
 
-    ```python
-    import numpy as np
-    from utility_viz import Canvas, levels
-    from utility_viz.models import Satiation
+</figure>
 
-    model = Satiation(bliss_x=6.0, bliss_y=4.0)
-    x = np.linspace(0.1, 12.0, 300)
-    y = np.linspace(0.1, 10.0, 300)
-    X, Y = np.meshgrid(x, y)
+### Stone-Geary
 
-    (
-        Canvas(x_max=12, y_max=10, title="Satiation")
-        .add_utility(
-            model, levels=levels.percentile(model(X, Y), n=5)
-        )
-        .save("satiation.png")
-    )
-    ```
+<!-- api: agora.utility_viz.models_index_9 -->
 
-    ![Satiation indifference map](../../assets/models/satiation.png)
+Cobb-Douglas with minimum consumption requirements
+[Stone (1954)](../project/references.md#stone1954)[Geary (1950)](../project/references.md#geary1950):
 
-For custom functions and multi-good Cobb-Douglas models, see
-[Advanced Models](advanced.md).
+$$
+u(x, y) = (x - \overline{x})^\alpha (y - \overline{y})^\beta.
+$$
+
+The consumer first covers the subsistence quantities $\overline{x}$ and
+$\overline{y}$, then allocates the remaining income like a Cobb-Douglas
+consumer.
+
+```python
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.models import StoneGeary
+
+# figure settings
+Config.load("manual.toml").use()
+
+model = StoneGeary(alpha=0.5, beta=0.5, bar_x=2.0, bar_y=2.0)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
+
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+cvs.add_utility(model, levels=levels.around(eq.utility, n=5))
+cvs.add_budget(2.0, 3.0, 30.0, fill=True)
+cvs.add_equilibrium(eq)
+cvs.save("stone_geary.png")
+```
+
+<figure class="ev-fig" markdown>
+
+![Stone-Geary with $\overline{x} = \overline{y} = 2$](../../assets/utility-viz/agora/models/stone_geary.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/stone_geary.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>Stone-Geary with $\overline{x} = \overline{y} = 2$</figcaption>
+
+</figure>
+
+### Satiation
+
+<!-- api: agora.utility_viz.models_index_10 -->
+
+A bliss point that maximises utility:
+
+$$
+u(x, y) = -a (x - x^*)^2 - b (y - y^*)^2.
+$$
+
+Utility falls in every direction away from $(x^*, y^*)$, so the
+indifference curves are closed ellipses and monotonicity does not hold.
+
+```python
+import numpy as np
+
+from utility_viz import Canvas, Config, levels
+from utility_viz.models import Satiation
+
+# figure settings
+Config.load("manual.toml").use()
+
+model = Satiation(bliss_x=6.0, bliss_y=4.0)
+
+# curves from a utility grid
+X, Y = np.meshgrid(
+    np.linspace(0.1, 12.0, 300), np.linspace(0.1, 10.0, 300)
+)
+
+cvs = Canvas(x_max=12, y_max=10, x_label="$x$", y_label="$y$")
+# five percentiles of u
+cvs.add_utility(
+    model, levels=levels.percentile(model(X, Y), n=5)
+)
+cvs.save("satiation.png")
+```
+
+<figure class="ev-fig" markdown>
+
+![Satiation around the bliss point $(6, 4)$](../../assets/utility-viz/agora/models/satiation.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/satiation.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>Satiation around the bliss point $(6, 4)$</figcaption>
+
+</figure>

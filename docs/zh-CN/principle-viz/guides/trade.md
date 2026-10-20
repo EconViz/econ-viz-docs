@@ -33,16 +33,40 @@ print(result.policy.government_revenue, result.deadweight_loss)
 
 <!-- api: agora.principle_viz.guides_trade_3 -->
 
-画出世界价格线并命名为 $p_w$，标出政策价格（$p_w + t$ 或 $p_q$），在数量轴上标 $Q_s$ 与 $Q_d$ 并于下方加上 "Imports" 或 "Exports" 括号，再以命名的矩形表示关税收入或配额租（参见[自由贸易下的进口。](trade.md#fig-free-trade)、[进口关税。](trade.md#fig-tariff)、[有约束的进口配额。](trade.md#fig-quota)）。
+画出世界价格线并命名为 $p_w$，标出政策价格（$p_w + t$ 或 $p_q$），在数量轴上标 $Q_s$ 与 $Q_d$ 并于下方加上 "Imports" 或 "Exports" 括号，再以命名的矩形表示关税收入或配额租（参见[自由贸易下的进口](trade.md#fig-free-trade)、[进口关税](trade.md#fig-tariff)、[有约束的进口配额](trade.md#fig-quota)）。
 
 <span id="fig-free-trade"></span>
 
-![自由贸易下的进口。](../../../assets/principle-viz/agora/trade/free_trade_import.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![自由贸易下的进口](../../../assets/principle-viz/agora/trade/free_trade_import.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/trade/trade.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>自由贸易下的进口</figcaption>
+
+</figure>
 
 <span id="fig-tariff"></span>
 
-![进口关税。](../../../assets/principle-viz/agora/trade/tariff.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![进口关税](../../../assets/principle-viz/agora/trade/tariff.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/trade/trade.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>进口关税</figcaption>
+
+</figure>
 
 <span id="fig-quota"></span>
 
-![有约束的进口配额。](../../../assets/principle-viz/agora/trade/quota.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![有约束的进口配额](../../../assets/principle-viz/agora/trade/quota.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/trade/trade.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>有约束的进口配额</figcaption>
+
+</figure>

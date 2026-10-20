@@ -1,167 +1,379 @@
 ---
-seo_title: "Themes for Economics Diagrams"
-description: "Control colours and stroke widths of utility-viz diagrams with built-in themes, including colourblind-friendly defaults, or define your own."
+seo_title: "Themes and configuration"
 ---
 
-# Themes
+# Themes and configuration
 
-Themes control all colours and stroke widths used by the Canvas.
+<span id="sec-themes"></span>
 
-![Default theme example](../../assets/themes/theme_default.png)
+A `Theme` defines the default look of a diagram; a `Config` loads theme
+overrides and font settings from a TOML file. `Canvas`, `Figure`,
+`DemandDiagram`, price-effect decompositions and `EdgeworthBox` share these
+style objects.
 
 ## Built-in themes
 
-### Default
+<!-- api: agora.utility_viz.guides_themes_1 -->
+
+The Python API provides the themes below. Theme objects are immutable; to
+change a field, create a new `Theme` or override the field with a
+`Config`.
+
+<span id="tab-themes"></span>
+
+| Name | Character |
+| --- | --- |
+| `default` | Colour-blind-friendly default palette |
+| `colorblind` | Alias with the same palette as `default` |
+| `nord` | Cool theme on the Nord palette |
+| `paper` | Transparent background and fine lines for print |
+| `monochrome` | Black and white; layers told apart by line style and marker |
+| `presentation` | Larger labels, lines and markers for projection |
+| `dark` | Dark background with matching foreground colours |
+
+The Python API and the `base` key of a configuration file accept all seven
+names (Passed directly to `--theme` on the command line, only the six themes other than the `colorblind` alias are accepted.).
+
+The default theme takes its colours from a colour-blind-friendly palette
+[{thriveth} (2014)](../project/references.md#thriveth2014).
+
+`themes.COLORBLIND_CYCLE_HEX` and `themes.COLORBLIND_CYCLE_RGB` give the
+palette as hexadecimal and RGB values. Economics teaching leans heavily on
+diagrams, so meaning should never rest on colour alone, or visually
+impaired students cannot follow it [Kugler (1996)](../project/references.md#kugler1996).
+
+The figures below show the same Cobb-Douglas diagram in each built-in theme except `dark`, with the manual's line weights on a white page.
 
 ```python
-from utility_viz import Canvas, themes
+from dataclasses import replace
 
-cvs = Canvas(x_max=20, y_max=15, theme=themes.default)
-```
+from utility_viz import Canvas, levels, solve, themes
+from utility_viz.models import CobbDouglas
 
-The default theme draws from a colour-blind-friendly colour cycle
-\citep{thriveth2014}, exposed as `themes.COLORBLIND_CYCLE_HEX` and
-`themes.COLORBLIND_CYCLE_RGB`. Economics teaching relies heavily on graphs, so
-colour alone should not carry meaning for students with impaired vision
-\citep{kugler1996}.
+model = CobbDouglas(alpha=0.5, beta=0.5)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
 
-### Nord
-
-```python
-cvs = Canvas(x_max=20, y_max=15, theme=themes.nord)
-```
-
-The Nord theme uses the [Nord colour palette](https://www.nordtheme.com/) — cool blues and muted tones suitable for academic presentations.
-
-![Nord theme example](../../assets/themes/theme_nord.png)
-
-### Paper
-
-```python
-cvs = Canvas(x_max=20, y_max=15, theme=themes.paper)
-```
-
-The paper theme uses thinner lines, smaller markers, and restrained typography on a transparent background — suitable for print and journal figures where ink and space are at a premium.
-
-![Paper theme example](../../assets/themes/theme_paper.png)
-
-### Monochrome
-
-```python
-cvs = Canvas(x_max=20, y_max=15, theme=themes.monochrome)
-```
-
-The monochrome theme drops colour entirely — every element is a shade of gray — and instead distinguishes curves, budget lines, and rays by line style, and markers by shape. Suitable for black-and-white printing or figures viewed by colour-blind readers without relying on colour at all.
-
-![Monochrome theme example](../../assets/themes/theme_monochrome.png)
-
-### Presentation
-
-```python
-cvs = Canvas(x_max=20, y_max=15, theme=themes.presentation)
-```
-
-The presentation theme uses larger text, thicker lines, and bigger markers for visibility on a projector screen or in a lecture hall.
-
-![Presentation theme example](../../assets/themes/theme_presentation.png)
-
-### Dark
-
-```python
-cvs = Canvas(x_max=20, y_max=15, theme=themes.dark)
-```
-
-The dark theme uses a dark background with light foreground colours, suitable for dark-mode slides or websites.
-
-![Dark theme example](../../assets/themes/theme_dark.png)
-
-## Custom theme
-
-Pass any field to the constructor to override just that value; everything
-else keeps the built-in default:
-
-```python
-from utility_viz import Theme
-
-my_theme = Theme(
-    name="custom",
-    axis_color="#333333",
-    label_color="#333333",
-    ic_color="#2563eb",
-    ic_linewidth=1.5,
-    budget_color="#dc2626",
-    eq_color="#16a34a",
-    eq_markersize=6.0,
+# theme colours with manual line weights
+theme = replace(
+    themes.default,
+    background_color="#ffffff",
+    ic_linewidth=2.6,
+    budget_linewidth=2.6,
+    eq_markersize=5.0,
 )
 
-cvs = Canvas(x_max=20, y_max=15, theme=my_theme)
+cvs = Canvas(
+    x_max=20,
+    y_max=15,
+    x_label="$x$",
+    y_label="$y$",
+    theme=theme,
+)
+cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
+cvs.add_budget(2.0, 3.0, 30.0, fill=True)
+cvs.add_equilibrium(eq)
+cvs.save("theme_default.png")
 ```
 
-Every line, marker, fill, label, and legend a diagram draws also has a
-composite default -- `theme.ic_stroke`, `theme.eq_marker`, `theme.point_label`,
-and so on -- built from the fields above. To change one of these as a whole
-(for example, giving the core segment of an Edgeworth box its own arrowhead,
-not just its own colour), subclass `Theme` and override the property:
+<figure class="ev-fig" markdown>
+
+![The `default` theme](../../assets/utility-viz/agora/themes/default.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/themes/default.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>The `default` theme</figcaption>
+
+</figure>
 
 ```python
-from utility_viz import ArrowStyle, Stroke, Theme
+from dataclasses import replace
 
+from utility_viz import Canvas, levels, solve, themes
+from utility_viz.models import CobbDouglas
 
-class MyTheme(Theme):
-    @property
-    def core_stroke(self) -> Stroke:
-        return Stroke(
-            width=3.0,
-            color="#C0392B",
-            arrow=ArrowStyle.TRIANGLE,
-        )
+model = CobbDouglas(alpha=0.5, beta=0.5)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
 
+# theme colours with manual line weights
+theme = replace(
+    themes.nord,
+    background_color="#ffffff",
+    ic_linewidth=2.6,
+    budget_linewidth=2.6,
+    eq_markersize=5.0,
+)
 
-cvs = EdgeworthBox(..., theme=MyTheme(name="my-theme"))
+cvs = Canvas(
+    x_max=20,
+    y_max=15,
+    x_label="$x$",
+    y_label="$y$",
+    theme=theme,
+)
+cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
+cvs.add_budget(2.0, 3.0, 30.0, fill=True)
+cvs.add_equilibrium(eq)
+cvs.save("theme_nord.png")
 ```
 
-Passing an explicit argument to a method (`add_core(stroke=...)`) still wins
-over the theme, and the theme still wins over the built-in default -- the
-same precedence a [settings file](config.md) follows.
+<figure class="ev-fig" markdown>
 
-## Theme fields
+![The `nord` theme](../../assets/utility-viz/agora/themes/nord.svg){ .ev-figure-sm }
 
-| Field | Description |
-|-------|-------------|
-| `name` | Theme identifier |
-| `axis_color` | Colour of axis spines and arrow tips |
-| `label_color` | Colour of axis and origin labels |
-| `ic_color`, `ic_linewidth` | Indifference-curve stroke colour and width |
-| `secondary_ic_color`, `secondary_ic_linewidth`, `secondary_ic_opacity` | Subdued curves shown beside a highlighted focal utility level |
-| `path_color`, `path_linewidth` | PCC / ICC path stroke colour and width |
-| `budget_color`, `budget_linewidth` | Budget-line stroke colour and width |
-| `budget_fill_alpha` | Opacity of the feasible-set shading |
-| `eq_color`, `eq_markersize` | Equilibrium marker colour and size |
-| `ray_color`, `ray_linewidth` | Expansion-path ray colour and width |
-| `kink_color` | Kink-point marker colour |
-| `sub_effect_color`, `inc_effect_color` | Substitution- / income-effect arrow colours |
-| `effect_arrow_linewidth` | Effect-arrow width |
-| `compensated_budget_color`, `compensated_budget_linewidth`, `compensated_budget_linestyle` | Compensated budget line in a decomposition |
-| `subsistence_color`, `subsistence_linewidth` | Stone-Geary subsistence reference lines |
-| `contract_color`, `contract_linewidth` | Edgeworth contract curve |
-| `core_color`, `core_linewidth` | Edgeworth core segment |
-| `price_color`, `price_linewidth` | Edgeworth price line |
-| `walrasian_color`, `walrasian_markersize` | Edgeworth Walrasian equilibrium marker |
-| `axis_stroke`, `drop_stroke`, `projection_stroke`, `guide_stroke`, `box_stroke` | Lines with no separate colour/width fields of their own |
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/themes/nord.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-## Style properties
+<figcaption markdown>The `nord` theme</figcaption>
 
-Every property below is a [`Stroke`](canvas.md#styles), [`Marker`](canvas.md#styles),
-[`Label`](canvas.md#styles), [`Fill`](canvas.md#styles), or [`Legend`](canvas.md#styles),
-built from the fields above. Overriding one in a subclass changes every
-diagram that doesn't pass its own explicit argument for that role; the
-[settings file](config.md) sets the same properties from `[stroke.<name>]`,
-`[marker.<name>]`, `[label.<name>]`, and `[fill.<name>]` sections.
+</figure>
 
-| Kind | Properties |
-|------|------------|
-| Stroke | `ic_stroke`, `secondary_ic_stroke`, `budget_stroke`, `ray_stroke`, `path_stroke`, `compensated_budget_stroke`, `final_budget_stroke`, `substitution_stroke`, `income_stroke`, `subsistence_stroke`, `contract_stroke`, `core_stroke`, `price_stroke`, `axis_stroke`, `drop_stroke`, `projection_stroke`, `guide_stroke`, `box_stroke` |
-| Marker | `eq_marker`, `point_marker`, `kink_marker`, `bliss_marker`, `path_marker`, `core_marker`, `endowment_marker`, `walrasian_marker` |
-| Label | `axis_label`, `origin_label`, `title_label`, `box_label`, `effect_label`, `point_label`, `bundle_label`, `bliss_label`, `ic_label`, `edgeworth_label` |
-| Fill | `budget_fill` |
-| Legend | `legend` |
+```python
+from dataclasses import replace
+
+from utility_viz import Canvas, levels, solve, themes
+from utility_viz.models import CobbDouglas
+
+model = CobbDouglas(alpha=0.5, beta=0.5)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
+
+# theme colours with manual line weights
+theme = replace(
+    themes.paper,
+    background_color="#ffffff",
+    ic_linewidth=2.6,
+    budget_linewidth=2.6,
+    eq_markersize=5.0,
+)
+
+cvs = Canvas(
+    x_max=20,
+    y_max=15,
+    x_label="$x$",
+    y_label="$y$",
+    theme=theme,
+)
+cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
+cvs.add_budget(2.0, 3.0, 30.0, fill=True)
+cvs.add_equilibrium(eq)
+cvs.save("theme_paper.png")
+```
+
+<figure class="ev-fig" markdown>
+
+![The `paper` theme](../../assets/utility-viz/agora/themes/paper.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/themes/paper.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>The `paper` theme</figcaption>
+
+</figure>
+
+```python
+from dataclasses import replace
+
+from utility_viz import Canvas, levels, solve, themes
+from utility_viz.models import CobbDouglas
+
+model = CobbDouglas(alpha=0.5, beta=0.5)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
+
+# theme colours with manual line weights
+theme = replace(
+    themes.monochrome,
+    background_color="#ffffff",
+    ic_linewidth=2.6,
+    budget_linewidth=2.6,
+    eq_markersize=5.0,
+)
+
+cvs = Canvas(
+    x_max=20,
+    y_max=15,
+    x_label="$x$",
+    y_label="$y$",
+    theme=theme,
+)
+cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
+cvs.add_budget(2.0, 3.0, 30.0, fill=True)
+cvs.add_equilibrium(eq)
+cvs.save("theme_monochrome.png")
+```
+
+<figure class="ev-fig" markdown>
+
+![The `monochrome` theme](../../assets/utility-viz/agora/themes/monochrome.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/themes/monochrome.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>The `monochrome` theme</figcaption>
+
+</figure>
+
+```python
+from dataclasses import replace
+
+from utility_viz import Canvas, levels, solve, themes
+from utility_viz.models import CobbDouglas
+
+model = CobbDouglas(alpha=0.5, beta=0.5)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
+
+# theme colours with manual line weights
+theme = replace(
+    themes.presentation,
+    background_color="#ffffff",
+    ic_linewidth=2.6,
+    budget_linewidth=2.6,
+    eq_markersize=5.0,
+)
+
+cvs = Canvas(
+    x_max=20,
+    y_max=15,
+    x_label="$x$",
+    y_label="$y$",
+    theme=theme,
+)
+cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
+cvs.add_budget(2.0, 3.0, 30.0, fill=True)
+cvs.add_equilibrium(eq)
+cvs.save("theme_presentation.png")
+```
+
+<figure class="ev-fig" markdown>
+
+![The `presentation` theme](../../assets/utility-viz/agora/themes/presentation.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/themes/presentation.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>The `presentation` theme</figcaption>
+
+</figure>
+
+## Custom themes
+
+<!-- api: agora.utility_viz.guides_themes_2 -->
+
+A `Theme` holds default colours, widths and styles for diagram elements.
+Fields not given keep the class defaults; style arguments passed
+explicitly to a drawing method take precedence over the theme.
+
+`Theme` also holds colours and widths for rays, kinks, compensated budget
+lines and price-effect arrows. `axis_stroke`, `drop_stroke`,
+`projection_stroke`, `guide_stroke` and `box_stroke` hold the defaults of
+other lines; markers, labels, fills and legends come from `Marker`, `Label`,
+`Fill` and `Legend` properties ([Styles](canvas.md#sec-styles)).
+
+## Configuration files
+
+<!-- api: agora.utility_viz.guides_themes_3 -->
+
+`Config.load()` reads a TOML file and returns a `Config`; `use()` makes it
+the default for later diagrams, and `reset()` restores the built-in
+defaults.
+
+### Tutorial: one shared style
+
+Figures in one set of lecture notes or one paper usually share their
+colours and line styles. Rather than repeating the same arguments on every
+`Canvas`, write the style once in an `utility-viz.toml` at the project root,
+where both Python and the command line read it.
+
++ *Create a template.* Run the following in the project root. It writes a
+  commented `utility-viz.toml` listing the names and fields each section
+  accepts:
+
+  ```bash
+  utility-viz init
+  ```
+
+  Every setting in the template starts commented out; keep only what you
+  change and delete the rest.
+
++ *Pick a base theme.* `base` names the built-in theme to start from
+  ([Built-in themes](themes.md#tab-themes)); everything else overrides it:
+
+  ```toml
+  base = "paper"
+  ```
+
++ *Override colours and styles.* Write only the fields you change:
+
+  ```toml
+  [color]
+  ic = "#1B4F72"
+  eq = "#C0392B"
+
+  [stroke.budget]
+  width = 1.6
+  style = "dashed"
+
+  [marker.eq]
+  size = 5
+
+  [label.point]
+  fontsize = 11
+  position = "right"
+  ```
+
+  Section names map to theme properties: `ic` under `[color]` sets
+  `ic_color`, and `[stroke.budget]` sets `theme.budget_stroke`. The fields
+  inside a section are the arguments of `Stroke`, `Marker`, `Label`, `Fill`
+  or `Legend` ([Styles](canvas.md#sec-styles)). Fonts go under `[font]` as `text` and `math`.
+  Fields you leave out keep the base theme's values.
+
++ *Use it from Python.* Load it once, before creating any diagram:
+
+  ```python
+  from utility_viz import Config
+
+  # reads ./utility-viz.toml by default
+  Config.load().use()
+  ```
+
+  Every `Canvas`, `Figure`, `DemandDiagram` and `EdgeworthBox` created
+  afterwards uses these settings; `Config.reset()` restores the defaults.
+
++ *Use it from the command line.* `utility-viz plot` reads
+  `utility-viz.toml` from the current directory on its own; pass another
+  file with `--config`:
+
+  ```bash
+  utility-viz plot --config utility-viz.toml --model cobb-douglas \
+    --px 2 --py 3 --income 30 --output figure.png
+  ```
+
+Settings apply in this order, highest first: arguments passed to `Canvas`
+or a drawing method, then the configuration file, then the base theme. For
+example, `Canvas(theme=themes.default)` ignores the file's theme.
+
+A mistake in the file makes `Config.load()` raise `InvalidParameterError`
+with the valid names. For instance, writing `[stroke.budgt]` for
+`[stroke.budget]` gives:
+
+```text
+utility-viz.toml: [stroke.budgt]: no such setting (choose: axis, box, budget, ...)
+```
+
+### File lookup
+
+<span id="sec-config-lookup"></span>
+
+<!-- api: agora.utility_viz.guides_themes_4 -->
+
+Find and read a configuration file without failing when there is none.
+
+`Config.load()`, `Config.discover()` and `utility-viz plot` resolve the
+file in this order:
+
++ the path given explicitly (`Config.load("file.toml")` or `--config`),
+  which must exist and is the only file read;
++ `utility-viz.toml` in the current directory (or `directory=`);
++ the legacy `econ-viz.toml`, with a deprecation warning;
++ the built-in defaults.
+
+When both files exist, `utility-viz.toml` wins and the legacy one is ignored
+with a warning. The two functions differ only when no file is found:
+`Config.load()` raises `InvalidParameterError` ("config file not found"),
+as in 1.x, while `Config.discover()` returns the built-in defaults.
+`utility-viz init --migrate` turns a legacy file into `utility-viz.toml`
+([Creating a configuration file](../getting-started/cli.md#sec-cli-init)).

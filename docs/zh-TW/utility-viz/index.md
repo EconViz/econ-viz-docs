@@ -119,3 +119,9 @@ uv add --prerelease allow utility-viz
 ```
 
 需要 Python 3.10 以上。uv 與選用依賴的安裝方式請見[安裝](getting-started/installation.md)。
+
+## 範例
+
+文件裡每張圖都附有畫出它的腳本，已依主題分資料夾。一次下載全部，內含腳本載入的設定檔 `manual.toml`。
+
+[下載全部範例](../../assets/utility-viz/agora/utility-viz-examples-zh-TW.zip){ .md-button download="" }

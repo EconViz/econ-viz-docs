@@ -1,19 +1,25 @@
 ---
-seo_title: "比較靜態與 Slutsky 分析"
-description: "用 utility-viz 的分析工具，以數值方法計算比較靜態、 Marshall 需求的導數與 Slutsky 分解。"
+seo_title: "分析"
 ---
 
 # 分析
 
-`utility-viz` 除了繪圖與求解均衡，也提供分析工具。
+<span id="sec-analysis"></span>
+
+分析 API 提供 Marshall 需求的比較靜態、Slutsky 矩陣，以及效用函數的齊次性與位似性檢查。
 
 ## 比較靜態
 
-用 `comparative_statics(...)` 以數值方法估計 Marshall 需求的六個導數：
+<!-- api: agora.utility_viz.tools_analysis_1 -->
+
+以有限差分估計兩商品 Marshall 需求對 $p_x$、$p_y$ 與所得的六個偏導數，回傳 `ComparativeStatics`。
+
+- 在 `solve(...)` 的結果附近使用中央有限差分，預設的相對步長是 `1e-3`。
+- 偵測到自身價格導數為正或所得導數為負時會發出警告，分別對應季芬財與劣等財的需求特性。
 
 ```python
+from utility_viz import comparative_statics
 from utility_viz.models import CobbDouglas
-from utility_viz.optimizer import comparative_statics
 
 model = CobbDouglas(alpha=0.4, beta=0.6)
 cs = comparative_statics(model, px=2.0, py=3.0, income=60.0)
@@ -29,15 +35,11 @@ print(
 # 0.0 -4.0 0.2
 ```
 
-說明：
-
-- 在 `solve(...)` 的結果附近使用**中央有限差分**
-- 預設的相對步長是 `1e-3`
-- 遇到經濟上不尋常的符號時會發出警告，例如**Giffen 財**式的自身價格反應，或**劣等財**的所得效果
-
 ## Slutsky 矩陣
 
-用 `slutsky_matrix(...)` 計算 Slutsky 方程式所隱含的兩商品替代矩陣。
+<!-- api: agora.utility_viz.tools_analysis_2 -->
+
+以 Marshall 需求導數與所得效果計算兩商品的 Slutsky 替代矩陣，並檢查對稱性、負半定性與齊次性；檢查未通過時發出警告。使用 `as_array()` 可轉為 `NumPy` 陣列。
 
 ```python
 from utility_viz import slutsky_matrix
@@ -60,28 +62,14 @@ print(S.as_array().round(1))
 #  [ 2.4 -1.6]]
 ```
 
-需要的是**補償性價格效果**，而不只是原始的 Marshall 導數時，就用這個工具。
+## 齊次性
 
-## 齊次性分析
+<!-- api: agora.utility_viz.tools_analysis_3 -->
 
-用 `HomogeneityAnalyzer` 檢查效用函數是否為齊次或位似。
-
-### 可用的檢查
-
-分析器提供以下四項檢查：
-
-| 方法 | 檢查內容 |
-|------|------|
-| `degree()` | 估計齊次的次數 |
-| `euler_check(x, y)` | 計算某個消費組合上的 Euler 定理殘差 |
-| `is_homothetic()` | 邊際替代率（MRS）在等比例縮放下是否不變 |
-| `demand_degree_zero(px, py, income)` | Marshall 需求是否為**零次齊次** |
-
-### 程式碼範例
+檢查效用函數的齊次性、位似性與需求的零次齊次性。
 
 ```python
-from utility_viz.analysis import HomogeneityAnalyzer
-from utility_viz.models import CobbDouglas
+from utility_viz.models import CobbDouglas, HomogeneityAnalyzer
 
 analyzer = HomogeneityAnalyzer(CobbDouglas(alpha=0.4, beta=0.6))
 result = analyzer.degree()
@@ -99,24 +87,21 @@ print(analyzer.demand_degree_zero(px=2.0, py=3.0, income=60.0))
 # True
 ```
 
-## 規模報酬分類
+## 規模報酬
 
-`degree()` 會回傳 `HomogeneityResult`，其中包含估計的次數，以及 `ReturnsToScale` 分類：
+<span id="sec-rts"></span>
 
-Cobb–Douglas 效用函數的齊次次數是 $\alpha+\beta$：
+`degree()` 回傳 `HomogeneityResult`，包含下列欄位：
+
+Cobb-Douglas 的齊次次數為 $\alpha + \beta$：
 
 $$
-U(\lambda x, \lambda y)
-= \lambda^{\alpha+\beta} U(x,y)
+u(\lambda x, \lambda y) = \lambda^{\alpha + \beta} u(x, y).
 $$
 
-- $\alpha+\beta>1$：`INCREASING`（規模報酬遞增）
-- $\alpha+\beta=1$：`CONSTANT`（規模報酬固定）
-- $\alpha+\beta<1$：`DECREASING`（規模報酬遞減）
+<!-- api: agora.utility_viz.tools_analysis_4 -->
 
-無法得到一致齊次次數的函數會分類為 `NOT_HOMOGENEOUS`（非齊次）。
-
-### 分類範例
+函數的規模報酬分類。
 
 ```python
 def shifted_utility(x, y):
@@ -144,19 +129,3 @@ for model in models:
 # 0.7 DECREASING
 # None NOT_HOMOGENEOUS
 ```
-
-## 均衡求解 {#solve}
-
-求出線性預算限制下，使效用最大的消費組合。
-
-<!-- api: helpers.solve -->
-
-## 效用水準 {#levels}
-
-<!-- api-target: levels levels -->
-
-`levels` 提供無異曲線的效用水準：`around` 以參考值為中心，`percentile` 從效用值陣列選取百分位數。
-
-<!-- api: helpers.levels_around -->
-
-<!-- api: helpers.levels_percentile -->

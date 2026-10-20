@@ -77,8 +77,16 @@ fig.add_discrete_equilibrium(eq)
 fig.finalize()
 ```
 
-The figure for this example is shown in [Discrete demand and supply.](discrete.md#fig-discrete).
+The figure for this example is shown in [Discrete demand and supply](discrete.md#fig-discrete).
 
 <span id="fig-discrete"></span>
 
-![Discrete demand and supply.](../../assets/principle-viz/agora/discrete/market.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![Discrete demand and supply](../../assets/principle-viz/agora/discrete/market.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/discrete/discrete.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>Discrete demand and supply</figcaption>
+
+</figure>

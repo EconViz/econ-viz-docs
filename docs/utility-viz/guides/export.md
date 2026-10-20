@@ -1,55 +1,58 @@
 ---
-seo_title: "Export Diagrams to PNG, PDF, SVG, and GIF"
-description: "Save utility-viz economics diagrams as PNG, PDF, or SVG for papers and slides, export animated GIFs, or open an interactive matplotlib window."
+seo_title: "Export"
 ---
 
 # Export
 
-## Raster formats
+<span id="sec-export"></span>
 
-Call `cvs.save()` with a `.png`, `.pdf`, or `.svg` extension:
+## Output formats
+
+<!-- api: agora.utility_viz.guides_export_1 -->
+
+Write the figure to `path`; the format follows the extension. `Figure`,
+`DemandDiagram` and `EdgeworthBox` have the same method.
+
+- PNG: raster, at the canvas `dpi` (default 300).
+- PDF, SVG: vector output that stays sharp when printed or scaled.
+- TeX: TikZ code (`.tex`) for inclusion in LaTeX documents; adjust it with
+  the keyword arguments `tikz_scale` and `tikz_standalone`.
 
 ```python
-# PNG, canvas DPI (default 300)
+# PNG with canvas DPI default 300
 cvs.save("figure.png")
-# PDF (vector)
+# PDF vector
 cvs.save("figure.pdf")
-# SVG (vector)
+# SVG vector
 cvs.save("figure.svg")
+# TikZ
+cvs.save("figure.tex")
 ```
 
-The `dpi` parameter on `Canvas` controls raster resolution:
+The `dpi` parameter of `Canvas` only affects raster output; lower it for
+faster previews:
 
 ```python
-# lower DPI, faster preview
+# lower DPI for a faster preview
 cvs = Canvas(x_max=20, y_max=15, dpi=150)
 ```
 
-DPI is clamped to the range 1–1200.
+## Animated GIFs
 
-## Animated GIF export
-
-For multi-frame output, use `Animator` instead of `Canvas.save()`:
+Export a GIF with `Animator.save()`; [Animation](animation.md#sec-animation) has complete examples.
 
 ```python
-from utility_viz.animation import Animator
+from utility_viz.core.animation import Animator
 
 Animator(draw_frame, frames=frames).save(
     "animation.gif", fps=12, dpi=120
 )
 ```
 
-See the [Animation](animation.md) page for parameter, price, income, and budget-only sweep examples.
-
 ## Interactive window
 
-Call `cvs.show()` to open a live matplotlib window instead of saving:
-
-```python
-cvs.show()
-```
-
-In the CLI, omit `--output` to get the same behaviour:
+`cvs.show()` opens a live `matplotlib` window instead of saving. In
+the CLI, omitting `--output` has the same effect ([Plotting](../getting-started/cli.md#sec-cli-plot)):
 
 ```bash
 utility-viz plot --model cobb-douglas --px 2 --py 3 --income 30

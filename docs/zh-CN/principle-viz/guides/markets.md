@@ -61,7 +61,7 @@ print(eq)
 
 以反函数形式描述一条曲线的移动：`delta_intercept` 为正时向上平移、为负时向下，`delta_slope` 旋转曲线。情景可同时移动需求、供给或两者。两者都位于 `principle_viz.core.shifts`。
 
-需求增加使需求截距上升；供给增加则使供给截距*下降*，因为卖方在每个数量下都愿意接受较低的价格。
+需求增加使需求截距上升；供给增加则使供给截距下降，因为卖方在每个数量下都愿意接受较低的价格。
 
 <!-- api: agora.principle_viz.guides_markets_4 -->
 
@@ -82,7 +82,7 @@ print(result.direction_q, result.direction_p)
 
 <!-- api: agora.principle_viz.guides_markets_5 -->
 
-画出移动的曲线、两个均衡点，以及由旧均衡指向新均衡的虚线箭头。在 `add_curves()` 中将原曲线命名为 $D_0$ 与 $S_0$。需求增加的结果如[需求增加。](markets.md#fig-shifts)，供给减少的结果如[供给减少。](markets.md#fig-shift-supply)。
+画出移动的曲线、两个均衡点，以及由旧均衡指向新均衡的虚线箭头。在 `add_curves()` 中将原曲线命名为 $D_0$ 与 $S_0$。需求增加的结果如[需求增加](markets.md#fig-shifts)，供给减少的结果如[供给减少](markets.md#fig-shift-supply)。
 
 ```python
 fig = MarketFigure(
@@ -101,11 +101,27 @@ fig.finalize()
 
 <span id="fig-shifts"></span>
 
-![需求增加。](../../../assets/principle-viz/agora/markets/shift_demand_increase.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![需求增加](../../../assets/principle-viz/agora/markets/shift_demand_increase.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/markets/markets.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>需求增加</figcaption>
+
+</figure>
 
 <span id="fig-shift-supply"></span>
 
-![供给减少。](../../../assets/principle-viz/agora/markets/shift_supply_decrease.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![供给减少](../../../assets/principle-viz/agora/markets/shift_supply_decrease.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/markets/markets.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>供给减少</figcaption>
+
+</figure>
 
 ## 异常
 

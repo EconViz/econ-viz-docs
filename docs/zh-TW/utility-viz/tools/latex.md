@@ -1,18 +1,21 @@
 ---
-seo_title: "解析 LaTeX 效用函數"
-description: "用 parse_latex 把 x^{0.4} y^{0.6} 或 \\min(2x, 3y) 這類 LaTeX 算式，直接轉成 utility-viz 的效用函數模型。"
+seo_title: "LaTeX 解析"
 ---
 
 # LaTeX 解析
 
-`parse_latex` 會把 LaTeX 數學字串直接轉成具體的模型物件。
+<span id="sec-latex"></span>
+
+<!-- api: agora.utility_viz.tools_latex_1 -->
+
+將 LaTeX 效用函數解析為模型，回傳值可用於 `solve()`、`Canvas` 或其他接受模型的 API。
 
 ```python
 from utility_viz import parse_latex
 
 # CobbDouglas(alpha=0.4, beta=0.6)
 model = parse_latex(r"x^{0.4} y^{0.6}")
-# 完全互補模型，a=2.0，b=3.0
+# Leontief(a=2.0, b=3.0)
 model = parse_latex(r"\min(2x, 3y)")
 # PerfectSubstitutes(a=2.0, b=3.0)
 model = parse_latex(r"2x + 3y")
@@ -20,30 +23,101 @@ model = parse_latex(r"2x + 3y")
 
 ## 支援的形式
 
+支援的輸入形式參見[支援的效用函數。](latex.md#tab-latex)。省略的係數或指數預設為 1。
+
+<span id="tab-latex"></span>
+
 | 類型 | 格式 | 範例 |
-|--------|---------|---------|
+| --- | --- | --- |
 | Cobb-Douglas | `x^{α} y^{β}` 或 `x^α y^β` | `x^{0.3} y^{0.7}` |
 | 完全互補 | `\min(ax, by)` 或 `min(ax, by)` | `\min(2x, y)` |
 | 完全替代 | `ax + by` | `3x + 1.5y` |
+| CES | `(αx^ρ + βy^ρ)^{1/ρ}` | `(0.4x^{-0.5}+0.6y^{-0.5})^{-2}` |
 
-係數與指數都可以省略，預設為 1。
+可省略開頭的 `U =` 或 `u(x, y) =`：
 
-## 輸入格式
-
-可以只輸入效用式，也可以在前面加上 `U =` 或 `U(x, y) =`：
-
-```
+```text
 U(x,y) = x^{0.5} y^{0.5}
 U = x^{0.5} y^{0.5}
 x^{0.5} y^{0.5}
 ```
 
-## 錯誤處理
+```python
+from utility_viz import (
+    Canvas,
+    Config,
+    levels,
+    parse_latex,
+    solve,
+)
 
-無法辨識的格式會拋出 `utility_viz.exceptions.ParseError`：
+# 圖形設定
+Config.load("manual.toml").use()
+
+# Leontief(a=2.0, b=3.0)
+model = parse_latex(r"\min(2x, 3y)")
+eq = solve(model, px=2.0, py=3.0, income=30.0)
+
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+cvs.add_utility(
+    model,
+    levels=levels.around(eq.utility, n=5),
+    show_kinks=True,
+)
+cvs.add_budget(2.0, 3.0, 30.0)
+cvs.add_equilibrium(eq)
+cvs.save("leontief.png")
+```
+
+<figure class="ev-fig" markdown>
+
+![Leontief 範例](../../../assets/utility-viz/agora/latex/leontief.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/latex/leontief.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+
+<figcaption markdown>Leontief 範例</figcaption>
+
+</figure>
 
 ```python
-from utility_viz.exceptions import ParseError
+from utility_viz import (
+    Canvas,
+    Config,
+    levels,
+    parse_latex,
+    solve,
+)
+
+# 圖形設定
+Config.load("manual.toml").use()
+
+# PerfectSubstitutes(a=2.0, b=3.0)
+model = parse_latex(r"2x + 3y")
+eq = solve(model, px=2.0, py=3.0, income=30.0)
+
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+cvs.add_utility(model, levels=levels.around(eq.utility, n=5))
+cvs.add_budget(2.0, 3.0, 30.0)
+cvs.add_equilibrium(eq)
+cvs.save("perfect_substitutes.png")
+```
+
+<figure class="ev-fig" markdown>
+
+![完全替代輸入範例](../../../assets/utility-viz/agora/latex/perfect_substitutes.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/latex/perfect_substitutes.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+
+<figcaption markdown>完全替代輸入範例</figcaption>
+
+</figure>
+
+## 錯誤處理
+
+無法解析時會拋出 `utility_viz.ParseError`，錯誤訊息包含支援的格式：
+
+```python
+from utility_viz import ParseError, parse_latex
 
 try:
     model = parse_latex(r"x^2 + y^2")
@@ -53,17 +127,15 @@ except ParseError as e:
 # Unrecognised LaTeX utility function: 'x^2 + y^2'
 # Supported forms:
 #   Cobb-Douglas       : x^{alpha} y^{beta}
-#   完全互補            : \min(ax, by)
+#   Leontief           : \min(ax, by)
 #   Perfect Substitutes: ax + by
 #   CES                : (alpha x^{rho} + beta y^{rho})^{1/rho}
 ```
 
 ## 在命令列工具中使用
 
+`utility-viz plot --latex` 使用相同的解析器，接受相同的輸入格式（詳見[繪圖](../getting-started/cli.md#sec-cli-plot)）：
+
 ```bash
 utility-viz plot --latex "x^{0.4} y^{0.6}" --px 2 --py 3 --income 30 -o out.png
 ```
-
-![從 LaTeX 解析出的完全互補](../../../assets/latex/latex_leontief_u.png)
-
-![從 LaTeX 解析出的完全替代](../../../assets/latex/latex_perfect_subs_u.png)

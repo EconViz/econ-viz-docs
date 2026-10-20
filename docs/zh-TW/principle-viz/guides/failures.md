@@ -38,15 +38,31 @@ print(result.corrective_tax, result.deadweight_loss)
 
 <!-- api: agora.principle_viz.guides_failures_3 -->
 
-畫出社會曲線，在數量軸上標出 $Q_m$（市場）與 $Q^*$（最適），在 $Q^*$ 處標出橫跨差距的矯正稅 $t$ 或補貼 $s$，並為無謂損失填色（參見[負外部性。](failures.md#fig-neg-externality)、[正外部性。](failures.md#fig-pos-externality)）。
+畫出社會曲線，在數量軸上標出 $Q_m$（市場）與 $Q^*$（最適），在 $Q^*$ 處標出橫跨差距的矯正稅 $t$ 或補貼 $s$，並為無謂損失填色（參見[負外部性](failures.md#fig-neg-externality)、[正外部性](failures.md#fig-pos-externality)）。
 
 <span id="fig-neg-externality"></span>
 
-![負外部性。](../../../assets/principle-viz/agora/failures/negative_externality.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![負外部性](../../../assets/principle-viz/agora/failures/negative_externality.zh-TW.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/failures/failures.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+
+<figcaption markdown>負外部性</figcaption>
+
+</figure>
 
 <span id="fig-pos-externality"></span>
 
-![正外部性。](../../../assets/principle-viz/agora/failures/positive_externality.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![正外部性](../../../assets/principle-viz/agora/failures/positive_externality.zh-TW.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/failures/failures.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+
+<figcaption markdown>正外部性</figcaption>
+
+</figure>
 
 ## 共有資源
 
@@ -58,17 +74,25 @@ print(result.corrective_tax, result.deadweight_loss)
 
 <!-- api: agora.principle_viz.guides_failures_5 -->
 
-畫出社會成本，標出 $Q^*$ 與 $Q_\text{open}$，並為無謂損失填色。在 `add_curves()` 中將曲線命名為 $M B$ 與 $M P C$。參見[共有資源的過度使用。](failures.md#fig-common-resource)。
+畫出社會成本，標出 $Q^*$ 與 $Q_\text{open}$，並為無謂損失填色。在 `add_curves()` 中將曲線命名為 $M B$ 與 $M P C$。參見[共有資源的過度使用](failures.md#fig-common-resource)。
 
 <span id="fig-common-resource"></span>
 
-![共有資源的過度使用。](../../../assets/principle-viz/agora/failures/common_resource.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![共有資源的過度使用](../../../assets/principle-viz/agora/failures/common_resource.zh-TW.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/failures/failures.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+
+<figcaption markdown>共有資源的過度使用</figcaption>
+
+</figure>
 
 ## 公共財
 
 <!-- api: agora.principle_viz.guides_failures_6 -->
 
-每個人都消費公共財的全部數量，因此邊際利益*垂直*加總。有效率的數量使邊際利益之和等於邊際成本 [Samuelson (1954)](../project/references.md#samuelson1954)；私人提供則停在最高的個人邊際利益等於邊際成本之處。結果包含 `efficient_quantity`、`efficient_marginal_value`、`private_provision_quantity`、`free_rider_gap` 與取樣點 `points`。
+每個人都消費公共財的全部數量，因此邊際利益垂直加總。有效率的數量使邊際利益之和等於邊際成本 [Samuelson (1954)](../project/references.md#samuelson1954)；私人提供則停在最高的個人邊際利益等於邊際成本之處。結果包含 `efficient_quantity`、`efficient_marginal_value`、`private_provision_quantity`、`free_rider_gap` 與取樣點 `points`。
 
 ```python
 from principle_viz import IndividualBenefit, analyze_public_good
@@ -89,8 +113,16 @@ print(
 
 <!-- api: agora.principle_viz.guides_failures_7 -->
 
-位於 `principle_viz.visuals.market_failures` 的 `mosaickit` 畫布，畫出各人的邊際利益、其垂直加總、邊際成本，並在數量軸上標出 $Q_p$ 與 $Q^*$（參見[邊際利益的垂直加總。](failures.md#fig-public-good)）。
+位於 `principle_viz.visuals.market_failures` 的 `mosaickit` 畫布，畫出各人的邊際利益、其垂直加總、邊際成本，並在數量軸上標出 $Q_p$ 與 $Q^*$（參見[邊際利益的垂直加總](failures.md#fig-public-good)）。
 
 <span id="fig-public-good"></span>
 
-![邊際利益的垂直加總。](../../../assets/principle-viz/agora/failures/public_good.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![邊際利益的垂直加總](../../../assets/principle-viz/agora/failures/public_good.zh-TW.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/failures/failures.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+
+<figcaption markdown>邊際利益的垂直加總</figcaption>
+
+</figure>

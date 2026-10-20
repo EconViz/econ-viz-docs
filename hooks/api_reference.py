@@ -27,6 +27,7 @@ _catalog = {}
 _symbols = {}
 _parameters = {}
 _sections = []
+_weights = {}  # (page, anchor) -> parameters documented there; the fuller definition wins a tie
 _class_categories = {
     'model': set('CobbDouglas CES Translog Leontief PerfectSubstitutes MaximumUtility QuasiLinear StoneGeary Satiation CustomUtility MultiGoodCD Haagsma UtilityFunction LinearDemand LinearSupply DiscreteDemand DiscreteSupply PiecewiseLinear ProductionPossibilitiesFrontier IndividualBenefit'.split()),
     'data': set('Point Vector PointSet Interval ParameterValues CanvasSpec AxisSpec Equilibrium EquilibriumResult TaxEquilibriumResult MarketOutcome Sample PathDocument EndpointDerivatives TangentDirections PlanarSlopes Rect Span Placement SurplusPolygons ShiftScenario ShiftSpec TaxScenario SubsidyScenario PriceControlScenario TradeScenario ExternalityScenario LoanableFundsScenario PPFGrowthScenario'.split()),
@@ -36,9 +37,15 @@ _class_categories = {
 _custom_classes = set()
 API_TOKEN_PATTERN = r'''"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|[A-Za-z_]\w*(?:\.[A-Za-z_]\w*)*|(?<![\w.])[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?'''
 # Explicitly selected reference tables; comparison/migration tables stay tabular.
+# Pages whose reference tables list allowed names or values in a column; shown as chips.
+OPTION_PAGES = {'utility-viz/guides/config.md'}
+OPTION_HEADERS = {'欄位', '字段', 'fields', 'values'}
 REFERENCE_TABLES = {
     'utility-viz/guides/canvas.md': {0},
     'utility-viz/guides/config.md': {0},
+    'utility-viz/guides/consumer.md': {0, 1},
+    'utility-viz/guides/interactive.md': {0},
+    'utility-viz/tools/latex.md': {0},
     'utility-viz/guides/themes.md': {0, 1},
     'utility-viz/tools/analysis.md': {0},
     'utility-viz/models/advanced.md': {1},
@@ -90,6 +97,7 @@ def reference_anchor(index, row):
 
 def render_reference_tables(source, src):
     language = src.split('/')[0] if src.startswith(('zh-TW/', 'zh-CN/')) else 'en'
+    plain_source = re.sub(r'^zh-(?:TW|CN)/', '', src)
     type_headers = {'type', 'types', '型別', '類型', '类型'}
     default_headers = {'default', 'defaults', 'default value', '預設值', '默认值'}
     description_headers = {
@@ -104,6 +112,7 @@ def render_reference_tables(source, src):
             if len(row) != len(headers):
                 raise PluginError(f'{src}: mismatched reference table columns')
             anchor = reference_anchor(index, row)
+            codes = re.findall(r'`([^`]+)`', row[0])
             label = row[0].strip('`')
             sections.append(f'<section class="ev-api__parameter" id="{anchor}" tabindex="-1" markdown="1">\n')
             types = ''
@@ -111,7 +120,11 @@ def render_reference_tables(source, src):
             description = []
             for heading, cell in zip(headers[1:], row[1:]):
                 kind = heading.strip('`* ').casefold()
-                if kind in type_headers:
+                options = re.fullmatch(r'(?:`[^`]+`\s*[、,，]?\s*)+', cell.strip())
+                if kind in OPTION_HEADERS and plain_source in OPTION_PAGES:
+                    values = re.findall(r'`([^`]+)`', cell) if options else [cell.strip()]
+                    types = ' '.join(f'<span class="ev-api__type ev-api__type--value">{html.escape(v)}</span>' for v in values)
+                elif kind in type_headers:
                     values = re.split(r'\s+(?:or|或)\s+|\s*\\?\|\s*', cell)
                     types = f' <span class="ev-api__or">{LABELS[language][2]}</span> '.join(_type(value.strip('` ')) for value in values)
                 elif kind in default_headers:
@@ -119,10 +132,10 @@ def render_reference_tables(source, src):
                     default = f'<span class="ev-api__default">{LABELS[language][1]} <code>{value}</code></span>'
                 else:
                     description.append((heading, cell, kind in description_headers))
-            sections.append(f'<div class="ev-api__meta"><a class="ev-api__name" href="#{anchor}">{_parameter_label(label)}</a>'
+            sections.append(f'<div class="ev-api__meta"><a class="ev-api__name" href="#{anchor}">{_reference_label(label, codes)}</a>'
                             f'<span class="ev-api__types">{types}</span>{default}</div>\n')
             for heading, cell, is_description in description:
-                sections.append((cell if is_description or len(description) == 1 else f'**{heading}** — {cell}') + '\n')
+                sections.append((cell if is_description or len(description) == 1 else f'<span class="ev-api__label">{html.escape(heading.strip("`* "))}</span> {cell}') + '\n')
             sections.append('</section>\n')
         sections.append('</div>\n')
         rendered = '\n'.join(sections)
@@ -149,6 +162,7 @@ def on_config(config, **kwargs):
     if str(DATA) not in config.watch:
         config.watch.append(str(DATA))
     _symbols.clear()
+    _weights.clear()
     _parameters.clear()
     _custom_classes.clear()
     for names in _class_categories.values():
@@ -181,8 +195,12 @@ def on_config(config, **kwargs):
                     if (m := re.match(r'\s*([A-Za-z_]\w*(?:\.\w+)*)\s*(?:\(|$)', signature))
                 ]
                 for name in names:
-                    for alias in {name, name.rsplit('.', 1)[-1]}:
+                    aliases = {name, name.rsplit('.', 1)[-1]}
+                    if '.' in name and name.split('.')[0].islower():
+                        aliases.add(name.split('.')[0])  # `levels` for `levels.around`, a module-like namespace
+                    for alias in aliases:
                         _symbols.setdefault(alias, set()).add((src, 'api-' + item['anchor']))
+                    _weights[(src, 'api-' + item['anchor'])] = len(item['parameters'])
                     for signature in item.get('signatures', []):
                         if signature.lstrip().startswith(name + '('):
                             for arg in re.findall(r'(?:\(|,)\s*([A-Za-z_]\w*)\s*(?=[=,:)])', signature):
@@ -191,11 +209,20 @@ def on_config(config, **kwargs):
                 for i, parameter in enumerate(item['parameters']):
                     target = item['anchor'] + '-' + (str(i) if 'signatures' in item else parameter['name'].lstrip('*'))
                     param = parameter['name'].lstrip('*')
+                    # an enum's name, even when its signature line writes the members as `Enum.A | Enum.B`
+                    owners = (list(names) + [n.split('.')[0] for n in names if '.' in n and n[:1].isupper()] + [item['name']]
+                              + re.findall(r'\b([A-Z][A-Za-z]+)\.[A-Z][A-Z0-9_]*\b', ' '.join(item.get('signatures', []))))
+                    if re.fullmatch(r'[A-Z][A-Z0-9_]*', param):
+                        for name in owners:
+                            _symbols.setdefault(f'{name}.{param}', set()).add((src, target))
+                            values = _parameters.setdefault((name, param), set())
+                            values.add((src, target))
                     if re.fullmatch(r'\w+', param):
                         for name in names:
                             values = _parameters.setdefault((name, param), set())
                             values.discard((src, 'api-' + item['anchor']))
                             values.add((src, target))
+                            _weights[(src, target)] = len(item['parameters'])
                     for method in re.findall(r'([A-Za-z_]\w*)\s*\(', parameter['name']):
                         aliases = {method, owner + '.' + method} if owner else {method}
                         for alias in aliases:
@@ -255,6 +282,9 @@ def on_page_content(html, page, config, **kwargs):
             targets = {t for t in _symbols.get(name, ()) if t[0].startswith(prefix)}
             local = {t for t in targets if t[0] == src}
             targets = local or targets
+            if len(targets) > 1:
+                best = max(_weights.get(t, -1) for t in targets)
+                targets = {t for t in targets if _weights.get(t, -1) == best}
             if len(targets) != 1:
                 return text
             target, anchor = next(iter(targets))
@@ -303,9 +333,15 @@ def link_examples(markup, src, config):
         candidates = {v for v in candidates if v[0].startswith(prefix)}
         local = {v for v in candidates if v[0] == src}
         candidates = local or candidates
+        if len(candidates) > 1:
+            best = max(_weights.get(v, -1) for v in candidates)
+            candidates = {v for v in candidates if _weights.get(v, -1) == best}
         if len(candidates) != 1:
             return None
         path, anchor = next(iter(candidates))
+        return page_link(path, anchor)
+
+    def page_link(path, anchor):
         if path == src:
             return '#' + anchor
         def url(path):
@@ -381,6 +417,12 @@ def link_examples(markup, src, config):
                     if isinstance(target, ast.Name):
                         bindings[target.id] = value
 
+            def visit_Attribute(self, node):
+                owner = resolve(node.value)
+                if owner and re.fullmatch(r'[A-Z][A-Z0-9_]*', node.attr):
+                    mark(node, node.attr, owner, node.attr, at_end=True)
+                self.generic_visit(node)
+
             def visit_Call(self, node):
                 symbol = resolve(node.func)
                 if isinstance(node.func, ast.Name):
@@ -453,11 +495,25 @@ def _reference_name(value):
     return ''.join(pieces) + html.escape(value[last:])
 
 
+def _reference_label(label, codes):
+    """Name of a reference entry: every name in the cell is a chip, however it is written."""
+    if len(codes) > 1:
+        return ', '.join(_reference_label(code, []) for code in codes)
+    styled = _parameter_label(label)
+    if '<span ' not in styled:
+        return f'<span class="ev-api__attribute">{html.escape(label)}</span>'
+    return styled
+
+
 def _parameter_label(value):
     assignment = re.fullmatch(r'([A-Za-z_]\w*)\s*=(.*)', value)
     if assignment:
         return f'<span class="ev-api__attribute">{html.escape(assignment[1])}</span>=' + _python_badges(assignment[2])
     if re.fullmatch(r'--?[A-Za-z][\w-]*', value):
+        return f'<span class="ev-api__attribute">{html.escape(value)}</span>'
+    if ', ' in value and all(re.fullmatch(r'\**[A-Za-z_]\w*|--?[A-Za-z][\w-]*', part) for part in value.split(', ')):
+        return ', '.join(_parameter_label(part) for part in value.split(', '))
+    if re.fullmatch(r'\[[A-Za-z_][\w.<>]*\]', value):
         return f'<span class="ev-api__attribute">{html.escape(value)}</span>'
     styled = _reference_name(value)
     if '<span ' not in styled and re.fullmatch(r'\**[A-Za-z_]\w*(?:\.[A-Za-z_]\w*)*', value):

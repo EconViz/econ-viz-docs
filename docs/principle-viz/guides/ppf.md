@@ -19,6 +19,10 @@ line (constant opportunity cost); $c > 1$ bows it out (increasing
 opportunity cost). Intercepts and curvature must be positive and
 $c \ge 1$, otherwise `PPFError` is raised.
 
+<!-- api: agora.principle_viz.guides_ppf_2 -->
+
+Where a point lies relative to the frontier.
+
 ```python
 from principle_viz import ProductionPossibilitiesFrontier
 
@@ -35,11 +39,11 @@ print(ppf.assess(4, 3), ppf.assess(7, 6))
 # PointStatus.INEFFICIENT PointStatus.UNATTAINABLE
 ```
 
-<!-- api: agora.principle_viz.guides_ppf_2 -->
+<!-- api: agora.principle_viz.guides_ppf_3 -->
 
 Sample the frontier and assess named points, given as `(x, y, label)`
 triples; `ppf_canvas()`, in `principle_viz.visuals.ppf`, draws it with the
-attainable set shaded and the points labelled ([Efficient, inefficient and unattainable points.](ppf.md#fig-ppf)).
+attainable set shaded and the points labelled ([Efficient and inefficient points](ppf.md#fig-ppf)).
 
 ```python
 from principle_viz import analyze_ppf
@@ -52,24 +56,40 @@ ppf_canvas(result).save("ppf_points.png")
 
 <span id="fig-ppf"></span>
 
-![Efficient, inefficient and unattainable points.](../../assets/principle-viz/agora/ppf/points.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-<!-- api: agora.principle_viz.guides_ppf_3 -->
+![Efficient and inefficient points](../../assets/principle-viz/agora/ppf/points.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/ppf/ppf.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>Efficient and inefficient points</figcaption>
+
+</figure>
+
+<!-- api: agora.principle_viz.guides_ppf_4 -->
 
 Economic growth scales each intercept by one plus its growth rate; the
 result holds the `baseline` and `shifted` frontiers and their sampled
 points. `ppf_growth_canvas()` draws both, named $P P F_0$ and $P P F_1$
-(see [Growth of 20% in consumer goods and 10% in capital goods.](ppf.md#fig-ppf-growth)).
+(see [Growth in consumer and capital goods](ppf.md#fig-ppf-growth)).
 
 <span id="fig-ppf-growth"></span>
 
-![Growth of 20% in consumer goods and 10% in capital goods.](../../assets/principle-viz/agora/ppf/growth.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![Growth in consumer and capital goods](../../assets/principle-viz/agora/ppf/growth.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/ppf/ppf.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>Growth in consumer and capital goods</figcaption>
+
+</figure>
 
 ## Comparative advantage
 
 <span id="sec-comparative-advantage"></span>
 
-<!-- api: agora.principle_viz.guides_ppf_4 -->
+<!-- api: agora.principle_viz.guides_ppf_5 -->
 
 For two straight-line frontiers, the opportunity cost of $x$ for each
 producer and who has the comparative advantage in each good (`"tie"` when

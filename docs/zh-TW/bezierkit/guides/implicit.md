@@ -40,7 +40,7 @@ seo_title: "等值線"
 
     設 $F$ 在開集 $\Omega \subset \mathbb{R}^2$ 上連續可微，$p \in \Omega$，$F(p) = c$ 且 $\nabla F(p) \ne 0$。則存在 $p$ 的開鄰域 $N$ 與開區間 $I$ 上的連續可微曲線 $\gamma : I \to \mathbb{R}^2$，滿足 $\gamma(I) = L_c \cap N$、某個 $u_0 \in I$ 使 $\gamma(u_0) = p$、對所有 $u \in I$ 有 $\gamma'(u) \ne 0$，且 $\gamma'(u)$ 平行於 $\gamma(u)$ 處的 $(F_y, -F_x)$。向量 $(F_y, -F_x)$ 與 $\nabla F$ 正交。
 
-切線 $(F_y, -F_x)$ 不需除法，因此垂直切線（$F_y = 0$）與其他情況一樣容易處理；圖形形式的斜率 $\mathrm{d} y / \mathrm{d} x = -F_x / F_y$ 在該處則為無窮大。
+切線 $(F_y, -F_x)$ 不需除法，因此垂直切線（$F_y = 0$）不需要另外處理；圖形形式的斜率 $\mathrm{d} y / \mathrm{d} x = -F_x / F_y$ 在該處則為無窮大。
 
 ## 描繪
 
@@ -66,15 +66,23 @@ seo_title: "等值線"
 
 一條邊有交點，若且唯若它的兩個角點高低不同。
 
-+ *取樣。*在 viewport 的規則網格上計算 $F$。
-+ *行進。*在每個網格格子中找出四條邊的交點（詳見[邊上的交點](implicit.md#def-crossing)）。有兩個交點的格子貢獻一條線段。有四個交點的格子是鞍點：兩個對角角點為高、另兩個為低，由下述規則決定如何連接（參見[鞍點格子：(a) 中心高、(b) 中心低；實心角點的 $F \ge c$。](implicit.md#fig-saddle)）。
-+ *縫合。*把端點相同的線段串成鏈。回到起點的鏈是封閉的；抵達 viewport 邊界或分支點的鏈是開放的。互不相連的部分保持為不同的路徑。
-+ *簡化。*以 `tolerance` 對每條鏈呼叫 `fit_polyline`（詳見[擬合](fitting.md#sec-fitting)），不保留轉角。
-+ *彎曲*（提供 `gradient` 時）。把每條直線段換成端點切線沿等值集方向的三次曲線（詳見[等值集的切線](implicit.md#thm-gradient)），控制柄長為弦長的三分之一。只有當三次曲線與弦的距離不超過 `tolerance` 時才採用；任一端 $\nabla F = 0$ 時維持直線。
++ 取樣。在 viewport 的規則網格上計算 $F$。
++ 行進。在每個網格格子中找出四條邊的交點（詳見[邊上的交點](implicit.md#def-crossing)）。有兩個交點的格子貢獻一條線段。有四個交點的格子是鞍點：兩個對角角點為高、另兩個為低，由下述規則決定如何連接（參見[鞍點格子的兩種中心](implicit.md#fig-saddle)）。
++ 縫合。把端點相同的線段串成鏈。回到起點的鏈是封閉的；抵達 viewport 邊界或分支點的鏈是開放的。互不相連的部分保持為不同的路徑。
++ 簡化。以 `tolerance` 對每條鏈呼叫 `fit_polyline`（詳見[擬合](fitting.md#sec-fitting)），不保留轉角。
++ 彎曲（提供 `gradient` 時）。把每條直線段換成端點切線沿等值集方向的三次曲線（詳見[等值集的切線](implicit.md#thm-gradient)），控制柄長為弦長的三分之一。只有當三次曲線與弦的距離不超過 `tolerance` 時才採用；任一端 $\nabla F = 0$ 時維持直線。
 
 <span id="fig-saddle"></span>
 
-![鞍點格子：(a) 中心高、(b) 中心低；實心角點的 $F \ge c$。](../../../assets/bezierkit/agora/implicit/saddle.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![鞍點格子的兩種中心](../../../assets/bezierkit/agora/implicit/saddle.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/bezierkit/agora/implicit/implicit.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+
+<figcaption markdown>鞍點格子的兩種中心</figcaption>
+
+</figure>
 
 鞍點規則使用四個角點值的雙線性插值
 
@@ -92,7 +100,7 @@ $$
     u(1/2, 1/2) = (f_{00} + f_{10} + f_{11} + f_{01}) / 4.
     $$
 
-此平均值不小於 $c$ 時，套件將中心視為高。在鞍點格子中，與中心同側的兩個角點在格內相連，另外兩個角點各自被一條線段切開（參見[鞍點格子：(a) 中心高、(b) 中心低；實心角點的 $F \ge c$。](implicit.md#fig-saddle)）。這就是中點決定法（midpoint decider）[Athawale (2019)](../project/references.md#athawale2019)。[Nielson (1991)](../project/references.md#nielson1991) 的漸近決定法（asymptotic decider）則比較 $u$ 在其鞍點的值
+此平均值不小於 $c$ 時，套件將中心視為高。在鞍點格子中，與中心同側的兩個角點在格內相連，另外兩個角點各自被一條線段切開（參見[鞍點格子的兩種中心](implicit.md#fig-saddle)）。這就是中點決定法（midpoint decider）[Athawale (2019)](../project/references.md#athawale2019)。[Nielson (1991)](../project/references.md#nielson1991) 的漸近決定法（asymptotic decider）則比較 $u$ 在其鞍點的值
 
 $$
 u^* = (f_{00} f_{11} - f_{10} f_{01}) / (f_{00} - f_{10} - f_{01} + f_{11}),
@@ -119,7 +127,15 @@ print(len(contours.for_level(4)[0].segments))
 
 <span id="fig-contours"></span>
 
-![$x^2 y = c$，$c = 1, 2, 4$ 由內而外。](../../../assets/bezierkit/agora/implicit/contours.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![$x^2 y = c$ 的三條曲線](../../../assets/bezierkit/agora/implicit/contours.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/bezierkit/agora/implicit/implicit.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+
+<figcaption markdown>$x^2 y = c$ 的三條曲線</figcaption>
+
+</figure>
 
 ## 結果
 

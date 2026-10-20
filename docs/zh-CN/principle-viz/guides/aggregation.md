@@ -57,11 +57,9 @@ print(round(eq.q_star, 3), round(eq.p_star, 3))
 cs, ps = piecewise_surplus(demand, supply, eq)
 ```
 
-`piecewise_surplus()` 返回沿价格积分得到的消费者剩余与生产者剩余。
-
 ## 加总离散表
 
-`DiscreteDemand.combine(*schedules)` 将所有买方的保留价格合并为一张市场表，由高到低排列；`DiscreteSupply.combine()` 合并单位成本，由低到高排列。相同的数值保留为不同单位，合并结果可直接交给 `solve_discrete_equilibrium()`（详见[离散市场](discrete.md#sec-discrete)）。输出参见[合并两张离散需求表。](aggregation.md#fig-discrete-market-demand)。
+`DiscreteDemand.combine(*schedules)` 将所有买方的保留价格合并为一张市场表，由高到低排列；`DiscreteSupply.combine()` 合并单位成本，由低到高排列。相同的数值保留为不同单位，合并结果可直接交给 `solve_discrete_equilibrium()`（详见[离散市场](discrete.md#sec-discrete)）。输出参见[合并两张离散需求表](aggregation.md#fig-discrete-market-demand)。
 
 ```python
 from principle_viz import DiscreteDemand
@@ -92,12 +90,28 @@ fig = demand_aggregation_figure(
 fig.save("market_demand.png")
 ```
 
-`demand_aggregation_figure()` 的输出参见[水平加总的市场需求。](aggregation.md#fig-market-demand)。
+`demand_aggregation_figure()` 的输出参见[水平加总的市场需求](aggregation.md#fig-market-demand)。
 
 <span id="fig-market-demand"></span>
 
-![水平加总的市场需求。](../../../assets/principle-viz/agora/aggregation/market_demand.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![水平加总的市场需求](../../../assets/principle-viz/agora/aggregation/market_demand.zh-CN.svg){ .ev-figure-lg }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/aggregation/aggregation.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>水平加总的市场需求</figcaption>
+
+</figure>
 
 <span id="fig-discrete-market-demand"></span>
 
-![合并两张离散需求表。](../../../assets/principle-viz/agora/aggregation/discrete_market_demand.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![合并两张离散需求表](../../../assets/principle-viz/agora/aggregation/discrete_market_demand.zh-CN.svg){ .ev-figure-lg }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/aggregation/aggregation.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>合并两张离散需求表</figcaption>
+
+</figure>

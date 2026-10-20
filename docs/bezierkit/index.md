@@ -151,3 +151,9 @@ The following chapters cover bezierkit 1.0.0.
 - [Change history](project/changelog.md)
 
 <!-- /agora-navigation -->
+
+## Examples
+
+The scripts that draw the figures in the manual and on these pages come as one zip, sorted by topic.
+
+[Download all examples](../assets/bezierkit/agora/bezierkit-examples.zip){ .md-button download="" }

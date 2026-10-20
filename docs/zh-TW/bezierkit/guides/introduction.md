@@ -6,7 +6,7 @@ seo_title: "簡介"
 
 <span id="sec-intro"></span>
 
-`bezierkit` 是處理 Bézier 曲線的小型數學工具套件。它可由控制點或端點條件建構曲線，計算曲線值與導數，分割與截取曲線，將曲線擬合到函數、取樣點與等值線，並輸出為 JSON、SVG 路徑資料或 TikZ。套件本身不繪圖，繪圖交給 Matplotlib、`mosaickit` 或 LaTeX 文件等繪圖端，它們收到的是精確的三次控制點。
+`bezierkit` 是處理 Bézier 曲線的小型數學工具套件。它可由控制點或端點條件建構曲線，計算曲線值與導數，分割與截取曲線，將曲線擬合到函數、取樣點與等值線，並輸出為 JSON、SVG 路徑資料或 TikZ。套件本身不繪圖。Matplotlib、`mosaickit` 或 LaTeX 文件等繪圖端接收精確的三次控制點，再負責繪製。
 
 ## 符號
 
@@ -34,7 +34,7 @@ $$
 
 ## 數學與證明
 
-各章先回顧所用的標準定義並附出處，再以編號的引理、命題、定理與推論陳述演算法所依據的性質：Bernstein 基底的保證、de Casteljau 演算法為何能計算並分割曲線、Hermite 插值最多偏離多少、匯出器因四捨五入損失多少精度。證明集中在[證明](../project/proofs.md#app-proofs)，只想了解 API 時可略過。屬於本套件而不見於文獻的約定，稱為套件約定。標準參考書為 [Farin (2002)](../project/references.md#farin2002) 與 [Prautzsch (2002)](../project/references.md#prautzsch2002)；Bernstein 基底另見 [Farouki (2012)](../project/references.md#farouki2012)。
+各章先回顧所用的標準定義並附出處，再以編號的引理、命題、定理與推論陳述演算法所依據的性質：Bernstein 基底、de Casteljau 演算法的求值與分割、Hermite 誤差界，以及匯出器的捨入誤差。證明集中在[證明](../project/proofs.md#app-proofs)，只想了解 API 時可略過。屬於本套件而不見於文獻的約定，稱為套件約定。標準參考書為 [Farin (2002)](../project/references.md#farin2002) 與 [Prautzsch (2002)](../project/references.md#prautzsch2002)；Bernstein 基底另見 [Farouki (2012)](../project/references.md#farouki2012)。
 
 ## 閱讀指引
 
@@ -42,11 +42,16 @@ $$
 
 | 主題 | 內容 | 章節 |
 | --- | --- | --- |
-| 點、向量、參數、例外 | [幾何數值物件](geometry.md#sec-geometry) | Bernstein 基底、曲線、求值 |
-| [Bézier 曲線](curves.md#sec-curves) | 導數、反轉、分割 | [導數、反轉與分割](operations.md#sec-operations) |
-| 三次線段與分段路徑 | [三次線段與路徑](paths.md#sec-paths) | 建構與 Hermite 插值 |
-| [建構與 Hermite 插值](construction.md#sec-construction) | 擬合函數與折線 | [擬合](fitting.md#sec-fitting) |
-| 描繪等值線 | [等值線](implicit.md#sec-implicit) | 取樣、JSON、SVG、TikZ、Matplotlib |
-| [取樣與匯出](export.md#sec-export) | 命令列 | [命令列介面](../cli.md#sec-cli) |
+| 基礎 | 點、向量、參數、例外 | [幾何數值物件](geometry.md#sec-geometry) |
+|  | Bernstein 基底、曲線、求值 | [Bézier 曲線](curves.md#sec-curves) |
+|  | 導數、反轉、分割 | [導數、反轉與分割](operations.md#sec-operations) |
+| 三次曲線 | 三次線段與分段路徑 | [三次線段與路徑](paths.md#sec-paths) |
+|  | 建構與 Hermite 插值 | [建構與 Hermite 插值](construction.md#sec-construction) |
+| 近似 | 擬合函數與折線 | [擬合](fitting.md#sec-fitting) |
+|  | 描繪等值線 | [等值線](implicit.md#sec-implicit) |
+| 輸出 | 取樣、JSON、SVG、TikZ、Matplotlib | [取樣與匯出](export.md#sec-export) |
+|  | 命令列 | [命令列介面](../cli.md#sec-cli) |
 
 初次使用時，先讀[快速開始](../quickstart.md#sec-quickstart)與[Bézier 曲線](curves.md#sec-curves)。本手冊的圖本身就是 `bezierkit` 的輸出：每條曲線都由[取樣與匯出](export.md#sec-export)的 TikZ 匯出器寫出，再以 LaTeX 編譯。
+
+繪製本手冊各圖的腳本依主題分類，可一次下載：[bezierkit-examples.zip](https://econ-viz.org/assets/bezierkit/agora/bezierkit-examples.zip)。

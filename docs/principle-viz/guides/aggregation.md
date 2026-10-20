@@ -66,16 +66,13 @@ print(round(eq.q_star, 3), round(eq.p_star, 3))
 cs, ps = piecewise_surplus(demand, supply, eq)
 ```
 
-`piecewise_surplus()` returns the consumer and producer surplus integrated
-along price.
-
 ## Summing discrete schedules
 
 `DiscreteDemand.combine(*schedules)` merges every buyer's reservation prices
 into one market schedule, highest first; `DiscreteSupply.combine()` merges
 unit costs, lowest first. Equal values remain separate units, and the result
 works with `solve_discrete_equilibrium()` ([Discrete markets](discrete.md#sec-discrete)). The output is
-shown in [Combining two discrete demand schedules.](aggregation.md#fig-discrete-market-demand).
+shown in [Combining two discrete demands](aggregation.md#fig-discrete-market-demand).
 
 ```python
 from principle_viz import DiscreteDemand
@@ -111,12 +108,28 @@ fig = demand_aggregation_figure(
 fig.save("market_demand.png")
 ```
 
-The output of `demand_aggregation_figure()` is shown in [Market demand as the horizontal sum.](aggregation.md#fig-market-demand).
+The output of `demand_aggregation_figure()` is shown in [Market demand as horizontal sum](aggregation.md#fig-market-demand).
 
 <span id="fig-market-demand"></span>
 
-![Market demand as the horizontal sum.](../../assets/principle-viz/agora/aggregation/market_demand.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![Market demand as horizontal sum](../../assets/principle-viz/agora/aggregation/market_demand.svg){ .ev-figure-lg }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/aggregation/aggregation.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>Market demand as horizontal sum</figcaption>
+
+</figure>
 
 <span id="fig-discrete-market-demand"></span>
 
-![Combining two discrete demand schedules.](../../assets/principle-viz/agora/aggregation/discrete_market_demand.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![Combining two discrete demands](../../assets/principle-viz/agora/aggregation/discrete_market_demand.svg){ .ev-figure-lg }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/aggregation/aggregation.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>Combining two discrete demands</figcaption>
+
+</figure>

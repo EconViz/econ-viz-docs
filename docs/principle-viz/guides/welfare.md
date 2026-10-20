@@ -67,11 +67,19 @@ fig.add_equilibrium(eq)
 fig.finalize()
 ```
 
-The output is shown in [Consumer and producer surplus at equilibrium.](welfare.md#fig-welfare).
+The output is shown in [Surplus at equilibrium](welfare.md#fig-welfare).
 
 <span id="fig-welfare"></span>
 
-![Consumer and producer surplus at equilibrium.](../../assets/principle-viz/agora/welfare/equilibrium.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![Surplus at equilibrium](../../assets/principle-viz/agora/welfare/equilibrium.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/welfare/welfare.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>Surplus at equilibrium</figcaption>
+
+</figure>
 
 <!-- api: agora.principle_viz.guides_welfare_5 -->
 

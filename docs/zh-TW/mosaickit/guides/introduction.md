@@ -27,11 +27,16 @@ seo_title: "簡介"
 
 | 主題 | 內容 | 章節 |
 | --- | --- | --- |
-| 畫布、規格、場景 | [畫布與場景](canvas.md#sec-canvas) | 路徑、填色、標記、文字、座標軸 |
-| [圖層與座標軸](layers.md#sec-layers) | 座標軸標記、註記與大括號 | [座標軸註記](annotations.md#sec-annotations) |
-| 配置幾何 | [配置幾何](geometry.md#sec-geometry) | 區域標籤與點標籤 |
-| [區域標籤與點標籤](labels.md#sec-labels) | 樣式、顏色、色盤 | [樣式與顏色](styles.md#sec-styles) |
-| 主題、角色、設定 | [主題與設定](themes.md#sec-themes) | 參數、網格、動畫 |
-| [參數、網格與動畫](parameters.md#sec-parameters) | 繪製器、快取、儲存 | [繪製](rendering.md#sec-rendering) |
+| 建構 | 畫布、規格、場景 | [畫布與場景](canvas.md#sec-canvas) |
+|  | 路徑、填色、標記、文字、座標軸 | [圖層與座標軸](layers.md#sec-layers) |
+|  | 座標軸標記、註記與大括號 | [座標軸註記](annotations.md#sec-annotations) |
+| 配置 | 配置幾何 | [配置幾何](geometry.md#sec-geometry) |
+|  | 區域標籤與點標籤 | [區域標籤與點標籤](labels.md#sec-labels) |
+| 外觀 | 樣式、顏色、色盤 | [樣式與顏色](styles.md#sec-styles) |
+|  | 主題、角色、設定 | [主題與設定](themes.md#sec-themes) |
+| 輸出 | 參數、網格、動畫 | [參數、網格與動畫](parameters.md#sec-parameters) |
+|  | 繪製器、快取、儲存 | [繪製](rendering.md#sec-rendering) |
 
 初次使用請先讀[快速入門](../quickstart.md#sec-quickstart)、[畫布與場景](canvas.md#sec-canvas)與[圖層與座標軸](layers.md#sec-layers)。本手冊的圖都是 `mosaickit` 自己的輸出：每張圖由它所示範的畫布或網格繪製，並以印在此處的尺寸存成 PDF。
+
+繪製本手冊各圖的腳本依主題分類，可一次下載：[mosaickit-examples.zip](https://econ-viz.org/assets/mosaickit/agora/mosaickit-examples.zip)。

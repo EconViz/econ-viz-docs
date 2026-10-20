@@ -18,6 +18,14 @@ seo_title: "租稅與補貼"
 
 <!-- api: agora.principle_viz.guides_taxes_2 -->
 
+稅的定義，來自 `principle_viz.policy.tax`。
+
+<!-- api: agora.principle_viz.guides_taxes_3 -->
+
+稅的法律歸宿，來自 `principle_viz.policy.tax`。
+
+<!-- api: agora.principle_viz.guides_taxes_4 -->
+
 課稅後的市場，回傳 `TaxEquilibriumResult`：`q_star`、`consumer_price`、`producer_price`、`tax_wedge`（兩價之差）與 `tax_revenue`（楔差乘以數量）。
 
 ```python
@@ -33,33 +41,49 @@ print(solve_tax_equilibrium(demand, supply, tax))
 
 `TaxOn.CONSUMER` 的結果相同。稅率為 $r$ 的從價稅使消費者價格等於生產者價格的 $(1 + r)$ 倍。
 
-<!-- api: agora.principle_viz.guides_taxes_3 -->
+<!-- api: agora.principle_viz.guides_taxes_5 -->
 
 並列課稅前後的市場：`baseline_equilibrium`、`post_tax`、變動量 `delta_q`、`delta_p_consumer`、`delta_p_producer`，以及各自的方向（`"left"`／`"right"`、`"up"`／`"down"`）。
 
-<!-- api: agora.principle_viz.guides_taxes_4 -->
+<!-- api: agora.principle_viz.guides_taxes_6 -->
 
 課稅曲線的幾何資訊：`base_curve`、`taxed_curve`、`curve_role`（`"supply"` 或 `"demand"`）與 `transform_kind`（`"shift"` 或 `"rotation"`）。`add_tax_transform()` 依此繪圖。
 
 ## 圖形
 
-<!-- api: agora.principle_viz.guides_taxes_5 -->
+<!-- api: agora.principle_viz.guides_taxes_7 -->
 
-畫出課稅後的曲線並命名為 $S + t$ 或 $D - t$，以虛線箭頭表示平移或旋轉，並標出未課稅的均衡（參見[向賣方課徵從量稅。](taxes.md#fig-tax-producer)、[向買方課徵從價稅。](taxes.md#fig-tax-consumer)）。
+畫出課稅後的曲線並命名為 $S + t$ 或 $D - t$，以虛線箭頭表示平移或旋轉，並標出未課稅的均衡（參見[向賣方課從量稅](taxes.md#fig-tax-producer)、[向買方課從價稅](taxes.md#fig-tax-consumer)）。
 
 <span id="fig-tax-producer"></span>
 
-![向賣方課徵從量稅。](../../../assets/principle-viz/agora/taxes/per_unit_producer.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![向賣方課從量稅](../../../assets/principle-viz/agora/taxes/per_unit_producer.zh-TW.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/taxes/taxes.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+
+<figcaption markdown>向賣方課從量稅</figcaption>
+
+</figure>
 
 <span id="fig-tax-consumer"></span>
 
-![向買方課徵從價稅。](../../../assets/principle-viz/agora/taxes/ad_valorem_consumer.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-<!-- api: agora.principle_viz.guides_taxes_6 -->
+![向買方課從價稅](../../../assets/principle-viz/agora/taxes/ad_valorem_consumer.zh-TW.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/taxes/taxes.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+
+<figcaption markdown>向買方課從價稅</figcaption>
+
+</figure>
+
+<!-- api: agora.principle_viz.guides_taxes_8 -->
 
 標出 `compare_tax_scenario()` 結果的楔差：在價格軸上標 $p_d$（買方）、$p_0$（課稅前）與 $p_s$（賣方），並以 "Tax" 括號涵蓋 $p_s$ 到 $p_d$。
 
-搭配[福利](welfare.md#sec-welfare)的福利區塊（參見[課稅下的剩餘與無謂損失。](taxes.md#fig-tax-welfare)）：
+搭配[福利](welfare.md#sec-welfare)的福利區塊（參見[課稅下的剩餘與損失](taxes.md#fig-tax-welfare)）：
 
 ```python
 from principle_viz import compare_tax_scenario
@@ -91,21 +115,33 @@ fig.finalize()
 
 <span id="fig-tax-welfare"></span>
 
-![課稅下的剩餘與無謂損失。](../../../assets/principle-viz/agora/taxes/welfare.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![課稅下的剩餘與損失](../../../assets/principle-viz/agora/taxes/welfare.zh-TW.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/taxes/taxes.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+
+<figcaption markdown>課稅下的剩餘與損失</figcaption>
+
+</figure>
 
 ## 補貼
 
-<!-- api: agora.principle_viz.guides_taxes_7 -->
+<!-- api: agora.principle_viz.guides_taxes_9 -->
 
 每單位 `amount` 的補貼（不得為負），發給賣方（`SubsidyTo.PRODUCER`）或買方（`SubsidyTo.CONSUMER`），位於 `principle_viz.policy.subsidy`。
 
-<!-- api: agora.principle_viz.guides_taxes_8 -->
+<!-- api: agora.principle_viz.guides_taxes_10 -->
+
+補貼的受領者，來自 `principle_viz.policy.subsidy`。
+
+<!-- api: agora.principle_viz.guides_taxes_11 -->
 
 補貼後的市場（`q_star`、`consumer_price`、`producer_price`、`subsidy_wedge`、`government_expenditure`），以及與自由市場的比較（`baseline_equilibrium`、`post_subsidy`、`delta_q`、`delta_p_consumer`、`delta_p_producer`）。在[快速開始](../quickstart.md#sec-quickstart)的市場中補貼 2：數量 5，買方支付 5，賣方收到 7，政府支出 10。
 
-<!-- api: agora.principle_viz.guides_taxes_9 -->
+<!-- api: agora.principle_viz.guides_taxes_12 -->
 
-以標示稅收楔差的方式標出補貼楔差，加上 "Subsidy" 括號，並標示補貼成本。[從量補貼與無謂損失。](taxes.md#fig-subsidy)以 `regions=("dwl",)` 只為無謂損失填色，並以 `visibility` 隱藏部分標籤（詳見[標籤與圖層](figures.md#sec-labels)）。
+以標示稅收楔差的方式標出補貼楔差，加上 "Subsidy" 括號，並標示補貼成本。[從量補貼與無謂損失](taxes.md#fig-subsidy)以 `regions=("dwl",)` 只為無謂損失填色，並以 `visibility` 隱藏部分標籤（詳見[標籤與圖層](figures.md#sec-labels)）。
 
 ```python
 from principle_viz import (
@@ -132,4 +168,12 @@ fig = MarketFigure(
 
 <span id="fig-subsidy"></span>
 
-![從量補貼與無謂損失。](../../../assets/principle-viz/agora/taxes/subsidy.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![從量補貼與無謂損失](../../../assets/principle-viz/agora/taxes/subsidy.zh-TW.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/taxes/taxes.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+
+<figcaption markdown>從量補貼與無謂損失</figcaption>
+
+</figure>

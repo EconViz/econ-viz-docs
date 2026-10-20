@@ -67,7 +67,7 @@ Two `mosaickit` canvases, in `principle_viz.visuals.revenue`: the
 demand curve, labelled "Elastic", "Unit elastic" and "Inelastic" along
 its length with the unit-elastic point marked, and total revenue against
 quantity with its maximum marked. Each canvas carries its own title. Place
-them side by side with `mosaickit.CanvasGrid` (see [Elasticity along demand and total revenue.](elasticity.md#fig-revenue)).
+them side by side with `mosaickit.CanvasGrid` (see [Elasticity and total revenue](elasticity.md#fig-revenue)).
 
 ```python
 from mosaickit import CanvasGrid
@@ -88,8 +88,14 @@ CanvasGrid(canvases, rows=1).save(
 )
 ```
 
-The output is shown in [Elasticity along demand and total revenue.](elasticity.md#fig-revenue).
-
 <span id="fig-revenue"></span>
 
-![Elasticity along demand and total revenue.](../../assets/principle-viz/agora/elasticity/revenue.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![Elasticity and total revenue](../../assets/principle-viz/agora/elasticity/revenue.svg){ .ev-figure-lg }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/elasticity/elasticity.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>Elasticity and total revenue</figcaption>
+
+</figure>

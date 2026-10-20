@@ -115,3 +115,9 @@ The following chapters cover mosaickit 0.5.1.
 - [Change history](project/changelog.md)
 
 <!-- /agora-navigation -->
+
+## Examples
+
+The scripts that draw the figures in the manual and on these pages come as one zip, sorted by topic.
+
+[Download all examples](../assets/mosaickit/agora/mosaickit-examples.zip){ .md-button download="" }

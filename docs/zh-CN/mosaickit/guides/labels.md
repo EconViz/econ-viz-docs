@@ -14,11 +14,19 @@ seo_title: "区域标签与点标签"
 
 为填色区域命名；区域可以是 `FillLayer` 的 id，也可以是至少由三点组成的多边形。`stroke` 设置引线标注的引线样式。
 
-“文字放得下”是指：文字矩形置中于极点、每边留白 2 pt 后，仍位于区域内（参见[多边形内的矩形](geometry.md#thm-rect-inside)），且不碰到任何线条、标记、文字或其他区域。[区域内标签与引线标注。](labels.md#fig-regions)同时呈现这两种结果。
+“文字放得下”是指：文字矩形置中于极点、每边留白 2 pt 后，仍位于区域内（参见[多边形内的矩形](geometry.md#thm-rect-inside)），且不碰到任何线条、标记、文字或其他区域。[区域内标签与引线](labels.md#fig-regions)同时呈现这两种结果。
 
 <span id="fig-regions"></span>
 
-![区域内标签与引线标注。](../../../assets/mosaickit/agora/labels/regions.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![区域内标签与引线](../../../assets/mosaickit/agora/labels/regions.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/labels/labels.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>区域内标签与引线</figcaption>
+
+</figure>
 
 ## 点标签
 
@@ -26,7 +34,7 @@ seo_title: "区域标签与点标签"
 
 在点的旁边加上文字为它命名，不使用引线。点的*足迹*是该处画有标记时的标记，否则就是点本身。
 
-标签在足迹周围尝试 16 个方向，距足迹边缘 4、7、11、16 pt，由近而远。同一距离内根据[候选顺序](labels.md#def-candidate-order)的顺序尝试方向（参见[方向的尝试顺序。](labels.md#fig-candidates)），第一个不遮盖任何对象的位置胜出；若都不行，选违规数最少者（相同时取较早者），并发出指出该图层的 `LayoutWarning`。点严格位于其内部（距边缘超过 1.5 px）的区域是标签应在之处，不算障碍物。
+标签在足迹周围尝试 16 个方向，距足迹边缘 4、7、11、16 pt，由近而远。同一距离内根据[候选顺序](labels.md#def-candidate-order)的顺序尝试方向（参见[方向的尝试顺序](labels.md#fig-candidates)），第一个不遮盖任何对象的位置胜出；若都不行，选违规数最少者（相同时取较早者），并发出指出该图层的 `LayoutWarning`。点严格位于其内部（距边缘超过 1.5 px）的区域是标签应在之处，不算障碍物。
 
 <span id="def-candidate-order"></span>
 
@@ -36,11 +44,27 @@ seo_title: "区域标签与点标签"
 
 <span id="fig-candidates"></span>
 
-![方向的尝试顺序。](../../../assets/mosaickit/agora/geometry/candidates.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![方向的尝试顺序](../../../assets/mosaickit/agora/geometry/candidates.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/geometry/geometry.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>方向的尝试顺序</figcaption>
+
+</figure>
 
 <span id="fig-points"></span>
 
-![点旁的点标签。](../../../assets/mosaickit/agora/labels/points.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![点旁的点标签](../../../assets/mosaickit/agora/labels/points.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/labels/labels.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>点旁的点标签</figcaption>
+
+</figure>
 
 ## 硬性限制
 
@@ -74,7 +98,7 @@ seo_title: "区域标签与点标签"
 
 !!! abstract "定义 · 开阔空间与交叉点"
 
-    *开阔空间*是在绘图区 4 pt 网格上、面积至少占十分之一的连通空白区域的联集；较小的空白区域称为*口袋*，例如两个阴影区域间未填色的窄带，文字放在那里看起来像在为口袋命名。区域的*交叉点*是两条障碍线段真正交叉（各自严格穿过对方）之处，且位于区域边界上或距边界 1.5 px 以内。从极点 $o$ 看，若 $(p - x) \cdot (x - o) > 0$，则称点 $p$ 位于 $x$ *之外*。
+    *开阔空间*是在绘图区 4 pt 网格上、面积至少占十分之一的连通空白区域的并集；较小的空白区域称为*口袋*，例如两个阴影区域间未填色的窄带，文字放在那里看起来像在为口袋命名。区域的*交叉点*是两条障碍线段真正交叉（各自严格穿过对方）之处，且位于区域边界上或距边界 1.5 px 以内。从极点 $o$ 看，若 $(p - x) \cdot (x - o) > 0$，则称点 $p$ 位于 $x$ *之外*。
 
 越过交叉点后，线条朝远离区域的方向分开；若把标签放在那里，看起来会贴近线条的延伸方向，而不是所命名的区域。交叉点本身由方向测试求得。
 

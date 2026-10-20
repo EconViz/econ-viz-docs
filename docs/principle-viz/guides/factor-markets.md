@@ -34,7 +34,7 @@ print(labor.employment, labor.unemployment)
 The wage floor drawn like a price floor ([Price controls](controls.md#sec-controls)): the "Minimum
 wage" line, $w_{\min}$ on the wage axis, and for a binding floor $L_d$ and
 $L_s$ with an "Unemployment" brace. Title the axes $L$ and $w$ and name
-the curves $D_L$ and $S_L$ (see [A binding minimum wage.](factor-markets.md#fig-minimum-wage)):
+the curves $D_L$ and $S_L$ (see [Binding minimum wage](factor-markets.md#fig-minimum-wage)):
 
 ```python
 fig = MarketFigure(x_max=11, y_max=14, x_label="L", y_label="w")
@@ -50,7 +50,15 @@ fig.add_minimum_wage(labor)
 
 <span id="fig-minimum-wage"></span>
 
-![A binding minimum wage.](../../assets/principle-viz/agora/factor/minimum_wage.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![Binding minimum wage](../../assets/principle-viz/agora/factor/minimum_wage.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/factor/factor.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>Binding minimum wage</figcaption>
+
+</figure>
 
 `labor_demanded` is 3, `labor_supplied` is 7, `employment` is 3 and
 `unemployment` is 4.
@@ -91,8 +99,16 @@ print(funds.interest_rate_change, funds.crowding_out)
 
 Draw the shifted curves, named $D_1$ or $S_1$, both equilibria and the
 movement between them. Title the price axis $r$ (see
-[Government borrowing crowds out private investment.](factor-markets.md#fig-loanable-funds)).
+[Borrowing crowds out investment](factor-markets.md#fig-loanable-funds)).
 
 <span id="fig-loanable-funds"></span>
 
-![Government borrowing crowds out private investment.](../../assets/principle-viz/agora/factor/loanable_funds.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![Borrowing crowds out investment](../../assets/principle-viz/agora/factor/loanable_funds.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/factor/factor.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>Borrowing crowds out investment</figcaption>
+
+</figure>

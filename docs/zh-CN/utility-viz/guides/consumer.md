@@ -1,125 +1,123 @@
 ---
 seo_title: "多面板图与需求图"
-description: "用 utility-viz 创建多面板图、需求图、价格效应分解与 Edgeworth 盒状图。"
 ---
 
 # 多面板图与需求图
 
-`utility-viz` 在 `Canvas` 之上提供更高级的教学组件：
+<span id="sec-figures"></span>
 
-| 组件 | 用途 |
-|------|------|
-| `Figure` | 多面板布局 |
-| `PricePath`、`IncomePath` | 让预算与均衡随参数移动 |
-| `DemandDiagram` | 联动的商品空间图与马歇尔需求图 |
-| `decompose_price_effect(...)` | Hicks 与 Slutsky 分解 |
-| `EdgeworthBox` | 两人交换的 Edgeworth 盒状图 |
+## 多面板图
 
-## 多面板图 {#multi-panel-figure data-toc-label="多面板图"}
+<!-- api: agora.utility_viz.guides_consumer_1 -->
 
-一个面板不够用时就用 `Figure`，例如变动前后的比较、效应分解图或课堂演示文稿。
+创建多面板图，坐标范围与样式参数与 `Canvas` 相同。使用 `fig[idx]` 获取面板，再调用 `add_utility()`、`add_budget()` 等绘图方法。
 
 ```python
-from utility_viz import Figure, Layout, levels, solve
+from utility_viz import Config, Figure, Layout, levels, solve
 from utility_viz.models import CobbDouglas
+
+# 图形设置
+Config.load("manual.toml").use()
 
 fig = Figure(
     Layout.SIDE_BY_SIDE,
     x_max=20,
     y_max=15,
-    x_label="x",
-    y_label="y",
-    title="Before / After Price Change",
-    shared_y=True,
+    x_label="$x$",
+    y_label="$y$",
 )
 
+# 价格上涨前后
 cases = [
-    (
-        CobbDouglas(alpha=0.5, beta=0.5),
-        2.0,
-        3.0,
-        30.0,
-        r"Before: $p_x=2$",
-    ),
-    (
-        CobbDouglas(alpha=0.3, beta=0.7),
-        4.0,
-        3.0,
-        30.0,
-        r"After: $p_x=4$",
-    ),
+    (CobbDouglas(alpha=0.5, beta=0.5), 2.0, 3.0, 30.0),
+    (CobbDouglas(alpha=0.3, beta=0.7), 4.0, 3.0, 30.0),
 ]
-
-for idx, (model, px, py, income, title) in enumerate(cases):
+for idx, (model, px, py, income) in enumerate(cases):
     eq = solve(model, px=px, py=py, income=income)
+    # 面板都是 Canvas
     panel = fig[idx]
-    panel.ax.set_title(title)
     panel.add_utility(
-        model, levels=levels.around(eq.utility, n=5), label="IC"
+        model, levels=levels.around(eq.utility, n=5)
     )
-    panel.add_budget(px, py, income, fill=True, label="BC")
+    panel.add_budget(px, py, income, fill=True)
     panel.add_equilibrium(eq, show_ray=True)
-
-fig[0].show_legend(loc="upper right")
-fig.save("figure_side_by_side.png")
+fig.save("side_by_side.png")
 ```
 
-![多面板并排比较](../../../assets/consumer/figure_side_by_side.png)
+<figure class="ev-fig" markdown>
 
-### 可用的布局
+![价格变动前后比较](../../../assets/utility-viz/agora/consumer/side_by_side.svg){ .ev-figure-lg }
 
-`Figure` 提供以下布局：
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/consumer/side_by_side.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-| 布局 | 面板数 | 排列方式 |
-|--------|--------|--------|
-| `Layout.SINGLE` | 1 | 单一面板 |
-| `Layout.STACKED` | 2 | 上下两个面板 |
-| `Layout.SIDE_BY_SIDE` | 2 | 左右两个面板 |
-| `Layout.TOP_TWO_BOTTOM_ONE` | 3 | 上方两个、下方一个 |
-| `Layout.TOP_ONE_BOTTOM_TWO` | 3 | 上方一个、下方两个 |
-| `Layout.GRID_2X2` | 4 | 2 × 2 网格 |
-| `Layout.GRID_3X3` | 9 | 3 × 3 网格 |
+<figcaption markdown>价格变动前后比较</figcaption>
 
-`Figure[idx]` 会返回一个面板 `Canvas`，所以布局建好之后，绘图 API 完全相同。
+</figure>
 
-## 路径工具
+<!-- api: agora.utility_viz.guides_consumer_2 -->
 
-路径对象会让某一个预算参数逐步变动，并在每一步重新求解消费者问题。
+内置版面有 `SINGLE`、`STACKED`、`SIDE_BY_SIDE`、`TOP_TWO_BOTTOM_ONE`、`TOP_ONE_BOTTOM_TWO`、`GRID_2X2` 和 `GRID_3X3`。
+
+## 路径
+
+<!-- api: agora.utility_viz.guides_consumer_3 -->
+
+`PricePath` 与 `IncomePath` 分别计算价格、收入变动时的最优消费组合。使用 `Canvas.add_path()` 绘制价格消费曲线（PCC）或收入消费曲线（ICC）；`PricePath` 也可用于需求图。
+
+<!-- api: agora.utility_viz.guides_consumer_4 -->
+
+将 `PricePath` 或 `IncomePath` 添加画布。[价格消费曲线](consumer.md#fig-price-path)中，Cobb-Douglas 模型在 $p_x$ 变动时，$y$ 的需求量不变，因此 PCC 为水平线。
 
 ```python
-from utility_viz import IncomePath, LinearBudget, PricePath
+from utility_viz import (
+    Canvas,
+    Config,
+    LinearBudget,
+    PricePath,
+    levels,
+)
 from utility_viz.models import CobbDouglas
+
+# 图形设置
+Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 budget = LinearBudget(px=2.0, py=2.0, income=40.0)
-
-price_path = PricePath(
+path = PricePath(
     model,
     budget=budget,
     price="px",
     price_range=(0.8, 6.0),
     n=40,
 )
-income_path = IncomePath(
-    model,
-    budget=budget,
-    income_range=(20.0, 80.0),
-    n=30,
-)
+
+# 围绕路径中段最优点的曲线
+eq = path.equilibria[len(path.equilibria) // 2]
+
+cvs = Canvas(x_max=25, y_max=20, x_label="$x$", y_label="$y$")
+cvs.add_utility(model, levels=levels.around(eq.utility, n=5))
+# 价格消费曲线
+cvs.add_path(path)
+cvs.save("price_path.png")
 ```
 
-这些路径可以用来：
+<span id="fig-price-path"></span>
 
-- 用 `Canvas.add_path(...)` 画出 PCC / ICC 形式的均衡轨迹
-- 传入 `DemandDiagram`
-- 观察价格或收入变动时，消费束如何移动
+<figure class="ev-fig" markdown>
 
-## 需求图 {#demanddiagram data-toc-label="需求图"}
+![价格消费曲线](../../../assets/utility-viz/agora/consumer/price_path.svg){ .ev-figure-sm }
 
-`DemandDiagram` 会创建上下两个面板的图：
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/consumer/price_path.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-- **上方面板**：无差异曲线、预算线与均衡点
-- **下方面板**：对应的马歇尔需求曲线
+<figcaption markdown>价格消费曲线</figcaption>
+
+</figure>
+
+## 需求图
+
+<!-- api: agora.utility_viz.guides_consumer_5 -->
+
+根据 `PricePath` 绘制两个面板：上方为预算线与最优消费组合，下方为对应的 Marshall 需求曲线（参见[需求曲线最优点](consumer.md#fig-demand)）。目前只接受 `PricePath`，并分别处理平滑、折点与角解。`show_pcc=True` 在上方面板显示价格消费曲线。
 
 ```python
 from utility_viz import DemandDiagram, LinearBudget, PricePath
@@ -144,24 +142,52 @@ fig.add_marshallian_panel(
 fig.save("demand_cobb_douglas.png")
 ```
 
-![联动的马歇尔需求图](../../../assets/consumer/demand_cobb_douglas.png)
+下图由 MosaicKit 图层画成，标签可逐一手动摆放。
 
-### 注意事项
+<span id="fig-demand"></span>
 
-创建需求图时请注意以下限制：
+<figure class="ev-fig" markdown>
 
-- `DemandDiagram` 目前只接受 `PricePath`
-- 平滑、有折点与角点解的需求情况会分别处理，让下方面板在经济意义上保持正确
-- `show_pcc=True` 会在商品空间面板上叠加价格消费曲线
+![需求曲线最优点](../../../assets/utility-viz/agora/consumer/demand.svg){ .ev-figure-lg }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/consumer/demand.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>需求曲线最优点</figcaption>
+
+</figure>
 
 ## 价格效应分解
 
-`decompose_price_effect(...)` 将价格变动分成替代效应与收入效应。`HICKS` 固定原来的效用水平；`SLUTSKY` 则让原来的消费组合在新价格下仍买得起。
+<!-- api: agora.utility_viz.guides_consumer_6 -->
+
+将价格效应分解为替代效应与收入效应。Hicks 补偿 [Hicks (1939)](../project/references.md#hicks1939) 维持原效用水平；Slutsky 补偿 [Slutsky (1915)](../project/references.md#slutsky1915) 则使原消费组合在新价格下恰好可负担。返回值包含下列字段：
+
+<!-- api: agora.utility_viz.guides_consumer_7 -->
+
+决定补偿组合 B 的方式。
+
+<!-- api: agora.utility_viz.guides_consumer_8 -->
+
+在画布上标示 A、B、C 三个消费组合、预算线、无差异曲线与效应箭头。Hicks 分解绘制通过 A 与 C 的曲线；Slutsky 分解另绘制通过 B 的曲线。
+
+<!-- api: agora.utility_viz.guides_consumer_9 -->
+
+设置替代效应或收入效应的颜色、横轴下方箭头高度、标签及透明度。线条本身仍可由 `substitution_stroke` 或 `income_stroke` 覆盖。
+
+<!-- api: agora.utility_viz.guides_consumer_10 -->
+
+`"auto"` 选择与图形重叠最少的内侧角落；四个角落均与图形重叠时，图例移到右侧。也可指定 `"upper left"` 等内侧角落，或 `"top"`、`"bottom"`、`"left"`、`"right"` 等外侧位置。`Legend(visible=False)` 隐藏图例。
 
 ```python
-from utility_viz import Canvas, DecompositionMethod, levels
+from utility_viz import (
+    Canvas,
+    DecompositionMethod,
+    Effect,
+    Label,
+    Legend,
+    decompose_price_effect,
+)
 from utility_viz.models import CobbDouglas
-from utility_viz.optimizer import decompose_price_effect
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 result = decompose_price_effect(
@@ -179,51 +205,34 @@ result = decompose_price_effect(
         show_arrows=True,
         label_effects=True,
         show_x_projections=True,
+        substitution=Effect(label="SE"),
+        income=Effect(label="IE", opacity=0.8),
+        curve_label=Label(position="right"),
+        legend=Legend(position="bottom"),
     )
     .save("hicks.png")
 )
 ```
 
-`add_decomposition` 默认会画出通过 A 与 C 的无差异曲线；Slutsky 分解的 B 不在原来的曲线上，所以还会多画一条通过 B 的曲线。如果要自己用 `add_utility` 画，传入 `show_curves=False` 即可。
+下图同样由 MosaicKit 图层画成，两个效果的名称标在坐标轴下方。
 
-`result.A`、`result.B` 与 `result.C` 分别是原始、补偿后与最终消费组合。结果也包含 `substitution_effect`、`income_effect`、`total_effect` 与 `compensated_income`。
+<figure class="ev-fig" markdown>
 
-用 `Effect` 可设置每个效应的颜色、坐标轴下方范围箭头的高度，以及旁边的标签。`point_label` 可移动或隐藏 A、B、C 标签：
+![Hicks 分解](../../../assets/utility-viz/agora/consumer/hicks.zh-CN.svg){ .ev-figure-lg }
 
-```python
-from utility_viz import Effect, Label
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/consumer/hicks.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-canvas.add_decomposition(
-    result,
-    substitution=Effect(
-        color="#E67E22", label="SE", label_position="top"
-    ),
-    income=Effect(color="#27AE60", label="IE"),
-    point_label=Label(visible=False),
-)
-```
+<figcaption markdown>Hicks 分解</figcaption>
 
-`curve_stroke` 与 `curve_label` 可调整这些曲线的样式并加上标签，`legend` 则决定图例的位置：
+</figure>
 
-```python
-from utility_viz import Label, Legend, Stroke
+## Edgeworth 箱形图
 
-canvas.add_decomposition(
-    result,
-    # 调整 U0、U1（与 U_B）的样式
-    curve_stroke=Stroke(opacity=0.6),
-    # 显示 U0、U1 标签
-    curve_label=Label(position="top"),
-    # 或 Legend(visible=False)
-    legend=Legend(position="bottom"),
-)
-```
+<!-- api: agora.utility_viz.guides_consumer_11 -->
 
-![Hicks 价格效应分解](../../../assets/consumer/cobb_douglas_hicks.png)
+创建两人交换经济的 Edgeworth 箱形图 [Edgeworth (1881)](../project/references.md#edgeworth1881)。$A$ 的原点在左下，$B$ 的原点在右上。使用 `add_*` 方法添加禀赋、契约曲线、核、价格线与 Walras 均衡。
 
-## Edgeworth 盒状图
-
-`EdgeworthBox` 用来绘制两人交换经济。消费者 A 从左下角原点计量，消费者 B 则从右上角原点计量。
+平滑偏好的契约曲线使用 `method="mrs"`；有折点、角解或自定义分段效用函数时，使用 `method="pareto"`。
 
 ```python
 from utility_viz import EdgeworthBox
@@ -248,21 +257,14 @@ box = EdgeworthBox(
 )
 ```
 
-平滑偏好可使用 `method="mrs"`。有折点、角解或自定义分段效用函数时，使用 `method="pareto"`。
+下图同样由 MosaicKit 图层画成，以教科书的图为蓝本，画出两人的无差异曲线。
 
-![非对称 Cobb-Douglas Edgeworth 盒状图](../../../assets/consumer/edgeworth_cobb_asymmetric.png)
+<figure class="ev-fig" markdown>
 
-## 绘制路径 {#canvasadd_path data-toc-label="绘制路径"}
+![Edgeworth 箱形图](../../../assets/utility-viz/agora/consumer/edgeworth.svg){ .ev-figure-lg }
 
-不需要完整的需求图时，也可以直接在 `Canvas` 上画出路径。
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/consumer/edgeworth.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-```python
-from utility_viz import Canvas, levels
+<figcaption markdown>Edgeworth 箱形图</figcaption>
 
-eq = price_path.equilibria[len(price_path.equilibria) // 2]
-lvls = levels.around(eq.utility, n=5)
-
-Canvas(x_max=25, y_max=20).add_utility(
-    model, levels=lvls
-).add_path(price_path, label="PCC").save("price_path.png")
-```
+</figure>

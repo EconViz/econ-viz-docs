@@ -1,50 +1,68 @@
 ---
-seo_title: "快速开始：用 Python 绘制无差异曲线"
-description: "用 utility-viz 在十行代码内，以 Python 画出第一张无差异曲线图、预算线与消费者均衡。"
+seo_title: "快速开始"
 ---
 
 # 快速开始
 
-## 最简范例
+<span id="sec-quickstart"></span>
+
+## 基本示例
+
+本章以 Cobb-Douglas 消费者问题说明完整流程：
+
+$$
+\begin{aligned}\max_{x, y} & u(x, y) = x^{1/2} y^{1/2} \\ \text{s.t.} & 2x + 3y = 30\end{aligned}
+$$
+
+程序先求解最优消费组合，再绘制无差异曲线、预算集与均衡点（参见[消费者均衡](quickstart.md#fig-quickstart)）。
 
 ```python
-from utility_viz import Canvas, levels, solve
+from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
+
+# 图形设置
+Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
-lvls = levels.around(eq.utility, n=5)
 
-cvs = Canvas(
-    x_max=20,
-    y_max=15,
-    x_label="x",
-    y_label="y",
-    title=r"Cobb-Douglas $x^{0.5} y^{0.5}$",
-)
+# 斜体的 x 与 y
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+# 五条曲线 一条过最优点
+lvls = levels.around(eq.utility, n=5)
 cvs.add_utility(model, levels=lvls)
+# 预算线与可行集合
 cvs.add_budget(2.0, 3.0, 30.0, fill=True)
+# 附扩张路径
 cvs.add_equilibrium(eq, show_ray=True)
 cvs.save("cobb_douglas.png")
 ```
 
-![快速开始的均衡图](../../../assets/models/cobb_douglas.png)
+<span id="fig-quickstart"></span>
+
+<figure class="ev-fig" markdown>
+
+![消费者均衡](../../../assets/utility-viz/agora/models/cobb_douglas.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/models/cobb_douglas.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>消费者均衡</figcaption>
+
+</figure>
+
+运行主程序 `main.py` 后，会在当前工作目录创建 `cobb_douglas.png`。本例的最优消费量为 $x^* = 7.5$、$y^* = 5$，支出为 $2 \times 7.5 + 3 \times 5 = 30$，恰好等于收入。预算线的两个轴截距则为 $I / p_x = 15$ 与 $I / p_y = 10$。
 
 ## 逐步说明
 
-### 选择模型
+绘图流程依次为：创建模型、求解均衡、选取效用水平、创建画布、添加图层与导出。
 
-从 `utility_viz.models` 挑一个效用函数。完整清单请见[模型目录](../models/index.md)。
+<!-- api: agora.utility_viz.getting_started_quickstart_1 -->
 
-```python
-from utility_viz.models import CobbDouglas
+创建效用模型。内置模型详见[核心模型](../models/index.md#sec-models)；自定义函数使用 `CustomUtility`，详见[进阶模型](../models/advanced.md#sec-advanced)。
 
-model = CobbDouglas(alpha=0.5, beta=0.5)
-```
+<!-- api: agora.utility_viz.getting_started_quickstart_2 -->
 
-### 求解均衡
-
-`solve()` 会返回一个 `Equilibrium` named tuple，字段有 `x`、`y`、`utility` 与 `bundle_type`。
+根据价格与收入求解，返回不可变的 `Equilibrium` 对象。
 
 ```python
 from utility_viz import solve
@@ -55,138 +73,47 @@ print(eq.x, eq.y, round(eq.utility, 3))
 # 7.5 5.0 6.124
 ```
 
-### 效用水平
+<!-- api: agora.utility_viz.getting_started_quickstart_3 -->
+
+以指定效用值为中心，生成 $n$ 个效用水平。[消费者均衡](quickstart.md#fig-quickstart) 使用 `n=5`，因此绘制五条无差异曲线。
+
+`levels.around()` 会保留指定的效用值，均衡点会落在其中一条无差异曲线上。若直接传入 `levels=5`，画布会依采样到的效用范围选取水平，不保证包含均衡效用。要比较多张图上的同一组偏好，可先计算一次 `lvls`，再让各张图使用相同水平。
+
+<!-- api: agora.utility_viz.getting_started_quickstart_4 -->
+
+创建画布并设置坐标范围，其余参数详见[Canvas 画布](../guides/canvas.md#sec-canvas)。
+
+坐标范围只控制显示区域，不参与 `solve()` 的计算。均衡点未出现在图中时，检查 `eq.x` 与 `eq.y` 是否超出范围，再调整坐标上限。
+
+<!-- api: agora.utility_viz.getting_started_quickstart_5 -->
+
+在同一张画布上添加无差异曲线、预算线或均衡点。这些方法可以链式调用（详见[链式调用](../guides/canvas.md#sec-chaining)）。`add_equilibrium()` 使用现有的求解结果，不会重新求解；若之后修改价格、收入或模型，需重新调用 `solve()`，并创建对应的新图。
+
+<!-- api: agora.utility_viz.getting_started_quickstart_6 -->
+
+`save()` 根据扩展名导出文件（详见[导出](../guides/export.md#sec-export)）；`show()` 打开 `matplotlib` 交互窗口。输出路径以运行程序时的工作目录为准，若需指定子目录，请事先创建目录。
+
+### 检查输入与求解失败
+
+价格与收入必须为正；输入不符合条件时，`solve()` 抛出 `InvalidParameterError` (一般平滑模型使用序列最小二乘法（sequential least squares programming, SLSQP） 求解。)。
+
+求解未收敛时，`solve()` 抛出 `OptimizationError`，不会返回无效的均衡点。
 
 ```python
-from utility_viz import levels
-
-# 以最优点为中心的 5 条曲线
-lvls = levels.around(eq.utility, n=5)
-```
-
-### 创建画布
-
-```python
-from utility_viz import Canvas
-
-cvs = Canvas(x_max=20, y_max=15)
-```
-
-### 加入图层
-
-`Canvas` 的方法都会返回 `self`，所以可以串接调用：
-
-```python
-cvs.add_utility(model, levels=lvls)
-cvs.add_budget(2.0, 3.0, 30.0, fill=True)
-cvs.add_equilibrium(eq, show_ray=True)
-```
-
-### 导出
-
-=== "位图 / 矢量"
-
-    ```python
-    # PNG
-    cvs.save("figure.png")
-    # PDF
-    cvs.save("figure.pdf")
-    # SVG
-    cvs.save("figure.svg")
-    ```
-
-=== "交互"
-
-    ```python
-    # 交互窗口
-    cvs.show()
-    ```
-
-## LaTeX 解析
-
-```python
-from utility_viz import parse_latex, Canvas, levels, solve
-
-model = parse_latex(r"x^{0.4} y^{0.6}")
-eq = solve(model, px=2.0, py=3.0, income=30.0)
-lvls = levels.around(eq.utility, n=5)
-
-Canvas(x_max=20, y_max=15).add_utility(
-    model, levels=lvls
-).add_budget(2.0, 3.0, 30.0).add_equilibrium(eq).save(
-    "figure.png"
-)
-```
-
-## 多面板图
-
-`Figure` 可以把多个 `Canvas` 面板组合成一张图。
-
-```python
-from utility_viz import Figure, Layout, levels, solve
-from utility_viz.models import CobbDouglas
-
-fig = Figure(
-    Layout.SIDE_BY_SIDE,
-    x_max=20,
-    y_max=15,
-    x_label="x",
-    y_label="y",
-    title="Before / After Price Change",
-    shared_y=True,
+from utility_viz import (
+    InvalidParameterError,
+    OptimizationError,
+    solve,
 )
 
-cases = [
-    (
-        CobbDouglas(alpha=0.5, beta=0.5),
-        2.0,
-        3.0,
-        30.0,
-        r"Before: $p_x=2$",
-    ),
-    (
-        CobbDouglas(alpha=0.3, beta=0.7),
-        4.0,
-        3.0,
-        30.0,
-        r"After: $p_x=4$",
-    ),
-]
-
-for idx, (model, px, py, income, title) in enumerate(cases):
-    eq = solve(model, px=px, py=py, income=income)
-    panel = fig[idx]
-    panel.ax.set_title(title)
-    panel.add_utility(
-        model, levels=levels.around(eq.utility, n=5)
-    )
-    panel.add_budget(px, py, income, fill=True)
-    panel.add_equilibrium(eq, show_ray=True)
-
-fig.save("comparison.png")
+try:
+    eq = solve(model, px=2.0, py=3.0, income=30.0)
+except (InvalidParameterError, OptimizationError) as error:
+    print(error)
+else:
+    print(round(eq.x, 3), round(eq.y, 3), eq.bundle_type)
 ```
 
-## 需求图
+软件包抛出的所有异常都继承自 `UtilityVizError`，捕获它即可一并处理。1.x 的名称 `EconVizError` 是同一个类。
 
-用 `PricePath` 搭配 `DemandDiagram`，把商品空间中的最优点与**马歇尔需求**链接起来。
-
-```python
-from utility_viz import DemandDiagram, LinearBudget, PricePath
-from utility_viz.models import CobbDouglas
-
-model = CobbDouglas(alpha=0.5, beta=0.5)
-budget = LinearBudget(px=2.0, py=2.0, income=40.0)
-path = PricePath(
-    model,
-    budget=budget,
-    price="px",
-    price_range=(0.8, 6.0),
-    n=40,
-)
-
-fig = DemandDiagram(path, title="Demand: Cobb-Douglas")
-fig.add_marshallian_panel(price_markers=[1.5, 4.0])
-fig.save("demand.png")
-```
-
-![快速开始的需求图](../../../assets/consumer/demand_cobb_douglas.png)
+数值解可能有微小误差，例如结果接近但不恰好等于 `7.5`。验证时应使用适当容差；显示结果时再用 `round()` 格式化，避免过早四舍五入影响后续计算。

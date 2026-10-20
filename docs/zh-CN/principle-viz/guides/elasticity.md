@@ -53,7 +53,7 @@ $p = 12 - Q$ 的总收益最大值为 36，位于 $Q = 6$、$p = 6$。
 
 <!-- api: agora.principle_viz.guides_elasticity_3 -->
 
-返回两张 `mosaickit` 画布，位于 `principle_viz.visuals.revenue`：一张是需求曲线，沿线标出 "Elastic"、"Unit elastic" 与 "Inelastic"，并标记单位弹性点；另一张是总收益对数量的曲线，标记最大值。两张画布各有标题。以 `mosaickit.CanvasGrid` 左右并排（参见[需求曲线上的弹性与总收益。](elasticity.md#fig-revenue)）。
+返回两张 `mosaickit` 画布，位于 `principle_viz.visuals.revenue`：一张是需求曲线，沿线标出 "Elastic"、"Unit elastic" 与 "Inelastic"，并标记单位弹性点；另一张是总收益对数量的曲线，标记最大值。两张画布各有标题。以 `mosaickit.CanvasGrid` 左右并排（参见[弹性与总收益](elasticity.md#fig-revenue)）。
 
 ```python
 from mosaickit import CanvasGrid
@@ -74,8 +74,14 @@ CanvasGrid(canvases, rows=1).save(
 )
 ```
 
-输出参见[需求曲线上的弹性与总收益。](elasticity.md#fig-revenue)。
-
 <span id="fig-revenue"></span>
 
-![需求曲线上的弹性与总收益。](../../../assets/principle-viz/agora/elasticity/revenue.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![弹性与总收益](../../../assets/principle-viz/agora/elasticity/revenue.zh-CN.svg){ .ev-figure-lg }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/elasticity/elasticity.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>弹性与总收益</figcaption>
+
+</figure>

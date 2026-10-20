@@ -114,3 +114,9 @@ uv add mosaickit
 - [更新记录](project/changelog.md)
 
 <!-- /agora-navigation -->
+
+## 示例
+
+手册与这些页面各图的绘制脚本，按主题分类，可一次下载。
+
+[下载全部示例](../../assets/mosaickit/agora/mosaickit-examples.zip){ .md-button download="" }

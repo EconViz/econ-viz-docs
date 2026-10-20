@@ -18,6 +18,14 @@ seo_title: "税收与补贴"
 
 <!-- api: agora.principle_viz.guides_taxes_2 -->
 
+税的定义，来自 `principle_viz.policy.tax`。
+
+<!-- api: agora.principle_viz.guides_taxes_3 -->
+
+税的法律归宿，来自 `principle_viz.policy.tax`。
+
+<!-- api: agora.principle_viz.guides_taxes_4 -->
+
 征税后的市场，返回 `TaxEquilibriumResult`：`q_star`、`consumer_price`、`producer_price`、`tax_wedge`（两价之差）与 `tax_revenue`（楔子乘以数量）。
 
 ```python
@@ -33,33 +41,49 @@ print(solve_tax_equilibrium(demand, supply, tax))
 
 `TaxOn.CONSUMER` 的结果相同。税率为 $r$ 的从价税使消费者价格等于生产者价格的 $(1 + r)$ 倍。
 
-<!-- api: agora.principle_viz.guides_taxes_3 -->
+<!-- api: agora.principle_viz.guides_taxes_5 -->
 
 并列征税前后的市场：`baseline_equilibrium`、`post_tax`、变动量 `delta_q`、`delta_p_consumer`、`delta_p_producer`，以及各自的方向（`"left"`／`"right"`、`"up"`／`"down"`）。
 
-<!-- api: agora.principle_viz.guides_taxes_4 -->
+<!-- api: agora.principle_viz.guides_taxes_6 -->
 
 征税曲线的几何信息：`base_curve`、`taxed_curve`、`curve_role`（`"supply"` 或 `"demand"`）与 `transform_kind`（`"shift"` 或 `"rotation"`）。`add_tax_transform()` 依此绘图。
 
 ## 图形
 
-<!-- api: agora.principle_viz.guides_taxes_5 -->
+<!-- api: agora.principle_viz.guides_taxes_7 -->
 
-画出征税后的曲线并命名为 $S + t$ 或 $D - t$，以虚线箭头表示平移或旋转，并标出未征税的均衡（参见[向卖方征收从量税。](taxes.md#fig-tax-producer)、[向买方征收从价税。](taxes.md#fig-tax-consumer)）。
+画出征税后的曲线并命名为 $S + t$ 或 $D - t$，以虚线箭头表示平移或旋转，并标出未征税的均衡（参见[向卖方征从量税](taxes.md#fig-tax-producer)、[向买方征从价税](taxes.md#fig-tax-consumer)）。
 
 <span id="fig-tax-producer"></span>
 
-![向卖方征收从量税。](../../../assets/principle-viz/agora/taxes/per_unit_producer.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![向卖方征从量税](../../../assets/principle-viz/agora/taxes/per_unit_producer.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/taxes/taxes.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>向卖方征从量税</figcaption>
+
+</figure>
 
 <span id="fig-tax-consumer"></span>
 
-![向买方征收从价税。](../../../assets/principle-viz/agora/taxes/ad_valorem_consumer.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-<!-- api: agora.principle_viz.guides_taxes_6 -->
+![向买方征从价税](../../../assets/principle-viz/agora/taxes/ad_valorem_consumer.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/taxes/taxes.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>向买方征从价税</figcaption>
+
+</figure>
+
+<!-- api: agora.principle_viz.guides_taxes_8 -->
 
 标出 `compare_tax_scenario()` 结果的楔子：在价格轴上标 $p_d$（买方）、$p_0$（征税前）与 $p_s$（卖方），并以 "Tax" 括号涵盖 $p_s$ 到 $p_d$。
 
-搭配[福利](welfare.md#sec-welfare)的福利区块（参见[征税下的剩余与无谓损失。](taxes.md#fig-tax-welfare)）：
+搭配[福利](welfare.md#sec-welfare)的福利区块（参见[征税下的剩余与损失](taxes.md#fig-tax-welfare)）：
 
 ```python
 from principle_viz import compare_tax_scenario
@@ -91,21 +115,33 @@ fig.finalize()
 
 <span id="fig-tax-welfare"></span>
 
-![征税下的剩余与无谓损失。](../../../assets/principle-viz/agora/taxes/welfare.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![征税下的剩余与损失](../../../assets/principle-viz/agora/taxes/welfare.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/taxes/taxes.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>征税下的剩余与损失</figcaption>
+
+</figure>
 
 ## 补贴
 
-<!-- api: agora.principle_viz.guides_taxes_7 -->
+<!-- api: agora.principle_viz.guides_taxes_9 -->
 
 每单位 `amount` 的补贴（不得为负），发给卖方（`SubsidyTo.PRODUCER`）或买方（`SubsidyTo.CONSUMER`），位于 `principle_viz.policy.subsidy`。
 
-<!-- api: agora.principle_viz.guides_taxes_8 -->
+<!-- api: agora.principle_viz.guides_taxes_10 -->
+
+补贴的受领者，来自 `principle_viz.policy.subsidy`。
+
+<!-- api: agora.principle_viz.guides_taxes_11 -->
 
 补贴后的市场（`q_star`、`consumer_price`、`producer_price`、`subsidy_wedge`、`government_expenditure`），以及与自由市场的比较（`baseline_equilibrium`、`post_subsidy`、`delta_q`、`delta_p_consumer`、`delta_p_producer`）。在[快速开始](../quickstart.md#sec-quickstart)的市场中补贴 2：数量 5，买方支付 5，卖方收到 7，政府支出 10。
 
-<!-- api: agora.principle_viz.guides_taxes_9 -->
+<!-- api: agora.principle_viz.guides_taxes_12 -->
 
-以标示税收楔子的方式标出补贴楔子，加上 "Subsidy" 括号，并标示补贴成本。[从量补贴与无谓损失。](taxes.md#fig-subsidy)以 `regions=("dwl",)` 只为无谓损失填色，并以 `visibility` 隐藏部分标签（详见[标签与图层](figures.md#sec-labels)）。
+以标示税收楔子的方式标出补贴楔子，加上 "Subsidy" 括号，并标示补贴成本。[从量补贴与无谓损失](taxes.md#fig-subsidy)以 `regions=("dwl",)` 只为无谓损失填色，并以 `visibility` 隐藏部分标签（详见[标签与图层](figures.md#sec-labels)）。
 
 ```python
 from principle_viz import (
@@ -132,4 +168,12 @@ fig = MarketFigure(
 
 <span id="fig-subsidy"></span>
 
-![从量补贴与无谓损失。](../../../assets/principle-viz/agora/taxes/subsidy.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![从量补贴与无谓损失](../../../assets/principle-viz/agora/taxes/subsidy.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/taxes/taxes.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>从量补贴与无谓损失</figcaption>
+
+</figure>

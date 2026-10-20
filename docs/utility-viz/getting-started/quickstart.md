@@ -1,50 +1,74 @@
 ---
-seo_title: "Quick Start: Plot Indifference Curves in Python"
-description: "Draw your first indifference curve map, budget line, and consumer equilibrium in Python with utility-viz in under ten lines of code."
+seo_title: "Quick start"
 ---
 
-# Quick Start
+# Quick start
 
-## Minimal example
+<span id="sec-quickstart"></span>
+
+## A minimal example
+
+This chapter uses the complete Cobb-Douglas consumer problem:
+
+$$
+\begin{aligned}\max_{x, y} & u(x, y) = x^{1/2} y^{1/2} \\ \text{s.t.} & 2x + 3y = 30\end{aligned}
+$$
+
+The script solves the optimum and draws the indifference map, budget set,
+and equilibrium shown in [The consumer-equilibrium diagram](quickstart.md#fig-quickstart).
 
 ```python
-from utility_viz import Canvas, levels, solve
+from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
+
+# figure settings
+Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
-lvls = levels.around(eq.utility, n=5)
 
-cvs = Canvas(
-    x_max=20,
-    y_max=15,
-    x_label="x",
-    y_label="y",
-    title=r"Cobb-Douglas $x^{0.5} y^{0.5}$",
-)
+# italic x and y
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+# five curves and one through the optimum
+lvls = levels.around(eq.utility, n=5)
 cvs.add_utility(model, levels=lvls)
+# the line and its feasible set
 cvs.add_budget(2.0, 3.0, 30.0, fill=True)
+# with the expansion path
 cvs.add_equilibrium(eq, show_ray=True)
 cvs.save("cobb_douglas.png")
 ```
 
-![Quick-start equilibrium diagram](../../assets/models/cobb_douglas.png)
+<span id="fig-quickstart"></span>
+
+<figure class="ev-fig" markdown>
+
+![The consumer-equilibrium diagram](../../assets/utility-viz/agora/models/cobb_douglas.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/cobb_douglas.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>The consumer-equilibrium diagram</figcaption>
+
+</figure>
+
+Running `main.py` writes `cobb_douglas.png` to the current working directory.
+The optimum is $x^* = 7.5$, $y^* = 5$; spending is
+$2 \times 7.5 + 3 \times 5 = 30$, exactly the income. The budget line meets
+the axes at $I / p_x = 15$ and $I / p_y = 10$.
 
 ## Step by step
 
-### Choose a model
+Every diagram follows the same steps: build a model, solve for the
+equilibrium, pick utility levels, create a canvas, add layers and export.
 
-Pick a utility function from `utility_viz.models`. See the [Model catalogue](../models/index.md) for the full list.
+<!-- api: agora.utility_viz.getting_started_quickstart_1 -->
 
-```python
-from utility_viz.models import CobbDouglas
+Pick a utility function. [Core models](../models/index.md#sec-models) lists every built-in model; any
+Python function can also be wrapped as a model ([Advanced models](../models/advanced.md#sec-advanced)).
 
-model = CobbDouglas(alpha=0.5, beta=0.5)
-```
+<!-- api: agora.utility_viz.getting_started_quickstart_2 -->
 
-### Solve for the equilibrium
-
-`solve()` returns an `Equilibrium` named tuple with fields `x`, `y`, `utility`, and `bundle_type`.
+Solve the consumer's problem and return an immutable `Equilibrium`.
 
 ```python
 from utility_viz import solve
@@ -55,138 +79,68 @@ print(eq.x, eq.y, round(eq.utility, 3))
 # 7.5 5.0 6.124
 ```
 
-### Utility levels
+<!-- api: agora.utility_viz.getting_started_quickstart_3 -->
+
+Generate $n$ utility levels centred on a given utility. [The consumer-equilibrium diagram](quickstart.md#fig-quickstart)
+uses `n=5`, so it draws five indifference curves.
+
+`levels.around()` keeps the given utility among the levels, so the
+equilibrium lies on one of the curves. Passing `levels=5` instead lets the
+canvas pick levels from the sampled utility range, which need not include
+the equilibrium utility. To compare the same preferences across several
+figures, compute `lvls` once and pass it to each figure.
+
+<!-- api: agora.utility_viz.getting_started_quickstart_4 -->
+
+Create the canvas and set the axis ranges; the other options are
+described in [Canvas](../guides/canvas.md#sec-canvas).
+
+The axis ranges only control what is shown; they play no part in
+`solve()`. If the equilibrium is missing from the figure, check whether
+`eq.x` or `eq.y` lies outside the range and raise the axis limits.
+
+<!-- api: agora.utility_viz.getting_started_quickstart_5 -->
+
+Add indifference curves, a budget line or the equilibrium to the same
+canvas. The calls can be chained ([Method chaining](../guides/canvas.md#sec-chaining)). `add_equilibrium()` uses
+an existing solution and does not solve again; after changing prices,
+income or the model, call `solve()` again and build a new figure.
+
+<!-- api: agora.utility_viz.getting_started_quickstart_6 -->
+
+`save()` writes the file in the format given by its extension
+([Export](../guides/export.md#sec-export)); `show()` opens a `matplotlib` window. Output paths are
+relative to the working directory of the script; create any subdirectory
+beforehand.
+
+### Checking inputs and failed solves
+
+Prices and income must be positive; otherwise `solve()` raises
+`InvalidParameterError` (Smooth models are solved with sequential least squares programming (SLSQP).).
+
+When the solver does not converge, `solve()` raises `OptimizationError`
+rather than returning an invalid equilibrium.
 
 ```python
-from utility_viz import levels
-
-# 5 curves around the optimum
-lvls = levels.around(eq.utility, n=5)
-```
-
-### Build the canvas
-
-```python
-from utility_viz import Canvas
-
-cvs = Canvas(x_max=20, y_max=15)
-```
-
-### Add layers
-
-`Canvas` methods return `self`, so calls can be chained:
-
-```python
-cvs.add_utility(model, levels=lvls)
-cvs.add_budget(2.0, 3.0, 30.0, fill=True)
-cvs.add_equilibrium(eq, show_ray=True)
-```
-
-### Export
-
-=== "Raster / vector"
-
-    ```python
-    # PNG
-    cvs.save("figure.png")
-    # PDF
-    cvs.save("figure.pdf")
-    # SVG
-    cvs.save("figure.svg")
-    ```
-
-=== "Interactive"
-
-    ```python
-    # interactive window
-    cvs.show()
-    ```
-
-## Using the LaTeX parser
-
-```python
-from utility_viz import parse_latex, Canvas, levels, solve
-
-model = parse_latex(r"x^{0.4} y^{0.6}")
-eq = solve(model, px=2.0, py=3.0, income=30.0)
-lvls = levels.around(eq.utility, n=5)
-
-Canvas(x_max=20, y_max=15).add_utility(
-    model, levels=lvls
-).add_budget(2.0, 3.0, 30.0).add_equilibrium(eq).save(
-    "figure.png"
-)
-```
-
-## Multi-panel figures
-
-`Figure` lets you compose several `Canvas` panels into one layout.
-
-```python
-from utility_viz import Figure, Layout, levels, solve
-from utility_viz.models import CobbDouglas
-
-fig = Figure(
-    Layout.SIDE_BY_SIDE,
-    x_max=20,
-    y_max=15,
-    x_label="x",
-    y_label="y",
-    title="Before / After Price Change",
-    shared_y=True,
+from utility_viz import (
+    InvalidParameterError,
+    OptimizationError,
+    solve,
 )
 
-cases = [
-    (
-        CobbDouglas(alpha=0.5, beta=0.5),
-        2.0,
-        3.0,
-        30.0,
-        r"Before: $p_x=2$",
-    ),
-    (
-        CobbDouglas(alpha=0.3, beta=0.7),
-        4.0,
-        3.0,
-        30.0,
-        r"After: $p_x=4$",
-    ),
-]
-
-for idx, (model, px, py, income, title) in enumerate(cases):
-    eq = solve(model, px=px, py=py, income=income)
-    panel = fig[idx]
-    panel.ax.set_title(title)
-    panel.add_utility(
-        model, levels=levels.around(eq.utility, n=5)
-    )
-    panel.add_budget(px, py, income, fill=True)
-    panel.add_equilibrium(eq, show_ray=True)
-
-fig.save("comparison.png")
+try:
+    eq = solve(model, px=2.0, py=3.0, income=30.0)
+except (InvalidParameterError, OptimizationError) as error:
+    print(error)
+else:
+    print(round(eq.x, 3), round(eq.y, 3), eq.bundle_type)
 ```
 
-## Demand diagrams
+Every exception the package raises derives from `UtilityVizError`;
+catch it to handle all of them at once. `EconVizError`, its 1.x name, is
+the same class.
 
-Use `PricePath` plus `DemandDiagram` to link the goods-space optimum to Marshallian demand.
-
-```python
-from utility_viz import DemandDiagram, LinearBudget, PricePath
-from utility_viz.models import CobbDouglas
-
-model = CobbDouglas(alpha=0.5, beta=0.5)
-budget = LinearBudget(px=2.0, py=2.0, income=40.0)
-path = PricePath(
-    model,
-    budget=budget,
-    price="px",
-    price_range=(0.8, 6.0),
-    n=40,
-)
-
-fig = DemandDiagram(path, title="Demand: Cobb-Douglas")
-fig.add_marshallian_panel(price_markers=[1.5, 4.0])
-fig.save("demand.png")
-```
-
-![Quick-start demand diagram](../../assets/consumer/demand_cobb_douglas.png)
+Numerical solutions carry small errors: a result may be close to, but not
+exactly, `7.5`. Compare with a tolerance when checking results, and round
+with `round()` only for display, so early rounding does not distort later
+calculations.

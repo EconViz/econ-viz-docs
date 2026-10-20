@@ -1,15 +1,16 @@
 # Agora reference synchronization
 
-The principle-viz, mosaickit and bezierkit reference pages are sourced from the
-three editions of the sibling `agora` repository. The source version is defined
-by each manual's `manual.toml`: principle-viz 0.10.1, mosaickit 0.5.1 and
-bezierkit 1.0.0 in this import.
+The utility-viz, principle-viz, mosaickit and bezierkit reference pages are sourced from the
+three editions of the sibling `agora` repository. The source version is defined by each manual's
+`manual.toml`.
 
 Run `uv run --frozen python scripts/sync_agora.py ../agora` to update the mapped
 pages and API data. This overwrites the destinations explicitly listed in
 `MAPPING`; edit the corresponding agora chapter before re-running it. Package
-landing pages, migration guides and the utility-viz documentation are maintained
-separately. Navigation is configured in `mkdocs.yml`.
+landing pages and migration guides are maintained separately. Two utility-viz pages
+are still written by hand because the manual has no equivalent: Themes (the six theme
+images, kept in each theme's own colours) and Animation (the GIF gallery); `KEEP_SITE_PAGE`
+in `sync_agora.py` lists them. The Settings File page is also hand-written. Navigation is configured in `mkdocs.yml`.
 
 After syncing, run `python scripts/format_examples.py` with `black` installed
 to restore the site's example formatting: 64-column Python, standalone comments,
@@ -56,3 +57,26 @@ anchor based on its API name; links prefer these rows over broad guide sections.
 Validate with `uv run --frozen python -m unittest discover -s tests` and
 `uv run --frozen mkdocs build`. New Typst macros require explicit converter
 support; unsupported macros fail instead of being silently omitted.
+
+## utility-viz figures
+
+Every figure of the utility-viz manual is drawn by the code printed beside it. The chapters
+(`agora/packages/utility-viz/chapters/<edition>/*.typ`) hold `#example` blocks, each followed by its
+`#fig`; `scripts/make_figures.py` in the agora repository runs the example before each figure and
+saves the picture, so the PDF and the site show what the printed code produces. Regenerate with
+`make figures PACKAGE=utility-viz`, rebuild the PDFs with `make publish PACKAGE=utility-viz`, and
+sync again, which copies the SVGs.
+
+* The house look (grey curves, black axes, white page) is `config/manual.toml`, which every example
+  loads and which the themes chapter prints in full; the script checks the two agree.
+* A figure whose code differs between editions (a translated title, a CJK font) gets its own file,
+  `<name>.zh-TW.svg` or `<name>.zh-CN.svg`; otherwise the editions share one.
+* The Themes page is converted from its chapter (six figures, one per built-in theme).
+* The Animation page is converted from its chapter, and `scripts/supplements/animation.<locale>.md`
+  is appended: a gallery of 14 GIFs drawn by `scripts/animation_figures.py` with the same settings.
+
+Each figure's script is offered for download: `make_figures.py` writes the code it ran next to the SVG
+(`<name>.py`), `sync_agora.py` copies it and adds a download link under the figure, and the Themes page
+links `manual.toml` the same way. The figures drawn from MosaicKit layers (`consumer/demand`, `hicks`,
+`edgeworth`) are too long to print, so the manual shows the API call and their scripts live in
+`agora/packages/utility-viz/scripts/scenes/`.

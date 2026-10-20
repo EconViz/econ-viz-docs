@@ -28,7 +28,7 @@ print(labor.employment, labor.unemployment)
 
 <!-- api: agora.principle_viz.guides_factor_markets_2 -->
 
-以價格下限的方式繪製工資下限（詳見[價格管制](controls.md#sec-controls)）："Minimum wage" 線、工資軸上的 $w_{\min}$，有約束時另標出 $L_d$ 與 $L_s$ 及 "Unemployment" 括號。座標軸命名為 $L$ 與 $w$，曲線命名為 $D_L$ 與 $S_L$（參見[有約束的最低工資。](factor-markets.md#fig-minimum-wage)）：
+以價格下限的方式繪製工資下限（詳見[價格管制](controls.md#sec-controls)）："Minimum wage" 線、工資軸上的 $w_{\min}$，有約束時另標出 $L_d$ 與 $L_s$ 及 "Unemployment" 括號。座標軸命名為 $L$ 與 $w$，曲線命名為 $D_L$ 與 $S_L$（參見[有約束的最低工資](factor-markets.md#fig-minimum-wage)）：
 
 ```python
 fig = MarketFigure(x_max=11, y_max=14, x_label="L", y_label="w")
@@ -44,7 +44,15 @@ fig.add_minimum_wage(labor)
 
 <span id="fig-minimum-wage"></span>
 
-![有約束的最低工資。](../../../assets/principle-viz/agora/factor/minimum_wage.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![有約束的最低工資](../../../assets/principle-viz/agora/factor/minimum_wage.zh-TW.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/factor/factor.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+
+<figcaption markdown>有約束的最低工資</figcaption>
+
+</figure>
 
 `labor_demanded` 為 3，`labor_supplied` 為 7，`employment` 為 3，`unemployment` 為 4。
 
@@ -76,8 +84,16 @@ print(funds.interest_rate_change, funds.crowding_out)
 
 <!-- api: agora.principle_viz.guides_factor_markets_5 -->
 
-畫出移動後的曲線並命名為 $D_1$ 或 $S_1$，以及兩個均衡點與其間的移動。價格軸命名為 $r$（參見[政府借款排擠民間投資。](factor-markets.md#fig-loanable-funds)）。
+畫出移動後的曲線並命名為 $D_1$ 或 $S_1$，以及兩個均衡點與其間的移動。價格軸命名為 $r$（參見[政府借款排擠投資](factor-markets.md#fig-loanable-funds)）。
 
 <span id="fig-loanable-funds"></span>
 
-![政府借款排擠民間投資。](../../../assets/principle-viz/agora/factor/loanable_funds.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![政府借款排擠投資](../../../assets/principle-viz/agora/factor/loanable_funds.zh-TW.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/factor/factor.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+
+<figcaption markdown>政府借款排擠投資</figcaption>
+
+</figure>

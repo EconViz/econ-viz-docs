@@ -103,7 +103,7 @@ $$
 (x_0, y_0), \quad (x_0 + h/3, y_0 + h m_0 / 3), \quad (x_1 - h/3, y_1 - h m_1 / 3), \quad (x_1, y_1),
 $$
 
-其中 $h = x_1 - x_0$（参见[$4 / x^2$ 在 $[1, 1.5]$ 的 Hermite 插值。](construction.md#fig-hermite)）。
+其中 $h = x_1 - x_0$（参见[$4 / x^2$ 的 Hermite 插值](construction.md#fig-hermite)）。
 
 <span id="prop-graph-hermite"></span>
 
@@ -122,7 +122,15 @@ segment = graph_hermite(
 
 <span id="fig-hermite"></span>
 
-![$4 / x^2$ 在 $[1, 1.5]$ 的 Hermite 插值。](../../../assets/bezierkit/agora/construction/hermite.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![$4 / x^2$ 的 Hermite 插值](../../../assets/bezierkit/agora/construction/hermite.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/bezierkit/agora/construction/construction.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>$4 / x^2$ 的 Hermite 插值</figcaption>
+
+</figure>
 
 ## 插值误差
 

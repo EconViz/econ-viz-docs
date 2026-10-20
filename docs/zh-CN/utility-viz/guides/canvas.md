@@ -1,215 +1,272 @@
 ---
-seo_title: "Canvas：教科书风格的经济学图形"
-description: "Canvas 是 utility-viz 的绘图画布，用来画教科书风格的微观经济学图形：第一象限坐标轴、箭头、LaTeX 标签、预算线与均衡点。"
+seo_title: "Canvas 画布"
 ---
 
 # Canvas 画布
 
-`Canvas` 是核心的绘图画布。它管理一张 matplotlib 图，样式遵循微观经济学教科书的惯例：**只画第一象限**、坐标轴末端有箭头、标签用 LaTeX 绘制、**不显示数字刻度**。
+<span id="sec-canvas"></span>
+
+`Canvas` 以 `matplotlib` 的 `Figure` 与 `Axes` 为基础，提供无差异曲线、预算线与均衡点等图层。
 
 ## 构造函数
 
-<!-- api: canvas.constructor -->
+<!-- api: agora.utility_viz.guides_canvas_1 -->
 
-??? example "查看示例"
+创建画布，并设置坐标范围、轴标签、字体、线条样式与主题。未明确传入的视觉设置取自当前的 `Config` 与 `Theme`。
 
-    ```python
-    from utility_viz import ArrowStyle, Axis, Canvas, Stroke, themes
+<span id="tab-x-label-pos"></span>
 
-    cvs = Canvas(
-        x_max=20,
-        y_max=15,
-        title=r"Cobb-Douglas $x^{0.5} y^{0.5}$",
-        dpi=300,
-        font="DejaVu Sans",
-        math_font="stix",
-        axis_stroke=Stroke(width=1.0, arrow=ArrowStyle.TRIANGLE),
-        # "top"、"right" 或 "bottom"
-        x_axis=Axis(label="x", label_position="right"),
-        # "left"、"top" 或 "right"
-        y_axis=Axis(label="y", label_position="top"),
-        theme=themes.default,
-    )
-    ```
+| 值 | 位置 |
+| --- | --- |
+| `"top"` | 箭头上方 |
+| `"right"` | 箭头右侧 |
+| `"bottom"` | 箭头下方 |
 
+<span id="tab-y-label-pos"></span>
 
+| 值 | 位置 |
+| --- | --- |
+| `"left"` | 箭头左侧 |
+| `"top"` | 箭头上方 |
+| `"right"` | 箭头右侧 |
 
-同一项设置给了两次时，以 `Axis` 的字段为准。坐标轴线条的优先顺序由高到低是 `Axis.stroke`、`x_axis_stroke`、`axis_stroke`、`x_line_style` / `x_arrow_style`、`theme.axis_stroke`。
+## 绘图方法
 
-## 方法
+`add_*` 方法在当前的画布添加图层，并返回同一个 `Canvas`，因此可链式调用（详见[链式调用](canvas.md#sec-chaining)）。
 
-所有绘图方法都会返回 `self`，所以可以串接调用。
+<!-- api: agora.utility_viz.guides_canvas_2 -->
 
-### 效用曲线 {#add_utility data-toc-label="效用曲线"}
-
-画出效用函数的无差异曲线。`levels` 传入整数会自动决定曲线的间距，也可以传入一组效用值，例如用 `levels.around(eq.utility, n=5)` 让曲线分布在最优点周围。
-
-<!-- api: canvas.add_utility -->
-
-![用 add_utility 画出的无差异曲线](../../../assets/canvas/add_utility.png){ .ev-figure-sm }
-
-#### 主要与次要曲线
-
-把均衡效用传给 `highlight_level`，即可强调最接近的效用水平，不需要自己再画第二组等高线。其余曲线使用 `theme.secondary_ic_stroke`，也可以用 `secondary_stroke` 单独指定。
+绘制无差异曲线。
 
 ```python
-from utility_viz import Canvas, Stroke, levels, solve
-from utility_viz.models import CobbDouglas
-
-model = CobbDouglas(0.5, 0.5)
-eq = solve(model, px=2, py=3, income=30)
 lvls = levels.around(eq.utility, n=5)
-
-(
-    Canvas(x_max=20, y_max=15)
-    .add_utility(
-        model,
-        levels=lvls,
-        highlight_level=eq.utility,
-        secondary_stroke=Stroke(width=1, opacity=0.35),
-        show_ic_labels=True,
-        label_style="ordinal",
-    )
-    .add_budget(2, 3, 30, fill=True)
-    .add_equilibrium(eq)
+cvs.add_utility(
+    model,
+    levels=lvls,
+    highlight_level=eq.utility,
+    show_ic_labels=True,
+    label_style="ordinal",
 )
 ```
 
-`label_style="numeric"` 显示格式化后的效用值；`"ordinal"` 则使用教科书常见的 $u_1,u_2,\ldots$。标签会跟随曲线在该处的角度，并避开可见范围的边界。
-
-<div class="grid cards" markdown>
-
-- ![强调前，所有无差异曲线的视觉权重相同](../../../assets/canvas/ic_hierarchy_before.png)
-  **强调前**——每个效用水平的视觉权重相同。
-- ![强调均衡无差异曲线，其余曲线淡化](../../../assets/canvas/ic_hierarchy_after.png)
-  **强调后**——均衡效用水平成为主要曲线。
-- ![无差异曲线的序数标签](../../../assets/canvas/ic_hierarchy_ordinal.png)
-  **序数标签**——曲线标为 $u_1,u_2,\ldots$。
-
-</div>
-
-### 预算线 {#add_budget data-toc-label="预算线"}
-
-画出预算线 $p_x x + p_y y = I$。设置 `fill=True` 会在预算线下方的可行集加上阴影。
-
-<!-- api: canvas.add_budget -->
-
-![加上预算线与可行集阴影](../../../assets/canvas/add_budget.png){ .ev-figure-sm }
-
-### 均衡点 {#add_equilibrium data-toc-label="均衡点"}
-
-在最优消费组合画上均衡点，并画出到两轴的垂直虚线。`eq` 传入 `solve()` 的返回值；`show_ray=True` 会同时画出通过原点的扩展路径。
-
-<!-- api: canvas.add_equilibrium -->
-
-![加上均衡点与垂直虚线](../../../assets/canvas/add_equilibrium.png){ .ev-figure-sm }
-
-### 射线 {#add_ray data-toc-label="射线"}
-
-从原点画一条斜率为 `slope`（$\mathrm{d}y/\mathrm{d}x$）的虚线射线，常用来表示扩展路径或固定的消费比例。
-
-<!-- api: canvas.add_ray -->
-
-![通过最优点的扩展路径射线](../../../assets/canvas/add_ray.png){ .ev-figure-sm }
-
-### 标记点 {#add_point data-toc-label="标记点"}
-
-标记任意一点，例如要与最优点比较的消费组合。`label` 会以 LaTeX 数学模式显示；要移动标签或改样式时，传入 `Label`。
-
-<!-- api: canvas.add_point -->
-
-![预算线上标记的 A 点](../../../assets/canvas/add_point.png){ .ev-figure-sm }
-
-### 显示与保存 {#show-save data-toc-label="显示与保存"}
-
-`show()` 会打开交互窗口。`save()` 根据扩展名决定格式，支持 `.png`、`.pdf`、`.svg`，以及输出 TikZ 的 `.tex`。`save()` 也会释放 matplotlib 的资源，所以要放在最后调用。
-
-<!-- api: canvas.show -->
-
-<!-- api: canvas.save -->
-
 ```python
-# 交互窗口
-cvs.show()
-# .png / .pdf / .svg / .tex
-cvs.save("figure.png")
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.models import CobbDouglas
+
+# 图形设置
+Config.load("manual.toml").use()
+
+model = CobbDouglas(alpha=0.5, beta=0.5)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
+
+# 斜体的 x 与 y
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+# 围绕最优点的三条曲线
+cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
+cvs.save("add_utility.png")
 ```
 
-![完成的图形](../../../assets/canvas/show_save.png){ .ev-figure-sm }
+<span id="fig-add-utility"></span>
+
+<figure class="ev-fig" markdown>
+
+![三条无差异曲线](../../../assets/utility-viz/agora/canvas/add_utility.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/canvas/add_utility.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>三条无差异曲线</figcaption>
+
+</figure>
+
+<!-- api: agora.utility_viz.guides_canvas_3 -->
+
+绘制预算线 $p_x x + p_y y = I$。
+
+```python
+from utility_viz import Canvas, Config
+
+# 图形设置
+Config.load("manual.toml").use()
+
+# 斜体的 x 与 y
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+# 预算线与可行集合
+cvs.add_budget(2.0, 3.0, 30.0, fill=True)
+cvs.save("add_budget.png")
+```
+
+<figure class="ev-fig" markdown>
+
+![预算线与阴影](../../../assets/utility-viz/agora/canvas/add_budget.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/canvas/add_budget.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>预算线与阴影</figcaption>
+
+</figure>
+
+<!-- api: agora.utility_viz.guides_canvas_4 -->
+
+标记 `solve()` 返回的最优消费组合。
+
+```python
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.models import CobbDouglas
+
+# 图形设置
+Config.load("manual.toml").use()
+
+model = CobbDouglas(alpha=0.5, beta=0.5)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
+
+# 斜体的 x 与 y
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
+cvs.add_budget(2.0, 3.0, 30.0, fill=True)
+# 最优点与通往坐标轴的虚线
+cvs.add_equilibrium(eq)
+cvs.save("add_equilibrium.png")
+```
+
+<figure class="ev-fig" markdown>
+
+![均衡点与虚线](../../../assets/utility-viz/agora/canvas/add_equilibrium.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/canvas/add_equilibrium.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>均衡点与虚线</figcaption>
+
+</figure>
+
+<!-- api: agora.utility_viz.guides_canvas_5 -->
+
+绘制通过原点、斜率为 `slope`（$\mathrm{d} y / \mathrm{d} x$）的射线，用于标记扩张路径或固定比例。
+
+```python
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.models import CobbDouglas
+
+# 图形设置
+Config.load("manual.toml").use()
+
+model = CobbDouglas(alpha=0.5, beta=0.5)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
+
+# 斜体的 x 与 y
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
+cvs.add_budget(2.0, 3.0, 30.0)
+cvs.add_equilibrium(eq)
+# 通过原点与最优点的射线
+cvs.add_ray(eq.y / eq.x)
+cvs.save("add_ray.png")
+```
+
+<figure class="ev-fig" markdown>
+
+![扩张路径射线](../../../assets/utility-viz/agora/canvas/add_ray.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/canvas/add_ray.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>扩张路径射线</figcaption>
+
+</figure>
+
+<!-- api: agora.utility_viz.guides_canvas_6 -->
+
+在指定坐标标记点。
+
+```python
+from utility_viz import Canvas, Config, Label, levels, solve
+from utility_viz.models import CobbDouglas
+
+# 图形设置
+Config.load("manual.toml").use()
+
+model = CobbDouglas(alpha=0.5, beta=0.5)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
+
+# 斜体的 x 与 y
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+# 一条无差异曲线 u = 5
+cvs.add_utility(model, levels=[5.0])
+cvs.add_budget(2.0, 3.0, 30.0)
+# 与预算线交于两点
+# 以 Label 放在点旁
+cvs.add_point(
+    3.17, 7.89, label=Label(text="A", position="top-right")
+)
+cvs.add_point(
+    11.83, 2.11, label=Label(text="B", position="top-right")
+)
+cvs.save("add_point.png")
+```
+
+<figure class="ev-fig" markdown>
+
+![无差异曲线交预算线于两点](../../../assets/utility-viz/agora/canvas/add_point.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/canvas/add_point.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>无差异曲线交预算线于两点</figcaption>
+
+</figure>
+
+<!-- api: agora.utility_viz.guides_canvas_7 -->
+
+`show()` 打开交互窗口；`save()` 根据扩展名导出文件（详见[导出](export.md#sec-export)），并释放对应的 `matplotlib` 图形，因此应最后调用。
+
+```python
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.models import CobbDouglas
+
+# 图形设置
+Config.load("manual.toml").use()
+
+model = CobbDouglas(alpha=0.5, beta=0.5)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
+
+# 斜体的 x 与 y
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
+cvs.add_budget(2.0, 3.0, 30.0, fill=True)
+# 均衡点与扩张路径
+cvs.add_equilibrium(eq, show_ray=True)
+cvs.save("show_save.png")
+```
+
+<span id="fig-show-save"></span>
+
+<figure class="ev-fig" markdown>
+
+![完整画布](../../../assets/utility-viz/agora/canvas/show_save.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/canvas/show_save.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>完整画布</figcaption>
+
+</figure>
 
 ## 样式
 
-每一类元素都有自己的样式对象。没有指定的字段会沿用主题默认值，所以只需设置想改的部分。
+<span id="sec-styles"></span>
 
-| 对象 | 控制项目 | 主题默认值 |
-|------|----------|------------|
-| `Stroke` | 线条粗细、线条样式、颜色、箭头 | `theme.budget_stroke`、`theme.ic_stroke` 等 |
-| `Marker` | 点的颜色、大小、形状 | `theme.eq_marker`、`theme.point_marker` 等 |
-| `Label` | 标签文字、位置、偏移、颜色、大小、是否显示 | `theme.point_label`、`theme.ic_label` 等 |
-| `Fill` | 阴影颜色与透明度 | `theme.budget_fill` |
-| `Axis` | 单个坐标轴的标签、标签位置与线条 | 无 |
-| `Legend` | 图例的位置、大小、外框、列数 | `theme.legend` |
-
-每个对象也都有 `opacity`，从 0（透明）到 1（不透明）。
-
-```python
-from utility_viz import Canvas, Fill, Label, Marker, Stroke
-
-(
-    Canvas(x_max=20, y_max=15)
-    .add_utility(
-        model,
-        levels=lvls,
-        ic_label=Label(text="U={:.1f}", position="top"),
-    )
-    .add_budget(
-        2.0,
-        3.0,
-        30.0,
-        stroke=Stroke(color="black"),
-        fill=Fill(color="lightgrey", opacity=0.4),
-    )
-    .add_equilibrium(
-        eq,
-        marker=Marker(color="#C0392B", shape="s"),
-        label=Label(position="bottom-left", offset=8),
-    )
-    .add_point(
-        12.0, 2.0, label=Label(text="A", position="left")
-    )
-    .save("styles.png")
-)
-```
-
-![自定义线条、阴影、标记点与标签](../../../assets/canvas/styles.png){ .ev-figure-sm }
-
-**建议用 `Stroke` 设置线条样式**。另外的 `color`、`linewidth`、`linestyle` 参数仍可作为简写使用，画出来的结果相同。标签默认沿用所属点的 `Marker` 颜色，除非另外指定；位置可用 `top`、`bottom`、`left`、`right` 与 `top-right` 等四个角落，`Label(visible=False)` 可隐藏标签。
-
-### 文字与图例
-
-所有文字都能传入 `Label`：坐标轴标签通过 `Axis(label=...)`，原点通过 `origin_label`，标题通过 `title`。图例默认会放在最不遮挡图形的位置，四个角都会遮挡时就移到图外；也可以用 `Legend` 指定图内的角落（`"upper left"` 等），或图外的上下左右（`"top"`、`"bottom"`、`"left"`、`"right"`）。
-
-```python
-from utility_viz import Axis, Canvas, Label, Legend
-
-cvs = Canvas(
-    title=Label(text="Cobb-Douglas", fontsize=13),
-    x_axis=Axis(label=Label(text="x_1", fontsize=16)),
-    origin_label=Label(visible=False),
-)
-cvs.show_legend(legend=Legend(position="bottom", fontsize=10))
-```
-
-下方的线条样式与箭头样式，坐标轴通过 `x_*` 与 `y_*` 参数设置，其他线条则通过 `Stroke` 应用。
+`LineStyle` 定义线型，`ArrowStyle` 定义箭头样式，`Stroke` 统一设置线宽、线型、颜色与箭头，可应用于坐标轴、预算线、路径与投影线。
 
 ### 线条样式
 
-坐标轴可使用 `LineStyle.SOLID`、`DASHED`、`DOTTED` 或 `DASHDOT`。也可以直接传入对应的 `solid`、`dashed`、`dotted` 或 `dashdot` 字符串。其他线条则通过 `Stroke(style=...)` 设置。
+<!-- api: agora.utility_viz.guides_canvas_8 -->
+
+提供实线、虚线、点线与点画线（参见[四种线条样式](canvas.md#fig-line-styles)）。坐标轴接受枚举值或对应字符串；其他线条通过 `Stroke(style=...)` 设置。
+`LineStyle` 就是 MosaicKit 的 `DashStyle`，沿用旧名称。
 
 ```python
 import matplotlib.pyplot as plt
 
-from utility_viz import Canvas, LineStyle
+from utility_viz import Canvas, Config, LineStyle
+
+# 图形设置
+Config.load("manual.toml").use()
 
 styles = [
     LineStyle.SOLID,
@@ -217,31 +274,53 @@ styles = [
     LineStyle.DOTTED,
     LineStyle.DASHDOT,
 ]
+titles = ["实线", "虚线", "点线", "点划线"]
 
-fig, axes = plt.subplots(2, 2, figsize=(7, 7))
-for ax, style in zip(axes.flat, styles):
+fig, axes = plt.subplots(1, 4, figsize=(7.6, 2.0))
+for ax, style, title in zip(axes, styles, titles):
     Canvas(
-        title=style.value,
+        title=title,
+        x_label="$x$",
+        y_label="$y$",
         x_line_style=style,
         y_line_style=style,
+        # 使用有中文字形的字体
+        font="PingFang SC",
         fig=fig,
         ax=ax,
     )
 
-fig.tight_layout()
-fig.savefig("line_styles.png", dpi=160, transparent=True)
+# 预留轴标签的空间
+fig.subplots_adjust(wspace=0.62)
+fig.savefig("line_styles.png", dpi=160)
 ```
 
-![可用的线条样式](../../../assets/canvas/line_styles.png)
+<span id="fig-line-styles"></span>
+
+<figure class="ev-fig" markdown>
+
+![四种线条样式](../../../assets/utility-viz/agora/canvas/line_styles.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/canvas/line_styles.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>四种线条样式</figcaption>
+
+</figure>
 
 ### 箭头样式
 
-坐标轴可使用 `ArrowStyle.SIMPLE`、`TRIANGLE`、`FANCY` 或 `WEDGE`。其他可见线条则通过 `Stroke(arrow=...)` 添加相同的箭头样式。
+<!-- api: agora.utility_viz.guides_canvas_9 -->
+
+提供四种箭头样式（参见[四种箭头样式](canvas.md#fig-arrow-styles)）。坐标轴通过 `x_arrow_style`、`y_arrow_style` 设置；其他线条通过 `Stroke(arrow=...)` 设置。
+`ArrowStyle` 是 MosaicKit 的；`SIMPLE` 即 `OPEN`，仍接受 `"->"` 与 `"-|>"`。
 
 ```python
 import matplotlib.pyplot as plt
 
-from utility_viz import ArrowStyle, Canvas
+from utility_viz import ArrowStyle, Canvas, Config
+
+# 图形设置
+Config.load("manual.toml").use()
 
 styles = [
     ArrowStyle.SIMPLE,
@@ -249,26 +328,112 @@ styles = [
     ArrowStyle.FANCY,
     ArrowStyle.WEDGE,
 ]
+titles = ["简单", "三角形", "花式", "楔形"]
 
-fig, axes = plt.subplots(2, 2, figsize=(7, 7))
-for ax, style in zip(axes.flat, styles):
+fig, axes = plt.subplots(1, 4, figsize=(7.6, 2.0))
+for ax, style, title in zip(axes, styles, titles):
     Canvas(
-        title=style.name.title(),
+        title=title,
+        x_label="$x$",
+        y_label="$y$",
         x_arrow_style=style,
         y_arrow_style=style,
+        # 使用有中文字形的字体
+        font="PingFang SC",
         fig=fig,
         ax=ax,
     )
 
-fig.tight_layout()
-fig.savefig("arrow_styles.png", dpi=160, transparent=True)
+# 预留轴标签的空间
+fig.subplots_adjust(wspace=0.62)
+fig.savefig("arrow_styles.png", dpi=160)
 ```
 
-![可用的箭头样式](../../../assets/canvas/arrow_styles.png)
+<span id="fig-arrow-styles"></span>
 
-路径、效应分解、`DemandDiagram`、`Figure` 与 `EdgeworthBox` 也可以使用 `Stroke`。未指定的字段会沿用当前主题。
+<figure class="ev-fig" markdown>
 
-## 串接调用
+![四种箭头样式](../../../assets/utility-viz/agora/canvas/arrow_styles.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/canvas/arrow_styles.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>四种箭头样式</figcaption>
+
+</figure>
+
+### Stroke
+
+<!-- api: agora.utility_viz.guides_canvas_10 -->
+
+设置线宽、线型、颜色、箭头与透明度。未指定的字段沿用当前主题。`opacity` 的有效范围为 0 至 1。
+
+### Axis
+
+<!-- api: agora.utility_viz.guides_canvas_11 -->
+
+集中设置单一坐标轴的标签、标签位置与线条。`Canvas`、`Figure`、`DemandDiagram` 与 `EdgeworthBox` 均接受 `x_axis` 与 `y_axis`。若同时传入简写参数，`Axis` 中已设置的字段优先。
+
+```python
+from utility_viz import Axis, Canvas, Label, Stroke
+
+cvs = Canvas(
+    x_axis=Axis(
+        label=Label(text="x_1", fontsize=16),
+        label_position="bottom",
+        stroke=Stroke(width=1.2),
+    ),
+    y_axis=Axis(label="x_2"),
+)
+```
+
+### Marker 与 Label
+
+<!-- api: agora.utility_viz.guides_canvas_12 -->
+
+设置标记点的颜色、大小、形状与透明度。`shape` 接受 `matplotlib` 的标记字符串，例如 `"o"`、`"s"`、`"^"`、`"D"` 与 `"*"`。
+
+<!-- api: agora.utility_viz.guides_canvas_13 -->
+
+设置文字、位置、位移、颜色、字号、可见性与透明度。位置可为上、下、左、右或四个角落；`Label(visible=False)` 隐藏对应文字。
+
+```python
+from utility_viz import Label, Marker
+
+cvs.add_equilibrium(
+    eq,
+    marker=Marker(shape="s", size=8),
+    label=Label(position="bottom-left", offset=8),
+)
+cvs.add_point(
+    12,
+    2,
+    marker=Marker(color="black", shape="D"),
+    label=Label(text="A", position="left", fontsize=14),
+)
+```
+
+### Fill
+
+<!-- api: agora.utility_viz.guides_canvas_14 -->
+
+设置阴影区域的颜色与透明度。`alpha` 是 `opacity` 的兼容简写；同一次调用不得传入不同的 `alpha` 与 `opacity`。
+
+```python
+from utility_viz import Fill
+
+cvs.add_budget(
+    2,
+    3,
+    30,
+    fill=Fill(color="lightgrey", opacity=0.4),
+)
+```
+
+## 链式调用
+
+<span id="sec-chaining"></span>
+
+`add_*` 方法支持链式调用，最后以 `save()` 导出：
 
 ```python
 Canvas(x_max=20, y_max=15).add_utility(

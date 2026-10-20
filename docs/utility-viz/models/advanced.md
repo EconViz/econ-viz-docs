@@ -1,173 +1,160 @@
 ---
-seo_title: "Custom and Advanced Utility Models"
-description: "Build custom utility functions, multi-good Cobb-Douglas models, and Haagsma utility with an inferior or Giffen good in utility-viz."
+seo_title: "Advanced models"
 ---
 
-# Advanced Models
+# Advanced models
 
-Advanced models extend the built-in utility families with user-defined
-functions, more than two goods, or goods that are inferior or Giffen.
+<span id="sec-advanced"></span>
 
-## Extensible models
+Advanced models extend the built-in families with user-defined functions
+or more than two goods.
 
-Use these models when a predefined two-good utility class is not enough.
+### Custom utility
 
-=== "Custom Utility"
+<!-- api: agora.utility_viz.models_advanced_1 -->
 
-    `CustomUtility` wraps any vectorised Python callable as an utility-viz model.
-
-    $$
-    U(x,y)=\ln x+\ln y
-    $$
-
-    The equation above is one example. The callable must accept two NumPy
-    arrays and return an array with the same shape.
-
-    **Parameters**
-
-    | Parameter | Meaning |
-    |-----------|---------|
-    | `func` | Vectorised utility function of $x$ and $y$ |
-    | `name` | Display name for the custom model |
-
-    **Example**
-
-    ```python
-    import numpy as np
-    from utility_viz import Canvas, levels, solve
-    from utility_viz.models import CustomUtility
-
-    model = CustomUtility(
-        func=lambda x, y: np.log(x) + np.log(y),
-        name="log+log",
-    )
-    eq = solve(model, px=2.0, py=3.0, income=30.0)
-
-    (
-        Canvas(x_max=20, y_max=15, title="Custom Utility")
-        .add_utility(model, levels=levels.around(eq.utility, n=5))
-        .add_budget(2.0, 3.0, 30.0)
-        .add_equilibrium(eq)
-        .save("custom.png")
-    )
-    ```
-
-    ![Custom utility indifference map](../../assets/advanced/advanced_custom.png)
-
-=== "Multi-Good Cobb-Douglas"
-
-    `MultiGoodCD` represents Cobb-Douglas preferences over $N$ goods.
-
-    $$
-    U(x_1,\ldots,x_N)=\prod_{i=1}^{N}x_i^{\alpha_i}
-    $$
-
-    `freeze()` fixes every good except $x$ and $y$, then returns a
-    `CustomUtility` that can be drawn on a two-dimensional canvas.
-
-    **Parameters**
-
-    | Parameter | Meaning |
-    |-----------|---------|
-    | `shares` | Mapping from each good name to its exponent $\alpha_i$ |
-    | `freeze(...)` | Fixed quantities for goods other than $x$ and $y$ |
-
-    **Example**
-
-    ```python
-    from utility_viz import Canvas, levels, solve
-    from utility_viz.models import MultiGoodCD
-
-    model = MultiGoodCD({"x": 0.3, "y": 0.3, "z": 0.4})
-    two_good_model = model.freeze(z=10.0)
-    eq = solve(two_good_model, px=2.0, py=3.0, income=30.0)
-
-    (
-        Canvas(x_max=20, y_max=15, title="Multi-Good Cobb-Douglas")
-        .add_utility(
-            two_good_model,
-            levels=levels.around(eq.utility, n=5),
-        )
-        .add_budget(2.0, 3.0, 30.0, fill=True)
-        .add_equilibrium(eq)
-        .save("multigood.png")
-    )
-    ```
-
-    ![Multi-good Cobb-Douglas projection](../../assets/advanced/advanced_multigd.png)
-
-## Inferior and Giffen goods
-
-`Haagsma` implements the utility function of \citet{haagsma2012}, in which good
-$x$ is **always inferior** and becomes a **Giffen good** when income is high
-enough.
+Wrap any vectorised Python callable as an `utility-viz` model. The
+callable must accept two `NumPy` arrays and return an array of the
+same shape. The example below uses
 
 $$
-U(x,y)=\alpha_x\ln(x-\gamma_x)-\alpha_y\ln(\gamma_y-y),
-\qquad 0<\alpha_x<\alpha_y,\quad x>\gamma_x,\quad 0\le y<\gamma_y
+u(x, y) = ln x + ln y.
 $$
-
-At an interior optimum, Marshallian demand for $x$ has a closed form:
-
-$$
-x^*=\frac{\alpha_x(\gamma_y p_y-I)}{(\alpha_y-\alpha_x)\,p_x}+\frac{\alpha_y\gamma_x}{\alpha_y-\alpha_x}
-$$
-
-so $\partial x^*/\partial I<0$ for every price and income. The sign of
-$\partial x^*/\partial p_x$ depends on income:
-
-| Income | Good $x$ |
-|--------|----------|
-| $I<\gamma_y p_y$ | Inferior; demand still falls as $p_x$ rises |
-| $I=\gamma_y p_y$ | Inferior; substitution and income effects cancel |
-| $\gamma_y p_y<I<\gamma_y p_y+\gamma_x p_x$ | Giffen; demand rises with $p_x$ |
-
-With $I\ge\gamma_y p_y+\gamma_x p_x$ the consumer can push $y$ towards
-$\gamma_y$, utility grows without bound, and no optimum exists; `solve()`
-raises an error.
-
-**Parameters**
-
-| Parameter | Meaning |
-|-----------|---------|
-| `alpha_x` | Weight $\alpha_x$ on good $x$, below `alpha_y` |
-| `alpha_y` | Weight $\alpha_y$ on good $y$ |
-| `gamma_x` | Lower bound $\gamma_x$ of good $x$ |
-| `gamma_y` | Upper bound $\gamma_y$ of good $y$ |
-
-`demand(px, py, income)` returns the closed-form bundle, and
-`is_giffen(px, py, income)` reports whether $x$ is a Giffen good.
-
-**Example**
 
 ```python
-from utility_viz import Canvas, Effect
-from utility_viz.models import Haagsma
-from utility_viz.optimizer import decompose_price_effect
+import numpy as np
 
-model = Haagsma(
-    alpha_x=1.0, alpha_y=2.0, gamma_x=2.0, gamma_y=27.0
-)
-# True
-model.is_giffen(px=2.0, py=1.0, income=28.0)
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.models import CustomUtility
 
-result = decompose_price_effect(
-    model, px=(2.0, 1.0), py=1.0, income=28.0, method="hicks"
-)
+# figure settings
+Config.load("manual.toml").use()
 
-(
-    Canvas(x_max=16, y_max=32, title="Haagsma: Giffen good")
-    .add_decomposition(
-        result,
-        show_x_projections=True,
-        substitution=Effect(label="SE"),
-        income=Effect(label="IE"),
-    )
-    .save("haagsma.png")
+# any array function works
+model = CustomUtility(
+    func=lambda x, y: np.log(x) + np.log(y), name="log+log"
 )
+eq = solve(model, px=2.0, py=3.0, income=30.0)
+
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+cvs.add_utility(model, levels=levels.around(eq.utility, n=5))
+cvs.add_budget(2.0, 3.0, 30.0)
+cvs.add_equilibrium(eq)
+cvs.save("custom.png")
 ```
 
-When $p_x$ falls from 2 to 1, the substitution effect raises $x$ by 4.5 while
-the income effect lowers it by 5, so demand for $x$ falls.
+<figure class="ev-fig" markdown>
 
-![Hicks decomposition of a Giffen good under Haagsma utility](../../assets/advanced/advanced_haagsma.png)
+![A custom model $ln x + ln y$](../../assets/utility-viz/agora/models/custom.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/custom.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>A custom model $ln x + ln y$</figcaption>
+
+</figure>
+
+### Many-good Cobb-Douglas
+
+<!-- api: agora.utility_viz.models_advanced_2 -->
+
+Cobb-Douglas preferences over $N$ goods:
+
+$$
+u(x_1, ..., x_N) = product_{i=1}^N x_i^{\alpha_i}.
+$$
+
+`freeze()` fixes every good except $x$ and $y$ and returns a
+`CustomUtility` that can be drawn on a two-dimensional canvas.
+
+```python
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.models import MultiGoodCD
+
+# figure settings
+Config.load("manual.toml").use()
+
+# three goods with z held at 10
+model = MultiGoodCD({"x": 0.3, "y": 0.3, "z": 0.4})
+two_good_model = model.freeze(z=10.0)
+eq = solve(two_good_model, px=2.0, py=3.0, income=30.0)
+
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+cvs.add_utility(
+    two_good_model, levels=levels.around(eq.utility, n=5)
+)
+cvs.add_budget(2.0, 3.0, 30.0, fill=True)
+cvs.add_equilibrium(eq)
+cvs.save("multigood.png")
+```
+
+<figure class="ev-fig" markdown>
+
+![Three-good Cobb-Douglas](../../assets/utility-viz/agora/models/multigood.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/multigood.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>Three-good Cobb-Douglas</figcaption>
+
+</figure>
+
+### Backend-neutral scenes
+
+<span id="sec-scenes"></span>
+
+`utility_viz.core.scenes` builds the same economic components as `Canvas`,
+but as immutable `mosaickit` layers instead of drawing on
+`matplotlib` axes. Every layer has a stable id (`budget`,
+`budget.fill`, `equilibrium.drop`, `ic.2`, ...) and a dotted theme role
+(`utility.budget`, `utility.indifference.secondary`, ...), so the scene can
+be inspected, edited and rendered by any `mosaickit` backend. It is an
+advanced, additive API: `Canvas` and the other diagrams are unchanged.
+
+<!-- api: agora.utility_viz.models_advanced_3 -->
+
+Return a tuple of layers for the budget line $p_x x + p_y y = I$, the
+equilibrium bundle, and the indifference curves of a model over
+$[0, x_{\max}] \times [0, y_{\max}]$. Styling comes from the theme roles; sparse
+`Stroke`, `Marker` and `Fill` overrides are accepted.
+`indifference_layers` returns `(layers, levels)` and traces the curves as
+Bézier paths with `bezierkit`, so it also handles non-monotone and
+kinked utilities.
+
+<!-- api: agora.utility_viz.models_advanced_4 -->
+
+`UTILITY_THEME` is a `mosaickit` theme with the `utility.*` roles,
+matching the default theme's colours. `canvas_to_tikz(canvas)` exports a
+scene as TikZ with native `.. controls ..` curves.
+
+```python
+from mosaickit import Canvas, CanvasSpec, quadrant_axes
+
+from utility_viz.core.scenes import (
+    UTILITY_THEME,
+    budget_layers,
+    canvas_to_tikz,
+    equilibrium_layers,
+    indifference_layers,
+)
+from utility_viz.models import CobbDouglas, solve
+
+model = CobbDouglas(alpha=0.5, beta=0.5)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
+u = eq.utility
+ic, _ = indifference_layers(
+    model, [0.6 * u, u, 1.4 * u], 18, 12
+)
+
+spec = CanvasSpec(x_range=(0, 18), y_range=(0, 12))
+canvas = (
+    Canvas(spec, theme=UTILITY_THEME)
+    .extend(quadrant_axes(18, 12))
+    .extend(ic)
+    .extend(budget_layers(2.0, 3.0, 30.0, fill=True))
+    .extend(equilibrium_layers(eq))
+)
+canvas.save("scene.png")
+tex = canvas_to_tikz(canvas)
+```
+
+The TikZ exporter handles path, fill, marker and text layers. The traced
+utility must be finite on the plotted region.

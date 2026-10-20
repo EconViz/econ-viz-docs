@@ -148,9 +148,9 @@ class ApiReferenceTests(unittest.TestCase):
         source = 'from utility_viz import Canvas as Plot\ncvs = Plot(x_max=20)\ncvs.add_budget(2, 3, 30, fill=True)\n# Canvas(x_max=10)\ntext = "Canvas(x_max=10)"\n'
         highlighted = highlight(source, PythonLexer(), HtmlFormatter()).replace('<pre>', '<pre><span></span><code><a id="line-1" href="#line-1"></a>').replace('</pre>', '</code></pre>')
         result = api.link_examples(highlighted, 'zh-TW/utility-viz/index.md', SimpleNamespace(use_directory_urls=True))
-        self.assertIn('#canvas-constructor-x_max', result)
-        self.assertIn('#add_budget-fill', result)
-        self.assertIn('#api-add_budget', result)
+        self.assertIn('#utility-viz-guides-canvas-1-0', result)
+        self.assertIn('#utility-viz-guides-canvas-3-0', result)
+        self.assertIn('#api-utility-viz-guides-canvas-3', result)
         self.assertEqual(html_module.unescape(re.sub('<[^>]+>', '', result)), html_module.unescape(re.sub('<[^>]+>', '', highlighted)))
         self.assertNotIn('ev-code-link', result.split('# Canvas')[1].split('\n')[0])
 

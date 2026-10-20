@@ -53,11 +53,19 @@ fig.add_equilibrium(eq)
 fig.finalize()
 ```
 
-输出参见[均衡下的消费者与生产者剩余。](welfare.md#fig-welfare)。
+输出参见[均衡下的剩余](welfare.md#fig-welfare)。
 
 <span id="fig-welfare"></span>
 
-![均衡下的消费者与生产者剩余。](../../../assets/principle-viz/agora/welfare/equilibrium.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![均衡下的剩余](../../../assets/principle-viz/agora/welfare/equilibrium.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/welfare/welfare.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>均衡下的剩余</figcaption>
+
+</figure>
 
 <!-- api: agora.principle_viz.guides_welfare_5 -->
 

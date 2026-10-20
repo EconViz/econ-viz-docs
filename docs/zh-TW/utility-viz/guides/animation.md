@@ -1,31 +1,26 @@
 ---
-seo_title: "把經濟學圖形做成 GIF 動畫"
-description: "用 utility-viz 的 Animator，把價格、所得或效用參數變動時的無異曲線與預算限制匯出成 GIF 動畫。"
+seo_title: "動畫"
 ---
 
 # 動畫
 
-`utility-viz` 提供以 `Animator` 為核心的輕量 GIF 流程。API 跟一般繪圖差不多：寫一個**frame factory**，每次回傳一個新的 `Canvas` 或 `Figure`，再掃過一串數值影格，最後存成 GIF。
+<span id="sec-animation"></span>
 
-## 安裝
+`Animator` 依指定的參數序列呼叫繪圖函數，將回傳的 `Canvas` 或 `Figure` 匯出為 GIF。使用前需安裝 `animation` 選用依賴（詳見[選用依賴](../getting-started/installation.md#sec-extras)）。從 `utility_viz.core.animation` 匯入；1.x 為 `econ_viz.animation`。
 
-```bash
-uv add "utility-viz[animation]"
-```
+<!-- api: agora.utility_viz.guides_animation_1 -->
 
-如果也要筆記本互動元件，就安裝：
+依序將 `frames` 的值傳入 `draw`，每次回傳的圖形對應一個影格。
 
-```bash
-uv add "utility-viz[all]"
-```
-
-## 最簡範例
+- `save()` 使用 `Pillow`，不需要 `ffmpeg`。
+- 匯出前將影格合成至白色背景，避免殘影。
+- `fps`、`dpi` 與 `loop` 分別設定影格率、解析度與循環次數。
 
 ```python
 import numpy as np
 
 from utility_viz import Canvas, levels, solve
-from utility_viz.animation import Animator
+from utility_viz.core.animation import Animator
 from utility_viz.models import CobbDouglas
 
 
@@ -55,18 +50,173 @@ Animator(draw, frames=np.linspace(1.0, 6.0, 45)).save(
 )
 ```
 
-## 教學用動畫
+`examples/scripts/animation.py` 提供四種範例 (各範例均包含 Cobb-Douglas、CES、完全替代與完全互補模型。)：
 
-範例腳本 `examples/animation.py` 會產生以下幾類動畫：
+- 參數變動：固定價格與所得，調整效用函數參數。
+- 價格變動：固定效用函數與 $p_y$，調整 $p_x$，呈現預算線旋轉，寫法見上例。
+- 所得變動：固定效用函數與價格，調整所得，呈現預算線平移。
+- 預算線變動：僅顯示預算線，省略效用圖層。
 
-- **參數變動**：價格與所得固定，只改變效用函數的某個參數。
-- **價格變動**：效用函數與 $p_y$ 固定，只改變 $p_x$。
-- **所得變動**：效用函數與價格固定，只改變所得。
-- **只有預算線**：完全拿掉效用圖層，讓學生專心觀察預算線怎麼移動。
+四種範例的差異只在於 `draw()` 每次固定哪些值、調整哪個值。以參數變動為例，將上例的 `draw()` 改為接收 `alpha`，價格固定為 $p_x = 2$：
 
-文件網站直接嵌入同一批 GIF，所以這裡看到的就是本機產生的結果。
+```python
+def draw(alpha: float) -> Canvas:
+    model = CobbDouglas(alpha=alpha, beta=1.0 - alpha)
+    eq = solve(model, px=2.0, py=2.0, income=20.0)
+    ...
 
-## 參數變動
+
+Animator(draw, frames=np.linspace(0.1, 0.9, 45)).save(
+    "parameter_sweep.gif"
+)
+```
+
+所得變動將 `draw()` 的引數改為 `income`，並把該值傳入 `add_budget()` 與 `solve()`。只呈現預算線時，省略 `add_utility()` 與 `add_equilibrium()`。
+
+[參數變動](animation.md#fig-sweep-param)至[所得變動](animation.md#fig-sweep-income)各節錄四個影格。
+
+```python
+import numpy as np
+
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.core.animation import Animator
+from utility_viz.models import CobbDouglas
+
+# 圖形設定
+Config.load("manual.toml").use()
+
+
+def draw(alpha: float) -> Canvas:
+    """一格影格：x 的權重是 alpha，y 的權重是 1 - alpha。"""
+    model = CobbDouglas(alpha=alpha, beta=1.0 - alpha)
+    eq = solve(model, px=2.0, py=2.0, income=20.0)
+    cvs = Canvas(
+        x_max=14, y_max=12, x_label="$x_1$", y_label="$x_2$"
+    )
+    cvs.add_utility(
+        model, levels=levels.around(eq.utility, n=5)
+    )
+    cvs.add_budget(2.0, 2.0, 20.0, fill=True)
+    cvs.add_equilibrium(eq, show_ray=True)
+    return cvs
+
+
+Animator(draw, frames=np.linspace(0.1, 0.9, 45)).save(
+    "parameter_sweep.gif", fps=12, dpi=120
+)
+```
+
+<span id="fig-sweep-param"></span>
+
+<figure class="ev-fig" markdown>
+
+![參數變動](../../../assets/utility-viz/agora/animation/parameter_sweep.svg){ .ev-figure-lg }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/animation/parameter_sweep.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+
+<figcaption markdown>參數變動</figcaption>
+
+</figure>
+
+下面每張圖取 GIF 的四個影格，GIF 共 45 格。
+
+```python
+import numpy as np
+
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.core.animation import Animator
+from utility_viz.models import CobbDouglas
+
+# 圖形設定
+Config.load("manual.toml").use()
+
+model = CobbDouglas(alpha=0.5, beta=0.5)
+# 每格用同一組曲線
+fixed = levels.around(
+    solve(model, px=2.0, py=2.0, income=20.0).utility, n=5
+)
+
+
+def draw(px: float) -> Canvas:
+    """一格影格：x 的價格是 px。"""
+    eq = solve(model, px=px, py=2.0, income=20.0)
+    cvs = Canvas(
+        x_max=14, y_max=12, x_label="$x_1$", y_label="$x_2$"
+    )
+    cvs.add_utility(model, levels=fixed)
+    cvs.add_budget(px, 2.0, 20.0, fill=True)
+    cvs.add_equilibrium(eq, show_ray=True)
+    return cvs
+
+
+Animator(draw, frames=np.linspace(1.0, 6.0, 45)).save(
+    "price_sweep.gif", fps=12, dpi=120
+)
+```
+
+<span id="fig-sweep-price"></span>
+
+<figure class="ev-fig" markdown>
+
+![價格變動](../../../assets/utility-viz/agora/animation/price_sweep.svg){ .ev-figure-lg }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/animation/price_sweep.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+
+<figcaption markdown>價格變動</figcaption>
+
+</figure>
+
+```python
+import numpy as np
+
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.core.animation import Animator
+from utility_viz.models import CobbDouglas
+
+# 圖形設定
+Config.load("manual.toml").use()
+
+model = CobbDouglas(alpha=0.5, beta=0.5)
+# 每格用同一組曲線
+fixed = levels.around(
+    solve(model, px=2.0, py=2.0, income=20.0).utility, n=5
+)
+
+
+def draw(income: float) -> Canvas:
+    """一格影格：所得是 income。"""
+    eq = solve(model, px=2.0, py=2.0, income=income)
+    cvs = Canvas(
+        x_max=14, y_max=12, x_label="$x_1$", y_label="$x_2$"
+    )
+    cvs.add_utility(model, levels=fixed)
+    cvs.add_budget(2.0, 2.0, income, fill=True)
+    cvs.add_equilibrium(eq, show_ray=True)
+    return cvs
+
+
+Animator(draw, frames=np.linspace(8.0, 36.0, 45)).save(
+    "income_sweep.gif", fps=12, dpi=120
+)
+```
+
+<span id="fig-sweep-income"></span>
+
+<figure class="ev-fig" markdown>
+
+![所得變動](../../../assets/utility-viz/agora/animation/income_sweep.svg){ .ev-figure-lg }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/animation/income_sweep.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+
+<figcaption markdown>所得變動</figcaption>
+
+</figure>
+
+## 動畫圖庫
+
+以下 GIF 由文件儲存庫的 `scripts/animation_figures.py` 依 `manual.toml` 的設定畫成，涵蓋同樣四種動畫：參數、價格、所得與只有預算線。
+
+### 參數變動
 
 改變效用函數的參數，觀察偏好圖的形狀如何隨之改變。
 
@@ -107,7 +257,7 @@ Animator(draw, frames=np.linspace(1.0, 6.0, 45)).save(
   </tbody>
 </table>
 
-## 價格變動
+### 價格變動
 
 固定效用函數與背景無異曲線的效用水準，只改變一項商品的價格，呈現預算線旋轉時的均衡路徑。
 
@@ -158,7 +308,7 @@ Animator(draw, frames=np.linspace(1.0, 6.0, 45)).save(
   </tbody>
 </table>
 
-## 所得變動
+### 所得變動
 
 固定效用函數與價格，只改變所得，呈現預算線平行移動時的均衡路徑。
 
@@ -208,11 +358,3 @@ Animator(draw, frames=np.linspace(1.0, 6.0, 45)).save(
     </tr>
   </tbody>
 </table>
-
-## 匯出說明
-
-GIF 匯出有以下特性：
-
-- `Animator.save()` 使用 Pillow，**不需要** `ffmpeg`。
-- 匯出前，每一格都會先疊在白色背景上，避免影格殘影堆疊。
-- 每個動畫都可以分別設定 `fps`、`dpi` 與 `loop`。

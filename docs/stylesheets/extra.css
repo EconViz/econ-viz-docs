@@ -185,8 +185,9 @@
 }
 
 /* Documentation examples share the site's grayscale palette, including SVGs
-   and animated GIFs. Keep branding assets outside the figure treatment. */
-.md-typeset img[src*="assets/"]:not([src*="banner"]):not([src*="logo"]):not([src*="favicon"]):not([src*="og-image"]) {
+   and animated GIFs. Keep branding assets outside the figure treatment, and the
+   built-in theme examples, which exist to show their own colours. */
+.md-typeset img[src*="assets/"]:not([src*="banner"]):not([src*="logo"]):not([src*="favicon"]):not([src*="og-image"]):not([src*="agora/themes/"]) {
   filter: grayscale(1);
 }
 
@@ -255,6 +256,11 @@
 /* Smaller step-by-step figures, e.g. one per Canvas method */
 .md-typeset p > img:only-child.ev-figure-sm {
   max-height: 300px;
+}
+
+/* Figures the manual sets wide (the demand diagram, the Edgeworth box) */
+.md-typeset p > img:only-child.ev-figure-lg {
+  max-height: 640px;
 }
 
 /* Changelog: borderless table, version column only as wide as its content */
@@ -465,3 +471,123 @@
   line-clamp: 3;
   overflow: hidden;
 }
+
+/* Code blocks over 15 lines: line numbers, and folding by clicking a number (docs/javascripts/code-fold.js) */
+.md-typeset .highlight code.ev-numbered .ev-line::before {
+  content: attr(data-m) attr(data-n);
+  display: inline-block;
+  box-sizing: content-box;
+  width: calc(var(--ev-digits, 2) * 1ch + 2ch);
+  margin-right: 1.4ch;
+  text-align: right;
+  color: var(--md-default-fg-color--lighter);
+  user-select: none;
+  -webkit-user-select: none;
+}
+.md-typeset .highlight code.ev-numbered .ev-line[data-fold]::before {
+  color: var(--md-default-fg-color--light);
+  cursor: pointer;
+}
+.md-typeset .highlight code.ev-numbered .ev-line[data-fold]:hover::before {
+  color: #405c9a;
+}
+.md-typeset .highlight code.ev-numbered .ev-line[data-folded]::before {
+  color: #405c9a;
+  font-weight: 600;
+}
+.md-typeset .highlight code.ev-numbered .ev-line[data-hidden] {
+  display: none;
+}
+/* copying takes the whole block, folded or not */
+.md-typeset .highlight code.ev-numbered[data-md-copying] .ev-line[data-hidden] {
+  display: inline;
+}
+.md-typeset .highlight code.ev-numbered .ev-dots {
+  display: none;
+}
+.md-typeset .highlight code.ev-numbered .ev-line[data-folded] .ev-dots {
+  display: inline;
+}
+.md-typeset .highlight code.ev-numbered .ev-line[data-folded] .ev-dots::before {
+  content: " ⋯";
+  color: #405c9a;
+}
+.ev-fold-tip {
+  position: fixed;
+  z-index: 10;
+  display: none;
+  max-width: 24rem;
+  padding: .3rem .6rem;
+  border-radius: 4px;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: .72rem;
+  line-height: 1.4;
+  pointer-events: none;
+  transform: translateY(calc(-100% - 6px));
+}
+.ev-fold-tip[data-visible] {
+  display: block;
+}
+.md-typeset .highlight pre > code.ev-numbered {
+  padding-left: .7em;
+}
+
+/* Floating download buttons on a figure: hover one to read what it fetches */
+.md-typeset .ev-downloads {
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  display: flex;
+  gap: .4rem;
+}
+/* A figure with its caption, and the floating button that downloads the script (hover to read the label) */
+.md-typeset figure.ev-fig {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  margin: 1.2rem auto 1.6rem;
+}
+.md-typeset figure.ev-fig > p { margin: 0; }
+.md-typeset figure.ev-fig img { display: block; margin: 0 auto; }
+.md-typeset figure.ev-fig figcaption {
+  margin-top: .5rem;
+  text-align: center;
+  font-style: normal;
+  font-size: .75rem;
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset a.ev-download {
+  display: flex;
+  align-items: center;
+  height: 2rem;
+  padding: 0 .5rem;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 22%);
+  color: #1a1a1a;
+  font-size: .72rem;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: box-shadow .2s, color .2s;
+}
+.md-typeset a.ev-download svg { flex: none; width: 1rem; height: 1rem; }
+.md-typeset a.ev-download span {
+  max-width: 0;
+  margin-left: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-width .3s ease, margin-left .3s ease, opacity .25s ease;
+}
+.md-typeset a.ev-download:hover,
+.md-typeset a.ev-download:focus-visible {
+  color: #405c9a;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 30%);
+}
+.md-typeset a.ev-download:hover span,
+.md-typeset a.ev-download:focus-visible span {
+  max-width: 12em;
+  margin-left: .4rem;
+  opacity: 1;
+}
+.md-typeset a.ev-download-text::before { content: "↓ "; }

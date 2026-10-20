@@ -59,18 +59,34 @@ canvas.add(AxisMarkLayer("x", 6, "b", math=True))
 
 <span id="fig-gutter"></span>
 
-![Marks, notes and an outside brace in the y gutter (guide lines added).](../../assets/mosaickit/agora/annotations/gutter.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![Marks and notes in the y gutter](../../assets/mosaickit/agora/annotations/gutter.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/mosaickit/agora/annotations/annotations.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>Marks and notes in the y gutter</figcaption>
+
+</figure>
 
 <span id="fig-span"></span>
 
-![A span brace between two points, labelled to the left.](../../assets/mosaickit/agora/annotations/span.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![Span brace between two points](../../assets/mosaickit/agora/annotations/span.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/mosaickit/agora/annotations/annotations.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>Span brace between two points</figcaption>
+
+</figure>
 
 ## Gutter columns
 
 Columns run outward from the axis line, starting 5 pt away and separated by
 8 pt: marks, then one column per lane of outside braces, then notes. Each
 column is as wide as its widest item. An empty column takes no space and adds
-no gap ([Marks, notes and an outside brace in the y gutter (guide lines added).](annotations.md#fig-gutter)). The layout must also keep neighbouring texts within a
+no gap ([Marks and notes in the y gutter](annotations.md#fig-gutter)). The layout must also keep neighbouring texts within a
 column from overlapping and decide which braces may share a lane.
 
 ## Spreading text along an axis
@@ -125,9 +141,17 @@ constraints into $y_1 \le \cdots \le y_n$.
 
 <span id="fig-spread"></span>
 
-![Targets (top) and their spread (bottom).](../../assets/mosaickit/agora/geometry/spread.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-In [Targets (top) and their spread (bottom).](annotations.md#fig-spread) the first three items overlap and form one cluster centred at
+![Targets and their spread](../../assets/mosaickit/agora/geometry/spread.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/mosaickit/agora/geometry/geometry.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>Targets and their spread</figcaption>
+
+</figure>
+
+In [Targets and their spread](annotations.md#fig-spread) the first three items overlap and form one cluster centred at
 their mean target. The other two are already clear and do not move.
 
 ## Lanes for braces

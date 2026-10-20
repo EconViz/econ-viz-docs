@@ -16,6 +16,10 @@ $$
 
 曲率 $c = 1$ 为直线（机会成本固定）；$c > 1$ 时曲线向外凸出（机会成本递增）。截距与曲率必须为正且 $c \ge 1$，否则抛出 `PPFError`。
 
+<!-- api: agora.principle_viz.guides_ppf_2 -->
+
+点相对于边界的位置。
+
 ```python
 from principle_viz import ProductionPossibilitiesFrontier
 
@@ -32,9 +36,9 @@ print(ppf.assess(4, 3), ppf.assess(7, 6))
 # PointStatus.INEFFICIENT PointStatus.UNATTAINABLE
 ```
 
-<!-- api: agora.principle_viz.guides_ppf_2 -->
+<!-- api: agora.principle_viz.guides_ppf_3 -->
 
-在曲线上采样，并评估以 `(x, y, label)` 三元组给定的点；`principle_viz.visuals.ppf` 中的 `ppf_canvas()` 画出曲线、为可达成的区域填色并标出各点（参见[有效率、无效率与无法达成的点。](ppf.md#fig-ppf)）。
+在曲线上采样，并评估以 `(x, y, label)` 三元组给定的点；`principle_viz.visuals.ppf` 中的 `ppf_canvas()` 画出曲线、为可达成的区域填色并标出各点（参见[有效率与无效率的点](ppf.md#fig-ppf)）。
 
 ```python
 from principle_viz import analyze_ppf
@@ -47,21 +51,37 @@ ppf_canvas(result).save("ppf_points.png")
 
 <span id="fig-ppf"></span>
 
-![有效率、无效率与无法达成的点。](../../../assets/principle-viz/agora/ppf/points.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-<!-- api: agora.principle_viz.guides_ppf_3 -->
+![有效率与无效率的点](../../../assets/principle-viz/agora/ppf/points.zh-CN.svg){ .ev-figure-sm }
 
-经济成长使各截距乘以一加上对应的成长率；结果包含 `baseline` 与 `shifted` 两条曲线及其采样点。`ppf_growth_canvas()` 画出两条曲线并命名为 $P P F_0$ 与 $P P F_1$（参见[消费财成长 20%、资本财成长 10%。](ppf.md#fig-ppf-growth)）。
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/ppf/ppf.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>有效率与无效率的点</figcaption>
+
+</figure>
+
+<!-- api: agora.principle_viz.guides_ppf_4 -->
+
+经济成长使各截距乘以一加上对应的成长率；结果包含 `baseline` 与 `shifted` 两条曲线及其采样点。`ppf_growth_canvas()` 画出两条曲线并命名为 $P P F_0$ 与 $P P F_1$（参见[消费品与资本品增长](ppf.md#fig-ppf-growth)）。
 
 <span id="fig-ppf-growth"></span>
 
-![消费财成长 20%、资本财成长 10%。](../../../assets/principle-viz/agora/ppf/growth.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![消费品与资本品增长](../../../assets/principle-viz/agora/ppf/growth.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/ppf/ppf.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>消费品与资本品增长</figcaption>
+
+</figure>
 
 ## 比较优势
 
 <span id="sec-comparative-advantage"></span>
 
-<!-- api: agora.principle_viz.guides_ppf_4 -->
+<!-- api: agora.principle_viz.guides_ppf_5 -->
 
 比较两条直线型生产可能性曲线：各生产者生产 $x$ 的机会成本，以及各商品的比较优势归属（成本相同时为 `"tie"`）。曲线型的生产可能性曲线会抛出 `PPFError`。
 

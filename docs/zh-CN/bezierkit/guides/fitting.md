@@ -50,9 +50,17 @@ print(max(s.fit_error for s in path))
 
 <span id="fig-adaptive"></span>
 
-![$4 / x^2$ 的自适应拟合。](../../../assets/bezierkit/agora/fitting/adaptive.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-曲线弯曲剧烈处线段较短，接近直线处线段较长（参见[$4 / x^2$ 的自适应拟合。](fitting.md#fig-adaptive)，相邻线段以不同颜色区分）。Hermite 误差界限可预估二分需要的深度：
+![$4 / x^2$ 的自适应拟合](../../../assets/bezierkit/agora/fitting/adaptive.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/bezierkit/agora/fitting/fitting.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>$4 / x^2$ 的自适应拟合</figcaption>
+
+</figure>
+
+曲线弯曲剧烈处线段较短，接近直线处线段较长（参见[$4 / x^2$ 的自适应拟合](fitting.md#fig-adaptive)，相邻线段以不同颜色区分）。Hermite 误差界限可预估二分需要的深度：
 
 <span id="cor-depth"></span>
 
@@ -90,7 +98,7 @@ print(max(s.fit_error for s in path))
 + 保留两端点；激活 `preserve_corners` 时，另保留方向转折至少 `corner_angle` 弧度的顶点。
 + 在相邻的保留顶点之间套用递归步骤：若离弦最远的顶点距离不超过 `tolerance`，以弦取代整段；否则保留该顶点，两侧递归处理。
 
-每条弦的 `fit_error` 是被它取代的顶点到弦的最大距离（参见[以容许误差 $0.08$ 简化 41 个噪声样本。](fitting.md#fig-polyline)）。
+每条弦的 `fit_error` 是被它取代的顶点到弦的最大距离（参见[简化后的噪声样本](fitting.md#fig-polyline)）。
 
 递归最多有与顶点数相同的层数，每层对每个顶点至多扫描一次，因此最坏情况下与顶点数成平方关系。[Hershberger (1994)](../project/references.md#hershberger1994) 给出此算法的 $O(n \log n)$ 实作。
 
@@ -116,7 +124,15 @@ print(max(s.fit_error for s in path))
 
 <span id="fig-polyline"></span>
 
-![以容许误差 $0.08$ 简化 41 个噪声样本。](../../../assets/bezierkit/agora/fitting/polyline.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![简化后的噪声样本](../../../assets/bezierkit/agora/fitting/polyline.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/bezierkit/agora/fitting/fitting.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>简化后的噪声样本</figcaption>
+
+</figure>
 
 <!-- api: agora.bezierkit.guides_fitting_4 -->
 

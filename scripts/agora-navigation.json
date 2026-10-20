@@ -158,6 +158,83 @@
       "zh-CN": "更新记录"
     }
   },
+  "utility-viz": {
+    "guides/introduction": {
+      "en": "Introduction",
+      "zh-TW": "簡介",
+      "zh-CN": "简介"
+    },
+    "getting-started/installation": {
+      "en": "Installation",
+      "zh-TW": "安裝",
+      "zh-CN": "安装"
+    },
+    "getting-started/quickstart": {
+      "en": "Quick start",
+      "zh-TW": "快速開始",
+      "zh-CN": "快速开始"
+    },
+    "guides/canvas": {
+      "en": "Canvas",
+      "zh-TW": "Canvas 畫布",
+      "zh-CN": "Canvas 画布"
+    },
+    "guides/consumer": {
+      "en": "Figures and demand diagrams",
+      "zh-TW": "多面板圖與需求圖",
+      "zh-CN": "多面板图与需求图"
+    },
+    "models/index": {
+      "en": "Core models",
+      "zh-TW": "核心模型",
+      "zh-CN": "核心模型"
+    },
+    "models/advanced": {
+      "en": "Advanced models",
+      "zh-TW": "進階模型",
+      "zh-CN": "进阶模型"
+    },
+    "tools/analysis": {
+      "en": "Analysis",
+      "zh-TW": "分析",
+      "zh-CN": "分析"
+    },
+    "guides/themes": {
+      "en": "Themes and configuration",
+      "zh-TW": "主題與設定",
+      "zh-CN": "主题与设置"
+    },
+    "guides/export": {
+      "en": "Export",
+      "zh-TW": "匯出",
+      "zh-CN": "导出"
+    },
+    "getting-started/cli": {
+      "en": "Command-line interface",
+      "zh-TW": "命令列工具",
+      "zh-CN": "命令行工具"
+    },
+    "guides/animation": {
+      "en": "Animation",
+      "zh-TW": "動畫",
+      "zh-CN": "动画"
+    },
+    "guides/interactive": {
+      "en": "Interactive widgets",
+      "zh-TW": "互動元件",
+      "zh-CN": "交互组件"
+    },
+    "tools/latex": {
+      "en": "LaTeX parsing",
+      "zh-TW": "LaTeX 解析",
+      "zh-CN": "LaTeX 解析"
+    },
+    "project/changelog": {
+      "en": "Change history",
+      "zh-TW": "更新紀錄",
+      "zh-CN": "更新纪录"
+    }
+  },
   "bezierkit": {
     "guides/introduction": {
       "en": "Introduction",

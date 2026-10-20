@@ -1,233 +1,282 @@
 ---
-seo_title: "Canvas: Textbook-Style Economics Diagrams"
-description: "Canvas is the utility-viz drawing surface for textbook-style microeconomics diagrams: first-quadrant axes, arrow tips, LaTeX labels, budget lines, and equilibria."
+seo_title: "Canvas"
 ---
 
 # Canvas
 
-`Canvas` is the central drawing surface. It manages a single matplotlib figure styled in the convention of microeconomic textbook diagrams: first-quadrant axes, arrow tips, LaTeX-rendered labels, and no numeric tick marks.
+<span id="sec-canvas"></span>
+
+`Canvas` builds on a `matplotlib` `Figure` and `Axes` and provides
+layers for indifference curves, budget lines, equilibria and more.
 
 ## Constructor
 
-<!-- api: canvas.constructor -->
+<!-- api: agora.utility_viz.guides_canvas_1 -->
 
-??? example "View example"
+Create a canvas and set its axis ranges, axis labels, fonts, line styles and
+theme. Visual settings not passed explicitly come from the active `Config`
+and `Theme`.
 
-    ```python
-    from utility_viz import ArrowStyle, Axis, Canvas, Stroke, themes
+<span id="tab-x-label-pos"></span>
 
-    cvs = Canvas(
-        x_max=20,
-        y_max=15,
-        title=r"Cobb-Douglas $x^{0.5} y^{0.5}$",
-        dpi=300,
-        font="DejaVu Sans",
-        math_font="stix",
-        axis_stroke=Stroke(width=1.0, arrow=ArrowStyle.TRIANGLE),
-        # "top", "right", or "bottom"
-        x_axis=Axis(label="x", label_position="right"),
-        # "left", "top", or "right"
-        y_axis=Axis(label="y", label_position="top"),
-        theme=themes.default,
-    )
-    ```
+| Value | Position |
+| --- | --- |
+| `"top"` | Above the arrow |
+| `"right"` | Right of the arrow |
+| `"bottom"` | Below the arrow |
 
+<span id="tab-y-label-pos"></span>
 
+| Value | Position |
+| --- | --- |
+| `"left"` | Left of the arrow |
+| `"top"` | Above the arrow |
+| `"right"` | Right of the arrow |
 
-When the same setting is given twice, the `Axis` field wins. For the axis
-line, the order from highest to lowest is `Axis.stroke`, `x_axis_stroke`,
-`axis_stroke`, `x_line_style` / `x_arrow_style`, and `theme.axis_stroke`.
+## Drawing methods
 
-## Methods
+The `add_*` methods add a layer to the canvas and return the same `Canvas`,
+so calls can be chained ([Method chaining](canvas.md#sec-chaining)).
 
-All drawing methods return `self`, so calls can be chained.
+<!-- api: agora.utility_viz.guides_canvas_2 -->
 
-### Utility curves {#add_utility data-toc-label="Utility curves"}
-
-Draws indifference curves for a utility model. Pass an integer to `levels` for automatically spaced curves, or a list of utility values, such as `levels.around(eq.utility, n=5)`, to place them around the optimum.
-
-<!-- api: canvas.add_utility -->
-
-![Indifference curves drawn with add_utility](../../assets/canvas/add_utility.png){ .ev-figure-sm }
-
-#### Focal and secondary curves
-
-Pass the equilibrium utility to `highlight_level` to emphasize the nearest
-available level without drawing a second contour set yourself. The other
-levels use `theme.secondary_ic_stroke`, or an explicit `secondary_stroke`.
+Draw indifference curves for a utility model.
 
 ```python
-from utility_viz import Canvas, Stroke, levels, solve
-from utility_viz.models import CobbDouglas
-
-model = CobbDouglas(0.5, 0.5)
-eq = solve(model, px=2, py=3, income=30)
 lvls = levels.around(eq.utility, n=5)
-
-(
-    Canvas(x_max=20, y_max=15)
-    .add_utility(
-        model,
-        levels=lvls,
-        highlight_level=eq.utility,
-        secondary_stroke=Stroke(width=1, opacity=0.35),
-        show_ic_labels=True,
-        label_style="ordinal",
-    )
-    .add_budget(2, 3, 30, fill=True)
-    .add_equilibrium(eq)
+cvs.add_utility(
+    model,
+    levels=lvls,
+    highlight_level=eq.utility,
+    show_ic_labels=True,
+    label_style="ordinal",
 )
 ```
 
-`label_style="numeric"` uses the formatted utility values; `"ordinal"`
-produces textbook labels $u_1,u_2,\ldots$. Labels follow the local curve angle
-and are kept away from the visible boundary.
-
-<div class="grid cards" markdown>
-
-- ![Uniform indifference curves before highlighting](../../assets/canvas/ic_hierarchy_before.png)
-  **Before** — every level has the same visual weight.
-- ![Focal equilibrium indifference curve with subdued neighbours](../../assets/canvas/ic_hierarchy_after.png)
-  **After** — the equilibrium level is focal.
-- ![Ordinal indifference-curve labels](../../assets/canvas/ic_hierarchy_ordinal.png)
-  **Ordinal labels** — curves are labelled $u_1,u_2,\ldots$.
-
-</div>
-
-### Budget line {#add_budget data-toc-label="Budget line"}
-
-Draws the budget line $p_x x + p_y y = I$. Set `fill=True` to shade the feasible set below it.
-
-<!-- api: canvas.add_budget -->
-
-![Budget line with the shaded feasible set](../../assets/canvas/add_budget.png){ .ev-figure-sm }
-
-### Equilibrium {#add_equilibrium data-toc-label="Equilibrium"}
-
-Marks the optimal bundle and drops dashed lines to both axes. Pass the result of `solve()` as `eq`; `show_ray=True` also draws the expansion path through the origin.
-
-<!-- api: canvas.add_equilibrium -->
-
-![Equilibrium point with dashed drop lines](../../assets/canvas/add_equilibrium.png){ .ev-figure-sm }
-
-### Ray {#add_ray data-toc-label="Ray"}
-
-Draws a dashed ray from the origin with slope `slope` ($\mathrm{d}y/\mathrm{d}x$), often used for an expansion path or a fixed consumption ratio.
-
-<!-- api: canvas.add_ray -->
-
-![Expansion-path ray through the optimum](../../assets/canvas/add_ray.png){ .ev-figure-sm }
-
-### Point {#add_point data-toc-label="Point"}
-
-Marks any point, such as a bundle to compare with the optimum. `label` is rendered in LaTeX math mode; pass a `Label` to move or restyle it.
-
-<!-- api: canvas.add_point -->
-
-![Labelled point A on the budget line](../../assets/canvas/add_point.png){ .ev-figure-sm }
-
-### Show and save {#show-save data-toc-label="Show and save"}
-
-`show()` opens an interactive window. `save()` infers the format from the file extension: `.png`, `.pdf`, `.svg`, or `.tex` for TikZ. It also releases matplotlib resources, so call it last.
-
-<!-- api: canvas.show -->
-
-<!-- api: canvas.save -->
-
 ```python
-# interactive window
-cvs.show()
-# .png / .pdf / .svg / .tex
-cvs.save("figure.png")
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.models import CobbDouglas
+
+# figure settings
+Config.load("manual.toml").use()
+
+model = CobbDouglas(alpha=0.5, beta=0.5)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
+
+# italic x and y
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+# three curves around the optimum
+cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
+cvs.save("add_utility.png")
 ```
 
-![Complete diagram ready to save](../../assets/canvas/show_save.png){ .ev-figure-sm }
+<span id="fig-add-utility"></span>
+
+<figure class="ev-fig" markdown>
+
+![Three indifference curves](../../assets/utility-viz/agora/canvas/add_utility.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/canvas/add_utility.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>Three indifference curves</figcaption>
+
+</figure>
+
+<!-- api: agora.utility_viz.guides_canvas_3 -->
+
+Draw the budget line $p_x x + p_y y = I$.
+
+```python
+from utility_viz import Canvas, Config
+
+# figure settings
+Config.load("manual.toml").use()
+
+# italic x and y
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+# the line and its feasible set
+cvs.add_budget(2.0, 3.0, 30.0, fill=True)
+cvs.save("add_budget.png")
+```
+
+<figure class="ev-fig" markdown>
+
+![Budget line and shading](../../assets/utility-viz/agora/canvas/add_budget.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/canvas/add_budget.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>Budget line and shading</figcaption>
+
+</figure>
+
+<!-- api: agora.utility_viz.guides_canvas_4 -->
+
+Mark the optimal bundle returned by `solve()`.
+
+```python
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.models import CobbDouglas
+
+# figure settings
+Config.load("manual.toml").use()
+
+model = CobbDouglas(alpha=0.5, beta=0.5)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
+
+# italic x and y
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
+cvs.add_budget(2.0, 3.0, 30.0, fill=True)
+# the optimum and dashed guides
+cvs.add_equilibrium(eq)
+cvs.save("add_equilibrium.png")
+```
+
+<figure class="ev-fig" markdown>
+
+![Equilibrium and drop lines](../../assets/utility-viz/agora/canvas/add_equilibrium.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/canvas/add_equilibrium.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>Equilibrium and drop lines</figcaption>
+
+</figure>
+
+<!-- api: agora.utility_viz.guides_canvas_5 -->
+
+Draw a ray from the origin with slope `slope` ($\mathrm{d} y / \mathrm{d} x$), for an
+expansion path or a fixed consumption ratio.
+
+```python
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.models import CobbDouglas
+
+# figure settings
+Config.load("manual.toml").use()
+
+model = CobbDouglas(alpha=0.5, beta=0.5)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
+
+# italic x and y
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
+cvs.add_budget(2.0, 3.0, 30.0)
+cvs.add_equilibrium(eq)
+# a ray through the optimum
+cvs.add_ray(eq.y / eq.x)
+cvs.save("add_ray.png")
+```
+
+<figure class="ev-fig" markdown>
+
+![Expansion-path ray](../../assets/utility-viz/agora/canvas/add_ray.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/canvas/add_ray.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>Expansion-path ray</figcaption>
+
+</figure>
+
+<!-- api: agora.utility_viz.guides_canvas_6 -->
+
+Mark any point, such as a bundle to compare with the optimum.
+
+```python
+from utility_viz import Canvas, Config, Label, levels, solve
+from utility_viz.models import CobbDouglas
+
+# figure settings
+Config.load("manual.toml").use()
+
+model = CobbDouglas(alpha=0.5, beta=0.5)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
+
+# italic x and y
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+# one indifference curve u = 5
+cvs.add_utility(model, levels=[5.0])
+cvs.add_budget(2.0, 3.0, 30.0)
+# it cuts the budget line twice
+# a Label puts text by the point
+cvs.add_point(
+    3.17, 7.89, label=Label(text="A", position="top-right")
+)
+cvs.add_point(
+    11.83, 2.11, label=Label(text="B", position="top-right")
+)
+cvs.save("add_point.png")
+```
+
+<figure class="ev-fig" markdown>
+
+![Indifference curve cutting the budget line](../../assets/utility-viz/agora/canvas/add_point.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/canvas/add_point.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>Indifference curve cutting the budget line</figcaption>
+
+</figure>
+
+<!-- api: agora.utility_viz.guides_canvas_7 -->
+
+`show()` opens an interactive window. `save()` writes the file in the
+format given by its extension ([Export](export.md#sec-export)) and releases the
+`matplotlib` figure, so call it last.
+
+```python
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.models import CobbDouglas
+
+# figure settings
+Config.load("manual.toml").use()
+
+model = CobbDouglas(alpha=0.5, beta=0.5)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
+
+# italic x and y
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
+cvs.add_budget(2.0, 3.0, 30.0, fill=True)
+# equilibrium with the expansion path
+cvs.add_equilibrium(eq, show_ray=True)
+cvs.save("show_save.png")
+```
+
+<span id="fig-show-save"></span>
+
+<figure class="ev-fig" markdown>
+
+![The complete canvas](../../assets/utility-viz/agora/canvas/show_save.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/canvas/show_save.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>The complete canvas</figcaption>
+
+</figure>
 
 ## Styles
 
-Each kind of element has its own style object. Fields left as `None` keep the
-theme default, so set only what you want to change.
+<span id="sec-styles"></span>
 
-| Object | Styles | Theme defaults |
-|--------|--------|----------------|
-| `Stroke` | Line width, line style, colour, arrowhead | `theme.budget_stroke`, `theme.ic_stroke`, … |
-| `Marker` | Point colour, size, shape | `theme.eq_marker`, `theme.point_marker`, … |
-| `Label` | Text, position, offset, colour, size, visibility | `theme.point_label`, `theme.axis_label`, … |
-| `Legend` | Legend position, size, frame, columns | `theme.legend` |
-| `Fill` | Shading colour and opacity | `theme.budget_fill` |
-| `Axis` | One axis's label, label position, and stroke | none |
-
-Every object also takes an `opacity` from 0 (transparent) to 1 (opaque).
-
-```python
-from utility_viz import Canvas, Fill, Label, Marker, Stroke
-
-(
-    Canvas(x_max=20, y_max=15)
-    .add_utility(
-        model,
-        levels=lvls,
-        ic_label=Label(text="U={:.1f}", position="top"),
-    )
-    .add_budget(
-        2.0,
-        3.0,
-        30.0,
-        stroke=Stroke(color="black"),
-        fill=Fill(color="lightgrey", opacity=0.4),
-    )
-    .add_equilibrium(
-        eq,
-        marker=Marker(color="#C0392B", shape="s"),
-        label=Label(position="bottom-left", offset=8),
-    )
-    .add_point(
-        12.0, 2.0, label=Label(text="A", position="left")
-    )
-    .save("styles.png")
-)
-```
-
-![Custom stroke, fill, markers, and labels](../../assets/canvas/styles.png){ .ev-figure-sm }
-
-`Stroke` is the preferred way to style lines. The separate `color`,
-`linewidth`, and `linestyle` arguments still work as shorthand and draw the
-same thing. A label takes its point's `Marker` colour unless it sets its own;
-label positions are `top`, `bottom`, `left`, `right`, and the four corners
-such as `top-right`, and `Label(visible=False)` hides a label.
-
-### Text and legend
-
-Every piece of text takes a `Label`: axis labels through `Axis(label=...)`,
-the origin through `origin_label`, and the title through `title`. Legends go
-where they cover the least of the diagram, moving outside the plot area when
-every corner is taken; a `Legend` chooses an inside corner (`"upper left"`,
-…) or a side outside (`"top"`, `"bottom"`, `"left"`, `"right"`).
-
-```python
-from utility_viz import Axis, Canvas, Label, Legend
-
-cvs = Canvas(
-    title=Label(text="Cobb-Douglas", fontsize=13),
-    x_axis=Axis(label=Label(text="x_1", fontsize=16)),
-    origin_label=Label(visible=False),
-)
-cvs.show_legend(legend=Legend(position="bottom", fontsize=10))
-```
-
-The line and arrow styles below apply to the axes with the `x_*` and `y_*`
-parameters, and to any other line through `Stroke`.
+`LineStyle` defines line patterns, `ArrowStyle` arrowheads, and `Stroke`
+bundles width, pattern, colour and arrowhead for axes, budget lines, paths
+and drop lines.
 
 ### Line styles
 
-Use `LineStyle.SOLID`, `DASHED`, `DOTTED`, or `DASHDOT` for axis lines.
-The equivalent strings—`solid`, `dashed`, `dotted`, and `dashdot`—are also
-accepted. Use `Stroke(style=...)` to apply the same setting to any other line.
+<!-- api: agora.utility_viz.guides_canvas_8 -->
+
+Solid, dashed, dotted and dash-dot lines ([The four line styles](canvas.md#fig-line-styles)). Axes accept
+the enum or the matching string; other lines use `Stroke(style=...)`.
+`LineStyle` is MosaicKit's `DashStyle` under its old name.
 
 ```python
 import matplotlib.pyplot as plt
 
-from utility_viz import Canvas, LineStyle
+from utility_viz import Canvas, Config, LineStyle
+
+# figure settings
+Config.load("manual.toml").use()
 
 styles = [
     LineStyle.SOLID,
@@ -236,31 +285,50 @@ styles = [
     LineStyle.DASHDOT,
 ]
 
-fig, axes = plt.subplots(2, 2, figsize=(7, 7))
-for ax, style in zip(axes.flat, styles):
+fig, axes = plt.subplots(1, 4, figsize=(7.6, 2.0))
+for ax, style in zip(axes, styles):
     Canvas(
         title=style.value,
+        x_label="$x$",
+        y_label="$y$",
         x_line_style=style,
         y_line_style=style,
         fig=fig,
         ax=ax,
     )
 
-fig.tight_layout()
-fig.savefig("line_styles.png", dpi=160, transparent=True)
+# leave room for axis labels
+fig.subplots_adjust(wspace=0.62)
+fig.savefig("line_styles.png", dpi=160)
 ```
 
-![Available line styles](../../assets/canvas/line_styles.png)
+<span id="fig-line-styles"></span>
+
+<figure class="ev-fig" markdown>
+
+![The four line styles](../../assets/utility-viz/agora/canvas/line_styles.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/canvas/line_styles.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>The four line styles</figcaption>
+
+</figure>
 
 ### Arrow styles
 
-Use `ArrowStyle.SIMPLE`, `TRIANGLE`, `FANCY`, or `WEDGE` for axis arrowheads.
-Use `Stroke(arrow=...)` to add the same arrowhead to another visible line.
+<!-- api: agora.utility_viz.guides_canvas_9 -->
+
+Four arrowhead styles ([The four arrow styles](canvas.md#fig-arrow-styles)). Axes use `x_arrow_style` and
+`y_arrow_style`; other lines use `Stroke(arrow=...)`.
+`ArrowStyle` is MosaicKit's; `SIMPLE` is its `OPEN`, and `"->"` and `"-|>"` are still accepted.
 
 ```python
 import matplotlib.pyplot as plt
 
-from utility_viz import ArrowStyle, Canvas
+from utility_viz import ArrowStyle, Canvas, Config
+
+# figure settings
+Config.load("manual.toml").use()
 
 styles = [
     ArrowStyle.SIMPLE,
@@ -269,27 +337,116 @@ styles = [
     ArrowStyle.WEDGE,
 ]
 
-fig, axes = plt.subplots(2, 2, figsize=(7, 7))
-for ax, style in zip(axes.flat, styles):
+fig, axes = plt.subplots(1, 4, figsize=(7.6, 2.0))
+for ax, style in zip(axes, styles):
     Canvas(
-        title=style.name.title(),
+        title=style.name,
+        x_label="$x$",
+        y_label="$y$",
         x_arrow_style=style,
         y_arrow_style=style,
         fig=fig,
         ax=ax,
     )
 
-fig.tight_layout()
-fig.savefig("arrow_styles.png", dpi=160, transparent=True)
+# leave room for axis labels
+fig.subplots_adjust(wspace=0.62)
+fig.savefig("arrow_styles.png", dpi=160)
 ```
 
-![Available arrow styles](../../assets/canvas/arrow_styles.png)
+<span id="fig-arrow-styles"></span>
 
-`Stroke` is also available for paths, decomposition diagrams,
-`DemandDiagram`, `Figure`, and `EdgeworthBox`. Fields left as `None` inherit
-from the active theme.
+<figure class="ev-fig" markdown>
+
+![The four arrow styles](../../assets/utility-viz/agora/canvas/arrow_styles.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/canvas/arrow_styles.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>The four arrow styles</figcaption>
+
+</figure>
+
+### Stroke
+
+<!-- api: agora.utility_viz.guides_canvas_10 -->
+
+Width, pattern, colour, arrowhead and opacity of one line. Fields left
+unset inherit from the active theme. `opacity` ranges from 0 to 1.
+
+### Axis
+
+<!-- api: agora.utility_viz.guides_canvas_11 -->
+
+Label, label position and line of one axis in one object. `Canvas`,
+`Figure`, `DemandDiagram` and `EdgeworthBox` all accept `x_axis` and
+`y_axis`. When shorthand arguments are passed as well, fields set in the
+`Axis` win.
+
+```python
+from utility_viz import Axis, Canvas, Label, Stroke
+
+cvs = Canvas(
+    x_axis=Axis(
+        label=Label(text="x_1", fontsize=16),
+        label_position="bottom",
+        stroke=Stroke(width=1.2),
+    ),
+    y_axis=Axis(label="x_2"),
+)
+```
+
+### Marker and Label
+
+<!-- api: agora.utility_viz.guides_canvas_12 -->
+
+Colour, size, shape and opacity of a point marker. `shape` takes a
+`matplotlib` marker string such as `"o"`, `"s"`, `"^"`, `"D"` or
+`"*"`.
+
+<!-- api: agora.utility_viz.guides_canvas_13 -->
+
+Text, position, offset, colour, size, visibility and opacity of a label.
+The position is a side or a corner; `Label(visible=False)` hides the text.
+
+```python
+from utility_viz import Label, Marker
+
+cvs.add_equilibrium(
+    eq,
+    marker=Marker(shape="s", size=8),
+    label=Label(position="bottom-left", offset=8),
+)
+cvs.add_point(
+    12,
+    2,
+    marker=Marker(color="black", shape="D"),
+    label=Label(text="A", position="left", fontsize=14),
+)
+```
+
+### Fill
+
+<!-- api: agora.utility_viz.guides_canvas_14 -->
+
+Colour and opacity of a shaded area. `alpha` is a compatible shorthand for
+`opacity`; one call must not pass different values for both.
+
+```python
+from utility_viz import Fill
+
+cvs.add_budget(
+    2,
+    3,
+    30,
+    fill=Fill(color="lightgrey", opacity=0.4),
+)
+```
 
 ## Method chaining
+
+<span id="sec-chaining"></span>
+
+The `add_*` methods can be chained, ending with `save()`:
 
 ```python
 Canvas(x_max=20, y_max=15).add_utility(

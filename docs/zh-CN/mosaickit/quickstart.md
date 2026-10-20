@@ -42,7 +42,15 @@ canvas.save("diagram.pdf")
 
 <span id="fig-quickstart"></span>
 
-![快速入门的图。](../../assets/mosaickit/agora/quickstart/diagram.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![快速入门的图](../../assets/mosaickit/agora/quickstart/diagram.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/mosaickit/agora/quickstart/quickstart.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>快速入门的图</figcaption>
+
+</figure>
 
 `quadrant_axes(10, 10)` 返回一般图层：两条带箭头的路径及其标题。填色图层以 `z_index=-1` 放在最底层。路径是通过各点的折线；`mosaickit` 本身不直接绘制曲线。如果要呈现平滑曲线，必须传入大量采样点，或先用几何软件包构造曲线再采样。文字从该点向右上偏移 6 pt。调用 `save()` 之前不会进行任何绘制；`save()` 会用画布的渲染器（未另行设置时为 Matplotlib）绘制场景、写出文件，并返回输出路径。
 

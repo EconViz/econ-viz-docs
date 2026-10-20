@@ -40,9 +40,17 @@ fig.save("basic_equilibrium.png")
 
 <span id="fig-quickstart"></span>
 
-![本章的市場（省略標題）。](../../assets/principle-viz/agora/quickstart/equilibrium.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-由 $10 - Q = 2 + Q$ 得 $Q^* = 4$、$p^* = 6$。輸出參見[本章的市場（省略標題）。](quickstart.md#fig-quickstart)。
+![本章的市場](../../assets/principle-viz/agora/quickstart/equilibrium.zh-TW.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/quickstart/quickstart.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+
+<figcaption markdown>本章的市場</figcaption>
+
+</figure>
+
+由 $10 - Q = 2 + Q$ 得 $Q^* = 4$、$p^* = 6$。輸出參見[本章的市場](quickstart.md#fig-quickstart)。
 
 ## 逐步說明
 

@@ -1,11 +1,15 @@
 ---
-seo_title: "Parse LaTeX Utility Functions"
-description: "Convert LaTeX math strings such as x^{0.4} y^{0.6} or \\min(2x, 3y) directly into utility-viz utility function models with parse_latex."
+seo_title: "LaTeX parsing"
 ---
 
-# LaTeX Parsing
+# LaTeX parsing
 
-`parse_latex` converts a LaTeX math string directly into a concrete model instance.
+<span id="sec-latex"></span>
+
+<!-- api: agora.utility_viz.tools_latex_1 -->
+
+Parse a LaTeX utility function into a model, usable with `solve()`,
+`Canvas` or any other API that takes a model.
 
 ```python
 from utility_viz import parse_latex
@@ -20,30 +24,103 @@ model = parse_latex(r"2x + 3y")
 
 ## Supported forms
 
+[Utility functions recognised by `parse_latex`.](latex.md#tab-latex) lists the accepted forms. Omitted coefficients and exponents
+default to 1.
+
+<span id="tab-latex"></span>
+
 | Family | Pattern | Example |
-|--------|---------|---------|
+| --- | --- | --- |
 | Cobb-Douglas | `x^{α} y^{β}` or `x^α y^β` | `x^{0.3} y^{0.7}` |
-| Leontief | `\min(ax, by)` or `min(ax, by)` | `\min(2x, y)` |
-| Perfect Substitutes | `ax + by` | `3x + 1.5y` |
+| Perfect complements | `\min(ax, by)` or `min(ax, by)` | `\min(2x, y)` |
+| Perfect substitutes | `ax + by` | `3x + 1.5y` |
+| CES | `(αx^ρ + βy^ρ)^{1/ρ}` | `(0.4x^{-0.5}+0.6y^{-0.5})^{-2}` |
 
-Coefficients and exponents are optional and default to 1.
+A leading `U =` or `u(x, y) =` may be omitted:
 
-## Input forms
-
-Enter the utility expression alone, or prefix it with `U =` or `U(x, y) =`:
-
-```
+```text
 U(x,y) = x^{0.5} y^{0.5}
 U = x^{0.5} y^{0.5}
 x^{0.5} y^{0.5}
 ```
 
-## Errors
+```python
+from utility_viz import (
+    Canvas,
+    Config,
+    levels,
+    parse_latex,
+    solve,
+)
 
-Unrecognised patterns raise `utility_viz.exceptions.ParseError`:
+# figure settings
+Config.load("manual.toml").use()
+
+# Leontief(a=2.0, b=3.0)
+model = parse_latex(r"\min(2x, 3y)")
+eq = solve(model, px=2.0, py=3.0, income=30.0)
+
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+cvs.add_utility(
+    model,
+    levels=levels.around(eq.utility, n=5),
+    show_kinks=True,
+)
+cvs.add_budget(2.0, 3.0, 30.0)
+cvs.add_equilibrium(eq)
+cvs.save("leontief.png")
+```
+
+<figure class="ev-fig" markdown>
+
+![`parse_latex(r"\min(2x, 3y)")`](../../assets/utility-viz/agora/latex/leontief.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/latex/leontief.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>`parse_latex(r"\min(2x, 3y)")`</figcaption>
+
+</figure>
 
 ```python
-from utility_viz.exceptions import ParseError
+from utility_viz import (
+    Canvas,
+    Config,
+    levels,
+    parse_latex,
+    solve,
+)
+
+# figure settings
+Config.load("manual.toml").use()
+
+# PerfectSubstitutes(a=2.0, b=3.0)
+model = parse_latex(r"2x + 3y")
+eq = solve(model, px=2.0, py=3.0, income=30.0)
+
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+cvs.add_utility(model, levels=levels.around(eq.utility, n=5))
+cvs.add_budget(2.0, 3.0, 30.0)
+cvs.add_equilibrium(eq)
+cvs.save("perfect_substitutes.png")
+```
+
+<figure class="ev-fig" markdown>
+
+![`parse_latex(r"2x + 3y")`](../../assets/utility-viz/agora/latex/perfect_substitutes.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/latex/perfect_substitutes.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>`parse_latex(r"2x + 3y")`</figcaption>
+
+</figure>
+
+## Errors
+
+Unparseable input raises `utility_viz.ParseError`, whose message
+lists the supported forms:
+
+```python
+from utility_viz import ParseError, parse_latex
 
 try:
     model = parse_latex(r"x^2 + y^2")
@@ -58,12 +135,11 @@ except ParseError as e:
 #   CES                : (alpha x^{rho} + beta y^{rho})^{1/rho}
 ```
 
-## In the CLI
+## In the command-line tool
+
+`utility-viz plot --latex` uses the same parser and accepts the same input
+([Plotting](../getting-started/cli.md#sec-cli-plot)):
 
 ```bash
 utility-viz plot --latex "x^{0.4} y^{0.6}" --px 2 --py 3 --income 30 -o out.png
 ```
-
-![Parsed Leontief from LaTeX](../../assets/latex/latex_leontief_u.png)
-
-![Parsed Perfect Substitutes from LaTeX](../../assets/latex/latex_perfect_subs_u.png)

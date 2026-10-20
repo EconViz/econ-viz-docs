@@ -9,7 +9,7 @@ seo_title: "Quick start"
 ## A cubic curve
 
 The curve used throughout this manual is the cubic with control points
-$(0, 0)$, $(1, 2)$, $(3, 2)$ and $(4, 0)$ ([The cubic of [Quick start](quickstart.md#sec-quickstart), its control polygon and convex hull.](quickstart.md#fig-quickstart)).
+$(0, 0)$, $(1, 2)$, $(3, 2)$ and $(4, 0)$ ([Cubic with control polygon and hull](quickstart.md#fig-quickstart)).
 
 ```python
 from bezierkit import BezierCurve, PiecewiseBezier, Point
@@ -33,7 +33,15 @@ print(to_tikz(path, precision=2, options="thick"))
 
 <span id="fig-quickstart"></span>
 
-![The cubic of [Quick start](quickstart.md#sec-quickstart), its control polygon and convex hull.](../assets/bezierkit/agora/curves/cubic.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
+
+![Cubic with control polygon and hull](../assets/bezierkit/agora/curves/cubic.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../assets/bezierkit/agora/curves/curves.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>Cubic with control polygon and hull</figcaption>
+
+</figure>
 
 The curve starts at $P_0$ and ends at $P_3$, leaves $P_0$ towards $P_1$ and
 arrives at $P_3$ from $P_2$, and never leaves the shaded hull of its control
@@ -42,15 +50,15 @@ into a LaTeX document.
 
 ## The pieces
 
-- *Values.* `Point`, `Vector` and `PointSet` are immutable and
+- Values: `Point`, `Vector` and `PointSet` are immutable and
   dimension-checked ([Geometry values](guides/geometry.md#sec-geometry)).
-- *Curves.* `BezierCurve` has any degree and dimension;
+- Curves: `BezierCurve` has any degree and dimension;
   `CubicBezierSegment` is the cubic that renderers consume; a
   `PiecewiseBezier` joins cubics into a path ([Bézier curves](guides/curves.md#sec-curves), [Cubic segments and paths](guides/paths.md#sec-paths)).
-- *Constructions.* Endpoint conditions, slopes, derivatives or Hermite data
+- Constructions: endpoint conditions, slopes, derivatives or Hermite data
   become control points ([Constructions and Hermite interpolation](guides/construction.md#sec-construction)).
-- *Approximation.* Smooth functions, sampled points and level sets
+- Approximation: smooth functions, sampled points and level sets
   $F(x, y) = c$ become cubic paths with a stated error ([Fitting](guides/fitting.md#sec-fitting),
   [Level sets](guides/implicit.md#sec-implicit)).
-- *Output.* Samples, JSON, SVG path data and TikZ, and Matplotlib paths
+- Output: samples, JSON, SVG path data and TikZ, and Matplotlib paths
   ([Sampling and export](guides/export.md#sec-export)).

@@ -1,31 +1,31 @@
 ---
-seo_title: "Animate Economics Diagrams as GIFs"
-description: "Export animated GIFs of indifference curves and budget constraints as prices, income, or utility parameters change, using the utility-viz Animator."
+seo_title: "Animation"
 ---
 
 # Animation
 
-`utility-viz` includes a lightweight GIF workflow built around `Animator`. The API stays close to normal plotting: you write a frame factory that returns a fresh `Canvas` or `Figure`, then sweep a numeric frame sequence and save the result as a GIF.
+<span id="sec-animation"></span>
 
-## Install
+`Animator` calls a drawing function over a sequence of parameter values and
+exports the returned `Canvas` or `Figure` objects as a GIF. It needs the
+`animation` extra ([Optional dependencies](../getting-started/installation.md#sec-extras)). Import it from
+`utility_viz.core.animation`; it was `econ_viz.animation` in 1.x.
 
-```bash
-uv add "utility-viz[animation]"
-```
+<!-- api: agora.utility_viz.guides_animation_1 -->
 
-If you also want notebook widgets, install:
+Call `draw(value)` for every value in `frames` and write the canvases as
+the frames of a GIF.
 
-```bash
-uv add "utility-viz[all]"
-```
-
-## Minimal example
+- `save()` uses `Pillow`, so no `ffmpeg` dependency is required.
+- Frames are composited onto white before export, which prevents
+  frame-stacking artefacts.
+- `fps`, `dpi` and `loop` set the frame rate, resolution and loop count.
 
 ```python
 import numpy as np
 
 from utility_viz import Canvas, levels, solve
-from utility_viz.animation import Animator
+from utility_viz.core.animation import Animator
 from utility_viz.models import CobbDouglas
 
 
@@ -55,18 +55,180 @@ Animator(draw, frames=np.linspace(1.0, 6.0, 45)).save(
 )
 ```
 
-## Teaching sweeps
+`examples/scripts/animation.py` provides four examples (Each example covers Cobb-Douglas, CES, perfect substitutes and perfect complements.):
 
-The local example script at `examples/animation.py` now generates three separate sweep families:
+- Parameter sweep: prices and income fixed, a utility-function parameter
+  varies.
+- Price sweep: utility function and $p_y$ fixed, $p_x$ varies and the
+  budget line rotates, as in the example above.
+- Income sweep: utility function and prices fixed, income varies and the
+  budget line shifts.
+- Budget-only sweep: the budget line alone, without the utility layers.
 
-- Parameter sweeps: move one utility-function parameter while holding prices and income fixed.
-- Price sweeps: hold the utility function fixed and sweep $p_x$ while holding $p_y$ fixed.
-- Income sweeps: hold the utility function and prices fixed and move only income.
-- Budget-only sweeps: remove the utility layer entirely so students can isolate budget-line motion.
+The four differ only in which values `draw()` holds fixed and which one it
+varies. For the parameter sweep, let the `draw()` above take `alpha` and fix
+the price at $p_x = 2$:
 
-The docs site embeds the same GIF assets directly, so what you see here matches the locally generated examples.
+```python
+def draw(alpha: float) -> Canvas:
+    model = CobbDouglas(alpha=alpha, beta=1.0 - alpha)
+    eq = solve(model, px=2.0, py=2.0, income=20.0)
+    ...
 
-## Parameter sweeps
+
+Animator(draw, frames=np.linspace(0.1, 0.9, 45)).save(
+    "parameter_sweep.gif"
+)
+```
+
+For the income sweep, `draw()` takes `income` and passes it to
+`add_budget()` and `solve()`. For the budget line alone, leave out
+`add_utility()` and `add_equilibrium()`.
+
+[Parameter sweep $\alpha$ varies with $\beta = 1 - \alpha$](animation.md#fig-sweep-param) to [Income sweep](animation.md#fig-sweep-income) each show four frames.
+
+```python
+import numpy as np
+
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.core.animation import Animator
+from utility_viz.models import CobbDouglas
+
+# figure settings
+Config.load("manual.toml").use()
+
+
+def draw(alpha: float) -> Canvas:
+    """One frame: the weight on x is alpha, the weight on y is 1 - alpha."""
+    model = CobbDouglas(alpha=alpha, beta=1.0 - alpha)
+    eq = solve(model, px=2.0, py=2.0, income=20.0)
+    cvs = Canvas(
+        x_max=14, y_max=12, x_label="$x_1$", y_label="$x_2$"
+    )
+    cvs.add_utility(
+        model, levels=levels.around(eq.utility, n=5)
+    )
+    cvs.add_budget(2.0, 2.0, 20.0, fill=True)
+    cvs.add_equilibrium(eq, show_ray=True)
+    return cvs
+
+
+Animator(draw, frames=np.linspace(0.1, 0.9, 45)).save(
+    "parameter_sweep.gif", fps=12, dpi=120
+)
+```
+
+<span id="fig-sweep-param"></span>
+
+<figure class="ev-fig" markdown>
+
+![Parameter sweep $\alpha$ varies with $\beta = 1 - \alpha$](../../assets/utility-viz/agora/animation/parameter_sweep.svg){ .ev-figure-lg }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/animation/parameter_sweep.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>Parameter sweep $\alpha$ varies with $\beta = 1 - \alpha$</figcaption>
+
+</figure>
+
+Each figure below shows four frames of its GIF, which has 45.
+
+```python
+import numpy as np
+
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.core.animation import Animator
+from utility_viz.models import CobbDouglas
+
+# figure settings
+Config.load("manual.toml").use()
+
+model = CobbDouglas(alpha=0.5, beta=0.5)
+# same curves in every frame
+fixed = levels.around(
+    solve(model, px=2.0, py=2.0, income=20.0).utility, n=5
+)
+
+
+def draw(px: float) -> Canvas:
+    """One frame: the price of x is px."""
+    eq = solve(model, px=px, py=2.0, income=20.0)
+    cvs = Canvas(
+        x_max=14, y_max=12, x_label="$x_1$", y_label="$x_2$"
+    )
+    cvs.add_utility(model, levels=fixed)
+    cvs.add_budget(px, 2.0, 20.0, fill=True)
+    cvs.add_equilibrium(eq, show_ray=True)
+    return cvs
+
+
+Animator(draw, frames=np.linspace(1.0, 6.0, 45)).save(
+    "price_sweep.gif", fps=12, dpi=120
+)
+```
+
+<span id="fig-sweep-price"></span>
+
+<figure class="ev-fig" markdown>
+
+![Price sweep](../../assets/utility-viz/agora/animation/price_sweep.svg){ .ev-figure-lg }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/animation/price_sweep.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>Price sweep</figcaption>
+
+</figure>
+
+```python
+import numpy as np
+
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.core.animation import Animator
+from utility_viz.models import CobbDouglas
+
+# figure settings
+Config.load("manual.toml").use()
+
+model = CobbDouglas(alpha=0.5, beta=0.5)
+# same curves in every frame
+fixed = levels.around(
+    solve(model, px=2.0, py=2.0, income=20.0).utility, n=5
+)
+
+
+def draw(income: float) -> Canvas:
+    """One frame: income is `income`."""
+    eq = solve(model, px=2.0, py=2.0, income=income)
+    cvs = Canvas(
+        x_max=14, y_max=12, x_label="$x_1$", y_label="$x_2$"
+    )
+    cvs.add_utility(model, levels=fixed)
+    cvs.add_budget(2.0, 2.0, income, fill=True)
+    cvs.add_equilibrium(eq, show_ray=True)
+    return cvs
+
+
+Animator(draw, frames=np.linspace(8.0, 36.0, 45)).save(
+    "income_sweep.gif", fps=12, dpi=120
+)
+```
+
+<span id="fig-sweep-income"></span>
+
+<figure class="ev-fig" markdown>
+
+![Income sweep](../../assets/utility-viz/agora/animation/income_sweep.svg){ .ev-figure-lg }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/animation/income_sweep.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>Income sweep</figcaption>
+
+</figure>
+
+## Sweep gallery
+
+The GIFs below are drawn by `scripts/animation_figures.py` in the docs repository, with the settings of `manual.toml`. They cover the same four sweeps: parameter, price, income and budget-only.
+
+### Parameter sweeps
 
 Vary utility-function parameters to see how the shape of the preference map changes.
 
@@ -107,7 +269,7 @@ Vary utility-function parameters to see how the shape of the preference map chan
   </tbody>
 </table>
 
-## Price sweeps
+### Price sweeps
 
 Hold the utility function and background indifference-curve levels fixed, then vary one good's price to trace equilibrium as the budget line rotates.
 
@@ -158,7 +320,7 @@ Hold the utility function and background indifference-curve levels fixed, then v
   </tbody>
 </table>
 
-## Income sweeps
+### Income sweeps
 
 Hold the utility function and prices fixed, then vary income to trace equilibrium as the budget line shifts in parallel.
 
@@ -208,11 +370,3 @@ Hold the utility function and prices fixed, then vary income to trace equilibriu
     </tr>
   </tbody>
 </table>
-
-## Export notes
-
-GIF export follows these rules:
-
-- `Animator.save()` uses Pillow, so no `ffmpeg` dependency is required.
-- GIF frames are composited onto white before export to prevent frame stacking artifacts.
-- `fps`, `dpi`, and `loop` are configurable per animation.

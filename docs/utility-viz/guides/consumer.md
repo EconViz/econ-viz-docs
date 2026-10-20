@@ -1,125 +1,148 @@
 ---
-seo_title: "Multi-Panel Figures and Demand Diagrams"
-description: "Build multi-panel figures, demand diagrams, price-effect decompositions, and Edgeworth boxes with utility-viz."
+seo_title: "Figures and demand diagrams"
 ---
 
-# Figures & Demand Diagrams
+# Figures and demand diagrams
 
-`utility-viz` now includes higher-level teaching primitives on top of `Canvas`:
+<span id="sec-figures"></span>
 
-| Tool | Use it for |
-|------|------|
-| `Figure` | Multi-panel layouts |
-| `PricePath`, `IncomePath` | Budget / equilibrium sweeps |
-| `DemandDiagram` | Linked goods-space and Marshallian-demand views |
-| `decompose_price_effect(...)` | Hicks and Slutsky decomposition |
-| `EdgeworthBox` | Two-consumer exchange diagrams |
+On top of `Canvas`, `utility-viz` builds these larger diagrams:
 
-## Multi-panel figures {#multi-panel-figure data-toc-label="Multi-panel figures"}
+- `Figure` for multi-panel layouts;
+- `PricePath` and `IncomePath` for budget and equilibrium sweeps;
+- `DemandDiagram` for linked goods-space and Marshallian-demand views;
+- `decompose_price_effect` for the Hicks and Slutsky decompositions;
+- `EdgeworthBox` for two-consumer exchange diagrams.
 
-Use `Figure` when one panel is not enough: before/after comparisons, decomposition diagrams, or classroom slides.
+## Multi-panel figures
+
+<!-- api: agora.utility_viz.guides_consumer_1 -->
+
+Compose several canvases into one figure, for before-and-after
+comparisons, decompositions or classroom slides. It takes the same
+styling arguments as `Canvas`. `fig[idx]` returns the panel `Canvas`, so
+the drawing API is unchanged once the layout exists.
 
 ```python
-from utility_viz import Figure, Layout, levels, solve
+from utility_viz import Config, Figure, Layout, levels, solve
 from utility_viz.models import CobbDouglas
+
+# figure settings
+Config.load("manual.toml").use()
 
 fig = Figure(
     Layout.SIDE_BY_SIDE,
     x_max=20,
     y_max=15,
-    x_label="x",
-    y_label="y",
-    title="Before / After Price Change",
-    shared_y=True,
+    x_label="$x$",
+    y_label="$y$",
 )
 
+# before and after x doubles
 cases = [
-    (
-        CobbDouglas(alpha=0.5, beta=0.5),
-        2.0,
-        3.0,
-        30.0,
-        r"Before: $p_x=2$",
-    ),
-    (
-        CobbDouglas(alpha=0.3, beta=0.7),
-        4.0,
-        3.0,
-        30.0,
-        r"After: $p_x=4$",
-    ),
+    (CobbDouglas(alpha=0.5, beta=0.5), 2.0, 3.0, 30.0),
+    (CobbDouglas(alpha=0.3, beta=0.7), 4.0, 3.0, 30.0),
 ]
-
-for idx, (model, px, py, income, title) in enumerate(cases):
+for idx, (model, px, py, income) in enumerate(cases):
     eq = solve(model, px=px, py=py, income=income)
+    # each panel is a Canvas
     panel = fig[idx]
-    panel.ax.set_title(title)
     panel.add_utility(
-        model, levels=levels.around(eq.utility, n=5), label="IC"
+        model, levels=levels.around(eq.utility, n=5)
     )
-    panel.add_budget(px, py, income, fill=True, label="BC")
+    panel.add_budget(px, py, income, fill=True)
     panel.add_equilibrium(eq, show_ray=True)
-
-fig[0].show_legend(loc="upper right")
-fig.save("figure_side_by_side.png")
+fig.save("side_by_side.png")
 ```
 
-![Multi-panel side-by-side comparison](../../assets/consumer/figure_side_by_side.png)
+<figure class="ev-fig" markdown>
 
-### Available layouts
+![Price change before and after](../../assets/utility-viz/agora/consumer/side_by_side.svg){ .ev-figure-lg }
 
-`Figure` supports these layouts:
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/consumer/side_by_side.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-| Layout | Panels | Arrangement |
-|--------|--------|--------|
-| `Layout.SINGLE` | 1 | One full-size panel |
-| `Layout.STACKED` | 2 | Two panels, one above the other |
-| `Layout.SIDE_BY_SIDE` | 2 | Two panels, left and right |
-| `Layout.TOP_TWO_BOTTOM_ONE` | 3 | Two panels on top, one below |
-| `Layout.TOP_ONE_BOTTOM_TWO` | 3 | One panel on top, two below |
-| `Layout.GRID_2X2` | 4 | 2 × 2 grid |
-| `Layout.GRID_3X3` | 9 | 3 × 3 grid |
+<figcaption markdown>Price change before and after</figcaption>
 
-`Figure[idx]` returns a panel `Canvas`, so the drawing API is the same once the layout exists.
+</figure>
 
-## Path helpers
+<!-- api: agora.utility_viz.guides_consumer_2 -->
 
-Path objects sweep one budget parameter while repeatedly solving the consumer problem.
+The available layouts:
+`SINGLE`, `STACKED`, `SIDE_BY_SIDE`, `TOP_TWO_BOTTOM_ONE`,
+`TOP_ONE_BOTTOM_TWO`, `GRID_2X2` and `GRID_3X3`.
+
+## Paths
+
+<!-- api: agora.utility_viz.guides_consumer_3 -->
+
+Sweep one budget parameter while repeatedly solving the consumer's
+problem. Use a path to draw price- and income-consumption curves with
+`Canvas.add_path`, to feed a `DemandDiagram`, or to inspect how bundles
+move as prices or income vary.
+
+<!-- api: agora.utility_viz.guides_consumer_4 -->
+
+Draw a path directly on a canvas when a full demand diagram is not
+needed. For Cobb-Douglas preferences the price-consumption curve is
+horizontal ([The price-consumption curve as $p_x$ varies](consumer.md#fig-price-path)): spending on $y$ does not depend on $p_x$.
 
 ```python
-from utility_viz import IncomePath, LinearBudget, PricePath
+from utility_viz import (
+    Canvas,
+    Config,
+    LinearBudget,
+    PricePath,
+    levels,
+)
 from utility_viz.models import CobbDouglas
+
+# figure settings
+Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 budget = LinearBudget(px=2.0, py=2.0, income=40.0)
-
-price_path = PricePath(
+path = PricePath(
     model,
     budget=budget,
     price="px",
     price_range=(0.8, 6.0),
     n=40,
 )
-income_path = IncomePath(
-    model,
-    budget=budget,
-    income_range=(20.0, 80.0),
-    n=30,
-)
+
+# curves around the middle optimum
+eq = path.equilibria[len(path.equilibria) // 2]
+
+cvs = Canvas(x_max=25, y_max=20, x_label="$x$", y_label="$y$")
+cvs.add_utility(model, levels=levels.around(eq.utility, n=5))
+# the price-consumption curve
+cvs.add_path(path)
+cvs.save("price_path.png")
 ```
 
-Use these paths to:
+<span id="fig-price-path"></span>
 
-- draw PCC / ICC style equilibrium traces with `Canvas.add_path(...)`
-- feed a `DemandDiagram`
-- inspect how bundles move as prices or income vary
+<figure class="ev-fig" markdown>
 
-## Demand diagrams {#demanddiagram data-toc-label="Demand diagrams"}
+![The price-consumption curve as $p_x$ varies](../../assets/utility-viz/agora/consumer/price_path.svg){ .ev-figure-sm }
 
-`DemandDiagram` builds a stacked two-panel figure:
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/consumer/price_path.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-- top panel: indifference curves, budget lines, equilibrium markers
-- bottom panel: the corresponding Marshallian demand curve
+<figcaption markdown>The price-consumption curve as $p_x$ varies</figcaption>
+
+</figure>
+
+## Demand diagrams
+
+<!-- api: agora.utility_viz.guides_consumer_5 -->
+
+A stacked two-panel figure: indifference curves, budget lines and
+equilibria in the top panel, the corresponding Marshallian demand curve
+in the bottom one ([Demand curve at the optima](consumer.md#fig-demand)).
+
+- `DemandDiagram` expects a `PricePath`.
+- Smooth, kinked and corner demand are handled differently, so that the
+  bottom panel stays economically meaningful.
+- `show_pcc=True` overlays the price-consumption curve in goods space.
 
 ```python
 from utility_viz import DemandDiagram, LinearBudget, PricePath
@@ -144,26 +167,62 @@ fig.add_marshallian_panel(
 fig.save("demand_cobb_douglas.png")
 ```
 
-![Linked Marshallian demand diagram](../../assets/consumer/demand_cobb_douglas.png)
+The figure below is drawn from MosaicKit layers, so each label can be placed by hand.
 
-### Notes
+<span id="fig-demand"></span>
 
-Keep these constraints in mind when building demand diagrams:
+<figure class="ev-fig" markdown>
 
-- `DemandDiagram` currently expects a `PricePath`
-- it handles smooth, kinked, and corner-demand cases differently so the bottom panel stays economically meaningful
-- `show_pcc=True` overlays the price-consumption curve in the goods-space panel
+![Demand curve at the optima](../../assets/utility-viz/agora/consumer/demand.svg){ .ev-figure-lg }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/consumer/demand.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+
+<figcaption markdown>Demand curve at the optima</figcaption>
+
+</figure>
 
 ## Price-effect decomposition
 
-`decompose_price_effect(...)` separates a price change into substitution and
-income effects. Choose `HICKS` to hold the original utility fixed or `SLUTSKY`
-to keep the original bundle affordable.
+<!-- api: agora.utility_viz.guides_consumer_6 -->
+
+Separate a price change into substitution and income effects. Choose
+`DecompositionMethod.HICKS` to hold the original utility fixed
+[Hicks (1939)](../project/references.md#hicks1939), or `SLUTSKY` [Slutsky (1915)](../project/references.md#slutsky1915) to keep the original bundle affordable. The result has these
+fields:
+
+<!-- api: agora.utility_viz.guides_consumer_7 -->
+
+How the compensated bundle B is chosen.
+
+<!-- api: agora.utility_viz.guides_consumer_8 -->
+
+Draw the three bundles A, B and C, the budget lines, the indifference
+curves and the effect arrows. A Hicks decomposition draws the curves
+through A and C; a Slutsky decomposition also draws the one through B.
+
+<!-- api: agora.utility_viz.guides_consumer_9 -->
+
+Colour, height of the arrow below the horizontal axis, label and opacity
+of the substitution or income effect. The line itself can still be
+overridden with `substitution_stroke` or `income_stroke`.
+
+<!-- api: agora.utility_viz.guides_consumer_10 -->
+
+`"auto"` picks the inner corner that hides the least of the plot; when
+all four corners overlap it, the legend moves to the right. Inner corners
+such as `"upper left"` and outer positions `"top"`, `"bottom"`, `"left"`
+and `"right"` can also be given. `Legend(visible=False)` hides the legend.
 
 ```python
-from utility_viz import Canvas, DecompositionMethod, levels
+from utility_viz import (
+    Canvas,
+    DecompositionMethod,
+    Effect,
+    Label,
+    Legend,
+    decompose_price_effect,
+)
 from utility_viz.models import CobbDouglas
-from utility_viz.optimizer import decompose_price_effect
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 result = decompose_price_effect(
@@ -181,61 +240,39 @@ result = decompose_price_effect(
         show_arrows=True,
         label_effects=True,
         show_x_projections=True,
+        substitution=Effect(label="SE"),
+        income=Effect(label="IE", opacity=0.8),
+        curve_label=Label(position="right"),
+        legend=Legend(position="bottom"),
     )
     .save("hicks.png")
 )
 ```
 
-`add_decomposition` draws the indifference curves through A and C by
-default, plus the one through B under Slutsky, where B is off the original
-curve. Pass `show_curves=False` when you draw them yourself with
-`add_utility`.
+The figure below is also drawn from MosaicKit layers; the two effects are named under the axis.
 
-`result.A`, `result.B`, and `result.C` are the original, compensated, and
-final bundles. The result also exposes `substitution_effect`, `income_effect`,
-`total_effect`, and `compensated_income`.
+<figure class="ev-fig" markdown>
 
-Use `Effect` to set each effect's colour, the height of its range arrow below
-the axis, and a label beside it. `point_label` moves or hides the A, B, and C
-labels:
+![Hicks decomposition](../../assets/utility-viz/agora/consumer/hicks.svg){ .ev-figure-lg }
 
-```python
-from utility_viz import Effect, Label
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/consumer/hicks.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-canvas.add_decomposition(
-    result,
-    substitution=Effect(
-        color="#E67E22", label="SE", label_position="top"
-    ),
-    income=Effect(color="#27AE60", label="IE"),
-    point_label=Label(visible=False),
-)
-```
+<figcaption markdown>Hicks decomposition</figcaption>
 
-`curve_stroke` and `curve_label` restyle and label those curves, and `legend`
-places the legend:
-
-```python
-from utility_viz import Label, Legend, Stroke
-
-canvas.add_decomposition(
-    result,
-    # restyle U0, U1 (and U_B)
-    curve_stroke=Stroke(opacity=0.6),
-    # turn on the U0, U1 labels
-    curve_label=Label(position="top"),
-    # or Legend(visible=False)
-    legend=Legend(position="bottom"),
-)
-```
-
-![Hicks price-effect decomposition](../../assets/consumer/cobb_douglas_hicks.png)
+</figure>
 
 ## Edgeworth box
 
-`EdgeworthBox` draws a two-consumer exchange economy. Consumer A is measured
-from the lower-left origin, while consumer B is measured from the upper-right
-origin.
+<!-- api: agora.utility_viz.guides_consumer_11 -->
+
+A two-consumer exchange economy [Edgeworth (1881)](../project/references.md#edgeworth1881). Consumer $A$ is measured from the
+lower-left origin and consumer $B$ from the upper-right origin. Layers
+are added with `add_endowment`, `add_contract_curve`, `add_core`,
+`add_price_line` and `add_walrasian_equilibrium`.
+
+Use `method="mrs"` for the contract curve of smooth preferences, and
+`method="pareto"` for models with kinks, corners or custom piecewise
+utility functions.
 
 ```python
 from utility_viz import EdgeworthBox
@@ -260,22 +297,14 @@ box = EdgeworthBox(
 )
 ```
 
-Use `method="mrs"` for smooth preferences. Use `method="pareto"` for models
-with kinks, corners, or custom piecewise utility functions.
+The figure below is drawn from MosaicKit layers after a textbook figure, with both consumers' indifference curves.
 
-![Asymmetric Cobb-Douglas Edgeworth box](../../assets/consumer/edgeworth_cobb_asymmetric.png)
+<figure class="ev-fig" markdown>
 
-## Draw paths {#canvasadd_path data-toc-label="Draw paths"}
+![Edgeworth box indifference curves](../../assets/utility-viz/agora/consumer/edgeworth.svg){ .ev-figure-lg }
 
-When you do not need a full demand diagram, you can still render a path directly on a `Canvas`.
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/consumer/edgeworth.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-```python
-from utility_viz import Canvas, levels
+<figcaption markdown>Edgeworth box indifference curves</figcaption>
 
-eq = price_path.equilibria[len(price_path.equilibria) // 2]
-lvls = levels.around(eq.utility, n=5)
-
-Canvas(x_max=25, y_max=20).add_utility(
-    model, levels=lvls
-).add_path(price_path, label="PCC").save("price_path.png")
-```
+</figure>

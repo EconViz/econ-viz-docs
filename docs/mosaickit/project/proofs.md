@@ -39,9 +39,9 @@ vectors $u, v$, define $u \times v = u_x v_y - u_y v_x$.
     alone has $Y = z_k$. Clusters $A$ and $B$ (with $B$ after $A$) are left
     apart when $S_A + \text{length}(A) + g \le S_B$; since
     $\text{length}(A) + g = O_{i_B} - O_{i_A}$, this says $Y_A \le Y_B$. The code is
-    therefore the pool-adjacent-violators algorithm (PAVA): append $z_k$ as a
-    block, and while the last two blocks have decreasing means, replace them
-    by their union with its mean.
+    therefore the pool-adjacent-violators algorithm: append $z_k$ as a block,
+    and while the last two blocks have decreasing means, replace them by
+    their union with its mean.
 
     _Invariants._ (a) Consecutive blocks have non-decreasing means: merging
     stops exactly when the last pair is in order, and earlier pairs are not
@@ -84,7 +84,7 @@ vectors $u, v$, define $u \times v = u_x v_y - u_y v_x$.
     the notation of that proof,
 
     $$
-    \sum_{k \in B} (x_k - c_k) = \sum_{k \in B} (y_k - z_k) = |B| Y_B - \sum_{k \in B} z_k = 0
+    \sum_{k \in B} (x_k - c_k) = \sum_{k \in B} (y_k - z_k) = |B| Y_B - \sum_{k \in B} z_k = 0.
     $$
 
 ??? note "Proof"
@@ -275,7 +275,7 @@ vectors $u, v$, define $u \times v = u_x v_y - u_y v_x$.
     $z \notin \text{int} P$ and $z \in \partial P$. Then
 
     $$
-    |f(p) - f(q)| = d(p, \partial P) + d(q, \partial P) \le |p - z| + |z - q| = |p - q|
+    |f(p) - f(q)| = d(p, \partial P) + d(q, \partial P) \le |p - z| + |z - q| = |p - q|.
     $$
 
 ??? note "Proof"
@@ -365,12 +365,16 @@ vectors $u, v$, define $u \times v = u_x v_y - u_y v_x$.
 
     [Choice of a callout](../guides/labels.md#prop-callout)
 
-    After any enumeration prefix, the retained candidate is the first one with
-    the least lexicographic key seen. If the near ring's least charge is $0$,
-    its least key is $(0, \ell_{\min})$, so stopping returns its first zero-charge,
-    shortest-leader candidate. Otherwise the same invariant over the far ring
-    yields the first global minimum. The key depends only on the stated inputs,
-    and enumeration order is fixed, so the result is deterministic.
+    The code keeps one best candidate and replaces it only by a candidate
+    with a strictly smaller key, so after any prefix of the enumeration it
+    holds the first candidate with the smallest key seen. After the near ring,
+    if the smallest charge is $0$, the smallest key is $(0, \ell_{\min})$ and the
+    search stops: the result is the first zero-charge candidate with the
+    shortest leader. Otherwise the far ring is enumerated with the same best
+    candidate, and the result is the first candidate with the smallest key
+    over both rings. Every step is a function of the arguments (the pole, the
+    exit distances, the open area, the crossings), with no randomness and a
+    fixed enumeration order.
 
 ## Styles, themes and binding
 
@@ -378,84 +382,88 @@ vectors $u, v$, define $u \times v = u_x v_y - u_y v_x$.
 
     [Merging is a monoid](../guides/styles.md#prop-monoid)
 
-    Per field, $x \circ y$ selects the first non-`None` value of $x,y$.
-    Thus either association selects the first such value among $x,y,z$;
-    `None` is a two-sided identity and $x \circ x=x$. This proves
-    (i)–(iii) fieldwise, and induction gives the general rule. Bundles follow
-    slot by slot, with a `None` slot as the empty style.
+    Per field the merge is the operation $x \circ y = x$ if
+    $x \ne \text{None}$ and $y$ otherwise. Both $(x \circ y) \circ z$
+    and $x \circ (y \circ z)$ equal the first of $x, y, z$ that is
+    not `None` (or `None`), `None` is a two-sided identity, and
+    $x \circ x = x$. Styles are equal when their fields are, which gives
+    (i)–(iii), and induction gives the first-non-`None` description. For
+    bundles the same holds slot by slot, a `None` slot behaving as the empty
+    style.
 
 ??? note "Proof"
 
     [Hex round trip](../guides/styles.md#prop-hex)
 
-    A hex pair $k \in \lbrace 0, \ldots, 255\rbrace$ is read as $k / 255$ and written as
-    $\text{round}(255 \cdot k / 255)$. Since double-precision error is at most
-    $255 \cdot 2^{-52} < 1 / 2$, rounding recovers $k$. Alpha is handled
-    likewise when included; three-digit input first doubles each digit.
+    A pair of hex digits $k \in \lbrace 0, \ldots, 255\rbrace$ is read as $k / 255$ and
+    written as the two upper-case digits of $\text{round}(255 \cdot k / 255)$.
+    In double precision the computed product differs from $k$ by at most
+    $255 \cdot 2^{-52} < 1 / 2$, so it rounds to $k$. The alpha pair is
+    written exactly when `include_alpha` is true, that is for the nine-character
+    form. A three-digit form doubles each digit before reading.
 
 ??? note "Proof"
 
     [Resolution order](../guides/themes.md#thm-resolution)
 
-    Write $\triangleright$ for merge. Starting from $D$, resolution processes
-    $T,G,C$, merging each $M[k_n],\ldots,M[k_1]$ least-specific first; a missing
-    key is the empty bundle. It merges last the layer bundle $E$ from
-    `style_slots`. By associativity ([Merging is a monoid](../guides/styles.md#prop-monoid)), the result is
+    Write $\triangleright$ for the merge. Resolution starts from $D$ and, for the
+    mappings $T$, $G$, $C$ in that order, merges $M[k_n], \ldots, M[k_1]$ over
+    the result in that order (least specific first), a missing key giving the
+    empty bundle; the layer's explicit bundle $E$, built from the fields named
+    in `style_slots`, is merged last. Unwinding, and using associativity
+    ([Merging is a monoid](../guides/styles.md#prop-monoid)) to drop the brackets, the resolved bundle is
 
     $$
     E \triangleright C[k_1] \triangleright \cdots \triangleright C[k_n] \triangleright G[k_1] \triangleright \cdots \triangleright T[k_n] \triangleright D,
     $$
 
-    so each field is the first non-`None` value in this order. Palette binding
-    replaces color names and leaves all other fields unchanged.
+    whose fields are the first non-`None` values in that order. Binding the
+    palette afterwards replaces color names by colors and leaves the other
+    fields alone.
 
 ??? note "Proof"
 
     [Overrides beat specificity](../guides/themes.md#cor-override)
 
-    For role `axes.note`, the chain is (`axes.note`, `axes`, `text`), so
-    $G[\text{text}]$ precedes $T[\text{axes.note}]$ in [Resolution order](../guides/themes.md#thm-resolution). Since no earlier
-    entry sets size, its first non-`None` value is $G[\text{text}]$.
+    A text layer with role `axes.note` has the chain (`axes.note`, `axes`,
+    `text`), and in the sequence of [Resolution order](../guides/themes.md#thm-resolution) the entry $G[\text{text}]$
+    comes before $T[\text{axes.note}]$. By hypothesis no earlier entry sets the
+    size, so the first non-`None` size is that of $G[\text{text}]$.
 
 ??? note "Proof"
 
     [Partial binding](../guides/parameters.md#thm-binding)
 
-    Induct on $e$. If $\text{free}(e) \subseteq \text{dom} \beta$, then
-    $\text{bind}(e,\beta)=e(\beta)$ is closed and equals $e(\beta \cup \gamma)$ because
-    values depend only on free parameters. If $e=p \notin \text{dom} \beta$, the
-    result is $p$, with free set $\lbrace p\rbrace =\text{free}(e) \setminus \text{dom} \beta$ and value
-    $\gamma(p)=(\beta \cup \gamma)(p)$. Otherwise $e=e_1 \circ e_2$;
-    binding acts on both operands (plain values become constants), giving
-
-    $$
-    (\text{free}(e_1) \setminus \text{dom} \beta) \cup (\text{free}(e_2) \setminus \text{dom} \beta) = \text{free}(e) \setminus \text{dom} \beta.
-    $$
-
-    Since $\gamma$ binds both parts, induction gives
-
-    $$
-    e_1(\beta \cup \gamma) \circ e_2(\beta \cup \gamma) = e(\beta \cup \gamma).
-    $$
+    By induction on $e$. If $\text{free}(e) \subseteq \text{dom} \beta$ (in particular for
+    constants and for parameters in $\text{dom} \beta$), $\text{bind}(e, \beta)$ is the
+    plain value $e(\beta)$: it has no free parameters, as (i) requires, and
+    evaluates to $e(\beta) = e(\beta \cup \gamma)$, since the value of an
+    expression depends only on the values of its free parameters. If $e$ is a
+    parameter $p \notin \text{dom} \beta$, the result is $p$, with
+    $\text{free} = \lbrace p\rbrace = \text{free}(e) \setminus \text{dom} \beta$ and value
+    $\gamma(p) = (\beta \cup \gamma)(p)$. Otherwise
+    $e = e_1 \circ e_2$ and the result is
+    $\text{bind}(e_1, \beta) \circ \text{bind}(e_2, \beta)$ (plain values wrapped as
+    constants). Its free parameters are
+    $(\text{free}(e_1) \setminus \text{dom} \beta) \cup (\text{free}(e_2) \setminus \text{dom} \beta) = \text{free}(e) \setminus \text{dom} \beta$, and $\gamma$ binds those of each part, so
+    by induction its value is
+    $e_1(\beta \cup \gamma) \circ e_2(\beta \cup \gamma) = e(\beta \cup \gamma)$.
 
 ??? note "Proof"
 
     [Binding in stages](../guides/parameters.md#cor-stages)
 
-    Applying [Partial binding](../guides/parameters.md#thm-binding) (i) twice gives free set
-    $\text{free}(e) \setminus \text{dom} (\beta_1 \cup \beta_2)$. If $\gamma$ binds it and is
-    disjoint from $\beta_1,\beta_2$, part (ii), applied twice, gives
-
-    $$
-    \text{bind}(\text{bind}(e, \beta_1), \beta_2)(\gamma) = \text{bind}(e, \beta_1)(\beta_2 \cup \gamma) = e(\beta_1 \cup \beta_2 \cup \gamma) = \text{bind}(e, \beta_1 \cup \beta_2)(\gamma)
-    $$
-
-    A canvas binds every scene expression in this way.
+    By [Partial binding](../guides/parameters.md#thm-binding) (i) twice, both have the free parameters
+    $\text{free}(e) \setminus \text{dom} (\beta_1 \cup \beta_2)$. For a binding $\gamma$ of
+    them, disjoint from $\beta_1$ and $\beta_2$, (ii) twice gives
+    $\text{bind}(\text{bind}(e, \beta_1), \beta_2)(\gamma) = \text{bind}(e, \beta_1)(\beta_2 \cup \gamma) = e(\beta_1 \cup \beta_2 \cup \gamma) = \text{bind}(e, \beta_1 \cup \beta_2)(\gamma)$. A canvas binds every
+    expression in its scene in this way.
 
 ??? note "Proof"
 
     [Inferred grid shape](../guides/parameters.md#prop-grid-shape)
 
     From $r = \left\lceil n / c \right\rceil$, $r c \ge n > (r - 1) c$, so the first $r - 1$
-    rows are full; the last holds $n-(r-1)c \in [1,c]$ cells and leaves fewer
-    than $c$ empty. Since $c=\left\lceil \sqrt\lbrace n\rbrace \right\rceil$ gives $n/c \le c$, also $r \le c$.
+    rows are full and the last holds $n - (r - 1) c \in [1, c]$ cells, leaving
+    $r c - n < c$ empty. From $c = \left\lceil \sqrt\lbrace n\rbrace \right\rceil$, $n \le c^2$, so
+    $n / c \le c$ and $r \le c$.
