@@ -114,6 +114,12 @@ The output of `demand_aggregation_figure()` is shown in [Market demand as the ho
 
 ![Market demand as the horizontal sum.](../../assets/principle-viz/agora/aggregation/market_demand.svg){ .ev-figure-lg }
 
+Market demand as the horizontal sum.
+{ .ev-caption }
+
 <span id="fig-discrete-market-demand"></span>
 
 ![Combining two discrete demand schedules.](../../assets/principle-viz/agora/aggregation/discrete_market_demand.svg){ .ev-figure-lg }
+
+Combining two discrete demand schedules.
+{ .ev-caption }

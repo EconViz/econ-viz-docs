@@ -313,11 +313,11 @@ class Converter:
             width=next((int(m[1]) for p in parts if (m:=re.fullmatch(r'width:\s*(\d+)%',p.strip()))),0)
             size='ev-figure-lg' if width>=60 else 'ev-figure-sm'  # wide figures keep more of their height
             script=original.with_suffix('.py')
-            link=''
-            if script.exists():  # the code that drew the figure, offered next to it
+            download=''
+            if script.exists():  # the code that drew the figure, offered under it
                 shutil.copyfile(script,dest.with_suffix('.py'))
-                link=f'[{DOWNLOAD_SCRIPT[self.locale]}]({os.path.splitext(url)[0]}.py){{ .ev-download download="" }}\n\n'
-            return f'\n\n![{caption}]({url}){{ .{size} }}\n\n'+link
+                download=f' [{DOWNLOAD_SCRIPT[self.locale]}]({os.path.splitext(url)[0]}.py){{ .ev-download download="" }}'
+            return f'\n\n![{caption}]({url}){{ .{size} }}\n\n{caption}{download}\n{{ .ev-caption }}\n\n'
         if name=='api':
             self.counter+=1
             parts=split_args(args)

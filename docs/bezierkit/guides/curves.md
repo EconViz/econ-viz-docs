@@ -45,6 +45,9 @@ The proofs below use two identities of binomial coefficients.
 
 ![The cubic Bernstein polynomials.](../../assets/bezierkit/agora/curves/basis.svg){ .ev-figure-sm }
 
+The cubic Bernstein polynomials.
+{ .ev-caption }
+
 <span id="prop-basis"></span>
 
 !!! abstract "Proposition · Bernstein basis"
@@ -166,6 +169,9 @@ The statement is Theorems 1.6 and 1.7 of [Floater (2025)](../project/references.
 <span id="fig-casteljau"></span>
 
 ![de Casteljau's algorithm at $t = 0.4$.](../../assets/bezierkit/agora/curves/casteljau.svg){ .ev-figure-sm }
+
+de Casteljau's algorithm at $t = 0.4$.
+{ .ev-caption }
 
 Every intermediate point is a convex combination of the control points, so
 the algorithm never forms large cancelling terms; it is the numerically

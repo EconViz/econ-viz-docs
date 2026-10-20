@@ -43,7 +43,8 @@ cvs.save("cobb_douglas.png")
 
 ![The consumer-equilibrium diagram.](../../assets/utility-viz/agora/models/cobb_douglas.svg){ .ev-figure-sm }
 
-[Download the script](../../assets/utility-viz/agora/models/cobb_douglas.py){ .ev-download download="" }
+The consumer-equilibrium diagram. [Download the script](../../assets/utility-viz/agora/models/cobb_douglas.py){ .ev-download download="" }
+{ .ev-caption }
 
 Running `main.py` writes `cobb_douglas.png` to the current working directory.
 The optimum is $x^* = 7.5$, $y^* = 5$; spending is

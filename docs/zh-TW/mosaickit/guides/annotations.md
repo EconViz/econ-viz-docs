@@ -50,9 +50,15 @@ canvas.add(AxisMarkLayer("x", 6, "b", math=True))
 
 ![y 軸邊欄的標記、註記與大括號。](../../../assets/mosaickit/agora/annotations/gutter.svg){ .ev-figure-sm }
 
+y 軸邊欄的標記、註記與大括號。
+{ .ev-caption }
+
 <span id="fig-span"></span>
 
 ![兩點之間的跨距大括號。](../../../assets/mosaickit/agora/annotations/span.svg){ .ev-figure-sm }
+
+兩點之間的跨距大括號。
+{ .ev-caption }
 
 ## 邊欄的欄位
 
@@ -98,6 +104,9 @@ canvas.add(AxisMarkLayer("x", 6, "b", math=True))
 <span id="fig-spread"></span>
 
 ![目標（上）與分散結果（下）。](../../../assets/mosaickit/agora/geometry/spread.svg){ .ev-figure-sm }
+
+目標（上）與分散結果（下）。
+{ .ev-caption }
 
 [目標（上）與分散結果（下）。](annotations.md#fig-spread)中的前三項因重疊而形成一群，群的位置以各項目標位置的平均值為中心；其餘兩項原本就已分開，因此不會移動。
 

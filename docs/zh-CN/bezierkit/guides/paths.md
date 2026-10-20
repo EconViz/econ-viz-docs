@@ -60,6 +60,9 @@ seo_title: "三次线段与路径"
 
 ![三次曲线的紧密边界框。](../../../assets/bezierkit/agora/paths/bbox.svg){ .ev-figure-sm }
 
+三次曲线的紧密边界框。
+{ .ev-caption }
+
 ## 升阶
 
 升阶（详见[升阶](curves.md#prop-raise-degree)）把 $n$ 次曲线写成参数化相同的 $n + 1$ 次曲线。本套件用它把直线与二次曲线写成三次曲线，使每个绘图端都收到四个控制点。对[升阶](curves.md#prop-raise-degree)套用一次或两次，即得下列控制点。

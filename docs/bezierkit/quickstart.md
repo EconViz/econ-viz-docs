@@ -35,6 +35,9 @@ print(to_tikz(path, precision=2, options="thick"))
 
 ![The cubic of [Quick start](quickstart.md#sec-quickstart), its control polygon and convex hull.](../assets/bezierkit/agora/curves/cubic.svg){ .ev-figure-sm }
 
+The cubic of [Quick start](quickstart.md#sec-quickstart), its control polygon and convex hull.
+{ .ev-caption }
+
 The curve starts at $P_0$ and ends at $P_3$, leaves $P_0$ towards $P_1$ and
 arrives at $P_3$ from $P_2$, and never leaves the shaded hull of its control
 points ([Convex hull](guides/curves.md#cor-hull)). The last line is the curve as a TikZ path, ready to paste

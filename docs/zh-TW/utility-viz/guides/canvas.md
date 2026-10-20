@@ -70,7 +70,8 @@ cvs.save("add_utility.png")
 
 ![三條無異曲線。](../../../assets/utility-viz/agora/canvas/add_utility.svg){ .ev-figure-sm }
 
-[下載繪製腳本](../../../assets/utility-viz/agora/canvas/add_utility.py){ .ev-download download="" }
+三條無異曲線。 [下載繪製腳本](../../../assets/utility-viz/agora/canvas/add_utility.py){ .ev-download download="" }
+{ .ev-caption }
 
 <!-- api: agora.utility_viz.guides_canvas_3 -->
 
@@ -91,7 +92,8 @@ cvs.save("add_budget.png")
 
 ![預算線與陰影。](../../../assets/utility-viz/agora/canvas/add_budget.svg){ .ev-figure-sm }
 
-[下載繪製腳本](../../../assets/utility-viz/agora/canvas/add_budget.py){ .ev-download download="" }
+預算線與陰影。 [下載繪製腳本](../../../assets/utility-viz/agora/canvas/add_budget.py){ .ev-download download="" }
+{ .ev-caption }
 
 <!-- api: agora.utility_viz.guides_canvas_4 -->
 
@@ -118,7 +120,8 @@ cvs.save("add_equilibrium.png")
 
 ![均衡點與虛線。](../../../assets/utility-viz/agora/canvas/add_equilibrium.svg){ .ev-figure-sm }
 
-[下載繪製腳本](../../../assets/utility-viz/agora/canvas/add_equilibrium.py){ .ev-download download="" }
+均衡點與虛線。 [下載繪製腳本](../../../assets/utility-viz/agora/canvas/add_equilibrium.py){ .ev-download download="" }
+{ .ev-caption }
 
 <!-- api: agora.utility_viz.guides_canvas_5 -->
 
@@ -146,7 +149,8 @@ cvs.save("add_ray.png")
 
 ![擴張路徑射線。](../../../assets/utility-viz/agora/canvas/add_ray.svg){ .ev-figure-sm }
 
-[下載繪製腳本](../../../assets/utility-viz/agora/canvas/add_ray.py){ .ev-download download="" }
+擴張路徑射線。 [下載繪製腳本](../../../assets/utility-viz/agora/canvas/add_ray.py){ .ev-download download="" }
+{ .ev-caption }
 
 <!-- api: agora.utility_viz.guides_canvas_6 -->
 
@@ -180,7 +184,8 @@ cvs.save("add_point.png")
 
 ![一條無異曲線與預算線交於兩點 $A$ 與 $B$。](../../../assets/utility-viz/agora/canvas/add_point.svg){ .ev-figure-sm }
 
-[下載繪製腳本](../../../assets/utility-viz/agora/canvas/add_point.py){ .ev-download download="" }
+一條無異曲線與預算線交於兩點 $A$ 與 $B$。 [下載繪製腳本](../../../assets/utility-viz/agora/canvas/add_point.py){ .ev-download download="" }
+{ .ev-caption }
 
 <!-- api: agora.utility_viz.guides_canvas_7 -->
 
@@ -209,7 +214,8 @@ cvs.save("show_save.png")
 
 ![完整畫布。](../../../assets/utility-viz/agora/canvas/show_save.svg){ .ev-figure-sm }
 
-[下載繪製腳本](../../../assets/utility-viz/agora/canvas/show_save.py){ .ev-download download="" }
+完整畫布。 [下載繪製腳本](../../../assets/utility-viz/agora/canvas/show_save.py){ .ev-download download="" }
+{ .ev-caption }
 
 ## 樣式
 
@@ -263,7 +269,8 @@ fig.savefig("line_styles.png", dpi=160)
 
 ![四種線條樣式。](../../../assets/utility-viz/agora/canvas/line_styles.zh-TW.svg){ .ev-figure-sm }
 
-[下載繪製腳本](../../../assets/utility-viz/agora/canvas/line_styles.zh-TW.py){ .ev-download download="" }
+四種線條樣式。 [下載繪製腳本](../../../assets/utility-viz/agora/canvas/line_styles.zh-TW.py){ .ev-download download="" }
+{ .ev-caption }
 
 ### 箭頭樣式
 
@@ -311,7 +318,8 @@ fig.savefig("arrow_styles.png", dpi=160)
 
 ![四種箭頭樣式。](../../../assets/utility-viz/agora/canvas/arrow_styles.zh-TW.svg){ .ev-figure-sm }
 
-[下載繪製腳本](../../../assets/utility-viz/agora/canvas/arrow_styles.zh-TW.py){ .ev-download download="" }
+四種箭頭樣式。 [下載繪製腳本](../../../assets/utility-viz/agora/canvas/arrow_styles.zh-TW.py){ .ev-download download="" }
+{ .ev-caption }
 
 ### Stroke
 

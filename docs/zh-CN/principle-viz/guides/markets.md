@@ -103,9 +103,15 @@ fig.finalize()
 
 ![需求增加。](../../../assets/principle-viz/agora/markets/shift_demand_increase.svg){ .ev-figure-sm }
 
+需求增加。
+{ .ev-caption }
+
 <span id="fig-shift-supply"></span>
 
 ![供给减少。](../../../assets/principle-viz/agora/markets/shift_supply_decrease.svg){ .ev-figure-sm }
+
+供给减少。
+{ .ev-caption }
 
 ## 异常
 

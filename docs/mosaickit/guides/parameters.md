@@ -173,6 +173,9 @@ CanvasGrid(cells, cols=3, links=[link]).save("sweep.pdf")
 
 ![A three-value sweep with a link from the first cell to the last.](../../assets/mosaickit/agora/grids/sweep.svg){ .ev-figure-sm }
 
+A three-value sweep with a link from the first cell to the last.
+{ .ev-caption }
+
 ## Animation
 
 <!-- api: agora.mosaickit.guides_parameters_7 -->

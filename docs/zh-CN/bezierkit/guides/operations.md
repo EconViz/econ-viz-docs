@@ -100,6 +100,9 @@ print(d.at(0.5))
 
 ![在 $t = 0.4$ 分割三次曲线。](../../../assets/bezierkit/agora/curves/split.svg){ .ev-figure-sm }
 
+在 $t = 0.4$ 分割三次曲线。
+{ .ev-caption }
+
 <!-- api: agora.bezierkit.guides_operations_3 -->
 
 `split(c)` 返回[分割](operations.md#thm-subdivision)的两条曲线，次数不变，参数范围都是 $[0, 1]$。`segment(t0, t1)` 返回曲线在 $t_0$ 与 $t_1$ 之间的部分，重新参数化到 $[0, 1]$；$t_0 = t_1$ 时返回单点 $B(t_0)$，即 0 次曲线。参数超出 $[0, 1]$ 或 $t_0 > t_1$ 时抛出异常。

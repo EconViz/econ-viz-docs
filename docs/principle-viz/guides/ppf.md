@@ -58,6 +58,9 @@ ppf_canvas(result).save("ppf_points.png")
 
 ![Efficient, inefficient and unattainable points.](../../assets/principle-viz/agora/ppf/points.svg){ .ev-figure-sm }
 
+Efficient, inefficient and unattainable points.
+{ .ev-caption }
+
 <!-- api: agora.principle_viz.guides_ppf_4 -->
 
 Economic growth scales each intercept by one plus its growth rate; the
@@ -68,6 +71,9 @@ points. `ppf_growth_canvas()` draws both, named $P P F_0$ and $P P F_1$
 <span id="fig-ppf-growth"></span>
 
 ![Growth of 20% in consumer goods and 10% in capital goods.](../../assets/principle-viz/agora/ppf/growth.svg){ .ev-figure-sm }
+
+Growth of 20% in consumer goods and 10% in capital goods.
+{ .ev-caption }
 
 ## Comparative advantage
 

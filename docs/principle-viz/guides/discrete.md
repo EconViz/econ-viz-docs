@@ -82,3 +82,6 @@ The figure for this example is shown in [Discrete demand and supply.](discrete.m
 <span id="fig-discrete"></span>
 
 ![Discrete demand and supply.](../../assets/principle-viz/agora/discrete/market.svg){ .ev-figure-sm }
+
+Discrete demand and supply.
+{ .ev-caption }

@@ -63,7 +63,8 @@ cvs.save("ces.png")
 
 ![CES with $\rho = -0.5$.](../../assets/utility-viz/agora/models/ces.svg){ .ev-figure-sm }
 
-[Download the script](../../assets/utility-viz/agora/models/ces.py){ .ev-download download="" }
+CES with $\rho = -0.5$. [Download the script](../../assets/utility-viz/agora/models/ces.py){ .ev-download download="" }
+{ .ev-caption }
 
 ### Translog
 
@@ -99,7 +100,8 @@ cvs.save("translog.png")
 
 ![Translog with $\beta_{x y} = 0.12$.](../../assets/utility-viz/agora/models/translog.svg){ .ev-figure-sm }
 
-[Download the script](../../assets/utility-viz/agora/models/translog.py){ .ev-download download="" }
+Translog with $\beta_{x y} = 0.12$. [Download the script](../../assets/utility-viz/agora/models/translog.py){ .ev-download download="" }
+{ .ev-caption }
 
 ## Kinks and corners
 
@@ -148,7 +150,8 @@ cvs.save("leontief.png")
 
 ![Leontief, with the ray through the kinks.](../../assets/utility-viz/agora/models/leontief.svg){ .ev-figure-sm }
 
-[Download the script](../../assets/utility-viz/agora/models/leontief.py){ .ev-download download="" }
+Leontief, with the ray through the kinks. [Download the script](../../assets/utility-viz/agora/models/leontief.py){ .ev-download download="" }
+{ .ev-caption }
 
 ### Perfect substitutes
 
@@ -183,7 +186,8 @@ cvs.save("perfect_substitutes.png")
 
 ![Perfect substitutes: a corner solution on the $y$-axis.](../../assets/utility-viz/agora/models/perfect_substitutes.svg){ .ev-figure-sm }
 
-[Download the script](../../assets/utility-viz/agora/models/perfect_substitutes.py){ .ev-download download="" }
+Perfect substitutes: a corner solution on the $y$-axis. [Download the script](../../assets/utility-viz/agora/models/perfect_substitutes.py){ .ev-download download="" }
+{ .ev-caption }
 
 ### Maximum utility
 
@@ -224,7 +228,8 @@ cvs.save("maximum.png")
 
 ![Maximum utility.](../../assets/utility-viz/agora/models/maximum.svg){ .ev-figure-sm }
 
-[Download the script](../../assets/utility-viz/agora/models/maximum.py){ .ev-download download="" }
+Maximum utility. [Download the script](../../assets/utility-viz/agora/models/maximum.py){ .ev-download download="" }
+{ .ev-caption }
 
 ## Income and reference points
 
@@ -265,7 +270,8 @@ cvs.save("quasi_linear.png")
 
 ![Quasi-linear preferences: vertically parallel indifference curves.](../../assets/utility-viz/agora/models/quasi_linear.svg){ .ev-figure-sm }
 
-[Download the script](../../assets/utility-viz/agora/models/quasi_linear.py){ .ev-download download="" }
+Quasi-linear preferences: vertically parallel indifference curves. [Download the script](../../assets/utility-viz/agora/models/quasi_linear.py){ .ev-download download="" }
+{ .ev-caption }
 
 ### Haagsma
 
@@ -303,7 +309,8 @@ cvs.save("haagsma.png")
 
 ![Haagsma with $\gamma_y = 10$.](../../assets/utility-viz/agora/models/haagsma.svg){ .ev-figure-sm }
 
-[Download the script](../../assets/utility-viz/agora/models/haagsma.py){ .ev-download download="" }
+Haagsma with $\gamma_y = 10$. [Download the script](../../assets/utility-viz/agora/models/haagsma.py){ .ev-download download="" }
+{ .ev-caption }
 
 ### Stone-Geary
 
@@ -339,7 +346,8 @@ cvs.save("stone_geary.png")
 
 ![Stone-Geary with $\overline{x} = \overline{y} = 2$.](../../assets/utility-viz/agora/models/stone_geary.svg){ .ev-figure-sm }
 
-[Download the script](../../assets/utility-viz/agora/models/stone_geary.py){ .ev-download download="" }
+Stone-Geary with $\overline{x} = \overline{y} = 2$. [Download the script](../../assets/utility-viz/agora/models/stone_geary.py){ .ev-download download="" }
+{ .ev-caption }
 
 ### Satiation
 
@@ -380,4 +388,5 @@ cvs.save("satiation.png")
 
 ![Satiation around the bliss point $(6, 4)$.](../../assets/utility-viz/agora/models/satiation.svg){ .ev-figure-sm }
 
-[Download the script](../../assets/utility-viz/agora/models/satiation.py){ .ev-download download="" }
+Satiation around the bliss point $(6, 4)$. [Download the script](../../assets/utility-viz/agora/models/satiation.py){ .ev-download download="" }
+{ .ev-caption }

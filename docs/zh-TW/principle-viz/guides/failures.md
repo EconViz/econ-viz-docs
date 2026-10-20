@@ -44,9 +44,15 @@ print(result.corrective_tax, result.deadweight_loss)
 
 ![負外部性。](../../../assets/principle-viz/agora/failures/negative_externality.svg){ .ev-figure-sm }
 
+負外部性。
+{ .ev-caption }
+
 <span id="fig-pos-externality"></span>
 
 ![正外部性。](../../../assets/principle-viz/agora/failures/positive_externality.svg){ .ev-figure-sm }
+
+正外部性。
+{ .ev-caption }
 
 ## 共有資源
 
@@ -63,6 +69,9 @@ print(result.corrective_tax, result.deadweight_loss)
 <span id="fig-common-resource"></span>
 
 ![共有資源的過度使用。](../../../assets/principle-viz/agora/failures/common_resource.svg){ .ev-figure-sm }
+
+共有資源的過度使用。
+{ .ev-caption }
 
 ## 公共財
 
@@ -94,3 +103,6 @@ print(
 <span id="fig-public-good"></span>
 
 ![邊際利益的垂直加總。](../../../assets/principle-viz/agora/failures/public_good.svg){ .ev-figure-sm }
+
+邊際利益的垂直加總。
+{ .ev-caption }

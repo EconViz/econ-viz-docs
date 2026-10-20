@@ -91,3 +91,6 @@ CanvasGrid(canvases, rows=1).save(
 <span id="fig-revenue"></span>
 
 ![Elasticity along demand and total revenue.](../../assets/principle-viz/agora/elasticity/revenue.svg){ .ev-figure-lg }
+
+Elasticity along demand and total revenue.
+{ .ev-caption }

@@ -26,6 +26,9 @@ line, marker, text or other region. [An inside label and a callout.](labels.md#f
 
 ![An inside label and a callout.](../../assets/mosaickit/agora/labels/regions.svg){ .ev-figure-sm }
 
+An inside label and a callout.
+{ .ev-caption }
+
 ## Point labels
 
 <!-- api: agora.mosaickit.guides_labels_2 -->
@@ -56,9 +59,15 @@ edge, because that is where the label belongs.
 
 ![The order in which directions are tried.](../../assets/mosaickit/agora/geometry/candidates.svg){ .ev-figure-sm }
 
+The order in which directions are tried.
+{ .ev-caption }
+
 <span id="fig-points"></span>
 
 ![Point labels beside their points.](../../assets/mosaickit/agora/labels/points.svg){ .ev-figure-sm }
+
+Point labels beside their points.
+{ .ev-caption }
 
 ## Hard constraints
 

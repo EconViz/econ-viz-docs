@@ -67,7 +67,8 @@ cvs.save("theme_default.png")
 
 ![`default` 主题。](../../../assets/utility-viz/agora/themes/default.svg){ .ev-figure-sm }
 
-[下载绘制脚本](../../../assets/utility-viz/agora/themes/default.py){ .ev-download download="" }
+`default` 主题。 [下载绘制脚本](../../../assets/utility-viz/agora/themes/default.py){ .ev-download download="" }
+{ .ev-caption }
 
 ```python
 from dataclasses import replace
@@ -102,7 +103,8 @@ cvs.save("theme_nord.png")
 
 ![`nord` 主题。](../../../assets/utility-viz/agora/themes/nord.svg){ .ev-figure-sm }
 
-[下载绘制脚本](../../../assets/utility-viz/agora/themes/nord.py){ .ev-download download="" }
+`nord` 主题。 [下载绘制脚本](../../../assets/utility-viz/agora/themes/nord.py){ .ev-download download="" }
+{ .ev-caption }
 
 ```python
 from dataclasses import replace
@@ -137,7 +139,8 @@ cvs.save("theme_paper.png")
 
 ![`paper` 主题。](../../../assets/utility-viz/agora/themes/paper.svg){ .ev-figure-sm }
 
-[下载绘制脚本](../../../assets/utility-viz/agora/themes/paper.py){ .ev-download download="" }
+`paper` 主题。 [下载绘制脚本](../../../assets/utility-viz/agora/themes/paper.py){ .ev-download download="" }
+{ .ev-caption }
 
 ```python
 from dataclasses import replace
@@ -172,7 +175,8 @@ cvs.save("theme_monochrome.png")
 
 ![`monochrome` 主题。](../../../assets/utility-viz/agora/themes/monochrome.svg){ .ev-figure-sm }
 
-[下载绘制脚本](../../../assets/utility-viz/agora/themes/monochrome.py){ .ev-download download="" }
+`monochrome` 主题。 [下载绘制脚本](../../../assets/utility-viz/agora/themes/monochrome.py){ .ev-download download="" }
+{ .ev-caption }
 
 ```python
 from dataclasses import replace
@@ -207,7 +211,8 @@ cvs.save("theme_presentation.png")
 
 ![`presentation` 主题。](../../../assets/utility-viz/agora/themes/presentation.svg){ .ev-figure-sm }
 
-[下载绘制脚本](../../../assets/utility-viz/agora/themes/presentation.py){ .ev-download download="" }
+`presentation` 主题。 [下载绘制脚本](../../../assets/utility-viz/agora/themes/presentation.py){ .ev-download download="" }
+{ .ev-caption }
 
 ## 自定义主题
 

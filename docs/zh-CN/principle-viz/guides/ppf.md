@@ -53,6 +53,9 @@ ppf_canvas(result).save("ppf_points.png")
 
 ![有效率、无效率与无法达成的点。](../../../assets/principle-viz/agora/ppf/points.svg){ .ev-figure-sm }
 
+有效率、无效率与无法达成的点。
+{ .ev-caption }
+
 <!-- api: agora.principle_viz.guides_ppf_4 -->
 
 经济成长使各截距乘以一加上对应的成长率；结果包含 `baseline` 与 `shifted` 两条曲线及其采样点。`ppf_growth_canvas()` 画出两条曲线并命名为 $P P F_0$ 与 $P P F_1$（参见[消费财成长 20%、资本财成长 10%。](ppf.md#fig-ppf-growth)）。
@@ -60,6 +63,9 @@ ppf_canvas(result).save("ppf_points.png")
 <span id="fig-ppf-growth"></span>
 
 ![消费财成长 20%、资本财成长 10%。](../../../assets/principle-viz/agora/ppf/growth.svg){ .ev-figure-sm }
+
+消费财成长 20%、资本财成长 10%。
+{ .ev-caption }
 
 ## 比较优势
 

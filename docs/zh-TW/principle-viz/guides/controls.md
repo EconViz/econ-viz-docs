@@ -43,9 +43,15 @@ print(
 
 ![有約束的價格上限。](../../../assets/principle-viz/agora/controls/ceiling.svg){ .ev-figure-sm }
 
+有約束的價格上限。
+{ .ev-caption }
+
 <span id="fig-floor"></span>
 
 ![有約束的價格下限。](../../../assets/principle-viz/agora/controls/floor.svg){ .ev-figure-sm }
+
+有約束的價格下限。
+{ .ev-caption }
 
 `outcome_from_control()` 將結果轉為市場結果，可交給[福利](welfare.md#sec-welfare)的福利函式（參見[上限為 3.5 時的福利。](controls.md#fig-ceiling-welfare)）：
 
@@ -67,5 +73,8 @@ fig.add_welfare(delta.policy)
 <span id="fig-ceiling-welfare"></span>
 
 ![上限為 3.5 時的福利。](../../../assets/principle-viz/agora/controls/ceiling_welfare.svg){ .ev-figure-sm }
+
+上限為 3.5 時的福利。
+{ .ev-caption }
 
 價格上限下，無謂損失為未成交的交易利益；部分剩餘由賣方轉移給買方。

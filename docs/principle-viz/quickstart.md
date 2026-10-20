@@ -42,6 +42,9 @@ fig.save("basic_equilibrium.png")
 
 ![The market of this chapter (title omitted).](../assets/principle-viz/agora/quickstart/equilibrium.svg){ .ev-figure-sm }
 
+The market of this chapter (title omitted).
+{ .ev-caption }
+
 $10 - Q = 2 + Q$ gives $Q^* = 4$ and $p^* = 6$. The output is shown in
 [The market of this chapter (title omitted).](quickstart.md#fig-quickstart).
 

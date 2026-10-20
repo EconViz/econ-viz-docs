@@ -110,7 +110,8 @@ Animator(draw, frames=np.linspace(0.1, 0.9, 45)).save(
 
 ![参数变动。](../../../assets/utility-viz/agora/animation/parameter_sweep.svg){ .ev-figure-lg }
 
-[下载绘制脚本](../../../assets/utility-viz/agora/animation/parameter_sweep.py){ .ev-download download="" }
+参数变动。 [下载绘制脚本](../../../assets/utility-viz/agora/animation/parameter_sweep.py){ .ev-download download="" }
+{ .ev-caption }
 
 下面每张图取 GIF 的四个帧，GIF 共 45 帧。
 
@@ -152,7 +153,8 @@ Animator(draw, frames=np.linspace(1.0, 6.0, 45)).save(
 
 ![价格变动。](../../../assets/utility-viz/agora/animation/price_sweep.svg){ .ev-figure-lg }
 
-[下载绘制脚本](../../../assets/utility-viz/agora/animation/price_sweep.py){ .ev-download download="" }
+价格变动。 [下载绘制脚本](../../../assets/utility-viz/agora/animation/price_sweep.py){ .ev-download download="" }
+{ .ev-caption }
 
 ```python
 import numpy as np
@@ -192,7 +194,8 @@ Animator(draw, frames=np.linspace(8.0, 36.0, 45)).save(
 
 ![收入变动。](../../../assets/utility-viz/agora/animation/income_sweep.svg){ .ev-figure-lg }
 
-[下载绘制脚本](../../../assets/utility-viz/agora/animation/income_sweep.py){ .ev-download download="" }
+收入变动。 [下载绘制脚本](../../../assets/utility-viz/agora/animation/income_sweep.py){ .ev-download download="" }
+{ .ev-caption }
 
 ## 动画图库
 

@@ -34,6 +34,9 @@ print(to_tikz(path, precision=2, options="thick"))
 
 ![三次曲線及其控制凸包。](../../assets/bezierkit/agora/curves/cubic.svg){ .ev-figure-sm }
 
+三次曲線及其控制凸包。
+{ .ev-caption }
+
 曲線由 $P_0$ 出發、在 $P_3$ 結束，離開 $P_0$ 時朝向 $P_1$，抵達 $P_3$ 時來自 $P_2$ 的方向，且始終位於控制點的凸包內（詳見[凸包](guides/curves.md#cor-hull)）。最後一行是這條曲線的 TikZ 路徑，可直接貼進 LaTeX 文件。
 
 ## 主要元件

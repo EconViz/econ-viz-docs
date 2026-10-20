@@ -66,3 +66,6 @@ fig.finalize()
 <span id="fig-discrete"></span>
 
 ![离散需求与供给。](../../../assets/principle-viz/agora/discrete/market.svg){ .ev-figure-sm }
+
+离散需求与供给。
+{ .ev-caption }

@@ -112,6 +112,9 @@ is derived from the blossom) and [Farin (2002)](../project/references.md#farin20
 
 ![Splitting the cubic at $t = 0.4$.](../../assets/bezierkit/agora/curves/split.svg){ .ev-figure-sm }
 
+Splitting the cubic at $t = 0.4$.
+{ .ev-caption }
+
 <!-- api: agora.bezierkit.guides_operations_3 -->
 
 `split(c)` returns the two curves of [Subdivision](operations.md#thm-subdivision), each of the same

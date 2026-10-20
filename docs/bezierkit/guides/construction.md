@@ -154,6 +154,9 @@ segment = graph_hermite(
 
 ![Hermite interpolant of $4 / x^2$ on $[1, 1.5]$.](../../assets/bezierkit/agora/construction/hermite.svg){ .ev-figure-sm }
 
+Hermite interpolant of $4 / x^2$ on $[1, 1.5]$.
+{ .ev-caption }
+
 ## Interpolation error
 
 <span id="thm-hermite-error"></span>

@@ -43,9 +43,15 @@ print(
 
 ![有约束的价格上限。](../../../assets/principle-viz/agora/controls/ceiling.svg){ .ev-figure-sm }
 
+有约束的价格上限。
+{ .ev-caption }
+
 <span id="fig-floor"></span>
 
 ![有约束的价格下限。](../../../assets/principle-viz/agora/controls/floor.svg){ .ev-figure-sm }
+
+有约束的价格下限。
+{ .ev-caption }
 
 `outcome_from_control()` 将结果转为市场结果，可交给[福利](welfare.md#sec-welfare)的福利函数（参见[上限为 3.5 时的福利。](controls.md#fig-ceiling-welfare)）：
 
@@ -67,5 +73,8 @@ fig.add_welfare(delta.policy)
 <span id="fig-ceiling-welfare"></span>
 
 ![上限为 3.5 时的福利。](../../../assets/principle-viz/agora/controls/ceiling_welfare.svg){ .ev-figure-sm }
+
+上限为 3.5 时的福利。
+{ .ev-caption }
 
 价格上限下，无谓损失为未成交的交易利益；部分剩余由卖方转移给买方。

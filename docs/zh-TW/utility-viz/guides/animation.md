@@ -110,7 +110,8 @@ Animator(draw, frames=np.linspace(0.1, 0.9, 45)).save(
 
 ![參數變動。](../../../assets/utility-viz/agora/animation/parameter_sweep.svg){ .ev-figure-lg }
 
-[下載繪製腳本](../../../assets/utility-viz/agora/animation/parameter_sweep.py){ .ev-download download="" }
+參數變動。 [下載繪製腳本](../../../assets/utility-viz/agora/animation/parameter_sweep.py){ .ev-download download="" }
+{ .ev-caption }
 
 下面每張圖取 GIF 的四個影格，GIF 共 45 格。
 
@@ -152,7 +153,8 @@ Animator(draw, frames=np.linspace(1.0, 6.0, 45)).save(
 
 ![價格變動。](../../../assets/utility-viz/agora/animation/price_sweep.svg){ .ev-figure-lg }
 
-[下載繪製腳本](../../../assets/utility-viz/agora/animation/price_sweep.py){ .ev-download download="" }
+價格變動。 [下載繪製腳本](../../../assets/utility-viz/agora/animation/price_sweep.py){ .ev-download download="" }
+{ .ev-caption }
 
 ```python
 import numpy as np
@@ -192,7 +194,8 @@ Animator(draw, frames=np.linspace(8.0, 36.0, 45)).save(
 
 ![所得變動。](../../../assets/utility-viz/agora/animation/income_sweep.svg){ .ev-figure-lg }
 
-[下載繪製腳本](../../../assets/utility-viz/agora/animation/income_sweep.py){ .ev-download download="" }
+所得變動。 [下載繪製腳本](../../../assets/utility-viz/agora/animation/income_sweep.py){ .ev-download download="" }
+{ .ev-caption }
 
 ## 動畫圖庫
 

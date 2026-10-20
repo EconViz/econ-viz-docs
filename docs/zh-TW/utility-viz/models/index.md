@@ -55,7 +55,8 @@ cvs.save("ces.png")
 
 ![CES 曲線。](../../../assets/utility-viz/agora/models/ces.svg){ .ev-figure-sm }
 
-[下載繪製腳本](../../../assets/utility-viz/agora/models/ces.py){ .ev-download download="" }
+CES 曲線。 [下載繪製腳本](../../../assets/utility-viz/agora/models/ces.py){ .ev-download download="" }
+{ .ev-caption }
 
 ### Translog
 
@@ -88,7 +89,8 @@ cvs.save("translog.png")
 
 ![Translog 範例。](../../../assets/utility-viz/agora/models/translog.svg){ .ev-figure-sm }
 
-[下載繪製腳本](../../../assets/utility-viz/agora/models/translog.py){ .ev-download download="" }
+Translog 範例。 [下載繪製腳本](../../../assets/utility-viz/agora/models/translog.py){ .ev-download download="" }
+{ .ev-caption }
 
 ## 拗折點與角解
 
@@ -133,7 +135,8 @@ cvs.save("leontief.png")
 
 ![完全互補射線。](../../../assets/utility-viz/agora/models/leontief.svg){ .ev-figure-sm }
 
-[下載繪製腳本](../../../assets/utility-viz/agora/models/leontief.py){ .ev-download download="" }
+完全互補射線。 [下載繪製腳本](../../../assets/utility-viz/agora/models/leontief.py){ .ev-download download="" }
+{ .ev-caption }
 
 ### 完全替代
 
@@ -166,7 +169,8 @@ cvs.save("perfect_substitutes.png")
 
 ![完全替代角解。](../../../assets/utility-viz/agora/models/perfect_substitutes.svg){ .ev-figure-sm }
 
-[下載繪製腳本](../../../assets/utility-viz/agora/models/perfect_substitutes.py){ .ev-download download="" }
+完全替代角解。 [下載繪製腳本](../../../assets/utility-viz/agora/models/perfect_substitutes.py){ .ev-download download="" }
+{ .ev-caption }
 
 ### 最大值效用
 
@@ -203,7 +207,8 @@ cvs.save("maximum.png")
 
 ![最大值效用。](../../../assets/utility-viz/agora/models/maximum.svg){ .ev-figure-sm }
 
-[下載繪製腳本](../../../assets/utility-viz/agora/models/maximum.py){ .ev-download download="" }
+最大值效用。 [下載繪製腳本](../../../assets/utility-viz/agora/models/maximum.py){ .ev-download download="" }
+{ .ev-caption }
 
 ## 所得與參考點
 
@@ -242,7 +247,8 @@ cvs.save("quasi_linear.png")
 
 ![準線性偏好。](../../../assets/utility-viz/agora/models/quasi_linear.svg){ .ev-figure-sm }
 
-[下載繪製腳本](../../../assets/utility-viz/agora/models/quasi_linear.py){ .ev-download download="" }
+準線性偏好。 [下載繪製腳本](../../../assets/utility-viz/agora/models/quasi_linear.py){ .ev-download download="" }
+{ .ev-caption }
 
 ### Haagsma
 
@@ -277,7 +283,8 @@ cvs.save("haagsma.png")
 
 ![$\gamma_y = 10$ 的 Haagsma。](../../../assets/utility-viz/agora/models/haagsma.svg){ .ev-figure-sm }
 
-[下載繪製腳本](../../../assets/utility-viz/agora/models/haagsma.py){ .ev-download download="" }
+$\gamma_y = 10$ 的 Haagsma。 [下載繪製腳本](../../../assets/utility-viz/agora/models/haagsma.py){ .ev-download download="" }
+{ .ev-caption }
 
 ### Stone-Geary
 
@@ -310,7 +317,8 @@ cvs.save("stone_geary.png")
 
 ![Stone-Geary。](../../../assets/utility-viz/agora/models/stone_geary.svg){ .ev-figure-sm }
 
-[下載繪製腳本](../../../assets/utility-viz/agora/models/stone_geary.py){ .ev-download download="" }
+Stone-Geary。 [下載繪製腳本](../../../assets/utility-viz/agora/models/stone_geary.py){ .ev-download download="" }
+{ .ev-caption }
 
 ### 飽和偏好
 
@@ -350,4 +358,5 @@ cvs.save("satiation.png")
 
 ![極樂點飽和偏好。](../../../assets/utility-viz/agora/models/satiation.svg){ .ev-figure-sm }
 
-[下載繪製腳本](../../../assets/utility-viz/agora/models/satiation.py){ .ev-download download="" }
+極樂點飽和偏好。 [下載繪製腳本](../../../assets/utility-viz/agora/models/satiation.py){ .ev-download download="" }
+{ .ev-caption }

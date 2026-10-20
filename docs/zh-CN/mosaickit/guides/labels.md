@@ -20,6 +20,9 @@ seo_title: "区域标签与点标签"
 
 ![区域内标签与引线标注。](../../../assets/mosaickit/agora/labels/regions.svg){ .ev-figure-sm }
 
+区域内标签与引线标注。
+{ .ev-caption }
+
 ## 点标签
 
 <!-- api: agora.mosaickit.guides_labels_2 -->
@@ -38,9 +41,15 @@ seo_title: "区域标签与点标签"
 
 ![方向的尝试顺序。](../../../assets/mosaickit/agora/geometry/candidates.svg){ .ev-figure-sm }
 
+方向的尝试顺序。
+{ .ev-caption }
+
 <span id="fig-points"></span>
 
 ![点旁的点标签。](../../../assets/mosaickit/agora/labels/points.svg){ .ev-figure-sm }
+
+点旁的点标签。
+{ .ev-caption }
 
 ## 硬性限制
 

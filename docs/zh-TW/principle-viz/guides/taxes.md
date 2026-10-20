@@ -59,9 +59,15 @@ print(solve_tax_equilibrium(demand, supply, tax))
 
 ![向賣方課徵從量稅。](../../../assets/principle-viz/agora/taxes/per_unit_producer.svg){ .ev-figure-sm }
 
+向賣方課徵從量稅。
+{ .ev-caption }
+
 <span id="fig-tax-consumer"></span>
 
 ![向買方課徵從價稅。](../../../assets/principle-viz/agora/taxes/ad_valorem_consumer.svg){ .ev-figure-sm }
+
+向買方課徵從價稅。
+{ .ev-caption }
 
 <!-- api: agora.principle_viz.guides_taxes_8 -->
 
@@ -100,6 +106,9 @@ fig.finalize()
 <span id="fig-tax-welfare"></span>
 
 ![課稅下的剩餘與無謂損失。](../../../assets/principle-viz/agora/taxes/welfare.svg){ .ev-figure-sm }
+
+課稅下的剩餘與無謂損失。
+{ .ev-caption }
 
 ## 補貼
 
@@ -145,3 +154,6 @@ fig = MarketFigure(
 <span id="fig-subsidy"></span>
 
 ![從量補貼與無謂損失。](../../../assets/principle-viz/agora/taxes/subsidy.svg){ .ev-figure-sm }
+
+從量補貼與無謂損失。
+{ .ev-caption }

@@ -46,6 +46,9 @@ fig.add_minimum_wage(labor)
 
 ![有约束的最低工资。](../../../assets/principle-viz/agora/factor/minimum_wage.svg){ .ev-figure-sm }
 
+有约束的最低工资。
+{ .ev-caption }
+
 `labor_demanded` 为 3，`labor_supplied` 为 7，`employment` 为 3，`unemployment` 为 4。
 
 ## 可贷资金
@@ -81,3 +84,6 @@ print(funds.interest_rate_change, funds.crowding_out)
 <span id="fig-loanable-funds"></span>
 
 ![政府借款挤出民间投资。](../../../assets/principle-viz/agora/factor/loanable_funds.svg){ .ev-figure-sm }
+
+政府借款挤出民间投资。
+{ .ev-caption }

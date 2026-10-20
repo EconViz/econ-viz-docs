@@ -58,7 +58,8 @@ fig.save("side_by_side.png")
 
 ![Price change, before and after.](../../assets/utility-viz/agora/consumer/side_by_side.svg){ .ev-figure-lg }
 
-[Download the script](../../assets/utility-viz/agora/consumer/side_by_side.py){ .ev-download download="" }
+Price change, before and after. [Download the script](../../assets/utility-viz/agora/consumer/side_by_side.py){ .ev-download download="" }
+{ .ev-caption }
 
 <!-- api: agora.utility_viz.guides_consumer_2 -->
 
@@ -118,7 +119,8 @@ cvs.save("price_path.png")
 
 ![The price-consumption curve as $p_x$ varies.](../../assets/utility-viz/agora/consumer/price_path.svg){ .ev-figure-sm }
 
-[Download the script](../../assets/utility-viz/agora/consumer/price_path.py){ .ev-download download="" }
+The price-consumption curve as $p_x$ varies. [Download the script](../../assets/utility-viz/agora/consumer/price_path.py){ .ev-download download="" }
+{ .ev-caption }
 
 ## Demand diagrams
 
@@ -162,7 +164,8 @@ The figure below is drawn from MosaicKit layers, so each label can be placed by 
 
 ![Demand curve at the optima.](../../assets/utility-viz/agora/consumer/demand.svg){ .ev-figure-lg }
 
-[Download the script](../../assets/utility-viz/agora/consumer/demand.py){ .ev-download download="" }
+Demand curve at the optima. [Download the script](../../assets/utility-viz/agora/consumer/demand.py){ .ev-download download="" }
+{ .ev-caption }
 
 ## Price-effect decomposition
 
@@ -236,7 +239,8 @@ The figure below is also drawn from MosaicKit layers; the two effects are named 
 
 ![Hicks decomposition.](../../assets/utility-viz/agora/consumer/hicks.svg){ .ev-figure-lg }
 
-[Download the script](../../assets/utility-viz/agora/consumer/hicks.py){ .ev-download download="" }
+Hicks decomposition. [Download the script](../../assets/utility-viz/agora/consumer/hicks.py){ .ev-download download="" }
+{ .ev-caption }
 
 ## Edgeworth box
 
@@ -278,4 +282,5 @@ The figure below is drawn from MosaicKit layers after a textbook figure, with bo
 
 ![Both consumers' indifference curves through allocations A to D; the shaded lens holds the allocations both prefer to A.](../../assets/utility-viz/agora/consumer/edgeworth.svg){ .ev-figure-lg }
 
-[Download the script](../../assets/utility-viz/agora/consumer/edgeworth.py){ .ev-download download="" }
+Both consumers' indifference curves through allocations A to D; the shaded lens holds the allocations both prefer to A. [Download the script](../../assets/utility-viz/agora/consumer/edgeworth.py){ .ev-download download="" }
+{ .ev-caption }

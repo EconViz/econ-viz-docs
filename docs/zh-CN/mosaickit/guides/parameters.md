@@ -138,6 +138,9 @@ CanvasGrid(cells, cols=3, links=[link]).save("sweep.pdf")
 
 ![三个值的扫描与跨格连线。](../../../assets/mosaickit/agora/grids/sweep.svg){ .ev-figure-sm }
 
+三个值的扫描与跨格连线。
+{ .ev-caption }
+
 ## 动画
 
 <!-- api: agora.mosaickit.guides_parameters_7 -->

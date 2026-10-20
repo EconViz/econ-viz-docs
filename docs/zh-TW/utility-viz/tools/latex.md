@@ -71,7 +71,8 @@ cvs.save("leontief.png")
 
 ![Leontief 範例。](../../../assets/utility-viz/agora/latex/leontief.svg){ .ev-figure-sm }
 
-[下載繪製腳本](../../../assets/utility-viz/agora/latex/leontief.py){ .ev-download download="" }
+Leontief 範例。 [下載繪製腳本](../../../assets/utility-viz/agora/latex/leontief.py){ .ev-download download="" }
+{ .ev-caption }
 
 ```python
 from utility_viz import (
@@ -98,7 +99,8 @@ cvs.save("perfect_substitutes.png")
 
 ![完全替代輸入範例。](../../../assets/utility-viz/agora/latex/perfect_substitutes.svg){ .ev-figure-sm }
 
-[下載繪製腳本](../../../assets/utility-viz/agora/latex/perfect_substitutes.py){ .ev-download download="" }
+完全替代輸入範例。 [下載繪製腳本](../../../assets/utility-viz/agora/latex/perfect_substitutes.py){ .ev-download download="" }
+{ .ev-caption }
 
 ## 錯誤處理
 

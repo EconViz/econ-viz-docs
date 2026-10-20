@@ -76,6 +76,9 @@ seo_title: "等值线"
 
 ![鞍点单元格：(a) 中心高、(b) 中心低；实心角点的 $F \ge c$。](../../../assets/bezierkit/agora/implicit/saddle.svg){ .ev-figure-sm }
 
+鞍点单元格：(a) 中心高、(b) 中心低；实心角点的 $F \ge c$。
+{ .ev-caption }
+
 鞍点规则使用四个角点值的双线性插值
 
 $$
@@ -120,6 +123,9 @@ print(len(contours.for_level(4)[0].segments))
 <span id="fig-contours"></span>
 
 ![$x^2 y = c$，$c = 1, 2, 4$ 由内而外。](../../../assets/bezierkit/agora/implicit/contours.svg){ .ev-figure-sm }
+
+$x^2 y = c$，$c = 1, 2, 4$ 由内而外。
+{ .ev-caption }
 
 ## 结果
 

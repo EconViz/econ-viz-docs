@@ -45,7 +45,8 @@ cvs.save("custom.png")
 
 ![A custom model, $ln x + ln y$.](../../assets/utility-viz/agora/models/custom.svg){ .ev-figure-sm }
 
-[Download the script](../../assets/utility-viz/agora/models/custom.py){ .ev-download download="" }
+A custom model, $ln x + ln y$. [Download the script](../../assets/utility-viz/agora/models/custom.py){ .ev-download download="" }
+{ .ev-caption }
 
 ### Many-good Cobb-Douglas
 
@@ -83,7 +84,8 @@ cvs.save("multigood.png")
 
 ![A three-good Cobb-Douglas model with $z = 10$ fixed.](../../assets/utility-viz/agora/models/multigood.svg){ .ev-figure-sm }
 
-[Download the script](../../assets/utility-viz/agora/models/multigood.py){ .ev-download download="" }
+A three-good Cobb-Douglas model with $z = 10$ fixed. [Download the script](../../assets/utility-viz/agora/models/multigood.py){ .ev-download download="" }
+{ .ev-caption }
 
 ### Backend-neutral scenes
 

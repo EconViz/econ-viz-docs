@@ -70,9 +70,15 @@ the shift or the rotation and the untaxed equilibrium (see
 
 ![A per-unit tax on sellers.](../../assets/principle-viz/agora/taxes/per_unit_producer.svg){ .ev-figure-sm }
 
+A per-unit tax on sellers.
+{ .ev-caption }
+
 <span id="fig-tax-consumer"></span>
 
 ![An ad valorem tax on buyers.](../../assets/principle-viz/agora/taxes/ad_valorem_consumer.svg){ .ev-figure-sm }
+
+An ad valorem tax on buyers.
+{ .ev-caption }
 
 <!-- api: agora.principle_viz.guides_taxes_8 -->
 
@@ -114,6 +120,9 @@ fig.finalize()
 <span id="fig-tax-welfare"></span>
 
 ![Surplus and deadweight loss under a tax.](../../assets/principle-viz/agora/taxes/welfare.svg){ .ev-figure-sm }
+
+Surplus and deadweight loss under a tax.
+{ .ev-caption }
 
 ## Subsidies
 
@@ -169,3 +178,6 @@ fig = MarketFigure(
 <span id="fig-subsidy"></span>
 
 ![A per-unit subsidy and its deadweight loss.](../../assets/principle-viz/agora/taxes/subsidy.svg){ .ev-figure-sm }
+
+A per-unit subsidy and its deadweight loss.
+{ .ev-caption }

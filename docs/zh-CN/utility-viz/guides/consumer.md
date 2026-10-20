@@ -47,7 +47,8 @@ fig.save("side_by_side.png")
 
 ![价格变动前后比较。](../../../assets/utility-viz/agora/consumer/side_by_side.svg){ .ev-figure-lg }
 
-[下载绘制脚本](../../../assets/utility-viz/agora/consumer/side_by_side.py){ .ev-download download="" }
+价格变动前后比较。 [下载绘制脚本](../../../assets/utility-viz/agora/consumer/side_by_side.py){ .ev-download download="" }
+{ .ev-caption }
 
 <!-- api: agora.utility_viz.guides_consumer_2 -->
 
@@ -100,7 +101,8 @@ cvs.save("price_path.png")
 
 ![价格消费曲线。](../../../assets/utility-viz/agora/consumer/price_path.svg){ .ev-figure-sm }
 
-[下载绘制脚本](../../../assets/utility-viz/agora/consumer/price_path.py){ .ev-download download="" }
+价格消费曲线。 [下载绘制脚本](../../../assets/utility-viz/agora/consumer/price_path.py){ .ev-download download="" }
+{ .ev-caption }
 
 ## 需求图
 
@@ -137,7 +139,8 @@ fig.save("demand_cobb_douglas.png")
 
 ![需求曲线最优点。](../../../assets/utility-viz/agora/consumer/demand.svg){ .ev-figure-lg }
 
-[下载绘制脚本](../../../assets/utility-viz/agora/consumer/demand.py){ .ev-download download="" }
+需求曲线最优点。 [下载绘制脚本](../../../assets/utility-viz/agora/consumer/demand.py){ .ev-download download="" }
+{ .ev-caption }
 
 ## 价格效应分解
 
@@ -201,7 +204,8 @@ result = decompose_price_effect(
 
 ![Hicks 分解。](../../../assets/utility-viz/agora/consumer/hicks.zh-CN.svg){ .ev-figure-lg }
 
-[下载绘制脚本](../../../assets/utility-viz/agora/consumer/hicks.zh-CN.py){ .ev-download download="" }
+Hicks 分解。 [下载绘制脚本](../../../assets/utility-viz/agora/consumer/hicks.zh-CN.py){ .ev-download download="" }
+{ .ev-caption }
 
 ## Edgeworth 箱形图
 
@@ -238,4 +242,5 @@ box = EdgeworthBox(
 
 ![两位消费者通过配置 A 至 D 的无差异曲线；阴影透镜是双方都偏好于 A 的配置。](../../../assets/utility-viz/agora/consumer/edgeworth.svg){ .ev-figure-lg }
 
-[下载绘制脚本](../../../assets/utility-viz/agora/consumer/edgeworth.py){ .ev-download download="" }
+两位消费者通过配置 A 至 D 的无差异曲线；阴影透镜是双方都偏好于 A 的配置。 [下载绘制脚本](../../../assets/utility-viz/agora/consumer/edgeworth.py){ .ev-download download="" }
+{ .ev-caption }

@@ -214,6 +214,9 @@ with a zero-width or zero-height bounding box returns its first vertex.
 
 ![Pole, largest disc and centroid.](../../assets/mosaickit/agora/geometry/polylabel.svg){ .ev-figure-sm }
 
+Pole, largest disc and centroid.
+{ .ev-caption }
+
 For a triangle the pole is the incentre. Placement calls `polylabel` with
 the default precision of one pixel, finer than any text-placement increment.
 
@@ -249,3 +252,6 @@ so a short span gets small arcs but the tip still reaches the full depth
 <span id="fig-brace"></span>
 
 ![Brace outlines; the right span is under $2 \delta$.](../../assets/mosaickit/agora/geometry/brace.svg){ .ev-figure-sm }
+
+Brace outlines; the right span is under $2 \delta$.
+{ .ev-caption }

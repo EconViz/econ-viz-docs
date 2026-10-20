@@ -75,6 +75,9 @@ curve, found by evaluating it at the candidate parameters of [Bounding box of a 
 
 ![The tight bounding box of a cubic.](../../assets/bezierkit/agora/paths/bbox.svg){ .ev-figure-sm }
 
+The tight bounding box of a cubic.
+{ .ev-caption }
+
 ## Degree elevation
 
 Degree elevation ([Degree elevation](curves.md#prop-raise-degree)) writes a curve of degree $n$ as a curve

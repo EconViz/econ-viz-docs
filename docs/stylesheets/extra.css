@@ -533,13 +533,17 @@
   padding-left: .7em;
 }
 
-/* "Download the script" under a figure */
-.md-typeset a.ev-download {
-  display: block;
-  width: fit-content;
-  margin: -.4rem auto 1.2rem;
-  font-size: .72rem;
+/* A figure's caption, with the link to its script */
+.md-typeset p.ev-caption {
+  margin: -.4rem auto 1.4rem;
+  max-width: 40rem;
+  text-align: center;
+  font-size: .75rem;
   color: var(--md-default-fg-color--light);
+}
+.md-typeset a.ev-download {
+  white-space: nowrap;
+  margin-left: .6em;
 }
 .md-typeset a.ev-download::before { content: "↓ "; }
 .md-typeset a.ev-download:hover { color: #405c9a; }

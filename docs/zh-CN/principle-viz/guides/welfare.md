@@ -59,6 +59,9 @@ fig.finalize()
 
 ![均衡下的消费者与生产者剩余。](../../../assets/principle-viz/agora/welfare/equilibrium.svg){ .ev-figure-sm }
 
+均衡下的消费者与生产者剩余。
+{ .ev-caption }
+
 <!-- api: agora.principle_viz.guides_welfare_5 -->
 
 同样的区块，再加上基准与政策下数量及价格的辅助线，用于比较前后差异。

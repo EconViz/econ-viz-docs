@@ -112,6 +112,9 @@ fig.finalize()
 
 ![Renamed curves and equilibrium point.](../../assets/principle-viz/agora/figures/labels.svg){ .ev-figure-sm }
 
+Renamed curves and equilibrium point.
+{ .ev-caption }
+
 ## Palettes and themes
 
 <span id="sec-palettes"></span>
@@ -159,6 +162,9 @@ fig = MarketFigure(x_max=12, y_max=12, palette="monochrome")
 <span id="fig-monochrome"></span>
 
 ![The `monochrome` palette.](../../assets/principle-viz/agora/figures/monochrome.svg){ .ev-figure-sm }
+
+The `monochrome` palette.
+{ .ev-caption }
 
 ## Canvases
 

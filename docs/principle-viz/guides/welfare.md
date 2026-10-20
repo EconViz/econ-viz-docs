@@ -73,6 +73,9 @@ The output is shown in [Consumer and producer surplus at equilibrium.](welfare.m
 
 ![Consumer and producer surplus at equilibrium.](../../assets/principle-viz/agora/welfare/equilibrium.svg){ .ev-figure-sm }
 
+Consumer and producer surplus at equilibrium.
+{ .ev-caption }
+
 <!-- api: agora.principle_viz.guides_welfare_5 -->
 
 The same regions together with guide lines at the baseline and policy

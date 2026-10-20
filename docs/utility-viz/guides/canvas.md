@@ -74,7 +74,8 @@ cvs.save("add_utility.png")
 
 ![Three indifference curves.](../../assets/utility-viz/agora/canvas/add_utility.svg){ .ev-figure-sm }
 
-[Download the script](../../assets/utility-viz/agora/canvas/add_utility.py){ .ev-download download="" }
+Three indifference curves. [Download the script](../../assets/utility-viz/agora/canvas/add_utility.py){ .ev-download download="" }
+{ .ev-caption }
 
 <!-- api: agora.utility_viz.guides_canvas_3 -->
 
@@ -95,7 +96,8 @@ cvs.save("add_budget.png")
 
 ![Budget line and shading.](../../assets/utility-viz/agora/canvas/add_budget.svg){ .ev-figure-sm }
 
-[Download the script](../../assets/utility-viz/agora/canvas/add_budget.py){ .ev-download download="" }
+Budget line and shading. [Download the script](../../assets/utility-viz/agora/canvas/add_budget.py){ .ev-download download="" }
+{ .ev-caption }
 
 <!-- api: agora.utility_viz.guides_canvas_4 -->
 
@@ -122,7 +124,8 @@ cvs.save("add_equilibrium.png")
 
 ![Equilibrium and drop lines.](../../assets/utility-viz/agora/canvas/add_equilibrium.svg){ .ev-figure-sm }
 
-[Download the script](../../assets/utility-viz/agora/canvas/add_equilibrium.py){ .ev-download download="" }
+Equilibrium and drop lines. [Download the script](../../assets/utility-viz/agora/canvas/add_equilibrium.py){ .ev-download download="" }
+{ .ev-caption }
 
 <!-- api: agora.utility_viz.guides_canvas_5 -->
 
@@ -151,7 +154,8 @@ cvs.save("add_ray.png")
 
 ![Expansion-path ray.](../../assets/utility-viz/agora/canvas/add_ray.svg){ .ev-figure-sm }
 
-[Download the script](../../assets/utility-viz/agora/canvas/add_ray.py){ .ev-download download="" }
+Expansion-path ray. [Download the script](../../assets/utility-viz/agora/canvas/add_ray.py){ .ev-download download="" }
+{ .ev-caption }
 
 <!-- api: agora.utility_viz.guides_canvas_6 -->
 
@@ -185,7 +189,8 @@ cvs.save("add_point.png")
 
 ![An indifference curve meets the budget line at two points, $A$ and $B$.](../../assets/utility-viz/agora/canvas/add_point.svg){ .ev-figure-sm }
 
-[Download the script](../../assets/utility-viz/agora/canvas/add_point.py){ .ev-download download="" }
+An indifference curve meets the budget line at two points, $A$ and $B$. [Download the script](../../assets/utility-viz/agora/canvas/add_point.py){ .ev-download download="" }
+{ .ev-caption }
 
 <!-- api: agora.utility_viz.guides_canvas_7 -->
 
@@ -216,7 +221,8 @@ cvs.save("show_save.png")
 
 ![The complete canvas.](../../assets/utility-viz/agora/canvas/show_save.svg){ .ev-figure-sm }
 
-[Download the script](../../assets/utility-viz/agora/canvas/show_save.py){ .ev-download download="" }
+The complete canvas. [Download the script](../../assets/utility-viz/agora/canvas/show_save.py){ .ev-download download="" }
+{ .ev-caption }
 
 ## Styles
 
@@ -270,7 +276,8 @@ fig.savefig("line_styles.png", dpi=160)
 
 ![The four line styles.](../../assets/utility-viz/agora/canvas/line_styles.svg){ .ev-figure-sm }
 
-[Download the script](../../assets/utility-viz/agora/canvas/line_styles.py){ .ev-download download="" }
+The four line styles. [Download the script](../../assets/utility-viz/agora/canvas/line_styles.py){ .ev-download download="" }
+{ .ev-caption }
 
 ### Arrow styles
 
@@ -316,7 +323,8 @@ fig.savefig("arrow_styles.png", dpi=160)
 
 ![The four arrow styles.](../../assets/utility-viz/agora/canvas/arrow_styles.svg){ .ev-figure-sm }
 
-[Download the script](../../assets/utility-viz/agora/canvas/arrow_styles.py){ .ev-download download="" }
+The four arrow styles. [Download the script](../../assets/utility-viz/agora/canvas/arrow_styles.py){ .ev-download download="" }
+{ .ev-caption }
 
 ### Stroke
 
