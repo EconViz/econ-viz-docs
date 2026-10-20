@@ -22,17 +22,12 @@ The controlled market, as a `PriceControlResult`:
 ```python
 from principle_viz import evaluate_price_control
 from principle_viz.core.controls import (
-    PriceControlScenario,
-    PriceControlType,
+    PriceControlScenario, PriceControlType,
 )
 
 scenario = PriceControlScenario(PriceControlType.CEILING, 4.0)
 ceiling = evaluate_price_control(demand, supply, scenario)
-print(
-    ceiling.is_binding,
-    ceiling.traded_quantity,
-    ceiling.shortage,
-)
+print(ceiling.is_binding, ceiling.traded_quantity, ceiling.shortage)
 # True 2.0 4.0
 ```
 
@@ -72,9 +67,7 @@ welfare functions of [Welfare](welfare.md#sec-welfare) (see [Welfare under a pri
 
 ```python
 from principle_viz.welfare.surplus import (
-    compare_surplus,
-    outcome_from_control,
-    outcome_from_equilibrium,
+    compare_surplus, outcome_from_control, outcome_from_equilibrium,
 )
 
 eq = solve_equilibrium(demand, supply)

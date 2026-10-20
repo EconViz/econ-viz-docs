@@ -19,8 +19,7 @@ seo_title: "国际贸易"
 ```python
 from principle_viz import TradeScenario, analyze_trade
 
-# autarky price 7
-demand = line_from_inverse(12.0, -1.0)
+demand = line_from_inverse(12.0, -1.0)   # autarky price 7
 scenario = TradeScenario(world_price=4, tariff=2)
 result = analyze_trade(demand, supply, scenario)
 print(result.free_trade.imports, result.policy.imports)

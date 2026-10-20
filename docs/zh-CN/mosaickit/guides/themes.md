@@ -84,18 +84,13 @@ from typing import ClassVar
 from mosaickit import Stroke, StyleBundle, Theme, expand_roles
 from mosaickit.themes import default
 
-
 @dataclass(frozen=True)
 class MyRoles:
     _namespace: ClassVar[str] = "mypkg"
-    line: StyleBundle | None = StyleBundle(
-        stroke=Stroke(color="blue", width=2)
-    )
+    line: StyleBundle | None = StyleBundle(stroke=Stroke(color="blue", width=2))
     line_dashed: StyleBundle | None = None
 
-
-# {"mypkg.line": ...}
-roles = expand_roles(MyRoles())
+roles = expand_roles(MyRoles())        # {"mypkg.line": ...}
 mytheme = Theme("mypkg", {**default.roles, **roles})
 ```
 

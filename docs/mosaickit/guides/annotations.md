@@ -38,19 +38,10 @@ brace bulges to `side`, 4 pt clear of the points and 8 pt deep, and its
 label sits past the tip, placed so it covers nothing ([Region and point labels](labels.md#sec-labels)).
 
 ```python
-from mosaickit import (
-    AxisMarkLayer,
-    AxisNoteLayer,
-    BraceLayer,
-    Canvas,
-    quadrant_axes,
-)
+from mosaickit import AxisMarkLayer, AxisNoteLayer, BraceLayer, Canvas, quadrant_axes
 
 canvas = Canvas().extend(quadrant_axes(10, 10))
-for value, symbol, note in [
-    (7, "a_1", "Upper\nvalue"),
-    (5, "a_0", "Lower\nvalue"),
-]:
+for value, symbol, note in [(7, "a_1", "Upper\nvalue"), (5, "a_0", "Lower\nvalue")]:
     canvas.add(AxisMarkLayer("y", value, symbol, math=True))
     canvas.add(AxisNoteLayer("y", value, note))
 canvas.add(BraceLayer("y", 5, 7, "Span", side="outside"))

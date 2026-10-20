@@ -15,23 +15,14 @@ $$
 $$
 
 ```python
-from principle_viz import (
-    MarketFigure,
-    line_from_inverse,
-    solve_equilibrium,
-)
+from principle_viz import MarketFigure, line_from_inverse, solve_equilibrium
 
-# p = 10 - Q
-demand = line_from_inverse(10.0, -1.0)
-# p = 2 + Q
-supply = line_from_inverse(2.0, 1.0)
+demand = line_from_inverse(10.0, -1.0)   # p = 10 - Q
+supply = line_from_inverse(2.0, 1.0)     # p = 2 + Q
 eq = solve_equilibrium(demand, supply)
-# 4.0 6.0
-print(eq.q_star, eq.p_star)
+print(eq.q_star, eq.p_star)              # 4.0 6.0
 
-fig = MarketFigure(
-    x_max=12, y_max=12, title="Basic Equilibrium"
-)
+fig = MarketFigure(x_max=12, y_max=12, title="Basic Equilibrium")
 fig.add_curves(demand, supply, q_max=10)
 fig.add_equilibrium(eq)
 fig.finalize()
@@ -93,8 +84,7 @@ from principle_viz import line_from_inverse, solve_equilibrium
 from principle_viz.exceptions import PrincipleVizError
 
 demand = line_from_inverse(10.0, -1.0)
-# parallel to demand
-supply = line_from_inverse(8.0, -1.0)
+supply = line_from_inverse(8.0, -1.0)   # parallel to demand
 
 try:
     eq = solve_equilibrium(demand, supply)

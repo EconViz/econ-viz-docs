@@ -27,19 +27,10 @@ y 轴位于绘图区左缘，x 轴位于下缘，两轴外侧的空间称为*边
 绘图区内两点之间的大括号。跨距必须是水平（`side` 为 `"above"` 或 `"below"`）或垂直（`"left"` 或 `"right"`）；大括号会朝 `side` 凸出，与两点相距 4 pt、深 8 pt。标签位于尖端之外，并会避开其他所有内容（详见[区域标签与点标签](labels.md#sec-labels)）。
 
 ```python
-from mosaickit import (
-    AxisMarkLayer,
-    AxisNoteLayer,
-    BraceLayer,
-    Canvas,
-    quadrant_axes,
-)
+from mosaickit import AxisMarkLayer, AxisNoteLayer, BraceLayer, Canvas, quadrant_axes
 
 canvas = Canvas().extend(quadrant_axes(10, 10))
-for value, symbol, note in [
-    (7, "a_1", "Upper\nvalue"),
-    (5, "a_0", "Lower\nvalue"),
-]:
+for value, symbol, note in [(7, "a_1", "Upper\nvalue"), (5, "a_0", "Lower\nvalue")]:
     canvas.add(AxisMarkLayer("y", value, symbol, math=True))
     canvas.add(AxisNoteLayer("y", value, note))
 canvas.add(BraceLayer("y", 5, 7, "Span", side="outside"))

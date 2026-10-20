@@ -24,12 +24,9 @@ $$
 from principle_viz import line_from_inverse, line_from_standard
 
 demand = line_from_inverse(10.0, -1.0)
-# 6.0 7.0
-print(demand.q_at(4), demand.p_at(3))
-# 10.0 10.0
-print(demand.p_intercept(), demand.q_intercept())
-# (10.0, -1.0)
-print(line_from_standard(1, 1, -10).to_inverse())
+print(demand.q_at(4), demand.p_at(3))         # 6.0 7.0
+print(demand.p_intercept(), demand.q_intercept())  # 10.0 10.0
+print(line_from_standard(1, 1, -10).to_inverse())  # (10.0, -1.0)
 ```
 
 $(A, B, C) = (1, 1, -10)$ 與 $p = 10 - Q$ 等價。
@@ -74,10 +71,8 @@ from principle_viz.core.shifts import ShiftScenario, ShiftSpec
 up = ShiftScenario(demand_shift=ShiftSpec(delta_intercept=3.0))
 result = comparative_statics(demand, supply, up)
 new = result.shifted_equilibrium
-# 5.5 7.5
-print(new.q_star, new.p_star)
-# right up
-print(result.direction_q, result.direction_p)
+print(new.q_star, new.p_star)                  # 5.5 7.5
+print(result.direction_q, result.direction_p)  # right up
 ```
 
 <!-- api: agora.principle_viz.guides_markets_5 -->
@@ -85,15 +80,10 @@ print(result.direction_q, result.direction_p)
 畫出移動的曲線、兩個均衡點，以及由舊均衡指向新均衡的虛線箭頭。在 `add_curves()` 中將原曲線命名為 $D_0$ 與 $S_0$。需求增加的結果如[需求增加。](markets.md#fig-shifts)，供給減少的結果如[供給減少。](markets.md#fig-shift-supply)。
 
 ```python
-fig = MarketFigure(
-    x_max=12, y_max=14, title="Increase in Demand"
-)
+fig = MarketFigure(x_max=12, y_max=14, title="Increase in Demand")
 fig.add_curves(
-    demand,
-    supply,
-    q_max=10,
-    demand_label="$D_0$",
-    supply_label="$S_0$",
+    demand, supply, q_max=10,
+    demand_label="$D_0$", supply_label="$S_0$",
 )
 fig.add_comparative_statics(result, q_max=10)
 fig.finalize()

@@ -29,15 +29,12 @@ fields:
 
 ```python
 from principle_viz import compute_surplus, solve_equilibrium
-from principle_viz.welfare.surplus import (
-    outcome_from_equilibrium,
-)
+from principle_viz.welfare.surplus import outcome_from_equilibrium
 
 eq = solve_equilibrium(demand, supply)
 outcome = outcome_from_equilibrium(eq)
 surplus = compute_surplus(demand, supply, outcome)
-# 8.0 8.0
-print(surplus.consumer_surplus, surplus.producer_surplus)
+print(surplus.consumer_surplus, surplus.producer_surplus)  # 8.0 8.0
 ```
 
 $(10 - 6) \times 4 / 2 = (6 - 2) \times 4 / 2 = 8$; the free market
