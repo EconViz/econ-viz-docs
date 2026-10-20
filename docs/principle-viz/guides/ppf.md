@@ -43,7 +43,7 @@ print(ppf.assess(4, 3), ppf.assess(7, 6))
 
 Sample the frontier and assess named points, given as `(x, y, label)`
 triples; `ppf_canvas()`, in `principle_viz.visuals.ppf`, draws it with the
-attainable set shaded and the points labelled ([Efficient, inefficient and unattainable points.](ppf.md#fig-ppf)).
+attainable set shaded and the points labelled ([Efficient and inefficient points](ppf.md#fig-ppf)).
 
 ```python
 from principle_viz import analyze_ppf
@@ -58,11 +58,11 @@ ppf_canvas(result).save("ppf_points.png")
 
 <figure class="ev-fig" markdown>
 
-![Efficient, inefficient and unattainable points.](../../assets/principle-viz/agora/ppf/points.svg){ .ev-figure-sm }
+![Efficient and inefficient points](../../assets/principle-viz/agora/ppf/points.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/ppf/ppf.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>Efficient, inefficient and unattainable points.</figcaption>
+<figcaption markdown>Efficient and inefficient points</figcaption>
 
 </figure>
 
@@ -71,17 +71,17 @@ ppf_canvas(result).save("ppf_points.png")
 Economic growth scales each intercept by one plus its growth rate; the
 result holds the `baseline` and `shifted` frontiers and their sampled
 points. `ppf_growth_canvas()` draws both, named $P P F_0$ and $P P F_1$
-(see [Growth of 20% in consumer goods and 10% in capital goods.](ppf.md#fig-ppf-growth)).
+(see [Growth in consumer and capital goods](ppf.md#fig-ppf-growth)).
 
 <span id="fig-ppf-growth"></span>
 
 <figure class="ev-fig" markdown>
 
-![Growth of 20% in consumer goods and 10% in capital goods.](../../assets/principle-viz/agora/ppf/growth.svg){ .ev-figure-sm }
+![Growth in consumer and capital goods](../../assets/principle-viz/agora/ppf/growth.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/ppf/ppf.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>Growth of 20% in consumer goods and 10% in capital goods.</figcaption>
+<figcaption markdown>Growth in consumer and capital goods</figcaption>
 
 </figure>
 

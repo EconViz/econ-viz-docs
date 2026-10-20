@@ -20,7 +20,7 @@ seo_title: "Bézier 曲線"
 
     其他整數 $i$ 令 $b_{i,n} = 0$。
 
-這組多項式出自 [Bernstein (1912)](../project/references.md#bernstein1912)；[Farouki (2012)](../project/references.md#farouki2012)回顧其歷史與性質，三次的情形如[三次 Bernstein 多項式。](curves.md#fig-basis)。以下證明用到兩個二項式係數恆等式。
+這組多項式出自 [Bernstein (1912)](../project/references.md#bernstein1912)；[Farouki (2012)](../project/references.md#farouki2012)回顧其歷史與性質，三次的情形如[三次 Bernstein 多項式](curves.md#fig-basis)。以下證明用到兩個二項式係數恆等式。
 
 <span id="lem-binomial"></span>
 
@@ -42,11 +42,11 @@ seo_title: "Bézier 曲線"
 
 <figure class="ev-fig" markdown>
 
-![三次 Bernstein 多項式。](../../../assets/bezierkit/agora/curves/basis.svg){ .ev-figure-sm }
+![三次 Bernstein 多項式](../../../assets/bezierkit/agora/curves/basis.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/bezierkit/agora/curves/curves.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
-<figcaption markdown>三次 Bernstein 多項式。</figcaption>
+<figcaption markdown>三次 Bernstein 多項式</figcaption>
 
 </figure>
 
@@ -134,7 +134,7 @@ seo_title: "Bézier 曲線"
     P_i^{(r)} = (1 - t) P_i^{(r-1)} + t P_{i+1}^{(r-1)}, \quad i = 0, \ldots, n - r.
     $$
 
-每一輪對相鄰點取平均，多邊形少一個點；$n$ 輪後只剩一點（參見[de Casteljau 演算法 (t = 0.4)。](curves.md#fig-casteljau)）。此演算法源自 Paul de Casteljau 約 1959 年在 Citroën 的工作 [M{\"u}ller (2024)](../project/references.md#mueller2024)。
+每一輪對相鄰點取平均，多邊形少一個點；$n$ 輪後只剩一點（參見[de Casteljau 演算法](curves.md#fig-casteljau)）。此演算法源自 Paul de Casteljau 約 1959 年在 Citroën 的工作 [M{\"u}ller (2024)](../project/references.md#mueller2024)。
 
 <span id="thm-casteljau"></span>
 
@@ -154,11 +154,11 @@ seo_title: "Bézier 曲線"
 
 <figure class="ev-fig" markdown>
 
-![de Casteljau 演算法 (t = 0.4)。](../../../assets/bezierkit/agora/curves/casteljau.svg){ .ev-figure-sm }
+![de Casteljau 演算法](../../../assets/bezierkit/agora/curves/casteljau.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/bezierkit/agora/curves/curves.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
-<figcaption markdown>de Casteljau 演算法 (t = 0.4)。</figcaption>
+<figcaption markdown>de Casteljau 演算法</figcaption>
 
 </figure>
 

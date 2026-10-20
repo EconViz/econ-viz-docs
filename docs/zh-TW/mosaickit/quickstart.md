@@ -44,11 +44,11 @@ canvas.save("diagram.pdf")
 
 <figure class="ev-fig" markdown>
 
-![快速入門的圖。](../../assets/mosaickit/agora/quickstart/diagram.zh-TW.svg){ .ev-figure-sm }
+![快速入門的圖](../../assets/mosaickit/agora/quickstart/diagram.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/mosaickit/agora/quickstart/quickstart.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
-<figcaption markdown>快速入門的圖。</figcaption>
+<figcaption markdown>快速入門的圖</figcaption>
 
 </figure>
 

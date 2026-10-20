@@ -88,7 +88,7 @@ The same overrides can be passed when the figure is created, as `labels=`
 and `visibility=` mappings; they then apply to layers added later as well.
 Aggregation figures and the canvas functions (`ppf_canvas()`,
 `public_good_canvas()`, ...) accept the same two arguments. See
-[Renamed curves and equilibrium point.](figures.md#fig-labels):
+[Renamed curves and equilibrium](figures.md#fig-labels):
 
 ```python
 from principle_viz import Label, MarketFigure
@@ -112,11 +112,11 @@ fig.finalize()
 
 <figure class="ev-fig" markdown>
 
-![Renamed curves and equilibrium point.](../../assets/principle-viz/agora/figures/labels.svg){ .ev-figure-sm }
+![Renamed curves and equilibrium](../../assets/principle-viz/agora/figures/labels.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/figures/figures.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>Renamed curves and equilibrium point.</figcaption>
+<figcaption markdown>Renamed curves and equilibrium</figcaption>
 
 </figure>
 
@@ -158,7 +158,7 @@ the switches `show_grid`, `show_ticks`, `show_axis_arrows` and
 `show_origin_label`. `from_palette()` starts from a built-in colour model
 and sets any of these fields.
 
-The `palette` argument selects a colour model (see [The `monochrome` palette.](figures.md#fig-monochrome)):
+The `palette` argument selects a colour model (see [The `monochrome` palette](figures.md#fig-monochrome)):
 
 ```python
 fig = MarketFigure(x_max=12, y_max=12, palette="monochrome")
@@ -168,11 +168,11 @@ fig = MarketFigure(x_max=12, y_max=12, palette="monochrome")
 
 <figure class="ev-fig" markdown>
 
-![The `monochrome` palette.](../../assets/principle-viz/agora/figures/monochrome.svg){ .ev-figure-sm }
+![The `monochrome` palette](../../assets/principle-viz/agora/figures/monochrome.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/figures/figures.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>The `monochrome` palette.</figcaption>
+<figcaption markdown>The `monochrome` palette</figcaption>
 
 </figure>
 

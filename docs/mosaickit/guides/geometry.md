@@ -172,7 +172,7 @@ search where the ray leaves the region.
 
 ## The visual centre of a region
 
-The centroid of a region can lie outside it ([Pole, largest disc and centroid.](geometry.md#fig-polylabel)). A label belongs
+The centroid of a region can lie outside it ([Pole largest disc and centroid](geometry.md#fig-polylabel)). A label belongs
 at the deepest interior point, which is farthest from the boundary.
 
 <span id="def-pole"></span>
@@ -214,11 +214,11 @@ with a zero-width or zero-height bounding box returns its first vertex.
 
 <figure class="ev-fig" markdown>
 
-![Pole, largest disc and centroid.](../../assets/mosaickit/agora/geometry/polylabel.svg){ .ev-figure-sm }
+![Pole largest disc and centroid](../../assets/mosaickit/agora/geometry/polylabel.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/mosaickit/agora/geometry/geometry.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>Pole, largest disc and centroid.</figcaption>
+<figcaption markdown>Pole largest disc and centroid</figcaption>
 
 </figure>
 
@@ -241,7 +241,7 @@ The outline is built in a local frame, $u$ across and $v$ along, from four
 quarter circles of radius $r = \min(\text{depth}/2, (\text{end} - \text{start})/4)$ joined
 by two straight pieces, and then stretched across by $\text{depth} / 2r$,
 so a short span gets small arcs but the tip still reaches the full depth
-([Brace outlines; the right span is under $2 \delta$.](geometry.md#fig-brace)).
+([Brace outlines](geometry.md#fig-brace)).
 
 <span id="prop-brace"></span>
 
@@ -258,10 +258,10 @@ so a short span gets small arcs but the tip still reaches the full depth
 
 <figure class="ev-fig" markdown>
 
-![Brace outlines; the right span is under $2 \delta$.](../../assets/mosaickit/agora/geometry/brace.svg){ .ev-figure-sm }
+![Brace outlines](../../assets/mosaickit/agora/geometry/brace.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/mosaickit/agora/geometry/geometry.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>Brace outlines; the right span is under $2 \delta$.</figcaption>
+<figcaption markdown>Brace outlines</figcaption>
 
 </figure>

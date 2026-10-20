@@ -130,7 +130,7 @@ seo_title: "配置幾何"
 
 ## 區域的視覺中心
 
-區域的形心，也就是將區域視為均勻薄片時的質心，可能落在區域外（參見[極點、最大圓盤與形心。](geometry.md#fig-polylabel)）。標籤應放在區域最深處，也就是離邊界最遠的點。
+區域的形心，也就是將區域視為均勻薄片時的質心，可能落在區域外（參見[極點最大圓盤與形心](geometry.md#fig-polylabel)）。標籤應放在區域最深處，也就是離邊界最遠的點。
 
 <span id="def-pole"></span>
 
@@ -158,11 +158,11 @@ seo_title: "配置幾何"
 
 <figure class="ev-fig" markdown>
 
-![極點、最大圓盤與形心。](../../../assets/mosaickit/agora/geometry/polylabel.zh-TW.svg){ .ev-figure-sm }
+![極點最大圓盤與形心](../../../assets/mosaickit/agora/geometry/polylabel.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/geometry/geometry.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
-<figcaption markdown>極點、最大圓盤與形心。</figcaption>
+<figcaption markdown>極點最大圓盤與形心</figcaption>
 
 </figure>
 
@@ -174,7 +174,7 @@ seo_title: "配置幾何"
 
 建立覆蓋 `start`..`end` 的大括號，以 `Brace(points, tip)` 表示。兩端位於直線 `base`（固定的橫向座標），尖端位於跨距中點，並在 `direction`（$\pm 1$）一側距 `base` 為 `depth`。軸為 `"y"` 時，各點表示為（橫向, 縱向）；軸為 `"x"` 時，則表示為（縱向, 橫向）。每段四分之一圓弧會以 `samples` 段取樣。若跨距為空、深度不是正數，或方向與軸使用其他值，便會引發 `ValueError`。
 
-外形會先在局部座標中建構，其中 $u$ 是橫向，$v$ 是沿軸方向。四段半徑為 $r = \min(\text{depth}/2, (\text{end} - \text{start})/4)$ 的四分之一圓弧以兩段直線相連，再沿橫向拉伸 $\text{depth} / 2r$ 倍。因此，跨距較短時圓弧也會較小，但尖端仍能達到完整深度（參見[大括號外形；右側跨距小於 $2 \delta$。](geometry.md#fig-brace)）。
+外形會先在局部座標中建構，其中 $u$ 是橫向，$v$ 是沿軸方向。四段半徑為 $r = \min(\text{depth}/2, (\text{end} - \text{start})/4)$ 的四分之一圓弧以兩段直線相連，再沿橫向拉伸 $\text{depth} / 2r$ 倍。因此，跨距較短時圓弧也會較小，但尖端仍能達到完整深度（參見[大括號外形](geometry.md#fig-brace)）。
 
 <span id="prop-brace"></span>
 
@@ -187,10 +187,10 @@ seo_title: "配置幾何"
 
 <figure class="ev-fig" markdown>
 
-![大括號外形；右側跨距小於 $2 \delta$。](../../../assets/mosaickit/agora/geometry/brace.zh-TW.svg){ .ev-figure-sm }
+![大括號外形](../../../assets/mosaickit/agora/geometry/brace.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/geometry/geometry.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
-<figcaption markdown>大括號外形；右側跨距小於 $2 \delta$。</figcaption>
+<figcaption markdown>大括號外形</figcaption>
 
 </figure>

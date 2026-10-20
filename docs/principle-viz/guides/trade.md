@@ -44,17 +44,17 @@ of 4 goes to the party named by `quota_rent_recipient`.
 Draw the world price line, named $p_w$, the policy price ($p_w + t$ or
 $p_q$), $Q_s$ and $Q_d$ on the quantity axis with an "Imports" or "Exports"
 brace beneath, and the tariff revenue or quota rent as a named rectangle
-(see [Free trade with imports.](trade.md#fig-free-trade), [An import tariff.](trade.md#fig-tariff) and [A binding import quota.](trade.md#fig-quota)).
+(see [Free trade with imports](trade.md#fig-free-trade), [Import tariff](trade.md#fig-tariff) and [Binding import quota](trade.md#fig-quota)).
 
 <span id="fig-free-trade"></span>
 
 <figure class="ev-fig" markdown>
 
-![Free trade with imports.](../../assets/principle-viz/agora/trade/free_trade_import.svg){ .ev-figure-sm }
+![Free trade with imports](../../assets/principle-viz/agora/trade/free_trade_import.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/trade/trade.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>Free trade with imports.</figcaption>
+<figcaption markdown>Free trade with imports</figcaption>
 
 </figure>
 
@@ -62,11 +62,11 @@ brace beneath, and the tariff revenue or quota rent as a named rectangle
 
 <figure class="ev-fig" markdown>
 
-![An import tariff.](../../assets/principle-viz/agora/trade/tariff.svg){ .ev-figure-sm }
+![Import tariff](../../assets/principle-viz/agora/trade/tariff.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/trade/trade.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>An import tariff.</figcaption>
+<figcaption markdown>Import tariff</figcaption>
 
 </figure>
 
@@ -74,10 +74,10 @@ brace beneath, and the tariff revenue or quota rent as a named rectangle
 
 <figure class="ev-fig" markdown>
 
-![A binding import quota.](../../assets/principle-viz/agora/trade/quota.svg){ .ev-figure-sm }
+![Binding import quota](../../assets/principle-viz/agora/trade/quota.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/trade/trade.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>A binding import quota.</figcaption>
+<figcaption markdown>Binding import quota</figcaption>
 
 </figure>

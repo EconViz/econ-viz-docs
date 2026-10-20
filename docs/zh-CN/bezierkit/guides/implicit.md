@@ -67,7 +67,7 @@ seo_title: "等值线"
 一条边有交点，若且唯若它的两个角点高低不同。
 
 + 采样。在 viewport 的规则网格上计算 $F$。
-+ 行进。在每个网格单元中找出四条边的交点（详见[边上的交点](implicit.md#def-crossing)）。有两个交点的单元格贡献一条线段。有四个交点的单元格是鞍点：两个对角角点为高、另两个为低，由下述规则决定如何连接（参见[鞍点单元格：(a) 中心高、(b) 中心低；实心角点的 $F \ge c$。](implicit.md#fig-saddle)）。
++ 行进。在每个网格单元中找出四条边的交点（详见[边上的交点](implicit.md#def-crossing)）。有两个交点的单元格贡献一条线段。有四个交点的单元格是鞍点：两个对角角点为高、另两个为低，由下述规则决定如何连接（参见[鞍点格子的两种中心](implicit.md#fig-saddle)）。
 + 缝合。把端点相同的线段串成链。回到起点的链是封闭的；抵达 viewport 边界或分支点的链是开放的。互不相连的部分保持为不同的路径。
 + 简化。以 `tolerance` 对每条链调用 `fit_polyline`（详见[拟合](fitting.md#sec-fitting)），不保留转角。
 + 弯曲（提供 `gradient` 时）。把每条直线段换成端点切线沿等值集方向的三次曲线（详见[等值集的切线](implicit.md#thm-gradient)），控制柄长为弦长的三分之一。只有当三次曲线与弦的距离不超过 `tolerance` 时才采用；任一端 $\nabla F = 0$ 时维持直线。
@@ -76,11 +76,11 @@ seo_title: "等值线"
 
 <figure class="ev-fig" markdown>
 
-![鞍点单元格：(a) 中心高、(b) 中心低；实心角点的 $F \ge c$。](../../../assets/bezierkit/agora/implicit/saddle.svg){ .ev-figure-sm }
+![鞍点格子的两种中心](../../../assets/bezierkit/agora/implicit/saddle.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/bezierkit/agora/implicit/implicit.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-<figcaption markdown>鞍点单元格：(a) 中心高、(b) 中心低；实心角点的 $F \ge c$。</figcaption>
+<figcaption markdown>鞍点格子的两种中心</figcaption>
 
 </figure>
 
@@ -100,7 +100,7 @@ $$
     u(1/2, 1/2) = (f_{00} + f_{10} + f_{11} + f_{01}) / 4.
     $$
 
-此平均值不小于 $c$ 时，套件将中心视为高。在鞍点单元格中，与中心同侧的两个角点在格内相连，另外两个角点各自被一条线段切开（参见[鞍点单元格：(a) 中心高、(b) 中心低；实心角点的 $F \ge c$。](implicit.md#fig-saddle)）。这就是中点决定法（midpoint decider）[Athawale (2019)](../project/references.md#athawale2019)。[Nielson (1991)](../project/references.md#nielson1991) 的渐近决定法（asymptotic decider）则比较 $u$ 在其鞍点的值
+此平均值不小于 $c$ 时，套件将中心视为高。在鞍点单元格中，与中心同侧的两个角点在格内相连，另外两个角点各自被一条线段切开（参见[鞍点格子的两种中心](implicit.md#fig-saddle)）。这就是中点决定法（midpoint decider）[Athawale (2019)](../project/references.md#athawale2019)。[Nielson (1991)](../project/references.md#nielson1991) 的渐近决定法（asymptotic decider）则比较 $u$ 在其鞍点的值
 
 $$
 u^* = (f_{00} f_{11} - f_{10} f_{01}) / (f_{00} - f_{10} - f_{01} + f_{11}),
@@ -129,11 +129,11 @@ print(len(contours.for_level(4)[0].segments))
 
 <figure class="ev-fig" markdown>
 
-![$x^2 y = c$，$c = 1, 2, 4$ 由内而外。](../../../assets/bezierkit/agora/implicit/contours.svg){ .ev-figure-sm }
+![$x^2 y = c$ 的三条曲线](../../../assets/bezierkit/agora/implicit/contours.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/bezierkit/agora/implicit/implicit.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-<figcaption markdown>$x^2 y = c$，$c = 1, 2, 4$ 由内而外。</figcaption>
+<figcaption markdown>$x^2 y = c$ 的三条曲线</figcaption>
 
 </figure>
 

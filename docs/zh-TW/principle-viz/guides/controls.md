@@ -37,17 +37,17 @@ print(
 
 <!-- api: agora.principle_viz.guides_controls_3 -->
 
-畫出管制線並命名為 "Price ceiling" 或 "Price floor"，在價格軸上標出 $p_c$。有約束時另標出 $Q_d$ 與 $Q_s$，並以括號標示差額：上限下方為 "Shortage"，下限上方為 "Surplus"。`gap_brace="axis"` 改在數量軸下方標示（參見[有約束的價格上限。](controls.md#fig-ceiling)、[有約束的價格下限。](controls.md#fig-floor)）。
+畫出管制線並命名為 "Price ceiling" 或 "Price floor"，在價格軸上標出 $p_c$。有約束時另標出 $Q_d$ 與 $Q_s$，並以括號標示差額：上限下方為 "Shortage"，下限上方為 "Surplus"。`gap_brace="axis"` 改在數量軸下方標示（參見[有約束的價格上限](controls.md#fig-ceiling)、[有約束的價格下限](controls.md#fig-floor)）。
 
 <span id="fig-ceiling"></span>
 
 <figure class="ev-fig" markdown>
 
-![有約束的價格上限。](../../../assets/principle-viz/agora/controls/ceiling.zh-TW.svg){ .ev-figure-sm }
+![有約束的價格上限](../../../assets/principle-viz/agora/controls/ceiling.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/controls/controls.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
-<figcaption markdown>有約束的價格上限。</figcaption>
+<figcaption markdown>有約束的價格上限</figcaption>
 
 </figure>
 
@@ -55,15 +55,15 @@ print(
 
 <figure class="ev-fig" markdown>
 
-![有約束的價格下限。](../../../assets/principle-viz/agora/controls/floor.zh-TW.svg){ .ev-figure-sm }
+![有約束的價格下限](../../../assets/principle-viz/agora/controls/floor.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/controls/controls.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
-<figcaption markdown>有約束的價格下限。</figcaption>
+<figcaption markdown>有約束的價格下限</figcaption>
 
 </figure>
 
-`outcome_from_control()` 將結果轉為市場結果，可交給[福利](welfare.md#sec-welfare)的福利函式（參見[上限為 3.5 時的福利。](controls.md#fig-ceiling-welfare)）：
+`outcome_from_control()` 將結果轉為市場結果，可交給[福利](welfare.md#sec-welfare)的福利函式（參見[上限 3.5 時的福利](controls.md#fig-ceiling-welfare)）：
 
 ```python
 from principle_viz.welfare.surplus import (
@@ -84,11 +84,11 @@ fig.add_welfare(delta.policy)
 
 <figure class="ev-fig" markdown>
 
-![上限為 3.5 時的福利。](../../../assets/principle-viz/agora/controls/ceiling_welfare.zh-TW.svg){ .ev-figure-sm }
+![上限 3.5 時的福利](../../../assets/principle-viz/agora/controls/ceiling_welfare.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/controls/controls.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
-<figcaption markdown>上限為 3.5 時的福利。</figcaption>
+<figcaption markdown>上限 3.5 時的福利</figcaption>
 
 </figure>
 

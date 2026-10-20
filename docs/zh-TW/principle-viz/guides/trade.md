@@ -33,17 +33,17 @@ print(result.policy.government_revenue, result.deadweight_loss)
 
 <!-- api: agora.principle_viz.guides_trade_3 -->
 
-畫出世界價格線並命名為 $p_w$，標出政策價格（$p_w + t$ 或 $p_q$），在數量軸上標 $Q_s$ 與 $Q_d$ 並於下方加上 "Imports" 或 "Exports" 括號，再以命名的矩形表示關稅收入或配額租（參見[自由貿易下的進口。](trade.md#fig-free-trade)、[進口關稅。](trade.md#fig-tariff)、[有約束的進口配額。](trade.md#fig-quota)）。
+畫出世界價格線並命名為 $p_w$，標出政策價格（$p_w + t$ 或 $p_q$），在數量軸上標 $Q_s$ 與 $Q_d$ 並於下方加上 "Imports" 或 "Exports" 括號，再以命名的矩形表示關稅收入或配額租（參見[自由貿易下的進口](trade.md#fig-free-trade)、[進口關稅](trade.md#fig-tariff)、[有約束的進口配額](trade.md#fig-quota)）。
 
 <span id="fig-free-trade"></span>
 
 <figure class="ev-fig" markdown>
 
-![自由貿易下的進口。](../../../assets/principle-viz/agora/trade/free_trade_import.zh-TW.svg){ .ev-figure-sm }
+![自由貿易下的進口](../../../assets/principle-viz/agora/trade/free_trade_import.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/trade/trade.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
-<figcaption markdown>自由貿易下的進口。</figcaption>
+<figcaption markdown>自由貿易下的進口</figcaption>
 
 </figure>
 
@@ -51,11 +51,11 @@ print(result.policy.government_revenue, result.deadweight_loss)
 
 <figure class="ev-fig" markdown>
 
-![進口關稅。](../../../assets/principle-viz/agora/trade/tariff.zh-TW.svg){ .ev-figure-sm }
+![進口關稅](../../../assets/principle-viz/agora/trade/tariff.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/trade/trade.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
-<figcaption markdown>進口關稅。</figcaption>
+<figcaption markdown>進口關稅</figcaption>
 
 </figure>
 
@@ -63,10 +63,10 @@ print(result.policy.government_revenue, result.deadweight_loss)
 
 <figure class="ev-fig" markdown>
 
-![有約束的進口配額。](../../../assets/principle-viz/agora/trade/quota.zh-TW.svg){ .ev-figure-sm }
+![有約束的進口配額](../../../assets/principle-viz/agora/trade/quota.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/trade/trade.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
-<figcaption markdown>有約束的進口配額。</figcaption>
+<figcaption markdown>有約束的進口配額</figcaption>
 
 </figure>

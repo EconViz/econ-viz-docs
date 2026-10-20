@@ -47,18 +47,18 @@ print(result.corrective_tax, result.deadweight_loss)
 
 Draw the social curve, mark $Q_m$ (market) and $Q^*$ (optimum) on the
 quantity axis, label the corrective tax $t$ or subsidy $s$ across the gap
-at $Q^*$, and shade the deadweight loss (see [A negative externality.](failures.md#fig-neg-externality) and
-[A positive externality.](failures.md#fig-pos-externality)).
+at $Q^*$, and shade the deadweight loss (see [Negative externality](failures.md#fig-neg-externality) and
+[Positive externality](failures.md#fig-pos-externality)).
 
 <span id="fig-neg-externality"></span>
 
 <figure class="ev-fig" markdown>
 
-![A negative externality.](../../assets/principle-viz/agora/failures/negative_externality.svg){ .ev-figure-sm }
+![Negative externality](../../assets/principle-viz/agora/failures/negative_externality.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/failures/failures.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>A negative externality.</figcaption>
+<figcaption markdown>Negative externality</figcaption>
 
 </figure>
 
@@ -66,11 +66,11 @@ at $Q^*$, and shade the deadweight loss (see [A negative externality.](failures.
 
 <figure class="ev-fig" markdown>
 
-![A positive externality.](../../assets/principle-viz/agora/failures/positive_externality.svg){ .ev-figure-sm }
+![Positive externality](../../assets/principle-viz/agora/failures/positive_externality.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/failures/failures.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>A positive externality.</figcaption>
+<figcaption markdown>Positive externality</figcaption>
 
 </figure>
 
@@ -91,17 +91,17 @@ uses 5 units, the efficient level is 3.5 and `corrective_fee` is 3.
 
 Draw the social cost, mark $Q^*$ and $Q_\text{open}$, and shade the
 deadweight loss. Name the curves $M B$ and $M P C$ in `add_curves()`. See
-[Overuse of a common resource.](failures.md#fig-common-resource).
+[Overuse of a common resource](failures.md#fig-common-resource).
 
 <span id="fig-common-resource"></span>
 
 <figure class="ev-fig" markdown>
 
-![Overuse of a common resource.](../../assets/principle-viz/agora/failures/common_resource.svg){ .ev-figure-sm }
+![Overuse of a common resource](../../assets/principle-viz/agora/failures/common_resource.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/failures/failures.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>Overuse of a common resource.</figcaption>
+<figcaption markdown>Overuse of a common resource</figcaption>
 
 </figure>
 
@@ -137,16 +137,16 @@ print(
 
 A `mosaickit` canvas, in `principle_viz.visuals.market_failures`,
 with each marginal benefit, their vertical sum, marginal cost, and $Q_p$
-and $Q^*$ on the quantity axis (see [The vertical sum of marginal benefits.](failures.md#fig-public-good)).
+and $Q^*$ on the quantity axis (see [Vertical sum of marginal benefits](failures.md#fig-public-good)).
 
 <span id="fig-public-good"></span>
 
 <figure class="ev-fig" markdown>
 
-![The vertical sum of marginal benefits.](../../assets/principle-viz/agora/failures/public_good.svg){ .ev-figure-sm }
+![Vertical sum of marginal benefits](../../assets/principle-viz/agora/failures/public_good.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/failures/failures.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>The vertical sum of marginal benefits.</figcaption>
+<figcaption markdown>Vertical sum of marginal benefits</figcaption>
 
 </figure>

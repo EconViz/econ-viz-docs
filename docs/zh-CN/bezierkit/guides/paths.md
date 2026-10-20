@@ -28,7 +28,7 @@ seo_title: "三次线段与路径"
 
     其中 $\alpha_k = \inf \lbrace x_k : x \in K\rbrace$、$\beta_k = \sup \lbrace x_k : x \in K\rbrace$。
 
-控制点凸包包含曲线（详见[凸包](curves.md#cor-hull)），但可能比曲线大得多。`bounding_box` 回传曲线本身的[轴对齐边界框](paths.md#def-bbox)所定义的方框（参见[三次曲线的紧密边界框。](paths.md#fig-bbox)），其候选点来自各坐标导数的根。
+控制点凸包包含曲线（详见[凸包](curves.md#cor-hull)），但可能比曲线大得多。`bounding_box` 回传曲线本身的[轴对齐边界框](paths.md#def-bbox)所定义的方框（参见[三次曲线的紧密边界框](paths.md#fig-bbox)），其候选点来自各坐标导数的根。
 
 <span id="prop-bbox"></span>
 
@@ -60,11 +60,11 @@ seo_title: "三次线段与路径"
 
 <figure class="ev-fig" markdown>
 
-![三次曲线的紧密边界框。](../../../assets/bezierkit/agora/paths/bbox.svg){ .ev-figure-sm }
+![三次曲线的紧密边界框](../../../assets/bezierkit/agora/paths/bbox.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/bezierkit/agora/paths/paths.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-<figcaption markdown>三次曲线的紧密边界框。</figcaption>
+<figcaption markdown>三次曲线的紧密边界框</figcaption>
 
 </figure>
 

@@ -8,7 +8,7 @@ seo_title: "快速开始"
 
 ## 一条三次曲线
 
-本手册通篇使用的曲线，是控制点为 $(0, 0)$、$(1, 2)$、$(3, 2)$、$(4, 0)$ 的三次曲线（参见[三次曲线及其控制凸包。](quickstart.md#fig-quickstart)）。
+本手册通篇使用的曲线，是控制点为 $(0, 0)$、$(1, 2)$、$(3, 2)$、$(4, 0)$ 的三次曲线（参见[三次曲线及其控制凸包](quickstart.md#fig-quickstart)）。
 
 ```python
 from bezierkit import BezierCurve, PiecewiseBezier, Point
@@ -34,11 +34,11 @@ print(to_tikz(path, precision=2, options="thick"))
 
 <figure class="ev-fig" markdown>
 
-![三次曲线及其控制凸包。](../../assets/bezierkit/agora/curves/cubic.svg){ .ev-figure-sm }
+![三次曲线及其控制凸包](../../assets/bezierkit/agora/curves/cubic.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/bezierkit/agora/curves/curves.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-<figcaption markdown>三次曲线及其控制凸包。</figcaption>
+<figcaption markdown>三次曲线及其控制凸包</figcaption>
 
 </figure>
 

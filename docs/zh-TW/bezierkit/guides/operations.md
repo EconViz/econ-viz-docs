@@ -76,7 +76,7 @@ print(d.at(0.5))
 
 ## 分割
 
-在 $t = c$ 執行 de Casteljau 演算法不只得到曲線值：每一輪的第一個點構成 $c$ 之前那段曲線的控制多邊形，最後一個點構成 $c$ 之後那段的控制多邊形（參見[在 $t = 0.4$ 分割三次曲線。](operations.md#fig-split)）。
+在 $t = c$ 執行 de Casteljau 演算法不只得到曲線值：每一輪的第一個點構成 $c$ 之前那段曲線的控制多邊形，最後一個點構成 $c$ 之後那段的控制多邊形（參見[在 $t = 0.4$ 分割曲線](operations.md#fig-split)）。
 
 <span id="thm-subdivision"></span>
 
@@ -100,11 +100,11 @@ print(d.at(0.5))
 
 <figure class="ev-fig" markdown>
 
-![在 $t = 0.4$ 分割三次曲線。](../../../assets/bezierkit/agora/curves/split.svg){ .ev-figure-sm }
+![在 $t = 0.4$ 分割曲線](../../../assets/bezierkit/agora/curves/split.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/bezierkit/agora/curves/curves.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
-<figcaption markdown>在 $t = 0.4$ 分割三次曲線。</figcaption>
+<figcaption markdown>在 $t = 0.4$ 分割曲線</figcaption>
 
 </figure>
 

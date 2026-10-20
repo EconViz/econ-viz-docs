@@ -53,17 +53,17 @@ print(solve_tax_equilibrium(demand, supply, tax))
 
 <!-- api: agora.principle_viz.guides_taxes_7 -->
 
-畫出課稅後的曲線並命名為 $S + t$ 或 $D - t$，以虛線箭頭表示平移或旋轉，並標出未課稅的均衡（參見[向賣方課徵從量稅。](taxes.md#fig-tax-producer)、[向買方課徵從價稅。](taxes.md#fig-tax-consumer)）。
+畫出課稅後的曲線並命名為 $S + t$ 或 $D - t$，以虛線箭頭表示平移或旋轉，並標出未課稅的均衡（參見[向賣方課從量稅](taxes.md#fig-tax-producer)、[向買方課從價稅](taxes.md#fig-tax-consumer)）。
 
 <span id="fig-tax-producer"></span>
 
 <figure class="ev-fig" markdown>
 
-![向賣方課徵從量稅。](../../../assets/principle-viz/agora/taxes/per_unit_producer.zh-TW.svg){ .ev-figure-sm }
+![向賣方課從量稅](../../../assets/principle-viz/agora/taxes/per_unit_producer.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/taxes/taxes.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
-<figcaption markdown>向賣方課徵從量稅。</figcaption>
+<figcaption markdown>向賣方課從量稅</figcaption>
 
 </figure>
 
@@ -71,11 +71,11 @@ print(solve_tax_equilibrium(demand, supply, tax))
 
 <figure class="ev-fig" markdown>
 
-![向買方課徵從價稅。](../../../assets/principle-viz/agora/taxes/ad_valorem_consumer.zh-TW.svg){ .ev-figure-sm }
+![向買方課從價稅](../../../assets/principle-viz/agora/taxes/ad_valorem_consumer.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/taxes/taxes.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
-<figcaption markdown>向買方課徵從價稅。</figcaption>
+<figcaption markdown>向買方課從價稅</figcaption>
 
 </figure>
 
@@ -83,7 +83,7 @@ print(solve_tax_equilibrium(demand, supply, tax))
 
 標出 `compare_tax_scenario()` 結果的楔差：在價格軸上標 $p_d$（買方）、$p_0$（課稅前）與 $p_s$（賣方），並以 "Tax" 括號涵蓋 $p_s$ 到 $p_d$。
 
-搭配[福利](welfare.md#sec-welfare)的福利區塊（參見[課稅下的剩餘與無謂損失。](taxes.md#fig-tax-welfare)）：
+搭配[福利](welfare.md#sec-welfare)的福利區塊（參見[課稅下的剩餘與損失](taxes.md#fig-tax-welfare)）：
 
 ```python
 from principle_viz import compare_tax_scenario
@@ -117,11 +117,11 @@ fig.finalize()
 
 <figure class="ev-fig" markdown>
 
-![課稅下的剩餘與無謂損失。](../../../assets/principle-viz/agora/taxes/welfare.zh-TW.svg){ .ev-figure-sm }
+![課稅下的剩餘與損失](../../../assets/principle-viz/agora/taxes/welfare.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/taxes/taxes.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
-<figcaption markdown>課稅下的剩餘與無謂損失。</figcaption>
+<figcaption markdown>課稅下的剩餘與損失</figcaption>
 
 </figure>
 
@@ -141,7 +141,7 @@ fig.finalize()
 
 <!-- api: agora.principle_viz.guides_taxes_12 -->
 
-以標示稅收楔差的方式標出補貼楔差，加上 "Subsidy" 括號，並標示補貼成本。[從量補貼與無謂損失。](taxes.md#fig-subsidy)以 `regions=("dwl",)` 只為無謂損失填色，並以 `visibility` 隱藏部分標籤（詳見[標籤與圖層](figures.md#sec-labels)）。
+以標示稅收楔差的方式標出補貼楔差，加上 "Subsidy" 括號，並標示補貼成本。[從量補貼與無謂損失](taxes.md#fig-subsidy)以 `regions=("dwl",)` 只為無謂損失填色，並以 `visibility` 隱藏部分標籤（詳見[標籤與圖層](figures.md#sec-labels)）。
 
 ```python
 from principle_viz import (
@@ -170,10 +170,10 @@ fig = MarketFigure(
 
 <figure class="ev-fig" markdown>
 
-![從量補貼與無謂損失。](../../../assets/principle-viz/agora/taxes/subsidy.zh-TW.svg){ .ev-figure-sm }
+![從量補貼與無謂損失](../../../assets/principle-viz/agora/taxes/subsidy.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/taxes/taxes.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
-<figcaption markdown>從量補貼與無謂損失。</figcaption>
+<figcaption markdown>從量補貼與無謂損失</figcaption>
 
 </figure>

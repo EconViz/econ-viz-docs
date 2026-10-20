@@ -52,15 +52,15 @@ print(max(s.fit_error for s in path))
 
 <figure class="ev-fig" markdown>
 
-![$4 / x^2$ 的自適應擬合。](../../../assets/bezierkit/agora/fitting/adaptive.svg){ .ev-figure-sm }
+![$4 / x^2$ 的自適應擬合](../../../assets/bezierkit/agora/fitting/adaptive.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/bezierkit/agora/fitting/fitting.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
-<figcaption markdown>$4 / x^2$ 的自適應擬合。</figcaption>
+<figcaption markdown>$4 / x^2$ 的自適應擬合</figcaption>
 
 </figure>
 
-曲線彎曲劇烈處線段較短，接近直線處線段較長（參見[$4 / x^2$ 的自適應擬合。](fitting.md#fig-adaptive)，相鄰線段以不同顏色區分）。Hermite 誤差界限可預估二分需要的深度：
+曲線彎曲劇烈處線段較短，接近直線處線段較長（參見[$4 / x^2$ 的自適應擬合](fitting.md#fig-adaptive)，相鄰線段以不同顏色區分）。Hermite 誤差界限可預估二分需要的深度：
 
 <span id="cor-depth"></span>
 
@@ -98,7 +98,7 @@ print(max(s.fit_error for s in path))
 + 保留兩端點；啟用 `preserve_corners` 時，另保留方向轉折至少 `corner_angle` 弧度的頂點。
 + 在相鄰的保留頂點之間套用遞迴步驟：若離弦最遠的頂點距離不超過 `tolerance`，以弦取代整段；否則保留該頂點，兩側遞迴處理。
 
-每條弦的 `fit_error` 是被它取代的頂點到弦的最大距離（參見[以容許誤差 $0.08$ 簡化 41 個雜訊樣本。](fitting.md#fig-polyline)）。
+每條弦的 `fit_error` 是被它取代的頂點到弦的最大距離（參見[簡化後的雜訊樣本](fitting.md#fig-polyline)）。
 
 遞迴最多有與頂點數相同的層數，每層對每個頂點至多掃描一次，因此最壞情況下與頂點數成平方關係。[Hershberger (1994)](../project/references.md#hershberger1994) 給出此演算法的 $O(n \log n)$ 實作。
 
@@ -126,11 +126,11 @@ print(max(s.fit_error for s in path))
 
 <figure class="ev-fig" markdown>
 
-![以容許誤差 $0.08$ 簡化 41 個雜訊樣本。](../../../assets/bezierkit/agora/fitting/polyline.svg){ .ev-figure-sm }
+![簡化後的雜訊樣本](../../../assets/bezierkit/agora/fitting/polyline.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/bezierkit/agora/fitting/fitting.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
-<figcaption markdown>以容許誤差 $0.08$ 簡化 41 個雜訊樣本。</figcaption>
+<figcaption markdown>簡化後的雜訊樣本</figcaption>
 
 </figure>
 

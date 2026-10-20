@@ -38,7 +38,7 @@ print(ppf.assess(4, 3), ppf.assess(7, 6))
 
 <!-- api: agora.principle_viz.guides_ppf_3 -->
 
-在曲線上取樣，並評估以 `(x, y, label)` 三元組給定的點；`principle_viz.visuals.ppf` 中的 `ppf_canvas()` 畫出曲線、為可達成的區域填色並標出各點（參見[有效率、無效率與無法達成的點。](ppf.md#fig-ppf)）。
+在曲線上取樣，並評估以 `(x, y, label)` 三元組給定的點；`principle_viz.visuals.ppf` 中的 `ppf_canvas()` 畫出曲線、為可達成的區域填色並標出各點（參見[有效率與無效率的點](ppf.md#fig-ppf)）。
 
 ```python
 from principle_viz import analyze_ppf
@@ -53,27 +53,27 @@ ppf_canvas(result).save("ppf_points.png")
 
 <figure class="ev-fig" markdown>
 
-![有效率、無效率與無法達成的點。](../../../assets/principle-viz/agora/ppf/points.zh-TW.svg){ .ev-figure-sm }
+![有效率與無效率的點](../../../assets/principle-viz/agora/ppf/points.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/ppf/ppf.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
-<figcaption markdown>有效率、無效率與無法達成的點。</figcaption>
+<figcaption markdown>有效率與無效率的點</figcaption>
 
 </figure>
 
 <!-- api: agora.principle_viz.guides_ppf_4 -->
 
-經濟成長使各截距乘以一加上對應的成長率；結果包含 `baseline` 與 `shifted` 兩條曲線及其取樣點。`ppf_growth_canvas()` 畫出兩條曲線並命名為 $P P F_0$ 與 $P P F_1$（參見[消費財成長 20%、資本財成長 10%。](ppf.md#fig-ppf-growth)）。
+經濟成長使各截距乘以一加上對應的成長率；結果包含 `baseline` 與 `shifted` 兩條曲線及其取樣點。`ppf_growth_canvas()` 畫出兩條曲線並命名為 $P P F_0$ 與 $P P F_1$（參見[消費財與資本財成長](ppf.md#fig-ppf-growth)）。
 
 <span id="fig-ppf-growth"></span>
 
 <figure class="ev-fig" markdown>
 
-![消費財成長 20%、資本財成長 10%。](../../../assets/principle-viz/agora/ppf/growth.zh-TW.svg){ .ev-figure-sm }
+![消費財與資本財成長](../../../assets/principle-viz/agora/ppf/growth.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/ppf/ppf.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
-<figcaption markdown>消費財成長 20%、資本財成長 10%。</figcaption>
+<figcaption markdown>消費財與資本財成長</figcaption>
 
 </figure>
 

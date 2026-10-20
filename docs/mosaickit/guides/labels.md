@@ -20,17 +20,17 @@ polygon with at least three points. `stroke` sets the callout leader style.
 
 A text fits inside when its rectangle, padded by 2 pt on each side and
 centred on the pole, lies in the region ([Rectangles in polygons](geometry.md#thm-rect-inside)) and touches no
-line, marker, text or other region. [An inside label and a callout.](labels.md#fig-regions) shows both outcomes.
+line, marker, text or other region. [Inside label and callout](labels.md#fig-regions) shows both outcomes.
 
 <span id="fig-regions"></span>
 
 <figure class="ev-fig" markdown>
 
-![An inside label and a callout.](../../assets/mosaickit/agora/labels/regions.svg){ .ev-figure-sm }
+![Inside label and callout](../../assets/mosaickit/agora/labels/regions.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/mosaickit/agora/labels/labels.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>An inside label and a callout.</figcaption>
+<figcaption markdown>Inside label and callout</figcaption>
 
 </figure>
 
@@ -44,7 +44,7 @@ its marker when one is drawn there, or the bare point otherwise.
 The label tries 16 directions around the footprint at gaps of 4, 7, 11 and
 16 pt from its edge, starting with the nearest gap. Within each gap, it
 tries the directions in the order defined by [Candidate order](labels.md#def-candidate-order)
-([The order in which directions are tried.](labels.md#fig-candidates)). It uses the first position that covers nothing. If every
+([Order of directions tried](labels.md#fig-candidates)). It uses the first position that covers nothing. If every
 position has violations, it uses the earliest position among those with the
 fewest and emits a `LayoutWarning` naming the layer. A region is not an
 obstacle when the point lies strictly inside it, more than 1.5 px from its
@@ -64,11 +64,11 @@ edge, because that is where the label belongs.
 
 <figure class="ev-fig" markdown>
 
-![The order in which directions are tried.](../../assets/mosaickit/agora/geometry/candidates.svg){ .ev-figure-sm }
+![Order of directions tried](../../assets/mosaickit/agora/geometry/candidates.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/mosaickit/agora/geometry/geometry.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>The order in which directions are tried.</figcaption>
+<figcaption markdown>Order of directions tried</figcaption>
 
 </figure>
 
@@ -76,11 +76,11 @@ edge, because that is where the label belongs.
 
 <figure class="ev-fig" markdown>
 
-![Point labels beside their points.](../../assets/mosaickit/agora/labels/points.svg){ .ev-figure-sm }
+![Point labels beside points](../../assets/mosaickit/agora/labels/points.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/mosaickit/agora/labels/labels.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>Point labels beside their points.</figcaption>
+<figcaption markdown>Point labels beside points</figcaption>
 
 </figure>
 

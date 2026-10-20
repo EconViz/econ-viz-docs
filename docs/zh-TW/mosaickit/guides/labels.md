@@ -14,17 +14,17 @@ seo_title: "區域標籤與點標籤"
 
 為填色區域命名；區域可以是 `FillLayer` 的 id，也可以是至少由三點組成的多邊形。`stroke` 設定引線標註的引線樣式。
 
-「文字放得下」是指：文字矩形置中於極點、每邊留白 2 pt 後，仍位於區域內（參見[多邊形內的矩形](geometry.md#thm-rect-inside)），且不碰到任何線條、標記、文字或其他區域。[區域內標籤與引線標註。](labels.md#fig-regions)同時呈現這兩種結果。
+「文字放得下」是指：文字矩形置中於極點、每邊留白 2 pt 後，仍位於區域內（參見[多邊形內的矩形](geometry.md#thm-rect-inside)），且不碰到任何線條、標記、文字或其他區域。[區域內標籤與引線](labels.md#fig-regions)同時呈現這兩種結果。
 
 <span id="fig-regions"></span>
 
 <figure class="ev-fig" markdown>
 
-![區域內標籤與引線標註。](../../../assets/mosaickit/agora/labels/regions.zh-TW.svg){ .ev-figure-sm }
+![區域內標籤與引線](../../../assets/mosaickit/agora/labels/regions.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/labels/labels.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
-<figcaption markdown>區域內標籤與引線標註。</figcaption>
+<figcaption markdown>區域內標籤與引線</figcaption>
 
 </figure>
 
@@ -34,7 +34,7 @@ seo_title: "區域標籤與點標籤"
 
 在點的旁邊加上文字為它命名，不使用引線。點的*足跡*是該處畫有標記時的標記，否則就是點本身。
 
-標籤會在足跡周圍嘗試 16 個方向，依序與足跡邊緣間隔 4、7、11、16 pt，由近而遠。同一間隔內，依[候選順序](labels.md#def-candidate-order)的順序嘗試各方向（參見[方向的嘗試順序。](labels.md#fig-candidates)），採用第一個不遮蓋任何物件的位置。若沒有合適的位置，就選擇違規數最少者；違規數相同時，採用較早嘗試的位置，並發出指名該圖層的 `LayoutWarning`。若點嚴格位於某區域內（距邊緣超過 1.5 px），標籤應位於該區域內，因此不會將它視為障礙物。
+標籤會在足跡周圍嘗試 16 個方向，依序與足跡邊緣間隔 4、7、11、16 pt，由近而遠。同一間隔內，依[候選順序](labels.md#def-candidate-order)的順序嘗試各方向（參見[方向的嘗試順序](labels.md#fig-candidates)），採用第一個不遮蓋任何物件的位置。若沒有合適的位置，就選擇違規數最少者；違規數相同時，採用較早嘗試的位置，並發出指名該圖層的 `LayoutWarning`。若點嚴格位於某區域內（距邊緣超過 1.5 px），標籤應位於該區域內，因此不會將它視為障礙物。
 
 <span id="def-candidate-order"></span>
 
@@ -46,11 +46,11 @@ seo_title: "區域標籤與點標籤"
 
 <figure class="ev-fig" markdown>
 
-![方向的嘗試順序。](../../../assets/mosaickit/agora/geometry/candidates.zh-TW.svg){ .ev-figure-sm }
+![方向的嘗試順序](../../../assets/mosaickit/agora/geometry/candidates.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/geometry/geometry.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
-<figcaption markdown>方向的嘗試順序。</figcaption>
+<figcaption markdown>方向的嘗試順序</figcaption>
 
 </figure>
 
@@ -58,11 +58,11 @@ seo_title: "區域標籤與點標籤"
 
 <figure class="ev-fig" markdown>
 
-![點旁的點標籤。](../../../assets/mosaickit/agora/labels/points.zh-TW.svg){ .ev-figure-sm }
+![點旁的點標籤](../../../assets/mosaickit/agora/labels/points.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/labels/labels.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
-<figcaption markdown>點旁的點標籤。</figcaption>
+<figcaption markdown>點旁的點標籤</figcaption>
 
 </figure>
 

@@ -61,7 +61,7 @@ seo_title: "圖形"
 
 同樣的覆寫也可在建立圖形時以 `labels=` 與 `visibility=` 對應表傳入，之後加入的圖層也會套用。加總圖與各畫布函式（`ppf_canvas()`、`public_good_canvas()` 等）接受同樣的兩個參數。
 
-參見[改名的曲線與均衡點。](figures.md#fig-labels)：
+參見[改名的曲線與均衡點](figures.md#fig-labels)：
 
 ```python
 from principle_viz import Label, MarketFigure
@@ -85,11 +85,11 @@ fig.finalize()
 
 <figure class="ev-fig" markdown>
 
-![改名的曲線與均衡點。](../../../assets/principle-viz/agora/figures/labels.zh-TW.svg){ .ev-figure-sm }
+![改名的曲線與均衡點](../../../assets/principle-viz/agora/figures/labels.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/figures/figures.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
-<figcaption markdown>改名的曲線與均衡點。</figcaption>
+<figcaption markdown>改名的曲線與均衡點</figcaption>
 
 </figure>
 
@@ -118,7 +118,7 @@ fig.finalize()
 
 配色加上線寬（`demand_linewidth`、`supply_linewidth`、`shifted_linewidth`、`tax_linewidth`、`arrow_linewidth`、`dashed_linewidth`）、`equilibrium_marker_size`，以及開關 `show_grid`、`show_ticks`、`show_axis_arrows` 與 `show_origin_label`。`from_palette()` 以內建配色為起點，並可設定上述任一欄位。
 
-以 `palette` 參數選用配色（參見[`monochrome` 配色。](figures.md#fig-monochrome)）：
+以 `palette` 參數選用配色（參見[`monochrome` 配色](figures.md#fig-monochrome)）：
 
 ```python
 fig = MarketFigure(x_max=12, y_max=12, palette="monochrome")
@@ -128,11 +128,11 @@ fig = MarketFigure(x_max=12, y_max=12, palette="monochrome")
 
 <figure class="ev-fig" markdown>
 
-![`monochrome` 配色。](../../../assets/principle-viz/agora/figures/monochrome.zh-TW.svg){ .ev-figure-sm }
+![`monochrome` 配色](../../../assets/principle-viz/agora/figures/monochrome.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/figures/figures.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
-<figcaption markdown>`monochrome` 配色。</figcaption>
+<figcaption markdown>`monochrome` 配色</figcaption>
 
 </figure>
 

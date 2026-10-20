@@ -45,17 +45,17 @@ Draw the control line, named "Price ceiling" or "Price floor", with $p_c$
 on the price axis. A binding control also marks $Q_d$ and $Q_s$ and
 braces the gap: "Shortage" below a ceiling, "Surplus" above a floor.
 `gap_brace="axis"` braces it under the quantity axis instead (see
-[A binding price ceiling.](controls.md#fig-ceiling) and [A binding price floor.](controls.md#fig-floor)).
+[Binding price ceiling](controls.md#fig-ceiling) and [Binding price floor](controls.md#fig-floor)).
 
 <span id="fig-ceiling"></span>
 
 <figure class="ev-fig" markdown>
 
-![A binding price ceiling.](../../assets/principle-viz/agora/controls/ceiling.svg){ .ev-figure-sm }
+![Binding price ceiling](../../assets/principle-viz/agora/controls/ceiling.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/controls/controls.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>A binding price ceiling.</figcaption>
+<figcaption markdown>Binding price ceiling</figcaption>
 
 </figure>
 
@@ -63,16 +63,16 @@ braces the gap: "Shortage" below a ceiling, "Surplus" above a floor.
 
 <figure class="ev-fig" markdown>
 
-![A binding price floor.](../../assets/principle-viz/agora/controls/floor.svg){ .ev-figure-sm }
+![Binding price floor](../../assets/principle-viz/agora/controls/floor.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/controls/controls.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>A binding price floor.</figcaption>
+<figcaption markdown>Binding price floor</figcaption>
 
 </figure>
 
 `outcome_from_control()` turns the result into a market outcome for the
-welfare functions of [Welfare](welfare.md#sec-welfare) (see [Welfare under a price ceiling of 3.5.](controls.md#fig-ceiling-welfare)):
+welfare functions of [Welfare](welfare.md#sec-welfare) (see [Welfare under a ceiling of 3.5](controls.md#fig-ceiling-welfare)):
 
 ```python
 from principle_viz.welfare.surplus import (
@@ -93,11 +93,11 @@ fig.add_welfare(delta.policy)
 
 <figure class="ev-fig" markdown>
 
-![Welfare under a price ceiling of 3.5.](../../assets/principle-viz/agora/controls/ceiling_welfare.svg){ .ev-figure-sm }
+![Welfare under a ceiling of 3.5](../../assets/principle-viz/agora/controls/ceiling_welfare.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/controls/controls.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>Welfare under a price ceiling of 3.5.</figcaption>
+<figcaption markdown>Welfare under a ceiling of 3.5</figcaption>
 
 </figure>
 

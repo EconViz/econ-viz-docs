@@ -9,7 +9,7 @@ seo_title: "Quick start"
 ## A cubic curve
 
 The curve used throughout this manual is the cubic with control points
-$(0, 0)$, $(1, 2)$, $(3, 2)$ and $(4, 0)$ ([The cubic of [Quick start](quickstart.md#sec-quickstart), its control polygon and convex hull.](quickstart.md#fig-quickstart)).
+$(0, 0)$, $(1, 2)$, $(3, 2)$ and $(4, 0)$ ([Cubic with control polygon and hull](quickstart.md#fig-quickstart)).
 
 ```python
 from bezierkit import BezierCurve, PiecewiseBezier, Point
@@ -35,11 +35,11 @@ print(to_tikz(path, precision=2, options="thick"))
 
 <figure class="ev-fig" markdown>
 
-![The cubic of [Quick start](quickstart.md#sec-quickstart), its control polygon and convex hull.](../assets/bezierkit/agora/curves/cubic.svg){ .ev-figure-sm }
+![Cubic with control polygon and hull](../assets/bezierkit/agora/curves/cubic.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../assets/bezierkit/agora/curves/curves.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>The cubic of [Quick start](quickstart.md#sec-quickstart), its control polygon and convex hull.</figcaption>
+<figcaption markdown>Cubic with control polygon and hull</figcaption>
 
 </figure>
 

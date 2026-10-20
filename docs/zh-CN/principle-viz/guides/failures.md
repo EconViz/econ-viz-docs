@@ -38,17 +38,17 @@ print(result.corrective_tax, result.deadweight_loss)
 
 <!-- api: agora.principle_viz.guides_failures_3 -->
 
-画出社会曲线，在数量轴上标出 $Q_m$（市场）与 $Q^*$（最优），在 $Q^*$ 处标出横跨差距的矫正税 $t$ 或补贴 $s$，并为无谓损失填色（参见[负外部性。](failures.md#fig-neg-externality)、[正外部性。](failures.md#fig-pos-externality)）。
+画出社会曲线，在数量轴上标出 $Q_m$（市场）与 $Q^*$（最优），在 $Q^*$ 处标出横跨差距的矫正税 $t$ 或补贴 $s$，并为无谓损失填色（参见[负外部性](failures.md#fig-neg-externality)、[正外部性](failures.md#fig-pos-externality)）。
 
 <span id="fig-neg-externality"></span>
 
 <figure class="ev-fig" markdown>
 
-![负外部性。](../../../assets/principle-viz/agora/failures/negative_externality.zh-CN.svg){ .ev-figure-sm }
+![负外部性](../../../assets/principle-viz/agora/failures/negative_externality.zh-CN.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/failures/failures.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-<figcaption markdown>负外部性。</figcaption>
+<figcaption markdown>负外部性</figcaption>
 
 </figure>
 
@@ -56,11 +56,11 @@ print(result.corrective_tax, result.deadweight_loss)
 
 <figure class="ev-fig" markdown>
 
-![正外部性。](../../../assets/principle-viz/agora/failures/positive_externality.zh-CN.svg){ .ev-figure-sm }
+![正外部性](../../../assets/principle-viz/agora/failures/positive_externality.zh-CN.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/failures/failures.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-<figcaption markdown>正外部性。</figcaption>
+<figcaption markdown>正外部性</figcaption>
 
 </figure>
 
@@ -74,17 +74,17 @@ print(result.corrective_tax, result.deadweight_loss)
 
 <!-- api: agora.principle_viz.guides_failures_5 -->
 
-画出社会成本，标出 $Q^*$ 与 $Q_\text{open}$，并为无谓损失填色。在 `add_curves()` 中将曲线命名为 $M B$ 与 $M P C$。参见[公共资源的过度使用。](failures.md#fig-common-resource)。
+画出社会成本，标出 $Q^*$ 与 $Q_\text{open}$，并为无谓损失填色。在 `add_curves()` 中将曲线命名为 $M B$ 与 $M P C$。参见[共有资源的过度使用](failures.md#fig-common-resource)。
 
 <span id="fig-common-resource"></span>
 
 <figure class="ev-fig" markdown>
 
-![公共资源的过度使用。](../../../assets/principle-viz/agora/failures/common_resource.zh-CN.svg){ .ev-figure-sm }
+![共有资源的过度使用](../../../assets/principle-viz/agora/failures/common_resource.zh-CN.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/failures/failures.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-<figcaption markdown>公共资源的过度使用。</figcaption>
+<figcaption markdown>共有资源的过度使用</figcaption>
 
 </figure>
 
@@ -113,16 +113,16 @@ print(
 
 <!-- api: agora.principle_viz.guides_failures_7 -->
 
-位于 `principle_viz.visuals.market_failures` 的 `mosaickit` 画布，画出各人的边际利益、其垂直加总、边际成本，并在数量轴上标出 $Q_p$ 与 $Q^*$（参见[边际利益的垂直加总。](failures.md#fig-public-good)）。
+位于 `principle_viz.visuals.market_failures` 的 `mosaickit` 画布，画出各人的边际利益、其垂直加总、边际成本，并在数量轴上标出 $Q_p$ 与 $Q^*$（参见[边际利益的垂直加总](failures.md#fig-public-good)）。
 
 <span id="fig-public-good"></span>
 
 <figure class="ev-fig" markdown>
 
-![边际利益的垂直加总。](../../../assets/principle-viz/agora/failures/public_good.zh-CN.svg){ .ev-figure-sm }
+![边际利益的垂直加总](../../../assets/principle-viz/agora/failures/public_good.zh-CN.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/failures/failures.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-<figcaption markdown>边际利益的垂直加总。</figcaption>
+<figcaption markdown>边际利益的垂直加总</figcaption>
 
 </figure>

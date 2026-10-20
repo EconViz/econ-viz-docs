@@ -64,17 +64,17 @@ or `"rotation"`). `add_tax_transform()` draws from it.
 
 Draw the taxed curve, named $S + t$ or $D - t$, with a dashed arrow for
 the shift or the rotation and the untaxed equilibrium (see
-[A per-unit tax on sellers.](taxes.md#fig-tax-producer) and [An ad valorem tax on buyers.](taxes.md#fig-tax-consumer)).
+[Per-unit tax on sellers](taxes.md#fig-tax-producer) and [Ad valorem tax on buyers](taxes.md#fig-tax-consumer)).
 
 <span id="fig-tax-producer"></span>
 
 <figure class="ev-fig" markdown>
 
-![A per-unit tax on sellers.](../../assets/principle-viz/agora/taxes/per_unit_producer.svg){ .ev-figure-sm }
+![Per-unit tax on sellers](../../assets/principle-viz/agora/taxes/per_unit_producer.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/taxes/taxes.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>A per-unit tax on sellers.</figcaption>
+<figcaption markdown>Per-unit tax on sellers</figcaption>
 
 </figure>
 
@@ -82,11 +82,11 @@ the shift or the rotation and the untaxed equilibrium (see
 
 <figure class="ev-fig" markdown>
 
-![An ad valorem tax on buyers.](../../assets/principle-viz/agora/taxes/ad_valorem_consumer.svg){ .ev-figure-sm }
+![Ad valorem tax on buyers](../../assets/principle-viz/agora/taxes/ad_valorem_consumer.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/taxes/taxes.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>An ad valorem tax on buyers.</figcaption>
+<figcaption markdown>Ad valorem tax on buyers</figcaption>
 
 </figure>
 
@@ -97,7 +97,7 @@ $p_0$ (before the tax) and $p_s$ (sellers) on the price axis, with a "Tax"
 brace over $p_s$ to $p_d$.
 
 It combines with the welfare regions of [Welfare](welfare.md#sec-welfare) (see
-[Surplus and deadweight loss under a tax.](taxes.md#fig-tax-welfare)):
+[Surplus and loss under a tax](taxes.md#fig-tax-welfare)):
 
 ```python
 from principle_viz import compare_tax_scenario
@@ -131,11 +131,11 @@ fig.finalize()
 
 <figure class="ev-fig" markdown>
 
-![Surplus and deadweight loss under a tax.](../../assets/principle-viz/agora/taxes/welfare.svg){ .ev-figure-sm }
+![Surplus and loss under a tax](../../assets/principle-viz/agora/taxes/welfare.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/taxes/taxes.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>Surplus and deadweight loss under a tax.</figcaption>
+<figcaption markdown>Surplus and loss under a tax</figcaption>
 
 </figure>
 
@@ -163,7 +163,7 @@ government expenditure is 10.
 <!-- api: agora.principle_viz.guides_taxes_12 -->
 
 Mark the subsidy wedge like the tax wedge, with a "Subsidy" brace, and
-name the subsidy's cost. [A per-unit subsidy and its deadweight loss.](taxes.md#fig-subsidy) shades only the deadweight loss
+name the subsidy's cost. [Per-unit subsidy and its loss](taxes.md#fig-subsidy) shades only the deadweight loss
 (`regions=("dwl",)`) and hides some labels with `visibility`
 ([Labels and layers](figures.md#sec-labels)).
 
@@ -194,10 +194,10 @@ fig = MarketFigure(
 
 <figure class="ev-fig" markdown>
 
-![A per-unit subsidy and its deadweight loss.](../../assets/principle-viz/agora/taxes/subsidy.svg){ .ev-figure-sm }
+![Per-unit subsidy and its loss](../../assets/principle-viz/agora/taxes/subsidy.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/taxes/taxes.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>A per-unit subsidy and its deadweight loss.</figcaption>
+<figcaption markdown>Per-unit subsidy and its loss</figcaption>
 
 </figure>

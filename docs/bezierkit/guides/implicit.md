@@ -96,7 +96,7 @@ An edge has a crossing exactly when its two corners differ in being high.
   ([Edge crossing](implicit.md#def-crossing)). A cell with two crossings contributes one line piece. A
   cell with four crossings is a saddle: two opposite corners are high, the
   other two low, and the rule below decides which crossings to join
-  ([Saddle cell, centre (a) high, (b) low; filled corners have $F \ge c$.](implicit.md#fig-saddle)).
+  ([Saddle cell with two centres](implicit.md#fig-saddle)).
 + Stitch. Join pieces that share an end point into chains. A chain that
   returns to its start is closed; one that reaches the viewport's edge or a
   branch point is open. Disconnected components stay separate paths.
@@ -111,11 +111,11 @@ An edge has a crossing exactly when its two corners differ in being high.
 
 <figure class="ev-fig" markdown>
 
-![Saddle cell, centre (a) high, (b) low; filled corners have $F \ge c$.](../../assets/bezierkit/agora/implicit/saddle.svg){ .ev-figure-sm }
+![Saddle cell with two centres](../../assets/bezierkit/agora/implicit/saddle.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/bezierkit/agora/implicit/implicit.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>Saddle cell, centre (a) high, (b) low; filled corners have $F \ge c$.</figcaption>
+<figcaption markdown>Saddle cell with two centres</figcaption>
 
 </figure>
 
@@ -139,7 +139,7 @@ $$
 The package calls the centre high when this mean is at least $c$. In a
 saddle cell the two corners that are on the same side of $c$ as the centre
 are then connected through the cell, and each of the other two corners is
-cut off by a line piece of its own ([Saddle cell, centre (a) high, (b) low; filled corners have $F \ge c$.](implicit.md#fig-saddle)).
+cut off by a line piece of its own ([Saddle cell with two centres](implicit.md#fig-saddle)).
 This is the midpoint decider [Athawale (2019)](../project/references.md#athawale2019). The asymptotic decider
 of [Nielson (1991)](../project/references.md#nielson1991) compares the value of $u$ at its saddle point
 instead,
@@ -172,11 +172,11 @@ print(len(contours.for_level(4)[0].segments))
 
 <figure class="ev-fig" markdown>
 
-![$x^2 y = c$ for $c = 1, 2, 4$, inner to outer.](../../assets/bezierkit/agora/implicit/contours.svg){ .ev-figure-sm }
+![$x^2 y = c$ for three values of $c$](../../assets/bezierkit/agora/implicit/contours.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/bezierkit/agora/implicit/implicit.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>$x^2 y = c$ for $c = 1, 2, 4$, inner to outer.</figcaption>
+<figcaption markdown>$x^2 y = c$ for three values of $c$</figcaption>
 
 </figure>
 

@@ -69,16 +69,16 @@ print(max(s.fit_error for s in path))
 
 <figure class="ev-fig" markdown>
 
-![Adaptive fit of $4 / x^2$; segments alternate colour.](../../assets/bezierkit/agora/fitting/adaptive.svg){ .ev-figure-sm }
+![Adaptive fit of $4 / x^2$](../../assets/bezierkit/agora/fitting/adaptive.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/bezierkit/agora/fitting/fitting.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>Adaptive fit of $4 / x^2$; segments alternate colour.</figcaption>
+<figcaption markdown>Adaptive fit of $4 / x^2$</figcaption>
 
 </figure>
 
 Segments are short where the curve bends sharply and long where it is
-nearly straight ([Adaptive fit of $4 / x^2$; segments alternate colour.](fitting.md#fig-adaptive)). The Hermite error bound predicts how deep
+nearly straight ([Adaptive fit of $4 / x^2$](fitting.md#fig-adaptive)). The Hermite error bound predicts how deep
 the bisection has to go:
 
 <span id="cor-depth"></span>
@@ -134,7 +134,7 @@ an exact cubic ([Lines and quadratics as cubics](paths.md#prop-elevation)). The 
   the whole run; otherwise keep that vertex and recurse on both sides.
 
 Each chord's `fit_error` is the largest distance from the vertices it
-replaced to the chord ([41 noisy samples simplified with tolerance $0.08$.](fitting.md#fig-polyline)).
+replaced to the chord ([Noisy samples simplified](fitting.md#fig-polyline)).
 
 The recursion makes at most as many levels as there are vertices and scans
 each vertex once per level, so it is quadratic in the number of vertices in
@@ -170,11 +170,11 @@ of the algorithm.
 
 <figure class="ev-fig" markdown>
 
-![41 noisy samples simplified with tolerance $0.08$.](../../assets/bezierkit/agora/fitting/polyline.svg){ .ev-figure-sm }
+![Noisy samples simplified](../../assets/bezierkit/agora/fitting/polyline.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/bezierkit/agora/fitting/fitting.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>41 noisy samples simplified with tolerance $0.08$.</figcaption>
+<figcaption markdown>Noisy samples simplified</figcaption>
 
 </figure>
 

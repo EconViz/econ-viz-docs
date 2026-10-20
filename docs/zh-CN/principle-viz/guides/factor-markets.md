@@ -28,7 +28,7 @@ print(labor.employment, labor.unemployment)
 
 <!-- api: agora.principle_viz.guides_factor_markets_2 -->
 
-以价格下限的方式绘制工资下限（详见[价格管制](controls.md#sec-controls)）："Minimum wage" 线、工资轴上的 $w_{\min}$，有约束时另标出 $L_d$ 与 $L_s$ 及 "Unemployment" 括号。坐标轴命名为 $L$ 与 $w$，曲线命名为 $D_L$ 与 $S_L$（参见[有约束的最低工资。](factor-markets.md#fig-minimum-wage)）：
+以价格下限的方式绘制工资下限（详见[价格管制](controls.md#sec-controls)）："Minimum wage" 线、工资轴上的 $w_{\min}$，有约束时另标出 $L_d$ 与 $L_s$ 及 "Unemployment" 括号。坐标轴命名为 $L$ 与 $w$，曲线命名为 $D_L$ 与 $S_L$（参见[有约束的最低工资](factor-markets.md#fig-minimum-wage)）：
 
 ```python
 fig = MarketFigure(x_max=11, y_max=14, x_label="L", y_label="w")
@@ -46,11 +46,11 @@ fig.add_minimum_wage(labor)
 
 <figure class="ev-fig" markdown>
 
-![有约束的最低工资。](../../../assets/principle-viz/agora/factor/minimum_wage.zh-CN.svg){ .ev-figure-sm }
+![有约束的最低工资](../../../assets/principle-viz/agora/factor/minimum_wage.zh-CN.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/factor/factor.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-<figcaption markdown>有约束的最低工资。</figcaption>
+<figcaption markdown>有约束的最低工资</figcaption>
 
 </figure>
 
@@ -84,16 +84,16 @@ print(funds.interest_rate_change, funds.crowding_out)
 
 <!-- api: agora.principle_viz.guides_factor_markets_5 -->
 
-画出移动后的曲线并命名为 $D_1$ 或 $S_1$，以及两个均衡点与其间的移动。价格轴命名为 $r$（参见[政府借款挤出民间投资。](factor-markets.md#fig-loanable-funds)）。
+画出移动后的曲线并命名为 $D_1$ 或 $S_1$，以及两个均衡点与其间的移动。价格轴命名为 $r$（参见[政府借款挤出投资](factor-markets.md#fig-loanable-funds)）。
 
 <span id="fig-loanable-funds"></span>
 
 <figure class="ev-fig" markdown>
 
-![政府借款挤出民间投资。](../../../assets/principle-viz/agora/factor/loanable_funds.zh-CN.svg){ .ev-figure-sm }
+![政府借款挤出投资](../../../assets/principle-viz/agora/factor/loanable_funds.zh-CN.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/factor/factor.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-<figcaption markdown>政府借款挤出民间投资。</figcaption>
+<figcaption markdown>政府借款挤出投资</figcaption>
 
 </figure>

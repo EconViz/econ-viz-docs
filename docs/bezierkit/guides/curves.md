@@ -21,7 +21,7 @@ seo_title: "Bézier curves"
     For all other integers $i$ we put $b_{i,n} = 0$.
 
 The polynomials are due to [Bernstein (1912)](../project/references.md#bernstein1912); [Farouki (2012)](../project/references.md#farouki2012)
-surveys their history and properties, and [The cubic Bernstein polynomials.](curves.md#fig-basis) shows the cubic ones.
+surveys their history and properties, and [Cubic Bernstein polynomials](curves.md#fig-basis) shows the cubic ones.
 The proofs below use two identities of binomial coefficients.
 
 <span id="lem-binomial"></span>
@@ -45,11 +45,11 @@ The proofs below use two identities of binomial coefficients.
 
 <figure class="ev-fig" markdown>
 
-![The cubic Bernstein polynomials.](../../assets/bezierkit/agora/curves/basis.svg){ .ev-figure-sm }
+![Cubic Bernstein polynomials](../../assets/bezierkit/agora/curves/basis.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/bezierkit/agora/curves/curves.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>The cubic Bernstein polynomials.</figcaption>
+<figcaption markdown>Cubic Bernstein polynomials</figcaption>
 
 </figure>
 
@@ -153,7 +153,7 @@ interpolation.
     $$
 
 Each round averages neighbouring points, so the polygon shrinks by one
-point; after $n$ rounds one point is left ([de Casteljau's algorithm at $t = 0.4$.](curves.md#fig-casteljau)). The algorithm
+point; after $n$ rounds one point is left ([de Casteljau at $t = 0.4$](curves.md#fig-casteljau)). The algorithm
 goes back to Paul de Casteljau's work at Citroën around 1959
 [M{\"u}ller (2024)](../project/references.md#mueller2024).
 
@@ -175,11 +175,11 @@ The statement is Theorems 1.6 and 1.7 of [Floater (2025)](../project/references.
 
 <figure class="ev-fig" markdown>
 
-![de Casteljau's algorithm at $t = 0.4$.](../../assets/bezierkit/agora/curves/casteljau.svg){ .ev-figure-sm }
+![de Casteljau at $t = 0.4$](../../assets/bezierkit/agora/curves/casteljau.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/bezierkit/agora/curves/curves.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>de Casteljau's algorithm at $t = 0.4$.</figcaption>
+<figcaption markdown>de Casteljau at $t = 0.4$</figcaption>
 
 </figure>
 

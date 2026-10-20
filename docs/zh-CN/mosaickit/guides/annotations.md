@@ -50,11 +50,11 @@ canvas.add(AxisMarkLayer("x", 6, "b", math=True))
 
 <figure class="ev-fig" markdown>
 
-![y 轴边栏的标记、注释与大括号。](../../../assets/mosaickit/agora/annotations/gutter.zh-CN.svg){ .ev-figure-sm }
+![y 轴边栏的标记与注记](../../../assets/mosaickit/agora/annotations/gutter.zh-CN.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/annotations/annotations.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-<figcaption markdown>y 轴边栏的标记、注释与大括号。</figcaption>
+<figcaption markdown>y 轴边栏的标记与注记</figcaption>
 
 </figure>
 
@@ -62,17 +62,17 @@ canvas.add(AxisMarkLayer("x", 6, "b", math=True))
 
 <figure class="ev-fig" markdown>
 
-![两点之间的跨距大括号。](../../../assets/mosaickit/agora/annotations/span.zh-CN.svg){ .ev-figure-sm }
+![两点之间的跨距大括号](../../../assets/mosaickit/agora/annotations/span.zh-CN.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/annotations/annotations.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-<figcaption markdown>两点之间的跨距大括号。</figcaption>
+<figcaption markdown>两点之间的跨距大括号</figcaption>
 
 </figure>
 
 ## 边栏的字段
 
-各栏从轴线向外排列，第一栏与轴线相距 5 pt，各栏彼此相距 8 pt。顺序依次是标记、每条外侧大括号轨道各一栏，以及注释。每栏宽度取其中最宽的内容；空栏不占空间，也不增加间距（参见[y 轴边栏的标记、注释与大括号。](annotations.md#fig-gutter)，图中另加了辅助线）。随后还要处理两个问题：同一栏中相邻的文字不能重叠，以及哪些大括号可以共用一条轨道。
+各栏从轴线向外排列，第一栏与轴线相距 5 pt，各栏彼此相距 8 pt。顺序依次是标记、每条外侧大括号轨道各一栏，以及注释。每栏宽度取其中最宽的内容；空栏不占空间，也不增加间距（参见[y 轴边栏的标记与注记](annotations.md#fig-gutter)，图中另加了辅助线）。随后还要处理两个问题：同一栏中相邻的文字不能重叠，以及哪些大括号可以共用一条轨道。
 
 ## 沿轴分散文字
 
@@ -115,15 +115,15 @@ canvas.add(AxisMarkLayer("x", 6, "b", math=True))
 
 <figure class="ev-fig" markdown>
 
-![目标（上）与分散结果（下）。](../../../assets/mosaickit/agora/geometry/spread.zh-CN.svg){ .ev-figure-sm }
+![目标与分散结果](../../../assets/mosaickit/agora/geometry/spread.zh-CN.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/geometry/geometry.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-<figcaption markdown>目标（上）与分散结果（下）。</figcaption>
+<figcaption markdown>目标与分散结果</figcaption>
 
 </figure>
 
-[目标（上）与分散结果（下）。](annotations.md#fig-spread)中的前三项因重叠而形成一组，该组的位置以各项目标位置的平均值为中心；其余两项原本就已分开，因此不会移动。
+[目标与分散结果](annotations.md#fig-spread)中的前三项因重叠而形成一组，该组的位置以各项目标位置的平均值为中心；其余两项原本就已分开，因此不会移动。
 
 ## 大括号的轨道
 

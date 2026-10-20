@@ -82,7 +82,7 @@ print(result.direction_q, result.direction_p)
 
 <!-- api: agora.principle_viz.guides_markets_5 -->
 
-画出移动的曲线、两个均衡点，以及由旧均衡指向新均衡的虚线箭头。在 `add_curves()` 中将原曲线命名为 $D_0$ 与 $S_0$。需求增加的结果如[需求增加。](markets.md#fig-shifts)，供给减少的结果如[供给减少。](markets.md#fig-shift-supply)。
+画出移动的曲线、两个均衡点，以及由旧均衡指向新均衡的虚线箭头。在 `add_curves()` 中将原曲线命名为 $D_0$ 与 $S_0$。需求增加的结果如[需求增加](markets.md#fig-shifts)，供给减少的结果如[供给减少](markets.md#fig-shift-supply)。
 
 ```python
 fig = MarketFigure(
@@ -103,11 +103,11 @@ fig.finalize()
 
 <figure class="ev-fig" markdown>
 
-![需求增加。](../../../assets/principle-viz/agora/markets/shift_demand_increase.zh-CN.svg){ .ev-figure-sm }
+![需求增加](../../../assets/principle-viz/agora/markets/shift_demand_increase.zh-CN.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/markets/markets.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-<figcaption markdown>需求增加。</figcaption>
+<figcaption markdown>需求增加</figcaption>
 
 </figure>
 
@@ -115,11 +115,11 @@ fig.finalize()
 
 <figure class="ev-fig" markdown>
 
-![供给减少。](../../../assets/principle-viz/agora/markets/shift_supply_decrease.zh-CN.svg){ .ev-figure-sm }
+![供给减少](../../../assets/principle-viz/agora/markets/shift_supply_decrease.zh-CN.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/markets/markets.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-<figcaption markdown>供给减少。</figcaption>
+<figcaption markdown>供给减少</figcaption>
 
 </figure>
 

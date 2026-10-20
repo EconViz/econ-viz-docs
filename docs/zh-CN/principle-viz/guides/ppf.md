@@ -38,7 +38,7 @@ print(ppf.assess(4, 3), ppf.assess(7, 6))
 
 <!-- api: agora.principle_viz.guides_ppf_3 -->
 
-在曲线上采样，并评估以 `(x, y, label)` 三元组给定的点；`principle_viz.visuals.ppf` 中的 `ppf_canvas()` 画出曲线、为可达成的区域填色并标出各点（参见[有效率、无效率与无法达成的点。](ppf.md#fig-ppf)）。
+在曲线上采样，并评估以 `(x, y, label)` 三元组给定的点；`principle_viz.visuals.ppf` 中的 `ppf_canvas()` 画出曲线、为可达成的区域填色并标出各点（参见[有效率与无效率的点](ppf.md#fig-ppf)）。
 
 ```python
 from principle_viz import analyze_ppf
@@ -53,27 +53,27 @@ ppf_canvas(result).save("ppf_points.png")
 
 <figure class="ev-fig" markdown>
 
-![有效率、无效率与无法达成的点。](../../../assets/principle-viz/agora/ppf/points.zh-CN.svg){ .ev-figure-sm }
+![有效率与无效率的点](../../../assets/principle-viz/agora/ppf/points.zh-CN.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/ppf/ppf.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-<figcaption markdown>有效率、无效率与无法达成的点。</figcaption>
+<figcaption markdown>有效率与无效率的点</figcaption>
 
 </figure>
 
 <!-- api: agora.principle_viz.guides_ppf_4 -->
 
-经济成长使各截距乘以一加上对应的成长率；结果包含 `baseline` 与 `shifted` 两条曲线及其采样点。`ppf_growth_canvas()` 画出两条曲线并命名为 $P P F_0$ 与 $P P F_1$（参见[消费财成长 20%、资本财成长 10%。](ppf.md#fig-ppf-growth)）。
+经济成长使各截距乘以一加上对应的成长率；结果包含 `baseline` 与 `shifted` 两条曲线及其采样点。`ppf_growth_canvas()` 画出两条曲线并命名为 $P P F_0$ 与 $P P F_1$（参见[消费品与资本品增长](ppf.md#fig-ppf-growth)）。
 
 <span id="fig-ppf-growth"></span>
 
 <figure class="ev-fig" markdown>
 
-![消费财成长 20%、资本财成长 10%。](../../../assets/principle-viz/agora/ppf/growth.zh-CN.svg){ .ev-figure-sm }
+![消费品与资本品增长](../../../assets/principle-viz/agora/ppf/growth.zh-CN.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/ppf/ppf.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-<figcaption markdown>消费财成长 20%、资本财成长 10%。</figcaption>
+<figcaption markdown>消费品与资本品增长</figcaption>
 
 </figure>
 

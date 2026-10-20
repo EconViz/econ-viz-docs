@@ -44,11 +44,11 @@ canvas.save("diagram.pdf")
 
 <figure class="ev-fig" markdown>
 
-![The quick-start diagram.](../assets/mosaickit/agora/quickstart/diagram.svg){ .ev-figure-sm }
+![Quick-start diagram](../assets/mosaickit/agora/quickstart/diagram.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../assets/mosaickit/agora/quickstart/quickstart.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>The quick-start diagram.</figcaption>
+<figcaption markdown>Quick-start diagram</figcaption>
 
 </figure>
 
