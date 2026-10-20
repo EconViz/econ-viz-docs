@@ -38,6 +38,7 @@ extra_css:
 
 extra_javascript:
   - javascripts/api-highlight.js
+  - javascripts/code-fold.js
   - javascripts/katex.js
   - javascripts/model-toc.js
   - javascripts/analytics-events.js

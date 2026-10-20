@@ -471,3 +471,61 @@
   line-clamp: 3;
   overflow: hidden;
 }
+
+/* Code blocks over 15 lines: line numbers, and folding by clicking a number (docs/javascripts/code-fold.js) */
+.md-typeset .highlight code.ev-numbered .ev-line::before {
+  content: attr(data-m) attr(data-n);
+  display: inline-block;
+  box-sizing: content-box;
+  width: calc(var(--ev-digits, 2) * 1ch + 2ch);
+  margin-right: 1.4ch;
+  text-align: right;
+  color: var(--md-default-fg-color--lighter);
+  user-select: none;
+  -webkit-user-select: none;
+}
+.md-typeset .highlight code.ev-numbered .ev-line[data-fold]::before {
+  color: var(--md-default-fg-color--light);
+  cursor: pointer;
+}
+.md-typeset .highlight code.ev-numbered .ev-line[data-fold]:hover::before {
+  color: #405c9a;
+}
+.md-typeset .highlight code.ev-numbered .ev-line[data-folded]::before {
+  color: #405c9a;
+  font-weight: 600;
+}
+.md-typeset .highlight code.ev-numbered .ev-line[data-hidden] {
+  display: none;
+}
+/* copying takes the whole block, folded or not */
+.md-typeset .highlight code.ev-numbered[data-md-copying] .ev-line[data-hidden] {
+  display: inline;
+}
+.md-typeset .highlight code.ev-numbered .ev-dots {
+  display: none;
+}
+.md-typeset .highlight code.ev-numbered .ev-line[data-folded] .ev-dots {
+  display: inline;
+}
+.md-typeset .highlight code.ev-numbered .ev-line[data-folded] .ev-dots::before {
+  content: " ⋯";
+  color: #405c9a;
+}
+.ev-fold-tip {
+  position: fixed;
+  z-index: 10;
+  display: none;
+  max-width: 24rem;
+  padding: .3rem .6rem;
+  border-radius: 4px;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: .72rem;
+  line-height: 1.4;
+  pointer-events: none;
+  transform: translateY(calc(-100% - 6px));
+}
+.ev-fold-tip[data-visible] {
+  display: block;
+}
