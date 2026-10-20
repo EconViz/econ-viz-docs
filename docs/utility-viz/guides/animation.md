@@ -124,7 +124,7 @@ Animator(draw, frames=np.linspace(0.1, 0.9, 45)).save(
 
 ![Parameter sweep $\alpha$ varies with $\beta = 1 - \alpha$](../../assets/utility-viz/agora/animation/parameter_sweep.svg){ .ev-figure-lg }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/animation/parameter_sweep.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/animation/parameter_sweep.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>Parameter sweep $\alpha$ varies with $\beta = 1 - \alpha$</figcaption>
 
@@ -172,7 +172,7 @@ Animator(draw, frames=np.linspace(1.0, 6.0, 45)).save(
 
 ![Price sweep](../../assets/utility-viz/agora/animation/price_sweep.svg){ .ev-figure-lg }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/animation/price_sweep.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/animation/price_sweep.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>Price sweep</figcaption>
 
@@ -218,7 +218,7 @@ Animator(draw, frames=np.linspace(8.0, 36.0, 45)).save(
 
 ![Income sweep](../../assets/utility-viz/agora/animation/income_sweep.svg){ .ev-figure-lg }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/animation/income_sweep.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/animation/income_sweep.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>Income sweep</figcaption>
 

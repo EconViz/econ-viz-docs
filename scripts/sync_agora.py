@@ -28,7 +28,7 @@ DOWNLOAD_SCRIPT = {'en': 'Download the source', 'zh-TW': '下載生圖原始檔'
 def _icon(path):
     return ('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="'+path+'" fill="none" stroke="currentColor" '
             'stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>')
-SCRIPT_ICON=_icon('M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16')
+SCRIPT_ICON=_icon('M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14')
 KEEP_SITE_PAGE = set()
 # Site-only material appended to a converted page: scripts/supplements/<name>.<locale>.md. The animation page's GIF
 # gallery is drawn by scripts/animation_figures.py, which has no place in the manual.

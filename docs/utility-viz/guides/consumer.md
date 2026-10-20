@@ -59,7 +59,7 @@ fig.save("side_by_side.png")
 
 ![Price change before and after](../../assets/utility-viz/agora/consumer/side_by_side.svg){ .ev-figure-lg }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/consumer/side_by_side.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/consumer/side_by_side.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>Price change before and after</figcaption>
 
@@ -125,7 +125,7 @@ cvs.save("price_path.png")
 
 ![The price-consumption curve as $p_x$ varies](../../assets/utility-viz/agora/consumer/price_path.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/consumer/price_path.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/consumer/price_path.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>The price-consumption curve as $p_x$ varies</figcaption>
 
@@ -175,7 +175,7 @@ The figure below is drawn from MosaicKit layers, so each label can be placed by 
 
 ![Demand curve at the optima](../../assets/utility-viz/agora/consumer/demand.svg){ .ev-figure-lg }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/consumer/demand.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/consumer/demand.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>Demand curve at the optima</figcaption>
 
@@ -255,7 +255,7 @@ The figure below is also drawn from MosaicKit layers; the two effects are named 
 
 ![Hicks decomposition](../../assets/utility-viz/agora/consumer/hicks.svg){ .ev-figure-lg }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/consumer/hicks.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/consumer/hicks.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>Hicks decomposition</figcaption>
 
@@ -303,7 +303,7 @@ The figure below is drawn from MosaicKit layers after a textbook figure, with bo
 
 ![Edgeworth box indifference curves](../../assets/utility-viz/agora/consumer/edgeworth.svg){ .ev-figure-lg }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/consumer/edgeworth.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/consumer/edgeworth.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>Edgeworth box indifference curves</figcaption>
 

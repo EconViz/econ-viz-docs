@@ -65,7 +65,7 @@ cvs.save("ces.png")
 
 ![CES with $\rho = -0.5$](../../assets/utility-viz/agora/models/ces.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/ces.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/ces.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>CES with $\rho = -0.5$</figcaption>
 
@@ -107,7 +107,7 @@ cvs.save("translog.png")
 
 ![Translog with $\beta_{x y} = 0.12$](../../assets/utility-viz/agora/models/translog.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/translog.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/translog.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>Translog with $\beta_{x y} = 0.12$</figcaption>
 
@@ -162,7 +162,7 @@ cvs.save("leontief.png")
 
 ![Leontief with kink ray](../../assets/utility-viz/agora/models/leontief.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/leontief.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/leontief.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>Leontief with kink ray</figcaption>
 
@@ -203,7 +203,7 @@ cvs.save("perfect_substitutes.png")
 
 ![Perfect substitutes corner solution](../../assets/utility-viz/agora/models/perfect_substitutes.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/perfect_substitutes.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/perfect_substitutes.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>Perfect substitutes corner solution</figcaption>
 
@@ -250,7 +250,7 @@ cvs.save("maximum.png")
 
 ![Maximum utility](../../assets/utility-viz/agora/models/maximum.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/maximum.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/maximum.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>Maximum utility</figcaption>
 
@@ -297,7 +297,7 @@ cvs.save("quasi_linear.png")
 
 ![Quasi-linear preferences vertically parallel indifference curves](../../assets/utility-viz/agora/models/quasi_linear.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/quasi_linear.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/quasi_linear.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>Quasi-linear preferences vertically parallel indifference curves</figcaption>
 
@@ -341,7 +341,7 @@ cvs.save("haagsma.png")
 
 ![Haagsma with $\gamma_y = 10$](../../assets/utility-viz/agora/models/haagsma.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/haagsma.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/haagsma.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>Haagsma with $\gamma_y = 10$</figcaption>
 
@@ -383,7 +383,7 @@ cvs.save("stone_geary.png")
 
 ![Stone-Geary with $\overline{x} = \overline{y} = 2$](../../assets/utility-viz/agora/models/stone_geary.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/stone_geary.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/stone_geary.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>Stone-Geary with $\overline{x} = \overline{y} = 2$</figcaption>
 
@@ -430,7 +430,7 @@ cvs.save("satiation.png")
 
 ![Satiation around the bliss point $(6, 4)$](../../assets/utility-viz/agora/models/satiation.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/satiation.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/satiation.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>Satiation around the bliss point $(6, 4)$</figcaption>
 

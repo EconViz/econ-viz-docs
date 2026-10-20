@@ -54,7 +54,7 @@ fig.add_minimum_wage(labor)
 
 ![A binding minimum wage.](../../assets/principle-viz/agora/factor/minimum_wage.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/factor/factor.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/factor/factor.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>A binding minimum wage.</figcaption>
 
@@ -107,7 +107,7 @@ movement between them. Title the price axis $r$ (see
 
 ![Government borrowing crowds out private investment.](../../assets/principle-viz/agora/factor/loanable_funds.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/factor/factor.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/factor/factor.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>Government borrowing crowds out private investment.</figcaption>
 

@@ -72,7 +72,7 @@ the shift or the rotation and the untaxed equilibrium (see
 
 ![A per-unit tax on sellers.](../../assets/principle-viz/agora/taxes/per_unit_producer.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/taxes/taxes.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/taxes/taxes.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>A per-unit tax on sellers.</figcaption>
 
@@ -84,7 +84,7 @@ the shift or the rotation and the untaxed equilibrium (see
 
 ![An ad valorem tax on buyers.](../../assets/principle-viz/agora/taxes/ad_valorem_consumer.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/taxes/taxes.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/taxes/taxes.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>An ad valorem tax on buyers.</figcaption>
 
@@ -133,7 +133,7 @@ fig.finalize()
 
 ![Surplus and deadweight loss under a tax.](../../assets/principle-viz/agora/taxes/welfare.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/taxes/taxes.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/taxes/taxes.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>Surplus and deadweight loss under a tax.</figcaption>
 
@@ -196,7 +196,7 @@ fig = MarketFigure(
 
 ![A per-unit subsidy and its deadweight loss.](../../assets/principle-viz/agora/taxes/subsidy.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/taxes/taxes.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/taxes/taxes.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>A per-unit subsidy and its deadweight loss.</figcaption>
 

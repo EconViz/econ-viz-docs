@@ -112,7 +112,7 @@ Animator(draw, frames=np.linspace(0.1, 0.9, 45)).save(
 
 ![參數變動](../../../assets/utility-viz/agora/animation/parameter_sweep.svg){ .ev-figure-lg }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/animation/parameter_sweep.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/animation/parameter_sweep.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>參數變動</figcaption>
 
@@ -160,7 +160,7 @@ Animator(draw, frames=np.linspace(1.0, 6.0, 45)).save(
 
 ![價格變動](../../../assets/utility-viz/agora/animation/price_sweep.svg){ .ev-figure-lg }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/animation/price_sweep.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/animation/price_sweep.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>價格變動</figcaption>
 
@@ -206,7 +206,7 @@ Animator(draw, frames=np.linspace(8.0, 36.0, 45)).save(
 
 ![所得變動](../../../assets/utility-viz/agora/animation/income_sweep.svg){ .ev-figure-lg }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/animation/income_sweep.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/animation/income_sweep.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>所得變動</figcaption>
 

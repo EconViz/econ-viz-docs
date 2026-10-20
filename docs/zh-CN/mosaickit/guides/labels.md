@@ -22,7 +22,7 @@ seo_title: "区域标签与点标签"
 
 ![区域内标签与引线标注。](../../../assets/mosaickit/agora/labels/regions.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/labels/labels.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/labels/labels.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>区域内标签与引线标注。</figcaption>
 
@@ -48,7 +48,7 @@ seo_title: "区域标签与点标签"
 
 ![方向的尝试顺序。](../../../assets/mosaickit/agora/geometry/candidates.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/geometry/geometry.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/geometry/geometry.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>方向的尝试顺序。</figcaption>
 
@@ -60,7 +60,7 @@ seo_title: "区域标签与点标签"
 
 ![点旁的点标签。](../../../assets/mosaickit/agora/labels/points.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/labels/labels.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/labels/labels.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>点旁的点标签。</figcaption>
 

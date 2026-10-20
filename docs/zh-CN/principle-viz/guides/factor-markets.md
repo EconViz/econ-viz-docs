@@ -48,7 +48,7 @@ fig.add_minimum_wage(labor)
 
 ![有约束的最低工资。](../../../assets/principle-viz/agora/factor/minimum_wage.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/factor/factor.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/factor/factor.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>有约束的最低工资。</figcaption>
 
@@ -92,7 +92,7 @@ print(funds.interest_rate_change, funds.crowding_out)
 
 ![政府借款挤出民间投资。](../../../assets/principle-viz/agora/factor/loanable_funds.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/factor/factor.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/factor/factor.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>政府借款挤出民间投资。</figcaption>
 
