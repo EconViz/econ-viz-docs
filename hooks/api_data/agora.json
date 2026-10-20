@@ -3652,9 +3652,9 @@
         "name": "alpha_x",
         "types": [],
         "description": {
-          "en": "First-order weight on $ln x$.",
-          "zh-TW": "$ln x$ 的一次項權重。",
-          "zh-CN": "$ln x$ 的一次项权重。"
+          "en": "First-order weight on $\\ln x$.",
+          "zh-TW": "$\\ln x$ 的一次項權重。",
+          "zh-CN": "$\\ln x$ 的一次项权重。"
         },
         "default": "0.5"
       },
@@ -3662,9 +3662,9 @@
         "name": "alpha_y",
         "types": [],
         "description": {
-          "en": "First-order weight on $ln y$.",
-          "zh-TW": "$ln y$ 的一次項權重。",
-          "zh-CN": "$ln y$ 的一次项权重。"
+          "en": "First-order weight on $\\ln y$.",
+          "zh-TW": "$\\ln y$ 的一次項權重。",
+          "zh-CN": "$\\ln y$ 的一次项权重。"
         },
         "default": "0.5"
       },
@@ -4684,9 +4684,9 @@
         "name": "--alpha-x",
         "types": [],
         "description": {
-          "en": "Translog first-order weight on $ln x$.",
-          "zh-TW": "Translog 中 $ln x$ 的一次項權重。",
-          "zh-CN": "Translog 中 $ln x$ 的一次项权重。"
+          "en": "Translog first-order weight on $\\ln x$.",
+          "zh-TW": "Translog 中 $\\ln x$ 的一次項權重。",
+          "zh-CN": "Translog 中 $\\ln x$ 的一次项权重。"
         },
         "default": "0.5"
       },
@@ -4694,9 +4694,9 @@
         "name": "--alpha-y",
         "types": [],
         "description": {
-          "en": "Translog first-order weight on $ln y$.",
-          "zh-TW": "Translog 中 $ln y$ 的一次項權重。",
-          "zh-CN": "Translog 中 $ln y$ 的一次项权重。"
+          "en": "Translog first-order weight on $\\ln y$.",
+          "zh-TW": "Translog 中 $\\ln y$ 的一次項權重。",
+          "zh-CN": "Translog 中 $\\ln y$ 的一次项权重。"
         },
         "default": "0.5"
       },

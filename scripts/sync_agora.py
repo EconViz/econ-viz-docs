@@ -173,8 +173,9 @@ def math_latex(value):
         'supset.eq': r'\supseteq', 'subset': r'\subset',
         'circle.small': r'\circ', 'triangle.r': r'\triangleright',
         'plus.minus': r'\pm', 'emptyset': r'\emptyset',
+        'product': r'\prod', 'infinity': r'\infty', 'degree': r'^\circ', 'round': r'\operatorname{round}',
     }
-    for word in 'sum int partial nabla alpha beta gamma delta epsilon lambda mu phi theta xi Gamma rho Omega omega psi Delta Pi pi tau ell sigma kappa min max log sin cos inf sup det mod approx'.split():
+    for word in 'ln arccos arcsin arctan tan exp sum int partial nabla alpha beta gamma delta epsilon lambda mu phi theta xi Gamma rho Omega omega psi Delta Pi pi tau ell sigma kappa min max log sin cos inf sup det mod approx'.split():
         symbols[word] = '\\'+word
     pattern = r'(?<![\\A-Za-z])(' + '|'.join(re.escape(w) for w in sorted(symbols, key=len, reverse=True)) + r')(?![A-Za-z])'
     # Protect existing TeX commands/text from recursive conversion.

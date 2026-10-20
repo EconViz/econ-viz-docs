@@ -445,7 +445,7 @@
   },
   "docs/zh-TW/utility-viz/guides/canvas.md": {
     "source": "packages/utility-viz/chapters/zh-TW/04-canvas.typ",
-    "sha256": "68583a09f1b516eb1c6d79e0977a3fefe03410d155f765a26216cc1651991c2e"
+    "sha256": "39f375e308a2b53d5e0fa788dd4467f39b01567f2cf8361f11dbafbd74593b90"
   },
   "docs/zh-TW/utility-viz/guides/consumer.md": {
     "source": "packages/utility-viz/chapters/zh-TW/05-figures.typ",
@@ -505,7 +505,7 @@
   },
   "docs/zh-CN/utility-viz/guides/canvas.md": {
     "source": "packages/utility-viz/chapters/zh-CN/04-canvas.typ",
-    "sha256": "c06272ec04c041bddb14cf8473e9b1ab57a0b61a0b66a7590b33bb6c7ecd5446"
+    "sha256": "5723ab450710534acd448ddb16b514bdab6088f96fe619a100de9d572e68cf3b"
   },
   "docs/zh-CN/utility-viz/guides/consumer.md": {
     "source": "packages/utility-viz/chapters/zh-CN/05-figures.typ",

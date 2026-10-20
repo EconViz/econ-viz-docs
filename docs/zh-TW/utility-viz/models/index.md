@@ -34,7 +34,7 @@ $$
 u(x, y) = (\alpha x^\rho + \beta y^\rho)^{1 / \rho}.
 $$
 
-替代彈性為 $\sigma = 1 / (1 - \rho)$。極限形式分別為 Cobb-Douglas（$\rho \to 0$）、完全互補（$\rho \to -infinity$）與完全替代（$\rho \to 1$）。
+替代彈性為 $\sigma = 1 / (1 - \rho)$。極限形式分別為 Cobb-Douglas（$\rho \to 0$）、完全互補（$\rho \to -\infty$）與完全替代（$\rho \to 1$）。
 
 ```python
 from utility_viz import Canvas, Config, levels, solve
@@ -70,7 +70,7 @@ cvs.save("ces.png")
 Translog [Christensen (1975)](../project/references.md#christensen1975) 以對數的一次項、二次項與交叉項表示效用：
 
 $$
-\begin{aligned}ln u(x, y) = & \alpha_0 + \alpha_x ln x + \alpha_y ln y \\ & + 1/2 \beta_{x x} (ln x)^2 + 1/2 \beta_{y y} (ln y)^2 + \beta_{x y} ln x ln y.\end{aligned}
+\begin{aligned}\ln u(x, y) = & \alpha_0 + \alpha_x \ln x + \alpha_y \ln y \\ & + 1/2 \beta_{x x} (\ln x)^2 + 1/2 \beta_{y y} (\ln y)^2 + \beta_{x y} \ln x \ln y.\end{aligned}
 $$
 
 二次項與交叉項控制曲率。所有 $\beta$ 係數為零時，退化為 Cobb-Douglas 型的對數線性形式。
@@ -287,7 +287,7 @@ cvs.save("quasi_linear.png")
 [Haagsma (2012)](../project/references.md#haagsma2012) 效用函數為
 
 $$
-u(x, y) = \alpha_x ln(x - \gamma_x) - \alpha_y ln(\gamma_y - y).
+u(x, y) = \alpha_x \ln(x - \gamma_x) - \alpha_y \ln(\gamma_y - y).
 $$
 
 定義域為 $x > \gamma_x$ 且 $0 \le y < \gamma_y$，並要求 $0 < \alpha_x < \alpha_y$。商品 $x$ 的 Marshall 需求隨所得下降；當 $\gamma_y p_y < I < \gamma_y p_y + \gamma_x p_x$ 時，商品 $x$ 為季芬財。

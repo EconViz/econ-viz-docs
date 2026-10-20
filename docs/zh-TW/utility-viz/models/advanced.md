@@ -15,7 +15,7 @@ seo_title: "進階模型"
 接受向量化的 Python 函數，回傳的模型可用於 `solve()` 與 `Canvas`。函數須接受兩個 `NumPy` 陣列，並回傳相同形狀的效用陣列。以下以對數效用為例：
 
 $$
-u(x, y) = ln x + ln y.
+u(x, y) = \ln x + \ln y.
 $$
 
 ```python
@@ -57,7 +57,7 @@ cvs.save("custom.png")
 `MultiGoodCD` 表示 $N$ 種商品的 Cobb-Douglas：
 
 $$
-u(x_1, ..., x_N) = product_{i=1}^N x_i^{\alpha_i}.
+u(x_1, ..., x_N) = \prod_{i=1}^N x_i^{\alpha_i}.
 $$
 
 使用 `freeze()` 固定 $x$、$y$ 以外的商品數量，回傳可用於二維 `Canvas` 的 `CustomUtility`。

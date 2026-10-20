@@ -285,7 +285,7 @@ for ax, style, title in zip(axes, styles, titles):
         x_line_style=style,
         y_line_style=style,
         # 使用有中文字形的字體
-        font="PingFang TC",
+        font="Noto Serif TC",
         fig=fig,
         ax=ax,
     )
@@ -339,7 +339,7 @@ for ax, style, title in zip(axes, styles, titles):
         x_arrow_style=style,
         y_arrow_style=style,
         # 使用有中文字形的字體
-        font="PingFang TC",
+        font="Noto Serif TC",
         fig=fig,
         ax=ax,
     )
