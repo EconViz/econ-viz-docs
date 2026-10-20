@@ -262,10 +262,10 @@ box = EdgeworthBox(
 
 <figure class="ev-fig" markdown>
 
-![两位消费者通过配置 A 至 D 的无差异曲线 阴影透镜是双方都偏好于 A 的配置](../../../assets/utility-viz/agora/consumer/edgeworth.svg){ .ev-figure-lg }
+![Edgeworth 箱形图](../../../assets/utility-viz/agora/consumer/edgeworth.svg){ .ev-figure-lg }
 
 <a class="ev-download" href="../../../assets/utility-viz/agora/consumer/edgeworth.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a>
 
-<figcaption markdown>两位消费者通过配置 A 至 D 的无差异曲线 阴影透镜是双方都偏好于 A 的配置</figcaption>
+<figcaption markdown>Edgeworth 箱形图</figcaption>
 
 </figure>

@@ -26,12 +26,18 @@ The private and social outcomes: `private_equilibrium`,
 `corrective_subsidy`, `quantity_distortion` and `deadweight_loss`.
 
 ```python
-from principle_viz import ExternalityScenario, analyze_externality
+from principle_viz import (
+    ExternalityScenario,
+    analyze_externality,
+)
 
 demand = line_from_inverse(12.0, -1.0)
 scenario = ExternalityScenario(marginal_external_cost=2)
 result = analyze_externality(demand, supply, scenario)
-print(result.private_equilibrium.q_star, result.social_equilibrium.q_star)
+print(
+    result.private_equilibrium.q_star,
+    result.social_equilibrium.q_star,
+)
 # 5.0 4.0
 print(result.corrective_tax, result.deadweight_loss)
 # 2.0 1.0
@@ -112,9 +118,12 @@ result = analyze_public_good(
         IndividualBenefit("$MB_A$", line_from_inverse(8, -1)),
         IndividualBenefit("$MB_B$", line_from_inverse(6, -1)),
     ),
-    line_from_inverse(5, 0),  # constant marginal cost of 5
+    # constant marginal cost of 5
+    line_from_inverse(5, 0),
 )
-print(result.efficient_quantity, result.private_provision_quantity)
+print(
+    result.efficient_quantity, result.private_provision_quantity
+)
 # 4.5 3.0
 ```
 

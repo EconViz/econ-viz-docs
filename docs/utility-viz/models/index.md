@@ -160,11 +160,11 @@ cvs.save("leontief.png")
 
 <figure class="ev-fig" markdown>
 
-![Leontief with the ray through the kinks](../../assets/utility-viz/agora/models/leontief.svg){ .ev-figure-sm }
+![Leontief with kink ray](../../assets/utility-viz/agora/models/leontief.svg){ .ev-figure-sm }
 
 <a class="ev-download" href="../../assets/utility-viz/agora/models/leontief.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
 
-<figcaption markdown>Leontief with the ray through the kinks</figcaption>
+<figcaption markdown>Leontief with kink ray</figcaption>
 
 </figure>
 
@@ -201,11 +201,11 @@ cvs.save("perfect_substitutes.png")
 
 <figure class="ev-fig" markdown>
 
-![Perfect substitutes a corner solution on the $y$-axis](../../assets/utility-viz/agora/models/perfect_substitutes.svg){ .ev-figure-sm }
+![Perfect substitutes corner solution](../../assets/utility-viz/agora/models/perfect_substitutes.svg){ .ev-figure-sm }
 
 <a class="ev-download" href="../../assets/utility-viz/agora/models/perfect_substitutes.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
 
-<figcaption markdown>Perfect substitutes a corner solution on the $y$-axis</figcaption>
+<figcaption markdown>Perfect substitutes corner solution</figcaption>
 
 </figure>
 

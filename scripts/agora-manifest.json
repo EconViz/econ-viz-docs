@@ -373,7 +373,7 @@
   },
   "docs/utility-viz/guides/introduction.md": {
     "source": "packages/utility-viz/chapters/en/01-introduction.typ",
-    "sha256": "b00dfb9a85dbc69273749fe1c44fc327b6fa2cf25d1237f0009afd7f3df436d8"
+    "sha256": "cb8b9f7f281d2f90ba404ad91441e6e7c380e56cbf9effb0e2f863e204933428"
   },
   "docs/utility-viz/getting-started/installation.md": {
     "source": "packages/utility-viz/chapters/en/02-installation.typ",
@@ -385,19 +385,19 @@
   },
   "docs/utility-viz/guides/canvas.md": {
     "source": "packages/utility-viz/chapters/en/04-canvas.typ",
-    "sha256": "eec839e35e5f5a75368e7b8a0fa396ab8fd0af7a9c588a175c31114fcf6a7ed6"
+    "sha256": "cb8feec87adab8df0544a56d93ac7ce9439f7f78483ae00d3e89e6ea8dc6019c"
   },
   "docs/utility-viz/guides/consumer.md": {
     "source": "packages/utility-viz/chapters/en/05-figures.typ",
-    "sha256": "de1589f173c871f1e432f3eb923dcf9f9929aa94499aff6f4c36b8f14d0d3174"
+    "sha256": "8e7a01face09dcc9c1f7bb34db6d3703d908415a17bbfe8bdb784e98b9b8ff28"
   },
   "docs/utility-viz/models/index.md": {
     "source": "packages/utility-viz/chapters/en/06-models.typ",
-    "sha256": "1a2ce891f69161df883d854a482ca3bacb3a66ec870a65bd2ece7edee0e9367c"
+    "sha256": "545d9d56bc86bdf798fc48b9841701af66238abcf942db5fe217eb1f0b972998"
   },
   "docs/utility-viz/models/advanced.md": {
     "source": "packages/utility-viz/chapters/en/07-advanced.typ",
-    "sha256": "4a6859ce33252261df150727bedfbe304267e27e293ae4bc06ea2ac3264a5e6e"
+    "sha256": "044c884913e4f55732d4910e4f50a461fb27b7a0d2ecf9a0dca67c2249deacc9"
   },
   "docs/utility-viz/tools/analysis.md": {
     "source": "packages/utility-viz/chapters/en/08-analysis.typ",
@@ -417,7 +417,7 @@
   },
   "docs/utility-viz/guides/animation.md": {
     "source": "packages/utility-viz/chapters/en/12-animation.typ",
-    "sha256": "44c8e65fd73de321e3f3279f5f68e2800c61861fe6bf59b829e42acad3892274"
+    "sha256": "c65706440357c4088c287b5c679dbe1d2eaa762624b1dc941b3941c4394a082f"
   },
   "docs/utility-viz/guides/interactive.md": {
     "source": "packages/utility-viz/chapters/en/13-widgets.typ",
@@ -433,7 +433,7 @@
   },
   "docs/zh-TW/utility-viz/guides/introduction.md": {
     "source": "packages/utility-viz/chapters/zh-TW/01-introduction.typ",
-    "sha256": "35a4e22d5912063dd63028a6b5694eb72d90cc09a24333ac3dc0c11a2f139829"
+    "sha256": "9e761696b4801f3af2b52732171f06e4eb1b298e129046ccf95a540968981212"
   },
   "docs/zh-TW/utility-viz/getting-started/installation.md": {
     "source": "packages/utility-viz/chapters/zh-TW/02-installation.typ",
@@ -445,11 +445,11 @@
   },
   "docs/zh-TW/utility-viz/guides/canvas.md": {
     "source": "packages/utility-viz/chapters/zh-TW/04-canvas.typ",
-    "sha256": "a40eb90eb736fbcd2b41e30af8c7e5115308ce42c66cb2673627911a9f44d080"
+    "sha256": "68583a09f1b516eb1c6d79e0977a3fefe03410d155f765a26216cc1651991c2e"
   },
   "docs/zh-TW/utility-viz/guides/consumer.md": {
     "source": "packages/utility-viz/chapters/zh-TW/05-figures.typ",
-    "sha256": "a1d226227104edfc9297db5940f85dae5d707e1e38a054a8527b43475fb1d842"
+    "sha256": "e543270f7bb9ab0421248f1974de0240569af3f95a17dc387a95dbc287fd8ff5"
   },
   "docs/zh-TW/utility-viz/models/index.md": {
     "source": "packages/utility-viz/chapters/zh-TW/06-models.typ",
@@ -493,7 +493,7 @@
   },
   "docs/zh-CN/utility-viz/guides/introduction.md": {
     "source": "packages/utility-viz/chapters/zh-CN/01-introduction.typ",
-    "sha256": "853320f9095a484a87bb50abfda273ab56da487aa8627285b8bb721568367728"
+    "sha256": "61caab44eadbd382d00cf74c3581eab158dfbc05ea47f70826645ab8fc12eb76"
   },
   "docs/zh-CN/utility-viz/getting-started/installation.md": {
     "source": "packages/utility-viz/chapters/zh-CN/02-installation.typ",
@@ -505,11 +505,11 @@
   },
   "docs/zh-CN/utility-viz/guides/canvas.md": {
     "source": "packages/utility-viz/chapters/zh-CN/04-canvas.typ",
-    "sha256": "4682198bd9e1d7b3e9d48d1e1265a374a0b5dea2eb6ea61cbbec54a60b176b5e"
+    "sha256": "c06272ec04c041bddb14cf8473e9b1ab57a0b61a0b66a7590b33bb6c7ecd5446"
   },
   "docs/zh-CN/utility-viz/guides/consumer.md": {
     "source": "packages/utility-viz/chapters/zh-CN/05-figures.typ",
-    "sha256": "3313a608e354e297a835b4b24b2ca14a9a41bcd97c00ae2240f2987e07c033b4"
+    "sha256": "e635b26c70660b99d9397509e467f310bc9a63e0c07890d514a323b4c8a91982"
   },
   "docs/zh-CN/utility-viz/models/index.md": {
     "source": "packages/utility-viz/chapters/zh-CN/06-models.typ",

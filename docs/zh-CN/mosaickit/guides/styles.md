@@ -137,9 +137,18 @@ seo_title: "样式与颜色"
 主题与样式以名称引用颜色，画布创建渲染计划时才在生效的调色板（`Config.palette`）中查询，因此渲染器只会收到具体颜色。在调色板中改一次颜色，所有引用它的角色都随之改变。调色板缺少的名称在绘制时引发 `ConfigurationError`，信息指明角色、样式字段与调色板。Python 的 `Palette` 会取代默认调色板，因此应从 `DEFAULT_PALETTE.colors` 创建，以保留内置主题所用的名称：
 
 ```python
-from mosaickit import DEFAULT_PALETTE, Canvas, Config, Palette, use_config
+from mosaickit import (
+    DEFAULT_PALETTE,
+    Canvas,
+    Config,
+    Palette,
+    use_config,
+)
 
-brand = Palette("brand", {**DEFAULT_PALETTE.colors, "blue": "#0072B2"})
+brand = Palette(
+    "brand", {**DEFAULT_PALETTE.colors, "blue": "#0072B2"}
+)
 with use_config(Config(palette=brand)):
-    canvas = Canvas()          # primary now draws in #0072B2
+    # primary now draws in #0072B2
+    canvas = Canvas()
 ```

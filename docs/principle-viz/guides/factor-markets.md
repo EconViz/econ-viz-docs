@@ -21,9 +21,12 @@ from principle_viz import analyze_minimum_wage
 labor_demand = line_from_inverse(12, -1)
 labor_supply = line_from_inverse(2, 1)
 labor = analyze_minimum_wage(
-    labor_demand, labor_supply, minimum_wage=9,
+    labor_demand,
+    labor_supply,
+    minimum_wage=9,
 )
-print(labor.employment, labor.unemployment)  # 3.0 4.0
+# 3.0 4.0
+print(labor.employment, labor.unemployment)
 ```
 
 <!-- api: agora.principle_viz.guides_factor_markets_2 -->
@@ -36,8 +39,11 @@ the curves $D_L$ and $S_L$ (see [A binding minimum wage.](factor-markets.md#fig-
 ```python
 fig = MarketFigure(x_max=11, y_max=14, x_label="L", y_label="w")
 fig.add_curves(
-    labor_demand, labor_supply, q_max=10,
-    demand_label="$D_L$", supply_label="$S_L$",
+    labor_demand,
+    labor_supply,
+    q_max=10,
+    demand_label="$D_L$",
+    supply_label="$S_L$",
 )
 fig.add_minimum_wage(labor)
 ```
@@ -73,14 +79,16 @@ displaced by the higher interest rate.
 
 ```python
 from principle_viz import (
-    LoanableFundsScenario, analyze_loanable_funds,
+    LoanableFundsScenario,
+    analyze_loanable_funds,
 )
 
 savings = line_from_inverse(2, 0.5)
 investment = line_from_inverse(12, -0.5)
 scenario = LoanableFundsScenario(government_borrowing=4)
 funds = analyze_loanable_funds(savings, investment, scenario)
-print(funds.interest_rate_change, funds.crowding_out)  # 1.0 2.0
+# 1.0 2.0
+print(funds.interest_rate_change, funds.crowding_out)
 ```
 
 `interest_rate_change` is 1.0 and `crowding_out` is 2.0.

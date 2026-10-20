@@ -103,7 +103,8 @@ from mosaickit import Canvas, Parameter, TextLayer
 x = Parameter("x", value_type=float)
 template = Canvas().add(TextLayer((x, 2 * x + 1), "moving"))
 frame = template.bind(x, 3.0)
-print(frame.snapshot().layers[0].position)    # (3.0, 7.0)
+# (3.0, 7.0)
+print(frame.snapshot().layers[0].position)
 ```
 
 ## Grids
@@ -150,12 +151,21 @@ resolved in the start cell's theme, with `stroke` on top. A cell index out
 of range raises `ConfigurationError` when the grid is built.
 
 ```python
-from mosaickit import Canvas, CanvasGrid, GridLink, MarkerLayer, Parameter, Stroke
+from mosaickit import (
+    Canvas,
+    CanvasGrid,
+    GridLink,
+    MarkerLayer,
+    Parameter,
+    Stroke,
+)
 
 shift = Parameter("shift", value_type=float)
 template = Canvas().add(MarkerLayer([(5, 2.5 + shift)]))
 cells = [template.bind(shift, v) for v in (0.0, 2.0, 4.0)]
-link = GridLink(0, (5, 2.5), 2, (5, 6.5), stroke=Stroke(dash="dashed"))
+link = GridLink(
+    0, (5, 2.5), 2, (5, 6.5), stroke=Stroke(dash="dashed")
+)
 CanvasGrid(cells, cols=3, links=[link]).save("sweep.pdf")
 ```
 

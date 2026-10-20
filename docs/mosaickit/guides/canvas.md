@@ -43,7 +43,8 @@ from mosaickit import Canvas, PathLayer
 canvas = Canvas()
 before = canvas.snapshot()
 canvas.add(PathLayer([(0, 0), (1, 1)], id="line"))
-assert before.layers == ()             # the old snapshot is unchanged
+# the old snapshot is unchanged
+assert before.layers == ()
 assert canvas.snapshot().layers[0].id == "line"
 ```
 

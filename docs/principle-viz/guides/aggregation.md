@@ -27,14 +27,20 @@ If the first point has $Q = 0$, quantity is zero at prices beyond it.
 
 ```python
 from principle_viz import (
-    line_from_inverse, market_demand, market_supply,
+    line_from_inverse,
+    market_demand,
+    market_supply,
 )
 
-a = line_from_inverse(10, -2)    # p = 10 - 2Q
-b = line_from_inverse(6, -0.5)   # p = 6 - 0.5Q
+# p = 10 - 2Q
+a = line_from_inverse(10, -2)
+# p = 6 - 0.5Q
+b = line_from_inverse(6, -0.5)
 demand = market_demand((a, b))
-print(demand.points)   # ((0.0, 10.0), (2.0, 6.0), (17.0, 0.0))
-print(demand.q_at(4))  # 7.0 = Q_A + Q_B = 3 + 4
+# ((0.0, 10.0), (2.0, 6.0), (17.0, 0.0))
+print(demand.points)
+# 7.0 = Q_A + Q_B = 3 + 4
+print(demand.q_at(4))
 ```
 
 Buyer B enters at a price of 6, giving the kink $(2, 6)$. At a price of 4,
@@ -47,14 +53,16 @@ and producer surplus at it, integrated along price.
 
 ```python
 from principle_viz import (
-    piecewise_surplus, solve_piecewise_equilibrium,
+    piecewise_surplus,
+    solve_piecewise_equilibrium,
 )
 
 c = line_from_inverse(2, 1)
 d = line_from_inverse(5, 0.5)
 supply = market_supply((c, d), p_max=10)
 eq = solve_piecewise_equilibrium(demand, supply)
-print(round(eq.q_star, 3), round(eq.p_star, 3))  # 3.818 5.273
+# 3.818 5.273
+print(round(eq.q_star, 3), round(eq.p_star, 3))
 cs, ps = piecewise_surplus(demand, supply, eq)
 ```
 
@@ -93,7 +101,9 @@ The returned `AggregationFigure` has `save()`, `hide()`, `show()`,
 from principle_viz import demand_aggregation_figure
 
 fig = demand_aggregation_figure(
-    {"A": a, "B": b}, price=4, link_price=True,
+    {"A": a, "B": b},
+    price=4,
+    link_price=True,
 )
 fig.save("market_demand.png")
 ```

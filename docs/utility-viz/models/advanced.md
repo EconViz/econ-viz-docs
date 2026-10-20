@@ -89,11 +89,11 @@ cvs.save("multigood.png")
 
 <figure class="ev-fig" markdown>
 
-![A three-good Cobb-Douglas model with $z = 10$ fixed](../../assets/utility-viz/agora/models/multigood.svg){ .ev-figure-sm }
+![Three-good Cobb-Douglas](../../assets/utility-viz/agora/models/multigood.svg){ .ev-figure-sm }
 
 <a class="ev-download" href="../../assets/utility-viz/agora/models/multigood.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
 
-<figcaption markdown>A three-good Cobb-Douglas model with $z = 10$ fixed</figcaption>
+<figcaption markdown>Three-good Cobb-Douglas</figcaption>
 
 </figure>
 

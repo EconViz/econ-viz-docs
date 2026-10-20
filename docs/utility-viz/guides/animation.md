@@ -85,7 +85,7 @@ For the income sweep, `draw()` takes `income` and passes it to
 `add_budget()` and `solve()`. For the budget line alone, leave out
 `add_utility()` and `add_equilibrium()`.
 
-[Parameter sweep $\alpha$ varies with $\beta = 1 - \alpha$](animation.md#fig-sweep-param) to [Income sweep with $p_x = p_y = 2$ fixed](animation.md#fig-sweep-income) each show four frames.
+[Parameter sweep $\alpha$ varies with $\beta = 1 - \alpha$](animation.md#fig-sweep-param) to [Income sweep](animation.md#fig-sweep-income) each show four frames.
 
 ```python
 import numpy as np
@@ -170,11 +170,11 @@ Animator(draw, frames=np.linspace(1.0, 6.0, 45)).save(
 
 <figure class="ev-fig" markdown>
 
-![Price sweep with $p_y = 2$ and $I = 20$ fixed](../../assets/utility-viz/agora/animation/price_sweep.svg){ .ev-figure-lg }
+![Price sweep](../../assets/utility-viz/agora/animation/price_sweep.svg){ .ev-figure-lg }
 
 <a class="ev-download" href="../../assets/utility-viz/agora/animation/price_sweep.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
 
-<figcaption markdown>Price sweep with $p_y = 2$ and $I = 20$ fixed</figcaption>
+<figcaption markdown>Price sweep</figcaption>
 
 </figure>
 
@@ -216,11 +216,11 @@ Animator(draw, frames=np.linspace(8.0, 36.0, 45)).save(
 
 <figure class="ev-fig" markdown>
 
-![Income sweep with $p_x = p_y = 2$ fixed](../../assets/utility-viz/agora/animation/income_sweep.svg){ .ev-figure-lg }
+![Income sweep](../../assets/utility-viz/agora/animation/income_sweep.svg){ .ev-figure-lg }
 
 <a class="ev-download" href="../../assets/utility-viz/agora/animation/income_sweep.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
 
-<figcaption markdown>Income sweep with $p_x = p_y = 2$ fixed</figcaption>
+<figcaption markdown>Income sweep</figcaption>
 
 </figure>
 

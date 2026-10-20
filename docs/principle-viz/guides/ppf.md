@@ -27,10 +27,14 @@ Where a point lies relative to the frontier.
 from principle_viz import ProductionPossibilitiesFrontier
 
 ppf = ProductionPossibilitiesFrontier(
-    10, 8, curvature=2,
-    x_good="Consumer goods", y_good="Capital goods",
+    10,
+    8,
+    curvature=2,
+    x_good="Consumer goods",
+    y_good="Capital goods",
 )
-print(ppf.y_at(6), ppf.opportunity_cost_x(6))  # 5.12 0.96
+# 5.12 0.96
+print(ppf.y_at(6), ppf.opportunity_cost_x(6))
 print(ppf.assess(4, 3), ppf.assess(7, 6))
 # PointStatus.INEFFICIENT PointStatus.UNATTAINABLE
 ```
@@ -90,10 +94,15 @@ the costs are equal). Curved frontiers raise `PPFError`.
 ```python
 from principle_viz import compare_linear_ppfs
 
-ann = ProductionPossibilitiesFrontier(10, 5)  # x costs 0.5 y
-bob = ProductionPossibilitiesFrontier(6, 6)   # x costs 1 y
+# x costs 0.5 y
+ann = ProductionPossibilitiesFrontier(10, 5)
+# x costs 1 y
+bob = ProductionPossibilitiesFrontier(6, 6)
 result = compare_linear_ppfs("Ann", ann, "Bob", bob)
-print(result.comparative_advantage_x, result.comparative_advantage_y)
+print(
+    result.comparative_advantage_x,
+    result.comparative_advantage_y,
+)
 # Ann Bob
 ```
 

@@ -37,7 +37,8 @@ seo_title: "繪製"
 ```python
 result = canvas.render()
 try:
-    result.show()          # an interactive window
+    # an interactive window
+    result.show()
 finally:
     result.close()
 ```

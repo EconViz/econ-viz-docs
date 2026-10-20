@@ -67,7 +67,8 @@ seo_title: "圖形"
 from principle_viz import Label, MarketFigure
 
 fig = MarketFigure(
-    x_max=12, y_max=12,
+    x_max=12,
+    y_max=12,
     labels={
         "market.demand.label": Label(text="Demand"),
         "market.supply.label": Label(text="Supply"),

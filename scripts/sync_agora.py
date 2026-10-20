@@ -274,6 +274,8 @@ class Converter:
             return '['+title+']('+url+'#'+key+')'
         if name in ('box','full-width'):
             return self.convert(body)
+        if name=='link':
+            return f'[{self.convert(body)}]({string(split_args(args)[0])})'
         if name in ('emph', 'strong'):
             marker='*' if name=='emph' else '**'
             return marker+self.convert(body)+marker

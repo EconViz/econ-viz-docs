@@ -538,7 +538,7 @@
   position: relative;
   width: fit-content;
   max-width: 100%;
-  margin: 1.2rem auto 1.6rem;
+  margin: 3.2rem auto 1.6rem;
 }
 .md-typeset figure.ev-fig > p { margin: 0; }
 .md-typeset figure.ev-fig img { display: block; margin: 0 auto; }
@@ -551,8 +551,8 @@
 }
 .md-typeset a.ev-download {
   position: absolute;
-  top: .5rem;
-  right: .5rem;
+  top: -2.5rem;
+  right: 0;
   display: flex;
   align-items: center;
   height: 2rem;

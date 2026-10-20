@@ -25,7 +25,8 @@ the `deadweight_loss` of the policy relative to free trade.
 ```python
 from principle_viz import TradeScenario, analyze_trade
 
-demand = line_from_inverse(12.0, -1.0)   # autarky price 7
+# autarky price 7
+demand = line_from_inverse(12.0, -1.0)
 scenario = TradeScenario(world_price=4, tariff=2)
 result = analyze_trade(demand, supply, scenario)
 print(result.free_trade.imports, result.policy.imports)

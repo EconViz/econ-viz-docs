@@ -70,7 +70,8 @@ diagram that fits keeps exactly the size of its `CanvasSpec`.
 ```python
 result = canvas.render()
 try:
-    result.show()          # an interactive window
+    # an interactive window
+    result.show()
 finally:
     result.close()
 ```

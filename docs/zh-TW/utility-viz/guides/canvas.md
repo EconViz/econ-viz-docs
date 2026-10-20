@@ -204,11 +204,11 @@ cvs.save("add_point.png")
 
 <figure class="ev-fig" markdown>
 
-![一條無異曲線與預算線交於兩點 $A$ 與 $B$](../../../assets/utility-viz/agora/canvas/add_point.svg){ .ev-figure-sm }
+![無異曲線交預算線於兩點](../../../assets/utility-viz/agora/canvas/add_point.svg){ .ev-figure-sm }
 
 <a class="ev-download" href="../../../assets/utility-viz/agora/canvas/add_point.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a>
 
-<figcaption markdown>一條無異曲線與預算線交於兩點 $A$ 與 $B$</figcaption>
+<figcaption markdown>無異曲線交預算線於兩點</figcaption>
 
 </figure>
 

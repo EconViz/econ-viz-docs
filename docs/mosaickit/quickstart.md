@@ -10,7 +10,13 @@ A diagram needs a canvas, its layers and a call to save it:
 
 ```python
 from mosaickit import (
-    Canvas, Fill, FillLayer, MarkerLayer, PathLayer, Stroke, TextLayer,
+    Canvas,
+    Fill,
+    FillLayer,
+    MarkerLayer,
+    PathLayer,
+    Stroke,
+    TextLayer,
     quadrant_axes,
 )
 

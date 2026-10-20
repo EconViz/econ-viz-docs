@@ -10,7 +10,13 @@ seo_title: "快速入门"
 
 ```python
 from mosaickit import (
-    Canvas, Fill, FillLayer, MarkerLayer, PathLayer, Stroke, TextLayer,
+    Canvas,
+    Fill,
+    FillLayer,
+    MarkerLayer,
+    PathLayer,
+    Stroke,
+    TextLayer,
     quadrant_axes,
 )
 

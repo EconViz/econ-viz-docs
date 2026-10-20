@@ -302,10 +302,10 @@ The figure below is drawn from MosaicKit layers after a textbook figure, with bo
 
 <figure class="ev-fig" markdown>
 
-![Both consumers' indifference curves through allocations A to D the shaded lens holds the allocations both prefer to A](../../assets/utility-viz/agora/consumer/edgeworth.svg){ .ev-figure-lg }
+![Edgeworth box indifference curves](../../assets/utility-viz/agora/consumer/edgeworth.svg){ .ev-figure-lg }
 
 <a class="ev-download" href="../../assets/utility-viz/agora/consumer/edgeworth.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
 
-<figcaption markdown>Both consumers' indifference curves through allocations A to D the shaded lens holds the allocations both prefer to A</figcaption>
+<figcaption markdown>Edgeworth box indifference curves</figcaption>
 
 </figure>
