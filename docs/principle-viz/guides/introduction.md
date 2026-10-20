@@ -56,3 +56,5 @@ tools (see [Chapter guide](introduction.md#tab-guide)).
 On first use, read [Quick start](../quickstart.md#sec-quickstart), [Linear markets](markets.md#sec-markets) and [Figures](figures.md#sec-figures) in that
 order. Each later chapter covers one topic: the calculation first, then the
 figure. For the options of a specific command, go to [Command-line interface](../cli.md#sec-cli).
+
+The figures of this manual come as one zip, sorted into folders by topic, with the script that draws them: [principle-viz-figures.zip](https://econ-viz.org/assets/principle-viz/agora/principle-viz-figures.zip).

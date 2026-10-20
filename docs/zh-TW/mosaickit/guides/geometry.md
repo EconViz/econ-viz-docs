@@ -160,6 +160,8 @@ seo_title: "配置幾何"
 
 ![極點、最大圓盤與形心。](../../../assets/mosaickit/agora/geometry/polylabel.svg){ .ev-figure-sm }
 
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/geometry/polylabel.svg" download aria-label="下載圖檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載圖檔</span></a></div>
+
 <figcaption markdown>極點、最大圓盤與形心。</figcaption>
 
 </figure>
@@ -186,6 +188,8 @@ seo_title: "配置幾何"
 <figure class="ev-fig" markdown>
 
 ![大括號外形；右側跨距小於 $2 \delta$。](../../../assets/mosaickit/agora/geometry/brace.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/geometry/brace.svg" download aria-label="下載圖檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載圖檔</span></a></div>
 
 <figcaption markdown>大括號外形；右側跨距小於 $2 \delta$。</figcaption>
 

@@ -105,6 +105,8 @@ fig.finalize()
 
 ![需求增加。](../../../assets/principle-viz/agora/markets/shift_demand_increase.svg){ .ev-figure-sm }
 
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/markets/shift_demand_increase.svg" download aria-label="下载图片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载图片</span></a></div>
+
 <figcaption markdown>需求增加。</figcaption>
 
 </figure>
@@ -114,6 +116,8 @@ fig.finalize()
 <figure class="ev-fig" markdown>
 
 ![供给减少。](../../../assets/principle-viz/agora/markets/shift_supply_decrease.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/markets/shift_supply_decrease.svg" download aria-label="下载图片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载图片</span></a></div>
 
 <figcaption markdown>供给减少。</figcaption>
 

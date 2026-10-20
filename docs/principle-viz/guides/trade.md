@@ -52,6 +52,8 @@ brace beneath, and the tariff revenue or quota rent as a named rectangle
 
 ![Free trade with imports.](../../assets/principle-viz/agora/trade/free_trade_import.svg){ .ev-figure-sm }
 
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/trade/free_trade_import.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
+
 <figcaption markdown>Free trade with imports.</figcaption>
 
 </figure>
@@ -62,6 +64,8 @@ brace beneath, and the tariff revenue or quota rent as a named rectangle
 
 ![An import tariff.](../../assets/principle-viz/agora/trade/tariff.svg){ .ev-figure-sm }
 
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/trade/tariff.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
+
 <figcaption markdown>An import tariff.</figcaption>
 
 </figure>
@@ -71,6 +75,8 @@ brace beneath, and the tariff revenue or quota rent as a named rectangle
 <figure class="ev-fig" markdown>
 
 ![A binding import quota.](../../assets/principle-viz/agora/trade/quota.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/trade/quota.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
 
 <figcaption markdown>A binding import quota.</figcaption>
 

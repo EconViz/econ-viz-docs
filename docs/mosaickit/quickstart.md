@@ -46,6 +46,8 @@ canvas.save("diagram.pdf")
 
 ![The quick-start diagram.](../assets/mosaickit/agora/quickstart/diagram.svg){ .ev-figure-sm }
 
+<div class="ev-downloads"><a class="ev-download" href="../assets/mosaickit/agora/quickstart/diagram.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
+
 <figcaption markdown>The quick-start diagram.</figcaption>
 
 </figure>

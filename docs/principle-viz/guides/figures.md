@@ -114,6 +114,8 @@ fig.finalize()
 
 ![Renamed curves and equilibrium point.](../../assets/principle-viz/agora/figures/labels.svg){ .ev-figure-sm }
 
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/figures/labels.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
+
 <figcaption markdown>Renamed curves and equilibrium point.</figcaption>
 
 </figure>
@@ -167,6 +169,8 @@ fig = MarketFigure(x_max=12, y_max=12, palette="monochrome")
 <figure class="ev-fig" markdown>
 
 ![The `monochrome` palette.](../../assets/principle-viz/agora/figures/monochrome.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/figures/monochrome.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
 
 <figcaption markdown>The `monochrome` palette.</figcaption>
 

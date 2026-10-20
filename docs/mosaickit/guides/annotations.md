@@ -63,6 +63,8 @@ canvas.add(AxisMarkLayer("x", 6, "b", math=True))
 
 ![Marks, notes and an outside brace in the y gutter (guide lines added).](../../assets/mosaickit/agora/annotations/gutter.svg){ .ev-figure-sm }
 
+<div class="ev-downloads"><a class="ev-download" href="../../assets/mosaickit/agora/annotations/gutter.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
+
 <figcaption markdown>Marks, notes and an outside brace in the y gutter (guide lines added).</figcaption>
 
 </figure>
@@ -72,6 +74,8 @@ canvas.add(AxisMarkLayer("x", 6, "b", math=True))
 <figure class="ev-fig" markdown>
 
 ![A span brace between two points, labelled to the left.](../../assets/mosaickit/agora/annotations/span.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/mosaickit/agora/annotations/span.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
 
 <figcaption markdown>A span brace between two points, labelled to the left.</figcaption>
 
@@ -140,6 +144,8 @@ constraints into $y_1 \le \cdots \le y_n$.
 <figure class="ev-fig" markdown>
 
 ![Targets (top) and their spread (bottom).](../../assets/mosaickit/agora/geometry/spread.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/mosaickit/agora/geometry/spread.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
 
 <figcaption markdown>Targets (top) and their spread (bottom).</figcaption>
 

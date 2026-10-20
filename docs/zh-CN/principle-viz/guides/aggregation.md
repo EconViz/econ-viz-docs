@@ -98,6 +98,8 @@ fig.save("market_demand.png")
 
 ![水平加总的市场需求。](../../../assets/principle-viz/agora/aggregation/market_demand.svg){ .ev-figure-lg }
 
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/aggregation/market_demand.svg" download aria-label="下载图片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载图片</span></a></div>
+
 <figcaption markdown>水平加总的市场需求。</figcaption>
 
 </figure>
@@ -107,6 +109,8 @@ fig.save("market_demand.png")
 <figure class="ev-fig" markdown>
 
 ![合并两张离散需求表。](../../../assets/principle-viz/agora/aggregation/discrete_market_demand.svg){ .ev-figure-lg }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/aggregation/discrete_market_demand.svg" download aria-label="下载图片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载图片</span></a></div>
 
 <figcaption markdown>合并两张离散需求表。</figcaption>
 

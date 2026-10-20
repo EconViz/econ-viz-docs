@@ -48,7 +48,7 @@ fig.save("side_by_side.png")
 
 ![價格變動前後比較](../../../assets/utility-viz/agora/consumer/side_by_side.svg){ .ev-figure-lg }
 
-<a class="ev-download" href="../../../assets/utility-viz/agora/consumer/side_by_side.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/consumer/side_by_side.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a><a class="ev-download" href="../../../assets/utility-viz/agora/consumer/side_by_side.svg" download aria-label="下載圖檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載圖檔</span></a></div>
 
 <figcaption markdown>價格變動前後比較</figcaption>
 
@@ -107,7 +107,7 @@ cvs.save("price_path.png")
 
 ![價格消費曲線](../../../assets/utility-viz/agora/consumer/price_path.svg){ .ev-figure-sm }
 
-<a class="ev-download" href="../../../assets/utility-viz/agora/consumer/price_path.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/consumer/price_path.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a><a class="ev-download" href="../../../assets/utility-viz/agora/consumer/price_path.svg" download aria-label="下載圖檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載圖檔</span></a></div>
 
 <figcaption markdown>價格消費曲線</figcaption>
 
@@ -150,7 +150,7 @@ fig.save("demand_cobb_douglas.png")
 
 ![需求曲線最適點](../../../assets/utility-viz/agora/consumer/demand.svg){ .ev-figure-lg }
 
-<a class="ev-download" href="../../../assets/utility-viz/agora/consumer/demand.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/consumer/demand.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a><a class="ev-download" href="../../../assets/utility-viz/agora/consumer/demand.svg" download aria-label="下載圖檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載圖檔</span></a></div>
 
 <figcaption markdown>需求曲線最適點</figcaption>
 
@@ -220,7 +220,7 @@ result = decompose_price_effect(
 
 ![Hicks 分解](../../../assets/utility-viz/agora/consumer/hicks.zh-TW.svg){ .ev-figure-lg }
 
-<a class="ev-download" href="../../../assets/utility-viz/agora/consumer/hicks.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/consumer/hicks.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a><a class="ev-download" href="../../../assets/utility-viz/agora/consumer/hicks.zh-TW.svg" download aria-label="下載圖檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載圖檔</span></a></div>
 
 <figcaption markdown>Hicks 分解</figcaption>
 
@@ -263,7 +263,7 @@ box = EdgeworthBox(
 
 ![Edgeworth 箱形圖](../../../assets/utility-viz/agora/consumer/edgeworth.svg){ .ev-figure-lg }
 
-<a class="ev-download" href="../../../assets/utility-viz/agora/consumer/edgeworth.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/consumer/edgeworth.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a><a class="ev-download" href="../../../assets/utility-viz/agora/consumer/edgeworth.svg" download aria-label="下載圖檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載圖檔</span></a></div>
 
 <figcaption markdown>Edgeworth 箱形圖</figcaption>
 

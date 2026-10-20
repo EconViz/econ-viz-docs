@@ -44,6 +44,8 @@ seo_title: "Bézier 曲線"
 
 ![三次 Bernstein 多項式。](../../../assets/bezierkit/agora/curves/basis.svg){ .ev-figure-sm }
 
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/bezierkit/agora/curves/basis.svg" download aria-label="下載圖檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載圖檔</span></a></div>
+
 <figcaption markdown>三次 Bernstein 多項式。</figcaption>
 
 </figure>
@@ -153,6 +155,8 @@ seo_title: "Bézier 曲線"
 <figure class="ev-fig" markdown>
 
 ![de Casteljau 演算法 (t = 0.4)。](../../../assets/bezierkit/agora/curves/casteljau.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/bezierkit/agora/curves/casteljau.svg" download aria-label="下載圖檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載圖檔</span></a></div>
 
 <figcaption markdown>de Casteljau 演算法 (t = 0.4)。</figcaption>
 

@@ -55,6 +55,8 @@ ppf_canvas(result).save("ppf_points.png")
 
 ![有效率、無效率與無法達成的點。](../../../assets/principle-viz/agora/ppf/points.svg){ .ev-figure-sm }
 
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/ppf/points.svg" download aria-label="下載圖檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載圖檔</span></a></div>
+
 <figcaption markdown>有效率、無效率與無法達成的點。</figcaption>
 
 </figure>
@@ -68,6 +70,8 @@ ppf_canvas(result).save("ppf_points.png")
 <figure class="ev-fig" markdown>
 
 ![消費財成長 20%、資本財成長 10%。](../../../assets/principle-viz/agora/ppf/growth.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/ppf/growth.svg" download aria-label="下載圖檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載圖檔</span></a></div>
 
 <figcaption markdown>消費財成長 20%、資本財成長 10%。</figcaption>
 

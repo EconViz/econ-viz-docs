@@ -66,3 +66,5 @@ order-restricted least squares behind [Spreading is optimal](annotations.md#thm-
 Start with [Quick start](../quickstart.md#sec-quickstart), [Canvases and scenes](canvas.md#sec-canvas) and [Layers and axes](layers.md#sec-layers). Every
 figure in this manual is `mosaickit` output, drawn by the canvas or
 grid it illustrates and saved as PDF at the printed size.
+
+The figures of this manual come as one zip, sorted into folders by topic, with the script that draws them: [mosaickit-figures.zip](https://econ-viz.org/assets/mosaickit/agora/mosaickit-figures.zip).

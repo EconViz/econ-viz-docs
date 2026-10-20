@@ -102,6 +102,8 @@ print(d.at(0.5))
 
 ![在 $t = 0.4$ 分割三次曲線。](../../../assets/bezierkit/agora/curves/split.svg){ .ev-figure-sm }
 
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/bezierkit/agora/curves/split.svg" download aria-label="下載圖檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載圖檔</span></a></div>
+
 <figcaption markdown>在 $t = 0.4$ 分割三次曲線。</figcaption>
 
 </figure>

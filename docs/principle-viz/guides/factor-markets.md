@@ -54,6 +54,8 @@ fig.add_minimum_wage(labor)
 
 ![A binding minimum wage.](../../assets/principle-viz/agora/factor/minimum_wage.svg){ .ev-figure-sm }
 
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/factor/minimum_wage.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
+
 <figcaption markdown>A binding minimum wage.</figcaption>
 
 </figure>
@@ -104,6 +106,8 @@ movement between them. Title the price axis $r$ (see
 <figure class="ev-fig" markdown>
 
 ![Government borrowing crowds out private investment.](../../assets/principle-viz/agora/factor/loanable_funds.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/factor/loanable_funds.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
 
 <figcaption markdown>Government borrowing crowds out private investment.</figcaption>
 

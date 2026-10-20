@@ -115,3 +115,9 @@ The following chapters cover principle-viz 0.10.1.
 - [Change history](changelog.md)
 
 <!-- /agora-navigation -->
+
+## Figures
+
+The figures in the manual and on these pages come as one zip, sorted into folders by topic, with the script that draws them.
+
+[Download all figures](../assets/principle-viz/agora/principle-viz-figures.zip){ .md-button download="" }

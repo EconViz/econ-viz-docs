@@ -42,3 +42,5 @@ seo_title: "简介"
 |  | 命令行接口 | 以 JSON 输出计算结果 | [命令行界面](../cli.md#sec-cli) |
 
 初次使用时，依序阅读[快速开始](../quickstart.md#sec-quickstart)、[线性市场](markets.md#sec-markets)与[图形](figures.md#sec-figures)。之后每章说明一个主题，先介绍计算，再介绍图形。查找特定命令的选项时，可直接前往[命令行界面](../cli.md#sec-cli)。
+
+本手册的图按主题分文件夹，连同绘制它们的脚本，可一次下载：[principle-viz-figures.zip](https://econ-viz.org/assets/principle-viz/agora/principle-viz-figures.zip)。

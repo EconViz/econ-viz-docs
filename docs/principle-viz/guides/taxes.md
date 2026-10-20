@@ -72,6 +72,8 @@ the shift or the rotation and the untaxed equilibrium (see
 
 ![A per-unit tax on sellers.](../../assets/principle-viz/agora/taxes/per_unit_producer.svg){ .ev-figure-sm }
 
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/taxes/per_unit_producer.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
+
 <figcaption markdown>A per-unit tax on sellers.</figcaption>
 
 </figure>
@@ -81,6 +83,8 @@ the shift or the rotation and the untaxed equilibrium (see
 <figure class="ev-fig" markdown>
 
 ![An ad valorem tax on buyers.](../../assets/principle-viz/agora/taxes/ad_valorem_consumer.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/taxes/ad_valorem_consumer.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
 
 <figcaption markdown>An ad valorem tax on buyers.</figcaption>
 
@@ -128,6 +132,8 @@ fig.finalize()
 <figure class="ev-fig" markdown>
 
 ![Surplus and deadweight loss under a tax.](../../assets/principle-viz/agora/taxes/welfare.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/taxes/welfare.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
 
 <figcaption markdown>Surplus and deadweight loss under a tax.</figcaption>
 
@@ -189,6 +195,8 @@ fig = MarketFigure(
 <figure class="ev-fig" markdown>
 
 ![A per-unit subsidy and its deadweight loss.](../../assets/principle-viz/agora/taxes/subsidy.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/taxes/subsidy.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
 
 <figcaption markdown>A per-unit subsidy and its deadweight loss.</figcaption>
 

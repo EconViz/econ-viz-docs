@@ -45,7 +45,7 @@ cvs.save("cobb_douglas.png")
 
 ![The consumer-equilibrium diagram](../../assets/utility-viz/agora/models/cobb_douglas.svg){ .ev-figure-sm }
 
-<a class="ev-download" href="../../assets/utility-viz/agora/models/cobb_douglas.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/cobb_douglas.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a><a class="ev-download" href="../../assets/utility-viz/agora/models/cobb_douglas.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
 
 <figcaption markdown>The consumer-equilibrium diagram</figcaption>
 

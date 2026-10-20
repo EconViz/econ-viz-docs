@@ -115,3 +115,9 @@ uv add principle-viz
 - [更新紀錄](changelog.md)
 
 <!-- /agora-navigation -->
+
+## 圖
+
+手冊與這些頁面的圖，連同繪製它們的腳本，已依主題分資料夾，可一次下載。
+
+[下載全部圖檔](../../assets/principle-viz/agora/principle-viz-figures.zip){ .md-button download="" }

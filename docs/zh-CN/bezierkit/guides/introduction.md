@@ -53,3 +53,5 @@ $$
 |  | 命令行 | [命令行界面](../cli.md#sec-cli) |
 
 初次使用时，先读[快速开始](../quickstart.md#sec-quickstart)与[Bézier 曲线](curves.md#sec-curves)。本手册的图本身就是 `bezierkit` 的输出：每条曲线都由[采样与导出](export.md#sec-export)的 TikZ 导出器写出，再以 LaTeX 编译。
+
+本手册的图按主题分文件夹，连同绘制它们的脚本，可一次下载：[bezierkit-figures.zip](https://econ-viz.org/assets/bezierkit/agora/bezierkit-figures.zip)。

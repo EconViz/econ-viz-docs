@@ -116,6 +116,8 @@ The output of `demand_aggregation_figure()` is shown in [Market demand as the ho
 
 ![Market demand as the horizontal sum.](../../assets/principle-viz/agora/aggregation/market_demand.svg){ .ev-figure-lg }
 
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/aggregation/market_demand.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
+
 <figcaption markdown>Market demand as the horizontal sum.</figcaption>
 
 </figure>
@@ -125,6 +127,8 @@ The output of `demand_aggregation_figure()` is shown in [Market demand as the ho
 <figure class="ev-fig" markdown>
 
 ![Combining two discrete demand schedules.](../../assets/principle-viz/agora/aggregation/discrete_market_demand.svg){ .ev-figure-lg }
+
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/aggregation/discrete_market_demand.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
 
 <figcaption markdown>Combining two discrete demand schedules.</figcaption>
 

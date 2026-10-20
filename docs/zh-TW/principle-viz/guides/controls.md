@@ -45,6 +45,8 @@ print(
 
 ![有約束的價格上限。](../../../assets/principle-viz/agora/controls/ceiling.svg){ .ev-figure-sm }
 
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/controls/ceiling.svg" download aria-label="下載圖檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載圖檔</span></a></div>
+
 <figcaption markdown>有約束的價格上限。</figcaption>
 
 </figure>
@@ -54,6 +56,8 @@ print(
 <figure class="ev-fig" markdown>
 
 ![有約束的價格下限。](../../../assets/principle-viz/agora/controls/floor.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/controls/floor.svg" download aria-label="下載圖檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載圖檔</span></a></div>
 
 <figcaption markdown>有約束的價格下限。</figcaption>
 
@@ -81,6 +85,8 @@ fig.add_welfare(delta.policy)
 <figure class="ev-fig" markdown>
 
 ![上限為 3.5 時的福利。](../../../assets/principle-viz/agora/controls/ceiling_welfare.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/controls/ceiling_welfare.svg" download aria-label="下載圖檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載圖檔</span></a></div>
 
 <figcaption markdown>上限為 3.5 時的福利。</figcaption>
 

@@ -533,6 +533,14 @@
   padding-left: .7em;
 }
 
+/* Floating download buttons on a figure: hover one to read what it fetches */
+.md-typeset .ev-downloads {
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  display: flex;
+  gap: .4rem;
+}
 /* A figure with its caption, and the floating button that downloads the script (hover to read the label) */
 .md-typeset figure.ev-fig {
   position: relative;
@@ -550,9 +558,6 @@
   color: var(--md-default-fg-color--light);
 }
 .md-typeset a.ev-download {
-  position: absolute;
-  top: .5rem;
-  right: .5rem;
   display: flex;
   align-items: center;
   height: 2rem;

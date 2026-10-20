@@ -54,6 +54,8 @@ print(max(s.fit_error for s in path))
 
 ![$4 / x^2$ 的自适应拟合。](../../../assets/bezierkit/agora/fitting/adaptive.svg){ .ev-figure-sm }
 
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/bezierkit/agora/fitting/adaptive.svg" download aria-label="下载图片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载图片</span></a></div>
+
 <figcaption markdown>$4 / x^2$ 的自适应拟合。</figcaption>
 
 </figure>
@@ -125,6 +127,8 @@ print(max(s.fit_error for s in path))
 <figure class="ev-fig" markdown>
 
 ![以容许误差 $0.08$ 简化 41 个噪声样本。](../../../assets/bezierkit/agora/fitting/polyline.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/bezierkit/agora/fitting/polyline.svg" download aria-label="下载图片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载图片</span></a></div>
 
 <figcaption markdown>以容许误差 $0.08$ 简化 41 个噪声样本。</figcaption>
 

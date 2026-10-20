@@ -62,6 +62,8 @@ seo_title: "三次線段與路徑"
 
 ![三次曲線的緊密邊界框。](../../../assets/bezierkit/agora/paths/bbox.svg){ .ev-figure-sm }
 
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/bezierkit/agora/paths/bbox.svg" download aria-label="下載圖檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載圖檔</span></a></div>
+
 <figcaption markdown>三次曲線的緊密邊界框。</figcaption>
 
 </figure>
