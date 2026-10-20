@@ -36,7 +36,6 @@ fig = Figure(
     y_max=15,
     x_label="$x$",
     y_label="$y$",
-    shared_y=True,
 )
 
 # before and after x doubles

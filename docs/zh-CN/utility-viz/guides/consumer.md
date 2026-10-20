@@ -25,7 +25,6 @@ fig = Figure(
     y_max=15,
     x_label="$x$",
     y_label="$y$",
-    shared_y=True,
 )
 
 # 价格上涨前后
