@@ -30,7 +30,7 @@ from utility_viz.models import CustomUtility
 # the settings behind this manual's figures
 Config.load("manual.toml").use()
 
-# Any function of x and y that works on arrays is a utility function
+# any array function works
 model = CustomUtility(
     func=lambda x, y: np.log(x) + np.log(y), name="log+log"
 )
@@ -65,7 +65,7 @@ from utility_viz.models import MultiGoodCD
 # the settings behind this manual's figures
 Config.load("manual.toml").use()
 
-# Three goods x y z with z held at 10 to draw the x y plane
+# three goods with z held at 10
 model = MultiGoodCD({"x": 0.3, "y": 0.3, "z": 0.4})
 two_good_model = model.freeze(z=10.0)
 eq = solve(two_good_model, px=2.0, py=3.0, income=30.0)

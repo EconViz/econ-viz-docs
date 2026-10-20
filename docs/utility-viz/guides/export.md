@@ -19,7 +19,7 @@ Write the figure to `path`; the format follows the extension. `Figure`,
   the keyword arguments `tikz_scale` and `tikz_standalone`.
 
 ```python
-# PNG at the canvas DPI and 300 by default
+# PNG with canvas DPI default 300
 cvs.save("figure.png")
 # PDF vector
 cvs.save("figure.pdf")

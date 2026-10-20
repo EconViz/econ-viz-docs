@@ -29,7 +29,7 @@ eq = solve(model, px=2.0, py=3.0, income=30.0)
 
 # italic x and y
 cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
-# five curves and one of them through the optimum
+# five curves and one through the optimum
 lvls = levels.around(eq.utility, n=5)
 cvs.add_utility(model, levels=lvls)
 # the line and its feasible set

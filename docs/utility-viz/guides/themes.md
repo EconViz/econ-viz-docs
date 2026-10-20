@@ -53,7 +53,7 @@ from utility_viz.models import CobbDouglas
 model = CobbDouglas(alpha=0.5, beta=0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
 
-# The theme's own colours and the manual's line weights on a white page
+# theme colours with manual line weights
 theme = replace(
     themes.default,
     background_color="#ffffff",
@@ -86,7 +86,7 @@ from utility_viz.models import CobbDouglas
 model = CobbDouglas(alpha=0.5, beta=0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
 
-# The theme's own colours and the manual's line weights on a white page
+# theme colours with manual line weights
 theme = replace(
     themes.nord,
     background_color="#ffffff",
@@ -119,7 +119,7 @@ from utility_viz.models import CobbDouglas
 model = CobbDouglas(alpha=0.5, beta=0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
 
-# The theme's own colours and the manual's line weights on a white page
+# theme colours with manual line weights
 theme = replace(
     themes.paper,
     background_color="#ffffff",
@@ -152,7 +152,7 @@ from utility_viz.models import CobbDouglas
 model = CobbDouglas(alpha=0.5, beta=0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
 
-# The theme's own colours and the manual's line weights on a white page
+# theme colours with manual line weights
 theme = replace(
     themes.monochrome,
     background_color="#ffffff",
@@ -185,7 +185,7 @@ from utility_viz.models import CobbDouglas
 model = CobbDouglas(alpha=0.5, beta=0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
 
-# The theme's own colours and the manual's line weights on a white page
+# theme colours with manual line weights
 theme = replace(
     themes.presentation,
     background_color="#ffffff",
@@ -321,18 +321,18 @@ utility-viz.toml: [stroke.budgt]: no such setting (choose: axis, box, budget, ..
 Every example in this manual loads `manual.toml` first. It sets the look of the figures: grey curves, black axes and guides, black points and a white page. It leaves the font out so that it runs anywhere; the figures use TeX Gyre Pagella, and without that font you get the default typeface.
 
 ```toml
-# Settings for every figure in this manual
-# Grey curves and black axes and guides and black points on a white background
+# Settings for every manual figure
+# Grey curves and black axes on white
 # Load them before drawing
 #
 #     Config.load("manual.toml").use()
 #
-# Each section maps to a Theme property as described in the Themes chapter
+# Sections map to Theme properties
 
 base = "default"
 
-# The font is TeX Gyre Pagella and it is not set here so the file runs on any machine
-# Add [font] text = "TeX Gyre Pagella" if the font is installed
+# Font is TeX Gyre Pagella but unset
+# Add [font] text = "TeX Gyre Pagella" to use it
 
 [color]
 background = "#ffffff"
@@ -411,7 +411,7 @@ size = 5
 [marker.point]
 size = 5
 
-[label.point]               # the text beside a point such as x* at the optimum
+[label.point]               # text beside a point such as x*
 fontsize = 14
 position = "right"
 offset = 10

@@ -119,7 +119,7 @@ cvs.add_utility(
     model,
     levels=levels.around(eq.utility, n=5),
     show_rays=True,
-    # 每个折点画一条射线与一个标记
+    # 每个折点画射线与标记
     show_kinks=True,
 )
 cvs.add_budget(2.0, 3.0, 30.0)
@@ -319,7 +319,7 @@ Config.load("manual.toml").use()
 
 model = Satiation(bliss_x=6.0, bliss_y=4.0)
 
-# 曲线取自网格上的效用值 这张图没有预算线与最优点
+# 曲线取自效用值网格
 X, Y = np.meshgrid(
     np.linspace(0.1, 12.0, 300), np.linspace(0.1, 10.0, 300)
 )

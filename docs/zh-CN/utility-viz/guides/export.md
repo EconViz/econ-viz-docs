@@ -17,7 +17,7 @@ seo_title: "导出"
 - TeX：TikZ 源代码（`.tex`），可嵌入 LaTeX 文件。通过关键字参数 `tikz_scale` 与 `tikz_standalone` 调整输出。
 
 ```python
-# PNG 依画布 DPI 默认 300
+# PNG 默认 300 DPI
 cvs.save("figure.png")
 # PDF 向量
 cvs.save("figure.pdf")

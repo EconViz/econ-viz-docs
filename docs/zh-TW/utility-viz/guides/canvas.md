@@ -159,8 +159,8 @@ cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
 # 一條無異曲線 u = 5
 cvs.add_utility(model, levels=[5.0])
 cvs.add_budget(2.0, 3.0, 30.0)
-# 它與預算線交於兩點 即 2x^2 - 30x + 75 = 0 的根
-# 以 Label 把文字放在點的旁邊
+# 與預算線交於兩點
+# 以 Label 放在點旁
 cvs.add_point(
     3.17, 7.89, label=Label(text="A", position="top-right")
 )
@@ -242,7 +242,7 @@ for ax, style, title in zip(axes, styles, titles):
         ax=ax,
     )
 
-# 軸標籤會放在箭頭外側 四張圖並排時要多留一點水平間距
+# 預留軸標籤的空間
 fig.subplots_adjust(wspace=0.62)
 fig.savefig("line_styles.png", dpi=160)
 ```
@@ -288,7 +288,7 @@ for ax, style, title in zip(axes, styles, titles):
         ax=ax,
     )
 
-# 軸標籤會放在箭頭外側 四張圖並排時要多留一點水平間距
+# 預留軸標籤的空間
 fig.subplots_adjust(wspace=0.62)
 fig.savefig("arrow_styles.png", dpi=160)
 ```

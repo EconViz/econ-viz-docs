@@ -28,14 +28,14 @@ fig = Figure(
     shared_y=True,
 )
 
-# 价格上涨前后 偏好也转向 y
+# 价格上涨前后
 cases = [
     (CobbDouglas(alpha=0.5, beta=0.5), 2.0, 3.0, 30.0),
     (CobbDouglas(alpha=0.3, beta=0.7), 4.0, 3.0, 30.0),
 ]
 for idx, (model, px, py, income) in enumerate(cases):
     eq = solve(model, px=px, py=py, income=income)
-    # 每个面板都是一个 Canvas
+    # 面板都是 Canvas
     panel = fig[idx]
     panel.add_utility(
         model, levels=levels.around(eq.utility, n=5)
@@ -156,11 +156,11 @@ from utility_viz.core.scenes import (
 )
 from utility_viz.models import CobbDouglas
 
-# 与 manual.toml 相同的颜色
+# 同 manual.toml 的颜色
 INK, DARK, GREY = "#1a1a1a", "#222222", "#8c8c8c"
 text = TextStyle(color=INK, size=14)
 
-# Cobb-Douglas 对 x 的需求 价格 p_x 在 A 为 1.5 在 B 为 4
+# Cobb-Douglas 的 x 需求
 model = CobbDouglas(alpha=0.5, beta=0.5)
 py, income, px_a, px_b = 2.0, 40.0, 1.5, 4.0
 points = {"A": px_a, "B": px_b}
@@ -168,7 +168,7 @@ optimum = {
     name: solve(model, px=px, py=py, income=income)
     for name, px in points.items()
 }
-# 两个面板的 x 都从 0 画到 29
+# x 都从 0 画到 29
 X = 29.0
 
 
@@ -248,7 +248,7 @@ def mark(cv, name, x, y):
     )
 
 
-# 上图是商品空间 每个价格各有一条预算线与一条无差异曲线
+# 上图是商品空间
 top = panel(-3.5, 24, 3.9, "$y$")
 top.extend(
     budget_layers(
@@ -282,7 +282,7 @@ for name, eq in optimum.items():
     top.extend(curve)
     mark(top, name, eq.x, eq.y)
 
-# 下图是需求曲线 x = alpha * income / p_x 标出同样的两个点
+# 下图是需求曲线
 bottom = panel(-1.2, 7, 3.6, "$p_x$")
 prices = np.linspace(0.8, 6.0, 80)
 demand = tuple(zip(0.5 * income / prices, prices))
@@ -393,18 +393,18 @@ from utility_viz.models import (
     decompose_price_effect,
 )
 
-# 与 manual.toml 相同的颜色
+# 同 manual.toml 的颜色
 INK, DARK, GREY = "#1a1a1a", "#222222", "#8c8c8c"
 text = TextStyle(color=INK, size=14)
 effect_name = TextStyle(
     color=INK,
     size=13,
     family="PingFang SC",
-    # 使用有中日韩字形的字体 family 选项已弃用 之后由 GlyphKit 取代
+    # 选用中日韩字体
 )
 
-# x 的价格由 2 涨到 4 A 是原来的最优点 C 是新的最优点
-# B 是新价格下仍在原来无差异曲线上的组合 即 Hicks 分解
+# x 的价格由 2 涨到 4
+# A 旧 C 新 B 为补偿点
 model = CobbDouglas(alpha=0.5, beta=0.5)
 px0, px1, py, income = 2.0, 4.0, 3.0, 60.0
 result = decompose_price_effect(
@@ -417,7 +417,7 @@ result = decompose_price_effect(
 bundles = {"A": result.A, "B": result.B, "C": result.C}
 X, Y = 26.0, 24.0
 
-# 白底细轴的画布 延伸到 x 轴下方 用来标出两个效果的名称
+# 白底细轴的画布
 spec = CanvasSpec(
     x_range=(0, X),
     y_range=(-7.5, Y),
@@ -457,7 +457,7 @@ cv.add(
     )
 )
 
-# 价格变动前后的预算线 虚线的补偿预算线与两条无差异曲线
+# 三条预算线与两条曲线
 cv.extend(
     budget_layers(
         px0,
@@ -500,7 +500,7 @@ for name in ("A", "C"):
     )
     cv.extend(curve)
 
-# 三个组合 各有一条通往 x 轴的虚线辅助线
+# 三个组合与虚线辅助线
 for name, bundle in bundles.items():
     cv.add(
         PathLayer(
@@ -529,8 +529,8 @@ for name, bundle in bundles.items():
         )
     )
 
-# x 方向的两个效果 画成辅助线之间的箭头 A 到 B 再 B 到 C 各用一条线拉到轴下方标出名称
-# 两条线向外展开 让两个名称在同一水平
+# x 方向效果画成箭头
+# 名称展开到同一水平
 gap, row, depth, spread = 0.2, 1.6, -4.4, 3.8
 effects = [
     ("A", "B", "替代效应", 1),
@@ -629,14 +629,14 @@ from scipy.interpolate import CubicSpline
 
 from utility_viz.core.scenes import UTILITY_THEME
 
-# 与 manual.toml 相同的颜色
+# 同 manual.toml 的颜色
 INK, GREY, LENS = "#1a1a1a", "#8c8c8c", "#ececec"
 text = TextStyle(color=INK, size=12)
 
-# 仿照教科书的图 箱子宽 10 高 6 J 从左下角 O_J 起算
-# K 从右上角 O_K 起算 每条无差异曲线都是通过几个控制点 (x, y) 的
-# 三次样条曲线 控制点的 x y 量自那张图
-# J 的无差异曲线控制点的 (xs, ys) 由低到高
+# 仿教科书的图 箱宽 10 高 6
+# J 起于 O_J K 起于 O_K
+# 曲线是过控制点的样条
+# J 的控制点 由低到高
 J = {
     1: (
         [3.80, 3.91, 4.18, 4.59, 5.12, 5.75, 6.46, 7.16, 8.07],
@@ -651,7 +651,7 @@ J = {
         [5.40, 4.88, 4.39, 3.93, 3.50, 3.18, 2.91, 2.73, 2.63],
     ),
 }
-# K 的无差异曲线同理 由外而内
+# K 的控制点 由外而内
 K = {
     1: (
         [3.38, 4.17, 4.91, 5.57, 5.95, 6.60, 6.93, 7.16, 7.19],
@@ -666,14 +666,14 @@ K = {
         [3.80, 3.65, 3.41, 3.11, 2.79, 2.33, 1.88, 1.41, 0.92],
     ),
 }
-# 四个配置 各在 J 的一条曲线与 K 的一条曲线相交处
+# 四个配置 A 到 D
 allocations = {
     "A": (7.16, 0.79),
     "B": (6.30, 1.83),
     "C": (5.25, 2.79),
     "D": (5.95, 3.50),
 }
-# 字母与曲线标签的位置 各文字的中心
+# 标签的位置
 letters = {
     "A": (7.41, 0.93),
     "B": (6.55, 1.90),
@@ -692,7 +692,7 @@ curve_labels = {
 
 def spline(points, n=240):
     """通过控制点的平滑曲线，取 n 个取样点。"""
-    # (xs, ys) 转成 (x, y) 的列表
+    # 转成点的列表
     points = np.column_stack(points)
     chord = np.r_[
         0, np.cumsum(np.hypot(*np.diff(points, axis=0).T))
@@ -705,8 +705,8 @@ def spline(points, n=240):
 curves_j = {k: spline(v) for k, v in J.items()}
 curves_k = {k: spline(v) for k, v in K.items()}
 
-# 画布是箱子加上放四个箭头的边界 0.6 英寸是箱子的一个单位
-# Matplotlib 的绘图区占图宽的 77.5% 图高的 77%
+# 箱子加上放箭头的边界
+# 每单位 0.6 英寸
 x_range, y_range, unit = (-1.0, 11.15), (-0.8, 6.8), 0.6
 spec = CanvasSpec(
     x_range=x_range,
@@ -731,7 +731,7 @@ cv.add(
     )
 )
 
-# J 最低的曲线与 K 最外侧曲线之间的透镜形 从两者相交处到配置 A
+# 到配置 A 为止的透镜形
 j1, k1 = curves_j[1], curves_k[1]
 near = lambda curve, point: int(
     np.argmin(np.hypot(*(curve - point).T))
@@ -758,7 +758,7 @@ cv.add(
     )
 )
 
-# 曲线宽为箱宽的 0.62% 即 6 英寸宽的箱子上的 2.66 pt 点的直径为 1.49% 即 6.45 pt
+# 线宽与点的直径
 for k, points in curves_j.items():
     cv.add(
         PathLayer(
@@ -829,7 +829,7 @@ cv.add(
     )
 )
 
-# 四个边 两人的数量沿箭头增加 J 从 O_J 起 K 从 O_K 起
+# 沿轴的箭头标出两人的量
 arrow, plain = Stroke(
     color=GREY, width=1.0, arrow=ArrowStyle.TRIANGLE
 ), Stroke(color=GREY, width=1.0)

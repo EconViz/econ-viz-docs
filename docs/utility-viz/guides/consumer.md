@@ -39,7 +39,7 @@ fig = Figure(
     shared_y=True,
 )
 
-# before and after the price of x doubles and the weights shift towards y
+# before and after x doubles
 cases = [
     (CobbDouglas(alpha=0.5, beta=0.5), 2.0, 3.0, 30.0),
     (CobbDouglas(alpha=0.3, beta=0.7), 4.0, 3.0, 30.0),
@@ -102,7 +102,7 @@ path = PricePath(
     n=40,
 )
 
-# curves around the optimum in the middle of the path
+# curves around the middle optimum
 eq = path.equilibria[len(path.equilibria) // 2]
 
 cvs = Canvas(x_max=25, y_max=20, x_label="$x$", y_label="$y$")
@@ -185,7 +185,7 @@ from utility_viz.models import CobbDouglas
 INK, DARK, GREY = "#1a1a1a", "#222222", "#8c8c8c"
 text = TextStyle(color=INK, size=14)
 
-# Cobb-Douglas demand for x at two prices p_x = 1.5 at A and 4 at B
+# Cobb-Douglas demand for x
 model = CobbDouglas(alpha=0.5, beta=0.5)
 py, income, px_a, px_b = 2.0, 40.0, 1.5, 4.0
 points = {"A": px_a, "B": px_b}
@@ -193,7 +193,7 @@ optimum = {
     name: solve(model, px=px, py=py, income=income)
     for name, px in points.items()
 }
-# both panels show x from 0 to 29
+# x runs from 0 to 29
 X = 29.0
 
 
@@ -273,7 +273,7 @@ def mark(cv, name, x, y):
     )
 
 
-# Top is the goods space with the budget line and the indifference curve at each price
+# top panel is the goods space
 top = panel(-3.5, 24, 3.9, "$y$")
 top.extend(
     budget_layers(
@@ -307,7 +307,7 @@ for name, eq in optimum.items():
     top.extend(curve)
     mark(top, name, eq.x, eq.y)
 
-# Bottom is the demand curve x = alpha * income / p_x with the same two points
+# bottom panel is the demand curve
 bottom = panel(-1.2, 7, 3.6, "$p_x$")
 prices = np.linspace(0.8, 6.0, 80)
 demand = tuple(zip(0.5 * income / prices, prices))
@@ -433,8 +433,8 @@ INK, DARK, GREY = "#1a1a1a", "#222222", "#8c8c8c"
 text = TextStyle(color=INK, size=14)
 effect_name = TextStyle(color=INK, size=13)
 
-# The price of x doubles from 2 to 4 and A is the old optimum
-# C is the new one and B is the bundle on the old curve at the new prices as in the Hicks decomposition
+# p_x doubles from 2 to 4
+# A old and C new and B compensated
 model = CobbDouglas(alpha=0.5, beta=0.5)
 px0, px1, py, income = 2.0, 4.0, 3.0, 60.0
 result = decompose_price_effect(
@@ -447,7 +447,7 @@ result = decompose_price_effect(
 bundles = {"A": result.A, "B": result.B, "C": result.C}
 X, Y = 26.0, 24.0
 
-# A white canvas with thin axes that reaches below the x-axis where the effects are named
+# a white canvas with thin axes
 spec = CanvasSpec(
     x_range=(0, X),
     y_range=(-7.5, Y),
@@ -487,7 +487,7 @@ cv.add(
     )
 )
 
-# The budget lines before and after and the dashed compensated line and the two indifference curves
+# three budget lines and two curves
 cv.extend(
     budget_layers(
         px0,
@@ -530,7 +530,7 @@ for name in ("A", "C"):
     )
     cv.extend(curve)
 
-# The three bundles each with a dashed guide down to the x-axis
+# three bundles with dashed guides
 for name, bundle in bundles.items():
     cv.add(
         PathLayer(
@@ -559,8 +559,8 @@ for name, bundle in bundles.items():
         )
     )
 
-# The effects on x as arrows between the guides from A to B then B to C and each is named by a line
-# pulled down below the axis and the lines fan out so that both names sit on one level
+# effects on x as arrows
+# names fanned out to one level
 gap, row, depth, spread = 0.2, 1.6, -4.4, 3.8
 effects = [
     ("A", "B", "Substitution effect", 1),
@@ -668,10 +668,10 @@ from utility_viz.core.scenes import UTILITY_THEME
 INK, GREY, LENS = "#1a1a1a", "#8c8c8c", "#ececec"
 text = TextStyle(color=INK, size=12)
 
-# Drawn after a textbook figure with a box 10 wide and 6 high and person J measured from the
-# lower-left corner O_J and person K from the upper-right corner O_K and each indifference curve is a
-# cubic spline through a few control points whose x and y are read off that figure
-# xs and ys of the control points of J's curves from the lowest to the highest
+# after a textbook figure
+# J from O_J and K from O_K
+# curves are splines through control points
+# J's control points low to high
 J = {
     1: (
         [3.80, 3.91, 4.18, 4.59, 5.12, 5.75, 6.46, 7.16, 8.07],
@@ -686,7 +686,7 @@ J = {
         [5.40, 4.88, 4.39, 3.93, 3.50, 3.18, 2.91, 2.73, 2.63],
     ),
 }
-# the same for K's curves from the outermost in
+# K's from outer to inner
 K = {
     1: (
         [3.38, 4.17, 4.91, 5.57, 5.95, 6.60, 6.93, 7.16, 7.19],
@@ -701,14 +701,14 @@ K = {
         [3.80, 3.65, 3.41, 3.11, 2.79, 2.33, 1.88, 1.41, 0.92],
     ),
 }
-# Four allocations each where one of J's curves crosses one of K's
+# four allocations A to D
 allocations = {
     "A": (7.16, 0.79),
     "B": (6.30, 1.83),
     "C": (5.25, 2.79),
     "D": (5.95, 3.50),
 }
-# Where the letters and curve labels stand at the centre of each text
+# positions of the labels
 letters = {
     "A": (7.41, 0.93),
     "B": (6.55, 1.90),
@@ -727,7 +727,7 @@ curve_labels = {
 
 def spline(points, n=240):
     """A smooth curve through the control points, as n sampled points."""
-    # xs and ys into a list of x y pairs
+    # turn xs and ys into points
     points = np.column_stack(points)
     chord = np.r_[
         0, np.cumsum(np.hypot(*np.diff(points, axis=0).T))
@@ -740,8 +740,8 @@ def spline(points, n=240):
 curves_j = {k: spline(v) for k, v in J.items()}
 curves_k = {k: spline(v) for k, v in K.items()}
 
-# The canvas is the box plus the margin that holds the four arrows and 0.6 inch is one unit of the
-# box and a Matplotlib axes fills 77.5% of the figure width and 77% of its height
+# box plus margin for the arrows
+# 0.6 inch per unit
 x_range, y_range, unit = (-1.0, 11.15), (-0.8, 6.8), 0.6
 spec = CanvasSpec(
     x_range=x_range,
@@ -766,7 +766,7 @@ cv.add(
     )
 )
 
-# The lens between J's lowest curve and K's outermost from where they cross to allocation A
+# lens up to allocation A
 j1, k1 = curves_j[1], curves_k[1]
 near = lambda curve, point: int(
     np.argmin(np.hypot(*(curve - point).T))
@@ -793,7 +793,7 @@ cv.add(
     )
 )
 
-# The curves are 0.62% of the box wide at 2.66 points on a 6 inch box and the dots 1.49% at 6.45 points
+# curve width and dot size
 for k, points in curves_j.items():
     cv.add(
         PathLayer(
@@ -864,7 +864,7 @@ cv.add(
     )
 )
 
-# The four sides and each person's quantities grow along the arrows with J's from O_J and K's from O_K
+# arrows along each person's axes
 arrow, plain = Stroke(
     color=GREY, width=1.0, arrow=ArrowStyle.TRIANGLE
 ), Stroke(color=GREY, width=1.0)

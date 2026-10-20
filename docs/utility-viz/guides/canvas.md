@@ -111,7 +111,7 @@ eq = solve(model, px=2.0, py=3.0, income=30.0)
 cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
 cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
 cvs.add_budget(2.0, 3.0, 30.0, fill=True)
-# the optimum with dashed guides to the axes
+# the optimum and dashed guides
 cvs.add_equilibrium(eq)
 cvs.save("add_equilibrium.png")
 ```
@@ -138,7 +138,7 @@ cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
 cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
 cvs.add_budget(2.0, 3.0, 30.0)
 cvs.add_equilibrium(eq)
-# a ray through the origin and the optimum
+# a ray through the optimum
 cvs.add_ray(eq.y / eq.x)
 cvs.save("add_ray.png")
 ```
@@ -164,8 +164,8 @@ cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
 # one indifference curve u = 5
 cvs.add_utility(model, levels=[5.0])
 cvs.add_budget(2.0, 3.0, 30.0)
-# it cuts the budget line twice at 2x^2 - 30x + 75 = 0
-# a Label places the text beside the point
+# it cuts the budget line twice
+# a Label puts text by the point
 cvs.add_point(
     3.17, 7.89, label=Label(text="A", position="top-right")
 )
@@ -249,7 +249,7 @@ for ax, style in zip(axes, styles):
         ax=ax,
     )
 
-# Axis labels sit outside the arrowheads so four panels need more room
+# leave room for axis labels
 fig.subplots_adjust(wspace=0.62)
 fig.savefig("line_styles.png", dpi=160)
 ```
@@ -293,7 +293,7 @@ for ax, style in zip(axes, styles):
         ax=ax,
     )
 
-# Axis labels sit outside the arrowheads so four panels need more room
+# leave room for axis labels
 fig.subplots_adjust(wspace=0.62)
 fig.savefig("arrow_styles.png", dpi=160)
 ```
