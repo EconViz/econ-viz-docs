@@ -40,8 +40,7 @@ $$
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CES
 
-# 图形设置
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # 图形设置
 
 model = CES(alpha=0.5, beta=0.5, rho=-0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
@@ -79,8 +78,7 @@ $$
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import Translog
 
-# 图形设置
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # 图形设置
 
 model = Translog(alpha_x=0.6, alpha_y=0.4, beta_xy=0.12)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
@@ -124,8 +122,7 @@ $$
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import Leontief
 
-# 图形设置
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # 图形设置
 
 model = Leontief(a=1.0, b=1.0)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
@@ -135,8 +132,7 @@ cvs.add_utility(
     model,
     levels=levels.around(eq.utility, n=5),
     show_rays=True,
-    # 每个折点画射线与标记
-    show_kinks=True,
+    show_kinks=True,  # 每个折点画射线与标记
 )
 cvs.add_budget(2.0, 3.0, 30.0)
 cvs.add_equilibrium(eq)
@@ -169,8 +165,7 @@ $$
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import PerfectSubstitutes
 
-# 图形设置
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # 图形设置
 
 model = PerfectSubstitutes(a=1.0, b=2.0)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
@@ -210,12 +205,9 @@ import numpy as np
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CustomUtility
 
-# 图形设置
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # 图形设置
 
-model = CustomUtility(
-    func=lambda x, y: np.maximum(x, y), name="maximum"
-)
+model = CustomUtility(func=lambda x, y: np.maximum(x, y), name="maximum")
 eq = solve(model, px=2.0, py=3.0, income=30.0)
 
 cvs = Canvas(x_max=25, y_max=20, x_label="$x$", y_label="$y$")
@@ -257,8 +249,7 @@ import numpy as np
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import QuasiLinear
 
-# 图形设置
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # 图形设置
 
 model = QuasiLinear(v_func=np.log, linear_in="y")
 eq = solve(model, px=1.0, py=2.0, income=20.0)
@@ -298,8 +289,7 @@ $$
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import Haagsma
 
-# 图形设置
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # 图形设置
 
 model = Haagsma(gamma_y=10.0)
 eq = solve(model, px=1.0, py=1.0, income=11.0)
@@ -337,8 +327,7 @@ $$
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import StoneGeary
 
-# 图形设置
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # 图形设置
 
 model = StoneGeary(alpha=0.5, beta=0.5, bar_x=2.0, bar_y=2.0)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
@@ -378,21 +367,15 @@ import numpy as np
 from utility_viz import Canvas, Config, levels
 from utility_viz.models import Satiation
 
-# 图形设置
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # 图形设置
 
 model = Satiation(bliss_x=6.0, bliss_y=4.0)
 
 # 曲线取自效用值网格
-X, Y = np.meshgrid(
-    np.linspace(0.1, 12.0, 300), np.linspace(0.1, 10.0, 300)
-)
+X, Y = np.meshgrid(np.linspace(0.1, 12.0, 300), np.linspace(0.1, 10.0, 300))
 
 cvs = Canvas(x_max=12, y_max=10, x_label="$x$", y_label="$y$")
-# u 的五个百分位数
-cvs.add_utility(
-    model, levels=levels.percentile(model(X, Y), n=5)
-)
+cvs.add_utility(model, levels=levels.percentile(model(X, Y), n=5))  # u 的五个百分位数
 cvs.save("satiation.png")
 ```
 

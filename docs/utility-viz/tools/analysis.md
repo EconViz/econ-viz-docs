@@ -30,12 +30,8 @@ from utility_viz.models import CobbDouglas
 model = CobbDouglas(alpha=0.4, beta=0.6)
 cs = comparative_statics(model, px=2.0, py=3.0, income=60.0)
 
-print(
-    round(cs.dx_dpx, 1), round(cs.dx_dpy, 1), round(cs.dx_dI, 1)
-)
-print(
-    round(cs.dy_dpx, 1), round(cs.dy_dpy, 1), round(cs.dy_dI, 1)
-)
+print(round(cs.dx_dpx, 1), round(cs.dx_dpy, 1), round(cs.dx_dI, 1))
+print(round(cs.dy_dpx, 1), round(cs.dy_dpy, 1), round(cs.dy_dI, 1))
 
 # -6.0 0.0 0.2
 # 0.0 -4.0 0.2
@@ -56,9 +52,7 @@ from utility_viz.models import CobbDouglas
 
 S = slutsky_matrix(
     CobbDouglas(alpha=0.4, beta=0.6),
-    px=2.0,
-    py=3.0,
-    income=60.0,
+    px=2.0, py=3.0, income=60.0,
 )
 
 print(round(S.s_xx, 1), round(S.s_xy, 1))
@@ -117,7 +111,6 @@ The returns-to-scale class of a function.
 def shifted_utility(x, y):
     return x**0.4 * y**0.6 + 1.0
 
-
 models = [
     CobbDouglas(alpha=0.7, beta=0.6),
     CobbDouglas(alpha=0.4, beta=0.6),
@@ -127,11 +120,7 @@ models = [
 
 for model in models:
     result = HomogeneityAnalyzer(model).degree()
-    degree = (
-        None
-        if result.degree is None
-        else round(result.degree, 1)
-    )
+    degree = None if result.degree is None else round(result.degree, 1)
     print(degree, result.returns_to_scale.name)
 
 # 1.3 INCREASING

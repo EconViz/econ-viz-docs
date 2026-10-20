@@ -53,16 +53,13 @@ cvs.add_utility(
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
-# 圖形設定
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # 圖形設定
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
 
-# 斜體的 x 與 y
-cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
-# 圍繞最適點的三條曲線
-cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")  # 斜體的 x 與 y
+cvs.add_utility(model, levels=levels.around(eq.utility, n=3))  # 圍繞最適點的三條曲線
 cvs.save("add_utility.png")
 ```
 
@@ -85,13 +82,10 @@ cvs.save("add_utility.png")
 ```python
 from utility_viz import Canvas, Config
 
-# 圖形設定
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # 圖形設定
 
-# 斜體的 x 與 y
-cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
-# 預算線與可行集合
-cvs.add_budget(2.0, 3.0, 30.0, fill=True)
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")  # 斜體的 x 與 y
+cvs.add_budget(2.0, 3.0, 30.0, fill=True)  # 預算線與可行集合
 cvs.save("add_budget.png")
 ```
 
@@ -113,18 +107,15 @@ cvs.save("add_budget.png")
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
-# 圖形設定
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # 圖形設定
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
 
-# 斜體的 x 與 y
-cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")  # 斜體的 x 與 y
 cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
 cvs.add_budget(2.0, 3.0, 30.0, fill=True)
-# 最適點與通往座標軸的虛線
-cvs.add_equilibrium(eq)
+cvs.add_equilibrium(eq)  # 最適點與通往座標軸的虛線
 cvs.save("add_equilibrium.png")
 ```
 
@@ -146,19 +137,16 @@ cvs.save("add_equilibrium.png")
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
-# 圖形設定
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # 圖形設定
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
 
-# 斜體的 x 與 y
-cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")  # 斜體的 x 與 y
 cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
 cvs.add_budget(2.0, 3.0, 30.0)
 cvs.add_equilibrium(eq)
-# 通過原點與最適點的射線
-cvs.add_ray(eq.y / eq.x)
+cvs.add_ray(eq.y / eq.x)  # 通過原點與最適點的射線
 cvs.save("add_ray.png")
 ```
 
@@ -180,25 +168,18 @@ cvs.save("add_ray.png")
 from utility_viz import Canvas, Config, Label, levels, solve
 from utility_viz.models import CobbDouglas
 
-# 圖形設定
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # 圖形設定
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
 
-# 斜體的 x 與 y
-cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
-# 一條無異曲線 u = 5
-cvs.add_utility(model, levels=[5.0])
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")  # 斜體的 x 與 y
+cvs.add_utility(model, levels=[5.0])  # 一條無異曲線 u = 5
 cvs.add_budget(2.0, 3.0, 30.0)
 # 與預算線交於兩點
 # 以 Label 放在點旁
-cvs.add_point(
-    3.17, 7.89, label=Label(text="A", position="top-right")
-)
-cvs.add_point(
-    11.83, 2.11, label=Label(text="B", position="top-right")
-)
+cvs.add_point(3.17, 7.89, label=Label(text="A", position="top-right"))
+cvs.add_point(11.83, 2.11, label=Label(text="B", position="top-right"))
 cvs.save("add_point.png")
 ```
 
@@ -220,18 +201,15 @@ cvs.save("add_point.png")
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
-# 圖形設定
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # 圖形設定
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
 
-# 斜體的 x 與 y
-cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")  # 斜體的 x 與 y
 cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
 cvs.add_budget(2.0, 3.0, 30.0, fill=True)
-# 均衡點與擴張路徑
-cvs.add_equilibrium(eq, show_ray=True)
+cvs.add_equilibrium(eq, show_ray=True)  # 均衡點與擴張路徑
 cvs.save("show_save.png")
 ```
 
@@ -265,15 +243,9 @@ import matplotlib.pyplot as plt
 
 from utility_viz import Canvas, Config, LineStyle
 
-# 圖形設定
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # 圖形設定
 
-styles = [
-    LineStyle.SOLID,
-    LineStyle.DASHED,
-    LineStyle.DOTTED,
-    LineStyle.DASHDOT,
-]
+styles = [LineStyle.SOLID, LineStyle.DASHED, LineStyle.DOTTED, LineStyle.DASHDOT]
 titles = ["實線", "虛線", "點線", "點劃線"]
 
 fig, axes = plt.subplots(1, 4, figsize=(7.6, 2.0))
@@ -284,8 +256,7 @@ for ax, style, title in zip(axes, styles, titles):
         y_label="$y$",
         x_line_style=style,
         y_line_style=style,
-        # 使用有中文字形的字體
-        font="Noto Serif TC",
+        font="Noto Serif TC",  # 使用有中文字形的字體
         fig=fig,
         ax=ax,
     )
@@ -319,15 +290,9 @@ import matplotlib.pyplot as plt
 
 from utility_viz import ArrowStyle, Canvas, Config
 
-# 圖形設定
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # 圖形設定
 
-styles = [
-    ArrowStyle.SIMPLE,
-    ArrowStyle.TRIANGLE,
-    ArrowStyle.FANCY,
-    ArrowStyle.WEDGE,
-]
+styles = [ArrowStyle.SIMPLE, ArrowStyle.TRIANGLE, ArrowStyle.FANCY, ArrowStyle.WEDGE]
 titles = ["簡單", "三角形", "花式", "楔形"]
 
 fig, axes = plt.subplots(1, 4, figsize=(7.6, 2.0))
@@ -338,8 +303,7 @@ for ax, style, title in zip(axes, styles, titles):
         y_label="$y$",
         x_arrow_style=style,
         y_arrow_style=style,
-        # 使用有中文字形的字體
-        font="Noto Serif TC",
+        font="Noto Serif TC",  # 使用有中文字形的字體
         fig=fig,
         ax=ax,
     )
@@ -405,8 +369,7 @@ cvs.add_equilibrium(
     label=Label(position="bottom-left", offset=8),
 )
 cvs.add_point(
-    12,
-    2,
+    12, 2,
     marker=Marker(color="black", shape="D"),
     label=Label(text="A", position="left", fontsize=14),
 )
@@ -422,9 +385,7 @@ cvs.add_point(
 from utility_viz import Fill
 
 cvs.add_budget(
-    2,
-    3,
-    30,
+    2, 3, 30,
     fill=Fill(color="lightgrey", opacity=0.4),
 )
 ```
@@ -436,11 +397,9 @@ cvs.add_budget(
 `add_*` 方法支援串接呼叫，最後以 `save()` 匯出：
 
 ```python
-Canvas(x_max=20, y_max=15).add_utility(
-    model, levels=lvls
-).add_budget(2.0, 3.0, 30.0, fill=True).add_equilibrium(
-    eq, show_ray=True
-).save(
-    "figure.png"
-)
+Canvas(x_max=20, y_max=15) \
+    .add_utility(model, levels=lvls) \
+    .add_budget(2.0, 3.0, 30.0, fill=True) \
+    .add_equilibrium(eq, show_ray=True) \
+    .save("figure.png")
 ```

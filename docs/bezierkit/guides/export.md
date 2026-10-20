@@ -26,8 +26,7 @@ the coordinate arrays `x` and `y` and iteration over `(t, point)` pairs.
 from bezierkit.sampling import UniformSampler
 
 sample = UniformSampler(5).sample(curve)
-# [0.      0.90625 2.      3.09375 4.     ]
-print(sample.x)
+print(sample.x)   # [0.      0.90625 2.      3.09375 4.     ]
 ```
 
 ## Rounding and transforms
@@ -111,8 +110,7 @@ same subset back; relative commands, lines and arcs raise `ValueError`.
 ```python
 from bezierkit.export.svg import to_svg_path_data
 
-# M 0.00 0.00 C 1.00 2.00 3.00 2.00 4.00 0.00
-print(to_svg_path_data(path, precision=2))
+print(to_svg_path_data(path, precision=2))   # M 0.00 0.00 C 1.00 2.00 3.00 2.00 4.00 0.00
 ```
 
 ## TikZ

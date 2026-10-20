@@ -171,7 +171,7 @@ class ApiReferenceTests(unittest.TestCase):
                     if not isinstance(node, ast.ImportFrom) or not node.module:
                         continue
                     package = node.module.split('.')[0].replace('_', '-')
-                    if package not in {'utility-viz', 'principle-viz', 'mosaickit', 'bezierkit'}:
+                    if package not in {'utility-viz', 'principle-viz', 'mosaickit', 'bezierkit', 'glyphkit', 'kinetickit'}:
                         continue
                     for name in node.names:
                         targets = {t for t in api._symbols.get(name.name, ()) if t[0].startswith(locale + package + '/')}
@@ -212,7 +212,7 @@ class ApiReferenceTests(unittest.TestCase):
 
     def test_inline_attributes_have_a_surface_in_every_package_and_language(self):
         for locale in ('', 'zh-TW/', 'zh-CN/'):
-            for package in ('utility-viz', 'principle-viz', 'mosaickit', 'bezierkit'):
+            for package in ('utility-viz', 'principle-viz', 'mosaickit', 'bezierkit', 'glyphkit', 'kinetickit'):
                 page = SimpleNamespace(file=SimpleNamespace(src_uri=locale + package + '/guides/canvas.md'))
                 source = ' '.join(f'<code>{name}</code>' for name in
                                   ('x_range', 'y_range', 'width', 'height', 'dpi', 'x_min', 'theme.ic_stroke'))

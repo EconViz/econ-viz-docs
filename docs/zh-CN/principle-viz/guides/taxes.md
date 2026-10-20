@@ -88,28 +88,19 @@ print(solve_tax_equilibrium(demand, supply, tax))
 ```python
 from principle_viz import compare_tax_scenario
 from principle_viz.welfare.surplus import (
-    compare_surplus,
-    outcome_from_equilibrium,
-    outcome_from_tax,
+    compare_surplus, outcome_from_equilibrium, outcome_from_tax,
 )
 
 eq = solve_equilibrium(demand, supply)
 baseline = outcome_from_equilibrium(eq)
-taxed = outcome_from_tax(
-    solve_tax_equilibrium(demand, supply, tax)
-)
+taxed = outcome_from_tax(solve_tax_equilibrium(demand, supply, tax))
 delta = compare_surplus(demand, supply, baseline, taxed)
-# 7.5 2.25
-print(delta.policy.tax_revenue, delta.deadweight_loss)
+print(delta.policy.tax_revenue, delta.deadweight_loss)  # 7.5 2.25
 
-fig = MarketFigure(
-    x_max=12, y_max=12, title="Welfare Under a Tax"
-)
+fig = MarketFigure(x_max=12, y_max=12, title="Welfare Under a Tax")
 fig.add_curves(demand, supply, q_max=10)
 fig.add_welfare(delta.policy)
-fig.add_tax_comparison(
-    compare_tax_scenario(demand, supply, tax)
-)
+fig.add_tax_comparison(compare_tax_scenario(demand, supply, tax))
 fig.finalize()
 ```
 
@@ -145,18 +136,14 @@ fig.finalize()
 
 ```python
 from principle_viz import (
-    SubsidyScenario,
-    SubsidyTo,
-    compare_subsidy_scenario,
+    SubsidyScenario, SubsidyTo, compare_subsidy_scenario,
 )
 
 demand = line_from_inverse(12.0, -1.0)
 subsidy = SubsidyScenario(3.0, SubsidyTo.PRODUCER)
 comparison = compare_subsidy_scenario(demand, supply, subsidy)
 fig = MarketFigure(
-    x_max=12,
-    y_max=13,
-    title="Per-Unit Subsidy",
+    x_max=12, y_max=13, title="Per-Unit Subsidy",
     visibility={
         "market.subsidy.expenditure.label": False,
         "market.subsidy.wedge.label": False,

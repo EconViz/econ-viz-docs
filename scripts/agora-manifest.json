@@ -730,5 +730,305 @@
   "docs/zh-CN/bezierkit/project/changelog.md": {
     "source": "packages/bezierkit/chapters/zh-CN/changelog.typ",
     "sha256": "b18c3c7226704a49ade9c4f19f6336ba184e5f61875e7643f026bc5289a2ea7d"
+  },
+  "docs/glyphkit/guides/introduction.md": {
+    "source": "packages/glyphkit/chapters/en/01-introduction.typ",
+    "sha256": "237cad34fe8589ee6498f3b728bf0c6ee451ecaf975e2c95f63967c5201872c7"
+  },
+  "docs/glyphkit/installation.md": {
+    "source": "packages/glyphkit/chapters/en/02-installation.typ",
+    "sha256": "3cbce27f916dc089e10179277301a33112558a73f8144651519456779ddf76f1"
+  },
+  "docs/glyphkit/quickstart.md": {
+    "source": "packages/glyphkit/chapters/en/03-quickstart.typ",
+    "sha256": "c41a3474e44ab6174829b20b17a5d9c7b8468b18e8eee1e8dc9e566b92170562"
+  },
+  "docs/glyphkit/guides/fonts-shaping.md": {
+    "source": "packages/glyphkit/chapters/en/04-fonts-shaping.typ",
+    "sha256": "4d3e8c6d3e5c97ef3993c78415ce2914f64a2bf4dfc70e344ae2e07259b94d9e"
+  },
+  "docs/glyphkit/guides/layout-math.md": {
+    "source": "packages/glyphkit/chapters/en/05-layout-math.typ",
+    "sha256": "808e43070017c9669a1b02505dfaedd89cdaf3b921f573d828091f823e7f0309"
+  },
+  "docs/glyphkit/guides/outlines-embedding.md": {
+    "source": "packages/glyphkit/chapters/en/06-outlines-embedding.typ",
+    "sha256": "b80e0ef9eaae2d6e220e83aa1de506114949a2824dcdabfe4fd8ab7cbed1a97b"
+  },
+  "docs/glyphkit/guides/coordinate-metrics.md": {
+    "source": "packages/glyphkit/chapters/en/07-coordinate-metrics.typ",
+    "sha256": "798f167c9304f00b92f40e0bb5318f6ec6f594cbd1ab4d420eb9590b92f9ffd8"
+  },
+  "docs/glyphkit/guides/bezier-geometry.md": {
+    "source": "packages/glyphkit/chapters/en/08-bezier-geometry.typ",
+    "sha256": "5591d1212b6dc8e29cba159ce9b05af05ea6dfc5c77fbb0af6cc90f722fd2b11"
+  },
+  "docs/glyphkit/guides/math-layout-model.md": {
+    "source": "packages/glyphkit/chapters/en/09-math-layout-model.typ",
+    "sha256": "49814b13b7d4b05060ac197a28b551732e1fc679d29dee31f7b3b9ce93d49c75"
+  },
+  "docs/glyphkit/guides/line-layout-algorithms.md": {
+    "source": "packages/glyphkit/chapters/en/10-line-layout-algorithms.typ",
+    "sha256": "b31a514d5cc26de1f7329d0f1af92a776cf036996f71cd1945b4248ca1c21f03"
+  },
+  "docs/glyphkit/guides/reproducibility.md": {
+    "source": "packages/glyphkit/chapters/en/11-reproducibility.typ",
+    "sha256": "8c5c01e6dbe26fecc0bae8f462bee9d0069e6750580f08550cae5344923328f9"
+  },
+  "docs/glyphkit/project/changelog.md": {
+    "source": "packages/glyphkit/chapters/en/changelog.typ",
+    "sha256": "33ae64db7819c076d77e63e79b985a874a8dab650469840c04e6c421bc409582"
+  },
+  "docs/zh-TW/glyphkit/guides/introduction.md": {
+    "source": "packages/glyphkit/chapters/zh-TW/01-introduction.typ",
+    "sha256": "52fb495f17ea58c7aa253e329bb5f400cef7bf3e20b550cce26103741f43c008"
+  },
+  "docs/zh-TW/glyphkit/installation.md": {
+    "source": "packages/glyphkit/chapters/zh-TW/02-installation.typ",
+    "sha256": "1ee6b377104ec051a4cbfc378fe8410972f2adc318259dff3c9fe7e420b0f1d9"
+  },
+  "docs/zh-TW/glyphkit/quickstart.md": {
+    "source": "packages/glyphkit/chapters/zh-TW/03-quickstart.typ",
+    "sha256": "70850b9d8f81e2dfd5893bb93a855ec1adc48dbcd53d7db50e69cf3a0f00d6cb"
+  },
+  "docs/zh-TW/glyphkit/guides/fonts-shaping.md": {
+    "source": "packages/glyphkit/chapters/zh-TW/04-fonts-shaping.typ",
+    "sha256": "bc6f9eccbc6a3385094c8cdca4ff2cfdb24ae62577e9beef5cc314f08ac5a20a"
+  },
+  "docs/zh-TW/glyphkit/guides/layout-math.md": {
+    "source": "packages/glyphkit/chapters/zh-TW/05-layout-math.typ",
+    "sha256": "d62d90ae5df68e2aa4fd3058fb1636d0f9279383ef8a5cfbb41dd6d305f278de"
+  },
+  "docs/zh-TW/glyphkit/guides/outlines-embedding.md": {
+    "source": "packages/glyphkit/chapters/zh-TW/06-outlines-embedding.typ",
+    "sha256": "3548f506e7600886fd01b8c08dbe859b36fa77f946d676b0230d3538fe21c148"
+  },
+  "docs/zh-TW/glyphkit/guides/coordinate-metrics.md": {
+    "source": "packages/glyphkit/chapters/zh-TW/07-coordinate-metrics.typ",
+    "sha256": "b3c601a813f36b76db8294588332cd7b2e6ef9fa732e7bdd57927a4d8725626b"
+  },
+  "docs/zh-TW/glyphkit/guides/bezier-geometry.md": {
+    "source": "packages/glyphkit/chapters/zh-TW/08-bezier-geometry.typ",
+    "sha256": "dc363ed26a9d3eb83a12e92395ed89e4ef11a70e8ec8782a843db3ed59134770"
+  },
+  "docs/zh-TW/glyphkit/guides/math-layout-model.md": {
+    "source": "packages/glyphkit/chapters/zh-TW/09-math-layout-model.typ",
+    "sha256": "2a549cf913d70f9894616a396d16a0827c97d60ae11c4f74e8363ee1e50f7194"
+  },
+  "docs/zh-TW/glyphkit/guides/line-layout-algorithms.md": {
+    "source": "packages/glyphkit/chapters/zh-TW/10-line-layout-algorithms.typ",
+    "sha256": "ce897ba73405c979bf0717dcd2b323e0d9c9c1e944aaed292e15cbc2678d0f34"
+  },
+  "docs/zh-TW/glyphkit/guides/reproducibility.md": {
+    "source": "packages/glyphkit/chapters/zh-TW/11-reproducibility.typ",
+    "sha256": "fc067efd24f98d5fee402ebc0b86328d3fe227e9a66489cadad1d7d6f3a96c16"
+  },
+  "docs/zh-TW/glyphkit/project/changelog.md": {
+    "source": "packages/glyphkit/chapters/zh-TW/changelog.typ",
+    "sha256": "7c5d038f247581b15cb5dfde6d8087df51e59c5ce228016af9db9dc1251c4c5d"
+  },
+  "docs/zh-CN/glyphkit/guides/introduction.md": {
+    "source": "packages/glyphkit/chapters/zh-CN/01-introduction.typ",
+    "sha256": "ef2202115d1b965f62f40154dd35f8e513d349760af7e617cff094fc2d7ce575"
+  },
+  "docs/zh-CN/glyphkit/installation.md": {
+    "source": "packages/glyphkit/chapters/zh-CN/02-installation.typ",
+    "sha256": "94ee0c38f38a67ecae3128b51e8ff5f2590b4c65ac223253e3dc4de3b94f0c1a"
+  },
+  "docs/zh-CN/glyphkit/quickstart.md": {
+    "source": "packages/glyphkit/chapters/zh-CN/03-quickstart.typ",
+    "sha256": "f3df57526d401358d0f0fe0b863f12bd266faaafc87ef0a65041f2919682d863"
+  },
+  "docs/zh-CN/glyphkit/guides/fonts-shaping.md": {
+    "source": "packages/glyphkit/chapters/zh-CN/04-fonts-shaping.typ",
+    "sha256": "6eb6c72bbcb7b273e6c34bf7575588064a8eb314c9a14cc6accca2acd87171f0"
+  },
+  "docs/zh-CN/glyphkit/guides/layout-math.md": {
+    "source": "packages/glyphkit/chapters/zh-CN/05-layout-math.typ",
+    "sha256": "6d22488e37f8640abc8157d3ad810f619b888dc504504eb2d551b0d17d8c67de"
+  },
+  "docs/zh-CN/glyphkit/guides/outlines-embedding.md": {
+    "source": "packages/glyphkit/chapters/zh-CN/06-outlines-embedding.typ",
+    "sha256": "edaa00ecfc2e4bffbb4174a6ae1af6f7f4f8a2817aebbe0ddc3e599aaecec01e"
+  },
+  "docs/zh-CN/glyphkit/guides/coordinate-metrics.md": {
+    "source": "packages/glyphkit/chapters/zh-CN/07-coordinate-metrics.typ",
+    "sha256": "6d27fb1c8f24ba2d639a64d604768c1c4a7330b394ef413ab1556c7ccae27829"
+  },
+  "docs/zh-CN/glyphkit/guides/bezier-geometry.md": {
+    "source": "packages/glyphkit/chapters/zh-CN/08-bezier-geometry.typ",
+    "sha256": "7a2c9c3c176a9a494f7a3d28856e98c8b04974b9e2b43bd0692e8c040f02c2f7"
+  },
+  "docs/zh-CN/glyphkit/guides/math-layout-model.md": {
+    "source": "packages/glyphkit/chapters/zh-CN/09-math-layout-model.typ",
+    "sha256": "fe022a57f69fa8a2de83201ee95e3b459b29421465e25d448024bce85d1efef8"
+  },
+  "docs/zh-CN/glyphkit/guides/line-layout-algorithms.md": {
+    "source": "packages/glyphkit/chapters/zh-CN/10-line-layout-algorithms.typ",
+    "sha256": "4613b50f5b17acb07a2897fe5969627863cc2fc0f62f753d9151aeab73f5bf2a"
+  },
+  "docs/zh-CN/glyphkit/guides/reproducibility.md": {
+    "source": "packages/glyphkit/chapters/zh-CN/11-reproducibility.typ",
+    "sha256": "4dc1f4b3a3177a6e65859e44b83d378ae86152e2197353bb79f3ca2052afb70e"
+  },
+  "docs/zh-CN/glyphkit/project/changelog.md": {
+    "source": "packages/glyphkit/chapters/zh-CN/changelog.typ",
+    "sha256": "0d64e82efc74d9383471b119648eb0d4269a9953c795b3afed720e9c70920986"
+  },
+  "docs/kinetickit/guides/introduction.md": {
+    "source": "packages/kinetickit/chapters/en/01-introduction.typ",
+    "sha256": "6d31f905aa65a5d6b1135a64840de9cf1276b1af868d193377bffd7d973e6b3e"
+  },
+  "docs/kinetickit/installation.md": {
+    "source": "packages/kinetickit/chapters/en/02-installation.typ",
+    "sha256": "ecbcad1d61c22ce2ec0b90137f109699cdefef1667b545759af411b1f94ef25e"
+  },
+  "docs/kinetickit/quickstart.md": {
+    "source": "packages/kinetickit/chapters/en/03-quickstart.typ",
+    "sha256": "663f4a155cd666f7ab32b1ae47da2878ca26b3b250f19f6bfb4b82373122ae76"
+  },
+  "docs/kinetickit/guides/scenes-motion.md": {
+    "source": "packages/kinetickit/chapters/en/04-scenes-motion.typ",
+    "sha256": "59bb76690281b068849fff74865de36c8e116b7e882922f8678d624e3b6dac28"
+  },
+  "docs/kinetickit/guides/outputs.md": {
+    "source": "packages/kinetickit/chapters/en/05-outputs.typ",
+    "sha256": "72deb56a4cc847a8362a00d0949f82686f6caae92e67c437f7d8b6c2be1a092d"
+  },
+  "docs/kinetickit/guides/typography-accessibility.md": {
+    "source": "packages/kinetickit/chapters/en/06-typography-accessibility.typ",
+    "sha256": "71835053297dff65ff3f7ab80c536d6e67b0a93ea19da5fce83e8eef82f4a2e0"
+  },
+  "docs/kinetickit/migration.md": {
+    "source": "packages/kinetickit/chapters/en/07-migration.typ",
+    "sha256": "662bfbbe8ee05e6d8cc44abffc4f17d1e8e8dbbefa12b5cda69cb192404e2328"
+  },
+  "docs/kinetickit/guides/time-easing.md": {
+    "source": "packages/kinetickit/chapters/en/08-time-easing.typ",
+    "sha256": "2c96d6cf5b966a0f95b1419df1703195eb2f4133a1db936a2e99f7ac7138608c"
+  },
+  "docs/kinetickit/guides/interpolation-transforms.md": {
+    "source": "packages/kinetickit/chapters/en/09-interpolation-transforms.typ",
+    "sha256": "32e17c5a8c8c71f16e77d72a1cd4c147e2cd541cff9590e361505ac4db0105db"
+  },
+  "docs/kinetickit/guides/projection.md": {
+    "source": "packages/kinetickit/chapters/en/10-projection.typ",
+    "sha256": "3ecb65f33ce2e09f42e19979fa93f9aab7e9b856d41cd5333ae8d727f0e5be39"
+  },
+  "docs/kinetickit/guides/morphing.md": {
+    "source": "packages/kinetickit/chapters/en/11-morphing.typ",
+    "sha256": "c48fa53e56acc179dbd7a2675c9342bb8c289f8084a12a91a276767a0c304711"
+  },
+  "docs/kinetickit/guides/sampling-encoding.md": {
+    "source": "packages/kinetickit/chapters/en/12-sampling-encoding.typ",
+    "sha256": "eeedd7cf80e1eb389641e79d04e71de1bf3f6263e01f2c13181f68a999b8d9ee"
+  },
+  "docs/kinetickit/project/changelog.md": {
+    "source": "packages/kinetickit/chapters/en/changelog.typ",
+    "sha256": "c8cc72da9f76cde74b565afe72086244cf45034116c06964db8c6c8647b96b2a"
+  },
+  "docs/zh-TW/kinetickit/guides/introduction.md": {
+    "source": "packages/kinetickit/chapters/zh-TW/01-introduction.typ",
+    "sha256": "6576f42be9b6a3f41d6891f403474fcecfa7db3f50900b8b3b9635fccacd2bff"
+  },
+  "docs/zh-TW/kinetickit/installation.md": {
+    "source": "packages/kinetickit/chapters/zh-TW/02-installation.typ",
+    "sha256": "b277050e82419c9a76a30f59e9e2b3861cdc33cad17302377f9b579aa9eb0687"
+  },
+  "docs/zh-TW/kinetickit/quickstart.md": {
+    "source": "packages/kinetickit/chapters/zh-TW/03-quickstart.typ",
+    "sha256": "94b1e4cc1d3278726e1abdd2a4daab2218138120ac39254f16e49eda54abd2a7"
+  },
+  "docs/zh-TW/kinetickit/guides/scenes-motion.md": {
+    "source": "packages/kinetickit/chapters/zh-TW/04-scenes-motion.typ",
+    "sha256": "308a2648fecf2a80af2e5e23eccd5299f7ad5f425e7288a151d452f9b7b00ead"
+  },
+  "docs/zh-TW/kinetickit/guides/outputs.md": {
+    "source": "packages/kinetickit/chapters/zh-TW/05-outputs.typ",
+    "sha256": "cf484963c8ee15a7618f79ffab37162ebfc0e5b249830540fe43057c43f85771"
+  },
+  "docs/zh-TW/kinetickit/guides/typography-accessibility.md": {
+    "source": "packages/kinetickit/chapters/zh-TW/06-typography-accessibility.typ",
+    "sha256": "648ffc881e74d9ba77fdb601f63b4ad28d5d375fea20629293bf6c5dc4c44294"
+  },
+  "docs/zh-TW/kinetickit/migration.md": {
+    "source": "packages/kinetickit/chapters/zh-TW/07-migration.typ",
+    "sha256": "549f8af8c1f045163648c785f1534bc73b02df2578e8ffa6952ca09f03830235"
+  },
+  "docs/zh-TW/kinetickit/guides/time-easing.md": {
+    "source": "packages/kinetickit/chapters/zh-TW/08-time-easing.typ",
+    "sha256": "e7e408ffb203fc4b26645084fd58d7e86a4853915a388cf29d513c4c5153c026"
+  },
+  "docs/zh-TW/kinetickit/guides/interpolation-transforms.md": {
+    "source": "packages/kinetickit/chapters/zh-TW/09-interpolation-transforms.typ",
+    "sha256": "872ba041bf32d787c9b7730e6c2e080e3d83f6bd8cd4d5cc22ee34401b931102"
+  },
+  "docs/zh-TW/kinetickit/guides/projection.md": {
+    "source": "packages/kinetickit/chapters/zh-TW/10-projection.typ",
+    "sha256": "fd418bba1ce921c6191fc1e5564633cbe67bd31979e72f6a47a57cc7887880af"
+  },
+  "docs/zh-TW/kinetickit/guides/morphing.md": {
+    "source": "packages/kinetickit/chapters/zh-TW/11-morphing.typ",
+    "sha256": "905cd284bd6fe4cd9edeb81632c5f3f2f8de291c1277d2eadf90c6efdd770c40"
+  },
+  "docs/zh-TW/kinetickit/guides/sampling-encoding.md": {
+    "source": "packages/kinetickit/chapters/zh-TW/12-sampling-encoding.typ",
+    "sha256": "8eda554e7eb8d96ed9ffc494536e781b5a679c0134f75157bd5f1dd2369701ed"
+  },
+  "docs/zh-TW/kinetickit/project/changelog.md": {
+    "source": "packages/kinetickit/chapters/zh-TW/changelog.typ",
+    "sha256": "6ab206700de442565ced3ac9738a57e1f58e4a451bff8dec612c98d3f06fb79c"
+  },
+  "docs/zh-CN/kinetickit/guides/introduction.md": {
+    "source": "packages/kinetickit/chapters/zh-CN/01-introduction.typ",
+    "sha256": "ef345a18406bff6d2813d99960b10c80021649f3f55c568fda167c76281e8b89"
+  },
+  "docs/zh-CN/kinetickit/installation.md": {
+    "source": "packages/kinetickit/chapters/zh-CN/02-installation.typ",
+    "sha256": "cc982ba3d74b3d196d393eab49e903df9ddd7b6fba30905a0577e4d3d4ccfd2d"
+  },
+  "docs/zh-CN/kinetickit/quickstart.md": {
+    "source": "packages/kinetickit/chapters/zh-CN/03-quickstart.typ",
+    "sha256": "7bf871c39176e0a5adb2d7b124eacd9910c83af3a9d5084599767b822b0caa8b"
+  },
+  "docs/zh-CN/kinetickit/guides/scenes-motion.md": {
+    "source": "packages/kinetickit/chapters/zh-CN/04-scenes-motion.typ",
+    "sha256": "b740d04736d3c6602579a8881ca78424db5be79f62daea7f1e482fa0da4a4b0a"
+  },
+  "docs/zh-CN/kinetickit/guides/outputs.md": {
+    "source": "packages/kinetickit/chapters/zh-CN/05-outputs.typ",
+    "sha256": "0b6983d08235ea0f1fd196d8aaecb4ef69c43ca607fddfab4babf15ff9995c01"
+  },
+  "docs/zh-CN/kinetickit/guides/typography-accessibility.md": {
+    "source": "packages/kinetickit/chapters/zh-CN/06-typography-accessibility.typ",
+    "sha256": "4e6968f17570d5a506044344b40a1ec76fa95892f4689929de57056320759a2c"
+  },
+  "docs/zh-CN/kinetickit/migration.md": {
+    "source": "packages/kinetickit/chapters/zh-CN/07-migration.typ",
+    "sha256": "df2251ebb27c8ec37f99d0b9c6e406274da1bb126835340c21278de9a4dcad92"
+  },
+  "docs/zh-CN/kinetickit/guides/time-easing.md": {
+    "source": "packages/kinetickit/chapters/zh-CN/08-time-easing.typ",
+    "sha256": "1570e9be1490b4360b9cbae2294e36837be72c08422a48dcb044374184b3b6e8"
+  },
+  "docs/zh-CN/kinetickit/guides/interpolation-transforms.md": {
+    "source": "packages/kinetickit/chapters/zh-CN/09-interpolation-transforms.typ",
+    "sha256": "d669a472282d4ebccaeeb33f0dadd5ae3740c9283b18bcc7edf4b555654fa757"
+  },
+  "docs/zh-CN/kinetickit/guides/projection.md": {
+    "source": "packages/kinetickit/chapters/zh-CN/10-projection.typ",
+    "sha256": "5c867d2d22293130c3678317305e449ca8179d57599c4626ce4bf50ce97a5950"
+  },
+  "docs/zh-CN/kinetickit/guides/morphing.md": {
+    "source": "packages/kinetickit/chapters/zh-CN/11-morphing.typ",
+    "sha256": "fbe3e32b3ae49ea96adb32a443bd264ff5fc5ca77ee950cf0bd4237754646164"
+  },
+  "docs/zh-CN/kinetickit/guides/sampling-encoding.md": {
+    "source": "packages/kinetickit/chapters/zh-CN/12-sampling-encoding.typ",
+    "sha256": "8c65d16e88a56a028a6c255aa28bed302445c9f4b9fd400b0a194e6537c84638"
+  },
+  "docs/zh-CN/kinetickit/project/changelog.md": {
+    "source": "packages/kinetickit/chapters/zh-CN/changelog.typ",
+    "sha256": "46f9fd20cc31662830d81e42b92e7d3bbc387934752fe3337964142135d5ba69"
   }
 }

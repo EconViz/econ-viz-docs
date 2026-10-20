@@ -52,13 +52,7 @@ theme = replace(
     eq_markersize=5.0,
 )
 
-cvs = Canvas(
-    x_max=20,
-    y_max=15,
-    x_label="$x$",
-    y_label="$y$",
-    theme=theme,
-)
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$", theme=theme)
 cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
 cvs.add_budget(2.0, 3.0, 30.0, fill=True)
 cvs.add_equilibrium(eq)
@@ -93,13 +87,7 @@ theme = replace(
     eq_markersize=5.0,
 )
 
-cvs = Canvas(
-    x_max=20,
-    y_max=15,
-    x_label="$x$",
-    y_label="$y$",
-    theme=theme,
-)
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$", theme=theme)
 cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
 cvs.add_budget(2.0, 3.0, 30.0, fill=True)
 cvs.add_equilibrium(eq)
@@ -134,13 +122,7 @@ theme = replace(
     eq_markersize=5.0,
 )
 
-cvs = Canvas(
-    x_max=20,
-    y_max=15,
-    x_label="$x$",
-    y_label="$y$",
-    theme=theme,
-)
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$", theme=theme)
 cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
 cvs.add_budget(2.0, 3.0, 30.0, fill=True)
 cvs.add_equilibrium(eq)
@@ -175,13 +157,7 @@ theme = replace(
     eq_markersize=5.0,
 )
 
-cvs = Canvas(
-    x_max=20,
-    y_max=15,
-    x_label="$x$",
-    y_label="$y$",
-    theme=theme,
-)
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$", theme=theme)
 cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
 cvs.add_budget(2.0, 3.0, 30.0, fill=True)
 cvs.add_equilibrium(eq)
@@ -216,13 +192,7 @@ theme = replace(
     eq_markersize=5.0,
 )
 
-cvs = Canvas(
-    x_max=20,
-    y_max=15,
-    x_label="$x$",
-    y_label="$y$",
-    theme=theme,
-)
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$", theme=theme)
 cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
 cvs.add_budget(2.0, 3.0, 30.0, fill=True)
 cvs.add_equilibrium(eq)
@@ -297,8 +267,7 @@ cvs.save("theme_presentation.png")
   ```python
   from utility_viz import Config
 
-  # 默认读 ./utility-viz.toml
-  Config.load().use()
+  Config.load().use()   # 默认读 ./utility-viz.toml
   ```
 
   此后创建的 `Canvas`、`Figure`、`DemandDiagram` 与 `EdgeworthBox` 都使用这组配置；调用 `Config.reset()` 可恢复内置默认值。

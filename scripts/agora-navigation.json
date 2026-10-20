@@ -311,5 +311,134 @@
       "zh-TW": "更新紀錄",
       "zh-CN": "更新纪录"
     }
+  },
+  "glyphkit": {
+    "guides/introduction": {
+      "en": "Introduction",
+      "zh-TW": "簡介",
+      "zh-CN": "简介"
+    },
+    "installation": {
+      "en": "Installation",
+      "zh-TW": "安裝",
+      "zh-CN": "安装"
+    },
+    "quickstart": {
+      "en": "Quick start",
+      "zh-TW": "快速開始",
+      "zh-CN": "快速开始"
+    },
+    "guides/fonts-shaping": {
+      "en": "Fonts and shaping",
+      "zh-TW": "字型與字形處理",
+      "zh-CN": "字体与字形处理"
+    },
+    "guides/layout-math": {
+      "en": "Text layout and mathematics",
+      "zh-TW": "文字與數學式排版",
+      "zh-CN": "文字与数学式排版"
+    },
+    "guides/outlines-embedding": {
+      "en": "Outlines, subsets, and portable data",
+      "zh-TW": "字形輪廓、字型子集與可攜式資料",
+      "zh-CN": "字形轮廓、字体子集与可移植数据"
+    },
+    "guides/coordinate-metrics": {
+      "en": "Coordinates, metrics, and bounds",
+      "zh-TW": "座標、字型度量與範圍",
+      "zh-CN": "坐标、字体度量与范围"
+    },
+    "guides/bezier-geometry": {
+      "en": "Bézier outline geometry",
+      "zh-TW": "Bézier 字形輪廓",
+      "zh-CN": "Bézier 字形轮廓"
+    },
+    "guides/math-layout-model": {
+      "en": "OpenType mathematics layout",
+      "zh-TW": "OpenType 數學排版模型",
+      "zh-CN": "OpenType 数学排版模型"
+    },
+    "guides/line-layout-algorithms": {
+      "en": "Line construction and spacing",
+      "zh-TW": "行構造與間距演算法",
+      "zh-CN": "行布局与间距算法"
+    },
+    "guides/reproducibility": {
+      "en": "Reproducibility and renderer contracts",
+      "zh-TW": "可重現性與繪圖端契約",
+      "zh-CN": "可重现性与渲染器约定"
+    },
+    "project/changelog": {
+      "en": "Change history",
+      "zh-TW": "更新紀錄",
+      "zh-CN": "更新纪录"
+    }
+  },
+  "kinetickit": {
+    "guides/introduction": {
+      "en": "Introduction",
+      "zh-TW": "簡介",
+      "zh-CN": "简介"
+    },
+    "installation": {
+      "en": "Installation",
+      "zh-TW": "安裝",
+      "zh-CN": "安装"
+    },
+    "quickstart": {
+      "en": "Quick start",
+      "zh-TW": "快速開始",
+      "zh-CN": "快速开始"
+    },
+    "guides/scenes-motion": {
+      "en": "Scenes and motion",
+      "zh-TW": "場景與動作",
+      "zh-CN": "场景与动作"
+    },
+    "guides/outputs": {
+      "en": "Output formats",
+      "zh-TW": "輸出格式",
+      "zh-CN": "输出格式"
+    },
+    "guides/typography-accessibility": {
+      "en": "Typography and accessibility",
+      "zh-TW": "字型與無障礙資訊",
+      "zh-CN": "字体与无障碍信息"
+    },
+    "migration": {
+      "en": "Migrating animation code",
+      "zh-TW": "遷移既有動畫程式",
+      "zh-CN": "迁移现有动画程序"
+    },
+    "guides/time-easing": {
+      "en": "Time, easing, and motion algebra",
+      "zh-TW": "時間、緩動與動作組合",
+      "zh-CN": "时间、缓动与动作组合"
+    },
+    "guides/interpolation-transforms": {
+      "en": "Interpolation and transforms",
+      "zh-TW": "插補與座標變換",
+      "zh-CN": "插值与坐标变换"
+    },
+    "guides/projection": {
+      "en": "Camera geometry and projection",
+      "zh-TW": "相機幾何與投影",
+      "zh-CN": "相机几何与投影"
+    },
+    "guides/morphing": {
+      "en": "Path, mesh, and surface morphing",
+      "zh-TW": "路徑、網格與曲面變形",
+      "zh-CN": "路径、网格与曲面变形"
+    },
+    "guides/sampling-encoding": {
+      "en": "Frame sampling and encoding",
+      "zh-TW": "影格取樣與編碼",
+      "zh-CN": "帧取样与编码"
+    },
+    "project/changelog": {
+      "en": "Change history",
+      "zh-TW": "更新紀錄",
+      "zh-CN": "更新纪录"
+    }
   }
 }

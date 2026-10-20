@@ -22,8 +22,7 @@ seo_title: "采样与导出"
 from bezierkit.sampling import UniformSampler
 
 sample = UniformSampler(5).sample(curve)
-# [0.      0.90625 2.      3.09375 4.     ]
-print(sample.x)
+print(sample.x)   # [0.      0.90625 2.      3.09375 4.     ]
 ```
 
 ## 四舍五入与坐标变换
@@ -88,8 +87,7 @@ assert loads(text).path.segments == path.segments
 ```python
 from bezierkit.export.svg import to_svg_path_data
 
-# M 0.00 0.00 C 1.00 2.00 3.00 2.00 4.00 0.00
-print(to_svg_path_data(path, precision=2))
+print(to_svg_path_data(path, precision=2))   # M 0.00 0.00 C 1.00 2.00 3.00 2.00 4.00 0.00
 ```
 
 ## TikZ

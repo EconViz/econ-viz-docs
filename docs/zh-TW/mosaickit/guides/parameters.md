@@ -85,8 +85,7 @@ from mosaickit import Canvas, Parameter, TextLayer
 x = Parameter("x", value_type=float)
 template = Canvas().add(TextLayer((x, 2 * x + 1), "moving"))
 frame = template.bind(x, 3.0)
-# (3.0, 7.0)
-print(frame.snapshot().layers[0].position)
+print(frame.snapshot().layers[0].position)    # (3.0, 7.0)
 ```
 
 ## 網格
@@ -116,21 +115,12 @@ print(frame.snapshot().layers[0].position)
 從某格的 `start` 畫到另一格 `end` 的直線；兩點分別以所在格子的資料座標表示。直線畫在整張圖上，會橫越格子間的空隙。格子依配置順序編號。樣式先在起點格子的主題中解析 `role`，再疊上 `stroke`。格子編號超出範圍時，建立網格就會引發 `ConfigurationError`。
 
 ```python
-from mosaickit import (
-    Canvas,
-    CanvasGrid,
-    GridLink,
-    MarkerLayer,
-    Parameter,
-    Stroke,
-)
+from mosaickit import Canvas, CanvasGrid, GridLink, MarkerLayer, Parameter, Stroke
 
 shift = Parameter("shift", value_type=float)
 template = Canvas().add(MarkerLayer([(5, 2.5 + shift)]))
 cells = [template.bind(shift, v) for v in (0.0, 2.0, 4.0)]
-link = GridLink(
-    0, (5, 2.5), 2, (5, 6.5), stroke=Stroke(dash="dashed")
-)
+link = GridLink(0, (5, 2.5), 2, (5, 6.5), stroke=Stroke(dash="dashed"))
 CanvasGrid(cells, cols=3, links=[link]).save("sweep.pdf")
 ```
 

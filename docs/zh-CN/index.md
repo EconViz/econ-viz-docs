@@ -1,6 +1,6 @@
 ---
 seo_title: "绘制经济学图形的 Python 包"
-description: "EconViz 是一组开源 Python 包，用来绘制经济学图形：utility-viz、principle-viz、mosaickit 与 bezierkit。"
+description: "EconViz 是一组用于经济学图形、几何、字体排版与动画的开源 Python 包。"
 ---
 
 <h1 class="ev-visually-hidden">EconViz：绘制经济学图形的 Python 包</h1>
@@ -21,7 +21,7 @@ description: "EconViz 是一组开源 Python 包，用来绘制经济学图形�
 
 ## 模块
 
-EconViz 由四个包组成：两个负责绘制经济学图形，另外两个是它们共用的通用组件。
+EconViz 由六个包组成：两个负责绘制经济学图形，另外四个提供共用的几何、场景、字体排版与动画功能。
 
 ### 经济学包
 
@@ -55,7 +55,7 @@ EconViz 由四个包组成：两个负责绘制经济学图形，另外两个是
 
 ### 底层包
 
-两个通用的基础组件，由经济学包共用。
+四个通用的基础组件，由经济学包共用。
 
 <div class="grid cards ev-package-cards" markdown>
 
@@ -80,5 +80,25 @@ EconViz 由四个包组成：两个负责绘制经济学图形，另外两个是
     当前稳定版本为 1.0.1。
 
     [:octicons-arrow-right-24: bezierkit](bezierkit/index.md)
+
+-   :material-format-font: **glyphkit**
+
+    与绘图端无关的字体选择、Unicode 塑形、文字与数学式排版、字形轮廓，以及可移植字体子集。
+
+    ```bash
+    uv add --prerelease allow glyphkit
+    ```
+
+    [:octicons-arrow-right-24: glyphkit](glyphkit/index.md)
+
+-   :material-animation-play: **kinetickit**
+
+    可重现的 2D 与 3D 动画，并可输出动态 SVG、流式 GIF 与交互 HTML。
+
+    ```bash
+    uv add --prerelease allow "kinetickit[studio]"
+    ```
+
+    [:octicons-arrow-right-24: kinetickit](kinetickit/index.md)
 
 </div>

@@ -1,4 +1,4 @@
-"""Sync the three reference manuals from a sibling agora checkout.
+"""Sync the reference manuals from a sibling agora checkout.
 
 This is an explicit authoring command, never a MkDocs build dependency.
 Run with `uv run --frozen python scripts/sync_agora.py /path/to/agora`.
@@ -77,6 +77,31 @@ MAPPING = {
         '09-fitting': 'guides/fitting', '10-implicit': 'guides/implicit',
         '11-export': 'guides/export', '12-cli': 'cli',
         'a-proofs': 'project/proofs', 'a-proofs-b': 'project/proofs-approximation',
+        'changelog': 'project/changelog',
+    },
+    'glyphkit': {
+        '01-introduction': 'guides/introduction', '02-installation': 'installation',
+        '03-quickstart': 'quickstart', '04-fonts-shaping': 'guides/fonts-shaping',
+        '05-layout-math': 'guides/layout-math',
+        '06-outlines-embedding': 'guides/outlines-embedding',
+        '07-coordinate-metrics': 'guides/coordinate-metrics',
+        '08-bezier-geometry': 'guides/bezier-geometry',
+        '09-math-layout-model': 'guides/math-layout-model',
+        '10-line-layout-algorithms': 'guides/line-layout-algorithms',
+        '11-reproducibility': 'guides/reproducibility',
+        'changelog': 'project/changelog',
+    },
+    'kinetickit': {
+        '01-introduction': 'guides/introduction', '02-installation': 'installation',
+        '03-quickstart': 'quickstart', '04-scenes-motion': 'guides/scenes-motion',
+        '05-outputs': 'guides/outputs',
+        '06-typography-accessibility': 'guides/typography-accessibility',
+        '07-migration': 'migration',
+        '08-time-easing': 'guides/time-easing',
+        '09-interpolation-transforms': 'guides/interpolation-transforms',
+        '10-projection': 'guides/projection',
+        '11-morphing': 'guides/morphing',
+        '12-sampling-encoding': 'guides/sampling-encoding',
         'changelog': 'project/changelog',
     },
 }

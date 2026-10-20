@@ -26,18 +26,13 @@ $$
 
 ```python
 from principle_viz import (
-    compute_arc_elasticity,
-    compute_point_elasticity,
-    line_from_inverse,
+    compute_arc_elasticity, compute_point_elasticity, line_from_inverse,
 )
 
 demand = line_from_inverse(10.0, -1.0)
-# -1.5
-print(compute_point_elasticity(demand, 4))
-# -1.0 (unit elastic)
-print(compute_point_elasticity(demand, 5))
-# -1.0
-print(compute_arc_elasticity(4, 6, 6, 4))
+print(compute_point_elasticity(demand, 4))   # -1.5
+print(compute_point_elasticity(demand, 5))   # -1.0 (unit elastic)
+print(compute_arc_elasticity(4, 6, 6, 4))    # -1.0
 ```
 
 $Q = 4$ 處彈性為 $-1.5$，絕對值大於 1，需求有彈性；$Q = 5$ 為單位彈性，也是 $p = 10 - Q$ 的中點。弧彈性以兩點的平均值計算，因此由 $(4, 6)$ 到 $(6, 4)$ 與反方向的結果相同。
@@ -65,13 +60,9 @@ from principle_viz.visuals.revenue import (
 demand = line_from_inverse(12.0, -1.0)
 schedule = elasticity_revenue_schedule(demand)
 canvases = elasticity_revenue_canvases(
-    demand,
-    schedule,
-    theme=PlotTheme(),
+    demand, schedule, theme=PlotTheme(),
 )
-CanvasGrid(canvases, rows=1).save(
-    "elasticity_total_revenue.png"
-)
+CanvasGrid(canvases, rows=1).save("elasticity_total_revenue.png")
 ```
 
 <span id="fig-revenue"></span>

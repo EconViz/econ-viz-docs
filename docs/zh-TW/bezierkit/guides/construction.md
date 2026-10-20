@@ -40,13 +40,9 @@ seo_title: "建構與 Hermite 插值"
 from bezierkit.construction import PlanarSlopes
 
 demand = PlanarSlopes(
-    start=Point(0, 5),
-    end=Point(5, 0),
-    start_slope=-2,
-    end_slope=-0.3,
+    start=Point(0, 5), end=Point(5, 0), start_slope=-2, end_slope=-0.3,
 ).build()
-# (0.447, 4.106): one unit from (0, 5) along slope -2
-print(demand.control_points[1])
+print(demand.control_points[1])   # (0.447, 4.106): one unit from (0, 5) along slope -2
 ```
 
 ## Hermite 插值
@@ -115,9 +111,7 @@ $$
 from bezierkit.interpolation import graph_hermite
 
 # f(x) = 4 / x^2 on [1, 1.5]
-segment = graph_hermite(
-    x0=1, x1=1.5, y0=4, y1=16 / 9, m0=-8, m1=-64 / 27
-)
+segment = graph_hermite(x0=1, x1=1.5, y0=4, y1=16 / 9, m0=-8, m1=-64 / 27)
 ```
 
 <span id="fig-hermite"></span>

@@ -137,18 +137,9 @@ seo_title: "樣式與顏色"
 主題與樣式以名稱指定顏色。畫布建立繪製計畫時，才會從生效的色盤（`Config.palette`）中查詢這些名稱，因此繪製器只會收到具體顏色。只要在色盤中修改一次顏色，所有指定該顏色的角色都會隨之改變。色盤若缺少某個名稱，繪製時會引發 `ConfigurationError`，訊息會指明角色、樣式欄位與色盤。Python 的 `Palette` 會取代預設色盤，因此應以 `DEFAULT_PALETTE.colors` 為基礎建立，才能保留內建主題所用的名稱：
 
 ```python
-from mosaickit import (
-    DEFAULT_PALETTE,
-    Canvas,
-    Config,
-    Palette,
-    use_config,
-)
+from mosaickit import DEFAULT_PALETTE, Canvas, Config, Palette, use_config
 
-brand = Palette(
-    "brand", {**DEFAULT_PALETTE.colors, "blue": "#0072B2"}
-)
+brand = Palette("brand", {**DEFAULT_PALETTE.colors, "blue": "#0072B2"})
 with use_config(Config(palette=brand)):
-    # primary now draws in #0072B2
-    canvas = Canvas()
+    canvas = Canvas()          # primary now draws in #0072B2
 ```

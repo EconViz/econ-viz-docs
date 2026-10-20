@@ -28,12 +28,9 @@ $\mathbb{R}^d$ 中的点或向量，由 $d \ge 1$ 个坐标给定。点与向量
 from bezierkit import Point, Vector
 
 p = Point(1, 2)
-# Point(coords=(7.0, 0.0))
-q = p + Vector(3, -1) * 2
-# Vector(coords=(6.0, -2.0))
-v = q - p
-# 6.324555320336759
-print(v.norm())
+q = p + Vector(3, -1) * 2      # Point(coords=(7.0, 0.0))
+v = q - p                      # Vector(coords=(6.0, -2.0))
+print(v.norm())                # 6.324555320336759
 ```
 
 ## 点集合

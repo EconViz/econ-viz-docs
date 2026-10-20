@@ -24,9 +24,7 @@ seo_title: "离散市场"
 
 ```python
 from principle_viz import (
-    DiscreteDemand,
-    DiscreteSupply,
-    solve_discrete_equilibrium,
+    DiscreteDemand, DiscreteSupply, solve_discrete_equilibrium,
 )
 
 demand = DiscreteDemand((11, 9, 7, 5, 3))
@@ -52,9 +50,7 @@ print(eq.gains_from_trade)
 
 ```python
 fig = MarketFigure(
-    x_max=5.5,
-    y_max=12,
-    title="Discrete Demand and Supply",
+    x_max=5.5, y_max=12, title="Discrete Demand and Supply",
 )
 fig.add_discrete_curves(demand, supply)
 fig.add_discrete_equilibrium(eq)

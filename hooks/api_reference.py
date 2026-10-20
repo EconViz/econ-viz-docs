@@ -324,7 +324,7 @@ def link_examples(markup, src, config):
     def destination(symbol, parameter=None):
         bits = symbol.split('.')
         package = current_package
-        if bits[0].replace('_', '-') in {'utility-viz', 'principle-viz', 'bezierkit', 'mosaickit'}:
+        if bits[0].replace('_', '-') in {'utility-viz', 'principle-viz', 'bezierkit', 'mosaickit', 'glyphkit', 'kinetickit'}:
             package = bits.pop(0).replace('_', '-')
         name = '.'.join(bits)
         prefix = (locale + '/' if locale else '') + package + '/'
@@ -390,7 +390,7 @@ def link_examples(markup, src, config):
                     returns = item.get('returns', '')
                     if declared and (name == declared or name.endswith('.' + declared)) and re.fullmatch(r'[A-Z]\w*', returns):
                         package = name.split('.')[0]
-                        return package + '.' + returns if package.replace('_', '-') in {'utility-viz', 'principle-viz', 'bezierkit', 'mosaickit'} else returns
+                        return package + '.' + returns if package.replace('_', '-') in {'utility-viz', 'principle-viz', 'bezierkit', 'mosaickit', 'glyphkit', 'kinetickit'} else returns
                 # Constructors and the documented fluent Canvas/MarketFigure API.
                 if name.rsplit('.', 1)[-1][:1].isupper():
                     return name

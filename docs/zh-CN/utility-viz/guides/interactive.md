@@ -17,12 +17,9 @@ seo_title: "交互组件"
 ```python
 from utility_viz.core.interactive import WidgetViewer
 
-
 def draw(alpha: float, px: float) -> Canvas:
     model = CobbDouglas(alpha=alpha, beta=1.0 - alpha)
-    # 其余与动画示例相同
-    ...
-
+    ...  # 其余与动画示例相同
 
 WidgetViewer(
     draw,

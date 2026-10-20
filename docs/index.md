@@ -1,6 +1,6 @@
 ---
 seo_title: "Python Packages for Economics Diagrams"
-description: "EconViz is a family of open-source Python packages for economics diagrams: utility-viz, principle-viz, mosaickit and bezierkit."
+description: "EconViz is a family of open-source Python packages for economics diagrams, geometry, typography, and animation."
 ---
 
 <h1 class="ev-visually-hidden">EconViz: Python packages for economics diagrams</h1>
@@ -21,7 +21,7 @@ description: "EconViz is a family of open-source Python packages for economics d
 
 ## Modules
 
-EconViz is made of four packages. Two draw economics diagrams, and two are general-purpose building blocks they share.
+EconViz is made of six packages. Two draw economics diagrams; four provide the geometry, scene, typography, and animation layers they share.
 
 ### Economics packages
 
@@ -55,7 +55,7 @@ Two packages draw economics diagrams.
 
 ### Foundation packages
 
-Two general-purpose building blocks that the economics packages share.
+Four general-purpose building blocks that the economics packages share.
 
 <div class="grid cards ev-package-cards" markdown>
 
@@ -80,5 +80,25 @@ Two general-purpose building blocks that the economics packages share.
     Current stable release: 1.0.1.
 
     [:octicons-arrow-right-24: bezierkit](bezierkit/index.md)
+
+-   :material-format-font: **glyphkit**
+
+    Renderer-independent font selection, Unicode shaping, text and math layout, glyph outlines, and portable font subsets.
+
+    ```bash
+    uv add --prerelease allow glyphkit
+    ```
+
+    [:octicons-arrow-right-24: glyphkit](glyphkit/index.md)
+
+-   :material-animation-play: **kinetickit**
+
+    Deterministic 2D and 3D animation with animated SVG, streamed GIF, and interactive HTML output.
+
+    ```bash
+    uv add --prerelease allow "kinetickit[studio]"
+    ```
+
+    [:octicons-arrow-right-24: kinetickit](kinetickit/index.md)
 
 </div>

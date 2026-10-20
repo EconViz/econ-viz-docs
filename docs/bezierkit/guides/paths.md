@@ -157,16 +157,12 @@ length.
 ```python
 from bezierkit import CubicBezierSegment, PiecewiseBezier
 
-path = PiecewiseBezier(
-    [
-        CubicBezierSegment.from_line(Point(0, 0), Point(2, 0)),
-        CubicBezierSegment.from_line(Point(2, 0), Point(2, 4)),
-    ]
-)
-# Point(coords=(2.0, 2.0))
-print(path.at(0.75))
-# Point(coords=(2.0, 2.0))
-print(path.segment(0.25, 0.75).at(1.0))
+path = PiecewiseBezier([
+    CubicBezierSegment.from_line(Point(0, 0), Point(2, 0)),
+    CubicBezierSegment.from_line(Point(2, 0), Point(2, 4)),
+])
+print(path.at(0.75))                     # Point(coords=(2.0, 2.0))
+print(path.segment(0.25, 0.75).at(1.0))  # Point(coords=(2.0, 2.0))
 ```
 
 `compound()` gathers several paths into one, keeping their subpaths

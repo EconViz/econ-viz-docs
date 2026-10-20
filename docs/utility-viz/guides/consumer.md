@@ -27,16 +27,9 @@ the drawing API is unchanged once the layout exists.
 from utility_viz import Config, Figure, Layout, levels, solve
 from utility_viz.models import CobbDouglas
 
-# figure settings
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # figure settings
 
-fig = Figure(
-    Layout.SIDE_BY_SIDE,
-    x_max=20,
-    y_max=15,
-    x_label="$x$",
-    y_label="$y$",
-)
+fig = Figure(Layout.SIDE_BY_SIDE, x_max=20, y_max=15, x_label="$x$", y_label="$y$")
 
 # before and after x doubles
 cases = [
@@ -45,11 +38,8 @@ cases = [
 ]
 for idx, (model, px, py, income) in enumerate(cases):
     eq = solve(model, px=px, py=py, income=income)
-    # each panel is a Canvas
-    panel = fig[idx]
-    panel.add_utility(
-        model, levels=levels.around(eq.utility, n=5)
-    )
+    panel = fig[idx]  # each panel is a Canvas
+    panel.add_utility(model, levels=levels.around(eq.utility, n=5))
     panel.add_budget(px, py, income, fill=True)
     panel.add_equilibrium(eq, show_ray=True)
 fig.save("side_by_side.png")
@@ -87,35 +77,21 @@ needed. For Cobb-Douglas preferences the price-consumption curve is
 horizontal ([The price-consumption curve as $p_x$ varies](consumer.md#fig-price-path)): spending on $y$ does not depend on $p_x$.
 
 ```python
-from utility_viz import (
-    Canvas,
-    Config,
-    LinearBudget,
-    PricePath,
-    levels,
-)
+from utility_viz import Canvas, Config, LinearBudget, PricePath, levels
 from utility_viz.models import CobbDouglas
 
-# figure settings
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # figure settings
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 budget = LinearBudget(px=2.0, py=2.0, income=40.0)
-path = PricePath(
-    model,
-    budget=budget,
-    price="px",
-    price_range=(0.8, 6.0),
-    n=40,
-)
+path = PricePath(model, budget=budget, price="px", price_range=(0.8, 6.0), n=40)
 
 # curves around the middle optimum
 eq = path.equilibria[len(path.equilibria) // 2]
 
 cvs = Canvas(x_max=25, y_max=20, x_label="$x$", y_label="$y$")
 cvs.add_utility(model, levels=levels.around(eq.utility, n=5))
-# the price-consumption curve
-cvs.add_path(path)
+cvs.add_path(path)  # the price-consumption curve
 cvs.save("price_path.png")
 ```
 

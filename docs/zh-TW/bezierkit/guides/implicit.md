@@ -119,10 +119,8 @@ contours = trace_implicit(
     tolerance=0.01,
     gradient=lambda x, y: (2 * x * y, x**2),
 )
-# (1.0, 2.0, 4.0)
-print(contours.level_values)
-# 15
-print(len(contours.for_level(4)[0].segments))
+print(contours.level_values)                     # (1.0, 2.0, 4.0)
+print(len(contours.for_level(4)[0].segments))    # 15
 ```
 
 <span id="fig-contours"></span>

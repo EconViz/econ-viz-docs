@@ -21,21 +21,16 @@ and equilibrium shown in [The consumer-equilibrium diagram](quickstart.md#fig-qu
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
-# figure settings
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # figure settings
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
 
-# italic x and y
-cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
-# five curves and one through the optimum
-lvls = levels.around(eq.utility, n=5)
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")  # italic x and y
+lvls = levels.around(eq.utility, n=5)  # five curves and one through the optimum
 cvs.add_utility(model, levels=lvls)
-# the line and its feasible set
-cvs.add_budget(2.0, 3.0, 30.0, fill=True)
-# with the expansion path
-cvs.add_equilibrium(eq, show_ray=True)
+cvs.add_budget(2.0, 3.0, 30.0, fill=True)  # the line and its feasible set
+cvs.add_equilibrium(eq, show_ray=True)  # with the expansion path
 cvs.save("cobb_douglas.png")
 ```
 
@@ -72,7 +67,6 @@ Solve the consumer's problem and return an immutable `Equilibrium`.
 
 ```python
 from utility_viz import solve
-
 eq = solve(model, px=2.0, py=3.0, income=30.0)
 print(eq.x, eq.y, round(eq.utility, 3))
 
@@ -122,11 +116,7 @@ When the solver does not converge, `solve()` raises `OptimizationError`
 rather than returning an invalid equilibrium.
 
 ```python
-from utility_viz import (
-    InvalidParameterError,
-    OptimizationError,
-    solve,
-)
+from utility_viz import InvalidParameterError, OptimizationError, solve
 
 try:
     eq = solve(model, px=2.0, py=3.0, income=30.0)

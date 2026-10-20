@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 160" width="640" height="160" role="img" aria-label="glyphkit">
+  <title>glyphkit</title>
+
+  <!-- A font file containing a type specimen and its baseline. -->
+  <g transform="translate(24, 22)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 4H82L108 30V112H10Z" fill="#ffffff" stroke="#181818" stroke-width="5"/>
+    <path d="M82 4V30H108" fill="#f3f3f3" stroke="#181818" stroke-width="5"/>
+    <text x="19" y="82" font-family="Georgia,'Times New Roman',serif" font-size="58" font-weight="700" fill="#181818">A</text>
+    <text x="61" y="82" font-family="Georgia,'Times New Roman',serif" font-size="48" font-weight="700" fill="#8a8a8a">a</text>
+    <path d="M20 91H96" fill="none" stroke="#c9c9c9" stroke-width="3" stroke-dasharray="5 6"/>
+    <circle cx="20" cy="91" r="3.5" fill="#181818"/>
+    <circle cx="96" cy="91" r="3.5" fill="#8a8a8a"/>
+  </g>
+
+  <text x="168" y="98" font-family="'JetBrains Mono','SFMono-Regular',Consolas,monospace" font-size="52" font-weight="700" letter-spacing="-1" fill="#181818">glyph<tspan fill="#8a8a8a">kit</tspan></text>
+</svg>

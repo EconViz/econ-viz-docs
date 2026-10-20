@@ -16,16 +16,9 @@ seo_title: "多面板图与需求图"
 from utility_viz import Config, Figure, Layout, levels, solve
 from utility_viz.models import CobbDouglas
 
-# 图形设置
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # 图形设置
 
-fig = Figure(
-    Layout.SIDE_BY_SIDE,
-    x_max=20,
-    y_max=15,
-    x_label="$x$",
-    y_label="$y$",
-)
+fig = Figure(Layout.SIDE_BY_SIDE, x_max=20, y_max=15, x_label="$x$", y_label="$y$")
 
 # 价格上涨前后
 cases = [
@@ -34,11 +27,8 @@ cases = [
 ]
 for idx, (model, px, py, income) in enumerate(cases):
     eq = solve(model, px=px, py=py, income=income)
-    # 面板都是 Canvas
-    panel = fig[idx]
-    panel.add_utility(
-        model, levels=levels.around(eq.utility, n=5)
-    )
+    panel = fig[idx]  # 面板都是 Canvas
+    panel.add_utility(model, levels=levels.around(eq.utility, n=5))
     panel.add_budget(px, py, income, fill=True)
     panel.add_equilibrium(eq, show_ray=True)
 fig.save("side_by_side.png")
@@ -69,35 +59,21 @@ fig.save("side_by_side.png")
 将 `PricePath` 或 `IncomePath` 添加画布。[价格消费曲线](consumer.md#fig-price-path)中，Cobb-Douglas 模型在 $p_x$ 变动时，$y$ 的需求量不变，因此 PCC 为水平线。
 
 ```python
-from utility_viz import (
-    Canvas,
-    Config,
-    LinearBudget,
-    PricePath,
-    levels,
-)
+from utility_viz import Canvas, Config, LinearBudget, PricePath, levels
 from utility_viz.models import CobbDouglas
 
-# 图形设置
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # 图形设置
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 budget = LinearBudget(px=2.0, py=2.0, income=40.0)
-path = PricePath(
-    model,
-    budget=budget,
-    price="px",
-    price_range=(0.8, 6.0),
-    n=40,
-)
+path = PricePath(model, budget=budget, price="px", price_range=(0.8, 6.0), n=40)
 
 # 围绕路径中段最优点的曲线
 eq = path.equilibria[len(path.equilibria) // 2]
 
 cvs = Canvas(x_max=25, y_max=20, x_label="$x$", y_label="$y$")
 cvs.add_utility(model, levels=levels.around(eq.utility, n=5))
-# 价格消费曲线
-cvs.add_path(path)
+cvs.add_path(path)  # 价格消费曲线
 cvs.save("price_path.png")
 ```
 

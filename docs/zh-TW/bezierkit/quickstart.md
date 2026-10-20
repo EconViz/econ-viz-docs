@@ -15,15 +15,10 @@ from bezierkit import BezierCurve, PiecewiseBezier, Point
 from bezierkit.bezier import to_cubic
 from bezierkit.export.tikz import to_tikz
 
-curve = BezierCurve.cubic(
-    Point(0, 0), Point(1, 2), Point(3, 2), Point(4, 0)
-)
-# Point(coords=(2.0, 1.5))
-print(curve.at(0.5))
-# Point(coords=(4.5, 0.0))
-print(curve.derivative().at(0.5))
-# two cubics that together trace curve
-left, right = curve.split(0.4)
+curve = BezierCurve.cubic(Point(0, 0), Point(1, 2), Point(3, 2), Point(4, 0))
+print(curve.at(0.5))                 # Point(coords=(2.0, 1.5))
+print(curve.derivative().at(0.5))    # Point(coords=(4.5, 0.0))
+left, right = curve.split(0.4)       # two cubics that together trace curve
 
 path = PiecewiseBezier([to_cubic(curve)])
 print(to_tikz(path, precision=2, options="thick"))

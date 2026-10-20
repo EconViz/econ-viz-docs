@@ -176,11 +176,8 @@ seo_title: "Bézier 曲線"
 from bezierkit import BezierCurve
 from bezierkit.bezier.evaluation import BernsteinEvaluator
 
-fast = BezierCurve(
-    curve.control_points, evaluator=BernsteinEvaluator()
-)
-# Point(coords=(2.0, 1.5)), as with the default
-print(fast.at(0.5))
+fast = BezierCurve(curve.control_points, evaluator=BernsteinEvaluator())
+print(fast.at(0.5))   # Point(coords=(2.0, 1.5)), as with the default
 ```
 
 儲存庫的 `benchmarks/` 目錄比較兩者在 400、10,000 與 100,000 個參數值下的效能。

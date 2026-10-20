@@ -62,13 +62,7 @@ theme = replace(
     eq_markersize=5.0,
 )
 
-cvs = Canvas(
-    x_max=20,
-    y_max=15,
-    x_label="$x$",
-    y_label="$y$",
-    theme=theme,
-)
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$", theme=theme)
 cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
 cvs.add_budget(2.0, 3.0, 30.0, fill=True)
 cvs.add_equilibrium(eq)
@@ -103,13 +97,7 @@ theme = replace(
     eq_markersize=5.0,
 )
 
-cvs = Canvas(
-    x_max=20,
-    y_max=15,
-    x_label="$x$",
-    y_label="$y$",
-    theme=theme,
-)
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$", theme=theme)
 cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
 cvs.add_budget(2.0, 3.0, 30.0, fill=True)
 cvs.add_equilibrium(eq)
@@ -144,13 +132,7 @@ theme = replace(
     eq_markersize=5.0,
 )
 
-cvs = Canvas(
-    x_max=20,
-    y_max=15,
-    x_label="$x$",
-    y_label="$y$",
-    theme=theme,
-)
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$", theme=theme)
 cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
 cvs.add_budget(2.0, 3.0, 30.0, fill=True)
 cvs.add_equilibrium(eq)
@@ -185,13 +167,7 @@ theme = replace(
     eq_markersize=5.0,
 )
 
-cvs = Canvas(
-    x_max=20,
-    y_max=15,
-    x_label="$x$",
-    y_label="$y$",
-    theme=theme,
-)
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$", theme=theme)
 cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
 cvs.add_budget(2.0, 3.0, 30.0, fill=True)
 cvs.add_equilibrium(eq)
@@ -226,13 +202,7 @@ theme = replace(
     eq_markersize=5.0,
 )
 
-cvs = Canvas(
-    x_max=20,
-    y_max=15,
-    x_label="$x$",
-    y_label="$y$",
-    theme=theme,
-)
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$", theme=theme)
 cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
 cvs.add_budget(2.0, 3.0, 30.0, fill=True)
 cvs.add_equilibrium(eq)
@@ -326,8 +296,7 @@ where both Python and the command line read it.
   ```python
   from utility_viz import Config
 
-  # reads ./utility-viz.toml by default
-  Config.load().use()
+  Config.load().use()   # reads ./utility-viz.toml by default
   ```
 
   Every `Canvas`, `Figure`, `DemandDiagram` and `EdgeworthBox` created

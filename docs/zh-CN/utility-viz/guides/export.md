@@ -17,21 +17,16 @@ seo_title: "导出"
 - TeX：TikZ 源代码（`.tex`），可嵌入 LaTeX 文件。通过关键字参数 `tikz_scale` 与 `tikz_standalone` 调整输出。
 
 ```python
-# PNG 默认 300 DPI
-cvs.save("figure.png")
-# PDF 向量
-cvs.save("figure.pdf")
-# SVG 向量
-cvs.save("figure.svg")
-# TikZ
-cvs.save("figure.tex")
+cvs.save("figure.png")   # PNG 默认 300 DPI
+cvs.save("figure.pdf")   # PDF 向量
+cvs.save("figure.svg")   # SVG 向量
+cvs.save("figure.tex")   # TikZ
 ```
 
 `dpi` 仅影响位图。预览时可降低分辨率：
 
 ```python
-# 降低 DPI 加快预览
-cvs = Canvas(x_max=20, y_max=15, dpi=150)
+cvs = Canvas(x_max=20, y_max=15, dpi=150)   # 降低 DPI 加快预览
 ```
 
 ## GIF 动画
@@ -41,9 +36,7 @@ cvs = Canvas(x_max=20, y_max=15, dpi=150)
 ```python
 from utility_viz.core.animation import Animator
 
-Animator(draw_frame, frames=frames).save(
-    "animation.gif", fps=12, dpi=120
-)
+Animator(draw_frame, frames=frames).save("animation.gif", fps=12, dpi=120)
 ```
 
 ## 交互窗口

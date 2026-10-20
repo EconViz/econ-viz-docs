@@ -19,22 +19,17 @@ Write the figure to `path`; the format follows the extension. `Figure`,
   the keyword arguments `tikz_scale` and `tikz_standalone`.
 
 ```python
-# PNG with canvas DPI default 300
-cvs.save("figure.png")
-# PDF vector
-cvs.save("figure.pdf")
-# SVG vector
-cvs.save("figure.svg")
-# TikZ
-cvs.save("figure.tex")
+cvs.save("figure.png")   # PNG with canvas DPI default 300
+cvs.save("figure.pdf")   # PDF vector
+cvs.save("figure.svg")   # SVG vector
+cvs.save("figure.tex")   # TikZ
 ```
 
 The `dpi` parameter of `Canvas` only affects raster output; lower it for
 faster previews:
 
 ```python
-# lower DPI for a faster preview
-cvs = Canvas(x_max=20, y_max=15, dpi=150)
+cvs = Canvas(x_max=20, y_max=15, dpi=150)   # lower DPI for a faster preview
 ```
 
 ## Animated GIFs
@@ -44,9 +39,7 @@ Export a GIF with `Animator.save()`; [Animation](animation.md#sec-animation) has
 ```python
 from utility_viz.core.animation import Animator
 
-Animator(draw_frame, frames=frames).save(
-    "animation.gif", fps=12, dpi=120
-)
+Animator(draw_frame, frames=frames).save("animation.gif", fps=12, dpi=120)
 ```
 
 ## Interactive window

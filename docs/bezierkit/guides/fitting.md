@@ -52,17 +52,10 @@ error measured as a Euclidean distance in the $(x, y)$ plane.
 ```python
 from bezierkit.fitting import fit_graph
 
-path = fit_graph(
-    lambda x: 4 / x**2,
-    lambda x: -8 / x**3,
-    x0=0.8,
-    x1=3,
-    tolerance=1e-3,
-)
-# 10
-print(len(path.segments))
-# 0.000676
-print(max(s.fit_error for s in path))
+path = fit_graph(lambda x: 4 / x**2, lambda x: -8 / x**3,
+                 x0=0.8, x1=3, tolerance=1e-3)
+print(len(path.segments))                    # 10
+print(max(s.fit_error for s in path))        # 0.000676
 ```
 
 <span id="fig-adaptive"></span>

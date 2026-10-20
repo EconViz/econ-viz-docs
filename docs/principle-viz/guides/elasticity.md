@@ -27,18 +27,13 @@ Both are negative for a downward-sloping demand.
 
 ```python
 from principle_viz import (
-    compute_arc_elasticity,
-    compute_point_elasticity,
-    line_from_inverse,
+    compute_arc_elasticity, compute_point_elasticity, line_from_inverse,
 )
 
 demand = line_from_inverse(10.0, -1.0)
-# -1.5
-print(compute_point_elasticity(demand, 4))
-# -1.0 (unit elastic)
-print(compute_point_elasticity(demand, 5))
-# -1.0
-print(compute_arc_elasticity(4, 6, 6, 4))
+print(compute_point_elasticity(demand, 4))   # -1.5
+print(compute_point_elasticity(demand, 5))   # -1.0 (unit elastic)
+print(compute_arc_elasticity(4, 6, 6, 4))    # -1.0
 ```
 
 At $Q = 4$ the elasticity is $-1.5$, so demand is elastic. $Q = 5$ is unit
@@ -79,13 +74,9 @@ from principle_viz.visuals.revenue import (
 demand = line_from_inverse(12.0, -1.0)
 schedule = elasticity_revenue_schedule(demand)
 canvases = elasticity_revenue_canvases(
-    demand,
-    schedule,
-    theme=PlotTheme(),
+    demand, schedule, theme=PlotTheme(),
 )
-CanvasGrid(canvases, rows=1).save(
-    "elasticity_total_revenue.png"
-)
+CanvasGrid(canvases, rows=1).save("elasticity_total_revenue.png")
 ```
 
 <span id="fig-revenue"></span>

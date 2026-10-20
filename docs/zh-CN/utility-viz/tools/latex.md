@@ -13,12 +13,9 @@ seo_title: "LaTeX 解析"
 ```python
 from utility_viz import parse_latex
 
-# CobbDouglas(alpha=0.4, beta=0.6)
-model = parse_latex(r"x^{0.4} y^{0.6}")
-# Leontief(a=2.0, b=3.0)
-model = parse_latex(r"\min(2x, 3y)")
-# PerfectSubstitutes(a=2.0, b=3.0)
-model = parse_latex(r"2x + 3y")
+model = parse_latex(r"x^{0.4} y^{0.6}")  # CobbDouglas(alpha=0.4, beta=0.6)
+model = parse_latex(r"\min(2x, 3y)")     # Leontief(a=2.0, b=3.0)
+model = parse_latex(r"2x + 3y")          # PerfectSubstitutes(a=2.0, b=3.0)
 ```
 
 ## 支持的形式
@@ -43,27 +40,15 @@ x^{0.5} y^{0.5}
 ```
 
 ```python
-from utility_viz import (
-    Canvas,
-    Config,
-    levels,
-    parse_latex,
-    solve,
-)
+from utility_viz import Canvas, Config, levels, parse_latex, solve
 
-# 图形设置
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # 图形设置
 
-# Leontief(a=2.0, b=3.0)
-model = parse_latex(r"\min(2x, 3y)")
+model = parse_latex(r"\min(2x, 3y)")  # Leontief(a=2.0, b=3.0)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
 
 cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
-cvs.add_utility(
-    model,
-    levels=levels.around(eq.utility, n=5),
-    show_kinks=True,
-)
+cvs.add_utility(model, levels=levels.around(eq.utility, n=5), show_kinks=True)
 cvs.add_budget(2.0, 3.0, 30.0)
 cvs.add_equilibrium(eq)
 cvs.save("leontief.png")
@@ -80,19 +65,11 @@ cvs.save("leontief.png")
 </figure>
 
 ```python
-from utility_viz import (
-    Canvas,
-    Config,
-    levels,
-    parse_latex,
-    solve,
-)
+from utility_viz import Canvas, Config, levels, parse_latex, solve
 
-# 图形设置
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # 图形设置
 
-# PerfectSubstitutes(a=2.0, b=3.0)
-model = parse_latex(r"2x + 3y")
+model = parse_latex(r"2x + 3y")  # PerfectSubstitutes(a=2.0, b=3.0)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
 
 cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")

@@ -52,8 +52,7 @@ Bézier 曲線的導數 $B'(t)$ 是其座標函數（$t$ 的多項式）的導�
 d = curve.derivative()
 print(list(d.control_points))
 # [Point(coords=(3.0, 6.0)), Point(coords=(6.0, 0.0)), Point(coords=(3.0, -6.0))]
-# Point(coords=(4.5, 0.0)): the tangent at the top is horizontal
-print(d.at(0.5))
+print(d.at(0.5))   # Point(coords=(4.5, 0.0)): the tangent at the top is horizontal
 ```
 
 ## 反轉
@@ -122,8 +121,6 @@ print(d.at(0.5))
 
 ```python
 left, right = curve.split(0.4)
-# both B(0.4) = (1.552, 1.44)
-print(left.at(1.0), right.at(0.0))
-# B(0.5) = (2.0, 1.5)
-print(curve.segment(0.25, 0.75).at(0.5))
+print(left.at(1.0), right.at(0.0))         # both B(0.4) = (1.552, 1.44)
+print(curve.segment(0.25, 0.75).at(0.5))   # B(0.5) = (2.0, 1.5)
 ```

@@ -64,6 +64,10 @@
       {% set manual_package = "mosaickit" %}
     {% elif "/bezierkit/" in page_source %}
       {% set manual_package = "bezierkit" %}
+    {% elif "/glyphkit/" in page_source %}
+      {% set manual_package = "glyphkit" %}
+    {% elif "/kinetickit/" in page_source %}
+      {% set manual_package = "kinetickit" %}
     {% else %}
       {% set manual_package = none %}
     {% endif %}

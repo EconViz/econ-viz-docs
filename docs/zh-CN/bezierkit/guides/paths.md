@@ -128,16 +128,12 @@ $$
 ```python
 from bezierkit import CubicBezierSegment, PiecewiseBezier
 
-path = PiecewiseBezier(
-    [
-        CubicBezierSegment.from_line(Point(0, 0), Point(2, 0)),
-        CubicBezierSegment.from_line(Point(2, 0), Point(2, 4)),
-    ]
-)
-# Point(coords=(2.0, 2.0))
-print(path.at(0.75))
-# Point(coords=(2.0, 2.0))
-print(path.segment(0.25, 0.75).at(1.0))
+path = PiecewiseBezier([
+    CubicBezierSegment.from_line(Point(0, 0), Point(2, 0)),
+    CubicBezierSegment.from_line(Point(2, 0), Point(2, 4)),
+])
+print(path.at(0.75))                     # Point(coords=(2.0, 2.0))
+print(path.segment(0.25, 0.75).at(1.0))  # Point(coords=(2.0, 2.0))
 ```
 
 `compound()` 把多条路径合为一条，各子路径保持分开，例如有洞的形状。复合路径没有单一的参数化：求值、分割或截取会抛出 `ValueError`；反转与导出则可正常使用。分割或截取封闭路径也会抛出异常（整条路径或单点除外），因为封闭路径没有可保留的起点与终点。

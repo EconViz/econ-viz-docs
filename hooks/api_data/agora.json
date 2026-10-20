@@ -5698,5 +5698,832 @@
       "bezierkit construct tangents --start ... --end ... --start-direction vector --end-direction vector [...]"
     ],
     "parameters": []
+  },
+  "agora.glyphkit.quickstart_1": {
+    "name": "FontSource",
+    "anchor": "glyphkit-quickstart-1",
+    "signatures": [
+      "FontSource",
+      "FontSource.path(path)",
+      "FontSource.bytes(data, label=...)"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.quickstart_2": {
+    "name": "FontLibrary",
+    "anchor": "glyphkit-quickstart-2",
+    "signatures": [
+      "FontLibrary",
+      "FontLibrary.from_sources(\n    sources,\n    *,\n    generic_families={}\n)"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.quickstart_3": {
+    "name": "Paragraph",
+    "anchor": "glyphkit-quickstart-3",
+    "signatures": [
+      "Paragraph"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.quickstart_4": {
+    "name": "TextSpan",
+    "anchor": "glyphkit-quickstart-4",
+    "signatures": [
+      "TextSpan"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.quickstart_5": {
+    "name": "TextStyle",
+    "anchor": "glyphkit-quickstart-5",
+    "signatures": [
+      "TextStyle"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.quickstart_6": {
+    "name": "TextLayout",
+    "anchor": "glyphkit-quickstart-6",
+    "signatures": [
+      "TextLayout"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_fonts_shaping_1": {
+    "name": "FontQuery",
+    "anchor": "glyphkit-guides-fonts-shaping-1",
+    "signatures": [
+      "FontQuery"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_fonts_shaping_2": {
+    "name": "FontMatch",
+    "anchor": "glyphkit-guides-fonts-shaping-2",
+    "signatures": [
+      "FontMatch"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_fonts_shaping_3": {
+    "name": "FontFace",
+    "anchor": "glyphkit-guides-fonts-shaping-3",
+    "signatures": [
+      "FontFace"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_fonts_shaping_4": {
+    "name": "ShapingStyle",
+    "anchor": "glyphkit-guides-fonts-shaping-4",
+    "signatures": [
+      "ShapingStyle"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_fonts_shaping_5": {
+    "name": "GlyphRun",
+    "anchor": "glyphkit-guides-fonts-shaping-5",
+    "signatures": [
+      "GlyphRun"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_fonts_shaping_6": {
+    "name": "PositionedGlyph",
+    "anchor": "glyphkit-guides-fonts-shaping-6",
+    "signatures": [
+      "PositionedGlyph"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_fonts_shaping_7": {
+    "name": "shape_text",
+    "anchor": "glyphkit-guides-fonts-shaping-7",
+    "signatures": [
+      "shape_text"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_fonts_shaping_8": {
+    "name": "discover_system_fonts",
+    "anchor": "glyphkit-guides-fonts-shaping-8",
+    "signatures": [
+      "discover_system_fonts"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_layout_math_1": {
+    "name": "layout_paragraph",
+    "anchor": "glyphkit-guides-layout-math-1",
+    "signatures": [
+      "layout_paragraph"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_layout_math_2": {
+    "name": "TextMeasurement",
+    "anchor": "glyphkit-guides-layout-math-2",
+    "signatures": [
+      "TextMeasurement"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_layout_math_3": {
+    "name": "LineLayout",
+    "anchor": "glyphkit-guides-layout-math-3",
+    "signatures": [
+      "LineLayout"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_layout_math_4": {
+    "name": "parse_math",
+    "anchor": "glyphkit-guides-layout-math-4",
+    "signatures": [
+      "parse_math"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_layout_math_5": {
+    "name": "MathStyle",
+    "anchor": "glyphkit-guides-layout-math-5",
+    "signatures": [
+      "MathStyle"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_layout_math_6": {
+    "name": "MathBox",
+    "anchor": "glyphkit-guides-layout-math-6",
+    "signatures": [
+      "MathBox"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_outlines_embedding_1": {
+    "name": "GlyphOutline",
+    "anchor": "glyphkit-guides-outlines-embedding-1",
+    "signatures": [
+      "GlyphOutline"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_outlines_embedding_2": {
+    "name": "MoveTo",
+    "anchor": "glyphkit-guides-outlines-embedding-2",
+    "signatures": [
+      "MoveTo"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_outlines_embedding_3": {
+    "name": "LineTo",
+    "anchor": "glyphkit-guides-outlines-embedding-3",
+    "signatures": [
+      "LineTo"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_outlines_embedding_4": {
+    "name": "QuadraticTo",
+    "anchor": "glyphkit-guides-outlines-embedding-4",
+    "signatures": [
+      "QuadraticTo"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_outlines_embedding_5": {
+    "name": "CubicTo",
+    "anchor": "glyphkit-guides-outlines-embedding-5",
+    "signatures": [
+      "CubicTo"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_outlines_embedding_6": {
+    "name": "ClosePath",
+    "anchor": "glyphkit-guides-outlines-embedding-6",
+    "signatures": [
+      "ClosePath"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_outlines_embedding_7": {
+    "name": "flatten",
+    "anchor": "glyphkit-guides-outlines-embedding-7",
+    "signatures": [
+      "flatten"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_outlines_embedding_8": {
+    "name": "Polyline",
+    "anchor": "glyphkit-guides-outlines-embedding-8",
+    "signatures": [
+      "Polyline"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_outlines_embedding_9": {
+    "name": "EmbeddingUse",
+    "anchor": "glyphkit-guides-outlines-embedding-9",
+    "signatures": [
+      "EmbeddingUse"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_outlines_embedding_10": {
+    "name": "FontContainer",
+    "anchor": "glyphkit-guides-outlines-embedding-10",
+    "signatures": [
+      "FontContainer"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_outlines_embedding_11": {
+    "name": "FontSubsetBundle",
+    "anchor": "glyphkit-guides-outlines-embedding-11",
+    "signatures": [
+      "FontSubsetBundle"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_outlines_embedding_12": {
+    "name": "PortableFont",
+    "anchor": "glyphkit-guides-outlines-embedding-12",
+    "signatures": [
+      "PortableFont"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_outlines_embedding_13": {
+    "name": "to_data",
+    "anchor": "glyphkit-guides-outlines-embedding-13",
+    "signatures": [
+      "to_data"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_outlines_embedding_14": {
+    "name": "from_data",
+    "anchor": "glyphkit-guides-outlines-embedding-14",
+    "signatures": [
+      "from_data"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_bezier_geometry_1": {
+    "name": "GlyphOutline",
+    "anchor": "glyphkit-guides-bezier-geometry-1",
+    "signatures": [
+      "GlyphOutline"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_bezier_geometry_2": {
+    "name": "MoveTo",
+    "anchor": "glyphkit-guides-bezier-geometry-2",
+    "signatures": [
+      "MoveTo"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_bezier_geometry_3": {
+    "name": "LineTo",
+    "anchor": "glyphkit-guides-bezier-geometry-3",
+    "signatures": [
+      "LineTo"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_bezier_geometry_4": {
+    "name": "QuadraticTo",
+    "anchor": "glyphkit-guides-bezier-geometry-4",
+    "signatures": [
+      "QuadraticTo"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_bezier_geometry_5": {
+    "name": "CubicTo",
+    "anchor": "glyphkit-guides-bezier-geometry-5",
+    "signatures": [
+      "CubicTo"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_bezier_geometry_6": {
+    "name": "ClosePath",
+    "anchor": "glyphkit-guides-bezier-geometry-6",
+    "signatures": [
+      "ClosePath"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_bezier_geometry_7": {
+    "name": "flatten",
+    "anchor": "glyphkit-guides-bezier-geometry-7",
+    "signatures": [
+      "flatten"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_math_layout_model_1": {
+    "name": "MathStyle",
+    "anchor": "glyphkit-guides-math-layout-model-1",
+    "signatures": [
+      "MathStyle"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_line_layout_algorithms_1": {
+    "name": "Paragraph",
+    "anchor": "glyphkit-guides-line-layout-algorithms-1",
+    "signatures": [
+      "Paragraph"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_line_layout_algorithms_2": {
+    "name": "LineLayout",
+    "anchor": "glyphkit-guides-line-layout-algorithms-2",
+    "signatures": [
+      "LineLayout"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_line_layout_algorithms_3": {
+    "name": "TextMeasurement",
+    "anchor": "glyphkit-guides-line-layout-algorithms-3",
+    "signatures": [
+      "TextMeasurement"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_reproducibility_1": {
+    "name": "FontManifest",
+    "anchor": "glyphkit-guides-reproducibility-1",
+    "signatures": [
+      "FontManifest"
+    ],
+    "parameters": []
+  },
+  "agora.glyphkit.guides_reproducibility_2": {
+    "name": "FontUse",
+    "anchor": "glyphkit-guides-reproducibility-2",
+    "signatures": [
+      "FontUse"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.quickstart_1": {
+    "name": "Animation",
+    "anchor": "kinetickit-quickstart-1",
+    "signatures": [
+      "Animation(\n    scene,\n    motion=None,\n    *,\n    interactions=None,\n    accessibility=None\n)"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.quickstart_2": {
+    "name": "Scene2D",
+    "anchor": "kinetickit-quickstart-2",
+    "signatures": [
+      "Scene2D"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.quickstart_3": {
+    "name": "Point2D",
+    "anchor": "kinetickit-quickstart-3",
+    "signatures": [
+      "Point2D"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.quickstart_4": {
+    "name": "Bounds2D",
+    "anchor": "kinetickit-quickstart-4",
+    "signatures": [
+      "Bounds2D"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.quickstart_5": {
+    "name": "Vec2",
+    "anchor": "kinetickit-quickstart-5",
+    "signatures": [
+      "Vec2"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.quickstart_6": {
+    "name": "ease",
+    "anchor": "kinetickit-quickstart-6",
+    "signatures": [
+      "ease"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_scenes_motion_1": {
+    "name": "Line2D",
+    "anchor": "kinetickit-guides-scenes-motion-1",
+    "signatures": [
+      "Line2D"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_scenes_motion_2": {
+    "name": "PathNode2D",
+    "anchor": "kinetickit-guides-scenes-motion-2",
+    "signatures": [
+      "PathNode2D"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_scenes_motion_3": {
+    "name": "Shape2D",
+    "anchor": "kinetickit-guides-scenes-motion-3",
+    "signatures": [
+      "Shape2D"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_scenes_motion_4": {
+    "name": "Group2D",
+    "anchor": "kinetickit-guides-scenes-motion-4",
+    "signatures": [
+      "Group2D"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_scenes_motion_5": {
+    "name": "Text2D",
+    "anchor": "kinetickit-guides-scenes-motion-5",
+    "signatures": [
+      "Text2D"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_scenes_motion_6": {
+    "name": "Camera2D",
+    "anchor": "kinetickit-guides-scenes-motion-6",
+    "signatures": [
+      "Camera2D"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_scenes_motion_7": {
+    "name": "Scene3D",
+    "anchor": "kinetickit-guides-scenes-motion-7",
+    "signatures": [
+      "Scene3D"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_scenes_motion_8": {
+    "name": "Point3D",
+    "anchor": "kinetickit-guides-scenes-motion-8",
+    "signatures": [
+      "Point3D"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_scenes_motion_9": {
+    "name": "Line3D",
+    "anchor": "kinetickit-guides-scenes-motion-9",
+    "signatures": [
+      "Line3D"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_scenes_motion_10": {
+    "name": "Polyline3D",
+    "anchor": "kinetickit-guides-scenes-motion-10",
+    "signatures": [
+      "Polyline3D"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_scenes_motion_11": {
+    "name": "Mesh3D",
+    "anchor": "kinetickit-guides-scenes-motion-11",
+    "signatures": [
+      "Mesh3D"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_scenes_motion_12": {
+    "name": "Surface3D",
+    "anchor": "kinetickit-guides-scenes-motion-12",
+    "signatures": [
+      "Surface3D"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_scenes_motion_13": {
+    "name": "Group3D",
+    "anchor": "kinetickit-guides-scenes-motion-13",
+    "signatures": [
+      "Group3D"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_scenes_motion_14": {
+    "name": "Camera3D",
+    "anchor": "kinetickit-guides-scenes-motion-14",
+    "signatures": [
+      "Camera3D"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_scenes_motion_15": {
+    "name": "Motion",
+    "anchor": "kinetickit-guides-scenes-motion-15",
+    "signatures": [
+      "Motion"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_scenes_motion_16": {
+    "name": "Timeline",
+    "anchor": "kinetickit-guides-scenes-motion-16",
+    "signatures": [
+      "Timeline"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_scenes_motion_17": {
+    "name": "Keyframe",
+    "anchor": "kinetickit-guides-scenes-motion-17",
+    "signatures": [
+      "Keyframe"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_scenes_motion_18": {
+    "name": "Keyframes",
+    "anchor": "kinetickit-guides-scenes-motion-18",
+    "signatures": [
+      "Keyframes"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_scenes_motion_19": {
+    "name": "SceneTransition",
+    "anchor": "kinetickit-guides-scenes-motion-19",
+    "signatures": [
+      "SceneTransition"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_scenes_motion_20": {
+    "name": "TransitionPolicy",
+    "anchor": "kinetickit-guides-scenes-motion-20",
+    "signatures": [
+      "TransitionPolicy"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_outputs_1": {
+    "name": "ExportManifest",
+    "anchor": "kinetickit-guides-outputs-1",
+    "signatures": [
+      "ExportManifest"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_outputs_2": {
+    "name": "available_formats",
+    "anchor": "kinetickit-guides-outputs-2",
+    "signatures": [
+      "available_formats"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_outputs_3": {
+    "name": "export",
+    "anchor": "kinetickit-guides-outputs-3",
+    "signatures": [
+      "export"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_outputs_4": {
+    "name": "RendererCapabilities",
+    "anchor": "kinetickit-guides-outputs-4",
+    "signatures": [
+      "RendererCapabilities"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_outputs_5": {
+    "name": "Requirements",
+    "anchor": "kinetickit-guides-outputs-5",
+    "signatures": [
+      "Requirements"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_outputs_6": {
+    "name": "requirements_for",
+    "anchor": "kinetickit-guides-outputs-6",
+    "signatures": [
+      "requirements_for"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_outputs_7": {
+    "name": "GifSettings",
+    "anchor": "kinetickit-guides-outputs-7",
+    "signatures": [
+      "GifSettings"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_outputs_8": {
+    "name": "export_png_frames",
+    "anchor": "kinetickit-guides-outputs-8",
+    "signatures": [
+      "export_png_frames"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_typography_accessibility_1": {
+    "name": "GlyphKitTypography",
+    "anchor": "kinetickit-guides-typography-accessibility-1",
+    "signatures": [
+      "GlyphKitTypography"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_typography_accessibility_2": {
+    "name": "text_asset_from_layout",
+    "anchor": "kinetickit-guides-typography-accessibility-2",
+    "signatures": [
+      "text_asset_from_layout"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_typography_accessibility_3": {
+    "name": "text_asset_from_math",
+    "anchor": "kinetickit-guides-typography-accessibility-3",
+    "signatures": [
+      "text_asset_from_math"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_typography_accessibility_4": {
+    "name": "Semantics",
+    "anchor": "kinetickit-guides-typography-accessibility-4",
+    "signatures": [
+      "Semantics"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_typography_accessibility_5": {
+    "name": "AccessibilityInfo",
+    "anchor": "kinetickit-guides-typography-accessibility-5",
+    "signatures": [
+      "AccessibilityInfo"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_typography_accessibility_6": {
+    "name": "ReducedMotion",
+    "anchor": "kinetickit-guides-typography-accessibility-6",
+    "signatures": [
+      "ReducedMotion"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_typography_accessibility_7": {
+    "name": "Event",
+    "anchor": "kinetickit-guides-typography-accessibility-7",
+    "signatures": [
+      "Event"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_typography_accessibility_8": {
+    "name": "Binding",
+    "anchor": "kinetickit-guides-typography-accessibility-8",
+    "signatures": [
+      "Binding"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_typography_accessibility_9": {
+    "name": "InteractionSpec",
+    "anchor": "kinetickit-guides-typography-accessibility-9",
+    "signatures": [
+      "InteractionSpec"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_time_easing_1": {
+    "name": "ease",
+    "anchor": "kinetickit-guides-time-easing-1",
+    "signatures": [
+      "ease"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_interpolation_transforms_1": {
+    "name": "Quaternion",
+    "anchor": "kinetickit-guides-interpolation-transforms-1",
+    "signatures": [
+      "Quaternion"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_interpolation_transforms_2": {
+    "name": "Transform2D",
+    "anchor": "kinetickit-guides-interpolation-transforms-2",
+    "signatures": [
+      "Transform2D"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_interpolation_transforms_3": {
+    "name": "Transform3D",
+    "anchor": "kinetickit-guides-interpolation-transforms-3",
+    "signatures": [
+      "Transform3D"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_projection_1": {
+    "name": "Camera3D",
+    "anchor": "kinetickit-guides-projection-1",
+    "signatures": [
+      "Camera3D"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_projection_2": {
+    "name": "Surface3D",
+    "anchor": "kinetickit-guides-projection-2",
+    "signatures": [
+      "Surface3D"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_projection_3": {
+    "name": "Mesh3D",
+    "anchor": "kinetickit-guides-projection-3",
+    "signatures": [
+      "Mesh3D"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_morphing_1": {
+    "name": "Path2D",
+    "anchor": "kinetickit-guides-morphing-1",
+    "signatures": [
+      "Path2D"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_morphing_2": {
+    "name": "MeshData",
+    "anchor": "kinetickit-guides-morphing-2",
+    "signatures": [
+      "MeshData"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_morphing_3": {
+    "name": "SurfaceGrid",
+    "anchor": "kinetickit-guides-morphing-3",
+    "signatures": [
+      "SurfaceGrid"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_sampling_encoding_1": {
+    "name": "FixedFPS",
+    "anchor": "kinetickit-guides-sampling-encoding-1",
+    "signatures": [
+      "FixedFPS"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_sampling_encoding_2": {
+    "name": "Timestamps",
+    "anchor": "kinetickit-guides-sampling-encoding-2",
+    "signatures": [
+      "Timestamps"
+    ],
+    "parameters": []
+  },
+  "agora.kinetickit.guides_sampling_encoding_3": {
+    "name": "Frame",
+    "anchor": "kinetickit-guides-sampling-encoding-3",
+    "signatures": [
+      "Frame"
+    ],
+    "parameters": []
   }
 }

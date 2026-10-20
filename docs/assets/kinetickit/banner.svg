@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 160" width="640" height="160" role="img" aria-label="kinetickit">
+  <title>kinetickit</title>
+
+  <!-- A motion curve sampled at three deterministic keyframes. -->
+  <g transform="translate(24, 24)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 92H106M14 89C24 88 27 70 35 48C43 26 50 22 58 58C66 94 72 105 80 69C88 33 95 28 104 31" fill="none" stroke="#181818" stroke-width="5"/>
+    <path d="M14 28V99M58 28V99M104 28V99" stroke="#c9c9c9" stroke-width="2" stroke-dasharray="5 6"/>
+    <g fill="#8a8a8a">
+      <circle cx="14" cy="89" r="5"/>
+      <circle cx="58" cy="58" r="5"/>
+      <circle cx="104" cy="31" r="5"/>
+    </g>
+  </g>
+
+  <text x="168" y="98" font-family="'JetBrains Mono','SFMono-Regular',Consolas,monospace" font-size="52" font-weight="700" letter-spacing="-1" fill="#181818">kinetic<tspan fill="#8a8a8a">kit</tspan></text>
+</svg>

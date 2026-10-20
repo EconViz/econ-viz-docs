@@ -20,21 +20,16 @@ $$
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
-# 圖形設定
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # 圖形設定
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
 
-# 斜體的 x 與 y
-cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
-# 五條曲線 一條過最適點
-lvls = levels.around(eq.utility, n=5)
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")  # 斜體的 x 與 y
+lvls = levels.around(eq.utility, n=5)  # 五條曲線 一條過最適點
 cvs.add_utility(model, levels=lvls)
-# 預算線與可行集合
-cvs.add_budget(2.0, 3.0, 30.0, fill=True)
-# 附擴張路徑
-cvs.add_equilibrium(eq, show_ray=True)
+cvs.add_budget(2.0, 3.0, 30.0, fill=True)  # 預算線與可行集合
+cvs.add_equilibrium(eq, show_ray=True)  # 附擴張路徑
 cvs.save("cobb_douglas.png")
 ```
 
@@ -66,7 +61,6 @@ cvs.save("cobb_douglas.png")
 
 ```python
 from utility_viz import solve
-
 eq = solve(model, px=2.0, py=3.0, income=30.0)
 print(eq.x, eq.y, round(eq.utility, 3))
 
@@ -100,11 +94,7 @@ print(eq.x, eq.y, round(eq.utility, 3))
 求解未收斂時，`solve()` 拋出 `OptimizationError`，不會回傳無效的均衡點。
 
 ```python
-from utility_viz import (
-    InvalidParameterError,
-    OptimizationError,
-    solve,
-)
+from utility_viz import InvalidParameterError, OptimizationError, solve
 
 try:
     eq = solve(model, px=2.0, py=3.0, income=30.0)

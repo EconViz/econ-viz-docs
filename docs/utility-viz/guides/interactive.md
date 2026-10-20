@@ -25,12 +25,9 @@ take several parameters. Starting from the price-sweep example there, let
 ```python
 from utility_viz.core.interactive import WidgetViewer
 
-
 def draw(alpha: float, px: float) -> Canvas:
     model = CobbDouglas(alpha=alpha, beta=1.0 - alpha)
-    # rest as in the animation example
-    ...
-
+    ...  # rest as in the animation example
 
 WidgetViewer(
     draw,

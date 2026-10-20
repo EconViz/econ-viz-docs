@@ -23,7 +23,6 @@ from utility_viz import Canvas, levels, solve
 from utility_viz.core.animation import Animator
 from utility_viz.models import CobbDouglas
 
-
 def draw(px: float) -> Canvas:
     model = CobbDouglas(alpha=0.5, beta=0.5)
     eq = solve(model, px=px, py=2.0, income=20.0)
@@ -31,17 +30,14 @@ def draw(px: float) -> Canvas:
 
     return (
         Canvas(
-            x_max=14,
-            y_max=12,
-            x_label="X_1",
-            y_label="X_2",
-            title="Price sweep",
+            x_max=14, y_max=12,
+            x_label="X_1", y_label="X_2",
+            title="Price sweep"
         )
         .add_utility(model, levels=lvls)
         .add_budget(px=px, py=2.0, income=20.0, fill=True)
         .add_equilibrium(eq, show_ray=True, drop_dashes=True)
     )
-
 
 Animator(draw, frames=np.linspace(1.0, 6.0, 45)).save(
     "price_sweep.gif",
@@ -65,10 +61,7 @@ def draw(alpha: float) -> Canvas:
     eq = solve(model, px=2.0, py=2.0, income=20.0)
     ...
 
-
-Animator(draw, frames=np.linspace(0.1, 0.9, 45)).save(
-    "parameter_sweep.gif"
-)
+Animator(draw, frames=np.linspace(0.1, 0.9, 45)).save("parameter_sweep.gif")
 ```
 
 收入变动将 `draw()` 的参数改为 `income`，并把该值传入 `add_budget()` 与 `solve()`。只呈现预算线时，省略 `add_utility()` 与 `add_equilibrium()`。
@@ -82,28 +75,19 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.core.animation import Animator
 from utility_viz.models import CobbDouglas
 
-# 图形设置
-Config.load("manual.toml").use()
-
+Config.load("manual.toml").use()  # 图形设置
 
 def draw(alpha: float) -> Canvas:
     """一格影格：x 的权重是 alpha，y 的权重是 1 - alpha。"""
     model = CobbDouglas(alpha=alpha, beta=1.0 - alpha)
     eq = solve(model, px=2.0, py=2.0, income=20.0)
-    cvs = Canvas(
-        x_max=14, y_max=12, x_label="$x_1$", y_label="$x_2$"
-    )
-    cvs.add_utility(
-        model, levels=levels.around(eq.utility, n=5)
-    )
+    cvs = Canvas(x_max=14, y_max=12, x_label="$x_1$", y_label="$x_2$")
+    cvs.add_utility(model, levels=levels.around(eq.utility, n=5))
     cvs.add_budget(2.0, 2.0, 20.0, fill=True)
     cvs.add_equilibrium(eq, show_ray=True)
     return cvs
 
-
-Animator(draw, frames=np.linspace(0.1, 0.9, 45)).save(
-    "parameter_sweep.gif", fps=12, dpi=120
-)
+Animator(draw, frames=np.linspace(0.1, 0.9, 45)).save("parameter_sweep.gif", fps=12, dpi=120)
 ```
 
 <span id="fig-sweep-param"></span>
@@ -127,31 +111,22 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.core.animation import Animator
 from utility_viz.models import CobbDouglas
 
-# 图形设置
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # 图形设置
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 # 每帧用同一组曲线
-fixed = levels.around(
-    solve(model, px=2.0, py=2.0, income=20.0).utility, n=5
-)
-
+fixed = levels.around(solve(model, px=2.0, py=2.0, income=20.0).utility, n=5)
 
 def draw(px: float) -> Canvas:
     """一格影格：x 的价格是 px。"""
     eq = solve(model, px=px, py=2.0, income=20.0)
-    cvs = Canvas(
-        x_max=14, y_max=12, x_label="$x_1$", y_label="$x_2$"
-    )
+    cvs = Canvas(x_max=14, y_max=12, x_label="$x_1$", y_label="$x_2$")
     cvs.add_utility(model, levels=fixed)
     cvs.add_budget(px, 2.0, 20.0, fill=True)
     cvs.add_equilibrium(eq, show_ray=True)
     return cvs
 
-
-Animator(draw, frames=np.linspace(1.0, 6.0, 45)).save(
-    "price_sweep.gif", fps=12, dpi=120
-)
+Animator(draw, frames=np.linspace(1.0, 6.0, 45)).save("price_sweep.gif", fps=12, dpi=120)
 ```
 
 <span id="fig-sweep-price"></span>
@@ -173,31 +148,22 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.core.animation import Animator
 from utility_viz.models import CobbDouglas
 
-# 图形设置
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # 图形设置
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 # 每帧用同一组曲线
-fixed = levels.around(
-    solve(model, px=2.0, py=2.0, income=20.0).utility, n=5
-)
-
+fixed = levels.around(solve(model, px=2.0, py=2.0, income=20.0).utility, n=5)
 
 def draw(income: float) -> Canvas:
     """一格影格：所得是 income。"""
     eq = solve(model, px=2.0, py=2.0, income=income)
-    cvs = Canvas(
-        x_max=14, y_max=12, x_label="$x_1$", y_label="$x_2$"
-    )
+    cvs = Canvas(x_max=14, y_max=12, x_label="$x_1$", y_label="$x_2$")
     cvs.add_utility(model, levels=fixed)
     cvs.add_budget(2.0, 2.0, income, fill=True)
     cvs.add_equilibrium(eq, show_ray=True)
     return cvs
 
-
-Animator(draw, frames=np.linspace(8.0, 36.0, 45)).save(
-    "income_sweep.gif", fps=12, dpi=120
-)
+Animator(draw, frames=np.linspace(8.0, 36.0, 45)).save("income_sweep.gif", fps=12, dpi=120)
 ```
 
 <span id="fig-sweep-income"></span>

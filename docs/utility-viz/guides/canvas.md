@@ -57,16 +57,13 @@ cvs.add_utility(
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
-# figure settings
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # figure settings
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
 
-# italic x and y
-cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
-# three curves around the optimum
-cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")  # italic x and y
+cvs.add_utility(model, levels=levels.around(eq.utility, n=3))  # three curves around the optimum
 cvs.save("add_utility.png")
 ```
 
@@ -89,13 +86,10 @@ Draw the budget line $p_x x + p_y y = I$.
 ```python
 from utility_viz import Canvas, Config
 
-# figure settings
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # figure settings
 
-# italic x and y
-cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
-# the line and its feasible set
-cvs.add_budget(2.0, 3.0, 30.0, fill=True)
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")  # italic x and y
+cvs.add_budget(2.0, 3.0, 30.0, fill=True)  # the line and its feasible set
 cvs.save("add_budget.png")
 ```
 
@@ -117,18 +111,15 @@ Mark the optimal bundle returned by `solve()`.
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
-# figure settings
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # figure settings
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
 
-# italic x and y
-cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")  # italic x and y
 cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
 cvs.add_budget(2.0, 3.0, 30.0, fill=True)
-# the optimum and dashed guides
-cvs.add_equilibrium(eq)
+cvs.add_equilibrium(eq)  # the optimum and dashed guides
 cvs.save("add_equilibrium.png")
 ```
 
@@ -151,19 +142,16 @@ expansion path or a fixed consumption ratio.
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
-# figure settings
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # figure settings
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
 
-# italic x and y
-cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")  # italic x and y
 cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
 cvs.add_budget(2.0, 3.0, 30.0)
 cvs.add_equilibrium(eq)
-# a ray through the optimum
-cvs.add_ray(eq.y / eq.x)
+cvs.add_ray(eq.y / eq.x)  # a ray through the optimum
 cvs.save("add_ray.png")
 ```
 
@@ -185,25 +173,18 @@ Mark any point, such as a bundle to compare with the optimum.
 from utility_viz import Canvas, Config, Label, levels, solve
 from utility_viz.models import CobbDouglas
 
-# figure settings
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # figure settings
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
 
-# italic x and y
-cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
-# one indifference curve u = 5
-cvs.add_utility(model, levels=[5.0])
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")  # italic x and y
+cvs.add_utility(model, levels=[5.0])  # one indifference curve u = 5
 cvs.add_budget(2.0, 3.0, 30.0)
 # it cuts the budget line twice
 # a Label puts text by the point
-cvs.add_point(
-    3.17, 7.89, label=Label(text="A", position="top-right")
-)
-cvs.add_point(
-    11.83, 2.11, label=Label(text="B", position="top-right")
-)
+cvs.add_point(3.17, 7.89, label=Label(text="A", position="top-right"))
+cvs.add_point(11.83, 2.11, label=Label(text="B", position="top-right"))
 cvs.save("add_point.png")
 ```
 
@@ -227,18 +208,15 @@ format given by its extension ([Export](export.md#sec-export)) and releases the
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
-# figure settings
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # figure settings
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
 
-# italic x and y
-cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")  # italic x and y
 cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
 cvs.add_budget(2.0, 3.0, 30.0, fill=True)
-# equilibrium with the expansion path
-cvs.add_equilibrium(eq, show_ray=True)
+cvs.add_equilibrium(eq, show_ray=True)  # equilibrium with the expansion path
 cvs.save("show_save.png")
 ```
 
@@ -275,15 +253,9 @@ import matplotlib.pyplot as plt
 
 from utility_viz import Canvas, Config, LineStyle
 
-# figure settings
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # figure settings
 
-styles = [
-    LineStyle.SOLID,
-    LineStyle.DASHED,
-    LineStyle.DOTTED,
-    LineStyle.DASHDOT,
-]
+styles = [LineStyle.SOLID, LineStyle.DASHED, LineStyle.DOTTED, LineStyle.DASHDOT]
 
 fig, axes = plt.subplots(1, 4, figsize=(7.6, 2.0))
 for ax, style in zip(axes, styles):
@@ -327,15 +299,9 @@ import matplotlib.pyplot as plt
 
 from utility_viz import ArrowStyle, Canvas, Config
 
-# figure settings
-Config.load("manual.toml").use()
+Config.load("manual.toml").use()  # figure settings
 
-styles = [
-    ArrowStyle.SIMPLE,
-    ArrowStyle.TRIANGLE,
-    ArrowStyle.FANCY,
-    ArrowStyle.WEDGE,
-]
+styles = [ArrowStyle.SIMPLE, ArrowStyle.TRIANGLE, ArrowStyle.FANCY, ArrowStyle.WEDGE]
 
 fig, axes = plt.subplots(1, 4, figsize=(7.6, 2.0))
 for ax, style in zip(axes, styles):
@@ -417,8 +383,7 @@ cvs.add_equilibrium(
     label=Label(position="bottom-left", offset=8),
 )
 cvs.add_point(
-    12,
-    2,
+    12, 2,
     marker=Marker(color="black", shape="D"),
     label=Label(text="A", position="left", fontsize=14),
 )
@@ -435,9 +400,7 @@ Colour and opacity of a shaded area. `alpha` is a compatible shorthand for
 from utility_viz import Fill
 
 cvs.add_budget(
-    2,
-    3,
-    30,
+    2, 3, 30,
     fill=Fill(color="lightgrey", opacity=0.4),
 )
 ```
@@ -449,11 +412,9 @@ cvs.add_budget(
 The `add_*` methods can be chained, ending with `save()`:
 
 ```python
-Canvas(x_max=20, y_max=15).add_utility(
-    model, levels=lvls
-).add_budget(2.0, 3.0, 30.0, fill=True).add_equilibrium(
-    eq, show_ray=True
-).save(
-    "figure.png"
-)
+Canvas(x_max=20, y_max=15) \
+    .add_utility(model, levels=lvls) \
+    .add_budget(2.0, 3.0, 30.0, fill=True) \
+    .add_equilibrium(eq, show_ray=True) \
+    .save("figure.png")
 ```

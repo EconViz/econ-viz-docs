@@ -203,11 +203,8 @@ degree. By [de Casteljau](curves.md#thm-casteljau) both strategies compute the s
 from bezierkit import BezierCurve
 from bezierkit.bezier.evaluation import BernsteinEvaluator
 
-fast = BezierCurve(
-    curve.control_points, evaluator=BernsteinEvaluator()
-)
-# Point(coords=(2.0, 1.5)), as with the default
-print(fast.at(0.5))
+fast = BezierCurve(curve.control_points, evaluator=BernsteinEvaluator())
+print(fast.at(0.5))   # Point(coords=(2.0, 1.5)), as with the default
 ```
 
 The repository's `benchmarks/` directory compares the two on batches of 400,

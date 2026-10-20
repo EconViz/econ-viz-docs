@@ -1,6 +1,6 @@
 ---
 seo_title: "繪製經濟學圖形的 Python 套件"
-description: "EconViz 是一組開源 Python 套件，用來繪製經濟學圖形：utility-viz、principle-viz、mosaickit 與 bezierkit。"
+description: "EconViz 是一組用於經濟學圖形、幾何、字體排版與動畫的開源 Python 套件。"
 ---
 
 <h1 class="ev-visually-hidden">EconViz：繪製經濟學圖形的 Python 套件</h1>
@@ -21,7 +21,7 @@ description: "EconViz 是一組開源 Python 套件，用來繪製經濟學圖�
 
 ## 模組
 
-EconViz 由四個套件組成：兩個負責繪製經濟學圖形，另外兩個是它們共用的通用元件。
+EconViz 由六個套件組成：兩個負責繪製經濟學圖形，另外四個提供共用的幾何、場景、字體排版與動畫功能。
 
 ### 經濟學套件
 
@@ -55,7 +55,7 @@ EconViz 由四個套件組成：兩個負責繪製經濟學圖形，另外兩個
 
 ### 底層套件
 
-兩個通用的基礎元件，由經濟學套件共用。
+四個通用的基礎元件，由經濟學套件共用。
 
 <div class="grid cards ev-package-cards" markdown>
 
@@ -80,5 +80,25 @@ EconViz 由四個套件組成：兩個負責繪製經濟學圖形，另外兩個
     目前的穩定版本為 1.0.1。
 
     [:octicons-arrow-right-24: bezierkit](bezierkit/index.md)
+
+-   :material-format-font: **glyphkit**
+
+    與繪圖端無關的字體選擇、Unicode 塑形、文字與數學式排版、字形輪廓，以及可攜字體子集。
+
+    ```bash
+    uv add --prerelease allow glyphkit
+    ```
+
+    [:octicons-arrow-right-24: glyphkit](glyphkit/index.md)
+
+-   :material-animation-play: **kinetickit**
+
+    可重現的 2D 與 3D 動畫，並可輸出動態 SVG、串流 GIF 與互動 HTML。
+
+    ```bash
+    uv add --prerelease allow "kinetickit[studio]"
+    ```
+
+    [:octicons-arrow-right-24: kinetickit](kinetickit/index.md)
 
 </div>

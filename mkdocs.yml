@@ -1,6 +1,6 @@
 site_name: EconViz
 site_url: https://econ-viz.org
-site_description: "Open-source Python packages for economics diagrams: utility-viz, principle-viz, mosaickit and bezierkit."
+site_description: "Open-source Python packages for economics diagrams, geometry, typography, and animation."
 site_author: Pin Yue Sung
 repo_url: https://github.com/EconViz
 repo_name: EconViz
@@ -130,7 +130,7 @@ plugins:
         - locale: zh-TW
           name: 繁體中文
           build: true
-          site_description: "用 Python 繪製經濟學圖形的開源套件：utility-viz、principle-viz、mosaickit 與 bezierkit。"
+          site_description: "用於經濟學圖形、幾何、字體排版與動畫的開源 Python 套件。"
           copyright: >-
             &copy; 2026 Pin Yue Sung ·
             <a href="#__consent">變更 Cookie 設定</a>
@@ -196,6 +196,13 @@ plugins:
             "Level sets": "等值線"
             "Sampling and export": "取樣與匯出"
             "Approximation proofs": "近似方法的證明"
+            "Fonts and shaping": "字體與塑形"
+            "Text layout and mathematics": "文字與數學式排版"
+            "Outlines, subsets, and portable data": "字形輪廓、字體子集與可攜資料"
+            "Scenes and motion": "場景與動作"
+            "Output formats": "輸出格式"
+            "Typography and accessibility": "字體與無障礙資訊"
+            "Migrating animation code": "遷移既有動畫程式"
             Home: 首頁
             Getting Started: 入門
             Markets & Welfare: 市場與福利
@@ -231,6 +238,7 @@ plugins:
             Analysis: 分析
             LaTeX Parsing: LaTeX 解析
             Project: 專案
+            Reproducibility: 可重現性
             Changelog: 更新紀錄
             References: 參考文獻
             PDF Manual: PDF 手冊
@@ -245,12 +253,19 @@ plugins:
             Fitting: 擬合
             Level Sets: 等值線
             Sampling & Export: 取樣與匯出
+            Fonts & Shaping: 字體與塑形
+            Text & Math: 文字與數學式
+            Outlines & Embedding: 字形輪廓與嵌入
+            Scenes & Motion: 場景與動作
+            Output Formats: 輸出格式
+            Typography & Accessibility: 字體與無障礙資訊
+            Migrating Animation: 遷移動畫程式
         - locale: zh-CN
           name: 简体中文
           build: true
           theme:
             language: zh
-          site_description: "用 Python 绘制经济学图形的开源包：utility-viz、principle-viz、mosaickit 与 bezierkit。"
+          site_description: "用于经济学图形、几何、字体排版与动画的开源 Python 包。"
           copyright: >-
             &copy; 2026 Pin Yue Sung ·
             <a href="#__consent">更改 Cookie 设置</a>
@@ -316,6 +331,13 @@ plugins:
             "Level sets": "等值线"
             "Sampling and export": "采样与导出"
             "Approximation proofs": "近似方法的证明"
+            "Fonts and shaping": "字体与塑形"
+            "Text layout and mathematics": "文字与数学式排版"
+            "Outlines, subsets, and portable data": "字形轮廓、字体子集与可移植数据"
+            "Scenes and motion": "场景与动作"
+            "Output formats": "输出格式"
+            "Typography and accessibility": "字体与无障碍信息"
+            "Migrating animation code": "迁移现有动画程序"
             Home: 首页
             Getting Started: 入门
             Markets & Welfare: 市场与福利
@@ -351,6 +373,7 @@ plugins:
             Analysis: 分析
             LaTeX Parsing: LaTeX 解析
             Project: 项目
+            Reproducibility: 可复现性
             Changelog: 更新日志
             References: 参考文献
             PDF Manual: PDF 手册
@@ -365,6 +388,13 @@ plugins:
             Fitting: 拟合
             Level Sets: 等值线
             Sampling & Export: 采样与导出
+            Fonts & Shaping: 字体与塑形
+            Text & Math: 文字与数学式
+            Outlines & Embedding: 字形轮廓与嵌入
+            Scenes & Motion: 场景与动作
+            Output Formats: 输出格式
+            Typography & Accessibility: 字体与无障碍信息
+            Migrating Animation: 迁移动画程序
   - redirects:
       redirect_maps:
         getting-started/cli.md: utility-viz/getting-started/cli.md
@@ -521,3 +551,47 @@ nav:
           - Approximation proofs: bezierkit/project/proofs-approximation.md
           - Change history: bezierkit/project/changelog.md
           - References: bezierkit/project/references.md
+  - glyphkit:
+      - Overview: glyphkit/index.md
+      - Getting Started:
+          - Introduction: glyphkit/guides/introduction.md
+          - Installation: glyphkit/installation.md
+          - Quick start: glyphkit/quickstart.md
+      - Fonts & Shaping:
+          - Fonts and shaping: glyphkit/guides/fonts-shaping.md
+      - Text & Math:
+          - Text layout and mathematics: glyphkit/guides/layout-math.md
+          - Coordinates, metrics, and bounds: glyphkit/guides/coordinate-metrics.md
+          - OpenType mathematics layout: glyphkit/guides/math-layout-model.md
+          - Line construction and spacing: glyphkit/guides/line-layout-algorithms.md
+      - Outlines & Embedding:
+          - Outlines, subsets, and portable data: glyphkit/guides/outlines-embedding.md
+          - Bézier outline geometry: glyphkit/guides/bezier-geometry.md
+      - Reproducibility:
+          - Reproducibility and renderer contracts: glyphkit/guides/reproducibility.md
+      - Project:
+          - Change history: glyphkit/project/changelog.md
+          - References: glyphkit/project/references.md
+  - kinetickit:
+      - Overview: kinetickit/index.md
+      - Getting Started:
+          - Introduction: kinetickit/guides/introduction.md
+          - Installation: kinetickit/installation.md
+          - Quick start: kinetickit/quickstart.md
+      - Scenes & Motion:
+          - Scenes and motion: kinetickit/guides/scenes-motion.md
+          - Time, easing, and motion algebra: kinetickit/guides/time-easing.md
+          - Interpolation and transforms: kinetickit/guides/interpolation-transforms.md
+          - Path, mesh, and surface morphing: kinetickit/guides/morphing.md
+      - 3D Geometry:
+          - Camera geometry and projection: kinetickit/guides/projection.md
+      - Output Formats:
+          - Output formats: kinetickit/guides/outputs.md
+          - Frame sampling and encoding: kinetickit/guides/sampling-encoding.md
+      - Typography & Accessibility:
+          - Typography and accessibility: kinetickit/guides/typography-accessibility.md
+      - Migrating Animation:
+          - Migrating animation code: kinetickit/migration.md
+      - Project:
+          - Change history: kinetickit/project/changelog.md
+          - References: kinetickit/project/references.md

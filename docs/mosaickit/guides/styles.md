@@ -170,18 +170,9 @@ the palette. A Python `Palette` replaces the default palette, so build it
 from `DEFAULT_PALETTE.colors` to keep the names the built-in theme uses:
 
 ```python
-from mosaickit import (
-    DEFAULT_PALETTE,
-    Canvas,
-    Config,
-    Palette,
-    use_config,
-)
+from mosaickit import DEFAULT_PALETTE, Canvas, Config, Palette, use_config
 
-brand = Palette(
-    "brand", {**DEFAULT_PALETTE.colors, "blue": "#0072B2"}
-)
+brand = Palette("brand", {**DEFAULT_PALETTE.colors, "blue": "#0072B2"})
 with use_config(Config(palette=brand)):
-    # primary now draws in #0072B2
-    canvas = Canvas()
+    canvas = Canvas()          # primary now draws in #0072B2
 ```
