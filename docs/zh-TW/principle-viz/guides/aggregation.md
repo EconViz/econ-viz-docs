@@ -98,7 +98,7 @@ fig.save("market_demand.png")
 
 ![水平加總的市場需求。](../../../assets/principle-viz/agora/aggregation/market_demand.svg){ .ev-figure-lg }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/aggregation/market_demand.svg" download aria-label="下載圖檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載圖檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/aggregation/aggregation.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>水平加總的市場需求。</figcaption>
 
@@ -110,7 +110,7 @@ fig.save("market_demand.png")
 
 ![合併兩張離散需求表。](../../../assets/principle-viz/agora/aggregation/discrete_market_demand.svg){ .ev-figure-lg }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/aggregation/discrete_market_demand.svg" download aria-label="下載圖檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載圖檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/aggregation/aggregation.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>合併兩張離散需求表。</figcaption>
 

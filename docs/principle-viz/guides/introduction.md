@@ -57,4 +57,4 @@ On first use, read [Quick start](../quickstart.md#sec-quickstart), [Linear marke
 order. Each later chapter covers one topic: the calculation first, then the
 figure. For the options of a specific command, go to [Command-line interface](../cli.md#sec-cli).
 
-The figures of this manual come as one zip, sorted into folders by topic, with the script that draws them: [principle-viz-figures.zip](https://econ-viz.org/assets/principle-viz/agora/principle-viz-figures.zip).
+The scripts that draw the figures of this manual come as one zip, sorted by topic: [principle-viz-examples.zip](https://econ-viz.org/assets/principle-viz/agora/principle-viz-examples.zip).

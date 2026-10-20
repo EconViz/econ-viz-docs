@@ -113,7 +113,7 @@ An edge has a crossing exactly when its two corners differ in being high.
 
 ![Saddle cell, centre (a) high, (b) low; filled corners have $F \ge c$.](../../assets/bezierkit/agora/implicit/saddle.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/bezierkit/agora/implicit/saddle.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/bezierkit/agora/implicit/implicit.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>Saddle cell, centre (a) high, (b) low; filled corners have $F \ge c$.</figcaption>
 
@@ -174,7 +174,7 @@ print(len(contours.for_level(4)[0].segments))
 
 ![$x^2 y = c$ for $c = 1, 2, 4$, inner to outer.](../../assets/bezierkit/agora/implicit/contours.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/bezierkit/agora/implicit/contours.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/bezierkit/agora/implicit/implicit.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>$x^2 y = c$ for $c = 1, 2, 4$, inner to outer.</figcaption>
 

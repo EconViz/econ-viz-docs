@@ -40,4 +40,4 @@ seo_title: "簡介"
 
 初次使用時，依序閱讀[快速開始](../quickstart.md#sec-quickstart)、[線性市場](markets.md#sec-markets)與[圖形](figures.md#sec-figures)。之後每章說明一個主題，先介紹計算，再介紹圖形。查詢特定指令的選項時，可直接前往[命令列介面](../cli.md#sec-cli)。
 
-本手冊的圖依主題分資料夾，連同繪製它們的腳本，可一次下載：[principle-viz-figures.zip](https://econ-viz.org/assets/principle-viz/agora/principle-viz-figures.zip)。
+繪製本手冊各圖的腳本依主題分類，可一次下載：[principle-viz-examples.zip](https://econ-viz.org/assets/principle-viz/agora/principle-viz-examples.zip)。

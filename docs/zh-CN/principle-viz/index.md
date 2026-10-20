@@ -116,8 +116,8 @@ uv add principle-viz
 
 <!-- /agora-navigation -->
 
-## 图
+## 示例
 
-手册与这些页面的图，连同绘制它们的脚本，已按主题分文件夹，可一次下载。
+手册与这些页面各图的绘制脚本，按主题分类，可一次下载。
 
-[下载全部图片](../../assets/principle-viz/agora/principle-viz-figures.zip){ .md-button download="" }
+[下载全部示例](../../assets/principle-viz/agora/principle-viz-examples.zip){ .md-button download="" }

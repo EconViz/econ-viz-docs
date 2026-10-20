@@ -22,7 +22,7 @@ seo_title: "區域標籤與點標籤"
 
 ![區域內標籤與引線標註。](../../../assets/mosaickit/agora/labels/regions.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/labels/regions.svg" download aria-label="下載圖檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載圖檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/labels/labels.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>區域內標籤與引線標註。</figcaption>
 
@@ -48,7 +48,7 @@ seo_title: "區域標籤與點標籤"
 
 ![方向的嘗試順序。](../../../assets/mosaickit/agora/geometry/candidates.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/geometry/candidates.svg" download aria-label="下載圖檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載圖檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/geometry/geometry.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>方向的嘗試順序。</figcaption>
 
@@ -60,7 +60,7 @@ seo_title: "區域標籤與點標籤"
 
 ![點旁的點標籤。](../../../assets/mosaickit/agora/labels/points.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/labels/points.svg" download aria-label="下載圖檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載圖檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/labels/labels.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>點旁的點標籤。</figcaption>
 

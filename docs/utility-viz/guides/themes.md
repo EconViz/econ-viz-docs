@@ -79,7 +79,7 @@ cvs.save("theme_default.png")
 
 ![The `default` theme](../../assets/utility-viz/agora/themes/default.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/themes/default.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a><a class="ev-download" href="../../assets/utility-viz/agora/themes/default.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/themes/default.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>The `default` theme</figcaption>
 
@@ -120,7 +120,7 @@ cvs.save("theme_nord.png")
 
 ![The `nord` theme](../../assets/utility-viz/agora/themes/nord.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/themes/nord.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a><a class="ev-download" href="../../assets/utility-viz/agora/themes/nord.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/themes/nord.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>The `nord` theme</figcaption>
 
@@ -161,7 +161,7 @@ cvs.save("theme_paper.png")
 
 ![The `paper` theme](../../assets/utility-viz/agora/themes/paper.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/themes/paper.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a><a class="ev-download" href="../../assets/utility-viz/agora/themes/paper.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/themes/paper.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>The `paper` theme</figcaption>
 
@@ -202,7 +202,7 @@ cvs.save("theme_monochrome.png")
 
 ![The `monochrome` theme](../../assets/utility-viz/agora/themes/monochrome.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/themes/monochrome.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a><a class="ev-download" href="../../assets/utility-viz/agora/themes/monochrome.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/themes/monochrome.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>The `monochrome` theme</figcaption>
 
@@ -243,7 +243,7 @@ cvs.save("theme_presentation.png")
 
 ![The `presentation` theme](../../assets/utility-viz/agora/themes/presentation.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/themes/presentation.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a><a class="ev-download" href="../../assets/utility-viz/agora/themes/presentation.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/themes/presentation.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>The `presentation` theme</figcaption>
 

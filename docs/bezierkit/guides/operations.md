@@ -114,7 +114,7 @@ is derived from the blossom) and [Farin (2002)](../project/references.md#farin20
 
 ![Splitting the cubic at $t = 0.4$.](../../assets/bezierkit/agora/curves/split.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/bezierkit/agora/curves/split.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/bezierkit/agora/curves/curves.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>Splitting the cubic at $t = 0.4$.</figcaption>
 

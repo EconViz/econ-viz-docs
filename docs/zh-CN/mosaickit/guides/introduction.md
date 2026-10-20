@@ -39,4 +39,4 @@ seo_title: "简介"
 
 初次使用请先读[快速入门](../quickstart.md#sec-quickstart)、[画布与场景](canvas.md#sec-canvas)与[图层与坐标轴](layers.md#sec-layers)。本手册的图都是 `mosaickit` 自己的输出：每张图由它所示范的画布或网格绘制，并以印在此处的尺寸存成 PDF。
 
-本手册的图按主题分文件夹，连同绘制它们的脚本，可一次下载：[mosaickit-figures.zip](https://econ-viz.org/assets/mosaickit/agora/mosaickit-figures.zip)。
+绘制本手册各图的脚本按主题分类，可一次下载：[mosaickit-examples.zip](https://econ-viz.org/assets/mosaickit/agora/mosaickit-examples.zip)。

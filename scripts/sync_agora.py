@@ -29,8 +29,6 @@ def _icon(path):
     return ('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="'+path+'" fill="none" stroke="currentColor" '
             'stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>')
 SCRIPT_ICON=_icon('M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16')
-IMAGE_ICON=_icon('M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01')
-DOWNLOAD_IMAGE = {'en': 'Download the image', 'zh-TW': '下載圖檔', 'zh-CN': '下载图片'}
 KEEP_SITE_PAGE = set()
 # Site-only material appended to a converted page: scripts/supplements/<name>.<locale>.md. The animation page's GIF
 # gallery is drawn by scripts/animation_figures.py, which has no place in the manual.
@@ -321,16 +319,19 @@ class Converter:
             size='ev-figure-lg' if width>=60 else 'ev-figure-sm'  # wide figures keep more of their height
             base_name=re.sub(r'\.zh-[A-Z]+$','',original.stem)
             def script_of(edition):
-                return original.with_name(base_name+('' if edition=='en' else '.'+edition)+'.py')
+                own=original.with_name(base_name+('' if edition=='en' else '.'+edition)+'.py')
+                if own.exists(): return own
+                english=original.with_name(base_name+'.py')
+                return english if english.exists() else original.with_name(original.parent.name+'.py')  # else the group's script
             buttons=[]
             if script_of(self.locale).exists():  # the code that drew the figure, offered on the figure
                 for edition in LANGS:
-                    shutil.copyfile(script_of(edition),dest.with_name(base_name+('' if edition=='en' else '.'+edition)+'.py'))
-                href=os.path.relpath(dest.with_name(base_name+('' if self.locale=='en' else '.'+self.locale)+'.py'),pagepath.parent)
+                    source=script_of(edition)
+                    if source.exists(): shutil.copyfile(source,dest.with_name(source.name))
+                href=os.path.relpath(dest.with_name(script_of(self.locale).name),pagepath.parent)
                 buttons.append((href,DOWNLOAD_SCRIPT[self.locale],SCRIPT_ICON))
-            buttons.append((url,DOWNLOAD_IMAGE[self.locale],IMAGE_ICON))
-            button='<div class="ev-downloads">'+''.join(
-                f'<a class="ev-download" href="{h}" download aria-label="{l}">{icon}<span>{l}</span></a>' for h,l,icon in buttons)+'</div>\n\n'
+            button=('<div class="ev-downloads">'+''.join(
+                f'<a class="ev-download" href="{h}" download aria-label="{l}">{icon}<span>{l}</span></a>' for h,l,icon in buttons)+'</div>\n\n') if buttons else ''
             return (f'\n\n<figure class="ev-fig" markdown>\n\n![{caption}]({url}){{ .{size} }}\n\n{button}'
                     f'<figcaption markdown>{caption}</figcaption>\n\n</figure>\n\n')
         if name=='api':
@@ -471,9 +472,6 @@ def build_example_zips(agora:Path)->None:
             wanted=parts[-1]==edition if edition!='en' else not parts[-1].startswith('zh-')
             if wanted:
                 files[f'{script.parent.name}/{parts[0]}.py']=script
-                image=script.with_name(parts[0]+suffix+'.svg')
-                if not image.exists(): image=script.with_name(parts[0]+'.svg')
-                if image.exists(): files[f'{script.parent.name}/{parts[0]}.svg']=image
         target=out/f'utility-viz-examples-{edition}.zip'
         with zipfile.ZipFile(target,'w',zipfile.ZIP_DEFLATED) as archive:
             for name,source in files.items():
@@ -484,19 +482,18 @@ def build_example_zips(agora:Path)->None:
 
 
 def build_figure_zips(agora:Path)->None:
-    """One zip per other package: the figures sorted into folders by topic, with the script that draws them."""
+    """One zip per other package: each figure group's script, sorted by topic, with the settings it reads."""
     import zipfile
     for name in ('principle-viz','mosaickit','bezierkit'):
         package=agora/'packages'/name
-        files={}
-        for figure in sorted((package/'figures').rglob('*')):
-            if figure.suffix in ('.svg','.pdf','.tex'): files[f'{figure.parent.name}/{figure.name}']=figure
-        files['make_figures.py']=package/'scripts'/'make_figures.py'
+        files={f'config/{f.name}':f for f in sorted((package/'config').glob('*.toml'))}
+        for script in sorted((package/'figures').rglob('*.py')):
+            files[f'scripts/{script.name}']=script
         out=ROOT/'docs/assets'/name/'agora'; out.mkdir(parents=True,exist_ok=True)
-        target=out/f'{name}-figures.zip'
+        target=out/f'{name}-examples.zip'
         with zipfile.ZipFile(target,'w',zipfile.ZIP_DEFLATED) as archive:
             for member,source in files.items():
-                info=zipfile.ZipInfo(f'{name}-figures/{member}',date_time=(2026,1,1,0,0,0))
+                info=zipfile.ZipInfo(f'{name}-examples/{member}',date_time=(2026,1,1,0,0,0))
                 info.compress_type=zipfile.ZIP_DEFLATED; info.external_attr=0o644<<16
                 archive.writestr(info,source.read_bytes())
         print(f'  {target.relative_to(ROOT)}: {len(files)} files')

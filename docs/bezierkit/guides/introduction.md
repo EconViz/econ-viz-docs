@@ -82,4 +82,4 @@ On first use, read [Quick start](../quickstart.md#sec-quickstart) and [Bézier c
 manual are themselves `bezierkit` output: every curve in them was
 written by the TikZ exporter of [Sampling and export](export.md#sec-export) and compiled with LaTeX.
 
-The figures of this manual come as one zip, sorted into folders by topic, with the script that draws them: [bezierkit-figures.zip](https://econ-viz.org/assets/bezierkit/agora/bezierkit-figures.zip).
+The scripts that draw the figures of this manual come as one zip, sorted by topic: [bezierkit-examples.zip](https://econ-viz.org/assets/bezierkit/agora/bezierkit-examples.zip).

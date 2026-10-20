@@ -57,7 +57,7 @@ cvs.save("ces.png")
 
 ![CES 曲线](../../../assets/utility-viz/agora/models/ces.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/models/ces.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a><a class="ev-download" href="../../../assets/utility-viz/agora/models/ces.svg" download aria-label="下载图片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载图片</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/models/ces.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>CES 曲线</figcaption>
 
@@ -96,7 +96,7 @@ cvs.save("translog.png")
 
 ![Translog 示例](../../../assets/utility-viz/agora/models/translog.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/models/translog.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a><a class="ev-download" href="../../../assets/utility-viz/agora/models/translog.svg" download aria-label="下载图片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载图片</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/models/translog.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>Translog 示例</figcaption>
 
@@ -147,7 +147,7 @@ cvs.save("leontief.png")
 
 ![完全互补射线](../../../assets/utility-viz/agora/models/leontief.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/models/leontief.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a><a class="ev-download" href="../../../assets/utility-viz/agora/models/leontief.svg" download aria-label="下载图片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载图片</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/models/leontief.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>完全互补射线</figcaption>
 
@@ -186,7 +186,7 @@ cvs.save("perfect_substitutes.png")
 
 ![完全替代角解](../../../assets/utility-viz/agora/models/perfect_substitutes.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/models/perfect_substitutes.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a><a class="ev-download" href="../../../assets/utility-viz/agora/models/perfect_substitutes.svg" download aria-label="下载图片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载图片</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/models/perfect_substitutes.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>完全替代角解</figcaption>
 
@@ -229,7 +229,7 @@ cvs.save("maximum.png")
 
 ![最大值效用](../../../assets/utility-viz/agora/models/maximum.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/models/maximum.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a><a class="ev-download" href="../../../assets/utility-viz/agora/models/maximum.svg" download aria-label="下载图片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载图片</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/models/maximum.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>最大值效用</figcaption>
 
@@ -274,7 +274,7 @@ cvs.save("quasi_linear.png")
 
 ![准线性偏好](../../../assets/utility-viz/agora/models/quasi_linear.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/models/quasi_linear.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a><a class="ev-download" href="../../../assets/utility-viz/agora/models/quasi_linear.svg" download aria-label="下载图片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载图片</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/models/quasi_linear.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>准线性偏好</figcaption>
 
@@ -315,7 +315,7 @@ cvs.save("haagsma.png")
 
 ![$\gamma_y = 10$ 的 Haagsma](../../../assets/utility-viz/agora/models/haagsma.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/models/haagsma.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a><a class="ev-download" href="../../../assets/utility-viz/agora/models/haagsma.svg" download aria-label="下载图片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载图片</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/models/haagsma.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>$\gamma_y = 10$ 的 Haagsma</figcaption>
 
@@ -354,7 +354,7 @@ cvs.save("stone_geary.png")
 
 ![Stone-Geary](../../../assets/utility-viz/agora/models/stone_geary.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/models/stone_geary.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a><a class="ev-download" href="../../../assets/utility-viz/agora/models/stone_geary.svg" download aria-label="下载图片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载图片</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/models/stone_geary.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>Stone-Geary</figcaption>
 
@@ -400,7 +400,7 @@ cvs.save("satiation.png")
 
 ![饱和偏好](../../../assets/utility-viz/agora/models/satiation.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/models/satiation.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a><a class="ev-download" href="../../../assets/utility-viz/agora/models/satiation.svg" download aria-label="下载图片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载图片</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/utility-viz/agora/models/satiation.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>饱和偏好</figcaption>
 

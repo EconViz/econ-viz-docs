@@ -76,7 +76,7 @@ cvs.save("add_utility.png")
 
 ![Three indifference curves](../../assets/utility-viz/agora/canvas/add_utility.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/canvas/add_utility.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a><a class="ev-download" href="../../assets/utility-viz/agora/canvas/add_utility.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/canvas/add_utility.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>Three indifference curves</figcaption>
 
@@ -103,7 +103,7 @@ cvs.save("add_budget.png")
 
 ![Budget line and shading](../../assets/utility-viz/agora/canvas/add_budget.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/canvas/add_budget.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a><a class="ev-download" href="../../assets/utility-viz/agora/canvas/add_budget.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/canvas/add_budget.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>Budget line and shading</figcaption>
 
@@ -136,7 +136,7 @@ cvs.save("add_equilibrium.png")
 
 ![Equilibrium and drop lines](../../assets/utility-viz/agora/canvas/add_equilibrium.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/canvas/add_equilibrium.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a><a class="ev-download" href="../../assets/utility-viz/agora/canvas/add_equilibrium.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/canvas/add_equilibrium.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>Equilibrium and drop lines</figcaption>
 
@@ -171,7 +171,7 @@ cvs.save("add_ray.png")
 
 ![Expansion-path ray](../../assets/utility-viz/agora/canvas/add_ray.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/canvas/add_ray.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a><a class="ev-download" href="../../assets/utility-viz/agora/canvas/add_ray.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/canvas/add_ray.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>Expansion-path ray</figcaption>
 
@@ -211,7 +211,7 @@ cvs.save("add_point.png")
 
 ![Indifference curve cutting the budget line](../../assets/utility-viz/agora/canvas/add_point.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/canvas/add_point.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a><a class="ev-download" href="../../assets/utility-viz/agora/canvas/add_point.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/canvas/add_point.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>Indifference curve cutting the budget line</figcaption>
 
@@ -248,7 +248,7 @@ cvs.save("show_save.png")
 
 ![The complete canvas](../../assets/utility-viz/agora/canvas/show_save.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/canvas/show_save.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a><a class="ev-download" href="../../assets/utility-viz/agora/canvas/show_save.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/canvas/show_save.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>The complete canvas</figcaption>
 
@@ -308,7 +308,7 @@ fig.savefig("line_styles.png", dpi=160)
 
 ![The four line styles](../../assets/utility-viz/agora/canvas/line_styles.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/canvas/line_styles.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a><a class="ev-download" href="../../assets/utility-viz/agora/canvas/line_styles.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/canvas/line_styles.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>The four line styles</figcaption>
 
@@ -360,7 +360,7 @@ fig.savefig("arrow_styles.png", dpi=160)
 
 ![The four arrow styles](../../assets/utility-viz/agora/canvas/arrow_styles.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/canvas/arrow_styles.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a><a class="ev-download" href="../../assets/utility-viz/agora/canvas/arrow_styles.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/canvas/arrow_styles.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>The four arrow styles</figcaption>
 

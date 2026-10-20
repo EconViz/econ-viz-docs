@@ -53,7 +53,7 @@ braces the gap: "Shortage" below a ceiling, "Surplus" above a floor.
 
 ![A binding price ceiling.](../../assets/principle-viz/agora/controls/ceiling.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/controls/ceiling.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/controls/controls.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>A binding price ceiling.</figcaption>
 
@@ -65,7 +65,7 @@ braces the gap: "Shortage" below a ceiling, "Surplus" above a floor.
 
 ![A binding price floor.](../../assets/principle-viz/agora/controls/floor.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/controls/floor.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/controls/controls.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>A binding price floor.</figcaption>
 
@@ -95,7 +95,7 @@ fig.add_welfare(delta.policy)
 
 ![Welfare under a price ceiling of 3.5.](../../assets/principle-viz/agora/controls/ceiling_welfare.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/controls/ceiling_welfare.svg" download aria-label="Download the image"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the image</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/principle-viz/agora/controls/controls.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>Welfare under a price ceiling of 3.5.</figcaption>
 

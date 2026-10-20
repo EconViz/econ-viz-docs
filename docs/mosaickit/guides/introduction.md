@@ -67,4 +67,4 @@ Start with [Quick start](../quickstart.md#sec-quickstart), [Canvases and scenes]
 figure in this manual is `mosaickit` output, drawn by the canvas or
 grid it illustrates and saved as PDF at the printed size.
 
-The figures of this manual come as one zip, sorted into folders by topic, with the script that draws them: [mosaickit-figures.zip](https://econ-viz.org/assets/mosaickit/agora/mosaickit-figures.zip).
+The scripts that draw the figures of this manual come as one zip, sorted by topic: [mosaickit-examples.zip](https://econ-viz.org/assets/mosaickit/agora/mosaickit-examples.zip).

@@ -54,4 +54,4 @@ $$
 
 初次使用時，先讀[快速開始](../quickstart.md#sec-quickstart)與[Bézier 曲線](curves.md#sec-curves)。本手冊的圖本身就是 `bezierkit` 的輸出：每條曲線都由[取樣與匯出](export.md#sec-export)的 TikZ 匯出器寫出，再以 LaTeX 編譯。
 
-本手冊的圖依主題分資料夾，連同繪製它們的腳本，可一次下載：[bezierkit-figures.zip](https://econ-viz.org/assets/bezierkit/agora/bezierkit-figures.zip)。
+繪製本手冊各圖的腳本依主題分類，可一次下載：[bezierkit-examples.zip](https://econ-viz.org/assets/bezierkit/agora/bezierkit-examples.zip)。

@@ -46,7 +46,7 @@ print(result.corrective_tax, result.deadweight_loss)
 
 ![负外部性。](../../../assets/principle-viz/agora/failures/negative_externality.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/failures/negative_externality.svg" download aria-label="下载图片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载图片</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/failures/failures.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>负外部性。</figcaption>
 
@@ -58,7 +58,7 @@ print(result.corrective_tax, result.deadweight_loss)
 
 ![正外部性。](../../../assets/principle-viz/agora/failures/positive_externality.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/failures/positive_externality.svg" download aria-label="下载图片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载图片</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/failures/failures.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>正外部性。</figcaption>
 
@@ -82,7 +82,7 @@ print(result.corrective_tax, result.deadweight_loss)
 
 ![公共资源的过度使用。](../../../assets/principle-viz/agora/failures/common_resource.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/failures/common_resource.svg" download aria-label="下载图片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载图片</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/failures/failures.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>公共资源的过度使用。</figcaption>
 
@@ -121,7 +121,7 @@ print(
 
 ![边际利益的垂直加总。](../../../assets/principle-viz/agora/failures/public_good.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/failures/public_good.svg" download aria-label="下载图片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载图片</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/failures/failures.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>边际利益的垂直加总。</figcaption>
 

@@ -148,8 +148,8 @@ uv add bezierkit
 
 <!-- /agora-navigation -->
 
-## 圖
+## 範例
 
-手冊與這些頁面的圖，連同繪製它們的腳本，已依主題分資料夾，可一次下載。
+手冊與這些頁面各圖的繪製腳本，依主題分類，可一次下載。
 
-[下載全部圖檔](../../assets/bezierkit/agora/bezierkit-figures.zip){ .md-button download="" }
+[下載全部範例](../../assets/bezierkit/agora/bezierkit-examples.zip){ .md-button download="" }

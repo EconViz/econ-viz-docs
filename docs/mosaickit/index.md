@@ -116,8 +116,8 @@ The following chapters cover mosaickit 0.5.1.
 
 <!-- /agora-navigation -->
 
-## Figures
+## Examples
 
-The figures in the manual and on these pages come as one zip, sorted into folders by topic, with the script that draws them.
+The scripts that draw the figures in the manual and on these pages come as one zip, sorted by topic.
 
-[Download all figures](../assets/mosaickit/agora/mosaickit-figures.zip){ .md-button download="" }
+[Download all examples](../assets/mosaickit/agora/mosaickit-examples.zip){ .md-button download="" }
