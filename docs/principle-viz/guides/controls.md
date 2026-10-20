@@ -49,17 +49,23 @@ braces the gap: "Shortage" below a ceiling, "Surplus" above a floor.
 
 <span id="fig-ceiling"></span>
 
+<figure class="ev-fig" markdown>
+
 ![A binding price ceiling.](../../assets/principle-viz/agora/controls/ceiling.svg){ .ev-figure-sm }
 
-A binding price ceiling.
-{ .ev-caption }
+<figcaption markdown>A binding price ceiling.</figcaption>
+
+</figure>
 
 <span id="fig-floor"></span>
 
+<figure class="ev-fig" markdown>
+
 ![A binding price floor.](../../assets/principle-viz/agora/controls/floor.svg){ .ev-figure-sm }
 
-A binding price floor.
-{ .ev-caption }
+<figcaption markdown>A binding price floor.</figcaption>
+
+</figure>
 
 `outcome_from_control()` turns the result into a market outcome for the
 welfare functions of [Welfare](welfare.md#sec-welfare) (see [Welfare under a price ceiling of 3.5.](controls.md#fig-ceiling-welfare)):
@@ -81,10 +87,13 @@ fig.add_welfare(delta.policy)
 
 <span id="fig-ceiling-welfare"></span>
 
+<figure class="ev-fig" markdown>
+
 ![Welfare under a price ceiling of 3.5.](../../assets/principle-viz/agora/controls/ceiling_welfare.svg){ .ev-figure-sm }
 
-Welfare under a price ceiling of 3.5.
-{ .ev-caption }
+<figcaption markdown>Welfare under a price ceiling of 3.5.</figcaption>
+
+</figure>
 
 Under a price ceiling, the deadweight loss is the surplus of the units that
 are no longer traded, and part of the remaining surplus transfers from

@@ -156,10 +156,13 @@ seo_title: "配置幾何"
 
 <span id="fig-polylabel"></span>
 
+<figure class="ev-fig" markdown>
+
 ![極點、最大圓盤與形心。](../../../assets/mosaickit/agora/geometry/polylabel.svg){ .ev-figure-sm }
 
-極點、最大圓盤與形心。
-{ .ev-caption }
+<figcaption markdown>極點、最大圓盤與形心。</figcaption>
+
+</figure>
 
 三角形的極點就是內心，也就是三條角平分線的交點。配置時會以預設的一像素精度呼叫 `polylabel`，這比任何文字的擺放精度都更細。
 
@@ -180,7 +183,10 @@ seo_title: "配置幾何"
 
 <span id="fig-brace"></span>
 
+<figure class="ev-fig" markdown>
+
 ![大括號外形；右側跨距小於 $2 \delta$。](../../../assets/mosaickit/agora/geometry/brace.svg){ .ev-figure-sm }
 
-大括號外形；右側跨距小於 $2 \delta$。
-{ .ev-caption }
+<figcaption markdown>大括號外形；右側跨距小於 $2 \delta$。</figcaption>
+
+</figure>

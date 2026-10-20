@@ -52,17 +52,23 @@ at $Q^*$, and shade the deadweight loss (see [A negative externality.](failures.
 
 <span id="fig-neg-externality"></span>
 
+<figure class="ev-fig" markdown>
+
 ![A negative externality.](../../assets/principle-viz/agora/failures/negative_externality.svg){ .ev-figure-sm }
 
-A negative externality.
-{ .ev-caption }
+<figcaption markdown>A negative externality.</figcaption>
+
+</figure>
 
 <span id="fig-pos-externality"></span>
 
+<figure class="ev-fig" markdown>
+
 ![A positive externality.](../../assets/principle-viz/agora/failures/positive_externality.svg){ .ev-figure-sm }
 
-A positive externality.
-{ .ev-caption }
+<figcaption markdown>A positive externality.</figcaption>
+
+</figure>
 
 ## Common resources
 
@@ -85,10 +91,13 @@ deadweight loss. Name the curves $M B$ and $M P C$ in `add_curves()`. See
 
 <span id="fig-common-resource"></span>
 
+<figure class="ev-fig" markdown>
+
 ![Overuse of a common resource.](../../assets/principle-viz/agora/failures/common_resource.svg){ .ev-figure-sm }
 
-Overuse of a common resource.
-{ .ev-caption }
+<figcaption markdown>Overuse of a common resource.</figcaption>
+
+</figure>
 
 ## Public goods
 
@@ -126,7 +135,10 @@ and $Q^*$ on the quantity axis (see [The vertical sum of marginal benefits.](fai
 
 <span id="fig-public-good"></span>
 
+<figure class="ev-fig" markdown>
+
 ![The vertical sum of marginal benefits.](../../assets/principle-viz/agora/failures/public_good.svg){ .ev-figure-sm }
 
-The vertical sum of marginal benefits.
-{ .ev-caption }
+<figcaption markdown>The vertical sum of marginal benefits.</figcaption>
+
+</figure>

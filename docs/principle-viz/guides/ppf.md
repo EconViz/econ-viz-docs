@@ -56,10 +56,13 @@ ppf_canvas(result).save("ppf_points.png")
 
 <span id="fig-ppf"></span>
 
+<figure class="ev-fig" markdown>
+
 ![Efficient, inefficient and unattainable points.](../../assets/principle-viz/agora/ppf/points.svg){ .ev-figure-sm }
 
-Efficient, inefficient and unattainable points.
-{ .ev-caption }
+<figcaption markdown>Efficient, inefficient and unattainable points.</figcaption>
+
+</figure>
 
 <!-- api: agora.principle_viz.guides_ppf_4 -->
 
@@ -70,10 +73,13 @@ points. `ppf_growth_canvas()` draws both, named $P P F_0$ and $P P F_1$
 
 <span id="fig-ppf-growth"></span>
 
+<figure class="ev-fig" markdown>
+
 ![Growth of 20% in consumer goods and 10% in capital goods.](../../assets/principle-viz/agora/ppf/growth.svg){ .ev-figure-sm }
 
-Growth of 20% in consumer goods and 10% in capital goods.
-{ .ev-caption }
+<figcaption markdown>Growth of 20% in consumer goods and 10% in capital goods.</figcaption>
+
+</figure>
 
 ## Comparative advantage
 

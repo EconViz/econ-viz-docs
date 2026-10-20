@@ -27,7 +27,7 @@ import numpy as np
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CustomUtility
 
-# the settings behind this manual's figures
+# figure settings
 Config.load("manual.toml").use()
 
 # any array function works
@@ -43,10 +43,15 @@ cvs.add_equilibrium(eq)
 cvs.save("custom.png")
 ```
 
-![A custom model, $ln x + ln y$.](../../assets/utility-viz/agora/models/custom.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-A custom model, $ln x + ln y$. [Download the script](../../assets/utility-viz/agora/models/custom.py){ .ev-download download="" }
-{ .ev-caption }
+![A custom model $ln x + ln y$](../../assets/utility-viz/agora/models/custom.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../assets/utility-viz/agora/models/custom.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
+
+<figcaption markdown>A custom model $ln x + ln y$</figcaption>
+
+</figure>
 
 ### Many-good Cobb-Douglas
 
@@ -65,7 +70,7 @@ $$
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import MultiGoodCD
 
-# the settings behind this manual's figures
+# figure settings
 Config.load("manual.toml").use()
 
 # three goods with z held at 10
@@ -82,10 +87,15 @@ cvs.add_equilibrium(eq)
 cvs.save("multigood.png")
 ```
 
-![A three-good Cobb-Douglas model with $z = 10$ fixed.](../../assets/utility-viz/agora/models/multigood.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-A three-good Cobb-Douglas model with $z = 10$ fixed. [Download the script](../../assets/utility-viz/agora/models/multigood.py){ .ev-download download="" }
-{ .ev-caption }
+![A three-good Cobb-Douglas model with $z = 10$ fixed](../../assets/utility-viz/agora/models/multigood.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../assets/utility-viz/agora/models/multigood.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
+
+<figcaption markdown>A three-good Cobb-Douglas model with $z = 10$ fixed</figcaption>
+
+</figure>
 
 ### Backend-neutral scenes
 

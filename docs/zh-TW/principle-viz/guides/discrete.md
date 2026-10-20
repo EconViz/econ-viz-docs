@@ -65,7 +65,10 @@ fig.finalize()
 
 <span id="fig-discrete"></span>
 
+<figure class="ev-fig" markdown>
+
 ![離散需求與供給。](../../../assets/principle-viz/agora/discrete/market.svg){ .ev-figure-sm }
 
-離散需求與供給。
-{ .ev-caption }
+<figcaption markdown>離散需求與供給。</figcaption>
+
+</figure>

@@ -40,10 +40,13 @@ seo_title: "Bézier 曲線"
 
 <span id="fig-basis"></span>
 
+<figure class="ev-fig" markdown>
+
 ![三次 Bernstein 多項式。](../../../assets/bezierkit/agora/curves/basis.svg){ .ev-figure-sm }
 
-三次 Bernstein 多項式。
-{ .ev-caption }
+<figcaption markdown>三次 Bernstein 多項式。</figcaption>
+
+</figure>
 
 <span id="prop-basis"></span>
 
@@ -147,10 +150,13 @@ seo_title: "Bézier 曲線"
 
 <span id="fig-casteljau"></span>
 
+<figure class="ev-fig" markdown>
+
 ![de Casteljau 演算法 (t = 0.4)。](../../../assets/bezierkit/agora/curves/casteljau.svg){ .ev-figure-sm }
 
-de Casteljau 演算法 (t = 0.4)。
-{ .ev-caption }
+<figcaption markdown>de Casteljau 演算法 (t = 0.4)。</figcaption>
+
+</figure>
 
 每個中間點都是控制點的凸組合，演算法不會產生互相抵消的大數，因此在高次數時數值穩定。每個參數的計算量為 $O(n^2)$。
 

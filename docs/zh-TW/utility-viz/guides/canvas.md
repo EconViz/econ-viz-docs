@@ -53,7 +53,7 @@ cvs.add_utility(
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
-# 本手冊圖形所用的設定
+# 圖形設定
 Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
@@ -68,10 +68,15 @@ cvs.save("add_utility.png")
 
 <span id="fig-add-utility"></span>
 
-![三條無異曲線。](../../../assets/utility-viz/agora/canvas/add_utility.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-三條無異曲線。 [下載繪製腳本](../../../assets/utility-viz/agora/canvas/add_utility.py){ .ev-download download="" }
-{ .ev-caption }
+![三條無異曲線](../../../assets/utility-viz/agora/canvas/add_utility.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/canvas/add_utility.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a>
+
+<figcaption markdown>三條無異曲線</figcaption>
+
+</figure>
 
 <!-- api: agora.utility_viz.guides_canvas_3 -->
 
@@ -80,7 +85,7 @@ cvs.save("add_utility.png")
 ```python
 from utility_viz import Canvas, Config
 
-# 本手冊圖形所用的設定
+# 圖形設定
 Config.load("manual.toml").use()
 
 # 斜體的 x 與 y
@@ -90,10 +95,15 @@ cvs.add_budget(2.0, 3.0, 30.0, fill=True)
 cvs.save("add_budget.png")
 ```
 
-![預算線與陰影。](../../../assets/utility-viz/agora/canvas/add_budget.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-預算線與陰影。 [下載繪製腳本](../../../assets/utility-viz/agora/canvas/add_budget.py){ .ev-download download="" }
-{ .ev-caption }
+![預算線與陰影](../../../assets/utility-viz/agora/canvas/add_budget.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/canvas/add_budget.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a>
+
+<figcaption markdown>預算線與陰影</figcaption>
+
+</figure>
 
 <!-- api: agora.utility_viz.guides_canvas_4 -->
 
@@ -103,7 +113,7 @@ cvs.save("add_budget.png")
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
-# 本手冊圖形所用的設定
+# 圖形設定
 Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
@@ -118,10 +128,15 @@ cvs.add_equilibrium(eq)
 cvs.save("add_equilibrium.png")
 ```
 
-![均衡點與虛線。](../../../assets/utility-viz/agora/canvas/add_equilibrium.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-均衡點與虛線。 [下載繪製腳本](../../../assets/utility-viz/agora/canvas/add_equilibrium.py){ .ev-download download="" }
-{ .ev-caption }
+![均衡點與虛線](../../../assets/utility-viz/agora/canvas/add_equilibrium.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/canvas/add_equilibrium.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a>
+
+<figcaption markdown>均衡點與虛線</figcaption>
+
+</figure>
 
 <!-- api: agora.utility_viz.guides_canvas_5 -->
 
@@ -131,7 +146,7 @@ cvs.save("add_equilibrium.png")
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
-# 本手冊圖形所用的設定
+# 圖形設定
 Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
@@ -147,10 +162,15 @@ cvs.add_ray(eq.y / eq.x)
 cvs.save("add_ray.png")
 ```
 
-![擴張路徑射線。](../../../assets/utility-viz/agora/canvas/add_ray.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-擴張路徑射線。 [下載繪製腳本](../../../assets/utility-viz/agora/canvas/add_ray.py){ .ev-download download="" }
-{ .ev-caption }
+![擴張路徑射線](../../../assets/utility-viz/agora/canvas/add_ray.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/canvas/add_ray.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a>
+
+<figcaption markdown>擴張路徑射線</figcaption>
+
+</figure>
 
 <!-- api: agora.utility_viz.guides_canvas_6 -->
 
@@ -160,7 +180,7 @@ cvs.save("add_ray.png")
 from utility_viz import Canvas, Config, Label, levels, solve
 from utility_viz.models import CobbDouglas
 
-# 本手冊圖形所用的設定
+# 圖形設定
 Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
@@ -182,10 +202,15 @@ cvs.add_point(
 cvs.save("add_point.png")
 ```
 
-![一條無異曲線與預算線交於兩點 $A$ 與 $B$。](../../../assets/utility-viz/agora/canvas/add_point.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-一條無異曲線與預算線交於兩點 $A$ 與 $B$。 [下載繪製腳本](../../../assets/utility-viz/agora/canvas/add_point.py){ .ev-download download="" }
-{ .ev-caption }
+![一條無異曲線與預算線交於兩點 $A$ 與 $B$](../../../assets/utility-viz/agora/canvas/add_point.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/canvas/add_point.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a>
+
+<figcaption markdown>一條無異曲線與預算線交於兩點 $A$ 與 $B$</figcaption>
+
+</figure>
 
 <!-- api: agora.utility_viz.guides_canvas_7 -->
 
@@ -195,7 +220,7 @@ cvs.save("add_point.png")
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
-# 本手冊圖形所用的設定
+# 圖形設定
 Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
@@ -212,10 +237,15 @@ cvs.save("show_save.png")
 
 <span id="fig-show-save"></span>
 
-![完整畫布。](../../../assets/utility-viz/agora/canvas/show_save.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-完整畫布。 [下載繪製腳本](../../../assets/utility-viz/agora/canvas/show_save.py){ .ev-download download="" }
-{ .ev-caption }
+![完整畫布](../../../assets/utility-viz/agora/canvas/show_save.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/canvas/show_save.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a>
+
+<figcaption markdown>完整畫布</figcaption>
+
+</figure>
 
 ## 樣式
 
@@ -227,7 +257,7 @@ cvs.save("show_save.png")
 
 <!-- api: agora.utility_viz.guides_canvas_8 -->
 
-提供實線、虛線、點線與點畫線（參見[四種線條樣式。](canvas.md#fig-line-styles)）。座標軸接受列舉值或對應字串；其他線條透過 `Stroke(style=...)` 設定。
+提供實線、虛線、點線與點畫線（參見[四種線條樣式](canvas.md#fig-line-styles)）。座標軸接受列舉值或對應字串；其他線條透過 `Stroke(style=...)` 設定。
 `LineStyle` 就是 MosaicKit 的 `DashStyle`，沿用舊名稱。
 
 ```python
@@ -235,7 +265,7 @@ import matplotlib.pyplot as plt
 
 from utility_viz import Canvas, Config, LineStyle
 
-# 本手冊圖形所用的設定
+# 圖形設定
 Config.load("manual.toml").use()
 
 styles = [
@@ -267,16 +297,21 @@ fig.savefig("line_styles.png", dpi=160)
 
 <span id="fig-line-styles"></span>
 
-![四種線條樣式。](../../../assets/utility-viz/agora/canvas/line_styles.zh-TW.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-四種線條樣式。 [下載繪製腳本](../../../assets/utility-viz/agora/canvas/line_styles.zh-TW.py){ .ev-download download="" }
-{ .ev-caption }
+![四種線條樣式](../../../assets/utility-viz/agora/canvas/line_styles.zh-TW.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/canvas/line_styles.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a>
+
+<figcaption markdown>四種線條樣式</figcaption>
+
+</figure>
 
 ### 箭頭樣式
 
 <!-- api: agora.utility_viz.guides_canvas_9 -->
 
-提供四種箭頭樣式（參見[四種箭頭樣式。](canvas.md#fig-arrow-styles)）。座標軸透過 `x_arrow_style`、`y_arrow_style` 設定；其他線條透過 `Stroke(arrow=...)` 設定。
+提供四種箭頭樣式（參見[四種箭頭樣式](canvas.md#fig-arrow-styles)）。座標軸透過 `x_arrow_style`、`y_arrow_style` 設定；其他線條透過 `Stroke(arrow=...)` 設定。
 `ArrowStyle` 是 MosaicKit 的；`SIMPLE` 即 `OPEN`，仍接受 `"->"` 與 `"-|>"`。
 
 ```python
@@ -284,7 +319,7 @@ import matplotlib.pyplot as plt
 
 from utility_viz import ArrowStyle, Canvas, Config
 
-# 本手冊圖形所用的設定
+# 圖形設定
 Config.load("manual.toml").use()
 
 styles = [
@@ -316,10 +351,15 @@ fig.savefig("arrow_styles.png", dpi=160)
 
 <span id="fig-arrow-styles"></span>
 
-![四種箭頭樣式。](../../../assets/utility-viz/agora/canvas/arrow_styles.zh-TW.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-四種箭頭樣式。 [下載繪製腳本](../../../assets/utility-viz/agora/canvas/arrow_styles.zh-TW.py){ .ev-download download="" }
-{ .ev-caption }
+![四種箭頭樣式](../../../assets/utility-viz/agora/canvas/arrow_styles.zh-TW.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/canvas/arrow_styles.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a>
+
+<figcaption markdown>四種箭頭樣式</figcaption>
+
+</figure>
 
 ### Stroke
 

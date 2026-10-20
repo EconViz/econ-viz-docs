@@ -37,21 +37,30 @@ print(result.policy.government_revenue, result.deadweight_loss)
 
 <span id="fig-free-trade"></span>
 
+<figure class="ev-fig" markdown>
+
 ![自由贸易下的进口。](../../../assets/principle-viz/agora/trade/free_trade_import.svg){ .ev-figure-sm }
 
-自由贸易下的进口。
-{ .ev-caption }
+<figcaption markdown>自由贸易下的进口。</figcaption>
+
+</figure>
 
 <span id="fig-tariff"></span>
 
+<figure class="ev-fig" markdown>
+
 ![进口关税。](../../../assets/principle-viz/agora/trade/tariff.svg){ .ev-figure-sm }
 
-进口关税。
-{ .ev-caption }
+<figcaption markdown>进口关税。</figcaption>
+
+</figure>
 
 <span id="fig-quota"></span>
 
+<figure class="ev-fig" markdown>
+
 ![有约束的进口配额。](../../../assets/principle-viz/agora/trade/quota.svg){ .ev-figure-sm }
 
-有约束的进口配额。
-{ .ev-caption }
+<figcaption markdown>有约束的进口配额。</figcaption>
+
+</figure>

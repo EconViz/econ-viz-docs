@@ -43,10 +43,13 @@ The proofs below use two identities of binomial coefficients.
 
 <span id="fig-basis"></span>
 
+<figure class="ev-fig" markdown>
+
 ![The cubic Bernstein polynomials.](../../assets/bezierkit/agora/curves/basis.svg){ .ev-figure-sm }
 
-The cubic Bernstein polynomials.
-{ .ev-caption }
+<figcaption markdown>The cubic Bernstein polynomials.</figcaption>
+
+</figure>
 
 <span id="prop-basis"></span>
 
@@ -168,10 +171,13 @@ The statement is Theorems 1.6 and 1.7 of [Floater (2025)](../project/references.
 
 <span id="fig-casteljau"></span>
 
+<figure class="ev-fig" markdown>
+
 ![de Casteljau's algorithm at $t = 0.4$.](../../assets/bezierkit/agora/curves/casteljau.svg){ .ev-figure-sm }
 
-de Casteljau's algorithm at $t = 0.4$.
-{ .ev-caption }
+<figcaption markdown>de Casteljau's algorithm at $t = 0.4$.</figcaption>
+
+</figure>
 
 Every intermediate point is a convex combination of the control points, so
 the algorithm never forms large cancelling terms; it is the numerically

@@ -58,10 +58,13 @@ seo_title: "三次线段与路径"
 
 <span id="fig-bbox"></span>
 
+<figure class="ev-fig" markdown>
+
 ![三次曲线的紧密边界框。](../../../assets/bezierkit/agora/paths/bbox.svg){ .ev-figure-sm }
 
-三次曲线的紧密边界框。
-{ .ev-caption }
+<figcaption markdown>三次曲线的紧密边界框。</figcaption>
+
+</figure>
 
 ## 升阶
 

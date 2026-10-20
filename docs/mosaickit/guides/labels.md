@@ -24,10 +24,13 @@ line, marker, text or other region. [An inside label and a callout.](labels.md#f
 
 <span id="fig-regions"></span>
 
+<figure class="ev-fig" markdown>
+
 ![An inside label and a callout.](../../assets/mosaickit/agora/labels/regions.svg){ .ev-figure-sm }
 
-An inside label and a callout.
-{ .ev-caption }
+<figcaption markdown>An inside label and a callout.</figcaption>
+
+</figure>
 
 ## Point labels
 
@@ -57,17 +60,23 @@ edge, because that is where the label belongs.
 
 <span id="fig-candidates"></span>
 
+<figure class="ev-fig" markdown>
+
 ![The order in which directions are tried.](../../assets/mosaickit/agora/geometry/candidates.svg){ .ev-figure-sm }
 
-The order in which directions are tried.
-{ .ev-caption }
+<figcaption markdown>The order in which directions are tried.</figcaption>
+
+</figure>
 
 <span id="fig-points"></span>
 
+<figure class="ev-fig" markdown>
+
 ![Point labels beside their points.](../../assets/mosaickit/agora/labels/points.svg){ .ev-figure-sm }
 
-Point labels beside their points.
-{ .ev-caption }
+<figcaption markdown>Point labels beside their points.</figcaption>
+
+</figure>
 
 ## Hard constraints
 

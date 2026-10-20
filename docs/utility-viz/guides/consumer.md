@@ -27,7 +27,7 @@ the drawing API is unchanged once the layout exists.
 from utility_viz import Config, Figure, Layout, levels, solve
 from utility_viz.models import CobbDouglas
 
-# the settings behind this manual's figures
+# figure settings
 Config.load("manual.toml").use()
 
 fig = Figure(
@@ -56,10 +56,15 @@ for idx, (model, px, py, income) in enumerate(cases):
 fig.save("side_by_side.png")
 ```
 
-![Price change, before and after.](../../assets/utility-viz/agora/consumer/side_by_side.svg){ .ev-figure-lg }
+<figure class="ev-fig" markdown>
 
-Price change, before and after. [Download the script](../../assets/utility-viz/agora/consumer/side_by_side.py){ .ev-download download="" }
-{ .ev-caption }
+![Price change before and after](../../assets/utility-viz/agora/consumer/side_by_side.svg){ .ev-figure-lg }
+
+<a class="ev-download" href="../../assets/utility-viz/agora/consumer/side_by_side.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
+
+<figcaption markdown>Price change before and after</figcaption>
+
+</figure>
 
 <!-- api: agora.utility_viz.guides_consumer_2 -->
 
@@ -80,7 +85,7 @@ move as prices or income vary.
 
 Draw a path directly on a canvas when a full demand diagram is not
 needed. For Cobb-Douglas preferences the price-consumption curve is
-horizontal ([The price-consumption curve as $p_x$ varies.](consumer.md#fig-price-path)): spending on $y$ does not depend on $p_x$.
+horizontal ([The price-consumption curve as $p_x$ varies](consumer.md#fig-price-path)): spending on $y$ does not depend on $p_x$.
 
 ```python
 from utility_viz import (
@@ -92,7 +97,7 @@ from utility_viz import (
 )
 from utility_viz.models import CobbDouglas
 
-# the settings behind this manual's figures
+# figure settings
 Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
@@ -117,10 +122,15 @@ cvs.save("price_path.png")
 
 <span id="fig-price-path"></span>
 
-![The price-consumption curve as $p_x$ varies.](../../assets/utility-viz/agora/consumer/price_path.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-The price-consumption curve as $p_x$ varies. [Download the script](../../assets/utility-viz/agora/consumer/price_path.py){ .ev-download download="" }
-{ .ev-caption }
+![The price-consumption curve as $p_x$ varies](../../assets/utility-viz/agora/consumer/price_path.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../assets/utility-viz/agora/consumer/price_path.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
+
+<figcaption markdown>The price-consumption curve as $p_x$ varies</figcaption>
+
+</figure>
 
 ## Demand diagrams
 
@@ -128,7 +138,7 @@ The price-consumption curve as $p_x$ varies. [Download the script](../../assets/
 
 A stacked two-panel figure: indifference curves, budget lines and
 equilibria in the top panel, the corresponding Marshallian demand curve
-in the bottom one ([Demand curve at the optima.](consumer.md#fig-demand)).
+in the bottom one ([Demand curve at the optima](consumer.md#fig-demand)).
 
 - `DemandDiagram` expects a `PricePath`.
 - Smooth, kinked and corner demand are handled differently, so that the
@@ -162,10 +172,15 @@ The figure below is drawn from MosaicKit layers, so each label can be placed by 
 
 <span id="fig-demand"></span>
 
-![Demand curve at the optima.](../../assets/utility-viz/agora/consumer/demand.svg){ .ev-figure-lg }
+<figure class="ev-fig" markdown>
 
-Demand curve at the optima. [Download the script](../../assets/utility-viz/agora/consumer/demand.py){ .ev-download download="" }
-{ .ev-caption }
+![Demand curve at the optima](../../assets/utility-viz/agora/consumer/demand.svg){ .ev-figure-lg }
+
+<a class="ev-download" href="../../assets/utility-viz/agora/consumer/demand.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
+
+<figcaption markdown>Demand curve at the optima</figcaption>
+
+</figure>
 
 ## Price-effect decomposition
 
@@ -237,10 +252,15 @@ result = decompose_price_effect(
 
 The figure below is also drawn from MosaicKit layers; the two effects are named under the axis.
 
-![Hicks decomposition.](../../assets/utility-viz/agora/consumer/hicks.svg){ .ev-figure-lg }
+<figure class="ev-fig" markdown>
 
-Hicks decomposition. [Download the script](../../assets/utility-viz/agora/consumer/hicks.py){ .ev-download download="" }
-{ .ev-caption }
+![Hicks decomposition](../../assets/utility-viz/agora/consumer/hicks.svg){ .ev-figure-lg }
+
+<a class="ev-download" href="../../assets/utility-viz/agora/consumer/hicks.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
+
+<figcaption markdown>Hicks decomposition</figcaption>
+
+</figure>
 
 ## Edgeworth box
 
@@ -280,7 +300,12 @@ box = EdgeworthBox(
 
 The figure below is drawn from MosaicKit layers after a textbook figure, with both consumers' indifference curves.
 
-![Both consumers' indifference curves through allocations A to D; the shaded lens holds the allocations both prefer to A.](../../assets/utility-viz/agora/consumer/edgeworth.svg){ .ev-figure-lg }
+<figure class="ev-fig" markdown>
 
-Both consumers' indifference curves through allocations A to D; the shaded lens holds the allocations both prefer to A. [Download the script](../../assets/utility-viz/agora/consumer/edgeworth.py){ .ev-download download="" }
-{ .ev-caption }
+![Both consumers' indifference curves through allocations A to D the shaded lens holds the allocations both prefer to A](../../assets/utility-viz/agora/consumer/edgeworth.svg){ .ev-figure-lg }
+
+<a class="ev-download" href="../../assets/utility-viz/agora/consumer/edgeworth.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
+
+<figcaption markdown>Both consumers' indifference curves through allocations A to D the shaded lens holds the allocations both prefer to A</figcaption>
+
+</figure>

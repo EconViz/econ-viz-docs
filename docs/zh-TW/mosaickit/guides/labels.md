@@ -18,10 +18,13 @@ seo_title: "區域標籤與點標籤"
 
 <span id="fig-regions"></span>
 
+<figure class="ev-fig" markdown>
+
 ![區域內標籤與引線標註。](../../../assets/mosaickit/agora/labels/regions.svg){ .ev-figure-sm }
 
-區域內標籤與引線標註。
-{ .ev-caption }
+<figcaption markdown>區域內標籤與引線標註。</figcaption>
+
+</figure>
 
 ## 點標籤
 
@@ -39,17 +42,23 @@ seo_title: "區域標籤與點標籤"
 
 <span id="fig-candidates"></span>
 
+<figure class="ev-fig" markdown>
+
 ![方向的嘗試順序。](../../../assets/mosaickit/agora/geometry/candidates.svg){ .ev-figure-sm }
 
-方向的嘗試順序。
-{ .ev-caption }
+<figcaption markdown>方向的嘗試順序。</figcaption>
+
+</figure>
 
 <span id="fig-points"></span>
 
+<figure class="ev-fig" markdown>
+
 ![點旁的點標籤。](../../../assets/mosaickit/agora/labels/points.svg){ .ev-figure-sm }
 
-點旁的點標籤。
-{ .ev-caption }
+<figcaption markdown>點旁的點標籤。</figcaption>
+
+</figure>
 
 ## 硬性限制
 

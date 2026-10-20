@@ -48,21 +48,30 @@ brace beneath, and the tariff revenue or quota rent as a named rectangle
 
 <span id="fig-free-trade"></span>
 
+<figure class="ev-fig" markdown>
+
 ![Free trade with imports.](../../assets/principle-viz/agora/trade/free_trade_import.svg){ .ev-figure-sm }
 
-Free trade with imports.
-{ .ev-caption }
+<figcaption markdown>Free trade with imports.</figcaption>
+
+</figure>
 
 <span id="fig-tariff"></span>
 
+<figure class="ev-fig" markdown>
+
 ![An import tariff.](../../assets/principle-viz/agora/trade/tariff.svg){ .ev-figure-sm }
 
-An import tariff.
-{ .ev-caption }
+<figcaption markdown>An import tariff.</figcaption>
+
+</figure>
 
 <span id="fig-quota"></span>
 
+<figure class="ev-fig" markdown>
+
 ![A binding import quota.](../../assets/principle-viz/agora/trade/quota.svg){ .ev-figure-sm }
 
-A binding import quota.
-{ .ev-caption }
+<figcaption markdown>A binding import quota.</figcaption>
+
+</figure>

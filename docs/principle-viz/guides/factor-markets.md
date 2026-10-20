@@ -50,10 +50,13 @@ fig.add_minimum_wage(labor)
 
 <span id="fig-minimum-wage"></span>
 
+<figure class="ev-fig" markdown>
+
 ![A binding minimum wage.](../../assets/principle-viz/agora/factor/minimum_wage.svg){ .ev-figure-sm }
 
-A binding minimum wage.
-{ .ev-caption }
+<figcaption markdown>A binding minimum wage.</figcaption>
+
+</figure>
 
 `labor_demanded` is 3, `labor_supplied` is 7, `employment` is 3 and
 `unemployment` is 4.
@@ -98,7 +101,10 @@ movement between them. Title the price axis $r$ (see
 
 <span id="fig-loanable-funds"></span>
 
+<figure class="ev-fig" markdown>
+
 ![Government borrowing crowds out private investment.](../../assets/principle-viz/agora/factor/loanable_funds.svg){ .ev-figure-sm }
 
-Government borrowing crowds out private investment.
-{ .ev-caption }
+<figcaption markdown>Government borrowing crowds out private investment.</figcaption>
+
+</figure>

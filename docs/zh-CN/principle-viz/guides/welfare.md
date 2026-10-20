@@ -57,10 +57,13 @@ fig.finalize()
 
 <span id="fig-welfare"></span>
 
+<figure class="ev-fig" markdown>
+
 ![均衡下的消费者与生产者剩余。](../../../assets/principle-viz/agora/welfare/equilibrium.svg){ .ev-figure-sm }
 
-均衡下的消费者与生产者剩余。
-{ .ev-caption }
+<figcaption markdown>均衡下的消费者与生产者剩余。</figcaption>
+
+</figure>
 
 <!-- api: agora.principle_viz.guides_welfare_5 -->
 

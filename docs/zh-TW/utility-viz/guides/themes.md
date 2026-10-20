@@ -65,10 +65,15 @@ cvs.add_equilibrium(eq)
 cvs.save("theme_default.png")
 ```
 
-![`default` 主題。](../../../assets/utility-viz/agora/themes/default.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-`default` 主題。 [下載繪製腳本](../../../assets/utility-viz/agora/themes/default.py){ .ev-download download="" }
-{ .ev-caption }
+![`default` 主題](../../../assets/utility-viz/agora/themes/default.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/themes/default.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a>
+
+<figcaption markdown>`default` 主題</figcaption>
+
+</figure>
 
 ```python
 from dataclasses import replace
@@ -101,10 +106,15 @@ cvs.add_equilibrium(eq)
 cvs.save("theme_nord.png")
 ```
 
-![`nord` 主題。](../../../assets/utility-viz/agora/themes/nord.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-`nord` 主題。 [下載繪製腳本](../../../assets/utility-viz/agora/themes/nord.py){ .ev-download download="" }
-{ .ev-caption }
+![`nord` 主題](../../../assets/utility-viz/agora/themes/nord.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/themes/nord.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a>
+
+<figcaption markdown>`nord` 主題</figcaption>
+
+</figure>
 
 ```python
 from dataclasses import replace
@@ -137,10 +147,15 @@ cvs.add_equilibrium(eq)
 cvs.save("theme_paper.png")
 ```
 
-![`paper` 主題。](../../../assets/utility-viz/agora/themes/paper.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-`paper` 主題。 [下載繪製腳本](../../../assets/utility-viz/agora/themes/paper.py){ .ev-download download="" }
-{ .ev-caption }
+![`paper` 主題](../../../assets/utility-viz/agora/themes/paper.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/themes/paper.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a>
+
+<figcaption markdown>`paper` 主題</figcaption>
+
+</figure>
 
 ```python
 from dataclasses import replace
@@ -173,10 +188,15 @@ cvs.add_equilibrium(eq)
 cvs.save("theme_monochrome.png")
 ```
 
-![`monochrome` 主題。](../../../assets/utility-viz/agora/themes/monochrome.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-`monochrome` 主題。 [下載繪製腳本](../../../assets/utility-viz/agora/themes/monochrome.py){ .ev-download download="" }
-{ .ev-caption }
+![`monochrome` 主題](../../../assets/utility-viz/agora/themes/monochrome.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/themes/monochrome.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a>
+
+<figcaption markdown>`monochrome` 主題</figcaption>
+
+</figure>
 
 ```python
 from dataclasses import replace
@@ -209,10 +229,15 @@ cvs.add_equilibrium(eq)
 cvs.save("theme_presentation.png")
 ```
 
-![`presentation` 主題。](../../../assets/utility-viz/agora/themes/presentation.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-`presentation` 主題。 [下載繪製腳本](../../../assets/utility-viz/agora/themes/presentation.py){ .ev-download download="" }
-{ .ev-caption }
+![`presentation` 主題](../../../assets/utility-viz/agora/themes/presentation.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/themes/presentation.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a>
+
+<figcaption markdown>`presentation` 主題</figcaption>
+
+</figure>
 
 ## 自訂主題
 
@@ -292,114 +317,6 @@ cvs.save("theme_presentation.png")
 ```text
 utility-viz.toml: [stroke.budgt]: no such setting (choose: axis, box, budget, ...)
 ```
-
-### 手冊圖形設定
-
-<span id="sec-manual-toml"></span>
-
-本手冊的範例都先載入 `manual.toml`，圖形的外觀由它決定：灰色曲線、黑色座標軸與輔助線、黑色的點、白色底。檔案沒有指定字體，在任何電腦上都能執行；圖形用 TeX Gyre Pagella 排版，沒有這個字體時用預設字體。
-
-```toml
-# 本手冊所有圖形的設定
-# 灰色曲線 黑色軸 白底
-# 畫圖前先載入
-#
-#     Config.load("manual.toml").use()
-#
-# 各區段對應 Theme 屬性
-
-base = "default"
-
-# 字體是 TeX Gyre Pagella 但不指定
-# 要用請加上 [font] text = "TeX Gyre Pagella"
-
-[color]
-background = "#ffffff"
-axis = "#1a1a1a"
-label = "#1a1a1a"
-ic = "#8c8c8c"              # 無異曲線
-secondary_ic = "#b8b8b8"    # 強調曲線旁的曲線
-path = "#1a1a1a"            # 價格與所得消費路徑
-budget = "#222222"
-eq = "#1a1a1a"              # 均衡點與其他點
-ray = "#8c8c8c"
-kink = "#8c8c8c"
-sub_effect = "#8c8c8c"
-inc_effect = "#8c8c8c"
-compensated_budget = "#1a1a1a"
-subsistence = "#8c8c8c"
-contract = "#8c8c8c"
-core = "#1a1a1a"
-price = "#8c8c8c"
-walrasian = "#1a1a1a"
-
-[stroke.axis]
-width = 1.0
-style = "solid"
-arrow = "-|>"
-
-[stroke.ic]
-width = 2.6
-
-[stroke.secondary_ic]
-width = 1.8
-opacity = 1.0
-
-[stroke.path]
-width = 1.4
-
-[stroke.budget]
-width = 2.6
-
-[stroke.ray]
-width = 0.9
-
-[stroke.substitution]
-width = 1.8
-
-[stroke.income]
-width = 1.8
-
-[stroke.compensated_budget]
-width = 1.0
-
-[stroke.contract]
-width = 2.6
-
-[stroke.price]
-width = 2.6
-
-[stroke.drop]               # 從點到座標軸的輔助線
-width = 0.8
-style = "dashed"
-color = "#1a1a1a"
-
-[stroke.projection]
-width = 0.8
-style = "dashed"
-color = "#1a1a1a"
-
-[stroke.guide]
-width = 0.8
-style = "dashed"
-color = "#1a1a1a"
-
-[marker.eq]
-size = 5
-
-[marker.point]
-size = 5
-
-[label.point]               # 點旁的文字 如 x*
-fontsize = 14
-position = "right"
-offset = 10
-
-[fill.budget]
-opacity = 0.08
-```
-
-[下載 manual.toml](../../../assets/utility-viz/agora/manual.toml){ .ev-download download="" }
 
 ### 設定檔查找順序
 

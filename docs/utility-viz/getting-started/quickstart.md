@@ -15,13 +15,13 @@ $$
 $$
 
 The script solves the optimum and draws the indifference map, budget set,
-and equilibrium shown in [The consumer-equilibrium diagram.](quickstart.md#fig-quickstart).
+and equilibrium shown in [The consumer-equilibrium diagram](quickstart.md#fig-quickstart).
 
 ```python
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
-# the settings behind this manual's figures
+# figure settings
 Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
@@ -41,10 +41,15 @@ cvs.save("cobb_douglas.png")
 
 <span id="fig-quickstart"></span>
 
-![The consumer-equilibrium diagram.](../../assets/utility-viz/agora/models/cobb_douglas.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-The consumer-equilibrium diagram. [Download the script](../../assets/utility-viz/agora/models/cobb_douglas.py){ .ev-download download="" }
-{ .ev-caption }
+![The consumer-equilibrium diagram](../../assets/utility-viz/agora/models/cobb_douglas.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../assets/utility-viz/agora/models/cobb_douglas.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
+
+<figcaption markdown>The consumer-equilibrium diagram</figcaption>
+
+</figure>
 
 Running `main.py` writes `cobb_douglas.png` to the current working directory.
 The optimum is $x^* = 7.5$, $y^* = 5$; spending is
@@ -76,7 +81,7 @@ print(eq.x, eq.y, round(eq.utility, 3))
 
 <!-- api: agora.utility_viz.getting_started_quickstart_3 -->
 
-Generate $n$ utility levels centred on a given utility. [The consumer-equilibrium diagram.](quickstart.md#fig-quickstart)
+Generate $n$ utility levels centred on a given utility. [The consumer-equilibrium diagram](quickstart.md#fig-quickstart)
 uses `n=5`, so it draws five indifference curves.
 
 `levels.around()` keeps the given utility among the levels, so the

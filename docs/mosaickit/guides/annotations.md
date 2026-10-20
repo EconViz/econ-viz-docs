@@ -59,17 +59,23 @@ canvas.add(AxisMarkLayer("x", 6, "b", math=True))
 
 <span id="fig-gutter"></span>
 
+<figure class="ev-fig" markdown>
+
 ![Marks, notes and an outside brace in the y gutter (guide lines added).](../../assets/mosaickit/agora/annotations/gutter.svg){ .ev-figure-sm }
 
-Marks, notes and an outside brace in the y gutter (guide lines added).
-{ .ev-caption }
+<figcaption markdown>Marks, notes and an outside brace in the y gutter (guide lines added).</figcaption>
+
+</figure>
 
 <span id="fig-span"></span>
 
+<figure class="ev-fig" markdown>
+
 ![A span brace between two points, labelled to the left.](../../assets/mosaickit/agora/annotations/span.svg){ .ev-figure-sm }
 
-A span brace between two points, labelled to the left.
-{ .ev-caption }
+<figcaption markdown>A span brace between two points, labelled to the left.</figcaption>
+
+</figure>
 
 ## Gutter columns
 
@@ -131,10 +137,13 @@ constraints into $y_1 \le \cdots \le y_n$.
 
 <span id="fig-spread"></span>
 
+<figure class="ev-fig" markdown>
+
 ![Targets (top) and their spread (bottom).](../../assets/mosaickit/agora/geometry/spread.svg){ .ev-figure-sm }
 
-Targets (top) and their spread (bottom).
-{ .ev-caption }
+<figcaption markdown>Targets (top) and their spread (bottom).</figcaption>
+
+</figure>
 
 In [Targets (top) and their spread (bottom).](annotations.md#fig-spread) the first three items overlap and form one cluster centred at
 their mean target. The other two are already clear and do not move.

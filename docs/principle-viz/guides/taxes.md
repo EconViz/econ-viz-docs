@@ -68,17 +68,23 @@ the shift or the rotation and the untaxed equilibrium (see
 
 <span id="fig-tax-producer"></span>
 
+<figure class="ev-fig" markdown>
+
 ![A per-unit tax on sellers.](../../assets/principle-viz/agora/taxes/per_unit_producer.svg){ .ev-figure-sm }
 
-A per-unit tax on sellers.
-{ .ev-caption }
+<figcaption markdown>A per-unit tax on sellers.</figcaption>
+
+</figure>
 
 <span id="fig-tax-consumer"></span>
 
+<figure class="ev-fig" markdown>
+
 ![An ad valorem tax on buyers.](../../assets/principle-viz/agora/taxes/ad_valorem_consumer.svg){ .ev-figure-sm }
 
-An ad valorem tax on buyers.
-{ .ev-caption }
+<figcaption markdown>An ad valorem tax on buyers.</figcaption>
+
+</figure>
 
 <!-- api: agora.principle_viz.guides_taxes_8 -->
 
@@ -119,10 +125,13 @@ fig.finalize()
 
 <span id="fig-tax-welfare"></span>
 
+<figure class="ev-fig" markdown>
+
 ![Surplus and deadweight loss under a tax.](../../assets/principle-viz/agora/taxes/welfare.svg){ .ev-figure-sm }
 
-Surplus and deadweight loss under a tax.
-{ .ev-caption }
+<figcaption markdown>Surplus and deadweight loss under a tax.</figcaption>
+
+</figure>
 
 ## Subsidies
 
@@ -177,7 +186,10 @@ fig = MarketFigure(
 
 <span id="fig-subsidy"></span>
 
+<figure class="ev-fig" markdown>
+
 ![A per-unit subsidy and its deadweight loss.](../../assets/principle-viz/agora/taxes/subsidy.svg){ .ev-figure-sm }
 
-A per-unit subsidy and its deadweight loss.
-{ .ev-caption }
+<figcaption markdown>A per-unit subsidy and its deadweight loss.</figcaption>
+
+</figure>

@@ -24,8 +24,9 @@ ROOT = Path(__file__).resolve().parents[1]
 LANGS = ('en', 'zh-TW', 'zh-CN')
 # Chapters that are still converted (their API groups and labels feed the site pages) but whose site page is
 # written by hand: the GIF gallery, the theme images, and the pages that merge several chapters.
-DOWNLOAD_SCRIPT = {'en': 'Download the script', 'zh-TW': '下載繪製腳本', 'zh-CN': '下载绘制脚本'}
-DOWNLOAD_SETTINGS = {'en': 'Download manual.toml', 'zh-TW': '下載 manual.toml', 'zh-CN': '下载 manual.toml'}
+DOWNLOAD_SCRIPT = {'en': 'Download the source', 'zh-TW': '下載生圖原始檔', 'zh-CN': '下载生图源文件'}
+DOWNLOAD_ICON = ('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" '
+                 'fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>')
 KEEP_SITE_PAGE = set()
 # Site-only material appended to a converted page: scripts/supplements/<name>.<locale>.md. The animation page's GIF
 # gallery is drawn by scripts/animation_figures.py, which has no place in the manual.
@@ -312,12 +313,19 @@ class Converter:
             url=os.path.relpath(dest,pagepath.parent)
             width=next((int(m[1]) for p in parts if (m:=re.fullmatch(r'width:\s*(\d+)%',p.strip()))),0)
             size='ev-figure-lg' if width>=60 else 'ev-figure-sm'  # wide figures keep more of their height
-            script=original.with_suffix('.py')
-            download=''
-            if script.exists():  # the code that drew the figure, offered under it
-                shutil.copyfile(script,dest.with_suffix('.py'))
-                download=f' [{DOWNLOAD_SCRIPT[self.locale]}]({os.path.splitext(url)[0]}.py){{ .ev-download download="" }}'
-            return f'\n\n![{caption}]({url}){{ .{size} }}\n\n{caption}{download}\n{{ .ev-caption }}\n\n'
+            base_name=re.sub(r'\.zh-[A-Z]+$','',original.stem)
+            def script_of(edition):
+                return original.with_name(base_name+('' if edition=='en' else '.'+edition)+'.py')
+            button=''
+            if script_of(self.locale).exists():  # the code that drew the figure, offered on the figure
+                for edition in LANGS:
+                    shutil.copyfile(script_of(edition),dest.with_name(base_name+('' if edition=='en' else '.'+edition)+'.py'))
+                label=DOWNLOAD_SCRIPT[self.locale]
+                href=os.path.relpath(dest.with_name(base_name+('' if self.locale=='en' else '.'+self.locale)+'.py'),pagepath.parent)
+                button=(f'<a class="ev-download" href="{href}" download aria-label="{label}">{DOWNLOAD_ICON}'
+                        f'<span>{label}</span></a>\n\n')
+            return (f'\n\n<figure class="ev-fig" markdown>\n\n![{caption}]({url}){{ .{size} }}\n\n{button}'
+                    f'<figcaption markdown>{caption}</figcaption>\n\n</figure>\n\n')
         if name=='api':
             self.counter+=1
             parts=split_args(args)
@@ -443,6 +451,27 @@ class Converter:
         raise ValueError(f'Unsupported macro #{name} in {self.package}/{self.locale}/{self.destination}')
 
 
+def build_example_zips(agora:Path)->None:
+    """One zip per language: the figure scripts sorted into folders by topic, with the settings file they load."""
+    import zipfile
+    package=agora/'packages'/'utility-viz'
+    out=ROOT/'docs/assets/utility-viz/agora'; out.mkdir(parents=True,exist_ok=True)
+    for edition in LANGS:
+        suffix='' if edition=='en' else '.'+edition
+        files={'manual.toml':package/'config'/('manual.toml' if edition=='en' else f'manual.{edition}.toml')}
+        for script in sorted((package/'figures').rglob('*.py')):
+            parts=script.name[:-3].split('.')
+            wanted=parts[-1]==edition if edition!='en' else not parts[-1].startswith('zh-')
+            if wanted: files[f'{script.parent.name}/{parts[0]}.py']=script
+        target=out/f'utility-viz-examples-{edition}.zip'
+        with zipfile.ZipFile(target,'w',zipfile.ZIP_DEFLATED) as archive:
+            for name,source in files.items():
+                info=zipfile.ZipInfo(f'utility-viz-examples/{name}',date_time=(2026,1,1,0,0,0))
+                info.compress_type=zipfile.ZIP_DEFLATED; info.external_attr=0o644<<16
+                archive.writestr(info,source.read_bytes())
+        print(f'  {target.relative_to(ROOT)}: {len(files)} files')
+
+
 def run(agora):
     catalog={}; manifest={}; nav={}
     for package,mapping in MAPPING.items():
@@ -483,13 +512,6 @@ def run(agora):
                 header='---\nseo_title: '+json.dumps(title,ensure_ascii=False)+'\n---\n\n'
                 path=base/(destination+'.md'); path.parent.mkdir(parents=True,exist_ok=True)
                 if (package,destination) in KEEP_SITE_PAGE: continue
-                if (package,destination)==('utility-viz','guides/themes'):
-                    settings=agora/'packages'/package/'config'/'manual.toml'
-                    target=ROOT/'docs/assets'/package/'agora'/'manual.toml'
-                    target.parent.mkdir(parents=True,exist_ok=True); shutil.copyfile(settings,target)
-                    url=os.path.relpath(target,path.parent)
-                    body=re.sub(r'(<span id="sec-manual-toml"></span>.*?```toml\n.*?\n```\n)',
-                                lambda m:m[1]+f'\n[{DOWNLOAD_SETTINGS[locale]}]({url}){{ .ev-download download="" }}\n',body,count=1,flags=re.S)
                 if (package,destination) in SUPPLEMENTS:
                     extra=Path(__file__).parent/'supplements'/f'{SUPPLEMENTS[package,destination]}.{locale}.md'
                     body=body.rstrip('\n')+'\n\n'+extra.read_text().strip('\n')
@@ -517,6 +539,7 @@ def run(agora):
     (ROOT/'hooks/api_data/agora.json').write_text(json.dumps(catalog,ensure_ascii=False,indent=2)+'\n')
     (ROOT/'scripts/agora-manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
     (ROOT/'scripts/agora-navigation.json').write_text(json.dumps(nav,ensure_ascii=False,indent=2)+'\n')
+    build_example_zips(agora)
     print(f'Synced {len(manifest)} pages and {len(catalog)} API groups.')
 
 

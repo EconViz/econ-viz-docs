@@ -50,10 +50,13 @@ print(max(s.fit_error for s in path))
 
 <span id="fig-adaptive"></span>
 
+<figure class="ev-fig" markdown>
+
 ![$4 / x^2$ 的自適應擬合。](../../../assets/bezierkit/agora/fitting/adaptive.svg){ .ev-figure-sm }
 
-$4 / x^2$ 的自適應擬合。
-{ .ev-caption }
+<figcaption markdown>$4 / x^2$ 的自適應擬合。</figcaption>
+
+</figure>
 
 曲線彎曲劇烈處線段較短，接近直線處線段較長（參見[$4 / x^2$ 的自適應擬合。](fitting.md#fig-adaptive)，相鄰線段以不同顏色區分）。Hermite 誤差界限可預估二分需要的深度：
 
@@ -119,10 +122,13 @@ $4 / x^2$ 的自適應擬合。
 
 <span id="fig-polyline"></span>
 
+<figure class="ev-fig" markdown>
+
 ![以容許誤差 $0.08$ 簡化 41 個雜訊樣本。](../../../assets/bezierkit/agora/fitting/polyline.svg){ .ev-figure-sm }
 
-以容許誤差 $0.08$ 簡化 41 個雜訊樣本。
-{ .ev-caption }
+<figcaption markdown>以容許誤差 $0.08$ 簡化 41 個雜訊樣本。</figcaption>
+
+</figure>
 
 <!-- api: agora.bezierkit.guides_fitting_4 -->
 

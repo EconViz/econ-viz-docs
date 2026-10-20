@@ -32,10 +32,13 @@ print(to_tikz(path, precision=2, options="thick"))
 
 <span id="fig-quickstart"></span>
 
+<figure class="ev-fig" markdown>
+
 ![三次曲线及其控制凸包。](../../assets/bezierkit/agora/curves/cubic.svg){ .ev-figure-sm }
 
-三次曲线及其控制凸包。
-{ .ev-caption }
+<figcaption markdown>三次曲线及其控制凸包。</figcaption>
+
+</figure>
 
 曲线由 $P_0$ 出发、在 $P_3$ 结束，离开 $P_0$ 时朝向 $P_1$，抵达 $P_3$ 时来自 $P_2$ 的方向，且始终位于控制点的凸包内（详见[凸包](guides/curves.md#cor-hull)）。最后一行是这条曲线的 TikZ 路径，可直接粘贴到 LaTeX 文档。
 

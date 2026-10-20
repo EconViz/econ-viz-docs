@@ -94,14 +94,20 @@ fig.save("market_demand.png")
 
 <span id="fig-market-demand"></span>
 
+<figure class="ev-fig" markdown>
+
 ![水平加总的市场需求。](../../../assets/principle-viz/agora/aggregation/market_demand.svg){ .ev-figure-lg }
 
-水平加总的市场需求。
-{ .ev-caption }
+<figcaption markdown>水平加总的市场需求。</figcaption>
+
+</figure>
 
 <span id="fig-discrete-market-demand"></span>
 
+<figure class="ev-fig" markdown>
+
 ![合并两张离散需求表。](../../../assets/principle-viz/agora/aggregation/discrete_market_demand.svg){ .ev-figure-lg }
 
-合并两张离散需求表。
-{ .ev-caption }
+<figcaption markdown>合并两张离散需求表。</figcaption>
+
+</figure>

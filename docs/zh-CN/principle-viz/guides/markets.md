@@ -101,17 +101,23 @@ fig.finalize()
 
 <span id="fig-shifts"></span>
 
+<figure class="ev-fig" markdown>
+
 ![需求增加。](../../../assets/principle-viz/agora/markets/shift_demand_increase.svg){ .ev-figure-sm }
 
-需求增加。
-{ .ev-caption }
+<figcaption markdown>需求增加。</figcaption>
+
+</figure>
 
 <span id="fig-shift-supply"></span>
 
+<figure class="ev-fig" markdown>
+
 ![供给减少。](../../../assets/principle-viz/agora/markets/shift_supply_decrease.svg){ .ev-figure-sm }
 
-供给减少。
-{ .ev-caption }
+<figcaption markdown>供给减少。</figcaption>
+
+</figure>
 
 ## 异常
 

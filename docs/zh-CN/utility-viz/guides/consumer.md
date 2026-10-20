@@ -16,7 +16,7 @@ seo_title: "多面板图与需求图"
 from utility_viz import Config, Figure, Layout, levels, solve
 from utility_viz.models import CobbDouglas
 
-# 本手册图形所用的设置
+# 图形设置
 Config.load("manual.toml").use()
 
 fig = Figure(
@@ -45,10 +45,15 @@ for idx, (model, px, py, income) in enumerate(cases):
 fig.save("side_by_side.png")
 ```
 
-![价格变动前后比较。](../../../assets/utility-viz/agora/consumer/side_by_side.svg){ .ev-figure-lg }
+<figure class="ev-fig" markdown>
 
-价格变动前后比较。 [下载绘制脚本](../../../assets/utility-viz/agora/consumer/side_by_side.py){ .ev-download download="" }
-{ .ev-caption }
+![价格变动前后比较](../../../assets/utility-viz/agora/consumer/side_by_side.svg){ .ev-figure-lg }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/consumer/side_by_side.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a>
+
+<figcaption markdown>价格变动前后比较</figcaption>
+
+</figure>
 
 <!-- api: agora.utility_viz.guides_consumer_2 -->
 
@@ -62,7 +67,7 @@ fig.save("side_by_side.png")
 
 <!-- api: agora.utility_viz.guides_consumer_4 -->
 
-将 `PricePath` 或 `IncomePath` 添加画布。[价格消费曲线。](consumer.md#fig-price-path)中，Cobb-Douglas 模型在 $p_x$ 变动时，$y$ 的需求量不变，因此 PCC 为水平线。
+将 `PricePath` 或 `IncomePath` 添加画布。[价格消费曲线](consumer.md#fig-price-path)中，Cobb-Douglas 模型在 $p_x$ 变动时，$y$ 的需求量不变，因此 PCC 为水平线。
 
 ```python
 from utility_viz import (
@@ -74,7 +79,7 @@ from utility_viz import (
 )
 from utility_viz.models import CobbDouglas
 
-# 本手册图形所用的设置
+# 图形设置
 Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
@@ -99,16 +104,21 @@ cvs.save("price_path.png")
 
 <span id="fig-price-path"></span>
 
-![价格消费曲线。](../../../assets/utility-viz/agora/consumer/price_path.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-价格消费曲线。 [下载绘制脚本](../../../assets/utility-viz/agora/consumer/price_path.py){ .ev-download download="" }
-{ .ev-caption }
+![价格消费曲线](../../../assets/utility-viz/agora/consumer/price_path.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/consumer/price_path.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a>
+
+<figcaption markdown>价格消费曲线</figcaption>
+
+</figure>
 
 ## 需求图
 
 <!-- api: agora.utility_viz.guides_consumer_5 -->
 
-根据 `PricePath` 绘制两个面板：上方为预算线与最优消费组合，下方为对应的 Marshall 需求曲线（参见[需求曲线最优点。](consumer.md#fig-demand)）。目前只接受 `PricePath`，并分别处理平滑、折点与角解。`show_pcc=True` 在上方面板显示价格消费曲线。
+根据 `PricePath` 绘制两个面板：上方为预算线与最优消费组合，下方为对应的 Marshall 需求曲线（参见[需求曲线最优点](consumer.md#fig-demand)）。目前只接受 `PricePath`，并分别处理平滑、折点与角解。`show_pcc=True` 在上方面板显示价格消费曲线。
 
 ```python
 from utility_viz import DemandDiagram, LinearBudget, PricePath
@@ -137,10 +147,15 @@ fig.save("demand_cobb_douglas.png")
 
 <span id="fig-demand"></span>
 
-![需求曲线最优点。](../../../assets/utility-viz/agora/consumer/demand.svg){ .ev-figure-lg }
+<figure class="ev-fig" markdown>
 
-需求曲线最优点。 [下载绘制脚本](../../../assets/utility-viz/agora/consumer/demand.py){ .ev-download download="" }
-{ .ev-caption }
+![需求曲线最优点](../../../assets/utility-viz/agora/consumer/demand.svg){ .ev-figure-lg }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/consumer/demand.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a>
+
+<figcaption markdown>需求曲线最优点</figcaption>
+
+</figure>
 
 ## 价格效应分解
 
@@ -202,10 +217,15 @@ result = decompose_price_effect(
 
 下图同样由 MosaicKit 图层画成，两个效果的名称标在坐标轴下方。
 
-![Hicks 分解。](../../../assets/utility-viz/agora/consumer/hicks.zh-CN.svg){ .ev-figure-lg }
+<figure class="ev-fig" markdown>
 
-Hicks 分解。 [下载绘制脚本](../../../assets/utility-viz/agora/consumer/hicks.zh-CN.py){ .ev-download download="" }
-{ .ev-caption }
+![Hicks 分解](../../../assets/utility-viz/agora/consumer/hicks.zh-CN.svg){ .ev-figure-lg }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/consumer/hicks.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a>
+
+<figcaption markdown>Hicks 分解</figcaption>
+
+</figure>
 
 ## Edgeworth 箱形图
 
@@ -240,7 +260,12 @@ box = EdgeworthBox(
 
 下图同样由 MosaicKit 图层画成，以教科书的图为蓝本，画出两人的无差异曲线。
 
-![两位消费者通过配置 A 至 D 的无差异曲线；阴影透镜是双方都偏好于 A 的配置。](../../../assets/utility-viz/agora/consumer/edgeworth.svg){ .ev-figure-lg }
+<figure class="ev-fig" markdown>
 
-两位消费者通过配置 A 至 D 的无差异曲线；阴影透镜是双方都偏好于 A 的配置。 [下载绘制脚本](../../../assets/utility-viz/agora/consumer/edgeworth.py){ .ev-download download="" }
-{ .ev-caption }
+![两位消费者通过配置 A 至 D 的无差异曲线 阴影透镜是双方都偏好于 A 的配置](../../../assets/utility-viz/agora/consumer/edgeworth.svg){ .ev-figure-lg }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/consumer/edgeworth.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a>
+
+<figcaption markdown>两位消费者通过配置 A 至 D 的无差异曲线 阴影透镜是双方都偏好于 A 的配置</figcaption>
+
+</figure>

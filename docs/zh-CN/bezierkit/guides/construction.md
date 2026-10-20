@@ -122,10 +122,13 @@ segment = graph_hermite(
 
 <span id="fig-hermite"></span>
 
+<figure class="ev-fig" markdown>
+
 ![$4 / x^2$ 在 $[1, 1.5]$ 的 Hermite 插值。](../../../assets/bezierkit/agora/construction/hermite.svg){ .ev-figure-sm }
 
-$4 / x^2$ 在 $[1, 1.5]$ 的 Hermite 插值。
-{ .ev-caption }
+<figcaption markdown>$4 / x^2$ 在 $[1, 1.5]$ 的 Hermite 插值。</figcaption>
+
+</figure>
 
 ## 插值误差
 

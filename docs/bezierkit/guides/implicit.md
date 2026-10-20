@@ -109,10 +109,13 @@ An edge has a crossing exactly when its two corners differ in being high.
 
 <span id="fig-saddle"></span>
 
+<figure class="ev-fig" markdown>
+
 ![Saddle cell, centre (a) high, (b) low; filled corners have $F \ge c$.](../../assets/bezierkit/agora/implicit/saddle.svg){ .ev-figure-sm }
 
-Saddle cell, centre (a) high, (b) low; filled corners have $F \ge c$.
-{ .ev-caption }
+<figcaption markdown>Saddle cell, centre (a) high, (b) low; filled corners have $F \ge c$.</figcaption>
+
+</figure>
 
 The saddle rule uses the bilinear interpolant of the four corner values,
 
@@ -165,10 +168,13 @@ print(len(contours.for_level(4)[0].segments))
 
 <span id="fig-contours"></span>
 
+<figure class="ev-fig" markdown>
+
 ![$x^2 y = c$ for $c = 1, 2, 4$, inner to outer.](../../assets/bezierkit/agora/implicit/contours.svg){ .ev-figure-sm }
 
-$x^2 y = c$ for $c = 1, 2, 4$, inner to outer.
-{ .ev-caption }
+<figcaption markdown>$x^2 y = c$ for $c = 1, 2, 4$, inner to outer.</figcaption>
+
+</figure>
 
 ## Results
 

@@ -110,10 +110,13 @@ fig.finalize()
 
 <span id="fig-labels"></span>
 
+<figure class="ev-fig" markdown>
+
 ![Renamed curves and equilibrium point.](../../assets/principle-viz/agora/figures/labels.svg){ .ev-figure-sm }
 
-Renamed curves and equilibrium point.
-{ .ev-caption }
+<figcaption markdown>Renamed curves and equilibrium point.</figcaption>
+
+</figure>
 
 ## Palettes and themes
 
@@ -161,10 +164,13 @@ fig = MarketFigure(x_max=12, y_max=12, palette="monochrome")
 
 <span id="fig-monochrome"></span>
 
+<figure class="ev-fig" markdown>
+
 ![The `monochrome` palette.](../../assets/principle-viz/agora/figures/monochrome.svg){ .ev-figure-sm }
 
-The `monochrome` palette.
-{ .ev-caption }
+<figcaption markdown>The `monochrome` palette.</figcaption>
+
+</figure>
 
 ## Canvases
 

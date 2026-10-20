@@ -42,10 +42,13 @@ canvas.save("diagram.pdf")
 
 <span id="fig-quickstart"></span>
 
+<figure class="ev-fig" markdown>
+
 ![The quick-start diagram.](../assets/mosaickit/agora/quickstart/diagram.svg){ .ev-figure-sm }
 
-The quick-start diagram.
-{ .ev-caption }
+<figcaption markdown>The quick-start diagram.</figcaption>
+
+</figure>
 
 `quadrant_axes(10, 10)` returns ordinary layers: two arrowed paths and their
 titles. The fill sits below everything else because `z_index=-1`. The path is

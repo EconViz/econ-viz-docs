@@ -51,10 +51,13 @@ ppf_canvas(result).save("ppf_points.png")
 
 <span id="fig-ppf"></span>
 
+<figure class="ev-fig" markdown>
+
 ![有效率、無效率與無法達成的點。](../../../assets/principle-viz/agora/ppf/points.svg){ .ev-figure-sm }
 
-有效率、無效率與無法達成的點。
-{ .ev-caption }
+<figcaption markdown>有效率、無效率與無法達成的點。</figcaption>
+
+</figure>
 
 <!-- api: agora.principle_viz.guides_ppf_4 -->
 
@@ -62,10 +65,13 @@ ppf_canvas(result).save("ppf_points.png")
 
 <span id="fig-ppf-growth"></span>
 
+<figure class="ev-fig" markdown>
+
 ![消費財成長 20%、資本財成長 10%。](../../../assets/principle-viz/agora/ppf/growth.svg){ .ev-figure-sm }
 
-消費財成長 20%、資本財成長 10%。
-{ .ev-caption }
+<figcaption markdown>消費財成長 20%、資本財成長 10%。</figcaption>
+
+</figure>
 
 ## 比較利益
 

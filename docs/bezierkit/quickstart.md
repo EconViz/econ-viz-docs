@@ -33,10 +33,13 @@ print(to_tikz(path, precision=2, options="thick"))
 
 <span id="fig-quickstart"></span>
 
+<figure class="ev-fig" markdown>
+
 ![The cubic of [Quick start](quickstart.md#sec-quickstart), its control polygon and convex hull.](../assets/bezierkit/agora/curves/cubic.svg){ .ev-figure-sm }
 
-The cubic of [Quick start](quickstart.md#sec-quickstart), its control polygon and convex hull.
-{ .ev-caption }
+<figcaption markdown>The cubic of [Quick start](quickstart.md#sec-quickstart), its control polygon and convex hull.</figcaption>
+
+</figure>
 
 The curve starts at $P_0$ and ends at $P_3$, leaves $P_0$ towards $P_1$ and
 arrives at $P_3$ from $P_2$, and never leaves the shaded hull of its control

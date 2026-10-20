@@ -40,7 +40,7 @@ $$
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CES
 
-# 本手册图形所用的设置
+# 图形设置
 Config.load("manual.toml").use()
 
 model = CES(alpha=0.5, beta=0.5, rho=-0.5)
@@ -53,10 +53,15 @@ cvs.add_equilibrium(eq)
 cvs.save("ces.png")
 ```
 
-![CES 曲线。](../../../assets/utility-viz/agora/models/ces.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-CES 曲线。 [下载绘制脚本](../../../assets/utility-viz/agora/models/ces.py){ .ev-download download="" }
-{ .ev-caption }
+![CES 曲线](../../../assets/utility-viz/agora/models/ces.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/models/ces.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a>
+
+<figcaption markdown>CES 曲线</figcaption>
+
+</figure>
 
 ### Translog
 
@@ -74,7 +79,7 @@ $$
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import Translog
 
-# 本手册图形所用的设置
+# 图形设置
 Config.load("manual.toml").use()
 
 model = Translog(alpha_x=0.6, alpha_y=0.4, beta_xy=0.12)
@@ -87,10 +92,15 @@ cvs.add_equilibrium(eq)
 cvs.save("translog.png")
 ```
 
-![Translog 示例。](../../../assets/utility-viz/agora/models/translog.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-Translog 示例。 [下载绘制脚本](../../../assets/utility-viz/agora/models/translog.py){ .ev-download download="" }
-{ .ev-caption }
+![Translog 示例](../../../assets/utility-viz/agora/models/translog.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/models/translog.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a>
+
+<figcaption markdown>Translog 示例</figcaption>
+
+</figure>
 
 ## 折点与角解
 
@@ -114,7 +124,7 @@ $$
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import Leontief
 
-# 本手册图形所用的设置
+# 图形设置
 Config.load("manual.toml").use()
 
 model = Leontief(a=1.0, b=1.0)
@@ -133,10 +143,15 @@ cvs.add_equilibrium(eq)
 cvs.save("leontief.png")
 ```
 
-![完全互补射线。](../../../assets/utility-viz/agora/models/leontief.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-完全互补射线。 [下载绘制脚本](../../../assets/utility-viz/agora/models/leontief.py){ .ev-download download="" }
-{ .ev-caption }
+![完全互补射线](../../../assets/utility-viz/agora/models/leontief.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/models/leontief.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a>
+
+<figcaption markdown>完全互补射线</figcaption>
+
+</figure>
 
 ### 完全替代
 
@@ -154,7 +169,7 @@ $$
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import PerfectSubstitutes
 
-# 本手册图形所用的设置
+# 图形设置
 Config.load("manual.toml").use()
 
 model = PerfectSubstitutes(a=1.0, b=2.0)
@@ -167,10 +182,15 @@ cvs.add_equilibrium(eq)
 cvs.save("perfect_substitutes.png")
 ```
 
-![完全替代角解。](../../../assets/utility-viz/agora/models/perfect_substitutes.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-完全替代角解。 [下载绘制脚本](../../../assets/utility-viz/agora/models/perfect_substitutes.py){ .ev-download download="" }
-{ .ev-caption }
+![完全替代角解](../../../assets/utility-viz/agora/models/perfect_substitutes.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/models/perfect_substitutes.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a>
+
+<figcaption markdown>完全替代角解</figcaption>
+
+</figure>
 
 ### 最大值效用
 
@@ -190,7 +210,7 @@ import numpy as np
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CustomUtility
 
-# 本手册图形所用的设置
+# 图形设置
 Config.load("manual.toml").use()
 
 model = CustomUtility(
@@ -205,10 +225,15 @@ cvs.add_equilibrium(eq)
 cvs.save("maximum.png")
 ```
 
-![最大值效用。](../../../assets/utility-viz/agora/models/maximum.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-最大值效用。 [下载绘制脚本](../../../assets/utility-viz/agora/models/maximum.py){ .ev-download download="" }
-{ .ev-caption }
+![最大值效用](../../../assets/utility-viz/agora/models/maximum.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/models/maximum.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a>
+
+<figcaption markdown>最大值效用</figcaption>
+
+</figure>
 
 ## 收入与参考点
 
@@ -232,7 +257,7 @@ import numpy as np
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import QuasiLinear
 
-# 本手册图形所用的设置
+# 图形设置
 Config.load("manual.toml").use()
 
 model = QuasiLinear(v_func=np.log, linear_in="y")
@@ -245,10 +270,15 @@ cvs.add_equilibrium(eq)
 cvs.save("quasi_linear.png")
 ```
 
-![准线性偏好。](../../../assets/utility-viz/agora/models/quasi_linear.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-准线性偏好。 [下载绘制脚本](../../../assets/utility-viz/agora/models/quasi_linear.py){ .ev-download download="" }
-{ .ev-caption }
+![准线性偏好](../../../assets/utility-viz/agora/models/quasi_linear.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/models/quasi_linear.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a>
+
+<figcaption markdown>准线性偏好</figcaption>
+
+</figure>
 
 ### Haagsma
 
@@ -268,7 +298,7 @@ $$
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import Haagsma
 
-# 本手册图形所用的设置
+# 图形设置
 Config.load("manual.toml").use()
 
 model = Haagsma(gamma_y=10.0)
@@ -281,10 +311,15 @@ cvs.add_equilibrium(eq)
 cvs.save("haagsma.png")
 ```
 
-![$\gamma_y = 10$ 的 Haagsma。](../../../assets/utility-viz/agora/models/haagsma.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-$\gamma_y = 10$ 的 Haagsma。 [下载绘制脚本](../../../assets/utility-viz/agora/models/haagsma.py){ .ev-download download="" }
-{ .ev-caption }
+![$\gamma_y = 10$ 的 Haagsma](../../../assets/utility-viz/agora/models/haagsma.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/models/haagsma.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a>
+
+<figcaption markdown>$\gamma_y = 10$ 的 Haagsma</figcaption>
+
+</figure>
 
 ### Stone-Geary
 
@@ -302,7 +337,7 @@ $$
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import StoneGeary
 
-# 本手册图形所用的设置
+# 图形设置
 Config.load("manual.toml").use()
 
 model = StoneGeary(alpha=0.5, beta=0.5, bar_x=2.0, bar_y=2.0)
@@ -315,10 +350,15 @@ cvs.add_equilibrium(eq)
 cvs.save("stone_geary.png")
 ```
 
-![Stone-Geary。](../../../assets/utility-viz/agora/models/stone_geary.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-Stone-Geary。 [下载绘制脚本](../../../assets/utility-viz/agora/models/stone_geary.py){ .ev-download download="" }
-{ .ev-caption }
+![Stone-Geary](../../../assets/utility-viz/agora/models/stone_geary.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/models/stone_geary.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a>
+
+<figcaption markdown>Stone-Geary</figcaption>
+
+</figure>
 
 ### 饱和偏好
 
@@ -338,7 +378,7 @@ import numpy as np
 from utility_viz import Canvas, Config, levels
 from utility_viz.models import Satiation
 
-# 本手册图形所用的设置
+# 图形设置
 Config.load("manual.toml").use()
 
 model = Satiation(bliss_x=6.0, bliss_y=4.0)
@@ -356,7 +396,12 @@ cvs.add_utility(
 cvs.save("satiation.png")
 ```
 
-![饱和偏好。](../../../assets/utility-viz/agora/models/satiation.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-饱和偏好。 [下载绘制脚本](../../../assets/utility-viz/agora/models/satiation.py){ .ev-download download="" }
-{ .ev-caption }
+![饱和偏好](../../../assets/utility-viz/agora/models/satiation.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/models/satiation.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a>
+
+<figcaption markdown>饱和偏好</figcaption>
+
+</figure>

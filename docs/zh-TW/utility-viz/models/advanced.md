@@ -24,7 +24,7 @@ import numpy as np
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CustomUtility
 
-# 本手冊圖形所用的設定
+# 圖形設定
 Config.load("manual.toml").use()
 
 # 任何陣列函數都可當效用
@@ -40,10 +40,15 @@ cvs.add_equilibrium(eq)
 cvs.save("custom.png")
 ```
 
-![對數自訂模型。](../../../assets/utility-viz/agora/models/custom.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-對數自訂模型。 [下載繪製腳本](../../../assets/utility-viz/agora/models/custom.py){ .ev-download download="" }
-{ .ev-caption }
+![對數自訂模型](../../../assets/utility-viz/agora/models/custom.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/models/custom.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a>
+
+<figcaption markdown>對數自訂模型</figcaption>
+
+</figure>
 
 ### 多商品 Cobb-Douglas
 
@@ -61,7 +66,7 @@ $$
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import MultiGoodCD
 
-# 本手冊圖形所用的設定
+# 圖形設定
 Config.load("manual.toml").use()
 
 # 三種商品 固定 z = 10
@@ -78,10 +83,15 @@ cvs.add_equilibrium(eq)
 cvs.save("multigood.png")
 ```
 
-![三商品固定 $z=10$。](../../../assets/utility-viz/agora/models/multigood.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-三商品固定 $z=10$。 [下載繪製腳本](../../../assets/utility-viz/agora/models/multigood.py){ .ev-download download="" }
-{ .ev-caption }
+![三商品固定 $z=10$](../../../assets/utility-viz/agora/models/multigood.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/models/multigood.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a>
+
+<figcaption markdown>三商品固定 $z=10$</figcaption>
+
+</figure>
 
 ### 與後端無關的場景
 

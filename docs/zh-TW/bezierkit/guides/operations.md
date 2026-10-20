@@ -98,10 +98,13 @@ print(d.at(0.5))
 
 <span id="fig-split"></span>
 
+<figure class="ev-fig" markdown>
+
 ![在 $t = 0.4$ 分割三次曲線。](../../../assets/bezierkit/agora/curves/split.svg){ .ev-figure-sm }
 
-在 $t = 0.4$ 分割三次曲線。
-{ .ev-caption }
+<figcaption markdown>在 $t = 0.4$ 分割三次曲線。</figcaption>
+
+</figure>
 
 <!-- api: agora.bezierkit.guides_operations_3 -->
 

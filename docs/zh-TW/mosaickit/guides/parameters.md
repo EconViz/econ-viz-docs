@@ -136,10 +136,13 @@ CanvasGrid(cells, cols=3, links=[link]).save("sweep.pdf")
 
 <span id="fig-sweep"></span>
 
+<figure class="ev-fig" markdown>
+
 ![三個值的掃描與跨格連線。](../../../assets/mosaickit/agora/grids/sweep.svg){ .ev-figure-sm }
 
-三個值的掃描與跨格連線。
-{ .ev-caption }
+<figcaption markdown>三個值的掃描與跨格連線。</figcaption>
+
+</figure>
 
 ## 動畫
 

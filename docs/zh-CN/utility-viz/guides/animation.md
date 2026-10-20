@@ -73,7 +73,7 @@ Animator(draw, frames=np.linspace(0.1, 0.9, 45)).save(
 
 收入变动将 `draw()` 的参数改为 `income`，并把该值传入 `add_budget()` 与 `solve()`。只呈现预算线时，省略 `add_utility()` 与 `add_equilibrium()`。
 
-[参数变动。](animation.md#fig-sweep-param)至[收入变动。](animation.md#fig-sweep-income)各节录四个帧。
+[参数变动](animation.md#fig-sweep-param)至[收入变动](animation.md#fig-sweep-income)各节录四个帧。
 
 ```python
 import numpy as np
@@ -82,7 +82,7 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.core.animation import Animator
 from utility_viz.models import CobbDouglas
 
-# 本手册图形所用的设置
+# 图形设置
 Config.load("manual.toml").use()
 
 
@@ -108,10 +108,15 @@ Animator(draw, frames=np.linspace(0.1, 0.9, 45)).save(
 
 <span id="fig-sweep-param"></span>
 
-![参数变动。](../../../assets/utility-viz/agora/animation/parameter_sweep.svg){ .ev-figure-lg }
+<figure class="ev-fig" markdown>
 
-参数变动。 [下载绘制脚本](../../../assets/utility-viz/agora/animation/parameter_sweep.py){ .ev-download download="" }
-{ .ev-caption }
+![参数变动](../../../assets/utility-viz/agora/animation/parameter_sweep.svg){ .ev-figure-lg }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/animation/parameter_sweep.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a>
+
+<figcaption markdown>参数变动</figcaption>
+
+</figure>
 
 下面每张图取 GIF 的四个帧，GIF 共 45 帧。
 
@@ -122,7 +127,7 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.core.animation import Animator
 from utility_viz.models import CobbDouglas
 
-# 本手册图形所用的设置
+# 图形设置
 Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
@@ -151,10 +156,15 @@ Animator(draw, frames=np.linspace(1.0, 6.0, 45)).save(
 
 <span id="fig-sweep-price"></span>
 
-![价格变动。](../../../assets/utility-viz/agora/animation/price_sweep.svg){ .ev-figure-lg }
+<figure class="ev-fig" markdown>
 
-价格变动。 [下载绘制脚本](../../../assets/utility-viz/agora/animation/price_sweep.py){ .ev-download download="" }
-{ .ev-caption }
+![价格变动](../../../assets/utility-viz/agora/animation/price_sweep.svg){ .ev-figure-lg }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/animation/price_sweep.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a>
+
+<figcaption markdown>价格变动</figcaption>
+
+</figure>
 
 ```python
 import numpy as np
@@ -163,7 +173,7 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.core.animation import Animator
 from utility_viz.models import CobbDouglas
 
-# 本手册图形所用的设置
+# 图形设置
 Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
@@ -192,10 +202,15 @@ Animator(draw, frames=np.linspace(8.0, 36.0, 45)).save(
 
 <span id="fig-sweep-income"></span>
 
-![收入变动。](../../../assets/utility-viz/agora/animation/income_sweep.svg){ .ev-figure-lg }
+<figure class="ev-fig" markdown>
 
-收入变动。 [下载绘制脚本](../../../assets/utility-viz/agora/animation/income_sweep.py){ .ev-download download="" }
-{ .ev-caption }
+![收入变动](../../../assets/utility-viz/agora/animation/income_sweep.svg){ .ev-figure-lg }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/animation/income_sweep.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a>
+
+<figcaption markdown>收入变动</figcaption>
+
+</figure>
 
 ## 动画图库
 

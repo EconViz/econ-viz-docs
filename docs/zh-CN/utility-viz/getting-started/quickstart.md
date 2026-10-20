@@ -14,13 +14,13 @@ $$
 \begin{aligned}\max_{x, y} & u(x, y) = x^{1/2} y^{1/2} \\ \text{s.t.} & 2x + 3y = 30\end{aligned}
 $$
 
-程序先求解最优消费组合，再绘制无差异曲线、预算集与均衡点（参见[消费者均衡。](quickstart.md#fig-quickstart)）。
+程序先求解最优消费组合，再绘制无差异曲线、预算集与均衡点（参见[消费者均衡](quickstart.md#fig-quickstart)）。
 
 ```python
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
-# 本手册图形所用的设置
+# 图形设置
 Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
@@ -40,10 +40,15 @@ cvs.save("cobb_douglas.png")
 
 <span id="fig-quickstart"></span>
 
-![消费者均衡。](../../../assets/utility-viz/agora/models/cobb_douglas.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-消费者均衡。 [下载绘制脚本](../../../assets/utility-viz/agora/models/cobb_douglas.py){ .ev-download download="" }
-{ .ev-caption }
+![消费者均衡](../../../assets/utility-viz/agora/models/cobb_douglas.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/models/cobb_douglas.zh-CN.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a>
+
+<figcaption markdown>消费者均衡</figcaption>
+
+</figure>
 
 运行主程序 `main.py` 后，会在当前工作目录创建 `cobb_douglas.png`。本例的最优消费量为 $x^* = 7.5$、$y^* = 5$，支出为 $2 \times 7.5 + 3 \times 5 = 30$，恰好等于收入。预算线的两个轴截距则为 $I / p_x = 15$ 与 $I / p_y = 10$。
 
@@ -70,7 +75,7 @@ print(eq.x, eq.y, round(eq.utility, 3))
 
 <!-- api: agora.utility_viz.getting_started_quickstart_3 -->
 
-以指定效用值为中心，生成 $n$ 个效用水平。[消费者均衡。](quickstart.md#fig-quickstart) 使用 `n=5`，因此绘制五条无差异曲线。
+以指定效用值为中心，生成 $n$ 个效用水平。[消费者均衡](quickstart.md#fig-quickstart) 使用 `n=5`，因此绘制五条无差异曲线。
 
 `levels.around()` 会保留指定的效用值，均衡点会落在其中一条无差异曲线上。若直接传入 `levels=5`，画布会依采样到的效用范围选取水平，不保证包含均衡效用。要比较多张图上的同一组偏好，可先计算一次 `lvls`，再让各张图使用相同水平。
 

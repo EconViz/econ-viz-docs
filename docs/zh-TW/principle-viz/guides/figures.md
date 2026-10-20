@@ -83,10 +83,13 @@ fig.finalize()
 
 <span id="fig-labels"></span>
 
+<figure class="ev-fig" markdown>
+
 ![改名的曲線與均衡點。](../../../assets/principle-viz/agora/figures/labels.svg){ .ev-figure-sm }
 
-改名的曲線與均衡點。
-{ .ev-caption }
+<figcaption markdown>改名的曲線與均衡點。</figcaption>
+
+</figure>
 
 ## 配色與主題
 
@@ -121,10 +124,13 @@ fig = MarketFigure(x_max=12, y_max=12, palette="monochrome")
 
 <span id="fig-monochrome"></span>
 
+<figure class="ev-fig" markdown>
+
 ![`monochrome` 配色。](../../../assets/principle-viz/agora/figures/monochrome.svg){ .ev-figure-sm }
 
-`monochrome` 配色。
-{ .ev-caption }
+<figcaption markdown>`monochrome` 配色。</figcaption>
+
+</figure>
 
 ## 畫布
 

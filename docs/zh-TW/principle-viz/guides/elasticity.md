@@ -76,7 +76,10 @@ CanvasGrid(canvases, rows=1).save(
 
 <span id="fig-revenue"></span>
 
+<figure class="ev-fig" markdown>
+
 ![需求曲線上的彈性與總收益。](../../../assets/principle-viz/agora/elasticity/revenue.svg){ .ev-figure-lg }
 
-需求曲線上的彈性與總收益。
-{ .ev-caption }
+<figcaption markdown>需求曲線上的彈性與總收益。</figcaption>
+
+</figure>

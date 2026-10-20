@@ -57,17 +57,23 @@ print(solve_tax_equilibrium(demand, supply, tax))
 
 <span id="fig-tax-producer"></span>
 
+<figure class="ev-fig" markdown>
+
 ![向卖方征收从量税。](../../../assets/principle-viz/agora/taxes/per_unit_producer.svg){ .ev-figure-sm }
 
-向卖方征收从量税。
-{ .ev-caption }
+<figcaption markdown>向卖方征收从量税。</figcaption>
+
+</figure>
 
 <span id="fig-tax-consumer"></span>
 
+<figure class="ev-fig" markdown>
+
 ![向买方征收从价税。](../../../assets/principle-viz/agora/taxes/ad_valorem_consumer.svg){ .ev-figure-sm }
 
-向买方征收从价税。
-{ .ev-caption }
+<figcaption markdown>向买方征收从价税。</figcaption>
+
+</figure>
 
 <!-- api: agora.principle_viz.guides_taxes_8 -->
 
@@ -105,10 +111,13 @@ fig.finalize()
 
 <span id="fig-tax-welfare"></span>
 
+<figure class="ev-fig" markdown>
+
 ![征税下的剩余与无谓损失。](../../../assets/principle-viz/agora/taxes/welfare.svg){ .ev-figure-sm }
 
-征税下的剩余与无谓损失。
-{ .ev-caption }
+<figcaption markdown>征税下的剩余与无谓损失。</figcaption>
+
+</figure>
 
 ## 补贴
 
@@ -153,7 +162,10 @@ fig = MarketFigure(
 
 <span id="fig-subsidy"></span>
 
+<figure class="ev-fig" markdown>
+
 ![从量补贴与无谓损失。](../../../assets/principle-viz/agora/taxes/subsidy.svg){ .ev-figure-sm }
 
-从量补贴与无谓损失。
-{ .ev-caption }
+<figcaption markdown>从量补贴与无谓损失。</figcaption>
+
+</figure>

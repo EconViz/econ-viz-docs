@@ -120,17 +120,23 @@ fig.finalize()
 
 <span id="fig-shifts"></span>
 
+<figure class="ev-fig" markdown>
+
 ![An increase in demand.](../../assets/principle-viz/agora/markets/shift_demand_increase.svg){ .ev-figure-sm }
 
-An increase in demand.
-{ .ev-caption }
+<figcaption markdown>An increase in demand.</figcaption>
+
+</figure>
 
 <span id="fig-shift-supply"></span>
 
+<figure class="ev-fig" markdown>
+
 ![A decrease in supply.](../../assets/principle-viz/agora/markets/shift_supply_decrease.svg){ .ev-figure-sm }
 
-A decrease in supply.
-{ .ev-caption }
+<figcaption markdown>A decrease in supply.</figcaption>
+
+</figure>
 
 ## Errors
 

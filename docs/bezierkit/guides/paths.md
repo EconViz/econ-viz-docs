@@ -73,10 +73,13 @@ curve, found by evaluating it at the candidate parameters of [Bounding box of a 
 
 <span id="fig-bbox"></span>
 
+<figure class="ev-fig" markdown>
+
 ![The tight bounding box of a cubic.](../../assets/bezierkit/agora/paths/bbox.svg){ .ev-figure-sm }
 
-The tight bounding box of a cubic.
-{ .ev-caption }
+<figcaption markdown>The tight bounding box of a cubic.</figcaption>
+
+</figure>
 
 ## Degree elevation
 

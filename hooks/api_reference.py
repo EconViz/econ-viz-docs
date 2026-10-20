@@ -27,10 +27,6 @@ _catalog = {}
 _symbols = {}
 _parameters = {}
 _sections = []
-# Every manual example loads this file; the string links to the section of this page that prints it.
-MANUAL_SETTINGS_FILE = 'manual.toml'
-MANUAL_SETTINGS_PAGE = 'utility-viz/guides/themes.md'
-MANUAL_SETTINGS_ANCHOR = 'sec-manual-toml'
 _weights = {}  # (page, anchor) -> parameters documented there; the fuller definition wins a tie
 _class_categories = {
     'model': set('CobbDouglas CES Translog Leontief PerfectSubstitutes MaximumUtility QuasiLinear StoneGeary Satiation CustomUtility MultiGoodCD Haagsma UtilityFunction LinearDemand LinearSupply DiscreteDemand DiscreteSupply PiecewiseLinear ProductionPossibilitiesFrontier IndividualBenefit'.split()),
@@ -420,14 +416,6 @@ def link_examples(markup, src, config):
                 for target in node.targets:
                     if isinstance(target, ast.Name):
                         bindings[target.id] = value
-
-            def visit_Constant(self, node):
-                # The settings file every example loads links to the section that prints it.
-                if node.value == MANUAL_SETTINGS_FILE and node.lineno == node.end_lineno:
-                    start = offset(node.lineno, node.col_offset)
-                    stop = offset(node.end_lineno, node.end_col_offset)
-                    prefix = (locale + '/' if locale else '') + MANUAL_SETTINGS_PAGE
-                    links[start] = (stop, page_link(prefix, MANUAL_SETTINGS_ANCHOR))
 
             def visit_Attribute(self, node):
                 owner = resolve(node.value)

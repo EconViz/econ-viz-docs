@@ -48,17 +48,23 @@ canvas.add(AxisMarkLayer("x", 6, "b", math=True))
 
 <span id="fig-gutter"></span>
 
+<figure class="ev-fig" markdown>
+
 ![y 轴边栏的标记、注释与大括号。](../../../assets/mosaickit/agora/annotations/gutter.svg){ .ev-figure-sm }
 
-y 轴边栏的标记、注释与大括号。
-{ .ev-caption }
+<figcaption markdown>y 轴边栏的标记、注释与大括号。</figcaption>
+
+</figure>
 
 <span id="fig-span"></span>
 
+<figure class="ev-fig" markdown>
+
 ![两点之间的跨距大括号。](../../../assets/mosaickit/agora/annotations/span.svg){ .ev-figure-sm }
 
-两点之间的跨距大括号。
-{ .ev-caption }
+<figcaption markdown>两点之间的跨距大括号。</figcaption>
+
+</figure>
 
 ## 边栏的字段
 
@@ -103,10 +109,13 @@ y 轴边栏的标记、注释与大括号。
 
 <span id="fig-spread"></span>
 
+<figure class="ev-fig" markdown>
+
 ![目标（上）与分散结果（下）。](../../../assets/mosaickit/agora/geometry/spread.svg){ .ev-figure-sm }
 
-目标（上）与分散结果（下）。
-{ .ev-caption }
+<figcaption markdown>目标（上）与分散结果（下）。</figcaption>
+
+</figure>
 
 [目标（上）与分散结果（下）。](annotations.md#fig-spread)中的前三项因重叠而形成一组，该组的位置以各项目标位置的平均值为中心；其余两项原本就已分开，因此不会移动。
 

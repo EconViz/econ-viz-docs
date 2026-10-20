@@ -85,7 +85,7 @@ For the income sweep, `draw()` takes `income` and passes it to
 `add_budget()` and `solve()`. For the budget line alone, leave out
 `add_utility()` and `add_equilibrium()`.
 
-[Parameter sweep: $\alpha$ varies with $\beta = 1 - \alpha$.](animation.md#fig-sweep-param) to [Income sweep with $p_x = p_y = 2$ fixed.](animation.md#fig-sweep-income) each show four frames.
+[Parameter sweep $\alpha$ varies with $\beta = 1 - \alpha$](animation.md#fig-sweep-param) to [Income sweep with $p_x = p_y = 2$ fixed](animation.md#fig-sweep-income) each show four frames.
 
 ```python
 import numpy as np
@@ -94,7 +94,7 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.core.animation import Animator
 from utility_viz.models import CobbDouglas
 
-# the settings behind this manual's figures
+# figure settings
 Config.load("manual.toml").use()
 
 
@@ -120,10 +120,15 @@ Animator(draw, frames=np.linspace(0.1, 0.9, 45)).save(
 
 <span id="fig-sweep-param"></span>
 
-![Parameter sweep: $\alpha$ varies with $\beta = 1 - \alpha$.](../../assets/utility-viz/agora/animation/parameter_sweep.svg){ .ev-figure-lg }
+<figure class="ev-fig" markdown>
 
-Parameter sweep: $\alpha$ varies with $\beta = 1 - \alpha$. [Download the script](../../assets/utility-viz/agora/animation/parameter_sweep.py){ .ev-download download="" }
-{ .ev-caption }
+![Parameter sweep $\alpha$ varies with $\beta = 1 - \alpha$](../../assets/utility-viz/agora/animation/parameter_sweep.svg){ .ev-figure-lg }
+
+<a class="ev-download" href="../../assets/utility-viz/agora/animation/parameter_sweep.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
+
+<figcaption markdown>Parameter sweep $\alpha$ varies with $\beta = 1 - \alpha$</figcaption>
+
+</figure>
 
 Each figure below shows four frames of its GIF, which has 45.
 
@@ -134,7 +139,7 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.core.animation import Animator
 from utility_viz.models import CobbDouglas
 
-# the settings behind this manual's figures
+# figure settings
 Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
@@ -163,10 +168,15 @@ Animator(draw, frames=np.linspace(1.0, 6.0, 45)).save(
 
 <span id="fig-sweep-price"></span>
 
-![Price sweep with $p_y = 2$ and $I = 20$ fixed.](../../assets/utility-viz/agora/animation/price_sweep.svg){ .ev-figure-lg }
+<figure class="ev-fig" markdown>
 
-Price sweep with $p_y = 2$ and $I = 20$ fixed. [Download the script](../../assets/utility-viz/agora/animation/price_sweep.py){ .ev-download download="" }
-{ .ev-caption }
+![Price sweep with $p_y = 2$ and $I = 20$ fixed](../../assets/utility-viz/agora/animation/price_sweep.svg){ .ev-figure-lg }
+
+<a class="ev-download" href="../../assets/utility-viz/agora/animation/price_sweep.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
+
+<figcaption markdown>Price sweep with $p_y = 2$ and $I = 20$ fixed</figcaption>
+
+</figure>
 
 ```python
 import numpy as np
@@ -175,7 +185,7 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.core.animation import Animator
 from utility_viz.models import CobbDouglas
 
-# the settings behind this manual's figures
+# figure settings
 Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
@@ -204,10 +214,15 @@ Animator(draw, frames=np.linspace(8.0, 36.0, 45)).save(
 
 <span id="fig-sweep-income"></span>
 
-![Income sweep with $p_x = p_y = 2$ fixed.](../../assets/utility-viz/agora/animation/income_sweep.svg){ .ev-figure-lg }
+<figure class="ev-fig" markdown>
 
-Income sweep with $p_x = p_y = 2$ fixed. [Download the script](../../assets/utility-viz/agora/animation/income_sweep.py){ .ev-download download="" }
-{ .ev-caption }
+![Income sweep with $p_x = p_y = 2$ fixed](../../assets/utility-viz/agora/animation/income_sweep.svg){ .ev-figure-lg }
+
+<a class="ev-download" href="../../assets/utility-viz/agora/animation/income_sweep.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
+
+<figcaption markdown>Income sweep with $p_x = p_y = 2$ fixed</figcaption>
+
+</figure>
 
 ## Sweep gallery
 

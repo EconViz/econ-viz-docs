@@ -119,3 +119,9 @@ uv add --prerelease allow utility-viz
 ```
 
 Requires Python 3.10 or later. See [Installation](getting-started/installation.md) for uv and optional extras.
+
+## Examples
+
+Every figure in this documentation comes with the script that draws it, sorted into folders by topic. Download them all in one file, with `manual.toml`, the settings the scripts load.
+
+[Download all examples](../assets/utility-viz/agora/utility-viz-examples-en.zip){ .md-button download="" }

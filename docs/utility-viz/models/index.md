@@ -48,7 +48,7 @@ changes, CES approaches Cobb-Douglas ($\rho \to 0$), Leontief
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CES
 
-# the settings behind this manual's figures
+# figure settings
 Config.load("manual.toml").use()
 
 model = CES(alpha=0.5, beta=0.5, rho=-0.5)
@@ -61,10 +61,15 @@ cvs.add_equilibrium(eq)
 cvs.save("ces.png")
 ```
 
-![CES with $\rho = -0.5$.](../../assets/utility-viz/agora/models/ces.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-CES with $\rho = -0.5$. [Download the script](../../assets/utility-viz/agora/models/ces.py){ .ev-download download="" }
-{ .ev-caption }
+![CES with $\rho = -0.5$](../../assets/utility-viz/agora/models/ces.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../assets/utility-viz/agora/models/ces.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
+
+<figcaption markdown>CES with $\rho = -0.5$</figcaption>
+
+</figure>
 
 ### Translog
 
@@ -85,7 +90,7 @@ Cobb-Douglas-style log-linear form.
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import Translog
 
-# the settings behind this manual's figures
+# figure settings
 Config.load("manual.toml").use()
 
 model = Translog(alpha_x=0.6, alpha_y=0.4, beta_xy=0.12)
@@ -98,10 +103,15 @@ cvs.add_equilibrium(eq)
 cvs.save("translog.png")
 ```
 
-![Translog with $\beta_{x y} = 0.12$.](../../assets/utility-viz/agora/models/translog.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-Translog with $\beta_{x y} = 0.12$. [Download the script](../../assets/utility-viz/agora/models/translog.py){ .ev-download download="" }
-{ .ev-caption }
+![Translog with $\beta_{x y} = 0.12$](../../assets/utility-viz/agora/models/translog.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../assets/utility-viz/agora/models/translog.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
+
+<figcaption markdown>Translog with $\beta_{x y} = 0.12$</figcaption>
+
+</figure>
 
 ## Kinks and corners
 
@@ -129,7 +139,7 @@ with `CustomUtility`.
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import Leontief
 
-# the settings behind this manual's figures
+# figure settings
 Config.load("manual.toml").use()
 
 model = Leontief(a=1.0, b=1.0)
@@ -148,10 +158,15 @@ cvs.add_equilibrium(eq)
 cvs.save("leontief.png")
 ```
 
-![Leontief, with the ray through the kinks.](../../assets/utility-viz/agora/models/leontief.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-Leontief, with the ray through the kinks. [Download the script](../../assets/utility-viz/agora/models/leontief.py){ .ev-download download="" }
-{ .ev-caption }
+![Leontief with the ray through the kinks](../../assets/utility-viz/agora/models/leontief.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../assets/utility-viz/agora/models/leontief.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
+
+<figcaption markdown>Leontief with the ray through the kinks</figcaption>
+
+</figure>
 
 ### Perfect substitutes
 
@@ -171,7 +186,7 @@ solution.
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import PerfectSubstitutes
 
-# the settings behind this manual's figures
+# figure settings
 Config.load("manual.toml").use()
 
 model = PerfectSubstitutes(a=1.0, b=2.0)
@@ -184,10 +199,15 @@ cvs.add_equilibrium(eq)
 cvs.save("perfect_substitutes.png")
 ```
 
-![Perfect substitutes: a corner solution on the $y$-axis.](../../assets/utility-viz/agora/models/perfect_substitutes.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-Perfect substitutes: a corner solution on the $y$-axis. [Download the script](../../assets/utility-viz/agora/models/perfect_substitutes.py){ .ev-download download="" }
-{ .ev-caption }
+![Perfect substitutes a corner solution on the $y$-axis](../../assets/utility-viz/agora/models/perfect_substitutes.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../assets/utility-viz/agora/models/perfect_substitutes.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
+
+<figcaption markdown>Perfect substitutes a corner solution on the $y$-axis</figcaption>
+
+</figure>
 
 ### Maximum utility
 
@@ -211,7 +231,7 @@ import numpy as np
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CustomUtility
 
-# the settings behind this manual's figures
+# figure settings
 Config.load("manual.toml").use()
 
 model = CustomUtility(
@@ -226,10 +246,15 @@ cvs.add_equilibrium(eq)
 cvs.save("maximum.png")
 ```
 
-![Maximum utility.](../../assets/utility-viz/agora/models/maximum.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-Maximum utility. [Download the script](../../assets/utility-viz/agora/models/maximum.py){ .ev-download download="" }
-{ .ev-caption }
+![Maximum utility](../../assets/utility-viz/agora/models/maximum.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../assets/utility-viz/agora/models/maximum.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
+
+<figcaption markdown>Maximum utility</figcaption>
+
+</figure>
 
 ## Income and reference points
 
@@ -255,7 +280,7 @@ import numpy as np
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import QuasiLinear
 
-# the settings behind this manual's figures
+# figure settings
 Config.load("manual.toml").use()
 
 model = QuasiLinear(v_func=np.log, linear_in="y")
@@ -268,10 +293,15 @@ cvs.add_equilibrium(eq)
 cvs.save("quasi_linear.png")
 ```
 
-![Quasi-linear preferences: vertically parallel indifference curves.](../../assets/utility-viz/agora/models/quasi_linear.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-Quasi-linear preferences: vertically parallel indifference curves. [Download the script](../../assets/utility-viz/agora/models/quasi_linear.py){ .ev-download download="" }
-{ .ev-caption }
+![Quasi-linear preferences vertically parallel indifference curves](../../assets/utility-viz/agora/models/quasi_linear.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../assets/utility-viz/agora/models/quasi_linear.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
+
+<figcaption markdown>Quasi-linear preferences vertically parallel indifference curves</figcaption>
+
+</figure>
 
 ### Haagsma
 
@@ -294,7 +324,7 @@ maximum on the budget line and the model raises `InvalidParameterError`.
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import Haagsma
 
-# the settings behind this manual's figures
+# figure settings
 Config.load("manual.toml").use()
 
 model = Haagsma(gamma_y=10.0)
@@ -307,10 +337,15 @@ cvs.add_equilibrium(eq)
 cvs.save("haagsma.png")
 ```
 
-![Haagsma with $\gamma_y = 10$.](../../assets/utility-viz/agora/models/haagsma.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-Haagsma with $\gamma_y = 10$. [Download the script](../../assets/utility-viz/agora/models/haagsma.py){ .ev-download download="" }
-{ .ev-caption }
+![Haagsma with $\gamma_y = 10$](../../assets/utility-viz/agora/models/haagsma.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../assets/utility-viz/agora/models/haagsma.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
+
+<figcaption markdown>Haagsma with $\gamma_y = 10$</figcaption>
+
+</figure>
 
 ### Stone-Geary
 
@@ -331,7 +366,7 @@ consumer.
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import StoneGeary
 
-# the settings behind this manual's figures
+# figure settings
 Config.load("manual.toml").use()
 
 model = StoneGeary(alpha=0.5, beta=0.5, bar_x=2.0, bar_y=2.0)
@@ -344,10 +379,15 @@ cvs.add_equilibrium(eq)
 cvs.save("stone_geary.png")
 ```
 
-![Stone-Geary with $\overline{x} = \overline{y} = 2$.](../../assets/utility-viz/agora/models/stone_geary.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-Stone-Geary with $\overline{x} = \overline{y} = 2$. [Download the script](../../assets/utility-viz/agora/models/stone_geary.py){ .ev-download download="" }
-{ .ev-caption }
+![Stone-Geary with $\overline{x} = \overline{y} = 2$](../../assets/utility-viz/agora/models/stone_geary.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../assets/utility-viz/agora/models/stone_geary.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
+
+<figcaption markdown>Stone-Geary with $\overline{x} = \overline{y} = 2$</figcaption>
+
+</figure>
 
 ### Satiation
 
@@ -368,7 +408,7 @@ import numpy as np
 from utility_viz import Canvas, Config, levels
 from utility_viz.models import Satiation
 
-# the settings behind this manual's figures
+# figure settings
 Config.load("manual.toml").use()
 
 model = Satiation(bliss_x=6.0, bliss_y=4.0)
@@ -386,7 +426,12 @@ cvs.add_utility(
 cvs.save("satiation.png")
 ```
 
-![Satiation around the bliss point $(6, 4)$.](../../assets/utility-viz/agora/models/satiation.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-Satiation around the bliss point $(6, 4)$. [Download the script](../../assets/utility-viz/agora/models/satiation.py){ .ev-download download="" }
-{ .ev-caption }
+![Satiation around the bliss point $(6, 4)$](../../assets/utility-viz/agora/models/satiation.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../assets/utility-viz/agora/models/satiation.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
+
+<figcaption markdown>Satiation around the bliss point $(6, 4)$</figcaption>
+
+</figure>

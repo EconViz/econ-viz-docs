@@ -110,10 +110,13 @@ is derived from the blossom) and [Farin (2002)](../project/references.md#farin20
 
 <span id="fig-split"></span>
 
+<figure class="ev-fig" markdown>
+
 ![Splitting the cubic at $t = 0.4$.](../../assets/bezierkit/agora/curves/split.svg){ .ev-figure-sm }
 
-Splitting the cubic at $t = 0.4$.
-{ .ev-caption }
+<figcaption markdown>Splitting the cubic at $t = 0.4$.</figcaption>
+
+</figure>
 
 <!-- api: agora.bezierkit.guides_operations_3 -->
 

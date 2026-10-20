@@ -51,7 +51,7 @@ from utility_viz import (
     solve,
 )
 
-# 本手冊圖形所用的設定
+# 圖形設定
 Config.load("manual.toml").use()
 
 # Leontief(a=2.0, b=3.0)
@@ -69,10 +69,15 @@ cvs.add_equilibrium(eq)
 cvs.save("leontief.png")
 ```
 
-![Leontief 範例。](../../../assets/utility-viz/agora/latex/leontief.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-Leontief 範例。 [下載繪製腳本](../../../assets/utility-viz/agora/latex/leontief.py){ .ev-download download="" }
-{ .ev-caption }
+![Leontief 範例](../../../assets/utility-viz/agora/latex/leontief.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/latex/leontief.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a>
+
+<figcaption markdown>Leontief 範例</figcaption>
+
+</figure>
 
 ```python
 from utility_viz import (
@@ -83,7 +88,7 @@ from utility_viz import (
     solve,
 )
 
-# 本手冊圖形所用的設定
+# 圖形設定
 Config.load("manual.toml").use()
 
 # PerfectSubstitutes(a=2.0, b=3.0)
@@ -97,10 +102,15 @@ cvs.add_equilibrium(eq)
 cvs.save("perfect_substitutes.png")
 ```
 
-![完全替代輸入範例。](../../../assets/utility-viz/agora/latex/perfect_substitutes.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-完全替代輸入範例。 [下載繪製腳本](../../../assets/utility-viz/agora/latex/perfect_substitutes.py){ .ev-download download="" }
-{ .ev-caption }
+![完全替代輸入範例](../../../assets/utility-viz/agora/latex/perfect_substitutes.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../../assets/utility-viz/agora/latex/perfect_substitutes.zh-TW.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a>
+
+<figcaption markdown>完全替代輸入範例</figcaption>
+
+</figure>
 
 ## 錯誤處理
 

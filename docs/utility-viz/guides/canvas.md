@@ -57,7 +57,7 @@ cvs.add_utility(
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
-# the settings behind this manual's figures
+# figure settings
 Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
@@ -72,10 +72,15 @@ cvs.save("add_utility.png")
 
 <span id="fig-add-utility"></span>
 
-![Three indifference curves.](../../assets/utility-viz/agora/canvas/add_utility.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-Three indifference curves. [Download the script](../../assets/utility-viz/agora/canvas/add_utility.py){ .ev-download download="" }
-{ .ev-caption }
+![Three indifference curves](../../assets/utility-viz/agora/canvas/add_utility.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../assets/utility-viz/agora/canvas/add_utility.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
+
+<figcaption markdown>Three indifference curves</figcaption>
+
+</figure>
 
 <!-- api: agora.utility_viz.guides_canvas_3 -->
 
@@ -84,7 +89,7 @@ Draw the budget line $p_x x + p_y y = I$.
 ```python
 from utility_viz import Canvas, Config
 
-# the settings behind this manual's figures
+# figure settings
 Config.load("manual.toml").use()
 
 # italic x and y
@@ -94,10 +99,15 @@ cvs.add_budget(2.0, 3.0, 30.0, fill=True)
 cvs.save("add_budget.png")
 ```
 
-![Budget line and shading.](../../assets/utility-viz/agora/canvas/add_budget.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-Budget line and shading. [Download the script](../../assets/utility-viz/agora/canvas/add_budget.py){ .ev-download download="" }
-{ .ev-caption }
+![Budget line and shading](../../assets/utility-viz/agora/canvas/add_budget.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../assets/utility-viz/agora/canvas/add_budget.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
+
+<figcaption markdown>Budget line and shading</figcaption>
+
+</figure>
 
 <!-- api: agora.utility_viz.guides_canvas_4 -->
 
@@ -107,7 +117,7 @@ Mark the optimal bundle returned by `solve()`.
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
-# the settings behind this manual's figures
+# figure settings
 Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
@@ -122,10 +132,15 @@ cvs.add_equilibrium(eq)
 cvs.save("add_equilibrium.png")
 ```
 
-![Equilibrium and drop lines.](../../assets/utility-viz/agora/canvas/add_equilibrium.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-Equilibrium and drop lines. [Download the script](../../assets/utility-viz/agora/canvas/add_equilibrium.py){ .ev-download download="" }
-{ .ev-caption }
+![Equilibrium and drop lines](../../assets/utility-viz/agora/canvas/add_equilibrium.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../assets/utility-viz/agora/canvas/add_equilibrium.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
+
+<figcaption markdown>Equilibrium and drop lines</figcaption>
+
+</figure>
 
 <!-- api: agora.utility_viz.guides_canvas_5 -->
 
@@ -136,7 +151,7 @@ expansion path or a fixed consumption ratio.
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
-# the settings behind this manual's figures
+# figure settings
 Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
@@ -152,10 +167,15 @@ cvs.add_ray(eq.y / eq.x)
 cvs.save("add_ray.png")
 ```
 
-![Expansion-path ray.](../../assets/utility-viz/agora/canvas/add_ray.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-Expansion-path ray. [Download the script](../../assets/utility-viz/agora/canvas/add_ray.py){ .ev-download download="" }
-{ .ev-caption }
+![Expansion-path ray](../../assets/utility-viz/agora/canvas/add_ray.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../assets/utility-viz/agora/canvas/add_ray.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
+
+<figcaption markdown>Expansion-path ray</figcaption>
+
+</figure>
 
 <!-- api: agora.utility_viz.guides_canvas_6 -->
 
@@ -165,7 +185,7 @@ Mark any point, such as a bundle to compare with the optimum.
 from utility_viz import Canvas, Config, Label, levels, solve
 from utility_viz.models import CobbDouglas
 
-# the settings behind this manual's figures
+# figure settings
 Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
@@ -187,10 +207,15 @@ cvs.add_point(
 cvs.save("add_point.png")
 ```
 
-![An indifference curve meets the budget line at two points, $A$ and $B$.](../../assets/utility-viz/agora/canvas/add_point.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-An indifference curve meets the budget line at two points, $A$ and $B$. [Download the script](../../assets/utility-viz/agora/canvas/add_point.py){ .ev-download download="" }
-{ .ev-caption }
+![An indifference curve meets the budget line at two points $A$ and $B$](../../assets/utility-viz/agora/canvas/add_point.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../assets/utility-viz/agora/canvas/add_point.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
+
+<figcaption markdown>An indifference curve meets the budget line at two points $A$ and $B$</figcaption>
+
+</figure>
 
 <!-- api: agora.utility_viz.guides_canvas_7 -->
 
@@ -202,7 +227,7 @@ format given by its extension ([Export](export.md#sec-export)) and releases the
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
-# the settings behind this manual's figures
+# figure settings
 Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
@@ -219,10 +244,15 @@ cvs.save("show_save.png")
 
 <span id="fig-show-save"></span>
 
-![The complete canvas.](../../assets/utility-viz/agora/canvas/show_save.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-The complete canvas. [Download the script](../../assets/utility-viz/agora/canvas/show_save.py){ .ev-download download="" }
-{ .ev-caption }
+![The complete canvas](../../assets/utility-viz/agora/canvas/show_save.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../assets/utility-viz/agora/canvas/show_save.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
+
+<figcaption markdown>The complete canvas</figcaption>
+
+</figure>
 
 ## Styles
 
@@ -236,7 +266,7 @@ and drop lines.
 
 <!-- api: agora.utility_viz.guides_canvas_8 -->
 
-Solid, dashed, dotted and dash-dot lines ([The four line styles.](canvas.md#fig-line-styles)). Axes accept
+Solid, dashed, dotted and dash-dot lines ([The four line styles](canvas.md#fig-line-styles)). Axes accept
 the enum or the matching string; other lines use `Stroke(style=...)`.
 `LineStyle` is MosaicKit's `DashStyle` under its old name.
 
@@ -245,7 +275,7 @@ import matplotlib.pyplot as plt
 
 from utility_viz import Canvas, Config, LineStyle
 
-# the settings behind this manual's figures
+# figure settings
 Config.load("manual.toml").use()
 
 styles = [
@@ -274,16 +304,21 @@ fig.savefig("line_styles.png", dpi=160)
 
 <span id="fig-line-styles"></span>
 
-![The four line styles.](../../assets/utility-viz/agora/canvas/line_styles.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-The four line styles. [Download the script](../../assets/utility-viz/agora/canvas/line_styles.py){ .ev-download download="" }
-{ .ev-caption }
+![The four line styles](../../assets/utility-viz/agora/canvas/line_styles.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../assets/utility-viz/agora/canvas/line_styles.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
+
+<figcaption markdown>The four line styles</figcaption>
+
+</figure>
 
 ### Arrow styles
 
 <!-- api: agora.utility_viz.guides_canvas_9 -->
 
-Four arrowhead styles ([The four arrow styles.](canvas.md#fig-arrow-styles)). Axes use `x_arrow_style` and
+Four arrowhead styles ([The four arrow styles](canvas.md#fig-arrow-styles)). Axes use `x_arrow_style` and
 `y_arrow_style`; other lines use `Stroke(arrow=...)`.
 `ArrowStyle` is MosaicKit's; `SIMPLE` is its `OPEN`, and `"->"` and `"-|>"` are still accepted.
 
@@ -292,7 +327,7 @@ import matplotlib.pyplot as plt
 
 from utility_viz import ArrowStyle, Canvas, Config
 
-# the settings behind this manual's figures
+# figure settings
 Config.load("manual.toml").use()
 
 styles = [
@@ -321,10 +356,15 @@ fig.savefig("arrow_styles.png", dpi=160)
 
 <span id="fig-arrow-styles"></span>
 
-![The four arrow styles.](../../assets/utility-viz/agora/canvas/arrow_styles.svg){ .ev-figure-sm }
+<figure class="ev-fig" markdown>
 
-The four arrow styles. [Download the script](../../assets/utility-viz/agora/canvas/arrow_styles.py){ .ev-download download="" }
-{ .ev-caption }
+![The four arrow styles](../../assets/utility-viz/agora/canvas/arrow_styles.svg){ .ev-figure-sm }
+
+<a class="ev-download" href="../../assets/utility-viz/agora/canvas/arrow_styles.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a>
+
+<figcaption markdown>The four arrow styles</figcaption>
+
+</figure>
 
 ### Stroke
 

@@ -40,10 +40,13 @@ fig.save("basic_equilibrium.png")
 
 <span id="fig-quickstart"></span>
 
+<figure class="ev-fig" markdown>
+
 ![本章的市场（省略标题）。](../../assets/principle-viz/agora/quickstart/equilibrium.svg){ .ev-figure-sm }
 
-本章的市场（省略标题）。
-{ .ev-caption }
+<figcaption markdown>本章的市场（省略标题）。</figcaption>
+
+</figure>
 
 由 $10 - Q = 2 + Q$ 得 $Q^* = 4$、$p^* = 6$。输出参见[本章的市场（省略标题）。](quickstart.md#fig-quickstart)。
 

@@ -67,10 +67,13 @@ print(max(s.fit_error for s in path))
 
 <span id="fig-adaptive"></span>
 
+<figure class="ev-fig" markdown>
+
 ![Adaptive fit of $4 / x^2$; segments alternate colour.](../../assets/bezierkit/agora/fitting/adaptive.svg){ .ev-figure-sm }
 
-Adaptive fit of $4 / x^2$; segments alternate colour.
-{ .ev-caption }
+<figcaption markdown>Adaptive fit of $4 / x^2$; segments alternate colour.</figcaption>
+
+</figure>
 
 Segments are short where the curve bends sharply and long where it is
 nearly straight ([Adaptive fit of $4 / x^2$; segments alternate colour.](fitting.md#fig-adaptive)). The Hermite error bound predicts how deep
@@ -163,10 +166,13 @@ of the algorithm.
 
 <span id="fig-polyline"></span>
 
+<figure class="ev-fig" markdown>
+
 ![41 noisy samples simplified with tolerance $0.08$.](../../assets/bezierkit/agora/fitting/polyline.svg){ .ev-figure-sm }
 
-41 noisy samples simplified with tolerance $0.08$.
-{ .ev-caption }
+<figcaption markdown>41 noisy samples simplified with tolerance $0.08$.</figcaption>
+
+</figure>
 
 <!-- api: agora.bezierkit.guides_fitting_4 -->
 
