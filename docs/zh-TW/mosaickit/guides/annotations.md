@@ -50,7 +50,7 @@ canvas.add(AxisMarkLayer("x", 6, "b", math=True))
 
 <figure class="ev-fig" markdown>
 
-![y 軸邊欄的標記、註記與大括號。](../../../assets/mosaickit/agora/annotations/gutter.svg){ .ev-figure-sm }
+![y 軸邊欄的標記、註記與大括號。](../../../assets/mosaickit/agora/annotations/gutter.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/annotations/annotations.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
@@ -62,7 +62,7 @@ canvas.add(AxisMarkLayer("x", 6, "b", math=True))
 
 <figure class="ev-fig" markdown>
 
-![兩點之間的跨距大括號。](../../../assets/mosaickit/agora/annotations/span.svg){ .ev-figure-sm }
+![兩點之間的跨距大括號。](../../../assets/mosaickit/agora/annotations/span.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/annotations/annotations.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
@@ -115,7 +115,7 @@ canvas.add(AxisMarkLayer("x", 6, "b", math=True))
 
 <figure class="ev-fig" markdown>
 
-![目標（上）與分散結果（下）。](../../../assets/mosaickit/agora/geometry/spread.svg){ .ev-figure-sm }
+![目標（上）與分散結果（下）。](../../../assets/mosaickit/agora/geometry/spread.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/geometry/geometry.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 

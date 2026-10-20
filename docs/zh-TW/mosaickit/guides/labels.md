@@ -20,7 +20,7 @@ seo_title: "區域標籤與點標籤"
 
 <figure class="ev-fig" markdown>
 
-![區域內標籤與引線標註。](../../../assets/mosaickit/agora/labels/regions.svg){ .ev-figure-sm }
+![區域內標籤與引線標註。](../../../assets/mosaickit/agora/labels/regions.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/labels/labels.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
@@ -46,7 +46,7 @@ seo_title: "區域標籤與點標籤"
 
 <figure class="ev-fig" markdown>
 
-![方向的嘗試順序。](../../../assets/mosaickit/agora/geometry/candidates.svg){ .ev-figure-sm }
+![方向的嘗試順序。](../../../assets/mosaickit/agora/geometry/candidates.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/geometry/geometry.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
@@ -58,7 +58,7 @@ seo_title: "區域標籤與點標籤"
 
 <figure class="ev-fig" markdown>
 
-![點旁的點標籤。](../../../assets/mosaickit/agora/labels/points.svg){ .ev-figure-sm }
+![點旁的點標籤。](../../../assets/mosaickit/agora/labels/points.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/labels/labels.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 

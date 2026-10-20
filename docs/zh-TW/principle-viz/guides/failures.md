@@ -44,7 +44,7 @@ print(result.corrective_tax, result.deadweight_loss)
 
 <figure class="ev-fig" markdown>
 
-![負外部性。](../../../assets/principle-viz/agora/failures/negative_externality.svg){ .ev-figure-sm }
+![負外部性。](../../../assets/principle-viz/agora/failures/negative_externality.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/failures/failures.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
@@ -56,7 +56,7 @@ print(result.corrective_tax, result.deadweight_loss)
 
 <figure class="ev-fig" markdown>
 
-![正外部性。](../../../assets/principle-viz/agora/failures/positive_externality.svg){ .ev-figure-sm }
+![正外部性。](../../../assets/principle-viz/agora/failures/positive_externality.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/failures/failures.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
@@ -80,7 +80,7 @@ print(result.corrective_tax, result.deadweight_loss)
 
 <figure class="ev-fig" markdown>
 
-![共有資源的過度使用。](../../../assets/principle-viz/agora/failures/common_resource.svg){ .ev-figure-sm }
+![共有資源的過度使用。](../../../assets/principle-viz/agora/failures/common_resource.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/failures/failures.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
@@ -119,7 +119,7 @@ print(
 
 <figure class="ev-fig" markdown>
 
-![邊際利益的垂直加總。](../../../assets/principle-viz/agora/failures/public_good.svg){ .ev-figure-sm }
+![邊際利益的垂直加總。](../../../assets/principle-viz/agora/failures/public_good.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/failures/failures.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 

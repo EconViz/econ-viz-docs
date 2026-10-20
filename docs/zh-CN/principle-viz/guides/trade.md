@@ -39,7 +39,7 @@ print(result.policy.government_revenue, result.deadweight_loss)
 
 <figure class="ev-fig" markdown>
 
-![自由贸易下的进口。](../../../assets/principle-viz/agora/trade/free_trade_import.svg){ .ev-figure-sm }
+![自由贸易下的进口。](../../../assets/principle-viz/agora/trade/free_trade_import.zh-CN.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/trade/trade.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
@@ -51,7 +51,7 @@ print(result.policy.government_revenue, result.deadweight_loss)
 
 <figure class="ev-fig" markdown>
 
-![进口关税。](../../../assets/principle-viz/agora/trade/tariff.svg){ .ev-figure-sm }
+![进口关税。](../../../assets/principle-viz/agora/trade/tariff.zh-CN.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/trade/trade.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
@@ -63,7 +63,7 @@ print(result.policy.government_revenue, result.deadweight_loss)
 
 <figure class="ev-fig" markdown>
 
-![有约束的进口配额。](../../../assets/principle-viz/agora/trade/quota.svg){ .ev-figure-sm }
+![有约束的进口配额。](../../../assets/principle-viz/agora/trade/quota.zh-CN.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/trade/trade.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 

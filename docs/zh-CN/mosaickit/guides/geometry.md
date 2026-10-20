@@ -158,7 +158,7 @@ seo_title: "布局几何"
 
 <figure class="ev-fig" markdown>
 
-![极点、最大圆盘与形心。](../../../assets/mosaickit/agora/geometry/polylabel.svg){ .ev-figure-sm }
+![极点、最大圆盘与形心。](../../../assets/mosaickit/agora/geometry/polylabel.zh-CN.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/geometry/geometry.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
@@ -187,7 +187,7 @@ seo_title: "布局几何"
 
 <figure class="ev-fig" markdown>
 
-![大括号外形；右侧跨距小于 $2 \delta$。](../../../assets/mosaickit/agora/geometry/brace.svg){ .ev-figure-sm }
+![大括号外形；右侧跨距小于 $2 \delta$。](../../../assets/mosaickit/agora/geometry/brace.zh-CN.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/mosaickit/agora/geometry/geometry.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 

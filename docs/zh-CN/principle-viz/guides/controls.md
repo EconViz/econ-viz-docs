@@ -43,7 +43,7 @@ print(
 
 <figure class="ev-fig" markdown>
 
-![有约束的价格上限。](../../../assets/principle-viz/agora/controls/ceiling.svg){ .ev-figure-sm }
+![有约束的价格上限。](../../../assets/principle-viz/agora/controls/ceiling.zh-CN.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/controls/controls.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
@@ -55,7 +55,7 @@ print(
 
 <figure class="ev-fig" markdown>
 
-![有约束的价格下限。](../../../assets/principle-viz/agora/controls/floor.svg){ .ev-figure-sm }
+![有约束的价格下限。](../../../assets/principle-viz/agora/controls/floor.zh-CN.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/controls/controls.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
@@ -84,7 +84,7 @@ fig.add_welfare(delta.policy)
 
 <figure class="ev-fig" markdown>
 
-![上限为 3.5 时的福利。](../../../assets/principle-viz/agora/controls/ceiling_welfare.svg){ .ev-figure-sm }
+![上限为 3.5 时的福利。](../../../assets/principle-viz/agora/controls/ceiling_welfare.zh-CN.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/controls/controls.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 

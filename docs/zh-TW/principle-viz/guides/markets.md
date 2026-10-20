@@ -103,7 +103,7 @@ fig.finalize()
 
 <figure class="ev-fig" markdown>
 
-![需求增加。](../../../assets/principle-viz/agora/markets/shift_demand_increase.svg){ .ev-figure-sm }
+![需求增加。](../../../assets/principle-viz/agora/markets/shift_demand_increase.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/markets/markets.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
@@ -115,7 +115,7 @@ fig.finalize()
 
 <figure class="ev-fig" markdown>
 
-![供給減少。](../../../assets/principle-viz/agora/markets/shift_supply_decrease.svg){ .ev-figure-sm }
+![供給減少。](../../../assets/principle-viz/agora/markets/shift_supply_decrease.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/markets/markets.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 

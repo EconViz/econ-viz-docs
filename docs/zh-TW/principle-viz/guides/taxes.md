@@ -59,7 +59,7 @@ print(solve_tax_equilibrium(demand, supply, tax))
 
 <figure class="ev-fig" markdown>
 
-![向賣方課徵從量稅。](../../../assets/principle-viz/agora/taxes/per_unit_producer.svg){ .ev-figure-sm }
+![向賣方課徵從量稅。](../../../assets/principle-viz/agora/taxes/per_unit_producer.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/taxes/taxes.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
@@ -71,7 +71,7 @@ print(solve_tax_equilibrium(demand, supply, tax))
 
 <figure class="ev-fig" markdown>
 
-![向買方課徵從價稅。](../../../assets/principle-viz/agora/taxes/ad_valorem_consumer.svg){ .ev-figure-sm }
+![向買方課徵從價稅。](../../../assets/principle-viz/agora/taxes/ad_valorem_consumer.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/taxes/taxes.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
@@ -117,7 +117,7 @@ fig.finalize()
 
 <figure class="ev-fig" markdown>
 
-![課稅下的剩餘與無謂損失。](../../../assets/principle-viz/agora/taxes/welfare.svg){ .ev-figure-sm }
+![課稅下的剩餘與無謂損失。](../../../assets/principle-viz/agora/taxes/welfare.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/taxes/taxes.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
@@ -170,7 +170,7 @@ fig = MarketFigure(
 
 <figure class="ev-fig" markdown>
 
-![從量補貼與無謂損失。](../../../assets/principle-viz/agora/taxes/subsidy.svg){ .ev-figure-sm }
+![從量補貼與無謂損失。](../../../assets/principle-viz/agora/taxes/subsidy.zh-TW.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/principle-viz/agora/taxes/taxes.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
