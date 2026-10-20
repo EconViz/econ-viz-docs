@@ -424,6 +424,7 @@ nav:
   - utility-viz:
       - Overview: utility-viz/index.md
       - Getting Started:
+          - Introduction: utility-viz/guides/introduction.md
           - Installation: utility-viz/getting-started/installation.md
           - Quick Start: utility-viz/getting-started/quickstart.md
           - CLI: utility-viz/getting-started/cli.md

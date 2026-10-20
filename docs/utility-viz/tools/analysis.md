@@ -1,19 +1,31 @@
 ---
-seo_title: "Comparative Statics and Slutsky Analysis"
-description: "Compute comparative statics, Marshallian demand derivatives, and Slutsky decompositions numerically with utility-viz analysis helpers."
+seo_title: "Analysis"
 ---
 
 # Analysis
 
-`utility-viz` now includes analysis helpers beyond plotting and equilibrium solving.
+<span id="sec-analysis"></span>
+
+The analysis API provides comparative statics of Marshallian demand, the
+Slutsky matrix, and checks for homogeneity and homotheticity of utility
+functions.
 
 ## Comparative statics
 
-Use `comparative_statics(...)` to estimate the six Marshallian demand derivatives numerically:
+<!-- api: agora.utility_viz.tools_analysis_1 -->
+
+Estimate the six partial derivatives of two-good Marshallian demand with
+respect to $p_x$, $p_y$ and income by finite differences, returned as a
+`ComparativeStatics`.
+
+- Central finite differences around `solve(...)`, with a default
+  relative step of `1e-3`.
+- Warns when the own-price derivative is positive or the income
+  derivative negative, the signatures of Giffen and inferior goods.
 
 ```python
+from utility_viz import comparative_statics
 from utility_viz.models import CobbDouglas
-from utility_viz.optimizer import comparative_statics
 
 model = CobbDouglas(alpha=0.4, beta=0.6)
 cs = comparative_statics(model, px=2.0, py=3.0, income=60.0)
@@ -29,15 +41,14 @@ print(
 # 0.0 -4.0 0.2
 ```
 
-Notes:
-
-- Uses central finite differences around `solve(...)`
-- Default relative step size is `1e-3`
-- Emits warnings for economically unusual sign patterns such as Giffen-style own-price responses or inferior-good income effects
-
 ## Slutsky matrix
 
-Use `slutsky_matrix(...)` to compute the two-good substitution matrix implied by the Slutsky equation.
+<!-- api: agora.utility_viz.tools_analysis_2 -->
+
+The two-good Slutsky substitution matrix, computed from Marshallian
+demand derivatives and income effects. The result checks
+symmetry, negative semidefiniteness and homogeneity, and warns when a
+condition fails. `as_array()` returns it as a `NumPy` array.
 
 ```python
 from utility_viz import slutsky_matrix
@@ -60,28 +71,15 @@ print(S.as_array().round(1))
 #  [ 2.4 -1.6]]
 ```
 
-Use this when you want compensated price effects rather than just the raw Marshallian derivatives.
+## Homogeneity
 
-## Homogeneity analysis
+<!-- api: agora.utility_viz.tools_analysis_3 -->
 
-Use `HomogeneityAnalyzer` to study whether a utility function is homogeneous or homothetic.
-
-### Available checks
-
-The analyzer provides four checks:
-
-| Method | Checks |
-|------|------|
-| `degree()` | Estimates the homogeneity degree |
-| `euler_check(x, y)` | Evaluates the Euler-theorem residual at a bundle |
-| `is_homothetic()` | Whether MRS is invariant to proportional scaling |
-| `demand_degree_zero(px, py, income)` | Whether Marshallian demand is homogeneous of degree 0 |
-
-### Example
+Check homogeneity and homotheticity of a utility function, and
+degree-zero homogeneity of demand.
 
 ```python
-from utility_viz.analysis import HomogeneityAnalyzer
-from utility_viz.models import CobbDouglas
+from utility_viz.models import CobbDouglas, HomogeneityAnalyzer
 
 analyzer = HomogeneityAnalyzer(CobbDouglas(alpha=0.4, beta=0.6))
 result = analyzer.degree()
@@ -101,23 +99,19 @@ print(analyzer.demand_degree_zero(px=2.0, py=3.0, income=60.0))
 
 ## Returns to scale
 
-`degree()` returns a `HomogeneityResult` carrying both the estimated degree and a `ReturnsToScale` classification:
+<span id="sec-rts"></span>
 
-For a Cobb–Douglas utility, the degree is $\alpha+\beta$:
+`degree()` returns a `HomogeneityResult` with these fields:
+
+For Cobb-Douglas utility the degree is $\alpha + \beta$:
 
 $$
-U(\lambda x, \lambda y)
-= \lambda^{\alpha+\beta} U(x,y)
+u(\lambda x, \lambda y) = \lambda^{\alpha + \beta} u(x, y).
 $$
 
-- $\alpha+\beta>1$: `INCREASING`
-- $\alpha+\beta=1$: `CONSTANT`
-- $\alpha+\beta<1$: `DECREASING`
+<!-- api: agora.utility_viz.tools_analysis_4 -->
 
-Functions without a consistent homogeneity degree are classified as
-`NOT_HOMOGENEOUS`.
-
-### Classification example
+The returns-to-scale class of a function.
 
 ```python
 def shifted_utility(x, y):
@@ -145,19 +139,3 @@ for model in models:
 # 0.7 DECREASING
 # None NOT_HOMOGENEOUS
 ```
-
-## Equilibrium solver {#solve}
-
-Find the utility-maximizing bundle under a linear budget constraint.
-
-<!-- api: helpers.solve -->
-
-## Utility levels {#levels}
-
-<!-- api-target: levels levels -->
-
-`levels` provides utility levels for indifference curves: `around` centers them on a reference value; `percentile` selects them from a utility surface.
-
-<!-- api: helpers.levels_around -->
-
-<!-- api: helpers.levels_percentile -->

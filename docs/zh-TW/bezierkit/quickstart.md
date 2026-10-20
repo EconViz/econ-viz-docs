@@ -38,8 +38,8 @@ print(to_tikz(path, precision=2, options="thick"))
 
 ## 主要元件
 
-- *數值物件。*`Point`、`Vector` 與 `PointSet` 不可變，並檢查維度（詳見[幾何數值物件](guides/geometry.md#sec-geometry)）。
-- *曲線。*`BezierCurve` 可為任意次數與維度；`CubicBezierSegment` 是繪圖端使用的三次曲線；`PiecewiseBezier` 將三次曲線連接成路徑（詳見[Bézier 曲線](guides/curves.md#sec-curves)、[三次線段與路徑](guides/paths.md#sec-paths)）。
-- *建構。*把端點條件、斜率、導數或 Hermite 資料轉為控制點（詳見[建構與 Hermite 插值](guides/construction.md#sec-construction)）。
-- *近似。*把平滑函數、取樣點與等值線 $F(x, y) = c$ 轉為誤差已知的三次路徑（詳見[擬合](guides/fitting.md#sec-fitting)、[等值線](guides/implicit.md#sec-implicit)）。
-- *輸出。*取樣、JSON、SVG 路徑資料、TikZ，以及 Matplotlib 路徑（詳見[取樣與匯出](guides/export.md#sec-export)）。
+- 數值物件：`Point`、`Vector` 與 `PointSet` 不可變，並檢查維度（詳見[幾何數值物件](guides/geometry.md#sec-geometry)）。
+- 曲線：`BezierCurve` 可為任意次數與維度；`CubicBezierSegment` 是繪圖端使用的三次曲線；`PiecewiseBezier` 將三次曲線連接成路徑（詳見[Bézier 曲線](guides/curves.md#sec-curves)、[三次線段與路徑](guides/paths.md#sec-paths)）。
+- 建構：把端點條件、斜率、導數或 Hermite 資料轉為控制點（詳見[建構與 Hermite 插值](guides/construction.md#sec-construction)）。
+- 近似：把平滑函數、取樣點與等值線 $F(x, y) = c$ 轉為誤差已知的三次路徑（詳見[擬合](guides/fitting.md#sec-fitting)、[等值線](guides/implicit.md#sec-implicit)）。
+- 輸出：取樣、JSON、SVG 路徑資料、TikZ，以及 Matplotlib 路徑（詳見[取樣與匯出](guides/export.md#sec-export)）。

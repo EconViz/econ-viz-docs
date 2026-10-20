@@ -74,7 +74,7 @@ seo_title: "布局几何"
 
 !!! abstract "定义 · 简单多边形"
 
-    若多边形 $P = (p_0, \ldots, p_{m-1})$（$m \ge 3$）的边 $[p_i, p_{i+1}]$（下标取模 $m$）只在相邻边的共同端点相交，且顶点不全共线，则称 $P$ 为*简单多边形*。其边界 $\partial P$ 是各边的联集；由 Jordan 曲线定理，$\partial P$ 的补集恰有一个有界连通分量，即*内部* $\text{int} P$，以及一个无界分量，即*外部*。记 $\overline{P} = \text{int} P \cup \partial P$。
+    若多边形 $P = (p_0, \ldots, p_{m-1})$（$m \ge 3$）的边 $[p_i, p_{i+1}]$（下标取模 $m$）只在相邻边的共同端点相交，且顶点不全共线，则称 $P$ 为*简单多边形*。其边界 $\partial P$ 是各边的并集；由 Jordan 曲线定理，$\partial P$ 的补集恰有一个有界连通分量，即*内部* $\text{int} P$，以及一个无界分量，即*外部*。记 $\overline{P} = \text{int} P \cup \partial P$。
 
 <!-- api: agora.mosaickit.guides_geometry_4 -->
 

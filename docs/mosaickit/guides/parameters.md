@@ -35,12 +35,27 @@ the set of parameters in the tree.
 
     An _expression_ is a constant, a parameter, or $e_1 \circ e_2$ for
     expressions $e_1, e_2$ and an operation $\circ$. Its free parameters
-    are $\text{free}(c) = \emptyset$, $\text{free}(p) = \lbrace p\rbrace$ and
-    $\text{free}(e_1 \circ e_2) = \text{free}(e_1) \cup \text{free}(e_2)$. A
-    _binding_ $\beta$ is a finite map from parameters to values, and
-    $\text{bind}(e, \beta)$ is: the value $e(\beta)$ if
-    $\text{free}(e) \subseteq \text{dom} \beta$; otherwise $e$ itself if $e$ is a
-    parameter; otherwise $\text{bind}(e_1, \beta) \circ \text{bind}(e_2, \beta)$.
+    satisfy
+
+    $$
+    \text{free}(c) = \emptyset, \quad \text{free}(p) = \lbrace p\rbrace ,
+    $$
+
+    and
+
+    $$
+    \text{free}(e_1 \circ e_2) = \text{free}(e_1) \cup \text{free}(e_2).
+    $$
+
+    A _binding_ $\beta$ is a finite map from parameters to values.
+    $\text{bind}(e, \beta)$ is the value $e(\beta)$ if
+    $\text{free}(e) \subseteq \text{dom} \beta$; it is $e$ itself if $e$ is an unbound
+    parameter; otherwise it is
+
+    $$
+    \text{bind}(e_1, \beta) \circ \text{bind}(e_2, \beta).
+    $$
+
     A plain value $v$ has no free parameters and evaluates to itself.
 
 <span id="thm-binding"></span>
@@ -48,9 +63,25 @@ the set of parameters in the tree.
 !!! abstract "Theorem · Partial binding"
 
     For every expression $e$ and binding $\beta$,
-    (i) $\text{free}(\text{bind}(e, \beta)) = \text{free}(e) \setminus \text{dom} \beta$, and
-    (ii) for every binding $\gamma$ with $\text{dom} \gamma \cap \text{dom} \beta = \emptyset$
-    and $\text{dom} \gamma \supseteq \text{free}(e) \setminus \text{dom} \beta$,
+    (i)
+
+    $$
+    \text{free}(\text{bind}(e, \beta)) = \text{free}(e) \setminus \text{dom} \beta;
+    $$
+
+    and (ii), for every binding $\gamma$ satisfying
+
+    $$
+    \text{dom} \gamma \cap \text{dom} \beta = \emptyset
+    $$
+
+    and
+
+    $$
+    \text{dom} \gamma \supseteq \text{free}(e) \setminus \text{dom} \beta,
+    $$
+
+    evaluation obeys
     $\text{bind}(e, \beta)(\gamma) = e(\beta \cup \gamma)$.
 
 <span id="cor-stages"></span>

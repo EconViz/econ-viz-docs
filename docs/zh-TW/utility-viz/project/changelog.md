@@ -1,343 +1,177 @@
 ---
 seo_title: "更新紀錄"
-description: "utility-viz Python 套件（原名 econ-viz）的版本歷史：每個版本的新功能、修正與變更。"
 ---
+
+<span id="sec-changelog"></span>
 
 # 更新紀錄
 
-`utility-viz`（原名 `econ-viz`）的版本歷史，不列出只有文件更新的項目。
+本章列出影響套件使用的版本變更，不含僅修改文件的版本；各條目依 l3doc 慣例標註於它所描述的功能旁，頁碼即該功能的實際頁碼。
 
-<table class="ev-changelog">
-  <thead>
-  <tr><th>版本</th><th>更新內容</th></tr>
-  </thead>
-  <tbody>
-  <tr id="v200b1">
-    <td class="ev-changelog__version"><strong>v2.0.0b1</strong><br><span>2026-10-04</span></td>
-    <td>
-      <p class="ev-changelog__type">變更</p>
-      <ul>
-        <li>由 <code>econ-viz</code> 更名為 <code>utility-viz</code>：發行套件、<code>utility_viz</code> 匯入、<code>utility-viz</code> 指令與 <code>utility-viz.toml</code> 設定檔（區段名稱不變）</li>
-        <li>這是預先發行版，安裝時需要加上 <code>--prerelease allow</code></li>
-      </ul>
-      <p class="ev-changelog__type">新功能</p>
-      <ul>
-        <li><code>utility-viz init --migrate</code> 會依據 <code>econ-viz.toml</code> 產生 <code>utility-viz.toml</code>，並保留舊檔案</li>
-        <li>設定檔依序查找明確指定的路徑、<code>utility-viz.toml</code>，最後是舊版 <code>econ-viz.toml</code>（會發出警告）</li>
-      </ul>
-      <p class="ev-changelog__type">相容性</p>
-      <ul>
-        <li><code>econ-viz</code> 2.x 是輕量的相容發行套件，會安裝同版本的 <code>utility-viz</code></li>
-        <li><code>econ_viz</code> 與 <code>econ-viz</code> 指令仍可使用，但會發出棄用警告，並將在 3.0.0 移除</li>
-      </ul>
-    </td>
-  </tr>
-  <tr id="v1120">
-    <td class="ev-changelog__version"><strong>v1.12.0</strong><br><span>2026-09-26</span></td>
-    <td>
-      <p class="ev-changelog__type">新功能</p>
-      <ul>
-        <li><code>highlight_level</code> 可強調一條主要無異曲線，其餘效用水準會使用淡化的次要樣式</li>
-        <li><code>secondary_stroke</code> 與主題欄位可控制次要曲線的顏色、線寬與不透明度</li>
-        <li>支援數值與序數標籤（$u_1$、$u_2$……）；標籤會跟隨曲線角度並避開圖形邊界</li>
-      </ul>
-      <p class="ev-changelog__type">變更</p>
-      <ul>
-        <li>主要與次要曲線標籤共用主題的無異曲線標籤樣式；平滑、線性、拗折與飽和偏好仍完整支援</li>
-      </ul>
-    </td>
-  </tr>
-  <tr id="v1110">
-    <td class="ev-changelog__version"><strong>v1.11.0</strong><br><span>2026-09-26</span></td>
-    <td>
-      <p class="ev-changelog__type">新功能</p>
-      <ul>
-        <li>補齊圖形背景、標籤、線條、標記點與輔助經濟線條的主題控制</li>
-        <li>新增 <code>paper</code>、<code>monochrome</code>、<code>presentation</code> 與 <code>dark</code> 四個內建主題</li>
-        <li>新增主題層級的 <code>background_color</code> 與 <code>label_scale</code> 控制</li>
-      </ul>
-    </td>
-  </tr>
-  <tr id="v1101">
-    <td class="ev-changelog__version"><strong>v1.10.1</strong><br><span>2026-09-26</span></td>
-    <td>
-      <p class="ev-changelog__type">維護</p>
-      <ul>
-        <li>在開發工具與 CI 加入 Ruff 程式碼檢查、格式驗證及 Mypy 型別檢查</li>
-        <li>加入 <code>py.typed</code>，將 <code>econ-viz</code> 發布為 PEP 561 型別套件</li>
-        <li>將公開例外訊息統一為英文</li>
-      </ul>
-      <p class="ev-changelog__type">錯誤修正</p>
-      <ul>
-        <li>補上等高線層級型別註記缺少的 NumPy import</li>
-        <li>讓 Edgeworth Pareto 搜尋的每個 closure 綁定各自的權重</li>
-      </ul>
-    </td>
-  </tr>
-  <tr id="v1100">
-    <td class="ev-changelog__version"><strong>v1.10.0</strong><br><span>2026-09-26</span></td>
-    <td>
-      <p class="ev-changelog__type">新功能</p>
-      <ul>
-        <li>新增 <code>Config</code>，從 <code>econ-viz.toml</code> 設定檔載入圖形設定；<code>Config.load(...).use()</code> 會把它設為預設</li>
-        <li>新增 <code>econ-viz init</code> 產生附註解的設定檔範本，<code>econ-viz plot --config</code> 可讀取設定檔</li>
-      </ul>
-      <p class="ev-changelog__type">變更</p>
-      <ul>
-        <li>沒有指定 theme 或字體時，圖形改用目前生效的 <code>Config</code>；沒有設定檔時輸出不變</li>
-        <li>Python 3.10 需要安裝 <code>tomli</code></li>
-      </ul>
-    </td>
-  </tr>
-  <tr id="v190">
-    <td class="ev-changelog__version"><strong>v1.9.0</strong><br><span>2026-09-26</span></td>
-    <td>
-      <p class="ev-changelog__type">新功能</p>
-      <ul>
-        <li>價格效果分解預設畫出無異曲線：通過 A 的 $U_0$、通過 C 的 $U_1$，Slutsky 分解還有通過 B 的曲線</li>
-        <li>新增 <code>Haagsma</code> 效用模型，其商品 x 一定是劣等財，所得夠高時成為季芬財</li>
-        <li>新增 <code>Legend</code>，自動放在最不擋到圖形的位置，也可指定角落或圖外的上下左右</li>
-        <li>所有文字都能用 <code>Label</code> 調整：座標軸標籤、原點、標題、效果標籤、Edgeworth 箱形圖文字</li>
-        <li><code>Stroke</code>、<code>Marker</code>、<code>Label</code>、<code>Legend</code>、<code>Effect</code>、<code>Fill</code> 都支援 <code>opacity</code></li>
-      </ul>
-      <p class="ev-changelog__type">變更</p>
-      <ul>
-        <li>既有的效果分解圖會多出無異曲線；傳入 <code>show_curves=False</code> 即可回到原本的圖</li>
-        <li>效果範圍箭頭改為單向，從 A 指向 B、從 B 指向 C</li>
-      </ul>
-      <p class="ev-changelog__type">錯誤修正</p>
-      <ul>
-        <li>提高最適化的精度，比較靜態與 Slutsky 矩陣更準確</li>
-        <li>效用為負值的無異曲線改畫實線</li>
-      </ul>
-    </td>
-  </tr>
-  <tr id="v180">
-    <td class="ev-changelog__version"><strong>v1.8.0</strong><br><span>2026-09-26</span></td>
-    <td>
-      <p class="ev-changelog__type">新功能</p>
-      <ul>
-        <li><code>Effect</code> 可設定價格效果分解中每個效果的顏色、範圍箭頭高度與標籤</li>
-        <li><code>Marker</code> 可設定畫布、需求圖與 Edgeworth 箱形圖中點的顏色、大小與形狀</li>
-        <li><code>Label</code> 可設定點標籤的文字、位置（上下左右與四個角落）、位移、顏色、大小與是否顯示，也能隱藏效果分解的 A/B/C 標籤</li>
-        <li><code>Fill</code> 讓預算集合的陰影可以有自己的顏色與透明度</li>
-        <li><code>Axis</code> 用一個物件設定單一座標軸的標籤、標籤位置與線條</li>
-        <li>新增標記點、標籤與陰影的主題預設值，例如 <code>theme.eq_marker</code>、<code>theme.point_label</code> 與 <code>theme.budget_fill</code></li>
-      </ul>
-      <p class="ev-changelog__type">變更</p>
-      <ul>
-        <li>均衡點的預設大小從 6 縮小為 4</li>
-        <li>建議用 <code>Stroke</code> 設定線條樣式，另外的顏色、粗細與線型參數保留為簡寫</li>
-      </ul>
-      <p class="ev-changelog__type">錯誤修正</p>
-      <ul>
-        <li>楔形箭頭在畫面上維持固定大小，不再沿整條線拉長</li>
-        <li>Edgeworth 箱形圖均衡點的無異曲線會套用 <code>stroke_a</code> / <code>stroke_b</code></li>
-      </ul>
-    </td>
-  </tr>
-  <tr id="v170">
-    <td class="ev-changelog__version"><strong>v1.7.0</strong><br><span>2026-09-25</span></td>
-    <td>
-      <p class="ev-changelog__type">新功能</p>
-      <ul>
-        <li><code>Canvas</code> 與 <code>Figure</code> 可分別設定座標軸標籤位置、線條樣式與箭頭樣式</li>
-        <li>可為單張圖設定文字與數學字體，不會改動 Matplotlib 的全域設定</li>
-        <li><code>Stroke</code> 統一控制畫布、多面板圖、需求圖與 Edgeworth 箱形圖中的線條粗細、線條樣式、顏色與箭頭樣式</li>
-        <li><code>econ-viz --version</code> 可顯示已安裝的套件版本</li>
-      </ul>
-      <p class="ev-changelog__type">錯誤修正</p>
-      <ul>
-        <li>修正效用模型的參數定義域、非對稱 CES 擴張路徑、Cobb-Douglas 極限，以及所得未用盡時的飽和偏好最適解</li>
-        <li>等高線水準可正確處理零與負效用值</li>
-        <li>比較靜態在價格、所得或最低消費限制附近改用邊界安全的有限差分</li>
-        <li>所有範例腳本皆可從全新 checkout 直接執行</li>
-      </ul>
-      <p class="ev-changelog__type">維護</p>
-      <ul>
-        <li>套件管理與建置流程遷移至 <code>uv</code></li>
-        <li>CI 測試 Python 3.10–3.13、檢查分支覆蓋率，並執行所有可執行範例</li>
-        <li>版本標籤觸發的發佈流程只有在測試通過後才會上傳套件</li>
-      </ul>
-    </td>
-  </tr>
-  <tr id="v160">
-    <td class="ev-changelog__version"><strong>v1.6.0</strong><br><span>2026-04-24</span></td>
-    <td>
-      <p class="ev-changelog__type">新功能</p>
-      <ul>
-        <li>預設配色改為色盲友善配色，並提供可重複使用的 <code>themes.COLORBLIND_CYCLE_RGB</code> 與 <code>themes.COLORBLIND_CYCLE_HEX</code></li>
-        <li>無異曲線的預設線寬從 <code>2.0</code> 調整為 <code>1.8</code></li>
-      </ul>
-      <p class="ev-changelog__type">維護</p>
-      <ul>
-        <li>動畫範例移至 <code>examples/scripts/animation.py</code></li>
-        <li>不再追蹤 <code>examples/output/</code> 底下產生的檔案</li>
-      </ul>
-      <p class="ev-changelog__type">測試</p>
-      <ul>
-        <li>TikZ 座標軸回歸測試不再依賴顏色索引</li>
-      </ul>
-    </td>
-  </tr>
-  <tr id="v150">
-    <td class="ev-changelog__version"><strong>v1.5.0</strong><br><span>2026-04-21</span></td>
-    <td>
-      <p class="ev-changelog__type">新功能</p>
-      <ul>
-        <li>新增純 TikZ 匯出後端，<code>Canvas.save()</code> 與 <code>Figure.save()</code> 支援 <code>.tex</code></li>
-        <li>新增價格效果分解：<code>decompose_price_effect()</code>、<code>PriceEffectDecomposition</code>，以及繪製 A/B/C 消費組合與替代／所得效果的 <code>Canvas.add_decomposition()</code></li>
-        <li>分解相關 API 可直接從套件根目錄匯入</li>
-        <li>新增分解、需求圖、PCC/ICC 路徑、多面板版面與 TikZ 匯出的範例腳本</li>
-      </ul>
-      <p class="ev-changelog__type">錯誤修正</p>
-      <ul>
-        <li>筆記本在 Colab 上的安裝流程可安全重新啟動</li>
-      </ul>
-      <p class="ev-changelog__type">重構</p>
-      <ul>
-        <li>改善共用面板版面中座標軸標籤的位置與顯示控制</li>
-      </ul>
-      <p class="ev-changelog__type">測試</p>
-      <ul>
-        <li>新增 TikZ 匯出與價格效果分解的回歸測試</li>
-      </ul>
-    </td>
-  </tr>
-  <tr id="v140">
-    <td class="ev-changelog__version"><strong>v1.4.0</strong><br><span>2026-04-09</span></td>
-    <td>
-      <p class="ev-changelog__type">新功能</p>
-      <ul>
-        <li>新增 <code>Animator</code>，透過 Pillow 匯出參數變動的 GIF，不需要 ffmpeg</li>
-        <li>新增 <code>WidgetViewer</code>，在 Jupyter 筆記本中用滑桿調整參數</li>
-        <li>新增選用依賴 <code>animation</code>、<code>interactive</code> 與 <code>all</code></li>
-        <li>新增常見效用函數的參數、價格、所得與只有預算線的 GIF 範例</li>
-        <li>影格先疊在純色背景上再匯出，GIF 更穩定</li>
-        <li>筆記本互動元件除了滑桿，也能直接輸入數值</li>
-      </ul>
-      <p class="ev-changelog__type">測試</p>
-      <ul>
-        <li>新增 <code>Animator</code> 與 <code>WidgetViewer</code> 的測試</li>
-      </ul>
-    </td>
-  </tr>
-  <tr id="v132">
-    <td class="ev-changelog__version"><strong>v1.3.2</strong><br><span>2026-04-03</span></td>
-    <td>
-      <p class="ev-changelog__type">錯誤修正</p>
-      <ul>
-        <li>Edgeworth 契約線與價格線預設為黑色虛線</li>
-      </ul>
-      <p class="ev-changelog__type">維護</p>
-      <ul>
-        <li>發佈流程會略過 PyPI 上已存在的版本</li>
-      </ul>
-    </td>
-  </tr>
-  <tr id="v131">
-    <td class="ev-changelog__version"><strong>v1.3.1</strong><br><span>2026-04-03</span></td>
-    <td>
-      <p class="ev-changelog__type">新功能</p>
-      <ul>
-        <li>Edgeworth 內部拆分為計算、狀態與繪圖三個模組</li>
-        <li>新增模型登錄表（<code>models.registry</code>），命令列工具改由它建立模型</li>
-      </ul>
-      <p class="ev-changelog__type">重構</p>
-      <ul>
-        <li>命令列工具的錯誤改為拋出 <code>CliConfigError</code>，並統一在 <code>cli.main</code> 處理結束流程</li>
-        <li>等高線水準的共用規則集中到 <code>contours.level_policies</code></li>
-        <li><code>Canvas</code>、<code>Figure</code> 與 <code>EdgeworthBox</code> 共用同一個匯出器（<code>io.exporter</code>）</li>
-        <li>Canvas 的繪製邏輯拆分到 <code>canvas.renderers</code> 與 <code>canvas.primitives</code></li>
-        <li>套件根目錄的匯出改為延遲載入，公開 API 不變</li>
-      </ul>
-    </td>
-  </tr>
-  <tr id="v130">
-    <td class="ev-changelog__version"><strong>v1.3.0</strong><br><span>2026-04-03</span></td>
-    <td>
-      <p class="ev-changelog__type">新功能</p>
-      <ul>
-        <li>新增 <code>EdgeworthBox</code> 與 <code>EquilibriumFocusConfig</code>，繪製兩人交換的 Edgeworth 箱形圖</li>
-        <li>新增契約線、核、Walras 均衡疊圖，以及聚焦於均衡的無異曲線</li>
-        <li>新增涵蓋常見效用函數組合的 <code>examples/edgeworth_box.py</code></li>
-        <li>新增 Edgeworth 專屬測試</li>
-      </ul>
-    </td>
-  </tr>
-  <tr id="v123">
-    <td class="ev-changelog__version"><strong>v1.2.3</strong><br><span>2026-03-31</span></td>
-    <td>
-      <p class="ev-changelog__type">新功能</p>
-      <ul>
-        <li><code>SlutskyMatrix</code> 新增對稱性、半負定性與齊次性檢查，條件不成立時會發出警告</li>
-        <li>命令列工具支援 <code>QuasiLinear</code>、<code>StoneGeary</code> 與 <code>Translog</code></li>
-      </ul>
-    </td>
-  </tr>
-  <tr id="v122">
-    <td class="ev-changelog__version"><strong>v1.2.2</strong><br><span>2026-03-31</span></td>
-    <td>
-      <p class="ev-changelog__type">錯誤修正</p>
-      <ul>
-        <li>PCC/ICC 路徑預設平滑化，端點稍微延伸，標記點預設不顯示</li>
-        <li>PCC/ICC 路徑改用獨立顏色，需求圖的商品空間邊距加大</li>
-        <li>新增 PCC/ICC 範例產生器與測試</li>
-      </ul>
-    </td>
-  </tr>
-  <tr id="v120">
-    <td class="ev-changelog__version"><strong>v1.2.0</strong><br><span>2026-03-30</span></td>
-    <td>
-      <p class="ev-changelog__type">新功能</p>
-      <ul>
-        <li>新增多面板 <code>Figure</code> 版面與 <code>Layout</code> 列舉</li>
-        <li>新增連動的 <code>DemandDiagram</code>，繪製 Marshall 需求</li>
-        <li>新增 <code>PricePath</code>、<code>IncomePath</code> 與 <code>Canvas.add_path()</code>，繪製 PCC/ICC</li>
-      </ul>
-    </td>
-  </tr>
-  <tr id="v110">
-    <td class="ev-changelog__version"><strong>v1.1.0</strong><br><span>2026-03-30</span></td>
-    <td>
-      <p class="ev-changelog__type">新功能</p>
-      <ul>
-        <li>新增比較靜態工具 <code>comparative_statics</code></li>
-        <li>分析模組新增 <code>HomogeneityAnalyzer</code> 與 <code>ReturnsToScale</code></li>
-        <li>新增 <code>Translog</code> 模型，並支援圖例與無異曲線標籤</li>
-      </ul>
-    </td>
-  </tr>
-  <tr id="v102">
-    <td class="ev-changelog__version"><strong>v1.0.2</strong><br><span>2026-03-29</span></td>
-    <td>
-      <p class="ev-changelog__type">錯誤修正</p>
-      <ul>
-        <li>數學式座標軸標籤不再被重複包裝</li>
-        <li>移除 NumPy 版本上限，避免在 Colab 上發生衝突</li>
-      </ul>
-    </td>
-  </tr>
-  <tr id="v101">
-    <td class="ev-changelog__version"><strong>v1.0.1</strong><br><span>2026-03-29</span></td>
-    <td>
-      <p class="ev-changelog__type">錯誤修正</p>
-      <ul>
-        <li>鎖定 <code>numpy&lt;2</code>，避免在 Colab 與本機安裝時 ABI 不相容</li>
-      </ul>
-      <p class="ev-changelog__type">維護</p>
-      <ul>
-        <li>放寬 Python 與 NumPy 版本限制，<code>pytest</code> 鎖定在 8.x</li>
-      </ul>
-    </td>
-  </tr>
-  <tr id="v100">
-    <td class="ev-changelog__version"><strong>v1.0.0</strong><br><span>2026-03-28</span></td>
-    <td>
-      <ul>
-        <li>首次發布</li>
-      </ul>
-    </td>
-  </tr>
-  </tbody>
-</table>
+## 2.0.0b1
+
+- 由 `econ-viz` 更名為 `utility-viz`：發行套件、匯入名稱、指令與設定檔一併更名 [簡介](../guides/introduction.md)
+- 內部結構重整為 `core` 與 `models`；公開 API 為套件根目錄與 `utility_viz.models` [簡介](../guides/introduction.md)
+- 新增依賴 `mosaickit` 與 `bezierkit` [簡介](../guides/introduction.md)
+- 整個儲存庫通過 `mypy` 檢查；Ruff 限制行長、複雜度與陳述式數量 [簡介](../guides/introduction.md)
+- `utility-viz` — 新增依賴 `mosaickit>=0.5.1,<0.6.0` 與 `bezierkit>=0.5.0rc1,<0.6.0` [安裝](../getting-started/installation.md)
+- `utility-viz` — 儲存庫改為 `uv` workspace，`utility-viz` 與 `econ-viz` 同步發布 [安裝](../getting-started/installation.md)
+- `econ-viz` — 更名為 `utility-viz`；`econ_viz` 套件、`econ-viz` 指令與 `econ-viz.toml` 查找保留為已棄用的相容層，於 3.0.0 移除 [安裝](../getting-started/installation.md)
+- `econ-viz` — 相容層改由獨立的 `econ-viz` 發行套件提供，升級 1.x 安裝時不再刪除與 `utility-viz` 共用的檔案 [安裝](../getting-started/installation.md)
+- `UtilityVizError` — `UtilityVizError` 成為基礎例外類別；`EconVizError` 保留為同一類別的別名 [快速開始](../getting-started/quickstart.md)
+- `Leontief` — 折角效用函數的無異曲線在 Matplotlib 與 TikZ 輸出中保留精確直角 [核心模型](../models/index.md)
+- `core.scenes` — 新增與後端無關的 `mosaickit` 圖層工廠，涵蓋預算線、均衡與無異曲線，並可匯出原生 Bézier TikZ [進階模型](../models/advanced.md)
+- `Config` — 預設設定檔更名為 `utility-viz.toml`；舊的 `econ-viz.toml` 仍可讀取，但會發出警告 [主題與設定](../guides/themes.md)
+- `Config.discover` — 新增 `Config.discover()`，找不到檔案時改用內建預設值 [主題與設定](../guides/themes.md)
+- `utility-viz` — 指令改為 `utility-viz`；`econ-viz` 會印出棄用警告並轉交給新指令 [命令列工具](../getting-started/cli.md)
+- `utility-viz plot` — 未指定 `--config` 時，讀取目前目錄的 `utility-viz.toml`（或舊的 `econ-viz.toml`） [命令列工具](../getting-started/cli.md)
+- `utility-viz init` — 新增 `--migrate` 選項 [命令列工具](../getting-started/cli.md)
+- `Animator` — 移至 `utility_viz.core.animation` [動畫](../guides/animation.md)
+- `WidgetViewer` — 移至 `utility_viz.core.interactive` [互動元件](../guides/interactive.md)
+
+## 1.12.0
+
+- 新增無異曲線主次層級、焦點曲線及數值或序數標籤 [簡介](../guides/introduction.md)
+- `Canvas.add_utility` — 新增焦點效用層級、次要曲線樣式及序數標籤 [Canvas 畫布](../guides/canvas.md)
+- `Theme` — 新增次要無異曲線的顏色、線寬與透明度設定 [主題與設定](../guides/themes.md)
+
+## 1.11.0
+
+- 完成主題系統，統一畫布、多面板圖、需求圖、效果分解與 Edgeworth 箱形圖的視覺設定 [簡介](../guides/introduction.md)
+- `Canvas` — 背景、標籤、線條與標記均由主題提供預設值 [Canvas 畫布](../guides/canvas.md)
+- `Figure` — 面板背景、標籤、線條與標記完整套用主題 [多面板圖與需求圖](../guides/consumer.md)
+- `EdgeworthBox` — 箱框、契約曲線、核、稟賦、價格線與 Walras 均衡完整套用主題 [多面板圖與需求圖](../guides/consumer.md)
+- `Theme` — 完成主題系統，新增背景色、標籤比例及所有經濟圖層的預設樣式 [主題與設定](../guides/themes.md)
+- `themes` — 新增 `paper`、`monochrome`、`presentation` 與 `dark` [主題與設定](../guides/themes.md)
+- `Config` — 設定檔可選用所有內建主題，並在各種圖形間保留相同的視覺語意 [主題與設定](../guides/themes.md)
+- `econ-viz plot` — `--theme` 支援所有命令列內建主題 [命令列工具](../getting-started/cli.md)
+
+## 1.10.1
+
+- 套件加入 `py.typed`，並在 CI 執行 Ruff 與 Mypy 檢查 [簡介](../guides/introduction.md)
+
+## 1.10.0
+
+- `econ-viz` — Python 3.10 使用 `tomli` 讀取 TOML 設定檔 [安裝](../getting-started/installation.md)
+- `Figure` — 未指定主題與字型時，使用目前的 `Config` [多面板圖與需求圖](../guides/consumer.md)
+- `EdgeworthBox` — 未指定主題與字型時，使用目前的 `Config` [多面板圖與需求圖](../guides/consumer.md)
+- `Config` — 新增 `Config`、`econ-viz.toml`、`econ-viz init` 與 `plot --config` [主題與設定](../guides/themes.md)
+- `econ-viz init` — 新增設定檔範本指令與 `plot --config` [命令列工具](../getting-started/cli.md)
+
+## 1.9.0
+
+- `Canvas` — 座標軸、原點、標題與其他文字元素接受 `Label` [Canvas 畫布](../guides/canvas.md)
+- `Stroke` — 新增 `opacity` 透明度 [Canvas 畫布](../guides/canvas.md)
+- `DemandDiagram` — 支援 `Legend`、`Marker`、`Label` 與各圖層的 `Stroke` [多面板圖與需求圖](../guides/consumer.md)
+- `Canvas.add_decomposition` — 預設繪製 A、B、C 所在的無異曲線，並支援曲線標籤與 `Legend` [多面板圖與需求圖](../guides/consumer.md)
+- `Canvas.add_decomposition` — 橫軸下方的效果箭頭依 A→B、B→C 方向繪製；效果為零時不繪製箭頭 [多面板圖與需求圖](../guides/consumer.md)
+- `Haagsma` — 新增具有閉式解的 Haagsma 效用模型，用於劣等財與季芬財分析 [核心模型](../models/index.md)
+
+## 1.8.0
+
+- `Canvas` — 新增 `Axis`、`Marker`、`Label` 與 `Fill` 樣式物件 [Canvas 畫布](../guides/canvas.md)
+- `Stroke` — 線條樣式統一由 `Stroke` 表示；個別樣式參數保留為簡寫 [Canvas 畫布](../guides/canvas.md)
+- `Canvas.add_decomposition` — 新增 `Effect`、`Marker` 與 `Label` 樣式物件 [多面板圖與需求圖](../guides/consumer.md)
+- `EdgeworthBox` — 標記點、文字與座標軸接受 `Marker`、`Label` 與 `Axis` [多面板圖與需求圖](../guides/consumer.md)
+
+## 1.7.0
+
+- CI 測試 Python 3.10–3.13，強制分支覆蓋率，並對可執行的範例做冒煙測試 [簡介](../guides/introduction.md)
+- 版本標籤須通過測試後才會觸發發布 [簡介](../guides/introduction.md)
+- `econ-viz` — 套件管理與建置改用 `uv` [安裝](../getting-started/installation.md)
+- `econ-viz` — 修正範例腳本，使其可在新簽出的原始碼目錄中直接執行 [安裝](../getting-started/installation.md)
+- `Canvas` — 支援個別設定各圖的文字與數學字型，不影響 `matplotlib` 的全域設定 [Canvas 畫布](../guides/canvas.md)
+- `Canvas` — `Canvas` 與 `Figure` 支援分別設定座標軸標籤位置、線條樣式與箭頭樣式 [Canvas 畫布](../guides/canvas.md)
+- `Stroke` — 統一控制畫布、多面板圖、需求圖與 Edgeworth 箱形圖中線條的粗細、樣式、顏色與箭頭 [Canvas 畫布](../guides/canvas.md)
+- `CobbDouglas` — 修正效用模型的定義域、非對稱 CES 的擴張路徑、Cobb-Douglas 的極限情況，以及所得未花完時的飽和最適解 [核心模型](../models/index.md)
+- `CobbDouglas` — 修正效用值接近零或為負時的等高線水準計算 [核心模型](../models/index.md)
+- `comparative_statics` — 修正價格、所得接近零或基本需求限制時，比較靜態計算超出定義域的問題 [分析](../tools/analysis.md)
+- `econ-viz` — 新增 `econ-viz --version`，顯示已安裝的套件版本 [命令列工具](../getting-started/cli.md)
+
+## 1.6.0
+
+- `examples/output/` 的產出檔案不再納入版本控制 [簡介](../guides/introduction.md)
+- `Canvas` — 無異曲線的預設線寬從 `2.0` 降為 `1.8` [Canvas 畫布](../guides/canvas.md)
+- `themes.default` — 預設配色改為色盲友善，並提供 `COLORBLIND_CYCLE_RGB` 與 `COLORBLIND_CYCLE_HEX` [主題與設定](../guides/themes.md)
+- `Canvas.save` — TikZ 座標軸的回歸測試不再依賴顏色索引 [匯出](../guides/export.md)
+- `Animator` — 動畫範例移到 `examples/scripts/animation.py` [動畫](../guides/animation.md)
+
+## 1.5.0
+
+- 新增效果分解、需求圖、PCC/ICC 路徑、多面板版面與 TikZ 匯出的範例腳本 [簡介](../guides/introduction.md)
+- 新增 TikZ 匯出與價格效果分解的回歸測試 [簡介](../guides/introduction.md)
+- `econ-viz` — Colab 上的筆記本安裝流程在重新啟動後也能正常運作 [安裝](../getting-started/installation.md)
+- `Figure` — 改善共用面板版面中座標軸標籤的位置與可見度 [多面板圖與需求圖](../guides/consumer.md)
+- `decompose_price_effect` — 價格效果分解：`decompose_price_effect()`、`PriceEffectDecomposition` 與 `Canvas.add_decomposition()`，可畫出 A/B/C 消費組合以及替代與所得效果 [多面板圖與需求圖](../guides/consumer.md)
+- `decompose_price_effect` — 效果分解的 API 可以直接從套件根目錄匯入 [多面板圖與需求圖](../guides/consumer.md)
+- `Canvas.save` — 純 TikZ 匯出後端；`Canvas.save()` 與 `Figure.save()` 接受 `.tex` [匯出](../guides/export.md)
+
+## 1.4.0
+
+- 新增 `Animator` 與 `WidgetViewer` 的測試 [簡介](../guides/introduction.md)
+- `econ-viz[extras]` — 新增選用依賴 `animation`、`interactive` 與 `all` [安裝](../getting-started/installation.md)
+- `Animator.save` — 匯出前將影格合成至不透明背景，改善 GIF 匯出穩定性 [匯出](../guides/export.md)
+- `Animator` — `Animator` 以 `Pillow` 產生 GIF 參數變動動畫，不需要 `ffmpeg` [動畫](../guides/animation.md)
+- `Animator` — 新增效用參數、價格、所得與僅顯示預算線的 GIF 範例 [動畫](../guides/animation.md)
+- `WidgetViewer` — `WidgetViewer` 在 Jupyter 筆記本中提供滑桿控制 [互動元件](../guides/interactive.md)
+- `WidgetViewer` — 筆記本互動元件新增數值輸入欄位 [互動元件](../guides/interactive.md)
+
+## 1.3.2
+
+- 發布流程略過 PyPI 上已有的版本 [簡介](../guides/introduction.md)
+- `EdgeworthBox` — Edgeworth 契約曲線與價格線預設為黑色虛線 [多面板圖與需求圖](../guides/consumer.md)
+
+## 1.3.1
+
+- 套件根目錄的匯出改為延遲載入，公開 API 不變 [簡介](../guides/introduction.md)
+- `Canvas` — Canvas 的繪製拆成 `canvas.renderers` 與 `canvas.primitives` [Canvas 畫布](../guides/canvas.md)
+- `EdgeworthBox` — Edgeworth 的內部實作拆成 compute、state 與 plotter 三個模組 [多面板圖與需求圖](../guides/consumer.md)
+- `models.registry` — 新增模型註冊表（`models.registry`），供命令列工具建立模型 [核心模型](../models/index.md)
+- `CobbDouglas` — 等高線水準的規則集中在 `contours.level_policies` [核心模型](../models/index.md)
+- `Canvas.save` — `Canvas`、`Figure` 與 `EdgeworthBox` 共用同一個圖形匯出器（`io.exporter`） [匯出](../guides/export.md)
+- `econ-viz` — 命令列錯誤改為拋出 `CliConfigError`，結束處理集中在 `cli.main` [命令列工具](../getting-started/cli.md)
+
+## 1.3.0
+
+- `examples/edgeworth_box.py` 涵蓋常見的效用函數組合 [簡介](../guides/introduction.md)
+- 新增 Edgeworth 測試 [簡介](../guides/introduction.md)
+- `EdgeworthBox` — 新增 `EdgeworthBox` 與 `EquilibriumFocusConfig`，支援兩人交換經濟繪圖 [多面板圖與需求圖](../guides/consumer.md)
+- `EdgeworthBox` — 契約曲線、核、Walras 均衡疊圖，以及聚焦於均衡的無異曲線 [多面板圖與需求圖](../guides/consumer.md)
+
+## 1.2.3
+
+- `slutsky_matrix` — `SlutskyMatrix` 會檢查對稱性、負半定性與齊次性，條件不成立時發出警告 [分析](../tools/analysis.md)
+- `econ-viz models` — 命令列工具支援 `QuasiLinear`、`StoneGeary` 與 `Translog` [命令列工具](../getting-started/cli.md)
+
+## 1.2.2
+
+- 新增 PCC/ICC 範例產生器與測試 [簡介](../guides/introduction.md)
+- `PricePath` — PCC/ICC 路徑預設經過平滑處理，端點略微延長，除非指定否則不顯示標記 [多面板圖與需求圖](../guides/consumer.md)
+- `PricePath` — PCC/ICC 路徑改用獨立配色，並增加需求圖商品空間的留白 [多面板圖與需求圖](../guides/consumer.md)
+
+## 1.2.0
+
+- `Layout` — 多面板 `Figure` 版面與 `Layout` 列舉 [多面板圖與需求圖](../guides/consumer.md)
+- `PricePath` — 新增 `PricePath`、`IncomePath` 與 `Canvas.add_path()`，支援 PCC/ICC 繪圖 [多面板圖與需求圖](../guides/consumer.md)
+- `DemandDiagram` — 新增 `DemandDiagram`，連動顯示商品空間與 Marshall 需求 [多面板圖與需求圖](../guides/consumer.md)
+
+## 1.1.0
+
+- `Translog` — `Translog` 模型，以及圖例與無異曲線標籤 [核心模型](../models/index.md)
+- `comparative_statics` — `comparative_statics` 輔助函數 [分析](../tools/analysis.md)
+- `HomogeneityAnalyzer` — 分析模組中的 `HomogeneityAnalyzer` 與 `ReturnsToScale` [分析](../tools/analysis.md)
+
+## 1.0.2
+
+- `econ-viz` — 移除 NumPy 的版本上限，避免在 Colab 上發生衝突 [安裝](../getting-started/installation.md)
+- `Canvas` — 數學式的座標軸標籤不再被重複包裝 [Canvas 畫布](../guides/canvas.md)
+
+## 1.0.1
+
+- `econ-viz` — 固定 `numpy<2`，避免 Colab 與本機安裝時 ABI 不相容 [安裝](../getting-started/installation.md)
+- `econ-viz` — 放寬 Python 與 NumPy 的版本限制；`pytest` 固定在 8.x [安裝](../getting-started/installation.md)
+
+## 1.0.0
+
+- 首次發布 [更新紀錄](changelog.md)
+

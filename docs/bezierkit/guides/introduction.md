@@ -10,9 +10,9 @@ The `bezierkit` package is a small mathematical toolkit for Bézier
 curves. It builds curves from control points or from endpoint conditions,
 evaluates and differentiates them, splits and restricts them, fits them to
 functions, sampled points and level sets, and writes them out as JSON, SVG
-path data or TikZ. It draws nothing: plotting is left to renderers such as
-Matplotlib, `mosaickit` or a LaTeX document, which receive exact
-cubic control points.
+path data or TikZ. It does not plot. Renderers such as Matplotlib,
+`mosaickit` or a LaTeX document receive exact cubic control points
+and draw them.
 
 ## Notation
 
@@ -53,9 +53,9 @@ letter $d$ always denotes the dimension; tolerances are written $\epsilon$.
 
 Each chapter first recalls the standard definitions it uses, with a
 reference, and then states the properties the algorithms rely on as numbered
-lemmas, propositions, theorems and corollaries: what the Bernstein basis
-guarantees, why de Casteljau's algorithm evaluates and subdivides a curve,
-how far a Hermite interpolant can stray, what the exporters lose to rounding.
+lemmas, propositions, theorems and corollaries: the Bernstein basis,
+evaluation and subdivision by de Casteljau's algorithm, the Hermite error
+bound and the rounding error of the exporters.
 Their proofs are collected in [Proofs](../project/proofs.md#app-proofs), so the chapters can be read for
 the API alone. Conventions that belong to this package, and not to the
 literature, are called package conventions. The standard references are
@@ -68,12 +68,15 @@ literature, are called package conventions. The standard references are
 
 | Topic | Contents | Section |
 | --- | --- | --- |
-| Points, vectors, parameters, errors | [Geometry values](geometry.md#sec-geometry) | Bernstein basis, curves, evaluation |
-| [Bézier curves](curves.md#sec-curves) | Derivatives, reversal, subdivision | [Derivatives, reversal and subdivision](operations.md#sec-operations) |
-| Cubic segments and piecewise paths | [Cubic segments and paths](paths.md#sec-paths) | Constructions and Hermite interpolation |
-| [Constructions and Hermite interpolation](construction.md#sec-construction) | Fitting functions and polylines | [Fitting](fitting.md#sec-fitting) |
-| Tracing level sets | [Level sets](implicit.md#sec-implicit) | Sampling, JSON, SVG, TikZ, Matplotlib |
-| [Sampling and export](export.md#sec-export) | Command line | [Command-line interface](../cli.md#sec-cli) |
+| Foundations | Points, vectors, parameters, errors | [Geometry values](geometry.md#sec-geometry) |
+|  | Bernstein basis, curves, evaluation | [Bézier curves](curves.md#sec-curves) |
+|  | Derivatives, reversal, subdivision | [Derivatives, reversal and subdivision](operations.md#sec-operations) |
+| Cubics | Cubic segments and piecewise paths | [Cubic segments and paths](paths.md#sec-paths) |
+|  | Constructions and Hermite interpolation | [Constructions and Hermite interpolation](construction.md#sec-construction) |
+| Approximation | Fitting functions and polylines | [Fitting](fitting.md#sec-fitting) |
+|  | Tracing level sets | [Level sets](implicit.md#sec-implicit) |
+| Output | Sampling, JSON, SVG, TikZ, Matplotlib | [Sampling and export](export.md#sec-export) |
+|  | Command line | [Command-line interface](../cli.md#sec-cli) |
 
 On first use, read [Quick start](../quickstart.md#sec-quickstart) and [Bézier curves](curves.md#sec-curves). The figures in this
 manual are themselves `bezierkit` output: every curve in them was

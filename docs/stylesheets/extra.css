@@ -185,8 +185,9 @@
 }
 
 /* Documentation examples share the site's grayscale palette, including SVGs
-   and animated GIFs. Keep branding assets outside the figure treatment. */
-.md-typeset img[src*="assets/"]:not([src*="banner"]):not([src*="logo"]):not([src*="favicon"]):not([src*="og-image"]) {
+   and animated GIFs. Keep branding assets outside the figure treatment, and the
+   built-in theme examples, which exist to show their own colours. */
+.md-typeset img[src*="assets/"]:not([src*="banner"]):not([src*="logo"]):not([src*="favicon"]):not([src*="og-image"]):not([src*="agora/themes/"]) {
   filter: grayscale(1);
 }
 
@@ -255,6 +256,11 @@
 /* Smaller step-by-step figures, e.g. one per Canvas method */
 .md-typeset p > img:only-child.ev-figure-sm {
   max-height: 300px;
+}
+
+/* Figures the manual sets wide (the demand diagram, the Edgeworth box) */
+.md-typeset p > img:only-child.ev-figure-lg {
+  max-height: 640px;
 }
 
 /* Changelog: borderless table, version column only as wide as its content */

@@ -1,151 +1,402 @@
 ---
-seo_title: "經濟學圖形的配色主題"
-description: "用內建主題控制 utility-viz 圖形的顏色與線條粗細，包含色盲友善的預設配色，也可以自訂主題。"
+seo_title: "主題與設定"
 ---
 
-# 主題
+# 主題與設定
 
-主題控制 Canvas 使用的所有顏色與線條粗細。
+<span id="sec-themes"></span>
 
-![預設主題範例](../../../assets/themes/theme_default.png)
+`Theme` 定義圖形的預設外觀；`Config` 從 TOML 檔案載入主題覆寫與字型設定。`Canvas`、`Figure`、`DemandDiagram`、價格效果分解及 `EdgeworthBox` 共用這些樣式物件。
 
 ## 內建主題
 
-### Default
+<!-- api: agora.utility_viz.guides_themes_1 -->
+
+Python API 提供下列主題。主題物件不可變；需要調整欄位時，可建立新的 `Theme`，或以 `Config` 覆寫指定欄位。
+
+<span id="tab-themes"></span>
+
+| 名稱 | 特性 |
+| --- | --- |
+| `default` | 色盲友善的預設配色 |
+| `colorblind` | 與 `default` 相同的配色別名 |
+| `nord` | 採用 Nord 色盤的冷色系主題 |
+| `paper` | 透明背景與出版用細線條 |
+| `monochrome` | 以線型與標記區分圖層的黑白主題 |
+| `presentation` | 放大標籤、線條與標記，供投影使用 |
+| `dark` | 深色背景與相應的前景色 |
+
+Python API 與設定檔的 `base` 可使用全部七個名稱 (命令列直接傳入 `--theme` 時，只接受 `colorblind` 別名以外的六個主題。)。
+
+預設主題的顏色取自一組色盲友善的配色 [{thriveth} (2014)](../project/references.md#thriveth2014)。
+
+`themes.COLORBLIND_CYCLE_HEX` 與 `themes.COLORBLIND_CYCLE_RGB` 提供這組配色的十六進位與 RGB 值。經濟學教學大量依賴圖形，因此不應只靠顏色傳達意義，以免視覺障礙的學生無法辨識 [Kugler (1996)](../project/references.md#kugler1996)。
+
+下列各圖以每個內建主題（`dark` 除外）畫出同一張 Cobb-Douglas 圖，沿用本手冊的線寬，底色為白色。
 
 ```python
-from utility_viz import Canvas, themes
+from dataclasses import replace
 
-cvs = Canvas(x_max=20, y_max=15, theme=themes.default)
+from utility_viz import Canvas, levels, solve, themes
+from utility_viz.models import CobbDouglas
+
+model = CobbDouglas(alpha=0.5, beta=0.5)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
+
+# 主題自己的顏色 配上本手冊的線寬 放在白底上
+theme = replace(
+    themes.default,
+    background_color="#ffffff",
+    ic_linewidth=2.6,
+    budget_linewidth=2.6,
+    eq_markersize=5.0,
+)
+
+cvs = Canvas(
+    x_max=20,
+    y_max=15,
+    x_label="$x$",
+    y_label="$y$",
+    theme=theme,
+)
+cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
+cvs.add_budget(2.0, 3.0, 30.0, fill=True)
+cvs.add_equilibrium(eq)
+cvs.save("theme_default.png")
 ```
 
-預設主題的顏色取自一組**色盲友善**的配色\citep{thriveth2014}，可從 `themes.COLORBLIND_CYCLE_HEX` 與 `themes.COLORBLIND_CYCLE_RGB` 取得。經濟學教學大量依賴圖形，因此不應只靠顏色傳達意義，以免視覺障礙的學生無法辨識\citep{kugler1996}。
-
-### Nord
+![`default` 主題。](../../../assets/utility-viz/agora/themes/default.svg){ .ev-figure-sm }
 
 ```python
-cvs = Canvas(x_max=20, y_max=15, theme=themes.nord)
+from dataclasses import replace
+
+from utility_viz import Canvas, levels, solve, themes
+from utility_viz.models import CobbDouglas
+
+model = CobbDouglas(alpha=0.5, beta=0.5)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
+
+# 主題自己的顏色 配上本手冊的線寬 放在白底上
+theme = replace(
+    themes.nord,
+    background_color="#ffffff",
+    ic_linewidth=2.6,
+    budget_linewidth=2.6,
+    eq_markersize=5.0,
+)
+
+cvs = Canvas(
+    x_max=20,
+    y_max=15,
+    x_label="$x$",
+    y_label="$y$",
+    theme=theme,
+)
+cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
+cvs.add_budget(2.0, 3.0, 30.0, fill=True)
+cvs.add_equilibrium(eq)
+cvs.save("theme_nord.png")
 ```
 
-Nord 主題使用 [Nord 配色](https://www.nordtheme.com/)，以冷色藍與低飽和色調為主，適合學術簡報。
-
-![Nord 主題範例](../../../assets/themes/theme_nord.png)
-
-### Paper
+![`nord` 主題。](../../../assets/utility-viz/agora/themes/nord.svg){ .ev-figure-sm }
 
 ```python
-cvs = Canvas(x_max=20, y_max=15, theme=themes.paper)
+from dataclasses import replace
+
+from utility_viz import Canvas, levels, solve, themes
+from utility_viz.models import CobbDouglas
+
+model = CobbDouglas(alpha=0.5, beta=0.5)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
+
+# 主題自己的顏色 配上本手冊的線寬 放在白底上
+theme = replace(
+    themes.paper,
+    background_color="#ffffff",
+    ic_linewidth=2.6,
+    budget_linewidth=2.6,
+    eq_markersize=5.0,
+)
+
+cvs = Canvas(
+    x_max=20,
+    y_max=15,
+    x_label="$x$",
+    y_label="$y$",
+    theme=theme,
+)
+cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
+cvs.add_budget(2.0, 3.0, 30.0, fill=True)
+cvs.add_equilibrium(eq)
+cvs.save("theme_paper.png")
 ```
 
-Paper 主題使用較細的線條、較小的標記，以及節制的字級，背景透明，適合印刷或期刊排版對墨量與版面較敏感的場合。
-
-![Paper 主題範例](../../../assets/themes/theme_paper.png)
-
-### Monochrome
+![`paper` 主題。](../../../assets/utility-viz/agora/themes/paper.svg){ .ev-figure-sm }
 
 ```python
-cvs = Canvas(x_max=20, y_max=15, theme=themes.monochrome)
+from dataclasses import replace
+
+from utility_viz import Canvas, levels, solve, themes
+from utility_viz.models import CobbDouglas
+
+model = CobbDouglas(alpha=0.5, beta=0.5)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
+
+# 主題自己的顏色 配上本手冊的線寬 放在白底上
+theme = replace(
+    themes.monochrome,
+    background_color="#ffffff",
+    ic_linewidth=2.6,
+    budget_linewidth=2.6,
+    eq_markersize=5.0,
+)
+
+cvs = Canvas(
+    x_max=20,
+    y_max=15,
+    x_label="$x$",
+    y_label="$y$",
+    theme=theme,
+)
+cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
+cvs.add_budget(2.0, 3.0, 30.0, fill=True)
+cvs.add_equilibrium(eq)
+cvs.save("theme_monochrome.png")
 ```
 
-Monochrome 主題完全不使用顏色，所有元素都是灰階，改以**線條樣式**區分曲線、預算線與射線，並以**標記形狀**區分不同的點。適合黑白列印，或需要完全不依賴顏色辨識的色盲友善場合。
-
-![Monochrome 主題範例](../../../assets/themes/theme_monochrome.png)
-
-### Presentation
+![`monochrome` 主題。](../../../assets/utility-viz/agora/themes/monochrome.svg){ .ev-figure-sm }
 
 ```python
-cvs = Canvas(x_max=20, y_max=15, theme=themes.presentation)
+from dataclasses import replace
+
+from utility_viz import Canvas, levels, solve, themes
+from utility_viz.models import CobbDouglas
+
+model = CobbDouglas(alpha=0.5, beta=0.5)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
+
+# 主題自己的顏色 配上本手冊的線寬 放在白底上
+theme = replace(
+    themes.presentation,
+    background_color="#ffffff",
+    ic_linewidth=2.6,
+    budget_linewidth=2.6,
+    eq_markersize=5.0,
+)
+
+cvs = Canvas(
+    x_max=20,
+    y_max=15,
+    x_label="$x$",
+    y_label="$y$",
+    theme=theme,
+)
+cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
+cvs.add_budget(2.0, 3.0, 30.0, fill=True)
+cvs.add_equilibrium(eq)
+cvs.save("theme_presentation.png")
 ```
 
-Presentation 主題使用較大的文字、較粗的線條與較大的標記，適合投影幕或演講廳等需要遠距離辨識的場合。
-
-![Presentation 主題範例](../../../assets/themes/theme_presentation.png)
-
-### Dark
-
-```python
-cvs = Canvas(x_max=20, y_max=15, theme=themes.dark)
-```
-
-Dark 主題使用深色背景搭配淺色前景，適合深色模式的投影片或網站。
-
-![Dark 主題範例](../../../assets/themes/theme_dark.png)
+![`presentation` 主題。](../../../assets/utility-viz/agora/themes/presentation.svg){ .ev-figure-sm }
 
 ## 自訂主題
 
-建構子可以只傳入想改的欄位，其他保留內建預設值：
+<!-- api: agora.utility_viz.guides_themes_2 -->
 
-```python
-from utility_viz import Theme
+`Theme` 保存圖形元素的顏色、線寬與樣式預設值。未指定的欄位使用類別預設值；繪圖方法明確收到的樣式參數優先於主題。
 
-my_theme = Theme(
-    name="custom",
-    axis_color="#333333",
-    label_color="#333333",
-    ic_color="#2563eb",
-    ic_linewidth=1.5,
-    budget_color="#dc2626",
-    eq_color="#16a34a",
-    eq_markersize=6.0,
-)
+`Theme` 也包含射線、拗折點、補償預算線與價格效果箭頭的顏色和線寬。`axis_stroke`、`drop_stroke`、`projection_stroke`、`guide_stroke` 與 `box_stroke` 保存其他線條的預設值；標記、標籤、填色及圖例則由 `Marker`、`Label`、`Fill` 與 `Legend` 屬性提供（詳見[樣式](canvas.md#sec-styles)）。
 
-cvs = Canvas(x_max=20, y_max=15, theme=my_theme)
+## 設定檔
+
+<!-- api: agora.utility_viz.guides_themes_3 -->
+
+`Config.load()` 讀取 TOML 檔案並回傳 `Config`。`use()` 將其設為後續圖形的預設設定；`reset()` 恢復內建預設值。
+
+### 教學：統一樣式
+
+同一份講義或論文的圖形，通常要共用相同的顏色與線條。與其在每個 `Canvas` 重複傳入參數，不如把樣式寫在專案根目錄的 `utility-viz.toml`，讓 Python 與命令列讀取同一份設定。
+
++ *建立範本。*在專案根目錄執行下列指令，會產生含註解的 `utility-viz.toml`，列出每個區段可用的名稱與欄位：
+
+  ```bash
+  utility-viz init
+  ```
+
+  範本中的設定預設都是註解；只保留需要修改的項目即可，其餘可以刪除。
+
++ *選擇基底主題。*`base` 指定起始的內建主題（[內建主題](themes.md#tab-themes)），其餘設定都在它之上覆寫：
+
+  ```toml
+  base = "paper"
+  ```
+
++ *覆寫顏色與樣式。*只寫出要改的欄位：
+
+  ```toml
+  [color]
+  ic = "#1B4F72"
+  eq = "#C0392B"
+
+  [stroke.budget]
+  width = 1.6
+  style = "dashed"
+
+  [marker.eq]
+  size = 5
+
+  [label.point]
+  fontsize = 11
+  position = "right"
+  ```
+
+  區段名稱對應主題屬性：`[color]` 的 `ic` 對應 `ic_color`，`[stroke.budget]` 對應 `theme.budget_stroke`；區段內的欄位就是 `Stroke`、`Marker`、`Label`、`Fill`、`Legend` 的參數（詳見[樣式](canvas.md#sec-styles)）。字型寫在 `[font]` 的 `text` 與 `math`。省略的欄位保留基底主題的值。
+
++ *在 Python 中套用。*在建立任何圖形之前載入一次：
+
+  ```python
+  from utility_viz import Config
+
+  # 預設讀取目前目錄的 utility-viz.toml
+  Config.load().use()
+  ```
+
+  此後建立的 `Canvas`、`Figure`、`DemandDiagram` 與 `EdgeworthBox` 都使用這組設定；呼叫 `Config.reset()` 可恢復內建預設值。
+
++ *在命令列套用。*`utility-viz plot` 會自動讀取目前目錄的 `utility-viz.toml`；要使用其他檔案時，以 `--config` 指定設定檔：
+
+  ```bash
+  utility-viz plot --config utility-viz.toml --model cobb-douglas \
+    --px 2 --py 3 --income 30 --output figure.png
+  ```
+
+設定的優先順序由高到低為：直接傳入 `Canvas` 或繪圖方法的參數、設定檔、基底主題。例如 `Canvas(theme=themes.default)` 會略過設定檔中的主題。
+
+設定檔寫錯時，`Config.load()` 會拋出 `InvalidParameterError`，並列出可用的名稱。例如把 `[stroke.budget]` 誤寫成 `[stroke.budgt]`：
+
+```text
+utility-viz.toml: [stroke.budgt]: no such setting (choose: axis, box, budget, ...)
 ```
 
-圖上每一條線、每一種標記、填色、標籤與 legend，也都有一個由上面欄位組成的整體預設值，例如 `theme.ic_stroke`、`theme.eq_marker`、`theme.point_label`。如果想整組改（例如讓 Edgeworth 箱形圖的 core 段除了顏色，還要有箭頭），可以繼承 `Theme` 並覆寫該屬性：
+### 手冊圖形設定
 
-```python
-from utility_viz import ArrowStyle, Stroke, Theme
+<span id="sec-manual-toml"></span>
 
+本手冊的範例都先載入 `manual.toml`，圖形的外觀由它決定：灰色曲線、黑色座標軸與輔助線、黑色的點、白色底。檔案沒有指定字體，所以在任何電腦上都能執行；圖形使用 TeX Gyre Pagella，沒有這個字體時則用預設字體。
 
-class MyTheme(Theme):
-    @property
-    def core_stroke(self) -> Stroke:
-        return Stroke(
-            width=3.0,
-            color="#C0392B",
-            arrow=ArrowStyle.TRIANGLE,
-        )
+```toml
+# 本手冊所有圖形的設定
+# 灰色曲線 黑色座標軸與輔助線 黑色的點 白色背景
+# 畫圖前先載入
+#
+#     Config.load("manual.toml").use()
+#
+# 各區段對應 Theme 的屬性 詳見主題與設定一章
 
+base = "default"
 
-cvs = EdgeworthBox(..., theme=MyTheme(name="my-theme"))
+# 字體是 TeX Gyre Pagella 這裡不指定 檔案在任何電腦上都能執行
+# 已安裝該字體時可加上 [font] text = "TeX Gyre Pagella"
+
+[color]
+background = "#ffffff"
+axis = "#1a1a1a"
+label = "#1a1a1a"
+ic = "#8c8c8c"              # 無異曲線
+secondary_ic = "#b8b8b8"    # 強調曲線旁的曲線
+path = "#1a1a1a"            # 價格與所得消費路徑
+budget = "#222222"
+eq = "#1a1a1a"              # 均衡點與其他點
+ray = "#8c8c8c"
+kink = "#8c8c8c"
+sub_effect = "#8c8c8c"
+inc_effect = "#8c8c8c"
+compensated_budget = "#1a1a1a"
+subsistence = "#8c8c8c"
+contract = "#8c8c8c"
+core = "#1a1a1a"
+price = "#8c8c8c"
+walrasian = "#1a1a1a"
+
+[stroke.axis]
+width = 1.0
+style = "solid"
+arrow = "-|>"
+
+[stroke.ic]
+width = 2.6
+
+[stroke.secondary_ic]
+width = 1.8
+opacity = 1.0
+
+[stroke.path]
+width = 1.4
+
+[stroke.budget]
+width = 2.6
+
+[stroke.ray]
+width = 0.9
+
+[stroke.substitution]
+width = 1.8
+
+[stroke.income]
+width = 1.8
+
+[stroke.compensated_budget]
+width = 1.0
+
+[stroke.contract]
+width = 2.6
+
+[stroke.price]
+width = 2.6
+
+[stroke.drop]               # 從點到座標軸的輔助線
+width = 0.8
+style = "dashed"
+color = "#1a1a1a"
+
+[stroke.projection]
+width = 0.8
+style = "dashed"
+color = "#1a1a1a"
+
+[stroke.guide]
+width = 0.8
+style = "dashed"
+color = "#1a1a1a"
+
+[marker.eq]
+size = 5
+
+[marker.point]
+size = 5
+
+[label.point]               # 點旁的文字 例如最適點的 x*
+fontsize = 14
+position = "right"
+offset = 10
+
+[fill.budget]
+opacity = 0.08
 ```
 
-方法明確傳入的參數（例如 `add_core(stroke=...)`）仍然優先於主題，主題則優先於內建預設值，跟[設定檔](config.md)的優先順序一致。
+### 設定檔查找順序
 
-## 主題欄位
+<span id="sec-config-lookup"></span>
 
-| 欄位 | 說明 |
-|------|------|
-| `name` | 主題名稱 |
-| `axis_color` | 座標軸與箭頭的顏色 |
-| `label_color` | 座標軸標籤與原點標籤的顏色 |
-| `ic_color`、`ic_linewidth` | 無異曲線的顏色與線寬 |
-| `secondary_ic_color`、`secondary_ic_linewidth`、`secondary_ic_opacity` | 強調主要效用水準時，其餘淡化曲線的顏色、線寬與不透明度 |
-| `path_color`、`path_linewidth` | PCC / ICC 路徑的顏色與線寬 |
-| `budget_color`、`budget_linewidth` | 預算線的顏色與線寬 |
-| `budget_fill_alpha` | 可行集合陰影的不透明度 |
-| `eq_color`、`eq_markersize` | 均衡點的顏色與大小 |
-| `ray_color`、`ray_linewidth` | 擴張路徑射線的顏色與線寬 |
-| `kink_color` | 拗折點標記的顏色 |
-| `sub_effect_color`、`inc_effect_color` | 替代效果、所得效果箭頭的顏色 |
-| `effect_arrow_linewidth` | 效果箭頭的線寬 |
-| `compensated_budget_color`、`compensated_budget_linewidth`、`compensated_budget_linestyle` | 分解圖中補償後預算線的樣式 |
-| `subsistence_color`、`subsistence_linewidth` | Stone-Geary 最低消費參考線 |
-| `contract_color`、`contract_linewidth` | Edgeworth 契約曲線 |
-| `core_color`、`core_linewidth` | Edgeworth core |
-| `price_color`、`price_linewidth` | Edgeworth 價格線 |
-| `walrasian_color`、`walrasian_markersize` | Edgeworth Walrasian 均衡點標記 |
-| `axis_stroke`、`drop_stroke`、`projection_stroke`、`guide_stroke`、`box_stroke` | 沒有各自顏色／線寬欄位的線條 |
+<!-- api: agora.utility_viz.guides_themes_4 -->
 
-## 樣式屬性
+尋找並讀取設定檔；找不到時不會出錯。
 
-以下每個屬性都是由上面的欄位組成的 [`Stroke`](canvas.md#styles)、[`Marker`](canvas.md#styles)、[`Label`](canvas.md#styles)、[`Fill`](canvas.md#styles) 或 [`Legend`](canvas.md#styles)。在子類別中覆寫某個屬性，會影響所有沒有另外傳入該項目參數的圖形；[設定檔](config.md)的 `[stroke.<name>]`、`[marker.<name>]`、`[label.<name>]`、`[fill.<name>]` 段落設定的正是同一批屬性。
+`Config.load()`、`Config.discover()` 與 `utility-viz plot` 依下列順序決定設定檔：
 
-| 種類 | 屬性 |
-|------|------|
-| Stroke | `ic_stroke`、`secondary_ic_stroke`、`budget_stroke`、`ray_stroke`、`path_stroke`、`compensated_budget_stroke`、`final_budget_stroke`、`substitution_stroke`、`income_stroke`、`subsistence_stroke`、`contract_stroke`、`core_stroke`、`price_stroke`、`axis_stroke`、`drop_stroke`、`projection_stroke`、`guide_stroke`、`box_stroke` |
-| Marker | `eq_marker`、`point_marker`、`kink_marker`、`bliss_marker`、`path_marker`、`core_marker`、`endowment_marker`、`walrasian_marker` |
-| Label | `axis_label`、`origin_label`、`title_label`、`box_label`、`effect_label`、`point_label`、`bundle_label`、`bliss_label`、`ic_label`、`edgeworth_label` |
-| Fill | `budget_fill` |
-| Legend | `legend` |
++ 明確指定的路徑（`Config.load("file.toml")` 或 `--config`）：檔案必須存在，且只讀取該檔；
++ 目前目錄（或 `directory=`）中的 `utility-viz.toml`；
++ 舊的 `econ-viz.toml`，並發出棄用警告；
++ 內建預設值。
+
+兩個檔案同時存在時，以 `utility-viz.toml` 為準，舊檔會被略過並發出警告。兩個函式只在找不到檔案時有差異：`Config.load()` 與 1.x 相同，拋出 `InvalidParameterError`（"config file not found"）；`Config.discover()` 則回傳內建預設值。`utility-viz init --migrate` 可將舊檔轉為 `utility-viz.toml`（詳見[建立設定檔](../getting-started/cli.md#sec-cli-init)）。

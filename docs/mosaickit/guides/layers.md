@@ -71,8 +71,7 @@ has no label raises `RenderError`. `LegendStyle(visible=False)` hides it.
 
 <!-- api: agora.mosaickit.guides_layers_8 -->
 
-Groups several layers without drawing anything of its own. Children are
-drawn as if they were in the scene,
+A layer made of layers. Children are drawn as if they were in the scene,
 with the group's `z_index` added to theirs; an invisible group hides them
 all.
 

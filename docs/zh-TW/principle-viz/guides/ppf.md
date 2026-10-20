@@ -16,6 +16,10 @@ $$
 
 曲率 $c = 1$ 為直線（機會成本固定）；$c > 1$ 時曲線向外凸出（機會成本遞增）。截距與曲率必須為正且 $c \ge 1$，否則拋出 `PPFError`。
 
+<!-- api: agora.principle_viz.guides_ppf_2 -->
+
+點相對於邊界的位置。
+
 ```python
 from principle_viz import ProductionPossibilitiesFrontier
 
@@ -32,7 +36,7 @@ print(ppf.assess(4, 3), ppf.assess(7, 6))
 # PointStatus.INEFFICIENT PointStatus.UNATTAINABLE
 ```
 
-<!-- api: agora.principle_viz.guides_ppf_2 -->
+<!-- api: agora.principle_viz.guides_ppf_3 -->
 
 在曲線上取樣，並評估以 `(x, y, label)` 三元組給定的點；`principle_viz.visuals.ppf` 中的 `ppf_canvas()` 畫出曲線、為可達成的區域填色並標出各點（參見[有效率、無效率與無法達成的點。](ppf.md#fig-ppf)）。
 
@@ -49,7 +53,7 @@ ppf_canvas(result).save("ppf_points.png")
 
 ![有效率、無效率與無法達成的點。](../../../assets/principle-viz/agora/ppf/points.svg){ .ev-figure-sm }
 
-<!-- api: agora.principle_viz.guides_ppf_3 -->
+<!-- api: agora.principle_viz.guides_ppf_4 -->
 
 經濟成長使各截距乘以一加上對應的成長率；結果包含 `baseline` 與 `shifted` 兩條曲線及其取樣點。`ppf_growth_canvas()` 畫出兩條曲線並命名為 $P P F_0$ 與 $P P F_1$（參見[消費財成長 20%、資本財成長 10%。](ppf.md#fig-ppf-growth)）。
 
@@ -61,7 +65,7 @@ ppf_canvas(result).save("ppf_points.png")
 
 <span id="sec-comparative-advantage"></span>
 
-<!-- api: agora.principle_viz.guides_ppf_4 -->
+<!-- api: agora.principle_viz.guides_ppf_5 -->
 
 比較兩條直線型生產可能曲線：各生產者生產 $x$ 的機會成本，以及各商品的比較利益歸屬（成本相同時為 `"tie"`）。曲線型的生產可能曲線會拋出 `PPFError`。
 

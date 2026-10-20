@@ -1,125 +1,108 @@
 ---
 seo_title: "多面板圖與需求圖"
-description: "用 utility-viz 建立多面板圖、需求圖、價格效果分解與 Edgeworth 箱形圖。"
 ---
 
 # 多面板圖與需求圖
 
-`utility-viz` 在 `Canvas` 之上提供更高階的教學元件：
+<span id="sec-figures"></span>
 
-| 元件 | 用途 |
-|------|------|
-| `Figure` | 多面板版面 |
-| `PricePath`、`IncomePath` | 讓預算與均衡隨參數移動 |
-| `DemandDiagram` | 連動的商品空間圖與 Marshall 需求圖 |
-| `decompose_price_effect(...)` | Hicks 與 Slutsky 分解 |
-| `EdgeworthBox` | 兩人交換的 Edgeworth 箱形圖 |
+## 多面板圖
 
-## 多面板圖 {#multi-panel-figure data-toc-label="多面板圖"}
+<!-- api: agora.utility_viz.guides_consumer_1 -->
 
-一個面板不夠用時就用 `Figure`，例如變動前後的比較、效果分解圖或課堂簡報。
+建立多面板圖，座標範圍與樣式參數與 `Canvas` 相同。使用 `fig[idx]` 取得面板，再呼叫 `add_utility()`、`add_budget()` 等繪圖方法。
 
 ```python
-from utility_viz import Figure, Layout, levels, solve
+from utility_viz import Config, Figure, Layout, levels, solve
 from utility_viz.models import CobbDouglas
+
+# 本手冊圖形所用的設定
+Config.load("manual.toml").use()
 
 fig = Figure(
     Layout.SIDE_BY_SIDE,
     x_max=20,
     y_max=15,
-    x_label="x",
-    y_label="y",
-    title="Before / After Price Change",
+    x_label="$x$",
+    y_label="$y$",
     shared_y=True,
 )
 
+# 價格上漲前後 偏好也轉向 y
 cases = [
-    (
-        CobbDouglas(alpha=0.5, beta=0.5),
-        2.0,
-        3.0,
-        30.0,
-        r"Before: $p_x=2$",
-    ),
-    (
-        CobbDouglas(alpha=0.3, beta=0.7),
-        4.0,
-        3.0,
-        30.0,
-        r"After: $p_x=4$",
-    ),
+    (CobbDouglas(alpha=0.5, beta=0.5), 2.0, 3.0, 30.0),
+    (CobbDouglas(alpha=0.3, beta=0.7), 4.0, 3.0, 30.0),
 ]
-
-for idx, (model, px, py, income, title) in enumerate(cases):
+for idx, (model, px, py, income) in enumerate(cases):
     eq = solve(model, px=px, py=py, income=income)
+    # 每個面板都是一個 Canvas
     panel = fig[idx]
-    panel.ax.set_title(title)
     panel.add_utility(
-        model, levels=levels.around(eq.utility, n=5), label="IC"
+        model, levels=levels.around(eq.utility, n=5)
     )
-    panel.add_budget(px, py, income, fill=True, label="BC")
+    panel.add_budget(px, py, income, fill=True)
     panel.add_equilibrium(eq, show_ray=True)
-
-fig[0].show_legend(loc="upper right")
-fig.save("figure_side_by_side.png")
+fig.save("side_by_side.png")
 ```
 
-![多面板並排比較](../../../assets/consumer/figure_side_by_side.png)
+![價格變動前後比較。](../../../assets/utility-viz/agora/consumer/side_by_side.svg){ .ev-figure-lg }
 
-### 可用的版面
+<!-- api: agora.utility_viz.guides_consumer_2 -->
 
-`Figure` 提供以下版面：
+內建版面有 `SINGLE`、`STACKED`、`SIDE_BY_SIDE`、`TOP_TWO_BOTTOM_ONE`、`TOP_ONE_BOTTOM_TWO`、`GRID_2X2` 和 `GRID_3X3`。
 
-| 版面 | 面板數 | 排列方式 |
-|--------|--------|--------|
-| `Layout.SINGLE` | 1 | 單一面板 |
-| `Layout.STACKED` | 2 | 上下兩個面板 |
-| `Layout.SIDE_BY_SIDE` | 2 | 左右兩個面板 |
-| `Layout.TOP_TWO_BOTTOM_ONE` | 3 | 上方兩個、下方一個 |
-| `Layout.TOP_ONE_BOTTOM_TWO` | 3 | 上方一個、下方兩個 |
-| `Layout.GRID_2X2` | 4 | 2 × 2 網格 |
-| `Layout.GRID_3X3` | 9 | 3 × 3 網格 |
+## 路徑
 
-`Figure[idx]` 會回傳一個面板 `Canvas`，所以版面建好之後，繪圖 API 完全相同。
+<!-- api: agora.utility_viz.guides_consumer_3 -->
 
-## 路徑工具
+`PricePath` 與 `IncomePath` 分別計算價格、所得變動時的最適消費組合。使用 `Canvas.add_path()` 繪製價格消費曲線（PCC）或所得消費曲線（ICC）；`PricePath` 也可用於需求圖。
 
-路徑物件會讓某一個預算參數逐步變動，並在每一步重新求解消費者問題。
+<!-- api: agora.utility_viz.guides_consumer_4 -->
+
+將 `PricePath` 或 `IncomePath` 加入畫布。[價格消費曲線。](consumer.md#fig-price-path)中，Cobb-Douglas 模型在 $p_x$ 變動時，$y$ 的需求量不變，因此 PCC 為水平線。
 
 ```python
-from utility_viz import IncomePath, LinearBudget, PricePath
+from utility_viz import (
+    Canvas,
+    Config,
+    LinearBudget,
+    PricePath,
+    levels,
+)
 from utility_viz.models import CobbDouglas
+
+# 本手冊圖形所用的設定
+Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 budget = LinearBudget(px=2.0, py=2.0, income=40.0)
-
-price_path = PricePath(
+path = PricePath(
     model,
     budget=budget,
     price="px",
     price_range=(0.8, 6.0),
     n=40,
 )
-income_path = IncomePath(
-    model,
-    budget=budget,
-    income_range=(20.0, 80.0),
-    n=30,
-)
+
+# 圍繞路徑中段最適點的曲線
+eq = path.equilibria[len(path.equilibria) // 2]
+
+cvs = Canvas(x_max=25, y_max=20, x_label="$x$", y_label="$y$")
+cvs.add_utility(model, levels=levels.around(eq.utility, n=5))
+# 價格消費曲線
+cvs.add_path(path)
+cvs.save("price_path.png")
 ```
 
-這些路徑可以用來：
+<span id="fig-price-path"></span>
 
-- 用 `Canvas.add_path(...)` 畫出 PCC / ICC 形式的均衡軌跡
-- 傳入 `DemandDiagram`
-- 觀察價格或所得變動時，消費組合如何移動
+![價格消費曲線。](../../../assets/utility-viz/agora/consumer/price_path.svg){ .ev-figure-sm }
 
-## 需求圖 {#demanddiagram data-toc-label="需求圖"}
+## 需求圖
 
-`DemandDiagram` 會建立上下兩個面板的圖：
+<!-- api: agora.utility_viz.guides_consumer_5 -->
 
-- **上方面板**：無異曲線、預算線與均衡點
-- **下方面板**：對應的 Marshall 需求曲線
+依 `PricePath` 繪製兩個面板：上方為預算線與最適消費組合，下方為對應的 Marshall 需求曲線（參見[需求曲線最適點。](consumer.md#fig-demand)）。目前只接受 `PricePath`，並分別處理平滑、拗折與角解。`show_pcc=True` 在上方面板顯示價格消費曲線。
 
 ```python
 from utility_viz import DemandDiagram, LinearBudget, PricePath
@@ -144,24 +127,214 @@ fig.add_marshallian_panel(
 fig.save("demand_cobb_douglas.png")
 ```
 
-![連動的 Marshall 需求圖](../../../assets/consumer/demand_cobb_douglas.png)
+下圖由 MosaicKit 圖層畫成，標籤可逐一手動擺放。
 
-### 注意事項
+```python
+from mosaickit import (
+    AxisSpec,
+    Canvas,
+    CanvasGrid,
+    CanvasSpec,
+    DashStyle,
+    Fill,
+    Marker,
+    MarkerLayer,
+    PathLayer,
+    Stroke,
+    StyleBundle,
+    TextLayer,
+    TextStyle,
+    build_axes,
+)
+import numpy as np
 
-建立需求圖時請注意以下限制：
+from utility_viz import solve
+from utility_viz.core.scenes import (
+    UTILITY_THEME,
+    budget_layers,
+    indifference_layers,
+)
+from utility_viz.models import CobbDouglas
 
-- `DemandDiagram` 目前只接受 `PricePath`
-- 平滑、拗折與角解的需求情況會分別處理，讓下方面板在經濟意義上保持正確
-- `show_pcc=True` 會在商品空間面板上疊加價格消費曲線
+# 與 manual.toml 相同的顏色
+INK, DARK, GREY = "#1a1a1a", "#222222", "#8c8c8c"
+text = TextStyle(color=INK, size=14)
+
+# Cobb-Douglas 對 x 的需求 價格 p_x 在 A 為 1.5 在 B 為 4
+model = CobbDouglas(alpha=0.5, beta=0.5)
+py, income, px_a, px_b = 2.0, 40.0, 1.5, 4.0
+points = {"A": px_a, "B": px_b}
+optimum = {
+    name: solve(model, px=px, py=py, income=income)
+    for name, px in points.items()
+}
+# 兩個面板的 x 都從 0 畫到 29
+X = 29.0
+
+
+def panel(y_min, y_max, height, y_label):
+    """白底、細軸的面板；從點通往座標軸的輔助線是虛線。"""
+    spec = CanvasSpec(
+        x_range=(0, X),
+        y_range=(y_min, y_max),
+        width=4.6,
+        height=height,
+        x_label="",
+        y_label="",
+    )
+    roles = {
+        "canvas": StyleBundle(
+            fill=Fill(color="#ffffff", opacity=1.0)
+        ),
+        "axes": StyleBundle(
+            stroke=Stroke(color=INK, width=1.0), text=text
+        ),
+        "guide": StyleBundle(
+            stroke=Stroke(
+                color=INK, width=0.8, dash=DashStyle.DASHED
+            )
+        ),
+    }
+    cv = Canvas(spec, theme=UTILITY_THEME, role_overrides=roles)
+    cv.extend(
+        build_axes(
+            AxisSpec((0, X), arrow="end", label="$x$"),
+            AxisSpec((0, y_max), arrow="end", label=y_label),
+        )
+    )
+    cv.add(
+        TextLayer(
+            (0, 0),
+            "0",
+            offset=(-6, -8),
+            anchor="top-right",
+            style=text,
+            id="origin",
+        )
+    )
+    return cv
+
+
+def mark(cv, name, x, y):
+    """黑點與斜體字母，以及通往兩軸的虛線輔助線。"""
+    cv.add(
+        PathLayer(
+            [(0, y), (x, y)], id=f"{name}.h", role="guide"
+        )
+    )
+    cv.add(
+        PathLayer(
+            [(x, 0), (x, y)], id=f"{name}.v", role="guide"
+        )
+    )
+    cv.add(
+        MarkerLayer(
+            [(x, y)],
+            marker=Marker(color=INK, size=26, edge_width=0),
+            id=f"{name}.dot",
+            z_index=5,
+        )
+    )
+    cv.add(
+        TextLayer(
+            (x, y),
+            name,
+            math=True,
+            offset=(8, 6),
+            anchor="bottom-left",
+            style=text,
+            id=f"{name}.label",
+        )
+    )
+
+
+# 上圖是商品空間 每個價格各有一條預算線與一條無異曲線
+top = panel(-3.5, 24, 3.9, "$y$")
+top.extend(
+    budget_layers(
+        px_a,
+        py,
+        income,
+        layer_id="ba",
+        stroke=Stroke(color=DARK, width=2.6),
+    )
+)
+top.extend(
+    budget_layers(
+        px_b,
+        py,
+        income,
+        layer_id="bb",
+        stroke=Stroke(
+            color=DARK, width=2.2, dash=DashStyle.DASHED
+        ),
+    )
+)
+for name, eq in optimum.items():
+    curve, _ = indifference_layers(
+        model,
+        [eq.utility],
+        X,
+        24,
+        layer_id=f"u.{name}",
+        stroke=Stroke(color=GREY, width=2.6),
+    )
+    top.extend(curve)
+    mark(top, name, eq.x, eq.y)
+
+# 下圖是需求曲線 x = alpha * income / p_x 標出同樣的兩個點
+bottom = panel(-1.2, 7, 3.6, "$p_x$")
+prices = np.linspace(0.8, 6.0, 80)
+demand = tuple(zip(0.5 * income / prices, prices))
+bottom.add(
+    PathLayer(
+        demand,
+        stroke=Stroke(color=GREY, width=2.6),
+        id="demand",
+    )
+)
+for name, eq in optimum.items():
+    mark(bottom, name, eq.x, points[name])
+
+CanvasGrid([[top], [bottom]]).save("demand.png")
+```
+
+<span id="fig-demand"></span>
+
+![需求曲線最適點。](../../../assets/utility-viz/agora/consumer/demand.svg){ .ev-figure-lg }
 
 ## 價格效果分解
 
-`decompose_price_effect(...)` 將價格變動分成替代效果與所得效果。`HICKS` 固定原本的效用水準；`SLUTSKY` 則讓原本的消費組合在新價格下仍買得起。
+<!-- api: agora.utility_viz.guides_consumer_6 -->
+
+將價格效果分解為替代效果與所得效果。Hicks 補償 [Hicks (1939)](../project/references.md#hicks1939) 維持原效用水準；Slutsky 補償 [Slutsky (1915)](../project/references.md#slutsky1915) 則使原消費組合在新價格下恰好可負擔。回傳值包含下列欄位：
+
+<!-- api: agora.utility_viz.guides_consumer_7 -->
+
+決定補償組合 B 的方式。
+
+<!-- api: agora.utility_viz.guides_consumer_8 -->
+
+在畫布上標示 A、B、C 三個消費組合、預算線、無異曲線與效果箭頭。Hicks 分解繪製通過 A 與 C 的曲線；Slutsky 分解另繪製通過 B 的曲線。
+
+<!-- api: agora.utility_viz.guides_consumer_9 -->
+
+設定替代效果或所得效果的顏色、橫軸下方箭頭高度、標籤及透明度。線條本身仍可由 `substitution_stroke` 或 `income_stroke` 覆寫。
+
+<!-- api: agora.utility_viz.guides_consumer_10 -->
+
+`"auto"` 選擇遮蔽圖形最少的內側角落；四個角落皆與圖形重疊時，圖例移到右側。也可指定 `"upper left"` 等內側角落，或 `"top"`、`"bottom"`、`"left"`、`"right"` 等外側位置。`Legend(visible=False)` 隱藏圖例。
 
 ```python
-from utility_viz import Canvas, DecompositionMethod, levels
+from utility_viz import (
+    Canvas,
+    DecompositionMethod,
+    Effect,
+    Label,
+    Legend,
+    decompose_price_effect,
+)
 from utility_viz.models import CobbDouglas
-from utility_viz.optimizer import decompose_price_effect
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 result = decompose_price_effect(
@@ -179,51 +352,235 @@ result = decompose_price_effect(
         show_arrows=True,
         label_effects=True,
         show_x_projections=True,
+        substitution=Effect(label="SE"),
+        income=Effect(label="IE", opacity=0.8),
+        curve_label=Label(position="right"),
+        legend=Legend(position="bottom"),
     )
     .save("hicks.png")
 )
 ```
 
-`add_decomposition` 預設會畫出通過 A 與 C 的無異曲線；Slutsky 分解的 B 不在原本的曲線上，所以還會多畫一條通過 B 的曲線。如果要自己用 `add_utility` 畫，傳入 `show_curves=False` 即可。
-
-`result.A`、`result.B` 與 `result.C` 分別是原始、補償後與最終消費組合。結果也包含 `substitution_effect`、`income_effect`、`total_effect` 與 `compensated_income`。
-
-用 `Effect` 可設定每個效果的顏色、座標軸下方範圍箭頭的高度，以及旁邊的標籤。`point_label` 可移動或隱藏 A、B、C 標籤：
+下圖同樣由 MosaicKit 圖層畫成，兩個效果的名稱標在座標軸下方。
 
 ```python
-from utility_viz import Effect, Label
+from mosaickit import (
+    ArrowLayer,
+    ArrowStyle,
+    AxisSpec,
+    Canvas,
+    CanvasSpec,
+    DashStyle,
+    Fill,
+    Marker,
+    MarkerLayer,
+    PathLayer,
+    Stroke,
+    StyleBundle,
+    TextLayer,
+    TextStyle,
+    build_axes,
+)
 
-canvas.add_decomposition(
-    result,
-    substitution=Effect(
-        color="#E67E22", label="SE", label_position="top"
+from utility_viz import DecompositionMethod
+from utility_viz.core.scenes import (
+    UTILITY_THEME,
+    budget_layers,
+    indifference_layers,
+)
+from utility_viz.models import (
+    CobbDouglas,
+    decompose_price_effect,
+)
+
+# 與 manual.toml 相同的顏色
+INK, DARK, GREY = "#1a1a1a", "#222222", "#8c8c8c"
+text = TextStyle(color=INK, size=14)
+effect_name = TextStyle(
+    color=INK,
+    size=13,
+    family="PingFang TC",
+    # 使用有中日韓字形的字體 family 選項已棄用 之後由 GlyphKit 取代
+)
+
+# x 的價格由 2 漲到 4 A 是原本的最適點 C 是新的最適點
+# B 是新價格下仍在原本無異曲線上的組合 即 Hicks 分解
+model = CobbDouglas(alpha=0.5, beta=0.5)
+px0, px1, py, income = 2.0, 4.0, 3.0, 60.0
+result = decompose_price_effect(
+    model,
+    px=(px0, px1),
+    py=py,
+    income=income,
+    method=DecompositionMethod.HICKS,
+)
+bundles = {"A": result.A, "B": result.B, "C": result.C}
+X, Y = 26.0, 24.0
+
+# 白底細軸的畫布 延伸到 x 軸下方 用來標出兩個效果的名稱
+spec = CanvasSpec(
+    x_range=(0, X),
+    y_range=(-7.5, Y),
+    width=4.6,
+    height=4.2,
+    x_label="",
+    y_label="",
+)
+roles = {
+    "canvas": StyleBundle(
+        fill=Fill(color="#ffffff", opacity=1.0)
     ),
-    income=Effect(color="#27AE60", label="IE"),
-    point_label=Label(visible=False),
+    "axes": StyleBundle(
+        stroke=Stroke(color=INK, width=1.0), text=text
+    ),
+    "guide": StyleBundle(
+        stroke=Stroke(
+            color=INK, width=0.8, dash=DashStyle.DASHED
+        )
+    ),
+}
+cv = Canvas(spec, theme=UTILITY_THEME, role_overrides=roles)
+cv.extend(
+    build_axes(
+        AxisSpec((0, X), arrow="end", label="$x$"),
+        AxisSpec((0, Y), arrow="end", label="$y$"),
+    )
 )
+cv.add(
+    TextLayer(
+        (0, 0),
+        "0",
+        offset=(-6, -8),
+        anchor="top-right",
+        style=text,
+        id="origin",
+    )
+)
+
+# 價格變動前後的預算線 虛線的補償預算線與兩條無異曲線
+cv.extend(
+    budget_layers(
+        px0,
+        py,
+        income,
+        layer_id="b0",
+        stroke=Stroke(color=DARK, width=2.6),
+    )
+)
+cv.extend(
+    budget_layers(
+        px1,
+        py,
+        income,
+        layer_id="b1",
+        stroke=Stroke(color=DARK, width=2.6),
+    )
+)
+compensated = [
+    (0, result.compensated_income / py),
+    (X, (result.compensated_income - px1 * X) / py),
+]
+cv.add(
+    PathLayer(
+        compensated,
+        stroke=Stroke(
+            color=INK, width=1.0, dash=DashStyle.DASHED
+        ),
+        id="compensated",
+    )
+)
+for name in ("A", "C"):
+    curve, _ = indifference_layers(
+        model,
+        [bundles[name].utility],
+        X,
+        Y,
+        layer_id=f"u.{name}",
+        stroke=Stroke(color=GREY, width=2.6),
+    )
+    cv.extend(curve)
+
+# 三個組合 各有一條通往 x 軸的虛線輔助線
+for name, bundle in bundles.items():
+    cv.add(
+        PathLayer(
+            [(bundle.x, 0), (bundle.x, bundle.y)],
+            id=f"{name}.guide",
+            role="guide",
+        )
+    )
+    cv.add(
+        MarkerLayer(
+            [(bundle.x, bundle.y)],
+            marker=Marker(color=INK, size=26, edge_width=0),
+            id=f"{name}.dot",
+            z_index=5,
+        )
+    )
+    cv.add(
+        TextLayer(
+            (bundle.x, bundle.y),
+            name,
+            math=True,
+            offset=(8, 6),
+            anchor="bottom-left",
+            style=text,
+            id=f"{name}.label",
+        )
+    )
+
+# x 方向的兩個效果 畫成輔助線之間的箭頭 A 到 B 再 B 到 C 各用一條線拉到軸下方標出名稱
+# 兩條線向外展開 讓兩個名稱在同一水平
+gap, row, depth, spread = 0.2, 1.6, -4.4, 3.8
+effects = [
+    ("A", "B", "替代效果", 1),
+    ("B", "C", "所得效果", -1),
+]
+for i, (start, end, name, direction) in enumerate(effects):
+    x0, x1 = bundles[start].x, bundles[end].x
+    sign = 1 if x1 > x0 else -1
+    arrow = Stroke(
+        color=GREY, width=1.8, arrow=ArrowStyle.TRIANGLE
+    )
+    cv.add(
+        ArrowLayer(
+            (x0 + gap * sign, row),
+            (x1 - gap * sign, row),
+            stroke=arrow,
+            id=f"effect.{i}",
+        )
+    )
+    foot = (x0 + x1) / 2 + direction * spread
+    cv.add(
+        PathLayer(
+            [((x0 + x1) / 2, row - 0.6), (foot, depth + 0.4)],
+            stroke=Stroke(color=INK, width=0.8),
+            id=f"leader.{i}",
+            clip=False,
+        )
+    )
+    cv.add(
+        TextLayer(
+            (foot, depth),
+            name,
+            anchor="top",
+            style=effect_name,
+            id=f"effect.label.{i}",
+        )
+    )
+
+cv.save("hicks.png")
 ```
 
-`curve_stroke` 與 `curve_label` 可調整這些曲線的樣式並加上標籤，`legend` 則決定 legend 的位置：
-
-```python
-from utility_viz import Label, Legend, Stroke
-
-canvas.add_decomposition(
-    result,
-    # 調整 U0、U1（與 U_B）的樣式
-    curve_stroke=Stroke(opacity=0.6),
-    # 顯示 U0、U1 標籤
-    curve_label=Label(position="top"),
-    # 或 Legend(visible=False)
-    legend=Legend(position="bottom"),
-)
-```
-
-![Hicks 價格效果分解](../../../assets/consumer/cobb_douglas_hicks.png)
+![Hicks 分解。](../../../assets/utility-viz/agora/consumer/hicks.zh-TW.svg){ .ev-figure-lg }
 
 ## Edgeworth 箱形圖
 
-`EdgeworthBox` 用來畫兩人交換經濟。消費者 A 從左下角原點計量，消費者 B 則從右上角原點計量。
+<!-- api: agora.utility_viz.guides_consumer_11 -->
+
+建立兩人交換經濟的 Edgeworth 箱形圖 [Edgeworth (1881)](../project/references.md#edgeworth1881)。$A$ 的原點在左下，$B$ 的原點在右上。使用 `add_*` 方法加入稟賦、契約曲線、核、價格線與 Walras 均衡。
+
+平滑偏好的契約曲線使用 `method="mrs"`；有拗折點、角解或自訂分段效用函數時，使用 `method="pareto"`。
 
 ```python
 from utility_viz import EdgeworthBox
@@ -248,21 +605,321 @@ box = EdgeworthBox(
 )
 ```
 
-平滑偏好可使用 `method="mrs"`。有折點、角解或自訂分段效用函數時，使用 `method="pareto"`。
-
-![非對稱 Cobb-Douglas Edgeworth 箱形圖](../../../assets/consumer/edgeworth_cobb_asymmetric.png)
-
-## 繪製路徑 {#canvasadd_path data-toc-label="繪製路徑"}
-
-不需要完整的需求圖時，也可以直接在 `Canvas` 上畫出路徑。
+下圖同樣由 MosaicKit 圖層畫成，以教科書的圖為藍本，畫出兩人的無異曲線。
 
 ```python
-from utility_viz import Canvas, levels
+import numpy as np
+from mosaickit import (
+    ArrowLayer,
+    ArrowStyle,
+    AxisSpec,
+    Canvas,
+    CanvasSpec,
+    Fill,
+    FillLayer,
+    Marker,
+    MarkerLayer,
+    PathLayer,
+    Stroke,
+    StyleBundle,
+    TextLayer,
+    TextStyle,
+)
+from scipy.interpolate import CubicSpline
 
-eq = price_path.equilibria[len(price_path.equilibria) // 2]
-lvls = levels.around(eq.utility, n=5)
+from utility_viz.core.scenes import UTILITY_THEME
 
-Canvas(x_max=25, y_max=20).add_utility(
-    model, levels=lvls
-).add_path(price_path, label="PCC").save("price_path.png")
+# 與 manual.toml 相同的顏色
+INK, GREY, LENS = "#1a1a1a", "#8c8c8c", "#ececec"
+text = TextStyle(color=INK, size=12)
+
+# 仿照教科書的圖 箱子寬 10 高 6 J 從左下角 O_J 起算
+# K 從右上角 O_K 起算 每條無異曲線都是通過幾個控制點 (x, y) 的
+# 三次樣條曲線 控制點的 x y 量自那張圖
+# J 的無異曲線控制點的 (xs, ys) 由低到高
+J = {
+    1: (
+        [3.80, 3.91, 4.18, 4.59, 5.12, 5.75, 6.46, 7.16, 8.07],
+        [5.15, 4.29, 3.49, 2.74, 2.08, 1.52, 1.07, 0.79, 0.58],
+    ),
+    2: (
+        [4.26, 4.37, 4.60, 4.94, 5.25, 5.90, 6.30, 7.15, 7.84],
+        [5.28, 4.55, 3.86, 3.22, 2.79, 2.13, 1.83, 1.38, 1.17],
+    ),
+    3: (
+        [5.12, 5.20, 5.38, 5.64, 5.95, 6.35, 6.81, 7.29, 7.80],
+        [5.40, 4.88, 4.39, 3.93, 3.50, 3.18, 2.91, 2.73, 2.63],
+    ),
+}
+# K 的無異曲線同理 由外而內
+K = {
+    1: (
+        [3.38, 4.17, 4.91, 5.57, 5.95, 6.60, 6.93, 7.16, 7.19],
+        [4.86, 4.65, 4.30, 3.83, 3.50, 2.57, 1.83, 0.79, 0.24],
+    ),
+    2: (
+        [3.62, 4.22, 4.77, 5.27, 5.68, 6.03, 6.30, 6.47, 6.54],
+        [4.35, 4.14, 3.83, 3.43, 2.97, 2.44, 1.83, 1.26, 0.64],
+    ),
+    3: (
+        [3.64, 4.12, 4.55, 4.93, 5.25, 5.53, 5.73, 5.86, 5.92],
+        [3.80, 3.65, 3.41, 3.11, 2.79, 2.33, 1.88, 1.41, 0.92],
+    ),
+}
+# 四個配置 各在 J 的一條曲線與 K 的一條曲線相交處
+allocations = {
+    "A": (7.16, 0.79),
+    "B": (6.30, 1.83),
+    "C": (5.25, 2.79),
+    "D": (5.95, 3.50),
+}
+# 字母與曲線標籤的位置 各文字的中心
+letters = {
+    "A": (7.41, 0.93),
+    "B": (6.55, 1.90),
+    "C": (5.48, 2.93),
+    "D": (6.14, 3.67),
+}
+curve_labels = {
+    "U_J^1": (8.35, 0.48),
+    "U_J^2": (8.12, 1.09),
+    "U_J^3": (8.05, 2.58),
+    "U_K^1": (7.46, 0.25),
+    "U_K^2": (6.58, 0.36),
+    "U_K^3": (5.95, 0.66),
+}
+
+
+def spline(points, n=240):
+    """通過控制點的平滑曲線，取 n 個取樣點。"""
+    # (xs, ys) 轉成 (x, y) 的列表
+    points = np.column_stack(points)
+    chord = np.r_[
+        0, np.cumsum(np.hypot(*np.diff(points, axis=0).T))
+    ]
+    return CubicSpline(chord, points)(
+        np.linspace(0, chord[-1], n)
+    )
+
+
+curves_j = {k: spline(v) for k, v in J.items()}
+curves_k = {k: spline(v) for k, v in K.items()}
+
+# 畫布是箱子加上放四個箭頭的邊界 0.6 吋是箱子的一個單位
+# Matplotlib 的繪圖區佔圖寬的 77.5% 圖高的 77%
+x_range, y_range, unit = (-1.0, 11.15), (-0.8, 6.8), 0.6
+spec = CanvasSpec(
+    x_range=x_range,
+    y_range=y_range,
+    x_label="",
+    y_label="",
+    width=(x_range[1] - x_range[0]) * unit / 0.775,
+    height=(y_range[1] - y_range[0]) * unit / 0.77,
+)
+roles = {
+    "canvas": StyleBundle(
+        fill=Fill(color="#ffffff", opacity=1.0)
+    )
+}
+cv = Canvas(spec, theme=UTILITY_THEME, role_overrides=roles)
+cv.add(
+    PathLayer(
+        [(0, 0), (10, 0), (10, 6), (0, 6), (0, 0)],
+        stroke=Stroke(color=INK, width=0.6),
+        id="box",
+        clip=False,
+    )
+)
+
+# J 最低的曲線與 K 最外側曲線之間的透鏡形 從兩者相交處到配置 A
+j1, k1 = curves_j[1], curves_k[1]
+near = lambda curve, point: int(
+    np.argmin(np.hypot(*(curve - point).T))
+)
+gaps = [
+    (np.hypot(*(j1[a] - k1[b])), a, b)
+    for a in range(0, 240, 2)
+    for b in range(0, 240, 2)
+    if j1[a][1] > 4 and k1[b][0] < 4.2
+]
+_, a_top, b_top = min(gaps)
+a_end, b_end = near(j1, allocations["A"]), near(
+    k1, allocations["A"]
+)
+lens = [tuple(p) for p in k1[b_top : b_end + 1]] + [
+    tuple(p) for p in j1[a_top : a_end + 1][::-1]
+]
+cv.add(
+    FillLayer(
+        lens,
+        fill=Fill(color=LENS, opacity=1.0),
+        id="lens",
+        z_index=0,
+    )
+)
+
+# 曲線寬為箱寬的 0.62% 即 6 吋寬的箱子上的 2.66 pt 點的直徑為 1.49% 即 6.45 pt
+for k, points in curves_j.items():
+    cv.add(
+        PathLayer(
+            [tuple(p) for p in points],
+            stroke=Stroke(color=INK, width=2.66),
+            id=f"j{k}",
+            z_index=2,
+        )
+    )
+for k, points in curves_k.items():
+    cv.add(
+        PathLayer(
+            [tuple(p) for p in points],
+            stroke=Stroke(color=GREY, width=2.66),
+            id=f"k{k}",
+            z_index=2,
+        )
+    )
+for name, point in allocations.items():
+    cv.add(
+        MarkerLayer(
+            [point],
+            marker=Marker(color=INK, size=41.6, edge_width=0),
+            id=f"dot.{name}",
+            z_index=4,
+        )
+    )
+    cv.add(
+        TextLayer(
+            letters[name],
+            name,
+            math=True,
+            anchor="center",
+            style=text,
+            id=f"letter.{name}",
+            z_index=4,
+        )
+    )
+for label, point in curve_labels.items():
+    cv.add(
+        TextLayer(
+            point,
+            label,
+            math=True,
+            anchor="center",
+            style=text,
+            id=f"label.{label}",
+        )
+    )
+cv.add(
+    TextLayer(
+        (-0.14, -0.20),
+        "O_J",
+        math=True,
+        anchor="center",
+        style=text,
+        id="origin.j",
+    )
+)
+cv.add(
+    TextLayer(
+        (10.30, 6.18),
+        "O_K",
+        math=True,
+        anchor="center",
+        style=text,
+        id="origin.k",
+    )
+)
+
+# 四個邊 兩人的數量沿箭頭增加 J 從 O_J 起 K 從 O_K 起
+arrow, plain = Stroke(
+    color=GREY, width=1.0, arrow=ArrowStyle.TRIANGLE
+), Stroke(color=GREY, width=1.0)
+cv.add(
+    ArrowLayer(
+        (3.91, -0.34),
+        (5.96, -0.34),
+        stroke=arrow,
+        id="side.bottom",
+    )
+)
+cv.add(
+    TextLayer(
+        (3.78, -0.35),
+        "x_J",
+        math=True,
+        anchor="right",
+        style=text,
+        id="name.bottom",
+    )
+)
+cv.add(
+    ArrowLayer(
+        (5.93, 6.35), (3.98, 6.35), stroke=arrow, id="side.top"
+    )
+)
+cv.add(
+    TextLayer(
+        (6.07, 6.36),
+        "x_K",
+        math=True,
+        anchor="left",
+        style=text,
+        id="name.top",
+    )
+)
+cv.add(
+    PathLayer(
+        [(-0.67, 1.91), (-0.67, 2.47)],
+        stroke=plain,
+        id="side.left.line",
+        clip=False,
+    )
+)
+cv.add(
+    ArrowLayer(
+        (-0.67, 3.47),
+        (-0.67, 4.18),
+        stroke=arrow,
+        id="side.left",
+    )
+)
+cv.add(
+    TextLayer(
+        (-0.67, 2.99),
+        "y_J",
+        math=True,
+        anchor="center",
+        style=text,
+        id="name.left",
+    )
+)
+cv.add(
+    PathLayer(
+        [(10.67, 3.47), (10.67, 4.04)],
+        stroke=plain,
+        id="side.right.line",
+        clip=False,
+    )
+)
+cv.add(
+    ArrowLayer(
+        (10.67, 2.47),
+        (10.67, 1.78),
+        stroke=arrow,
+        id="side.right",
+    )
+)
+cv.add(
+    TextLayer(
+        (10.67, 3.01),
+        "y_K",
+        math=True,
+        anchor="center",
+        style=text,
+        id="name.right",
+    )
+)
+
+cv.save("edgeworth.png")
 ```
+
+![兩位消費者通過配置 A 至 D 的無異曲線；陰影透鏡是雙方都偏好於 A 的配置。](../../../assets/utility-viz/agora/consumer/edgeworth.svg){ .ev-figure-lg }

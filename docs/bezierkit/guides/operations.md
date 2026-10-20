@@ -105,7 +105,7 @@ before $c$, and the last points that of the part after it ([Splitting the cubic 
     B(c + (1 - c) s) = \sum_{j=0}^n b_{j,n}(s) R_j.
     $$
 
-The result is classical; see [Floater (2025)](../project/references.md#floater2025) (Section 8.4, where it
+This is a standard result; see [Floater (2025)](../project/references.md#floater2025) (Section 8.4, where it
 is derived from the blossom) and [Farin (2002)](../project/references.md#farin2002).
 
 <span id="fig-split"></span>

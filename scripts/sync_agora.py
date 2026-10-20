@@ -22,6 +22,18 @@ import bibtexparser
 
 ROOT = Path(__file__).resolve().parents[1]
 LANGS = ('en', 'zh-TW', 'zh-CN')
+# Chapters that are still converted (their API groups and labels feed the site pages) but whose site page is
+# written by hand: the GIF gallery, the theme images, and the pages that merge several chapters.
+KEEP_SITE_PAGE = set()
+# Site-only material appended to a converted page: scripts/supplements/<name>.<locale>.md. The animation page's GIF
+# gallery is drawn by scripts/animation_figures.py, which has no place in the manual.
+SUPPLEMENTS = {('utility-viz', 'guides/animation'): 'animation'}
+# The manual names these methods bare under their chapter's class; the site qualifies them like the other packages.
+METHOD_OWNERS = {
+    ('utility-viz', 'guides/canvas'): ('Canvas', {'add_utility', 'add_budget', 'add_equilibrium', 'add_ray', 'add_point', 'show', 'save'}),
+}
+# Labels whose chapter section lives on another site page than its chapter's.
+LABEL_PAGES = {}
 MAPPING = {
     'principle-viz': {
         '01-introduction': 'guides/introduction', '02-installation': 'installation',
@@ -41,6 +53,16 @@ MAPPING = {
         '09-styles': 'guides/styles', '10-themes': 'guides/themes',
         '11-parameters': 'guides/parameters', '12-rendering': 'guides/rendering',
         'a-proofs': 'project/proofs', 'changelog': 'project/changelog',
+    },
+    'utility-viz': {
+        '01-introduction': 'guides/introduction', '02-installation': 'getting-started/installation',
+        '03-quickstart': 'getting-started/quickstart', '04-canvas': 'guides/canvas',
+        '05-figures': 'guides/consumer', '06-models': 'models/index',
+        '07-advanced': 'models/advanced', '08-analysis': 'tools/analysis',
+        '09-themes': 'guides/themes', '10-export': 'guides/export',
+        '11-cli': 'getting-started/cli', '12-animation': 'guides/animation',
+        '13-widgets': 'guides/interactive', '14-latex': 'tools/latex',
+        '15-changelog': 'project/changelog',
     },
     'bezierkit': {
         '01-introduction': 'guides/introduction', '02-installation': 'installation',
@@ -227,6 +249,12 @@ class Converter:
     def macro(self,name,args,body):
         if name in ('pkg','raw','meta'):
             return '`'+string(args)+'`'
+        if name=='oarg':
+            return '`['+string(args)+']`'
+        if name=='term':
+            parts=split_args(args)
+            english=next((string(p.split(':',1)[1]) for p in parts if p.startswith('english:')), '')
+            return string(parts[0])+('（'+english+'）' if english else '')
         if name=='pkg-meta':
             return str(self.meta[string(args)])
         if name=='url':
@@ -252,7 +280,10 @@ class Converter:
             return '# '+self.convert(body)
         if name=='pagebreak': return ''
         if name=='LaTeX': return 'LaTeX'
-        if name=='example': return '\n\n'+args.strip()+'\n\n'
+        if name=='example':
+            code=args.strip()
+            if code.startswith('[') and code.endswith(']'): code=code[1:-1].strip()
+            return '\n\n'+code+'\n\n'
         if name=='changed':
             version=string(split_args(args)[0]); description=self.convert(body)
             label=re.search(r'label:\s*("(?:\\.|[^"\\])*")',args)
@@ -267,6 +298,8 @@ class Converter:
             original=self.agora/'packages'/self.package/src
             dest=ROOT/'docs/assets'/self.package/'agora'/Path(src).relative_to('figures')
             if dest.suffix=='.pdf': dest=dest.with_suffix('.svg')
+            if (self.package,self.destination) in KEEP_SITE_PAGE:
+                return ''
             dest.parent.mkdir(parents=True,exist_ok=True)
             if str(original) not in self.assets:
                 if original.suffix=='.pdf':
@@ -275,15 +308,19 @@ class Converter:
                 self.assets.add(str(original))
             pagepath=ROOT/'docs'/('' if self.locale=='en' else self.locale)/self.package/(self.destination+'.md')
             url=os.path.relpath(dest,pagepath.parent)
-            return f'\n\n![{caption}]({url}){{ .ev-figure-sm }}\n\n'
+            width=next((int(m[1]) for p in parts if (m:=re.fullmatch(r'width:\s*(\d+)%',p.strip()))),0)
+            size='ev-figure-lg' if width>=60 else 'ev-figure-sm'  # wide figures keep more of their height
+            return f'\n\n![{caption}]({url}){{ .{size} }}\n\n'
         if name=='api':
             self.counter+=1
             parts=split_args(args)
             names=[string(p) for p in split_args(parts[0][1:-1])]
+            owner, methods = METHOD_OWNERS.get((self.package, self.destination), (None, set()))
+            names=[owner+'.'+n if owner and n in methods else n for n in names]
             syntax=next((p[len('syntax:'):].strip()[1:-1] for p in parts if p.startswith('syntax:')), '')
             signatures=[]
             for line in re.split(r'\\\s*\n',syntax.strip()):
-                fragments=re.findall(r'#(?:raw|meta)\(("(?:\\.|[^"\\])*")\)',line)
+                fragments=re.findall(r'#(?:raw|meta|oarg)\(\s*("(?:\\.|[^"\\])*")\s*,?\s*\)',line)
                 joined=''.join(string(p) for p in fragments)
                 if joined: signatures.append(joined)
             if not signatures: signatures=names
@@ -315,6 +352,17 @@ class Converter:
             self.param_index=0
             description=self.convert(body)
             self.current=key
+            entry=self.catalog[key]
+            # A group documented with a code example has only its name as signature; build the call from its
+            # parameters, as the hand-written groups of the other packages do.
+            members=[p['name'] for p in entry['parameters']]
+            if self.locale=='en' and members and all(re.fullmatch(r'[A-Z][A-Z0-9_]*',m) for m in members):
+                pass  # an enum: its members are the rows, the name is the signature
+            elif self.locale=='en' and len(names)==1 and entry['parameters'] and '(' not in entry['signatures'][0]:
+                arguments=[p['name']+('='+p['default'] if 'default' in p else '') for p in entry['parameters']]
+                entry['signatures']=[names[0]+'('+', '.join(arguments)+')']
+                if len(entry['signatures'][0])>75:
+                    entry['signatures']=[names[0]+'(\n    '+',\n    '.join(arguments)+'\n)']
             return '\n\n<!-- api: '+key+' -->\n\n'+description+'\n\n'
         if name=='param':
             parts=split_args(args); parameter=string(parts[0])
@@ -358,8 +406,32 @@ class Converter:
             parts=split_args(args)
             header=next(p.split(':',1)[1].strip() for p in parts if p.startswith('header:'))
             headers=[self.convert(p[1:-1]) for p in split_args(header[1:-1])]
-            cells=[self.convert(p[1:-1]).replace('\n',' ').replace('|','\\|') for p in parts if p.startswith('[')]
-            rows=[headers,['---']*len(headers)]+[cells[i:i+len(headers)] for i in range(0,len(cells),len(headers))]
+            width=len(headers)
+            rows=[headers,['---']*width]
+            body_row=[]; carried={}  # column -> rows still covered by a rowspan cell above
+            def flush():
+                nonlocal body_row
+                rows.append(body_row); body_row=[]
+            def settle():
+                # Rows covered by a rowspan keep an empty cell in that column (Markdown has no spans).
+                while len(body_row)<width and len(body_row) in carried:
+                    column=len(body_row); body_row.append('')
+                    carried[column]-=1
+                    if not carried[column]: del carried[column]
+                if len(body_row)==width: flush()
+            for p in parts:
+                if p.startswith('table.cell('):
+                    opening,after=balanced(p,len('table.cell'))
+                    span=int(re.search(r'rowspan:\s*(\d+)',opening)[1]) if 'rowspan' in opening else 1
+                    content=self.convert(balanced(p,after)[0]).replace('\n',' ').replace('|','\\|')
+                    if span>1: carried[len(body_row)]=span-1
+                    body_row.append(content)
+                elif p.startswith('['):
+                    body_row.append(self.convert(p[1:-1]).replace('\n',' ').replace('|','\\|'))
+                else:
+                    continue
+                if len(body_row)==width: flush()
+                settle()
             return '\n'+'\n'.join('| '+' | '.join(row)+' |' for row in rows)+'\n'
         raise ValueError(f'Unsupported macro #{name} in {self.package}/{self.locale}/{self.destination}')
 
@@ -379,7 +451,7 @@ def run(agora):
                     # Only declarations, not references in macro arguments.
                     if not re.search(r'(?m)(?:\]|\)|[^\s])\s*<'+re.escape(label)+r'>\s*$',text): continue
                     title=re.search(r'^=+\s+(.+?)\s*<'+re.escape(label)+'>',text,re.M)
-                    labels[label]=(destination,title[1] if title else label)
+                    labels[label]=(LABEL_PAGES.get((package,label),destination),title[1] if title else label)
                 for match in re.finditer(r'#(?:fig|definition|lemma|proposition|theorem|corollary|tbl)\(',text):
                     args,end=balanced(text,match.end()-1)
                     if end<len(text) and text[end]=='[':
@@ -403,6 +475,10 @@ def run(agora):
                 nav[package].setdefault(destination,{})[locale]=title
                 header='---\nseo_title: '+json.dumps(title,ensure_ascii=False)+'\n---\n\n'
                 path=base/(destination+'.md'); path.parent.mkdir(parents=True,exist_ok=True)
+                if (package,destination) in KEEP_SITE_PAGE: continue
+                if (package,destination) in SUPPLEMENTS:
+                    extra=Path(__file__).parent/'supplements'/f'{SUPPLEMENTS[package,destination]}.{locale}.md'
+                    body=body.rstrip('\n')+'\n\n'+extra.read_text().strip('\n')
                 path.write_text(header+body+'\n')
                 manifest[str(path.relative_to(ROOT))]={'source':str(source.relative_to(agora)), 'sha256':hashlib.sha256(raw.encode()).hexdigest()}
             # Release entries point to the chapter where the change is documented.

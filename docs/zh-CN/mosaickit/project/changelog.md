@@ -8,6 +8,10 @@ seo_title: "更新记录"
 
 本章列出影响软件包使用的版本变更，不列仅修改文档的版本。按照 l3doc 惯例，每个条目都标注在它所描述的功能旁，因此所列页码就是该功能的实际页码。
 
+## 0.8.0
+
+- `DashStyle` — `DashStyle` 与 `ArrowStyle` 接受简写，让其他包可直接当作自己的线型与箭头枚举 [样式与颜色](../guides/styles.md)
+
 ## 0.5.1
 
 - 绘图区边缘的标记完整画出；中心在绘图区外的标记略过 [图层与坐标轴](../guides/layers.md)
@@ -44,7 +48,7 @@ seo_title: "更新记录"
 
 ## 0.2.0
 
-- `mosaickit` — 内建渲染器在第一次使用时按名称加载；核心不再导入 Matplotlib 后端 [安装](../installation.md)
+- `mosaickit` — 内置渲染器在第一次使用时按名称加载；核心不再导入 Matplotlib 后端 [安装](../installation.md)
 - `LayoutWarning` — 新增，在没有任何引线标注位置能避开所有障碍物时发出 [画布与场景](../guides/canvas.md)
 - 新增 `clip`（默认 `True`）；箭头不再于路径末端重画实线，虚线箭头因此保持虚线 [图层与坐标轴](../guides/layers.md)
 - `anchor` 接受四个角 `top-left`、`top-right`、`bottom-left`、`bottom-right` [图层与坐标轴](../guides/layers.md)

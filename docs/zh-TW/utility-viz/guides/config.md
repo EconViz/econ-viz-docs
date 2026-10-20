@@ -66,21 +66,75 @@ fontsize = 10
 
 ## 載入
 
-```python
-from utility_viz import Canvas, Config
+`Config` 把主題與字體選項放在一起。從檔案讀進來後，可以讓它成為之後所有圖的預設值，也可以只把它的 `theme` 交給單一張 `Canvas`。
 
-# 之後建立的圖
-Config.load("utility-viz.toml").use()
-# 套用設定檔
-Canvas(x_max=20, y_max=15)
+### 讀取設定檔 {#config_load data-toc-label="讀取設定檔"}
 
-theme = Config.load("utility-viz.toml").theme
-# 或只套用在這張圖
-Canvas(theme=theme)
+把一個 TOML 檔讀成 `Config`。
 
-# 回到內建預設值
-Config.reset()
-```
+<!-- api: config.load -->
+
+??? example "查看範例"
+
+    ```python
+    from utility_viz import Config
+
+    config = Config.load("utility-viz.toml")
+    theme = config.theme
+    ```
+
+### 自動尋找 {#config_discover data-toc-label="自動尋找"}
+
+依序尋找：指定的路徑、`utility-viz.toml`、內建預設值。和 `Config.load` 不同的是，找不到檔案時不會出錯。
+
+<!-- api: config.discover -->
+
+??? example "查看範例"
+
+    ```python
+    from utility_viz import Config
+
+    # 找不到檔案時回到內建預設值
+    config = Config.discover()
+    ```
+
+### 套用 {#config_use data-toc-label="套用"}
+
+讓這份 `Config` 成為之後建立的圖的預設值，並回傳它自己。只想影響單一張圖時，把它的 `theme` 傳給 `Canvas(theme=...)`。
+
+<!-- api: config.use -->
+
+??? example "查看範例"
+
+    ```python
+    from utility_viz import Canvas, Config
+
+    # 之後建立的圖
+    Config.load("utility-viz.toml").use()
+    # 套用設定檔
+    Canvas(x_max=20, y_max=15)
+
+    theme = Config.load("utility-viz.toml").theme
+    # 或只套用在這張圖
+    Canvas(theme=theme)
+    ```
+
+### 還原 {#config_reset data-toc-label="還原"}
+
+回到內建預設值。`Config.active()` 可以查目前使用的是哪一份 `Config`。
+
+<!-- api: config.reset -->
+
+<!-- api: config.active -->
+
+??? example "查看範例"
+
+    ```python
+    from utility_viz import Config
+
+    # 回到內建預設值
+    Config.reset()
+    ```
 
 方法明確傳入的參數仍然優先於設定檔：以上面的設定為例，`add_budget(..., stroke=Stroke(width=1))` 會畫出 1 pt 粗、其餘沿用設定檔樣式的線。
 

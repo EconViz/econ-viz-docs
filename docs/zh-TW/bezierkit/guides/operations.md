@@ -94,7 +94,7 @@ print(d.at(0.5))
     B(c + (1 - c) s) = \sum_{j=0}^n b_{j,n}(s) R_j.
     $$
 
-這是經典結果，見 [Floater (2025)](../project/references.md#floater2025)（第 8.4 節，由 blossom 導出）與 [Farin (2002)](../project/references.md#farin2002)。
+這是標準結果，見 [Floater (2025)](../project/references.md#floater2025)（第 8.4 節，由 blossom 導出）與 [Farin (2002)](../project/references.md#farin2002)。
 
 <span id="fig-split"></span>
 

@@ -897,40 +897,113 @@
     ]
   },
   "agora.principle_viz.guides_taxes_2": {
-    "name": "solve_tax_equilibrium",
+    "name": "TaxType",
     "anchor": "principle-viz-guides-taxes-2",
+    "signatures": [
+      "TaxType"
+    ],
+    "parameters": [
+      {
+        "name": "FIXED_TAX",
+        "types": [
+          "TaxType"
+        ],
+        "description": {
+          "en": "A fixed amount, which shifts a curve by `amount`.",
+          "zh-TW": "固定金額，使曲線平移 `amount`。",
+          "zh-CN": "固定金额，使曲线平移 `amount`。"
+        }
+      },
+      {
+        "name": "PER_UNIT_TAX",
+        "types": [
+          "TaxType"
+        ],
+        "description": {
+          "en": "An amount per unit; the same equilibrium as `FIXED_TAX`.",
+          "zh-TW": "每單位的稅額；均衡與 `FIXED_TAX` 相同。",
+          "zh-CN": "每单位的税额；均衡与 `FIXED_TAX` 相同。"
+        }
+      },
+      {
+        "name": "AD_VALOREM_TAX",
+        "types": [
+          "TaxType"
+        ],
+        "description": {
+          "en": "A rate on the price, which rotates a curve.",
+          "zh-TW": "按價格計的稅率，使曲線旋轉。",
+          "zh-CN": "按价格计的税率，使曲线旋转。"
+        }
+      }
+    ]
+  },
+  "agora.principle_viz.guides_taxes_3": {
+    "name": "TaxOn",
+    "anchor": "principle-viz-guides-taxes-3",
+    "signatures": [
+      "TaxOn"
+    ],
+    "parameters": [
+      {
+        "name": "CONSUMER",
+        "types": [
+          "TaxOn"
+        ],
+        "description": {
+          "en": "Charged to buyers: demand shifts down.",
+          "zh-TW": "向買方課徵：需求向下平移。",
+          "zh-CN": "向买方征收：需求向下平移。"
+        }
+      },
+      {
+        "name": "PRODUCER",
+        "types": [
+          "TaxOn"
+        ],
+        "description": {
+          "en": "Charged to sellers: supply shifts up.",
+          "zh-TW": "向賣方課徵：供給向上平移。",
+          "zh-CN": "向卖方征收：供给向上平移。"
+        }
+      }
+    ]
+  },
+  "agora.principle_viz.guides_taxes_4": {
+    "name": "solve_tax_equilibrium",
+    "anchor": "principle-viz-guides-taxes-4",
     "signatures": [
       "solve_tax_equilibrium(\n    demand,\n    supply,\n    scenario\n)"
     ],
     "parameters": []
   },
-  "agora.principle_viz.guides_taxes_3": {
+  "agora.principle_viz.guides_taxes_5": {
     "name": "compare_tax_scenario",
-    "anchor": "principle-viz-guides-taxes-3",
+    "anchor": "principle-viz-guides-taxes-5",
     "signatures": [
       "compare_tax_scenario(\n    demand,\n    supply,\n    scenario\n)"
     ],
     "parameters": []
   },
-  "agora.principle_viz.guides_taxes_4": {
+  "agora.principle_viz.guides_taxes_6": {
     "name": "build_tax_visual_guide",
-    "anchor": "principle-viz-guides-taxes-4",
+    "anchor": "principle-viz-guides-taxes-6",
     "signatures": [
       "build_tax_visual_guide(\n    demand,\n    supply,\n    scenario\n)"
     ],
     "parameters": []
   },
-  "agora.principle_viz.guides_taxes_5": {
+  "agora.principle_viz.guides_taxes_7": {
     "name": "MarketFigure.add_tax_transform",
-    "anchor": "principle-viz-guides-taxes-5",
+    "anchor": "principle-viz-guides-taxes-7",
     "signatures": [
       "MarketFigure.add_tax_transform(\n    demand,\n    supply,\n    scenario,\n    q_max\n)"
     ],
     "parameters": []
   },
-  "agora.principle_viz.guides_taxes_6": {
+  "agora.principle_viz.guides_taxes_8": {
     "name": "MarketFigure.add_tax_comparison",
-    "anchor": "principle-viz-guides-taxes-6",
+    "anchor": "principle-viz-guides-taxes-8",
     "signatures": [
       "MarketFigure.add_tax_comparison(\n    result,\n    *,\n    brace_side=\"outside\",\n    notes=False\n)"
     ],
@@ -961,26 +1034,57 @@
       }
     ]
   },
-  "agora.principle_viz.guides_taxes_7": {
+  "agora.principle_viz.guides_taxes_9": {
     "name": "SubsidyScenario",
-    "anchor": "principle-viz-guides-taxes-7",
+    "anchor": "principle-viz-guides-taxes-9",
     "signatures": [
       "SubsidyScenario(amount, subsidy_to=SubsidyTo.PRODUCER)"
     ],
     "parameters": []
   },
-  "agora.principle_viz.guides_taxes_8": {
+  "agora.principle_viz.guides_taxes_10": {
+    "name": "SubsidyTo",
+    "anchor": "principle-viz-guides-taxes-10",
+    "signatures": [
+      "SubsidyTo"
+    ],
+    "parameters": [
+      {
+        "name": "PRODUCER",
+        "types": [
+          "SubsidyTo"
+        ],
+        "description": {
+          "en": "Paid to sellers.",
+          "zh-TW": "補貼給賣方。",
+          "zh-CN": "补贴给卖方。"
+        }
+      },
+      {
+        "name": "CONSUMER",
+        "types": [
+          "SubsidyTo"
+        ],
+        "description": {
+          "en": "Paid to buyers.",
+          "zh-TW": "補貼給買方。",
+          "zh-CN": "补贴给买方。"
+        }
+      }
+    ]
+  },
+  "agora.principle_viz.guides_taxes_11": {
     "name": "solve_subsidy_equilibrium",
-    "anchor": "principle-viz-guides-taxes-8",
+    "anchor": "principle-viz-guides-taxes-11",
     "signatures": [
       "solve_subsidy_equilibrium(\n    demand,\n    supply,\n    scenario\n)",
       "compare_subsidy_scenario(\n    demand,\n    supply,\n    scenario\n)"
     ],
     "parameters": []
   },
-  "agora.principle_viz.guides_taxes_9": {
+  "agora.principle_viz.guides_taxes_12": {
     "name": "MarketFigure.add_subsidy_comparison",
-    "anchor": "principle-viz-guides-taxes-9",
+    "anchor": "principle-viz-guides-taxes-12",
     "signatures": [
       "MarketFigure.add_subsidy_comparison(\n    result,\n    *,\n    brace_side=\"outside\",\n    notes=False\n)"
     ],
@@ -993,7 +1097,30 @@
       "PriceControlScenario(control_type, control_price)",
       "PriceControlType.CEILING | PriceControlType.FLOOR"
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "CEILING",
+        "types": [
+          "PriceControlType"
+        ],
+        "description": {
+          "en": "A maximum price.",
+          "zh-TW": "價格上限。",
+          "zh-CN": "价格上限。"
+        }
+      },
+      {
+        "name": "FLOOR",
+        "types": [
+          "PriceControlType"
+        ],
+        "description": {
+          "en": "A minimum price.",
+          "zh-TW": "價格下限。",
+          "zh-CN": "价格下限。"
+        }
+      }
+    ]
   },
   "agora.principle_viz.guides_controls_2": {
     "name": "evaluate_price_control",
@@ -1386,17 +1513,59 @@
     ]
   },
   "agora.principle_viz.guides_ppf_2": {
-    "name": "analyze_ppf",
+    "name": "PointStatus",
     "anchor": "principle-viz-guides-ppf-2",
+    "signatures": [
+      "PointStatus"
+    ],
+    "parameters": [
+      {
+        "name": "EFFICIENT",
+        "types": [
+          "PointStatus"
+        ],
+        "description": {
+          "en": "On the frontier.",
+          "zh-TW": "在邊界上。",
+          "zh-CN": "在边界上。"
+        }
+      },
+      {
+        "name": "INEFFICIENT",
+        "types": [
+          "PointStatus"
+        ],
+        "description": {
+          "en": "Inside the frontier.",
+          "zh-TW": "在邊界內側。",
+          "zh-CN": "在边界内侧。"
+        }
+      },
+      {
+        "name": "UNATTAINABLE",
+        "types": [
+          "PointStatus"
+        ],
+        "description": {
+          "en": "Outside the frontier.",
+          "zh-TW": "在邊界外側。",
+          "zh-CN": "在边界外侧。"
+        }
+      }
+    ]
+  },
+  "agora.principle_viz.guides_ppf_3": {
+    "name": "analyze_ppf",
+    "anchor": "principle-viz-guides-ppf-3",
     "signatures": [
       "analyze_ppf(\n    frontier,\n    points=(),\n    *,\n    samples=101\n)",
       "ppf_canvas(\n    result,\n    *,\n    theme=None,\n    labels=None,\n    visibility=None\n)"
     ],
     "parameters": []
   },
-  "agora.principle_viz.guides_ppf_3": {
+  "agora.principle_viz.guides_ppf_4": {
     "name": "PPFGrowthScenario",
-    "anchor": "principle-viz-guides-ppf-3",
+    "anchor": "principle-viz-guides-ppf-4",
     "signatures": [
       "PPFGrowthScenario(x_growth_rate=0.0, y_growth_rate=0.0)",
       "analyze_ppf_growth(\n    frontier,\n    scenario,\n    *,\n    samples=101\n)",
@@ -1404,9 +1573,9 @@
     ],
     "parameters": []
   },
-  "agora.principle_viz.guides_ppf_4": {
+  "agora.principle_viz.guides_ppf_5": {
     "name": "compare_linear_ppfs",
-    "anchor": "principle-viz-guides-ppf-4",
+    "anchor": "principle-viz-guides-ppf-5",
     "signatures": [
       "compare_linear_ppfs(\n    name_a,\n    frontier_a,\n    name_b,\n    frontier_b\n)"
     ],
@@ -2038,49 +2207,197 @@
     "parameters": []
   },
   "agora.mosaickit.guides_styles_3": {
-    "name": "Fill",
+    "name": "DashStyle",
     "anchor": "mosaickit-guides-styles-3",
+    "signatures": [
+      "DashStyle"
+    ],
+    "parameters": [
+      {
+        "name": "SOLID",
+        "types": [
+          "DashStyle"
+        ],
+        "description": {
+          "en": "Solid line.",
+          "zh-TW": "實線。",
+          "zh-CN": "实线。"
+        }
+      },
+      {
+        "name": "DASHED",
+        "types": [
+          "DashStyle"
+        ],
+        "description": {
+          "en": "Dashed line.",
+          "zh-TW": "虛線。",
+          "zh-CN": "虚线。"
+        }
+      },
+      {
+        "name": "DOTTED",
+        "types": [
+          "DashStyle"
+        ],
+        "description": {
+          "en": "Dotted line.",
+          "zh-TW": "點線。",
+          "zh-CN": "点线。"
+        }
+      },
+      {
+        "name": "DASHDOT",
+        "types": [
+          "DashStyle"
+        ],
+        "description": {
+          "en": "Dash-dot line.",
+          "zh-TW": "點劃線。",
+          "zh-CN": "点划线。"
+        }
+      }
+    ]
+  },
+  "agora.mosaickit.guides_styles_4": {
+    "name": "ArrowStyle",
+    "anchor": "mosaickit-guides-styles-4",
+    "signatures": [
+      "ArrowStyle"
+    ],
+    "parameters": [
+      {
+        "name": "OPEN",
+        "types": [
+          "ArrowStyle"
+        ],
+        "description": {
+          "en": "Open arrowhead.",
+          "zh-TW": "開口箭頭。",
+          "zh-CN": "开口箭头。"
+        }
+      },
+      {
+        "name": "TRIANGLE",
+        "types": [
+          "ArrowStyle"
+        ],
+        "description": {
+          "en": "Filled triangle.",
+          "zh-TW": "實心三角形。",
+          "zh-CN": "实心三角形。"
+        }
+      },
+      {
+        "name": "FANCY",
+        "types": [
+          "ArrowStyle"
+        ],
+        "description": {
+          "en": "Curved, tapering arrowhead.",
+          "zh-TW": "彎曲、漸細的箭頭。",
+          "zh-CN": "弯曲、渐细的箭头。"
+        }
+      },
+      {
+        "name": "WEDGE",
+        "types": [
+          "ArrowStyle"
+        ],
+        "description": {
+          "en": "Thin wedge-shaped arrowhead.",
+          "zh-TW": "細楔形箭頭。",
+          "zh-CN": "细楔形箭头。"
+        }
+      }
+    ]
+  },
+  "agora.mosaickit.guides_styles_5": {
+    "name": "ArrowPlacement",
+    "anchor": "mosaickit-guides-styles-5",
+    "signatures": [
+      "ArrowPlacement"
+    ],
+    "parameters": [
+      {
+        "name": "START",
+        "types": [
+          "ArrowPlacement"
+        ],
+        "description": {
+          "en": "At the first point.",
+          "zh-TW": "在第一個點。",
+          "zh-CN": "在第一个点。"
+        }
+      },
+      {
+        "name": "END",
+        "types": [
+          "ArrowPlacement"
+        ],
+        "description": {
+          "en": "At the last point.",
+          "zh-TW": "在最後一個點。",
+          "zh-CN": "在最后一个点。"
+        }
+      },
+      {
+        "name": "BOTH",
+        "types": [
+          "ArrowPlacement"
+        ],
+        "description": {
+          "en": "At both ends.",
+          "zh-TW": "兩端都畫。",
+          "zh-CN": "两端都画。"
+        }
+      }
+    ]
+  },
+  "agora.mosaickit.guides_styles_6": {
+    "name": "Fill",
+    "anchor": "mosaickit-guides-styles-6",
     "signatures": [
       "Fill(\n    color=None,\n    opacity=None,\n    hatch=None\n)"
     ],
     "parameters": []
   },
-  "agora.mosaickit.guides_styles_4": {
+  "agora.mosaickit.guides_styles_7": {
     "name": "Marker",
-    "anchor": "mosaickit-guides-styles-4",
+    "anchor": "mosaickit-guides-styles-7",
     "signatures": [
       "Marker(\n    color=None,\n    size=None,\n    shape=None,\n    opacity=None,\n    edge_color=None,\n    edge_width=None\n)"
     ],
     "parameters": []
   },
-  "agora.mosaickit.guides_styles_5": {
+  "agora.mosaickit.guides_styles_8": {
     "name": "TextStyle",
-    "anchor": "mosaickit-guides-styles-5",
+    "anchor": "mosaickit-guides-styles-8",
     "signatures": [
       "TextStyle(\n    color=None,\n    size=None,\n    family=None,\n    weight=None,\n    opacity=None,\n    rotation=None\n)"
     ],
     "parameters": []
   },
-  "agora.mosaickit.guides_styles_6": {
+  "agora.mosaickit.guides_styles_9": {
     "name": "LegendStyle",
-    "anchor": "mosaickit-guides-styles-6",
+    "anchor": "mosaickit-guides-styles-9",
     "signatures": [
       "LegendStyle(\n    visible=None,\n    location=None,\n    frame=None,\n    size=None\n)"
     ],
     "parameters": []
   },
-  "agora.mosaickit.guides_styles_7": {
+  "agora.mosaickit.guides_styles_10": {
     "name": "Color",
-    "anchor": "mosaickit-guides-styles-7",
+    "anchor": "mosaickit-guides-styles-10",
     "signatures": [
       "Color(\n    red,\n    green,\n    blue,\n    alpha=1.0\n)",
       "Color.from_hex(\"#RGB\" | \"#RRGGBB\" | \"#RRGGBBAA\")"
     ],
     "parameters": []
   },
-  "agora.mosaickit.guides_styles_8": {
+  "agora.mosaickit.guides_styles_11": {
     "name": "Palette",
-    "anchor": "mosaickit-guides-styles-8",
+    "anchor": "mosaickit-guides-styles-11",
     "signatures": [
       "Palette(name, colors)"
     ],
@@ -2241,6 +2558,2399 @@
     "anchor": "mosaickit-guides-rendering-5",
     "signatures": [
       "RenderCache(max_entries=256)"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.getting_started_installation_1": {
+    "name": "animation",
+    "anchor": "utility-viz-getting-started-installation-1",
+    "signatures": [],
+    "parameters": [
+      {
+        "name": "animation",
+        "types": [],
+        "description": {
+          "en": "GIF export with `Animator` ([Animation](../guides/animation.md#sec-animation)); pulls in `Pillow`.",
+          "zh-TW": "供 `Animator` 寫出 GIF（詳見[動畫](../guides/animation.md#sec-animation)）；安裝 `Pillow`。",
+          "zh-CN": "供 `Animator` 写入 GIF（详见[动画](../guides/animation.md#sec-animation)）；安装 `Pillow`。"
+        }
+      },
+      {
+        "name": "interactive",
+        "types": [],
+        "description": {
+          "en": "Notebook widgets with `WidgetViewer` ([Interactive widgets](../guides/interactive.md#sec-widgets)); pulls in\n`ipywidgets` and `IPython`.",
+          "zh-TW": "供 `WidgetViewer` 在 Jupyter 顯示控制項（詳見[互動元件](../guides/interactive.md#sec-widgets)）；安裝 `ipywidgets` 與 `IPython`。",
+          "zh-CN": "供 `WidgetViewer` 在 Jupyter 显示控件（详见[交互组件](../guides/interactive.md#sec-widgets)）；安装 `ipywidgets` 与 `IPython`。"
+        }
+      },
+      {
+        "name": "all",
+        "types": [],
+        "description": {
+          "en": "Every optional dependency.",
+          "zh-TW": "全部選用依賴。",
+          "zh-CN": "全部可选依赖。"
+        }
+      }
+    ]
+  },
+  "agora.utility_viz.getting_started_installation_2": {
+    "name": "UtilityVizDeprecationWarning",
+    "anchor": "utility-viz-getting-started-installation-2",
+    "signatures": [
+      "UtilityVizDeprecationWarning"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.getting_started_quickstart_1": {
+    "name": "utility_viz.models",
+    "anchor": "utility-viz-getting-started-quickstart-1",
+    "signatures": [
+      "utility_viz.models"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.getting_started_quickstart_2": {
+    "name": "solve",
+    "anchor": "utility-viz-getting-started-quickstart-2",
+    "signatures": [
+      "solve(\n    model,\n    px=float,\n    py=float,\n    income=float\n)"
+    ],
+    "parameters": [
+      {
+        "name": "x",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Optimal quantity $x^*$.",
+          "zh-TW": "最適消費量 $x^*$。",
+          "zh-CN": "最优消费量 $x^*$。"
+        }
+      },
+      {
+        "name": "y",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Optimal quantity $y^*$.",
+          "zh-TW": "最適消費量 $y^*$。",
+          "zh-CN": "最优消费量 $y^*$。"
+        }
+      },
+      {
+        "name": "utility",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Utility at the optimum.",
+          "zh-TW": "模型在最適點的效用值。",
+          "zh-CN": "模型在最优点的效用值。"
+        }
+      },
+      {
+        "name": "bundle_type",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "Solution type: `\"interior\"` for an interior solution, `\"boundary\"` when the numerical solution sits at a quantity lower bound (e.g. Stone-Geary subsistence), `\"kink\"` for a Leontief kink and `\"corner\"` for a perfect-substitutes corner.",
+          "zh-TW": "解的類型：`\"interior\"` 為內部解、`\"boundary\"` 為數值解落在數量下界（例如 Stone-Geary 的最低消費限制）、`\"kink\"` 為完全互補的拗折解、`\"corner\"` 為完全替代的角解。",
+          "zh-CN": "解的类型：`\"interior\"` 为内部解、`\"boundary\"` 为数值解位于数量下界（例如 Stone-Geary 的最低消费限制）、`\"kink\"` 为完全互补的折点解、`\"corner\"` 为完全替代的角解。"
+        }
+      }
+    ]
+  },
+  "agora.utility_viz.getting_started_quickstart_3": {
+    "name": "levels.around",
+    "anchor": "utility-viz-getting-started-quickstart-3",
+    "signatures": [
+      "levels.around(utility, n=int)"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.getting_started_quickstart_4": {
+    "name": "Canvas",
+    "anchor": "utility-viz-getting-started-quickstart-4",
+    "signatures": [
+      "Canvas(\n    x_max=float,\n    y_max=float,\n    ...\n)"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.getting_started_quickstart_5": {
+    "name": "Canvas.add_*",
+    "anchor": "utility-viz-getting-started-quickstart-5",
+    "signatures": [
+      "Canvas.add_*"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.getting_started_quickstart_6": {
+    "name": "Canvas.save",
+    "anchor": "utility-viz-getting-started-quickstart-6",
+    "signatures": [
+      "Canvas.save",
+      "Canvas.show"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.guides_canvas_1": {
+    "name": "Canvas",
+    "anchor": "utility-viz-guides-canvas-1",
+    "signatures": [
+      "Canvas"
+    ],
+    "parameters": [
+      {
+        "name": "x_max",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Upper bound of the horizontal axis.",
+          "zh-TW": "橫軸上限。",
+          "zh-CN": "横轴上限。"
+        },
+        "default": "10"
+      },
+      {
+        "name": "y_max",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Upper bound of the vertical axis.",
+          "zh-TW": "縱軸上限。",
+          "zh-CN": "纵轴上限。"
+        },
+        "default": "10"
+      },
+      {
+        "name": "x_label",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "Label at the tip of the horizontal axis.",
+          "zh-TW": "橫軸末端的標籤。",
+          "zh-CN": "横轴末端的标签。"
+        },
+        "default": "\"X\""
+      },
+      {
+        "name": "y_label",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "Label at the tip of the vertical axis.",
+          "zh-TW": "縱軸末端的標籤。",
+          "zh-CN": "纵轴末端的标签。"
+        },
+        "default": "\"Y\""
+      },
+      {
+        "name": "title",
+        "types": [
+          "str | None"
+        ],
+        "description": {
+          "en": "Figure title.",
+          "zh-TW": "圖形標題。",
+          "zh-CN": "图形标题。"
+        },
+        "default": "None"
+      },
+      {
+        "name": "dpi",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "Raster export resolution, clamped to 1--1200.",
+          "zh-TW": "點陣圖匯出解析度，限制在 1–1200 之間。",
+          "zh-CN": "位图导出分辨率，限制在 1–1200 之间。"
+        },
+        "default": "300"
+      },
+      {
+        "name": "x_label_pos",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "Position of the horizontal label relative to the arrow; a `LabelPosition`\nis also accepted ([`x_label_pos` values](canvas.md#tab-x-label-pos)).",
+          "zh-TW": "橫軸標籤相對箭頭的位置，也接受 `LabelPosition`（參見[`x_label_pos` 值](canvas.md#tab-x-label-pos)）。",
+          "zh-CN": "横轴标签相对箭头的位置，也接受 `LabelPosition`（参见[`x_label_pos` 值](canvas.md#tab-x-label-pos)）。"
+        },
+        "default": "\"right\""
+      },
+      {
+        "name": "y_label_pos",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "Position of the vertical label relative to the arrow ([`y_label_pos` values](canvas.md#tab-y-label-pos)).",
+          "zh-TW": "縱軸標籤相對箭頭的位置（參見[`y_label_pos` 值](canvas.md#tab-y-label-pos)）。",
+          "zh-CN": "纵轴标签相对箭头的位置（参见[`y_label_pos` 值](canvas.md#tab-y-label-pos)）。"
+        },
+        "default": "\"top\""
+      },
+      {
+        "name": "font",
+        "types": [
+          "str | list"
+        ],
+        "description": {
+          "en": "Font for all text, or a list of candidate fonts. It applies to this canvas\nonly and leaves `matplotlib`'s global configuration alone.",
+          "zh-TW": "所有文字使用的字型，或候選字型清單。此項設定僅作用於指定畫布，不會更動 `matplotlib` 的全域設定。",
+          "zh-CN": "所有文字使用的字体，或候选字体列表。此项设置仅作用于指定画布，不会改变 `matplotlib` 的全局设置。"
+        },
+        "default": "None"
+      },
+      {
+        "name": "math_font",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "`matplotlib` math font set: `dejavusans`, `dejavuserif`, `cm`,\n`stix`, `stixsans` and so on.",
+          "zh-TW": "`matplotlib` 的數學字型：`dejavusans`、`dejavuserif`、`cm`、`stix` 或 `stixsans` 等。",
+          "zh-CN": "`matplotlib` 的数学字体：`dejavusans`、`dejavuserif`、`cm`、`stix` 或 `stixsans` 等。"
+        },
+        "default": "None"
+      },
+      {
+        "name": "axis_stroke",
+        "types": [
+          "Stroke"
+        ],
+        "description": {
+          "en": "Width, style, colour and arrowhead of both axes ([Styles](canvas.md#sec-styles)).",
+          "zh-TW": "同時設定兩軸的粗細、線條樣式、顏色與箭頭（詳見[樣式](canvas.md#sec-styles)）。",
+          "zh-CN": "同时设置两轴的粗细、线条样式、颜色与箭头（详见[样式](canvas.md#sec-styles)）。"
+        },
+        "default": "theme"
+      },
+      {
+        "name": "x_axis_stroke",
+        "types": [
+          "Stroke"
+        ],
+        "description": {
+          "en": "Override for the horizontal axis.",
+          "zh-TW": "單獨覆寫橫軸。",
+          "zh-CN": "单独覆盖横轴。"
+        },
+        "default": "None"
+      },
+      {
+        "name": "y_axis_stroke",
+        "types": [
+          "Stroke"
+        ],
+        "description": {
+          "en": "Override for the vertical axis.",
+          "zh-TW": "單獨覆寫縱軸。",
+          "zh-CN": "单独覆盖纵轴。"
+        },
+        "default": "None"
+      },
+      {
+        "name": "theme",
+        "types": [
+          "Theme"
+        ],
+        "description": {
+          "en": "Colour and style theme ([Themes and configuration](themes.md#sec-themes)).",
+          "zh-TW": "配色與樣式主題（詳見[主題與設定](themes.md#sec-themes)）。",
+          "zh-CN": "配色与样式主题（详见[主题与设置](themes.md#sec-themes)）。"
+        },
+        "default": "themes.default"
+      }
+    ]
+  },
+  "agora.utility_viz.guides_canvas_2": {
+    "name": "Canvas.add_utility",
+    "anchor": "utility-viz-guides-canvas-2",
+    "signatures": [
+      "Canvas.add_utility"
+    ],
+    "parameters": [
+      {
+        "name": "levels",
+        "types": [
+          "int | list"
+        ],
+        "description": {
+          "en": "A number of curves, or a list of utility values such as `levels.around(eq.utility, n=5)` to place them around the optimum.",
+          "zh-TW": "曲線條數或效用值清單；例如 `levels.around(eq.utility, n=5)` 會在均衡效用附近選取五個水準。",
+          "zh-CN": "曲线条数或效用值列表；例如 `levels.around(eq.utility, n=5)` 会在均衡效用附近选取五个水平。"
+        },
+        "default": "3"
+      },
+      {
+        "name": "highlight_level",
+        "types": [
+          "float | None"
+        ],
+        "description": {
+          "en": "Focal utility level. The closest curve is drawn in the main style.",
+          "zh-TW": "焦點效用值。實際繪製時選取最接近的曲線，以主要樣式顯示。",
+          "zh-CN": "焦点效用值。绘制时选择最接近的曲线，以主要样式显示。"
+        },
+        "default": "None"
+      },
+      {
+        "name": "secondary_stroke",
+        "types": [
+          "Stroke | None"
+        ],
+        "description": {
+          "en": "Style of the other curves; defaults to `theme.secondary_ic_stroke`.",
+          "zh-TW": "其他曲線的樣式；省略時使用 `theme.secondary_ic_stroke`。",
+          "zh-CN": "其他曲线的样式；省略时使用 `theme.secondary_ic_stroke`。"
+        },
+        "default": "None"
+      },
+      {
+        "name": "show_ic_labels",
+        "types": [
+          "bool"
+        ],
+        "description": {
+          "en": "Label the curves. Labels follow the curve's tangent and stay inside the plotting area.",
+          "zh-TW": "顯示曲線標籤。標籤沿曲線切線旋轉，並保留在可見繪圖區域內。",
+          "zh-CN": "显示曲线标签。标签沿曲线切线旋转，并保持在可见绘图区内。"
+        },
+        "default": "False"
+      },
+      {
+        "name": "label_style",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "`\"numeric\"` shows utility values; `\"ordinal\"` numbers the curves $u_1, u_2, \\ldots$ in increasing utility.",
+          "zh-TW": "`\"numeric\"` 顯示效用值；`\"ordinal\"` 依效用遞增順序顯示 $u_1, u_2, \\ldots$。",
+          "zh-CN": "`\"numeric\"` 显示效用值；`\"ordinal\"` 按效用递增顺序显示 $u_1, u_2, \\ldots$。"
+        },
+        "default": "\"numeric\""
+      }
+    ]
+  },
+  "agora.utility_viz.guides_canvas_3": {
+    "name": "Canvas.add_budget",
+    "anchor": "utility-viz-guides-canvas-3",
+    "signatures": [
+      "Canvas.add_budget"
+    ],
+    "parameters": [
+      {
+        "name": "fill",
+        "types": [
+          "bool | Fill"
+        ],
+        "description": {
+          "en": "`True` shades the feasible set with the theme's fill; pass a `Fill` to set its colour and opacity.",
+          "zh-TW": "`True` 使用主題的陰影設定；傳入 `Fill` 可覆寫陰影顏色與透明度。",
+          "zh-CN": "`True` 使用主题的阴影设置；传入 `Fill` 可覆盖阴影颜色与透明度。"
+        },
+        "default": "False"
+      },
+      {
+        "name": "stroke",
+        "types": [
+          "Stroke | None"
+        ],
+        "description": {
+          "en": "Colour, width, style and opacity of the line in one object; takes precedence over `color`, `linewidth` and `linestyle` ([Styles](canvas.md#sec-styles)).",
+          "zh-TW": "統一設定預算線的顏色、線寬、線型與透明度，優先於 `color`、`linewidth`、`linestyle` 等簡寫參數（詳見[樣式](canvas.md#sec-styles)）。",
+          "zh-CN": "统一设置预算线的颜色、线宽、线型与透明度，优先于 `color`、`linewidth`、`linestyle` 等简写参数（详见[样式](canvas.md#sec-styles)）。"
+        },
+        "default": "None"
+      },
+      {
+        "name": "label",
+        "types": [
+          "str | None"
+        ],
+        "description": {
+          "en": "Legend text, shown once `show_legend()` is called.",
+          "zh-TW": "圖例文字；呼叫 `show_legend()` 後才會顯示圖例。",
+          "zh-CN": "图例文字；调用 `show_legend()` 后才会显示图例。"
+        },
+        "default": "None"
+      }
+    ]
+  },
+  "agora.utility_viz.guides_canvas_4": {
+    "name": "Canvas.add_equilibrium",
+    "anchor": "utility-viz-guides-canvas-4",
+    "signatures": [
+      "Canvas.add_equilibrium"
+    ],
+    "parameters": [
+      {
+        "name": "drop_dashes",
+        "types": [
+          "bool"
+        ],
+        "description": {
+          "en": "Drop lines to both axes.",
+          "zh-TW": "顯示至兩軸的投影線。",
+          "zh-CN": "显示至两轴的投影线。"
+        },
+        "default": "True"
+      },
+      {
+        "name": "show_ray",
+        "types": [
+          "bool"
+        ],
+        "description": {
+          "en": "Draw the expansion path through the origin and the optimum.",
+          "zh-TW": "顯示通過原點與均衡點的射線。",
+          "zh-CN": "显示通过原点与均衡点的射线。"
+        },
+        "default": "False"
+      },
+      {
+        "name": "marker",
+        "types": [
+          "Marker | None"
+        ],
+        "description": {
+          "en": "Style of the equilibrium marker ([Styles](canvas.md#sec-styles)).",
+          "zh-TW": "均衡點的標記樣式（詳見[樣式](canvas.md#sec-styles)）。",
+          "zh-CN": "均衡点的标记样式（详见[样式](canvas.md#sec-styles)）。"
+        },
+        "default": "None"
+      }
+    ]
+  },
+  "agora.utility_viz.guides_canvas_5": {
+    "name": "Canvas.add_ray",
+    "anchor": "utility-viz-guides-canvas-5",
+    "signatures": [
+      "Canvas.add_ray"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.guides_canvas_6": {
+    "name": "Canvas.add_point",
+    "anchor": "utility-viz-guides-canvas-6",
+    "signatures": [
+      "Canvas.add_point"
+    ],
+    "parameters": [
+      {
+        "name": "label",
+        "types": [
+          "str | Label | None"
+        ],
+        "description": {
+          "en": "Marker text, as a string or a `Label`.",
+          "zh-TW": "標記文字，可傳入字串或 `Label`。",
+          "zh-CN": "标记文字，可传入字符串或 `Label`。"
+        },
+        "default": "None"
+      },
+      {
+        "name": "offset",
+        "types": [
+          "tuple | None"
+        ],
+        "description": {
+          "en": "Offset of the text from the point, in points.",
+          "zh-TW": "文字相對標記點的位移，單位為 pt。",
+          "zh-CN": "文字相对标记点的位移，单位为 pt。"
+        },
+        "default": "None"
+      },
+      {
+        "name": "marker",
+        "types": [
+          "Marker | None"
+        ],
+        "description": {
+          "en": "Style of the point marker.",
+          "zh-TW": "標記樣式。",
+          "zh-CN": "标记样式。"
+        },
+        "default": "None"
+      }
+    ]
+  },
+  "agora.utility_viz.guides_canvas_7": {
+    "name": "Canvas.show",
+    "anchor": "utility-viz-guides-canvas-7",
+    "signatures": [
+      "Canvas.show",
+      "Canvas.save"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.guides_canvas_8": {
+    "name": "LineStyle",
+    "anchor": "utility-viz-guides-canvas-8",
+    "signatures": [
+      "LineStyle"
+    ],
+    "parameters": [
+      {
+        "name": "SOLID",
+        "types": [
+          "LineStyle"
+        ],
+        "description": {
+          "en": "Solid line.",
+          "zh-TW": "實線。",
+          "zh-CN": "实线。"
+        }
+      },
+      {
+        "name": "DASHED",
+        "types": [
+          "LineStyle"
+        ],
+        "description": {
+          "en": "Dashed line.",
+          "zh-TW": "虛線。",
+          "zh-CN": "虚线。"
+        }
+      },
+      {
+        "name": "DOTTED",
+        "types": [
+          "LineStyle"
+        ],
+        "description": {
+          "en": "Dotted line.",
+          "zh-TW": "點線。",
+          "zh-CN": "点线。"
+        }
+      },
+      {
+        "name": "DASHDOT",
+        "types": [
+          "LineStyle"
+        ],
+        "description": {
+          "en": "Dash-dot line.",
+          "zh-TW": "點劃線。",
+          "zh-CN": "点划线。"
+        }
+      }
+    ]
+  },
+  "agora.utility_viz.guides_canvas_9": {
+    "name": "ArrowStyle",
+    "anchor": "utility-viz-guides-canvas-9",
+    "signatures": [
+      "ArrowStyle"
+    ],
+    "parameters": [
+      {
+        "name": "SIMPLE",
+        "types": [
+          "ArrowStyle"
+        ],
+        "description": {
+          "en": "Open arrowhead (`->`).",
+          "zh-TW": "開口箭頭（`->`）。",
+          "zh-CN": "开口箭头（`->`）。"
+        }
+      },
+      {
+        "name": "TRIANGLE",
+        "types": [
+          "ArrowStyle"
+        ],
+        "description": {
+          "en": "Filled triangle (`-|>`), the default.",
+          "zh-TW": "實心三角形（`-|>`），預設值。",
+          "zh-CN": "实心三角形（`-|>`），默认值。"
+        }
+      },
+      {
+        "name": "FANCY",
+        "types": [
+          "ArrowStyle"
+        ],
+        "description": {
+          "en": "Curved, tapering arrowhead.",
+          "zh-TW": "彎曲、漸細的箭頭。",
+          "zh-CN": "弯曲、渐细的箭头。"
+        }
+      },
+      {
+        "name": "WEDGE",
+        "types": [
+          "ArrowStyle"
+        ],
+        "description": {
+          "en": "Thin wedge-shaped arrowhead.",
+          "zh-TW": "細楔形箭頭。",
+          "zh-CN": "细楔形箭头。"
+        }
+      }
+    ]
+  },
+  "agora.utility_viz.guides_canvas_10": {
+    "name": "Stroke",
+    "anchor": "utility-viz-guides-canvas-10",
+    "signatures": [
+      "Stroke(\n    width=float,\n    style=LineStyle,\n    color=str,\n    arrow=ArrowStyle,\n    opacity=float\n)"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.guides_canvas_11": {
+    "name": "Axis",
+    "anchor": "utility-viz-guides-canvas-11",
+    "signatures": [
+      "Axis"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.guides_canvas_12": {
+    "name": "Marker",
+    "anchor": "utility-viz-guides-canvas-12",
+    "signatures": [
+      "Marker"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.guides_canvas_13": {
+    "name": "Label",
+    "anchor": "utility-viz-guides-canvas-13",
+    "signatures": [
+      "Label"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.guides_canvas_14": {
+    "name": "Fill",
+    "anchor": "utility-viz-guides-canvas-14",
+    "signatures": [
+      "Fill"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.guides_consumer_1": {
+    "name": "Figure",
+    "anchor": "utility-viz-guides-consumer-1",
+    "signatures": [
+      "Figure(\n    layout,\n    x_max=float,\n    y_max=float,\n    ...,\n    shared_x=False,\n    shared_y=False\n)"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.guides_consumer_2": {
+    "name": "Layout",
+    "anchor": "utility-viz-guides-consumer-2",
+    "signatures": [
+      "Layout"
+    ],
+    "parameters": [
+      {
+        "name": "SINGLE",
+        "types": [
+          "Layout"
+        ],
+        "description": {
+          "en": "One panel.",
+          "zh-TW": "單一面板。",
+          "zh-CN": "单个面板。"
+        }
+      },
+      {
+        "name": "STACKED",
+        "types": [
+          "Layout"
+        ],
+        "description": {
+          "en": "Two panels, one above the other.",
+          "zh-TW": "上下兩個面板。",
+          "zh-CN": "上下两个面板。"
+        }
+      },
+      {
+        "name": "SIDE_BY_SIDE",
+        "types": [
+          "Layout"
+        ],
+        "description": {
+          "en": "Two panels, side by side.",
+          "zh-TW": "左右兩個面板。",
+          "zh-CN": "左右两个面板。"
+        }
+      },
+      {
+        "name": "TOP_TWO_BOTTOM_ONE",
+        "types": [
+          "Layout"
+        ],
+        "description": {
+          "en": "Two panels on top, one below.",
+          "zh-TW": "上方兩個、下方一個面板。",
+          "zh-CN": "上方两个、下方一个面板。"
+        }
+      },
+      {
+        "name": "TOP_ONE_BOTTOM_TWO",
+        "types": [
+          "Layout"
+        ],
+        "description": {
+          "en": "One panel on top, two below.",
+          "zh-TW": "上方一個、下方兩個面板。",
+          "zh-CN": "上方一个、下方两个面板。"
+        }
+      },
+      {
+        "name": "GRID_2X2",
+        "types": [
+          "Layout"
+        ],
+        "description": {
+          "en": "Four panels in a 2 × 2 grid.",
+          "zh-TW": "2 × 2 格四個面板。",
+          "zh-CN": "2 × 2 格四个面板。"
+        }
+      },
+      {
+        "name": "GRID_3X3",
+        "types": [
+          "Layout"
+        ],
+        "description": {
+          "en": "Nine panels in a 3 × 3 grid.",
+          "zh-TW": "3 × 3 格九個面板。",
+          "zh-CN": "3 × 3 格九个面板。"
+        }
+      }
+    ]
+  },
+  "agora.utility_viz.guides_consumer_3": {
+    "name": "PricePath",
+    "anchor": "utility-viz-guides-consumer-3",
+    "signatures": [
+      "PricePath",
+      "IncomePath"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.guides_consumer_4": {
+    "name": "Canvas.add_path",
+    "anchor": "utility-viz-guides-consumer-4",
+    "signatures": [
+      "Canvas.add_path"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.guides_consumer_5": {
+    "name": "DemandDiagram",
+    "anchor": "utility-viz-guides-consumer-5",
+    "signatures": [
+      "DemandDiagram(\n    price path,\n    title=None,\n    ...\n)",
+      ".add_marshallian_panel(\n    price_markers=None,\n    show_pcc=False,\n    show_demand_guides=True\n)"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.guides_consumer_6": {
+    "name": "decompose_price_effect",
+    "anchor": "utility-viz-guides-consumer-6",
+    "signatures": [
+      "decompose_price_effect(\n    model,\n    px=(old, new),\n    py=float,\n    income=float,\n    method=method\n)"
+    ],
+    "parameters": [
+      {
+        "name": "A, B, C",
+        "types": [],
+        "description": {
+          "en": "The original, compensated and final bundles.",
+          "zh-TW": "原始、補償後與最終的消費組合。",
+          "zh-CN": "原始、补偿后与最终的消费组合。"
+        }
+      },
+      {
+        "name": "substitution_effect",
+        "types": [],
+        "description": {
+          "en": "Substitution effect.",
+          "zh-TW": "替代效果。",
+          "zh-CN": "替代效应。"
+        }
+      },
+      {
+        "name": "income_effect",
+        "types": [],
+        "description": {
+          "en": "Income effect.",
+          "zh-TW": "所得效果。",
+          "zh-CN": "收入效应。"
+        }
+      },
+      {
+        "name": "total_effect",
+        "types": [],
+        "description": {
+          "en": "Total effect.",
+          "zh-TW": "總效果。",
+          "zh-CN": "总效应。"
+        }
+      },
+      {
+        "name": "compensated_income",
+        "types": [],
+        "description": {
+          "en": "Income after compensation.",
+          "zh-TW": "補償後的所得。",
+          "zh-CN": "补偿后的收入。"
+        }
+      }
+    ]
+  },
+  "agora.utility_viz.guides_consumer_7": {
+    "name": "DecompositionMethod",
+    "anchor": "utility-viz-guides-consumer-7",
+    "signatures": [
+      "DecompositionMethod"
+    ],
+    "parameters": [
+      {
+        "name": "HICKS",
+        "types": [
+          "DecompositionMethod"
+        ],
+        "description": {
+          "en": "Hold the original utility fixed: B lies on the original indifference curve.",
+          "zh-TW": "維持原本的效用水準：B 在原本的無異曲線上。",
+          "zh-CN": "保持原来的效用水平：B 在原来的无差异曲线上。"
+        }
+      },
+      {
+        "name": "SLUTSKY",
+        "types": [
+          "DecompositionMethod"
+        ],
+        "description": {
+          "en": "Keep the original bundle affordable: B is the optimum on the budget line through A at the new prices.",
+          "zh-TW": "讓原本的組合仍買得起：B 是新價格下通過 A 的預算線上的最適組合。",
+          "zh-CN": "让原来的组合仍买得起：B 是新价格下通过 A 的预算线上的最优组合。"
+        }
+      }
+    ]
+  },
+  "agora.utility_viz.guides_consumer_8": {
+    "name": "Canvas.add_decomposition",
+    "anchor": "utility-viz-guides-consumer-8",
+    "signatures": [
+      "Canvas.add_decomposition"
+    ],
+    "parameters": [
+      {
+        "name": "show_curves",
+        "types": [
+          "bool"
+        ],
+        "description": {
+          "en": "Draw the decomposition's indifference curves; set to `False` when you draw your own.",
+          "zh-TW": "繪製分解用的無異曲線；已有自訂無異曲線時設為 `False`，避免重複。",
+          "zh-CN": "绘制分解用的无差异曲线；已有自定义无差异曲线时设为 `False`，避免重复。"
+        },
+        "default": "True"
+      },
+      {
+        "name": "curve_stroke",
+        "types": [
+          "Stroke | None"
+        ],
+        "description": {
+          "en": "Style of the indifference curves.",
+          "zh-TW": "無異曲線的樣式。",
+          "zh-CN": "无差异曲线的样式。"
+        },
+        "default": "None"
+      },
+      {
+        "name": "curve_label",
+        "types": [
+          "Label | None"
+        ],
+        "description": {
+          "en": "Show and style the $U_0$, $U_1$ and $U_B$ labels.",
+          "zh-TW": "顯示並設定 $U_0$、$U_1$ 與 $U_B$ 標籤。",
+          "zh-CN": "显示并设置 $U_0$、$U_1$ 与 $U_B$ 标签。"
+        },
+        "default": "None"
+      },
+      {
+        "name": "substitution, income",
+        "types": [
+          "Effect | None"
+        ],
+        "description": {
+          "en": "Style of the substitution and income effects (see `Effect` below).",
+          "zh-TW": "替代效果與所得效果的樣式（參見下方 `Effect`）。",
+          "zh-CN": "替代效应与收入效应的样式（参见下方 `Effect`）。"
+        },
+        "default": "None"
+      },
+      {
+        "name": "point_marker",
+        "types": [
+          "Marker | None"
+        ],
+        "description": {
+          "en": "Markers of the bundles.",
+          "zh-TW": "消費組合的標記。",
+          "zh-CN": "消费组合的标记。"
+        },
+        "default": "None"
+      },
+      {
+        "name": "point_label",
+        "types": [
+          "Label | None"
+        ],
+        "description": {
+          "en": "Text of the bundles.",
+          "zh-TW": "消費組合的文字。",
+          "zh-CN": "消费组合的文字。"
+        },
+        "default": "None"
+      },
+      {
+        "name": "legend",
+        "types": [
+          "Legend | None"
+        ],
+        "description": {
+          "en": "Position and style of the legend (see `Legend` below).",
+          "zh-TW": "圖例位置與樣式（參見下方 `Legend`）。",
+          "zh-CN": "图例位置与样式（参见下方 `Legend`）。"
+        },
+        "default": "None"
+      }
+    ]
+  },
+  "agora.utility_viz.guides_consumer_9": {
+    "name": "Effect",
+    "anchor": "utility-viz-guides-consumer-9",
+    "signatures": [
+      "Effect"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.guides_consumer_10": {
+    "name": "Legend",
+    "anchor": "utility-viz-guides-consumer-10",
+    "signatures": [
+      "Legend"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.guides_consumer_11": {
+    "name": "EdgeworthBox",
+    "anchor": "utility-viz-guides-consumer-11",
+    "signatures": [
+      "EdgeworthBox(\n    utility A,\n    utility B,\n    total_x=float,\n    total_y=float,\n    ...\n)"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.models_index_1": {
+    "name": "CobbDouglas",
+    "anchor": "utility-viz-models-index-1",
+    "signatures": [
+      "CobbDouglas"
+    ],
+    "parameters": [
+      {
+        "name": "alpha",
+        "types": [],
+        "description": {
+          "en": "Weight on good $x$.",
+          "zh-TW": "商品 $x$ 的權重。",
+          "zh-CN": "商品 $x$ 的权重。"
+        },
+        "default": "0.5"
+      },
+      {
+        "name": "beta",
+        "types": [],
+        "description": {
+          "en": "Weight on good $y$.",
+          "zh-TW": "商品 $y$ 的權重。",
+          "zh-CN": "商品 $y$ 的权重。"
+        },
+        "default": "0.5"
+      }
+    ]
+  },
+  "agora.utility_viz.models_index_2": {
+    "name": "CES",
+    "anchor": "utility-viz-models-index-2",
+    "signatures": [
+      "CES"
+    ],
+    "parameters": [
+      {
+        "name": "alpha",
+        "types": [],
+        "description": {
+          "en": "Weight on good $x$.",
+          "zh-TW": "商品 $x$ 的權重。",
+          "zh-CN": "商品 $x$ 的权重。"
+        },
+        "default": "0.5"
+      },
+      {
+        "name": "beta",
+        "types": [],
+        "description": {
+          "en": "Weight on good $y$.",
+          "zh-TW": "商品 $y$ 的權重。",
+          "zh-CN": "商品 $y$ 的权重。"
+        },
+        "default": "0.5"
+      },
+      {
+        "name": "rho",
+        "types": [],
+        "description": {
+          "en": "Substitution parameter, $\\rho \\ne 1$.",
+          "zh-TW": "替代參數，且 $\\rho \\ne 1$。",
+          "zh-CN": "替代参数，且 $\\rho \\ne 1$。"
+        },
+        "default": "0.5"
+      }
+    ]
+  },
+  "agora.utility_viz.models_index_3": {
+    "name": "Translog",
+    "anchor": "utility-viz-models-index-3",
+    "signatures": [
+      "Translog"
+    ],
+    "parameters": [
+      {
+        "name": "alpha_0",
+        "types": [],
+        "description": {
+          "en": "Log-utility intercept.",
+          "zh-TW": "對數效用截距。",
+          "zh-CN": "对数效用截距。"
+        },
+        "default": "0.0"
+      },
+      {
+        "name": "alpha_x",
+        "types": [],
+        "description": {
+          "en": "First-order weight on $ln x$.",
+          "zh-TW": "$ln x$ 的一次項權重。",
+          "zh-CN": "$ln x$ 的一次项权重。"
+        },
+        "default": "0.5"
+      },
+      {
+        "name": "alpha_y",
+        "types": [],
+        "description": {
+          "en": "First-order weight on $ln y$.",
+          "zh-TW": "$ln y$ 的一次項權重。",
+          "zh-CN": "$ln y$ 的一次项权重。"
+        },
+        "default": "0.5"
+      },
+      {
+        "name": "beta_xx",
+        "types": [],
+        "description": {
+          "en": "Curvature in $x$.",
+          "zh-TW": "$x$ 方向的曲率。",
+          "zh-CN": "$x$ 方向的曲率。"
+        },
+        "default": "0.0"
+      },
+      {
+        "name": "beta_yy",
+        "types": [],
+        "description": {
+          "en": "Curvature in $y$.",
+          "zh-TW": "$y$ 方向的曲率。",
+          "zh-CN": "$y$ 方向的曲率。"
+        },
+        "default": "0.0"
+      },
+      {
+        "name": "beta_xy",
+        "types": [],
+        "description": {
+          "en": "Interaction between $x$ and $y$.",
+          "zh-TW": "$x$ 與 $y$ 的交叉效果。",
+          "zh-CN": "$x$ 与 $y$ 的交叉效应。"
+        },
+        "default": "0.0"
+      }
+    ]
+  },
+  "agora.utility_viz.models_index_4": {
+    "name": "Leontief",
+    "anchor": "utility-viz-models-index-4",
+    "signatures": [
+      "Leontief"
+    ],
+    "parameters": [
+      {
+        "name": "a",
+        "types": [],
+        "description": {
+          "en": "Weight on good $x$.",
+          "zh-TW": "商品 $x$ 的權重。",
+          "zh-CN": "商品 $x$ 的权重。"
+        },
+        "default": "1.0"
+      },
+      {
+        "name": "b",
+        "types": [],
+        "description": {
+          "en": "Weight on good $y$.",
+          "zh-TW": "商品 $y$ 的權重。",
+          "zh-CN": "商品 $y$ 的权重。"
+        },
+        "default": "1.0"
+      }
+    ]
+  },
+  "agora.utility_viz.models_index_5": {
+    "name": "PerfectSubstitutes",
+    "anchor": "utility-viz-models-index-5",
+    "signatures": [
+      "PerfectSubstitutes"
+    ],
+    "parameters": [
+      {
+        "name": "a",
+        "types": [],
+        "description": {
+          "en": "Marginal utility of good $x$.",
+          "zh-TW": "商品 $x$ 的邊際效用。",
+          "zh-CN": "商品 $x$ 的边际效用。"
+        },
+        "default": "1.0"
+      },
+      {
+        "name": "b",
+        "types": [],
+        "description": {
+          "en": "Marginal utility of good $y$.",
+          "zh-TW": "商品 $y$ 的邊際效用。",
+          "zh-CN": "商品 $y$ 的边际效用。"
+        },
+        "default": "1.0"
+      }
+    ]
+  },
+  "agora.utility_viz.models_index_6": {
+    "name": "maximum",
+    "anchor": "utility-viz-models-index-6",
+    "signatures": [
+      "maximum"
+    ],
+    "parameters": [
+      {
+        "name": "a",
+        "types": [],
+        "description": {
+          "en": "Weight on good $x$.",
+          "zh-TW": "商品 $x$ 的權重。",
+          "zh-CN": "商品 $x$ 的权重。"
+        },
+        "default": "1.0"
+      },
+      {
+        "name": "b",
+        "types": [],
+        "description": {
+          "en": "Weight on good $y$.",
+          "zh-TW": "商品 $y$ 的權重。",
+          "zh-CN": "商品 $y$ 的权重。"
+        },
+        "default": "1.0"
+      }
+    ]
+  },
+  "agora.utility_viz.models_index_7": {
+    "name": "QuasiLinear",
+    "anchor": "utility-viz-models-index-7",
+    "signatures": [
+      "QuasiLinear"
+    ],
+    "parameters": [
+      {
+        "name": "v_func",
+        "types": [],
+        "description": {
+          "en": "Increasing, concave function $f$.",
+          "zh-TW": "遞增且凹的函數 $f$。",
+          "zh-CN": "递增且凹的函数 $f$。"
+        },
+        "default": "numpy.log"
+      },
+      {
+        "name": "linear_in",
+        "types": [],
+        "description": {
+          "en": "Good that enters linearly.",
+          "zh-TW": "以線性方式進入的商品。",
+          "zh-CN": "以线性方式进入的商品。"
+        },
+        "default": "\"y\""
+      }
+    ]
+  },
+  "agora.utility_viz.models_index_8": {
+    "name": "Haagsma",
+    "anchor": "utility-viz-models-index-8",
+    "signatures": [
+      "Haagsma"
+    ],
+    "parameters": [
+      {
+        "name": "alpha_x",
+        "types": [],
+        "description": {
+          "en": "Weight on good $x$; must be less than `alpha_y`.",
+          "zh-TW": "商品 $x$ 的權重，必須小於 `alpha_y`。",
+          "zh-CN": "商品 $x$ 的权重，必须小于 `alpha_y`。"
+        },
+        "default": "1.0"
+      },
+      {
+        "name": "alpha_y",
+        "types": [],
+        "description": {
+          "en": "Weight on good $y$.",
+          "zh-TW": "商品 $y$ 的權重。",
+          "zh-CN": "商品 $y$ 的权重。"
+        },
+        "default": "2.0"
+      },
+      {
+        "name": "gamma_x",
+        "types": [],
+        "description": {
+          "en": "Lower bound on the quantity of $x$.",
+          "zh-TW": "商品 $x$ 的數量下界。",
+          "zh-CN": "商品 $x$ 的数量下界。"
+        },
+        "default": "2.0"
+      },
+      {
+        "name": "gamma_y",
+        "types": [],
+        "description": {
+          "en": "Upper bound on the quantity of $y$.",
+          "zh-TW": "商品 $y$ 的數量上界。",
+          "zh-CN": "商品 $y$ 的数量上界。"
+        },
+        "default": "27.0"
+      },
+      {
+        "name": "demand(px, py, income)",
+        "types": [],
+        "description": {
+          "en": "Closed-form interior solution.",
+          "zh-TW": "回傳閉式內部解。",
+          "zh-CN": "返回闭式内部解。"
+        }
+      },
+      {
+        "name": "is_giffen(px, py, income)",
+        "types": [],
+        "description": {
+          "en": "Whether $x$ is a Giffen good at the given budget.",
+          "zh-TW": "檢查指定預算下商品 $x$ 是否為季芬財。",
+          "zh-CN": "检查指定预算下商品 $x$ 是否为季芬财。"
+        }
+      }
+    ]
+  },
+  "agora.utility_viz.models_index_9": {
+    "name": "StoneGeary",
+    "anchor": "utility-viz-models-index-9",
+    "signatures": [
+      "StoneGeary"
+    ],
+    "parameters": [
+      {
+        "name": "alpha",
+        "types": [],
+        "description": {
+          "en": "Weight on supernumerary $x$.",
+          "zh-TW": "超額 $x$ 的權重。",
+          "zh-CN": "超额 $x$ 的权重。"
+        },
+        "default": "0.5"
+      },
+      {
+        "name": "beta",
+        "types": [],
+        "description": {
+          "en": "Weight on supernumerary $y$.",
+          "zh-TW": "超額 $y$ 的權重。",
+          "zh-CN": "超额 $y$ 的权重。"
+        },
+        "default": "0.5"
+      },
+      {
+        "name": "bar_x",
+        "types": [],
+        "description": {
+          "en": "Subsistence quantity $\\overline{x}$.",
+          "zh-TW": "基本需求量 $\\overline{x}$。",
+          "zh-CN": "基本需求量 $\\overline{x}$。"
+        },
+        "default": "1.0"
+      },
+      {
+        "name": "bar_y",
+        "types": [],
+        "description": {
+          "en": "Subsistence quantity $\\overline{y}$.",
+          "zh-TW": "基本需求量 $\\overline{y}$。",
+          "zh-CN": "基本需求量 $\\overline{y}$。"
+        },
+        "default": "1.0"
+      }
+    ]
+  },
+  "agora.utility_viz.models_index_10": {
+    "name": "Satiation",
+    "anchor": "utility-viz-models-index-10",
+    "signatures": [
+      "Satiation"
+    ],
+    "parameters": [
+      {
+        "name": "bliss_x",
+        "types": [],
+        "description": {
+          "en": "Bliss-point coordinate $x^*$.",
+          "zh-TW": "極樂點座標 $x^*$。",
+          "zh-CN": "饱和点坐标 $x^*$。"
+        },
+        "default": "5.0"
+      },
+      {
+        "name": "bliss_y",
+        "types": [],
+        "description": {
+          "en": "Bliss-point coordinate $y^*$.",
+          "zh-TW": "極樂點座標 $y^*$。",
+          "zh-CN": "饱和点坐标 $y^*$。"
+        },
+        "default": "5.0"
+      },
+      {
+        "name": "a",
+        "types": [],
+        "description": {
+          "en": "Curvature along the $x$-axis.",
+          "zh-TW": "$x$ 軸方向的曲率。",
+          "zh-CN": "$x$ 轴方向的曲率。"
+        },
+        "default": "1.0"
+      },
+      {
+        "name": "b",
+        "types": [],
+        "description": {
+          "en": "Curvature along the $y$-axis.",
+          "zh-TW": "$y$ 軸方向的曲率。",
+          "zh-CN": "$y$ 轴方向的曲率。"
+        },
+        "default": "1.0"
+      }
+    ]
+  },
+  "agora.utility_viz.models_advanced_1": {
+    "name": "CustomUtility",
+    "anchor": "utility-viz-models-advanced-1",
+    "signatures": [
+      "CustomUtility(func=callable, name=str)"
+    ],
+    "parameters": [
+      {
+        "name": "func",
+        "types": [],
+        "description": {
+          "en": "Vectorised utility function of $x$ and $y$.",
+          "zh-TW": "以 $x$ 與 $y$ 為變數的向量化效用函數。",
+          "zh-CN": "以 $x$ 与 $y$ 为变量的向量化效用函数。"
+        }
+      },
+      {
+        "name": "name",
+        "types": [],
+        "description": {
+          "en": "Display name of the model.",
+          "zh-TW": "模型的顯示名稱。",
+          "zh-CN": "模型的显示名称。"
+        }
+      }
+    ]
+  },
+  "agora.utility_viz.models_advanced_2": {
+    "name": "MultiGoodCD",
+    "anchor": "utility-viz-models-advanced-2",
+    "signatures": [
+      "MultiGoodCD(shares)",
+      ".freeze(good=quantity, ...)"
+    ],
+    "parameters": [
+      {
+        "name": "shares",
+        "types": [],
+        "description": {
+          "en": "Mapping from each good's name to its exponent $\\alpha_i$.",
+          "zh-TW": "商品名稱與指數 $\\alpha_i$ 的對應。",
+          "zh-CN": "商品名称与指数 $\\alpha_i$ 的对应。"
+        }
+      },
+      {
+        "name": "freeze(...)",
+        "types": [],
+        "description": {
+          "en": "Fixed quantities of the goods other than $x$ and $y$.",
+          "zh-TW": "$x$、$y$ 以外商品的固定數量。",
+          "zh-CN": "$x$、$y$ 以外商品的固定数量。"
+        }
+      }
+    ]
+  },
+  "agora.utility_viz.models_advanced_3": {
+    "name": "budget_layers",
+    "anchor": "utility-viz-models-advanced-3",
+    "signatures": [
+      "budget_layers(\n    float,\n    float,\n    float,\n    fill=False,\n    ...\n)",
+      "equilibrium_layers(\n    equilibrium,\n    drop_lines=True,\n    ...\n)",
+      "indifference_layers(\n    model,\n    levels,\n    max,\n    max,\n    ...\n)"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.models_advanced_4": {
+    "name": "UTILITY_THEME",
+    "anchor": "utility-viz-models-advanced-4",
+    "signatures": [
+      "UTILITY_THEME",
+      "canvas_to_tikz"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.tools_analysis_1": {
+    "name": "comparative_statics",
+    "anchor": "utility-viz-tools-analysis-1",
+    "signatures": [
+      "comparative_statics(\n    model,\n    px=float,\n    py=float,\n    income=float\n)"
+    ],
+    "parameters": [
+      {
+        "name": "dx_dpx",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "$\\partial x^* / \\partial p_x$.",
+          "zh-TW": "$\\partial x^* / \\partial p_x$。",
+          "zh-CN": "$\\partial x^* / \\partial p_x$。"
+        }
+      },
+      {
+        "name": "dx_dpy",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "$\\partial x^* / \\partial p_y$.",
+          "zh-TW": "$\\partial x^* / \\partial p_y$。",
+          "zh-CN": "$\\partial x^* / \\partial p_y$。"
+        }
+      },
+      {
+        "name": "dx_dI",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "$\\partial x^* / \\partial I$.",
+          "zh-TW": "$\\partial x^* / \\partial I$。",
+          "zh-CN": "$\\partial x^* / \\partial I$。"
+        }
+      },
+      {
+        "name": "dy_dpx",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "$\\partial y^* / \\partial p_x$.",
+          "zh-TW": "$\\partial y^* / \\partial p_x$。",
+          "zh-CN": "$\\partial y^* / \\partial p_x$。"
+        }
+      },
+      {
+        "name": "dy_dpy",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "$\\partial y^* / \\partial p_y$.",
+          "zh-TW": "$\\partial y^* / \\partial p_y$。",
+          "zh-CN": "$\\partial y^* / \\partial p_y$。"
+        }
+      },
+      {
+        "name": "dy_dI",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "$\\partial y^* / \\partial I$.",
+          "zh-TW": "$\\partial y^* / \\partial I$。",
+          "zh-CN": "$\\partial y^* / \\partial I$。"
+        }
+      }
+    ]
+  },
+  "agora.utility_viz.tools_analysis_2": {
+    "name": "slutsky_matrix",
+    "anchor": "utility-viz-tools-analysis-2",
+    "signatures": [
+      "slutsky_matrix(\n    model,\n    px=float,\n    py=float,\n    income=float\n)"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.tools_analysis_3": {
+    "name": "HomogeneityAnalyzer",
+    "anchor": "utility-viz-tools-analysis-3",
+    "signatures": [
+      "HomogeneityAnalyzer(model)"
+    ],
+    "parameters": [
+      {
+        "name": "degree()",
+        "types": [],
+        "description": {
+          "en": "Estimate the degree of homogeneity; see [Returns to scale](analysis.md#sec-rts).",
+          "zh-TW": "估計齊次次數，詳見[規模報酬](analysis.md#sec-rts)。",
+          "zh-CN": "估计齐次次数，详见[规模报酬](analysis.md#sec-rts)。"
+        }
+      },
+      {
+        "name": "euler_check(x, y)",
+        "types": [],
+        "description": {
+          "en": "Euler-theorem residual at a bundle.",
+          "zh-TW": "計算指定消費組合的 Euler 定理殘差。",
+          "zh-CN": "计算指定消费组合的 Euler 定理残差。"
+        }
+      },
+      {
+        "name": "is_homothetic()",
+        "types": [],
+        "description": {
+          "en": "Whether the MRS is invariant to proportional scaling.",
+          "zh-TW": "邊際替代率（MRS）在等比例縮放下是否不變。",
+          "zh-CN": "边际替代率（MRS）在等比例缩放下是否不变。"
+        }
+      },
+      {
+        "name": "demand_degree_zero(px, py, income)",
+        "types": [],
+        "description": {
+          "en": "Whether Marshallian demand is homogeneous of degree zero.",
+          "zh-TW": "Marshall 需求是否為零次齊次。",
+          "zh-CN": "Marshall 需求是否为零次齐次。"
+        }
+      },
+      {
+        "name": "degree",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Estimated degree of homogeneity.",
+          "zh-TW": "估計的齊次次數。",
+          "zh-CN": "估计的齐次次数。"
+        }
+      },
+      {
+        "name": "is_homogeneous",
+        "types": [
+          "bool"
+        ],
+        "description": {
+          "en": "Whether the function is homogeneous.",
+          "zh-TW": "是否為齊次函數。",
+          "zh-CN": "是否为齐次函数。"
+        }
+      },
+      {
+        "name": "returns_to_scale",
+        "types": [
+          "ReturnsToScale"
+        ],
+        "description": {
+          "en": "Returns-to-scale class, one of the values below.",
+          "zh-TW": "規模報酬的分類，取值如下。",
+          "zh-CN": "规模报酬的分类，取值如下。"
+        }
+      }
+    ]
+  },
+  "agora.utility_viz.tools_analysis_4": {
+    "name": "ReturnsToScale",
+    "anchor": "utility-viz-tools-analysis-4",
+    "signatures": [
+      "ReturnsToScale"
+    ],
+    "parameters": [
+      {
+        "name": "INCREASING",
+        "types": [
+          "ReturnsToScale"
+        ],
+        "description": {
+          "en": "$\\alpha + \\beta > 1$, increasing returns.",
+          "zh-TW": "$\\alpha + \\beta > 1$，規模報酬遞增。",
+          "zh-CN": "$\\alpha + \\beta > 1$，规模报酬递增。"
+        }
+      },
+      {
+        "name": "CONSTANT",
+        "types": [
+          "ReturnsToScale"
+        ],
+        "description": {
+          "en": "$\\alpha + \\beta = 1$, constant returns.",
+          "zh-TW": "$\\alpha + \\beta = 1$，規模報酬固定。",
+          "zh-CN": "$\\alpha + \\beta = 1$，规模报酬不变。"
+        }
+      },
+      {
+        "name": "DECREASING",
+        "types": [
+          "ReturnsToScale"
+        ],
+        "description": {
+          "en": "$\\alpha + \\beta < 1$, decreasing returns.",
+          "zh-TW": "$\\alpha + \\beta < 1$，規模報酬遞減。",
+          "zh-CN": "$\\alpha + \\beta < 1$，规模报酬递减。"
+        }
+      },
+      {
+        "name": "NOT_HOMOGENEOUS",
+        "types": [
+          "ReturnsToScale"
+        ],
+        "description": {
+          "en": "No consistent degree of homogeneity.",
+          "zh-TW": "沒有一致的齊次次數。",
+          "zh-CN": "没有一致的齐次次数。"
+        }
+      }
+    ]
+  },
+  "agora.utility_viz.guides_themes_1": {
+    "name": "themes",
+    "anchor": "utility-viz-guides-themes-1",
+    "signatures": [
+      "themes"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.guides_themes_2": {
+    "name": "Theme",
+    "anchor": "utility-viz-guides-themes-2",
+    "signatures": [
+      "Theme"
+    ],
+    "parameters": [
+      {
+        "name": "name",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "Theme identifier.",
+          "zh-TW": "主題識別名稱。",
+          "zh-CN": "主题标识名称。"
+        }
+      },
+      {
+        "name": "background_color",
+        "types": [
+          "str | None"
+        ],
+        "description": {
+          "en": "Background of the figure and axes; `None` keeps it transparent.",
+          "zh-TW": "圖形與座標區域的背景色；`None` 保持透明。",
+          "zh-CN": "图形与坐标区域的背景色；`None` 保持透明。"
+        },
+        "default": "None"
+      },
+      {
+        "name": "label_scale",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Multiplier for ordinary label sizes.",
+          "zh-TW": "一般標籤字級的倍率。",
+          "zh-CN": "普通标签字号的倍数。"
+        },
+        "default": "1.0"
+      },
+      {
+        "name": "axis_color",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "Axis colour.",
+          "zh-TW": "座標軸顏色。",
+          "zh-CN": "坐标轴颜色。"
+        },
+        "default": "\"#222222\""
+      },
+      {
+        "name": "label_color",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "Colour of axis labels and origin text.",
+          "zh-TW": "座標標籤與原點文字顏色。",
+          "zh-CN": "坐标标签与原点文字颜色。"
+        },
+        "default": "\"#222222\""
+      },
+      {
+        "name": "ic_color",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "Indifference-curve colour.",
+          "zh-TW": "無異曲線顏色。",
+          "zh-CN": "无差异曲线颜色。"
+        },
+        "default": "\"#377EB8\""
+      },
+      {
+        "name": "ic_linewidth",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Indifference-curve width.",
+          "zh-TW": "無異曲線線寬。",
+          "zh-CN": "无差异曲线线宽。"
+        },
+        "default": "1.8"
+      },
+      {
+        "name": "secondary_ic_color",
+        "types": [
+          "str | None"
+        ],
+        "description": {
+          "en": "Colour of non-focal indifference curves; `None` uses `ic_color`.",
+          "zh-TW": "非焦點無異曲線顏色；`None` 沿用 `ic_color`。",
+          "zh-CN": "非焦点无差异曲线颜色；`None` 沿用 `ic_color`。"
+        },
+        "default": "None"
+      },
+      {
+        "name": "secondary_ic_linewidth",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Width of non-focal indifference curves.",
+          "zh-TW": "非焦點無異曲線線寬。",
+          "zh-CN": "非焦点无差异曲线线宽。"
+        },
+        "default": "1.0"
+      },
+      {
+        "name": "secondary_ic_opacity",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Opacity of non-focal indifference curves.",
+          "zh-TW": "非焦點無異曲線透明度。",
+          "zh-CN": "非焦点无差异曲线不透明度。"
+        },
+        "default": "0.45"
+      },
+      {
+        "name": "path_color",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "Colour of PCC and ICC paths.",
+          "zh-TW": "PCC 與 ICC 路徑顏色。",
+          "zh-CN": "PCC 与 ICC 路径颜色。"
+        },
+        "default": "\"#4DAF4A\""
+      },
+      {
+        "name": "budget_color",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "Budget-line colour.",
+          "zh-TW": "預算線顏色。",
+          "zh-CN": "预算线颜色。"
+        },
+        "default": "\"#984EA3\""
+      },
+      {
+        "name": "budget_fill_alpha",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Opacity of the budget-set shading.",
+          "zh-TW": "預算集合陰影透明度。",
+          "zh-CN": "预算集阴影不透明度。"
+        },
+        "default": "0.08"
+      },
+      {
+        "name": "eq_color",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "Colour of the equilibrium and its drop lines.",
+          "zh-TW": "均衡點與投影線顏色。",
+          "zh-CN": "均衡点与投影线颜色。"
+        },
+        "default": "\"#E41A1C\""
+      },
+      {
+        "name": "eq_markersize",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Equilibrium marker size.",
+          "zh-TW": "均衡點標記大小。",
+          "zh-CN": "均衡点标记大小。"
+        },
+        "default": "4.0"
+      }
+    ]
+  },
+  "agora.utility_viz.guides_themes_3": {
+    "name": "Config.load",
+    "anchor": "utility-viz-guides-themes-3",
+    "signatures": [
+      "Config.load",
+      "Config.use",
+      "Config.reset"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.guides_themes_4": {
+    "name": "Config.discover",
+    "anchor": "utility-viz-guides-themes-4",
+    "signatures": [
+      "Config.discover(path, directory=None)"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.guides_export_1": {
+    "name": "Canvas.save",
+    "anchor": "utility-viz-guides-export-1",
+    "signatures": [
+      "cvs.save(path)"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.getting_started_cli_1": {
+    "name": "utility-viz help",
+    "anchor": "utility-viz-getting-started-cli-1",
+    "signatures": [
+      "utility-viz help [command]"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.getting_started_cli_2": {
+    "name": "utility-viz models",
+    "anchor": "utility-viz-getting-started-cli-2",
+    "signatures": [
+      "utility-viz models"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.getting_started_cli_3": {
+    "name": "utility-viz plot",
+    "anchor": "utility-viz-getting-started-cli-3",
+    "signatures": [
+      "utility-viz plot --model name options",
+      "utility-viz plot --latex expression options"
+    ],
+    "parameters": [
+      {
+        "name": "--model, -m",
+        "types": [],
+        "description": {
+          "en": "Model name; `utility-viz models` lists them all.",
+          "zh-TW": "模型名稱，完整清單可用 `utility-viz models` 查詢。",
+          "zh-CN": "模型名称，完整列表可用 `utility-viz models` 查询。"
+        }
+      },
+      {
+        "name": "--latex, -l",
+        "types": [],
+        "description": {
+          "en": "LaTeX expression for Cobb-Douglas, perfect complements, perfect\nsubstitutes or CES ([LaTeX parsing](../tools/latex.md#sec-latex)).",
+          "zh-TW": "LaTeX 算式，支援 Cobb-Douglas、完全互補、完全替代與 CES（詳見[LaTeX 解析](../tools/latex.md#sec-latex)）。",
+          "zh-CN": "LaTeX 表达式，支持 Cobb-Douglas、完全互补、完全替代与 CES（详见[LaTeX 解析](../tools/latex.md#sec-latex)）。"
+        }
+      },
+      {
+        "name": "--px",
+        "types": [],
+        "description": {
+          "en": "Price of good $x$.",
+          "zh-TW": "商品 $x$ 的價格。",
+          "zh-CN": "商品 $x$ 的价格。"
+        }
+      },
+      {
+        "name": "--py",
+        "types": [],
+        "description": {
+          "en": "Price of good $y$.",
+          "zh-TW": "商品 $y$ 的價格。",
+          "zh-CN": "商品 $y$ 的价格。"
+        }
+      },
+      {
+        "name": "--income",
+        "types": [],
+        "description": {
+          "en": "Consumer income.",
+          "zh-TW": "消費者的所得。",
+          "zh-CN": "消费者的收入。"
+        }
+      },
+      {
+        "name": "--alpha",
+        "types": [],
+        "description": {
+          "en": "Alpha parameter (Cobb-Douglas, CES).",
+          "zh-TW": "alpha 參數（Cobb-Douglas、CES）。",
+          "zh-CN": "alpha 参数（Cobb-Douglas、CES）。"
+        },
+        "default": "0.5"
+      },
+      {
+        "name": "--beta",
+        "types": [],
+        "description": {
+          "en": "Beta parameter (Cobb-Douglas, CES).",
+          "zh-TW": "beta 參數（Cobb-Douglas、CES）。",
+          "zh-CN": "beta 参数（Cobb-Douglas、CES）。"
+        },
+        "default": "0.5"
+      },
+      {
+        "name": "--a",
+        "types": [],
+        "description": {
+          "en": "Parameter $a$ (perfect complements, perfect substitutes, satiation).",
+          "zh-TW": "參數 $a$（完全互補、完全替代、飽和）。",
+          "zh-CN": "参数 $a$（完全互补、完全替代、饱和）。"
+        },
+        "default": "1.0"
+      },
+      {
+        "name": "--b",
+        "types": [],
+        "description": {
+          "en": "Parameter $b$ (perfect complements, perfect substitutes, satiation).",
+          "zh-TW": "參數 $b$（完全互補、完全替代、飽和）。",
+          "zh-CN": "参数 $b$（完全互补、完全替代、饱和）。"
+        },
+        "default": "1.0"
+      },
+      {
+        "name": "--rho",
+        "types": [],
+        "description": {
+          "en": "Substitution parameter (CES).",
+          "zh-TW": "替代參數（CES）。",
+          "zh-CN": "替代参数（CES）。"
+        },
+        "default": "0.5"
+      },
+      {
+        "name": "--bliss-x",
+        "types": [],
+        "description": {
+          "en": "Bliss-point $x$-coordinate (satiation).",
+          "zh-TW": "極樂點的 $x$ 座標（飽和）。",
+          "zh-CN": "饱和点的 $x$ 坐标（饱和）。"
+        },
+        "default": "5.0"
+      },
+      {
+        "name": "--bliss-y",
+        "types": [],
+        "description": {
+          "en": "Bliss-point $y$-coordinate (satiation).",
+          "zh-TW": "極樂點的 $y$ 座標（飽和）。",
+          "zh-CN": "饱和点的 $y$ 坐标（饱和）。"
+        },
+        "default": "5.0"
+      },
+      {
+        "name": "--v-func",
+        "types": [],
+        "description": {
+          "en": "Non-linear function of the quasi-linear model, `log` or `sqrt`.",
+          "zh-TW": "準線性的非線性函數，接受 `log` 或 `sqrt`。",
+          "zh-CN": "准线性的非线性函数，接受 `log` 或 `sqrt`。"
+        },
+        "default": "log"
+      },
+      {
+        "name": "--linear-in",
+        "types": [],
+        "description": {
+          "en": "Good that enters the quasi-linear model linearly, `x` or `y`.",
+          "zh-TW": "準線性的線性商品，接受 `x` 或 `y`。",
+          "zh-CN": "准线性的线性商品，接受 `x` 或 `y`。"
+        },
+        "default": "y"
+      },
+      {
+        "name": "--bar-x",
+        "types": [],
+        "description": {
+          "en": "Stone-Geary subsistence quantity $\\overline{x}$.",
+          "zh-TW": "Stone-Geary 的最低消費量 $\\overline{x}$。",
+          "zh-CN": "Stone-Geary 的最低消费量 $\\overline{x}$。"
+        },
+        "default": "1.0"
+      },
+      {
+        "name": "--bar-y",
+        "types": [],
+        "description": {
+          "en": "Stone-Geary subsistence quantity $\\overline{y}$.",
+          "zh-TW": "Stone-Geary 的最低消費量 $\\overline{y}$。",
+          "zh-CN": "Stone-Geary 的最低消费量 $\\overline{y}$。"
+        },
+        "default": "1.0"
+      },
+      {
+        "name": "--alpha-0",
+        "types": [],
+        "description": {
+          "en": "Translog intercept.",
+          "zh-TW": "Translog 的截距。",
+          "zh-CN": "Translog 的截距。"
+        },
+        "default": "0.0"
+      },
+      {
+        "name": "--alpha-x",
+        "types": [],
+        "description": {
+          "en": "Translog first-order weight on $ln x$.",
+          "zh-TW": "Translog 中 $ln x$ 的一次項權重。",
+          "zh-CN": "Translog 中 $ln x$ 的一次项权重。"
+        },
+        "default": "0.5"
+      },
+      {
+        "name": "--alpha-y",
+        "types": [],
+        "description": {
+          "en": "Translog first-order weight on $ln y$.",
+          "zh-TW": "Translog 中 $ln y$ 的一次項權重。",
+          "zh-CN": "Translog 中 $ln y$ 的一次项权重。"
+        },
+        "default": "0.5"
+      },
+      {
+        "name": "--beta-xx",
+        "types": [],
+        "description": {
+          "en": "Translog curvature in $x$.",
+          "zh-TW": "Translog 中 $x$ 方向的曲率。",
+          "zh-CN": "Translog 中 $x$ 方向的曲率。"
+        },
+        "default": "0.0"
+      },
+      {
+        "name": "--beta-yy",
+        "types": [],
+        "description": {
+          "en": "Translog curvature in $y$.",
+          "zh-TW": "Translog 中 $y$ 方向的曲率。",
+          "zh-CN": "Translog 中 $y$ 方向的曲率。"
+        },
+        "default": "0.0"
+      },
+      {
+        "name": "--beta-xy",
+        "types": [],
+        "description": {
+          "en": "Translog interaction between $x$ and $y$.",
+          "zh-TW": "Translog 中 $x$ 與 $y$ 的交叉項。",
+          "zh-CN": "Translog 中 $x$ 与 $y$ 的交叉项。"
+        },
+        "default": "0.0"
+      },
+      {
+        "name": "--x-max",
+        "types": [],
+        "description": {
+          "en": "Horizontal axis limit.",
+          "zh-TW": "橫軸上限。",
+          "zh-CN": "横轴上限。"
+        },
+        "default": "10"
+      },
+      {
+        "name": "--y-max",
+        "types": [],
+        "description": {
+          "en": "Vertical axis limit.",
+          "zh-TW": "縱軸上限。",
+          "zh-CN": "纵轴上限。"
+        },
+        "default": "10"
+      },
+      {
+        "name": "--x-label",
+        "types": [],
+        "description": {
+          "en": "Horizontal axis label.",
+          "zh-TW": "橫軸標籤。",
+          "zh-CN": "横轴标签。"
+        },
+        "default": "x"
+      },
+      {
+        "name": "--y-label",
+        "types": [],
+        "description": {
+          "en": "Vertical axis label.",
+          "zh-TW": "縱軸標籤。",
+          "zh-CN": "纵轴标签。"
+        },
+        "default": "y"
+      },
+      {
+        "name": "--title",
+        "types": [],
+        "description": {
+          "en": "Figure title.",
+          "zh-TW": "圖形標題。",
+          "zh-CN": "图形标题。"
+        }
+      },
+      {
+        "name": "--theme",
+        "types": [],
+        "description": {
+          "en": "Theme name: `default`, `nord`, `paper`, `monochrome`, `presentation` or `dark` ([Themes and configuration](../guides/themes.md#sec-themes)).",
+          "zh-TW": "主題名稱：`default`、`nord`、`paper`、`monochrome`、`presentation` 或 `dark`（詳見[主題與設定](../guides/themes.md#sec-themes)）。",
+          "zh-CN": "主题名称：`default`、`nord`、`paper`、`monochrome`、`presentation` 或 `dark`（详见[主题与设置](../guides/themes.md#sec-themes)）。"
+        },
+        "default": "default"
+      },
+      {
+        "name": "--config",
+        "types": [],
+        "description": {
+          "en": "Path to a TOML configuration file. Command-line options take precedence over the file. Without it, `utility-viz.toml` (or the legacy `econ-viz.toml`) in the current directory is used if present ([File lookup](../guides/themes.md#sec-config-lookup)).",
+          "zh-TW": "TOML 設定檔路徑。命令列參數的優先順序高於設定檔。省略時，若目前目錄有 `utility-viz.toml`（或舊的 `econ-viz.toml`）則自動使用（詳見[設定檔查找順序](../guides/themes.md#sec-config-lookup)）。",
+          "zh-CN": "TOML 配置文件路径。命令行参数的优先级高于配置文件。省略时，若当前目录有 `utility-viz.toml`（或旧的 `econ-viz.toml`）则自动使用（详见[配置文件查找顺序](../guides/themes.md#sec-config-lookup)）。"
+        }
+      },
+      {
+        "name": "--n-curves",
+        "types": [],
+        "description": {
+          "en": "Number of indifference curves.",
+          "zh-TW": "無異曲線的條數。",
+          "zh-CN": "无差异曲线的条数。"
+        },
+        "default": "5"
+      },
+      {
+        "name": "--dpi",
+        "types": [],
+        "description": {
+          "en": "Raster output resolution.",
+          "zh-TW": "點陣圖輸出解析度。",
+          "zh-CN": "位图输出分辨率。"
+        },
+        "default": "300"
+      },
+      {
+        "name": "--fill",
+        "types": [],
+        "description": {
+          "en": "Shade the feasible set below the budget line.",
+          "zh-TW": "為預算線下方的可行集合加上陰影。",
+          "zh-CN": "为预算线下方的可行集合加上阴影。"
+        }
+      },
+      {
+        "name": "--show-ray",
+        "types": [],
+        "description": {
+          "en": "Draw the expansion-path ray through the optimum.",
+          "zh-TW": "畫出通過最適點的擴張路徑射線。",
+          "zh-CN": "画出通过最优点的扩张路径射线。"
+        }
+      },
+      {
+        "name": "--no-budget",
+        "types": [],
+        "description": {
+          "en": "Omit the budget line.",
+          "zh-TW": "不畫預算線。",
+          "zh-CN": "不画预算线。"
+        }
+      },
+      {
+        "name": "--no-equilibrium",
+        "types": [],
+        "description": {
+          "en": "Omit the equilibrium point.",
+          "zh-TW": "不畫均衡點。",
+          "zh-CN": "不画均衡点。"
+        }
+      },
+      {
+        "name": "--no-curves",
+        "types": [],
+        "description": {
+          "en": "Omit the indifference curves.",
+          "zh-TW": "不畫無異曲線。",
+          "zh-CN": "不画无差异曲线。"
+        }
+      },
+      {
+        "name": "--output, -o",
+        "types": [],
+        "description": {
+          "en": "Output file (`.png`, `.pdf`, `.svg`, `.tex`); omit it to open an\ninteractive window.",
+          "zh-TW": "輸出檔案（`.png`、`.pdf`、`.svg`、`.tex`）；省略時開啟互動視窗。",
+          "zh-CN": "输出文件（`.png`、`.pdf`、`.svg`、`.tex`）；省略时打开交互窗口。"
+        }
+      }
+    ]
+  },
+  "agora.utility_viz.getting_started_cli_4": {
+    "name": "utility-viz init",
+    "anchor": "utility-viz-getting-started-cli-4",
+    "signatures": [
+      "utility-viz init [path] [--force] [--migrate]"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.getting_started_cli_5": {
+    "name": "utility-viz solve-tex",
+    "anchor": "utility-viz-getting-started-cli-5",
+    "signatures": [
+      "utility-viz solve-tex --model name options"
+    ],
+    "parameters": [
+      {
+        "name": "--symbolic-params",
+        "types": [],
+        "description": {
+          "en": "Keep model parameters as symbols, such as $\\alpha$ and $\\beta$; without it the given values are substituted.",
+          "zh-TW": "保留模型參數符號，例如 $\\alpha$、$\\beta$；未使用時代入指定的參數值。",
+          "zh-CN": "保留模型参数符号，例如 $\\alpha$、$\\beta$；未使用时代入指定的参数值。"
+        }
+      },
+      {
+        "name": "--px-symbol",
+        "types": [],
+        "description": {
+          "en": "Symbol for the price of $x$.",
+          "zh-TW": "商品 $x$ 價格的符號。",
+          "zh-CN": "商品 $x$ 价格的符号。"
+        },
+        "default": "p_x"
+      },
+      {
+        "name": "--py-symbol",
+        "types": [],
+        "description": {
+          "en": "Symbol for the price of $y$.",
+          "zh-TW": "商品 $y$ 價格的符號。",
+          "zh-CN": "商品 $y$ 价格的符号。"
+        },
+        "default": "p_y"
+      },
+      {
+        "name": "--income-symbol",
+        "types": [],
+        "description": {
+          "en": "Symbol for income.",
+          "zh-TW": "所得的符號。",
+          "zh-CN": "收入的符号。"
+        },
+        "default": "I"
+      }
+    ]
+  },
+  "agora.utility_viz.guides_animation_1": {
+    "name": "Animator",
+    "anchor": "utility-viz-guides-animation-1",
+    "signatures": [
+      "Animator(draw, frames=values).save(path, fps=12, dpi=120, loop=0)"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.guides_interactive_1": {
+    "name": "WidgetViewer",
+    "anchor": "utility-viz-guides-interactive-1",
+    "signatures": [
+      "WidgetViewer(\n    draw,\n    name=(min, max, step),\n    ...\n).show()"
+    ],
+    "parameters": []
+  },
+  "agora.utility_viz.tools_latex_1": {
+    "name": "parse_latex",
+    "anchor": "utility-viz-tools-latex-1",
+    "signatures": [
+      "parse_latex(expression)"
     ],
     "parameters": []
   },

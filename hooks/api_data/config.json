@@ -1,0 +1,77 @@
+{
+  "config.load": {
+    "name": "Config.load",
+    "anchor": "config-load",
+    "returns": "Config",
+    "parameters": [
+      {
+        "name": "path",
+        "types": [
+          "str",
+          "Path",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "TOML file to read; it must exist. With `None`, `utility-viz.toml` in the working directory is used, and an error is raised when it is missing.",
+          "zh-TW": "要讀取的 TOML 檔，必須存在。傳入 `None` 時讀取工作目錄的 `utility-viz.toml`，找不到會引發錯誤。",
+          "zh-CN": "要读取的 TOML 文件，必须存在。传入 `None` 时读取工作目录的 `utility-viz.toml`，找不到会引发错误。"
+        }
+      }
+    ]
+  },
+  "config.discover": {
+    "name": "Config.discover",
+    "anchor": "config-discover",
+    "returns": "Config",
+    "parameters": [
+      {
+        "name": "path",
+        "types": [
+          "str",
+          "Path",
+          "None"
+        ],
+        "default": "None",
+        "description": {
+          "en": "Explicit file to read; it takes precedence over the lookup below.",
+          "zh-TW": "指定要讀取的檔案，優先於下列尋找順序。",
+          "zh-CN": "指定要读取的文件，优先于下列查找顺序。"
+        }
+      },
+      {
+        "name": "directory",
+        "types": [
+          "str",
+          "Path",
+          "None"
+        ],
+        "default": "None",
+        "keyword_only": true,
+        "description": {
+          "en": "Directory searched for `utility-viz.toml`; the working directory by default.",
+          "zh-TW": "尋找 `utility-viz.toml` 的資料夾，預設為工作目錄。",
+          "zh-CN": "查找 `utility-viz.toml` 的文件夹，默认为工作目录。"
+        }
+      }
+    ]
+  },
+  "config.use": {
+    "name": "Config.use",
+    "anchor": "config-use",
+    "returns": "Config",
+    "parameters": []
+  },
+  "config.reset": {
+    "name": "Config.reset",
+    "anchor": "config-reset",
+    "returns": "None",
+    "parameters": []
+  },
+  "config.active": {
+    "name": "Config.active",
+    "anchor": "config-active",
+    "returns": "Config",
+    "parameters": []
+  }
+}

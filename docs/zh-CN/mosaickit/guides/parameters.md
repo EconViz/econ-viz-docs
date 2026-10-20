@@ -22,15 +22,54 @@ seo_title: "参数、网格与动画"
 
 !!! abstract "定义 · 表达式与绑定"
 
-    *表达式*是常数、参数，或对表达式 $e_1, e_2$ 与运算 $\circ$ 而言的 $e_1 \circ e_2$。其自由参数为 $\text{free}(c) = \emptyset$、$\text{free}(p) = \lbrace p\rbrace$、$\text{free}(e_1 \circ e_2) = \text{free}(e_1) \cup \text{free}(e_2)$。*绑定* $\beta$ 是从参数到值的有限对应，而 $\text{bind}(e, \beta)$ 定义为：若 $\text{free}(e) \subseteq \text{dom} \beta$，则为值 $e(\beta)$；否则若 $e$ 为参数，则为 $e$ 本身；否则为 $\text{bind}(e_1, \beta) \circ \text{bind}(e_2, \beta)$。一般值 $v$ 没有自由参数，求值结果为其本身。
+    *表达式*是常数、参数，或对表达式 $e_1, e_2$ 与运算 $\circ$ 而言的 $e_1 \circ e_2$。其自由参数满足
+
+    $$
+    \text{free}(c) = \emptyset, \quad \text{free}(p) = \lbrace p\rbrace ,
+    $$
+
+    以及
+
+    $$
+    \text{free}(e_1 \circ e_2) = \text{free}(e_1) \cup \text{free}(e_2).
+    $$
+
+    *绑定* $\beta$ 是从参数到值的有限对应。若 $\text{free}(e) \subseteq \text{dom} \beta$，则 $\text{bind}(e, \beta)$ 为值 $e(\beta)$；若 $e$ 是未绑定参数，则为 $e$ 本身；其余情况为
+
+    $$
+    \text{bind}(e_1, \beta) \circ \text{bind}(e_2, \beta).
+    $$
+
+    一般值 $v$ 没有自由参数，求值结果为其本身。
 
 <span id="thm-binding"></span>
 
 !!! abstract "定理 · 部分绑定"
 
     对每个表达式 $e$ 与绑定 $\beta$，
-    (i) $\text{free}(\text{bind}(e, \beta)) = \text{free}(e) \setminus \text{dom} \beta$；
-    (ii) 对每个满足 $\text{dom} \gamma \cap \text{dom} \beta = \emptyset$ 且 $\text{dom} \gamma \supseteq \text{free}(e) \setminus \text{dom} \beta$ 的绑定 $\gamma$，$\text{bind}(e, \beta)(\gamma) = e(\beta \cup \gamma)$。
+    (i)
+
+    $$
+    \text{free}(\text{bind}(e, \beta)) = \text{free}(e) \setminus \text{dom} \beta;
+    $$
+
+    (ii) 对每个满足
+
+    $$
+    \text{dom} \gamma \cap \text{dom} \beta = \emptyset
+    $$
+
+    以及
+
+    $$
+    \text{dom} \gamma \supseteq \text{free}(e) \setminus \text{dom} \beta
+    $$
+
+    的绑定 $\gamma$，都有
+
+    $$
+    \text{bind}(e, \beta)(\gamma) = e(\beta \cup \gamma).
+    $$
 
 <span id="cor-stages"></span>
 

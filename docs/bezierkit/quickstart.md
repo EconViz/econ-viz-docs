@@ -42,15 +42,15 @@ into a LaTeX document.
 
 ## The pieces
 
-- *Values.* `Point`, `Vector` and `PointSet` are immutable and
+- Values: `Point`, `Vector` and `PointSet` are immutable and
   dimension-checked ([Geometry values](guides/geometry.md#sec-geometry)).
-- *Curves.* `BezierCurve` has any degree and dimension;
+- Curves: `BezierCurve` has any degree and dimension;
   `CubicBezierSegment` is the cubic that renderers consume; a
   `PiecewiseBezier` joins cubics into a path ([Bézier curves](guides/curves.md#sec-curves), [Cubic segments and paths](guides/paths.md#sec-paths)).
-- *Constructions.* Endpoint conditions, slopes, derivatives or Hermite data
+- Constructions: endpoint conditions, slopes, derivatives or Hermite data
   become control points ([Constructions and Hermite interpolation](guides/construction.md#sec-construction)).
-- *Approximation.* Smooth functions, sampled points and level sets
+- Approximation: smooth functions, sampled points and level sets
   $F(x, y) = c$ become cubic paths with a stated error ([Fitting](guides/fitting.md#sec-fitting),
   [Level sets](guides/implicit.md#sec-implicit)).
-- *Output.* Samples, JSON, SVG path data and TikZ, and Matplotlib paths
+- Output: samples, JSON, SVG path data and TikZ, and Matplotlib paths
   ([Sampling and export](guides/export.md#sec-export)).

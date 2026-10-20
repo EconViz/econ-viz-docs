@@ -125,7 +125,7 @@ onto the edge's line and clamps the parameter to $[0, 1]$.
 
 <!-- api: agora.mosaickit.guides_geometry_5 -->
 
-The even–odd rule: follow the horizontal ray from the point to the right
+The even-odd rule: follow the horizontal ray from the point to the right
 and count the edges it crosses. An edge counts when exactly one of its
 endpoints lies strictly above the ray's line and the crossing is right of
 the point [Haines (1994)](../project/references.md#haines1994).

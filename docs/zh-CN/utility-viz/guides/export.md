@@ -1,55 +1,54 @@
 ---
-seo_title: "把图形导出成 PNG、PDF、SVG 与 GIF"
-description: "把 utility-viz 经济学图形保存为 PNG、PDF 或 SVG 用于论文与演示文稿，也可以导出 GIF 动画，或打开交互式 matplotlib 窗口。"
+seo_title: "导出"
 ---
 
 # 导出
 
-## 位图与矢量格式
+<span id="sec-export"></span>
 
-调用 `cvs.save()`，扩展名用 `.png`、`.pdf` 或 `.svg`：
+## 输出格式
+
+<!-- api: agora.utility_viz.guides_export_1 -->
+
+根据 `path` 的扩展名决定输出格式。`Figure`、`DemandDiagram` 与 `EdgeworthBox` 使用相同接口。
+
+- PNG：位图，分辨率由画布的 `dpi` 设置，默认为 300。
+- PDF、SVG：向量图，可在打印或缩放时保留线条质量。
+- TeX：TikZ 源代码（`.tex`），可嵌入 LaTeX 文件。通过关键字参数 `tikz_scale` 与 `tikz_standalone` 调整输出。
 
 ```python
-# PNG．按画布 DPI（默认 300）
+# PNG 依画布 DPI 默认 300
 cvs.save("figure.png")
-# PDF（矢量）
+# PDF 向量
 cvs.save("figure.pdf")
-# SVG（矢量）
+# SVG 向量
 cvs.save("figure.svg")
+# TikZ
+cvs.save("figure.tex")
 ```
 
-`Canvas` 的 `dpi` 参数控制位图的分辨率：
+`dpi` 仅影响位图。预览时可降低分辨率：
 
 ```python
 # 降低 DPI 加快预览
 cvs = Canvas(x_max=20, y_max=15, dpi=150)
 ```
 
-DPI 会限制在 1–1200 之间。
+## GIF 动画
 
-## 导出 GIF 动画
-
-要输出多个帧时，改用 `Animator`，不要用 `Canvas.save()`：
+使用 `Animator.save()` 导出 GIF，完整示例详见[动画](animation.md#sec-animation)。
 
 ```python
-from utility_viz.animation import Animator
+from utility_viz.core.animation import Animator
 
 Animator(draw_frame, frames=frames).save(
     "animation.gif", fps=12, dpi=120
 )
 ```
 
-参数、价格、收入与只有预算线的变动范例，请见[动画](animation.md)页面。
-
 ## 交互窗口
 
-调用 `cvs.show()` 会打开即时的 matplotlib 窗口，而不是存盘：
-
-```python
-cvs.show()
-```
-
-在命令行工具中，省略 `--output` 就会有同样的效果：
+`cvs.show()` 打开 `matplotlib` 交互窗口，不会保存文件。命令行的 `plot` 省略 `--output` 时也会打开窗口（详见[绘图](../getting-started/cli.md#sec-cli-plot)）：
 
 ```bash
 utility-viz plot --model cobb-douglas --px 2 --py 3 --income 30

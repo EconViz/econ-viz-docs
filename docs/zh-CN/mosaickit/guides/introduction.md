@@ -27,11 +27,14 @@ seo_title: "简介"
 
 | 主题 | 内容 | 章节 |
 | --- | --- | --- |
-| 画布、规格、场景 | [画布与场景](canvas.md#sec-canvas) | 路径、填色、标记、文字、坐标轴 |
-| [图层与坐标轴](layers.md#sec-layers) | 坐标轴标记、注释与大括号 | [坐标轴注释](annotations.md#sec-annotations) |
-| 布局几何 | [布局几何](geometry.md#sec-geometry) | 区域标签与点标签 |
-| [区域标签与点标签](labels.md#sec-labels) | 样式、颜色、调色板 | [样式与颜色](styles.md#sec-styles) |
-| 主题、角色、配置 | [主题与配置](themes.md#sec-themes) | 参数、网格、动画 |
-| [参数、网格与动画](parameters.md#sec-parameters) | 渲染器、缓存、保存 | [绘制](rendering.md#sec-rendering) |
+| 构造 | 画布、规格、场景 | [画布与场景](canvas.md#sec-canvas) |
+|  | 路径、填色、标记、文字、坐标轴 | [图层与坐标轴](layers.md#sec-layers) |
+|  | 坐标轴标记、注释与大括号 | [坐标轴注释](annotations.md#sec-annotations) |
+| 布局 | 布局几何 | [布局几何](geometry.md#sec-geometry) |
+|  | 区域标签与点标签 | [区域标签与点标签](labels.md#sec-labels) |
+| 外观 | 样式、颜色、调色板 | [样式与颜色](styles.md#sec-styles) |
+|  | 主题、角色、配置 | [主题与配置](themes.md#sec-themes) |
+| 输出 | 参数、网格、动画 | [参数、网格与动画](parameters.md#sec-parameters) |
+|  | 渲染器、缓存、保存 | [绘制](rendering.md#sec-rendering) |
 
 初次使用请先读[快速入门](../quickstart.md#sec-quickstart)、[画布与场景](canvas.md#sec-canvas)与[图层与坐标轴](layers.md#sec-layers)。本手册的图都是 `mosaickit` 自己的输出：每张图由它所示范的画布或网格绘制，并以印在此处的尺寸存成 PDF。

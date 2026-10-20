@@ -22,15 +22,54 @@ seo_title: "參數、網格與動畫"
 
 !!! abstract "定義 · 運算式與綁定"
 
-    *運算式*是常數、參數，或對運算式 $e_1, e_2$ 與運算 $\circ$ 而言的 $e_1 \circ e_2$。其自由參數為 $\text{free}(c) = \emptyset$、$\text{free}(p) = \lbrace p\rbrace$、$\text{free}(e_1 \circ e_2) = \text{free}(e_1) \cup \text{free}(e_2)$。*綁定* $\beta$ 是從參數到值的有限對應，而 $\text{bind}(e, \beta)$ 定義為：若 $\text{free}(e) \subseteq \text{dom} \beta$，則為值 $e(\beta)$；否則若 $e$ 為參數，則為 $e$ 本身；否則為 $\text{bind}(e_1, \beta) \circ \text{bind}(e_2, \beta)$。一般值 $v$ 沒有自由參數，求值結果為其本身。
+    *運算式*是常數、參數，或對運算式 $e_1, e_2$ 與運算 $\circ$ 而言的 $e_1 \circ e_2$。其自由參數滿足
+
+    $$
+    \text{free}(c) = \emptyset, \quad \text{free}(p) = \lbrace p\rbrace ,
+    $$
+
+    以及
+
+    $$
+    \text{free}(e_1 \circ e_2) = \text{free}(e_1) \cup \text{free}(e_2).
+    $$
+
+    *綁定* $\beta$ 是從參數到值的有限對應。若 $\text{free}(e) \subseteq \text{dom} \beta$，則 $\text{bind}(e, \beta)$ 為值 $e(\beta)$；若 $e$ 是未綁定參數，則為 $e$ 本身；其餘情況為
+
+    $$
+    \text{bind}(e_1, \beta) \circ \text{bind}(e_2, \beta).
+    $$
+
+    一般值 $v$ 沒有自由參數，求值結果為其本身。
 
 <span id="thm-binding"></span>
 
 !!! abstract "定理 · 部分綁定"
 
     對每個運算式 $e$ 與綁定 $\beta$，
-    (i) $\text{free}(\text{bind}(e, \beta)) = \text{free}(e) \setminus \text{dom} \beta$；
-    (ii) 對每個滿足 $\text{dom} \gamma \cap \text{dom} \beta = \emptyset$ 且 $\text{dom} \gamma \supseteq \text{free}(e) \setminus \text{dom} \beta$ 的綁定 $\gamma$，$\text{bind}(e, \beta)(\gamma) = e(\beta \cup \gamma)$。
+    (i)
+
+    $$
+    \text{free}(\text{bind}(e, \beta)) = \text{free}(e) \setminus \text{dom} \beta;
+    $$
+
+    (ii) 對每個滿足
+
+    $$
+    \text{dom} \gamma \cap \text{dom} \beta = \emptyset
+    $$
+
+    以及
+
+    $$
+    \text{dom} \gamma \supseteq \text{free}(e) \setminus \text{dom} \beta
+    $$
+
+    的綁定 $\gamma$，都有
+
+    $$
+    \text{bind}(e, \beta)(\gamma) = e(\beta \cup \gamma).
+    $$
 
 <span id="cor-stages"></span>
 

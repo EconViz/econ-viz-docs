@@ -74,8 +74,6 @@ CanvasGrid(canvases, rows=1).save(
 )
 ```
 
-輸出參見[需求曲線上的彈性與總收益。](elasticity.md#fig-revenue)。
-
 <span id="fig-revenue"></span>
 
-![需求曲線上的彈性與總收益。](../../../assets/principle-viz/agora/elasticity/revenue.svg){ .ev-figure-sm }
+![需求曲線上的彈性與總收益。](../../../assets/principle-viz/agora/elasticity/revenue.svg){ .ev-figure-lg }

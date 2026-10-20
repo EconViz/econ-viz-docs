@@ -66,9 +66,6 @@ print(round(eq.q_star, 3), round(eq.p_star, 3))
 cs, ps = piecewise_surplus(demand, supply, eq)
 ```
 
-`piecewise_surplus()` returns the consumer and producer surplus integrated
-along price.
-
 ## Summing discrete schedules
 
 `DiscreteDemand.combine(*schedules)` merges every buyer's reservation prices
@@ -115,8 +112,8 @@ The output of `demand_aggregation_figure()` is shown in [Market demand as the ho
 
 <span id="fig-market-demand"></span>
 
-![Market demand as the horizontal sum.](../../assets/principle-viz/agora/aggregation/market_demand.svg){ .ev-figure-sm }
+![Market demand as the horizontal sum.](../../assets/principle-viz/agora/aggregation/market_demand.svg){ .ev-figure-lg }
 
 <span id="fig-discrete-market-demand"></span>
 
-![Combining two discrete demand schedules.](../../assets/principle-viz/agora/aggregation/discrete_market_demand.svg){ .ev-figure-sm }
+![Combining two discrete demand schedules.](../../assets/principle-viz/agora/aggregation/discrete_market_demand.svg){ .ev-figure-lg }

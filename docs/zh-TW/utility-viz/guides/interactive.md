@@ -1,50 +1,27 @@
 ---
-seo_title: "在 Jupyter 中操作互動式經濟學圖形"
-description: "在 Jupyter 筆記本中用 utility-viz 的 WidgetViewer 滑桿與數字輸入框，互動探索效用函數與預算限制。"
+seo_title: "互動元件"
 ---
 
 # 互動元件
 
-`WidgetViewer` 會在筆記本儲存格中繪製 `utility-viz` 圖形，只要控制項一變動就重新繪製。每個參數都同時有**滑桿**和**數字輸入框**，使用者可以拖曳培養直覺，也可以輸入精確數值，方便教學與示範。
+<span id="sec-widgets"></span>
 
-## 安裝
+`WidgetViewer` 在 Jupyter 中提供滑桿與數值輸入欄位，調整參數後會更新圖形。使用前需安裝 `interactive` 選用依賴（詳見[選用依賴](../getting-started/installation.md#sec-extras)）。從 `utility_viz.core.interactive` 匯入；1.x 為 `econ_viz.interactive`。
 
-```bash
-uv add "utility-viz[interactive]"
-```
+<!-- api: agora.utility_viz.guides_interactive_1 -->
 
-如果也要匯出 GIF：
+傳入繪圖函數 `draw`，並以 `(最小值, 最大值, 步長)` 指定各參數範圍。每個參數會產生同步的 `FloatSlider` 與 `FloatText`；數值變更後重新呼叫 `draw`，並取代儲存格中的舊圖。
 
-```bash
-uv add "utility-viz[all]"
-```
-
-## 基本用法
+`draw` 的寫法與 `Animator` 相同（詳見[動畫](animation.md#sec-animation)），只是可同時接收多個參數。以[動畫](animation.md#sec-animation)的價格變動範例為基礎，讓 `draw()` 另外接收 `alpha`：
 
 ```python
-from utility_viz import Canvas, levels, solve
-from utility_viz.interactive import WidgetViewer
-from utility_viz.models import CobbDouglas
+from utility_viz.core.interactive import WidgetViewer
 
 
 def draw(alpha: float, px: float) -> Canvas:
     model = CobbDouglas(alpha=alpha, beta=1.0 - alpha)
-    eq = solve(model, px=px, py=2.0, income=20.0)
-
-    return (
-        Canvas(
-            x_max=14,
-            y_max=12,
-            x_label="X_1",
-            y_label="X_2",
-            title="Interactive equilibrium",
-        )
-        .add_utility(
-            model, levels=levels.around(eq.utility, n=5)
-        )
-        .add_budget(px=px, py=2.0, income=20.0, fill=True)
-        .add_equilibrium(eq, show_ray=True, drop_dashes=True)
-    )
+    # 其餘與動畫範例相同
+    ...
 
 
 WidgetViewer(
@@ -54,30 +31,14 @@ WidgetViewer(
 ).show()
 ```
 
-## 元件行為
-
-互動元件會自動處理以下行為：
-
-- 為每個參數建立一個 `FloatSlider`。
-- 為每個參數建立一個連動的 `FloatText` 輸入框。
-- 讓滑桿與輸入的數值保持同步。
-- 重新繪製前會先清掉舊圖，筆記本儲存格裡不會堆積一堆過時的圖。
-
 ## 筆記本設定
 
-在全新的筆記本執行環境中，尤其是 Colab：
+在新的 Jupyter 或 Colab 環境中，依下列順序執行 (utility-viz repo 中的 `notebook/econ-viz Playground.ipynb`（沿用舊檔名）已採用此流程，可在 Jupyter、VS Code 或 Colab 開啟；環境中已有 `utility-viz` 時，會自動略過安裝。)：
 
-1. 先執行一次安裝儲存格。
-2. 如果 `ipywidgets`、`traitlets` 或 `IPython` 被升級了，**重新啟動一次執行環境**。
-3. 重新啟動後跳過安裝儲存格，從 import 儲存格繼續執行。
++ 執行安裝儲存格。
++ 若安裝過程升級 `ipywidgets`、`traitlets` 或 `IPython`，重新啟動執行環境。
++ 重新啟動後，從匯入套件的儲存格繼續執行，無須再次安裝。
 
-隨套件附上的 Playground 筆記本已經照這個流程設計，若環境中已經裝好 `utility-viz`，就不會重新安裝。
+## 選擇互動元件或 GIF
 
-## 元件或 GIF
-
-依教學情境選擇合適的呈現方式：
-
-| 工具 | 適用情境 |
-|------|------|
-| `WidgetViewer` | 學生需要輸入或拖曳參數、一次檢查一個狀態 |
-| `Animator` | 想在簡報、文件或專案網站中呈現固定、可重複播放的變動過程 |
+需要由使用者調整參數時，使用 `WidgetViewer`；需要在簡報或網頁中播放固定的變動過程時，使用 `Animator` 匯出 GIF（詳見[動畫](animation.md#sec-animation)）。

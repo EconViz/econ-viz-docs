@@ -19,6 +19,10 @@ line (constant opportunity cost); $c > 1$ bows it out (increasing
 opportunity cost). Intercepts and curvature must be positive and
 $c \ge 1$, otherwise `PPFError` is raised.
 
+<!-- api: agora.principle_viz.guides_ppf_2 -->
+
+Where a point lies relative to the frontier.
+
 ```python
 from principle_viz import ProductionPossibilitiesFrontier
 
@@ -35,7 +39,7 @@ print(ppf.assess(4, 3), ppf.assess(7, 6))
 # PointStatus.INEFFICIENT PointStatus.UNATTAINABLE
 ```
 
-<!-- api: agora.principle_viz.guides_ppf_2 -->
+<!-- api: agora.principle_viz.guides_ppf_3 -->
 
 Sample the frontier and assess named points, given as `(x, y, label)`
 triples; `ppf_canvas()`, in `principle_viz.visuals.ppf`, draws it with the
@@ -54,7 +58,7 @@ ppf_canvas(result).save("ppf_points.png")
 
 ![Efficient, inefficient and unattainable points.](../../assets/principle-viz/agora/ppf/points.svg){ .ev-figure-sm }
 
-<!-- api: agora.principle_viz.guides_ppf_3 -->
+<!-- api: agora.principle_viz.guides_ppf_4 -->
 
 Economic growth scales each intercept by one plus its growth rate; the
 result holds the `baseline` and `shifted` frontiers and their sampled
@@ -69,7 +73,7 @@ points. `ppf_growth_canvas()` draws both, named $P P F_0$ and $P P F_1$
 
 <span id="sec-comparative-advantage"></span>
 
-<!-- api: agora.principle_viz.guides_ppf_4 -->
+<!-- api: agora.principle_viz.guides_ppf_5 -->
 
 For two straight-line frontiers, the opportunity cost of $x$ for each
 producer and who has the comparative advantage in each good (`"tie"` when

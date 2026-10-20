@@ -27,9 +27,24 @@ seo_title: "樣式與顏色"
 !!! abstract "命題 · 合併構成么半群"
 
     對同型別的樣式 $a, b, c$，
-    (i) $(a \triangleright b) \triangleright c = a \triangleright (b \triangleright c)$；
-    (ii) $\epsilon \triangleright a = a \triangleright \epsilon = a$；
-    (iii) $a \triangleright a = a$。
+    (i) 結合律為
+
+    $$
+    (a \triangleright b) \triangleright c = a \triangleright (b \triangleright c);
+    $$
+
+    (ii) 空樣式是單位元，
+
+    $$
+    \epsilon \triangleright a = a \triangleright \epsilon = a;
+    $$
+
+    (iii) 合併具冪等性，
+
+    $$
+    a \triangleright a = a.
+    $$
+
     逐欄來看，$a_1 \triangleright \cdots \triangleright a_n$ 取第一個不是 `None` 的值。
 
 因此，多個樣式無論如何分組合併，結果都一樣。可將它們視為一份優先順序清單：某欄位的值取自第一個設定該欄位的來源。
@@ -46,17 +61,29 @@ seo_title: "樣式與顏色"
 
 <!-- api: agora.mosaickit.guides_styles_3 -->
 
-區域內部的填色樣式；`hatch` 為 Matplotlib 的網紋樣式，例如 `"//"`，`""` 表示無網紋。
+`Stroke` 的線條型態；也接受簡寫 `-`、`--`、`:` 與 `-.`。
 
 <!-- api: agora.mosaickit.guides_styles_4 -->
 
-點標記樣式。`size` 是以平方點計的面積，與 Matplotlib 的 `scatter` 相同（36 對應 6 pt 圓點）；`shape` 為 Matplotlib 標記，例如 `"o"`、`"s"` 或 `"X"`。
+`Stroke` 的箭頭樣式。`SIMPLE` 是 `OPEN` 的另一個名稱，也接受 Matplotlib 寫法 `->` 與 `-|>`。
 
 <!-- api: agora.mosaickit.guides_styles_5 -->
 
-文字樣式。`size` 以點為單位，`family` 為字型家族名稱，`weight` 例如 `"bold"`，`rotation` 為逆時針旋轉的角度（度）。
+圖層的箭頭畫在哪裡。
 
 <!-- api: agora.mosaickit.guides_styles_6 -->
+
+區域內部的填色樣式；`hatch` 為 Matplotlib 的網紋樣式，例如 `"//"`，`""` 表示無網紋。
+
+<!-- api: agora.mosaickit.guides_styles_7 -->
+
+點標記樣式。`size` 是以平方點計的面積，與 Matplotlib 的 `scatter` 相同（36 對應 6 pt 圓點）；`shape` 為 Matplotlib 標記，例如 `"o"`、`"s"` 或 `"X"`。
+
+<!-- api: agora.mosaickit.guides_styles_8 -->
+
+文字樣式。`size` 以點為單位，`family` 為字型家族名稱，`weight` 例如 `"bold"`，`rotation` 為逆時針旋轉的角度（度）。
+
+<!-- api: agora.mosaickit.guides_styles_9 -->
 
 圖例樣式：包括 Matplotlib 的位置名稱（例如 `"best"` 或 `"upper right"`）、外框與字級。
 
@@ -74,7 +101,7 @@ seo_title: "樣式與顏色"
 
 ## 顏色
 
-<!-- api: agora.mosaickit.guides_styles_7 -->
+<!-- api: agora.mosaickit.guides_styles_10 -->
 
 不可變的 RGBA 顏色，各通道在 $[0, 1]$ 內。`channels` 回傳四個值，`from_channels()` 建立顏色，`to_hex(include_alpha=None)` 寫出 `#RRGGBB`，當 `include_alpha` 為真、或預設情況下 alpha 不為 1 時加上 `AA`。`TRANSPARENT` 為 `Color(0, 0, 0, 0)`。
 
@@ -88,7 +115,7 @@ seo_title: "樣式與顏色"
 
 ## 色盤
 
-<!-- api: agora.mosaickit.guides_styles_8 -->
+<!-- api: agora.mosaickit.guides_styles_11 -->
 
 具名的顏色表。值可以是 `Color` 或十六進位字串；`palette[name]` 用來查詢顏色，名稱不存在時會引發指名該色盤的 `ConfigurationError`；`name in palette` 用來檢查名稱是否存在。
 

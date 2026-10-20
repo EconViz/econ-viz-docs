@@ -20,6 +20,14 @@ One tax, from `principle_viz.policy.tax`.
 
 <!-- api: agora.principle_viz.guides_taxes_2 -->
 
+The tax's definition, from `principle_viz.policy.tax`.
+
+<!-- api: agora.principle_viz.guides_taxes_3 -->
+
+The legal incidence of a tax, from `principle_viz.policy.tax`.
+
+<!-- api: agora.principle_viz.guides_taxes_4 -->
+
 The taxed market, as a `TaxEquilibriumResult`: `q_star`,
 `consumer_price`, `producer_price`, `tax_wedge` (their difference) and
 `tax_revenue` (wedge times quantity).
@@ -38,13 +46,13 @@ print(solve_tax_equilibrium(demand, supply, tax))
 `TaxOn.CONSUMER` gives the same result. An ad valorem tax at rate $r$ sets
 the consumer price to $(1 + r)$ times the producer price.
 
-<!-- api: agora.principle_viz.guides_taxes_3 -->
+<!-- api: agora.principle_viz.guides_taxes_5 -->
 
 The untaxed and taxed markets side by side: `baseline_equilibrium`,
 `post_tax`, the changes `delta_q`, `delta_p_consumer`, `delta_p_producer`,
 and their directions (`"left"`/`"right"`, `"up"`/`"down"`).
 
-<!-- api: agora.principle_viz.guides_taxes_4 -->
+<!-- api: agora.principle_viz.guides_taxes_6 -->
 
 The geometry of the taxed curve: `base_curve`, `taxed_curve`,
 `curve_role` (`"supply"` or `"demand"`) and `transform_kind` (`"shift"`
@@ -52,7 +60,7 @@ or `"rotation"`). `add_tax_transform()` draws from it.
 
 ## Figures
 
-<!-- api: agora.principle_viz.guides_taxes_5 -->
+<!-- api: agora.principle_viz.guides_taxes_7 -->
 
 Draw the taxed curve, named $S + t$ or $D - t$, with a dashed arrow for
 the shift or the rotation and the untaxed equilibrium (see
@@ -66,7 +74,7 @@ the shift or the rotation and the untaxed equilibrium (see
 
 ![An ad valorem tax on buyers.](../../assets/principle-viz/agora/taxes/ad_valorem_consumer.svg){ .ev-figure-sm }
 
-<!-- api: agora.principle_viz.guides_taxes_6 -->
+<!-- api: agora.principle_viz.guides_taxes_8 -->
 
 Mark the wedge of a `compare_tax_scenario()` result: $p_d$ (buyers),
 $p_0$ (before the tax) and $p_s$ (sellers) on the price axis, with a "Tax"
@@ -109,13 +117,17 @@ fig.finalize()
 
 ## Subsidies
 
-<!-- api: agora.principle_viz.guides_taxes_7 -->
+<!-- api: agora.principle_viz.guides_taxes_9 -->
 
 A per-unit subsidy of `amount` (non-negative), paid to sellers
 (`SubsidyTo.PRODUCER`) or buyers (`SubsidyTo.CONSUMER`), from
 `principle_viz.policy.subsidy`.
 
-<!-- api: agora.principle_viz.guides_taxes_8 -->
+<!-- api: agora.principle_viz.guides_taxes_10 -->
+
+Who receives a subsidy, from `principle_viz.policy.subsidy`.
+
+<!-- api: agora.principle_viz.guides_taxes_11 -->
 
 The subsidised market (`q_star`, `consumer_price`, `producer_price`,
 `subsidy_wedge`, `government_expenditure`), and its comparison with the
@@ -124,7 +136,7 @@ free market (`baseline_equilibrium`, `post_subsidy`, `delta_q`,
 [Quick start](../quickstart.md#sec-quickstart) gives a quantity of 5; buyers pay 5, sellers receive 7 and
 government expenditure is 10.
 
-<!-- api: agora.principle_viz.guides_taxes_9 -->
+<!-- api: agora.principle_viz.guides_taxes_12 -->
 
 Mark the subsidy wedge like the tax wedge, with a "Subsidy" brace, and
 name the subsidy's cost. [A per-unit subsidy and its deadweight loss.](taxes.md#fig-subsidy) shades only the deadweight loss

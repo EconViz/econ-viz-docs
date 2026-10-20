@@ -57,8 +57,6 @@ print(round(eq.q_star, 3), round(eq.p_star, 3))
 cs, ps = piecewise_surplus(demand, supply, eq)
 ```
 
-`piecewise_surplus()` 返回沿价格积分得到的消费者剩余与生产者剩余。
-
 ## 加总离散表
 
 `DiscreteDemand.combine(*schedules)` 将所有买方的保留价格合并为一张市场表，由高到低排列；`DiscreteSupply.combine()` 合并单位成本，由低到高排列。相同的数值保留为不同单位，合并结果可直接交给 `solve_discrete_equilibrium()`（详见[离散市场](discrete.md#sec-discrete)）。输出参见[合并两张离散需求表。](aggregation.md#fig-discrete-market-demand)。
@@ -96,8 +94,8 @@ fig.save("market_demand.png")
 
 <span id="fig-market-demand"></span>
 
-![水平加总的市场需求。](../../../assets/principle-viz/agora/aggregation/market_demand.svg){ .ev-figure-sm }
+![水平加总的市场需求。](../../../assets/principle-viz/agora/aggregation/market_demand.svg){ .ev-figure-lg }
 
 <span id="fig-discrete-market-demand"></span>
 
-![合并两张离散需求表。](../../../assets/principle-viz/agora/aggregation/discrete_market_demand.svg){ .ev-figure-sm }
+![合并两张离散需求表。](../../../assets/principle-viz/agora/aggregation/discrete_market_demand.svg){ .ev-figure-lg }

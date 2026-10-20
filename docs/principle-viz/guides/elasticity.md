@@ -88,8 +88,6 @@ CanvasGrid(canvases, rows=1).save(
 )
 ```
 
-The output is shown in [Elasticity along demand and total revenue.](elasticity.md#fig-revenue).
-
 <span id="fig-revenue"></span>
 
-![Elasticity along demand and total revenue.](../../assets/principle-viz/agora/elasticity/revenue.svg){ .ev-figure-sm }
+![Elasticity along demand and total revenue.](../../assets/principle-viz/agora/elasticity/revenue.svg){ .ev-figure-lg }

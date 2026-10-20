@@ -36,19 +36,14 @@ Four ideas run through the package.
 
 ## Mathematics and proofs
 
-Automatic placement uses several computational-geometry routines. An
-orientation test determines which side of a directed line contains a point,
-and the even-odd rule classifies a point by counting ray crossings of a
-boundary. The package also measures distance to a polygon's boundary and
-uses best-first search, always examining the candidate region with the
-largest upper bound first, to find the point deepest inside a region. Axis
-text is arranged without overlap while minimizing the sum of squared
-displacements. The chapters state what each routine guarantees
-as numbered definitions, lemmas, propositions and theorems; the proofs are
-collected in [Proofs](../project/proofs.md#app-proofs), so the chapters can be read for the API alone. The
-manual also states and proves the corresponding results for style and theme
-algebra (sparse merging and role resolution) and for parameter binding. The
-standard references are
+Automatic placement uses computational geometry: orientation tests, the
+even-odd rule, distances to a polygon's boundary, a best-first search for the
+point deepest inside a region, and the least-squares packing that keeps axis
+text apart. The chapters state what each routine guarantees as numbered
+definitions, lemmas, propositions and theorems; the proofs are collected in
+[Proofs](../project/proofs.md#app-proofs), so the chapters can be read for the API alone. The same
+treatment covers the algebra of styles and themes (sparse merging, role
+resolution) and parameter binding. The standard references are
 [{de Berg} (2008)](../project/references.md#deberg2008) for the geometry and [Barlow (1972)](../project/references.md#barlow1972) for the
 order-restricted least squares behind [Spreading is optimal](annotations.md#thm-spread).
 
@@ -58,12 +53,15 @@ order-restricted least squares behind [Spreading is optimal](annotations.md#thm-
 
 | Topic | Contents | Section |
 | --- | --- | --- |
-| Canvases, specifications, scenes | [Canvases and scenes](canvas.md#sec-canvas) | Paths, fills, markers, text, axes |
-| [Layers and axes](layers.md#sec-layers) | Axis marks, notes and braces | [Axis annotations](annotations.md#sec-annotations) |
-| Layout geometry | [Layout geometry](geometry.md#sec-geometry) | Region and point labels |
-| [Region and point labels](labels.md#sec-labels) | Styles, colors, palettes | [Styles and colors](styles.md#sec-styles) |
-| Themes, roles, configuration | [Themes and configuration](themes.md#sec-themes) | Parameters, grids, animation |
-| [Parameters, grids and animation](parameters.md#sec-parameters) | Renderers, caches, saving | [Rendering](rendering.md#sec-rendering) |
+| Building | Canvases, specifications, scenes | [Canvases and scenes](canvas.md#sec-canvas) |
+|  | Paths, fills, markers, text, axes | [Layers and axes](layers.md#sec-layers) |
+|  | Axis marks, notes and braces | [Axis annotations](annotations.md#sec-annotations) |
+| Placement | Layout geometry | [Layout geometry](geometry.md#sec-geometry) |
+|  | Region and point labels | [Region and point labels](labels.md#sec-labels) |
+| Appearance | Styles, colors, palettes | [Styles and colors](styles.md#sec-styles) |
+|  | Themes, roles, configuration | [Themes and configuration](themes.md#sec-themes) |
+| Output | Parameters, grids, animation | [Parameters, grids and animation](parameters.md#sec-parameters) |
+|  | Renderers, caches, saving | [Rendering](rendering.md#sec-rendering) |
 
 Start with [Quick start](../quickstart.md#sec-quickstart), [Canvases and scenes](canvas.md#sec-canvas) and [Layers and axes](layers.md#sec-layers). Every
 figure in this manual is `mosaickit` output, drawn by the canvas or

@@ -32,9 +32,24 @@ values are not `None`, so `opacity=0`, `width=0` and
 !!! abstract "Proposition · Merging is a monoid"
 
     For styles $a, b, c$ of one type,
-    (i) $(a \triangleright b) \triangleright c = a \triangleright (b \triangleright c)$;
-    (ii) $\epsilon \triangleright a = a \triangleright \epsilon = a$;
-    (iii) $a \triangleright a = a$.
+    (i) associativity states
+
+    $$
+    (a \triangleright b) \triangleright c = a \triangleright (b \triangleright c);
+    $$
+
+    (ii) the empty style is an identity,
+
+    $$
+    \epsilon \triangleright a = a \triangleright \epsilon = a;
+    $$
+
+    and (iii) merging is idempotent,
+
+    $$
+    a \triangleright a = a.
+    $$
+
     Field by field, $a_1 \triangleright \cdots \triangleright a_n$ takes the first
     value that is not `None`.
 
@@ -56,22 +71,34 @@ Line styles. `width` is in points; `dash` is a `DashStyle` (`SOLID`,
 
 <!-- api: agora.mosaickit.guides_styles_3 -->
 
+Line patterns of a `Stroke`. The short forms `-`, `--`, `:` and `-.` are accepted too.
+
+<!-- api: agora.mosaickit.guides_styles_4 -->
+
+Arrowheads of a `Stroke`. `SIMPLE` is another name for `OPEN`, and the Matplotlib spellings `->` and `-|>` are accepted.
+
+<!-- api: agora.mosaickit.guides_styles_5 -->
+
+Where a layer's arrowhead is drawn.
+
+<!-- api: agora.mosaickit.guides_styles_6 -->
+
 Styles for region interiors. `hatch` is a Matplotlib hatch pattern such as
 `"//"`; `""` means no hatch.
 
-<!-- api: agora.mosaickit.guides_styles_4 -->
+<!-- api: agora.mosaickit.guides_styles_7 -->
 
 Point-marker styles. As in Matplotlib's `scatter`, `size` is the area in
 square points (36 is a 6 pt disc). `shape` is a Matplotlib marker such as
 `"o"`, `"s"` or `"X"`.
 
-<!-- api: agora.mosaickit.guides_styles_5 -->
+<!-- api: agora.mosaickit.guides_styles_8 -->
 
 Text styles. `size` is in points, `family` is a font-family name, `weight`
 may be a value such as `"bold"`, and `rotation` is in degrees
 counter-clockwise.
 
-<!-- api: agora.mosaickit.guides_styles_6 -->
+<!-- api: agora.mosaickit.guides_styles_9 -->
 
 Legend styles, including a Matplotlib location such as `"best"` or
 `"upper right"`, a frame setting and the font size.
@@ -91,7 +118,7 @@ be finite and non-negative, opacities in $[0, 1]$, rotation finite.
 
 ## Colors
 
-<!-- api: agora.mosaickit.guides_styles_7 -->
+<!-- api: agora.mosaickit.guides_styles_10 -->
 
 An immutable RGBA color with channels in $[0, 1]$. `channels` returns the
 four values, `from_channels()` builds one, and
@@ -112,7 +139,7 @@ at once) or any other string, which is kept as a _palette name_.
 
 ## Palettes
 
-<!-- api: agora.mosaickit.guides_styles_8 -->
+<!-- api: agora.mosaickit.guides_styles_11 -->
 
 A named table of colors. Values may be `Color`s or hex strings.
 `palette[name]` looks up a color and raises `ConfigurationError`, naming

@@ -1,25 +1,32 @@
 ---
-seo_title: "Command-Line Interface"
-description: "Generate indifference curve and budget constraint diagrams from the command line with the utility-viz CLI, without writing any Python."
+seo_title: "Command-line interface"
 ---
 
-# CLI
+# Command-line interface
 
-`utility-viz` ships with a command-line interface for generating diagrams without writing Python.
+<span id="sec-cli"></span>
 
-Install it as a global command with `uv tool install utility-viz`, or prefix each command with `uv run` inside a uv project. See [Installation](installation.md) for details.
-
-## Commands
+The command-line interface plots diagrams, runs batches and prints demand
+formulas. Install it as a standalone tool with `uv tool install utility-viz`,
+or prefix each command with `uv run` inside a `uv` project
+([Installing the command-line tool](installation.md#sec-install-cli)). The 1.x command `econ-viz`, installed by the
+`econ-viz` compatibility distribution, still works in 2.x: it warns
+that it is deprecated and runs `utility-viz` with the same arguments
+([Migrating from `econ-viz`](installation.md#sec-migrate)).
 
 | Command | Description |
-|---------|-------------|
-| `utility-viz help [<command>]` | Show help for the CLI or a specific command |
+| --- | --- |
+| `utility-viz help [``command``]` | Show help for the CLI or a specific command |
 | `utility-viz models` | List all supported utility models |
 | `utility-viz plot ...` | Generate and export a diagram |
-| `utility-viz solve-tex ...` | Print a closed-form Marshallian demand in plain TeX text |
-| `utility-viz init [path]` | Write a commented [settings file](../guides/config.md) template (`--force` overwrites) |
+| `utility-viz solve-tex ...` | Print a closed-form Marshallian demand as TeX |
+| `utility-viz init [path]` | Create an `utility-viz.toml` configuration template |
 
-## Help {#utility-viz-help data-toc-label="Help"}
+## Help and models
+
+<!-- api: agora.utility_viz.getting_started_cli_1 -->
+
+Without an argument, list all commands; with one, show its options.
 
 ```bash
 utility-viz help          # all commands
@@ -27,19 +34,48 @@ utility-viz help plot     # plot options
 utility-viz help models   # models options
 ```
 
-## Models {#utility-viz-models data-toc-label="Models"}
+<!-- api: agora.utility_viz.getting_started_cli_2 -->
 
-```bash
-utility-viz models
-```
+List the model names and parameters the CLI supports. `--model` takes
+kebab-case names, which differ from the Python class names
+([CLI models](cli.md#tab-models)). The parameter options are described in [Plotting](cli.md#sec-cli-plot).
 
-Prints all model names and their parameters.
+<span id="tab-models"></span>
 
-## Plot {#utility-viz-plot data-toc-label="Plot"}
+| Model | `--model` value | Required | Optional |
+| --- | --- | --- | --- |
+| Cobb-Douglas | `cobb-douglas` | `alpha`, `beta` | -- |
+| CES | `ces` | `rho` | `alpha`, `beta` |
+| Perfect complements | `leontief` | `a`, `b` | -- |
+| Perfect substitutes | `perfect-substitutes` | `a`, `b` | -- |
+| Satiation | `satiation` | `bliss-x`, `bliss-y` | `a`, `b` |
+| Quasi-linear | `quasi-linear` | -- | `v-func`, `linear-in` |
+| Stone-Geary | `stone-geary` | -- | `alpha`, `beta`, `bar-x`, `bar-y` |
+| Translog | `translog` | -- | `alpha-0`, `alpha-x`, `alpha-y`, `beta-xx`, `beta-yy`, `beta-xy` |
 
-### Model selection
+## Plotting
 
-Provide either `--model` or `--latex` — not both.
+<span id="sec-cli-plot"></span>
+
+<!-- api: agora.utility_viz.getting_started_cli_3 -->
+
+Give the model with `--model`, or the utility function with `--latex`,
+not both. With `--output` the diagram is written to a file; without it an
+interactive window opens.
+
+The budget line and equilibrium need both prices and income.
+`--no-budget`, `--no-equilibrium` and `--no-curves` each omit one layer
+and can be combined ([Layer options](cli.md#tab-plot-flags)).
+
+<span id="tab-plot-flags"></span>
+
+| Case | Result |
+| --- | --- |
+| `--px`, `--py` and `--income` all given | Budget line drawn and equilibrium solved |
+| Any price or income missing | Indifference curves only, no budget line or equilibrium |
+| `--no-equilibrium` added | No solve and no equilibrium, even with prices and income |
+| `--no-budget` added | Budget line hidden, even with prices and income |
+| `--no-curves` with prices and income | Budget line and equilibrium only, no indifference curves |
 
 ```bash
 # named model
@@ -48,8 +84,6 @@ utility-viz plot --model cobb-douglas --alpha 0.5 --beta 0.5 ...
 # LaTeX expression
 utility-viz plot --latex "x^{0.4} y^{0.6}" ...
 ```
-
-### Examples
 
 ```bash
 # Cobb-Douglas, shaded budget set
@@ -63,7 +97,7 @@ utility-viz plot --latex "x^{0.4} y^{0.6}" \
               --theme nord --show-ray \
               --output cd_latex.png
 
-# Leontief, larger canvas
+# perfect complements, larger canvas
 utility-viz plot --model leontief --a 1 --b 2 \
               --px 2 --py 3 --income 30 \
               --x-max 20 --y-max 15 \
@@ -75,7 +109,7 @@ utility-viz plot --model ces --rho -0.5 \
               --no-budget --no-equilibrium \
               --output ces.png
 
-# Satiation (bliss point)
+# satiation (bliss point)
 utility-viz plot --model satiation --bliss-x 6 --bliss-y 4 \
               --x-max 12 --y-max 10 \
               --no-budget --no-equilibrium \
@@ -85,41 +119,56 @@ utility-viz plot --model satiation --bliss-x 6 --bliss-y 4 \
 utility-viz plot --model cobb-douglas --px 2 --py 3 --income 30
 ```
 
-### All options
+### Model selection
 
-| Flag | Default | Description |
-|------|---------|-------------|
-| `--model`, `-m` | — | Model name: `cobb-douglas`, `leontief`, `perfect-substitutes`, `ces`, `satiation` |
-| `--latex`, `-l` | — | LaTeX expression (Cobb-Douglas / Leontief / Perfect Substitutes) |
-| `--px` | — | Price of good x |
-| `--py` | — | Price of good y |
-| `--income` | — | Consumer income |
-| `--alpha` | 0.5 | Alpha parameter (Cobb-Douglas / CES) |
-| `--beta` | 0.5 | Beta parameter (Cobb-Douglas / CES) |
-| `--a` | 1.0 | a parameter (Leontief / Perfect Substitutes / Satiation) |
-| `--b` | 1.0 | b parameter (Leontief / Perfect Substitutes / Satiation) |
-| `--rho` | 0.5 | Substitution parameter (CES) |
-| `--bliss-x` | 5.0 | Bliss point x-coordinate (Satiation) |
-| `--bliss-y` | 5.0 | Bliss point y-coordinate (Satiation) |
-| `--x-max` | 10 | Horizontal axis limit |
-| `--y-max` | 10 | Vertical axis limit |
-| `--x-label` | `x` | Horizontal axis label |
-| `--y-label` | `y` | Vertical axis label |
-| `--title` | — | Figure title |
-| `--theme` | `default` | Colour theme: `default`, `nord` |
-| `--config` | — | [Settings file](../guides/config.md) (`utility-viz.toml`); `--theme` replaces its `base` |
-| `--n-curves` | 5 | Number of indifference curves |
-| `--dpi` | 300 | Raster output resolution |
-| `--fill` | off | Shade feasible set below the budget line |
-| `--show-ray` | off | Draw expansion-path ray through the optimum |
-| `--no-budget` | off | Omit the budget line |
-| `--no-equilibrium` | off | Omit the equilibrium point |
-| `--no-curves` | off | Omit indifference curves |
-| `--output`, `-o` | — | Output file (`.png`, `.pdf`, `.svg`); omit to open an interactive window |
+### Prices and income
 
-## Demand formulas {#utility-viz-solve-tex data-toc-label="Demand formulas"}
+### Model parameters
 
-Use `solve-tex` when you want the closed-form Marshallian demand formula without generating a figure.
+Quasi-linear, Stone-Geary and Translog take these further options:
+
+```bash
+utility-viz plot --model stone-geary --bar-x 2 --bar-y 2 \
+              --px 2 --py 3 --income 30 \
+              --x-max 20 --y-max 15 --output stone_geary.png
+```
+
+Subsistence spending here is $2 \times 2 + 3 \times 2 = 10$, below the income
+of $30$. With an income of $10$ or less, the solve fails because the budget
+lies outside the model's domain.
+
+### Canvas and layers
+
+For batch runs, give each parameter set its own file name and create the
+output directory first. `--x-max` and `--y-max` do not follow the prices;
+when an intercept or the optimum falls outside the canvas, raise the limits
+as well.
+
+## Creating a configuration file
+
+<span id="sec-cli-init"></span>
+
+<!-- api: agora.utility_viz.getting_started_cli_4 -->
+
+Write a commented `utility-viz.toml` template. Without a path it goes in the
+current directory; an existing file is overwritten only with `--force`.
+`--migrate` instead creates `utility-viz.toml` from a legacy
+`econ-viz.toml` in the same directory and keeps the old file.
+
+```bash
+utility-viz init
+utility-viz init config/figures.toml
+utility-viz init --migrate
+utility-viz plot --config utility-viz.toml --model cobb-douglas \
+              --px 2 --py 3 --income 30 --output figure.png
+```
+
+## Demand formulas
+
+<!-- api: agora.utility_viz.getting_started_cli_5 -->
+
+Print the closed-form Marshallian demand as TeX, for any document that
+supports TeX math.
 
 ```bash
 # numeric parameters
@@ -128,16 +177,11 @@ utility-viz solve-tex --model cobb-douglas --alpha 0.4 --beta 0.6
 # symbolic parameters
 utility-viz solve-tex --model cobb-douglas --symbolic-params
 
-# custom price/income symbols
+# custom price and income symbols
 utility-viz solve-tex --model leontief --a 2 --b 3 \
                    --px-symbol p_1 --py-symbol p_2 --income-symbol M
 ```
 
-Supported closed-form models currently include:
-
-- `cobb-douglas`
-- `leontief`
-- `perfect-substitutes`
-- LaTeX shortcuts for Cobb-Douglas, Leontief, and Perfect Substitutes
-
-The command prints plain TeX text, so you can drop the output directly into Markdown math, LaTeX, or slide tooling.
+Supports `cobb-douglas`, `leontief`, `perfect-substitutes` and their
+LaTeX expressions. The command prints the formula only and writes no
+figure.

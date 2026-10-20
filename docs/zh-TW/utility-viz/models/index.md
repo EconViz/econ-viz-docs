@@ -1,390 +1,335 @@
 ---
-seo_title: "效用函數模型"
-description: "比較 utility-viz 支援的核心效用模型，包含公式、參數、Python 範例與無異曲線圖。"
+seo_title: "核心模型"
 ---
 
 # 核心模型
 
-核心模型涵蓋平滑偏好、折點與線性偏好，以及具有所得或參考點效果的偏好。
-先選擇模型群組，再用分頁切換並比較模型。
+<span id="sec-models"></span>
+
+內建模型位於 `utility_viz.models`，可傳入 `solve()` 與 `Canvas.add_utility()`。本章依偏好特性分組，列出各模型的效用函數、參數、特有行為與圖形。
 
 ## 平滑偏好
 
-這組模型會產生平滑的無異曲線；價格與所得為正時，通常會得到內點解。
+Cobb-Douglas、CES 與 Translog 的無異曲線為平滑曲線；最適解取決於模型參數、價格與所得。
 
-=== "Cobb-Douglas"
+### Cobb-Douglas
 
-    Cobb-Douglas 是描述平滑、嚴格凸偏好的標準模型。
+<!-- api: agora.utility_viz.models_index_1 -->
 
-    $$
-    U(x,y)=x^\alpha y^\beta
-    $$
+Cobb-Douglas 效用函數 [Cobb (1928)](../project/references.md#cobb1928)：
 
-    指數決定兩種商品在效用中的相對權重。無異曲線會接近兩軸，但不會碰到兩軸。
+$$
+u(x, y) = x^\alpha y^\beta
+$$
 
-    **參數**
+正指數決定兩種商品的相對權重，無異曲線以座標軸為漸近線。
 
-    | 參數 | 預設值 | 意義 |
-    |------|--------|------|
-    | `alpha` | `0.5` | 商品 $x$ 的權重 |
-    | `beta` | `0.5` | 商品 $y$ 的權重 |
+### CES
 
-    **程式碼**
+<!-- api: agora.utility_viz.models_index_2 -->
 
-    ```python
-    from utility_viz import Canvas, levels, solve
-    from utility_viz.models import CobbDouglas
+CES [Arrow (1961)](../project/references.md#arrow1961) 透過 `rho` 調整商品間的替代彈性：
 
-    model = CobbDouglas(alpha=0.5, beta=0.5)
-    eq = solve(model, px=2.0, py=3.0, income=30.0)
+$$
+u(x, y) = (\alpha x^\rho + \beta y^\rho)^{1 / \rho}.
+$$
 
-    (
-        Canvas(x_max=20, y_max=15, title="Cobb-Douglas")
-        .add_utility(model, levels=levels.around(eq.utility, n=5))
-        .add_budget(2.0, 3.0, 30.0, fill=True)
-        .add_equilibrium(eq, show_ray=True)
-        .save("cobb_douglas.png")
-    )
-    ```
+替代彈性為 $\sigma = 1 / (1 - \rho)$。極限形式分別為 Cobb-Douglas（$\rho \to 0$）、完全互補（$\rho \to -infinity$）與完全替代（$\rho \to 1$）。
 
-    ![Cobb-Douglas 無異曲線圖](../../../assets/models/cobb_douglas.png)
+```python
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.models import CES
 
-=== "CES"
+# 本手冊圖形所用的設定
+Config.load("manual.toml").use()
 
-    CES 能在維持平滑偏好的同時，調整兩種商品的替代難易度。
+model = CES(alpha=0.5, beta=0.5, rho=-0.5)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
 
-    $$
-    U(x,y)=\left(\alpha x^\rho+\beta y^\rho\right)^{1/\rho}
-    $$
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+cvs.add_utility(model, levels=levels.around(eq.utility, n=5))
+cvs.add_budget(2.0, 3.0, 30.0)
+cvs.add_equilibrium(eq)
+cvs.save("ces.png")
+```
 
-    替代彈性是 $\sigma=1/(1-\rho)$。改變 $\rho$ 時，CES 會接近
-    Cobb-Douglas、完全互補或完全替代。
+![CES 曲線。](../../../assets/utility-viz/agora/models/ces.svg){ .ev-figure-sm }
 
-    **參數**
+### Translog
 
-    | 參數 | 預設值 | 意義 |
-    |------|--------|------|
-    | `alpha` | `0.5` | 商品 $x$ 的權重 |
-    | `beta` | `0.5` | 商品 $y$ 的權重 |
-    | `rho` | `0.5` | 替代參數，且 $\rho\ne1$ |
+<!-- api: agora.utility_viz.models_index_3 -->
 
-    **程式碼**
+Translog [Christensen (1975)](../project/references.md#christensen1975) 以對數的一次項、二次項與交叉項表示效用：
 
-    ```python
-    from utility_viz import Canvas, levels, solve
-    from utility_viz.models import CES
+$$
+\begin{aligned}ln u(x, y) = & \alpha_0 + \alpha_x ln x + \alpha_y ln y \\ & + 1/2 \beta_{x x} (ln x)^2 + 1/2 \beta_{y y} (ln y)^2 + \beta_{x y} ln x ln y.\end{aligned}
+$$
 
-    model = CES(alpha=0.5, beta=0.5, rho=-0.5)
-    eq = solve(model, px=2.0, py=3.0, income=30.0)
+二次項與交叉項控制曲率。所有 $\beta$ 係數為零時，退化為 Cobb-Douglas 型的對數線性形式。
 
-    (
-        Canvas(x_max=20, y_max=15, title="CES")
-        .add_utility(model, levels=levels.around(eq.utility, n=5))
-        .add_budget(2.0, 3.0, 30.0)
-        .add_equilibrium(eq)
-        .save("ces.png")
-    )
-    ```
+```python
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.models import Translog
 
-    ![CES 無異曲線圖](../../../assets/models/ces.png)
+# 本手冊圖形所用的設定
+Config.load("manual.toml").use()
 
-=== "Translog"
+model = Translog(alpha_x=0.6, alpha_y=0.4, beta_xy=0.12)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
 
-    Translog 是描述平滑偏好的彈性對數二次模型。
+cvs = Canvas(x_max=18, y_max=12, x_label="$x$", y_label="$y$")
+cvs.add_utility(model, levels=levels.around(eq.utility, n=4))
+cvs.add_budget(2.0, 3.0, 30.0)
+cvs.add_equilibrium(eq)
+cvs.save("translog.png")
+```
 
-    $$
-    \begin{aligned}
-    \ln U(x,y)={}&\alpha_0+\alpha_x\ln x+\alpha_y\ln y\\
-    &+\tfrac12\beta_{xx}(\ln x)^2
-    +\tfrac12\beta_{yy}(\ln y)^2
-    +\beta_{xy}\ln x\ln y
-    \end{aligned}
-    $$
+![Translog 範例。](../../../assets/utility-viz/agora/models/translog.svg){ .ev-figure-sm }
 
-    二次項與交叉項讓曲率能隨消費組合改變。所有 $\beta$ 係數都設為零時，
-    會得到類似 Cobb-Douglas 的對數線性形式。
+## 拗折點與角解
 
-    **參數**
+無異曲線有拗折或為直線時，最適解可能位於拗折點或座標軸，不能僅以相切條件判定。
 
-    | 參數 | 預設值 | 意義 |
-    |------|--------|------|
-    | `alpha_0` | `0.0` | 對數效用截距 |
-    | `alpha_x` | `0.5` | $\ln x$ 的一次項權重 |
-    | `alpha_y` | `0.5` | $\ln y$ 的一次項權重 |
-    | `beta_xx` | `0.0` | $x$ 方向的曲率 |
-    | `beta_yy` | `0.0` | $y$ 方向的曲率 |
-    | `beta_xy` | `0.0` | $x$ 與 $y$ 的交叉效果 |
+### 完全互補
 
-    **程式碼**
+<!-- api: agora.utility_viz.models_index_4 -->
 
-    ```python
-    from utility_viz import Canvas, levels, solve
-    from utility_viz.models import Translog
+完全互補效用函數：
 
-    model = Translog(alpha_x=0.6, alpha_y=0.4, beta_xy=0.12)
-    eq = solve(model, px=2.0, py=3.0, income=30.0)
+$$
+u(x, y) = \min\lbrace a x, b y\rbrace
+$$
 
-    (
-        Canvas(x_max=18, y_max=12, title="Translog")
-        .add_utility(model, levels=levels.around(eq.utility, n=4))
-        .add_budget(2.0, 3.0, 30.0)
-        .add_equilibrium(eq)
-        .save("translog.png")
-    )
-    ```
+無異曲線呈 L 型。權重與價格為正時，最適點滿足固定比例 $a x = b y$。
 
-    ![Translog 無異曲線圖](../../../assets/models/translog.png)
+轉角在圖片與 TikZ 輸出中都畫成精確的直角；以 `CustomUtility` 建立的分段 `min`/`max` 函數亦同。
 
-## 折點與角點
+```python
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.models import Leontief
 
-這組模型呈現不平滑或線性偏好如何改變最適點的位置。
+# 本手冊圖形所用的設定
+Config.load("manual.toml").use()
 
-=== "完全互補"
+model = Leontief(a=1.0, b=1.0)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
 
-    完全互補偏好描述以固定比例搭配消費的商品。
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+cvs.add_utility(
+    model,
+    levels=levels.around(eq.utility, n=5),
+    show_rays=True,
+    # 每個折點畫一條射線與一個標記
+    show_kinks=True,
+)
+cvs.add_budget(2.0, 3.0, 30.0)
+cvs.add_equilibrium(eq)
+cvs.save("leontief.png")
+```
 
-    $$
-    U(x,y)=\min(ax,by)
-    $$
+![完全互補射線。](../../../assets/utility-viz/agora/models/leontief.svg){ .ev-figure-sm }
 
-    無異曲線呈 L 型。最適點位於兩個加權數量相等的拗折點。
+### 完全替代
 
-    **參數**
+<!-- api: agora.utility_viz.models_index_5 -->
 
-    | 參數 | 預設值 | 意義 |
-    |------|--------|------|
-    | `a` | `1.0` | 商品 $x$ 的權重 |
-    | `b` | `1.0` | 商品 $y$ 的權重 |
+完全替代效用函數：
 
-    **程式碼**
+$$
+u(x, y) = a x + b y.
+$$
 
-    ```python
-    from utility_viz import Canvas, levels, solve
-    from utility_viz.models import Leontief
+無異曲線為直線。每元邊際效用不同時，最適解為僅購買較高者的角解；兩者相等時，預算線上的消費組合皆為最適解。
 
-    model = Leontief(a=1.0, b=1.0)
-    eq = solve(model, px=2.0, py=3.0, income=30.0)
+```python
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.models import PerfectSubstitutes
 
-    (
-        Canvas(x_max=20, y_max=15, title="完全互補")
-        .add_utility(
-            model,
-            levels=levels.around(eq.utility, n=5),
-            show_rays=True,
-            show_kinks=True,
-        )
-        .add_budget(2.0, 3.0, 30.0)
-        .add_equilibrium(eq)
-        .save("leontief.png")
-    )
-    ```
+# 本手冊圖形所用的設定
+Config.load("manual.toml").use()
 
-    ![完全互補無異曲線圖](../../../assets/models/leontief.png)
+model = PerfectSubstitutes(a=1.0, b=2.0)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
 
-=== "完全替代"
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+cvs.add_utility(model, levels=levels.around(eq.utility, n=5))
+cvs.add_budget(2.0, 3.0, 30.0)
+cvs.add_equilibrium(eq)
+cvs.save("perfect_substitutes.png")
+```
 
-    完全替代偏好讓兩種商品之間的效用交換比例維持固定。
+![完全替代角解。](../../../assets/utility-viz/agora/models/perfect_substitutes.svg){ .ev-figure-sm }
 
-    $$
-    U(x,y)=ax+by
-    $$
+### 最大值效用
 
-    無異曲線是直線。消費者通常只選擇每元邊際效用較高的商品，因此形成角點解。
+<!-- api: agora.utility_viz.models_index_6 -->
 
-    **參數**
+以兩個加權數量的最大值定義效用：
 
-    | 參數 | 預設值 | 意義 |
-    |------|--------|------|
-    | `a` | `1.0` | 商品 $x$ 的邊際效用 |
-    | `b` | `1.0` | 商品 $y$ 的邊際效用 |
+$$
+u(x, y) = \max\lbrace a x, b y\rbrace
+$$
 
-    **程式碼**
+此偏好不具凸性。在正權重與正價格下，最適解位於效用較高的預算線軸截距。此模型以 `CustomUtility` 建立（詳見[進階模型](advanced.md#sec-advanced)）。
 
-    ```python
-    from utility_viz import Canvas, levels, solve
-    from utility_viz.models import PerfectSubstitutes
+```python
+import numpy as np
 
-    model = PerfectSubstitutes(a=1.0, b=2.0)
-    eq = solve(model, px=2.0, py=3.0, income=30.0)
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.models import CustomUtility
 
-    (
-        Canvas(x_max=20, y_max=15, title="Perfect Substitutes")
-        .add_utility(model, levels=levels.around(eq.utility, n=5))
-        .add_budget(2.0, 3.0, 30.0)
-        .add_equilibrium(eq)
-        .save("perfect_substitutes.png")
-    )
-    ```
+# 本手冊圖形所用的設定
+Config.load("manual.toml").use()
 
-    ![完全替代無異曲線圖](../../../assets/models/perfect_substitutes.png)
+model = CustomUtility(
+    func=lambda x, y: np.maximum(x, y), name="maximum"
+)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
 
-=== "最大值效用"
+cvs = Canvas(x_max=25, y_max=20, x_label="$x$", y_label="$y$")
+cvs.add_utility(model, levels=levels.around(eq.utility, n=5))
+cvs.add_budget(2.0, 3.0, 30.0)
+cvs.add_equilibrium(eq)
+cvs.save("maximum.png")
+```
 
-    最大值效用只取每個消費組合中較大的加權數量。
-
-    $$
-    U(x,y)=\max(ax,by)
-    $$
-
-    每條無異曲線有兩條朝坐標軸延伸的直角線段，因此偏好不是凸的。在
-    線性預算限制下，最適選擇通常落在加權效用較高的軸截距。
-
-    **參數**
-
-    | 參數 | 預設值 | 意義 |
-    |------|--------|------|
-    | `a` | `1.0` | 商品 $x$ 的權重 |
-    | `b` | `1.0` | 商品 $y$ 的權重 |
-
-    **程式碼**
-
-    ```python
-    import numpy as np
-    from utility_viz import Canvas, levels, solve
-    from utility_viz.models import CustomUtility
-
-    a, b = 1.0, 1.0
-    model = CustomUtility(
-        func=lambda x, y: np.maximum(a * x, b * y),
-        name="maximum",
-    )
-    eq = solve(model, px=2.0, py=3.0, income=30.0)
-
-    (
-        Canvas(x_max=25, y_max=20, title="最大值效用")
-        .add_utility(model, levels=levels.around(eq.utility, n=5))
-        .add_budget(2.0, 3.0, 30.0)
-        .add_equilibrium(eq)
-        .save("maximum.png")
-    )
-    ```
-
-    ![最大值效用無異曲線圖](../../../assets/models/maximum.png)
+![最大值效用。](../../../assets/utility-viz/agora/models/maximum.svg){ .ev-figure-sm }
 
 ## 所得與參考點
 
-這組模型加入特殊所得效果、基本需求量或偏好的消費參考點。
+以下模型分別描述準線性偏好、最低消費需求與具有極樂點的飽和偏好。
 
-=== "準線性"
+### 準線性
 
-    準線性偏好讓其中一種商品以線性方式進入效用。
+<!-- api: agora.utility_viz.models_index_7 -->
 
-    $$
-    U(x,y)=f(x)+y
-    $$
+準線性效用中，一種商品以線性項表示：
 
-    得到內點解後，非線性商品沒有所得效果。`linear_in` 可以對調 $x$ 與 $y$
-    的角色。
+$$
+u(x, y) = f(x) + y.
+$$
 
-    **參數**
+在內部解範圍內，非線性商品的需求不受所得影響。`linear_in` 指定線性項對應的商品。
 
-    | 參數 | 預設值 | 意義 |
-    |------|--------|------|
-    | `v_func` | `numpy.log` | 遞增且凹的函數 $f$ |
-    | `linear_in` | `"y"` | 線性進入的商品 |
+```python
+import numpy as np
 
-    **程式碼**
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.models import QuasiLinear
 
-    ```python
-    import numpy as np
-    from utility_viz import Canvas, levels, solve
-    from utility_viz.models import QuasiLinear
+# 本手冊圖形所用的設定
+Config.load("manual.toml").use()
 
-    model = QuasiLinear(v_func=np.log, linear_in="y")
-    eq = solve(model, px=2.0, py=1.0, income=20.0)
+model = QuasiLinear(v_func=np.log, linear_in="y")
+eq = solve(model, px=1.0, py=2.0, income=20.0)
 
-    (
-        Canvas(x_max=15, y_max=15, title="Quasi-Linear")
-        .add_utility(model, levels=levels.around(eq.utility, n=5))
-        .add_budget(2.0, 1.0, 20.0)
-        .add_equilibrium(eq)
-        .save("quasi_linear.png")
-    )
-    ```
+cvs = Canvas(x_max=15, y_max=15, x_label="$x$", y_label="$y$")
+cvs.add_utility(model, levels=levels.around(eq.utility, n=5))
+cvs.add_budget(1.0, 2.0, 20.0)
+cvs.add_equilibrium(eq)
+cvs.save("quasi_linear.png")
+```
 
-    ![準線性無異曲線圖](../../../assets/models/quasi_linear.png)
+![準線性偏好。](../../../assets/utility-viz/agora/models/quasi_linear.svg){ .ev-figure-sm }
 
-=== "Stone-Geary"
+### Haagsma
 
-    Stone-Geary 在 Cobb-Douglas 中加入最低消費需求。
+<!-- api: agora.utility_viz.models_index_8 -->
 
-    $$
-    U(x,y)=(x-\bar{x})^\alpha(y-\bar{y})^\beta
-    $$
+[Haagsma (2012)](../project/references.md#haagsma2012) 效用函數為
 
-    消費者先滿足基本需求量 $\bar{x}$ 與 $\bar{y}$，再像 Cobb-Douglas 消費者
-    一樣分配剩餘所得。
+$$
+u(x, y) = \alpha_x ln(x - \gamma_x) - \alpha_y ln(\gamma_y - y).
+$$
 
-    **參數**
+定義域為 $x > \gamma_x$ 且 $0 \le y < \gamma_y$，並要求 $0 < \alpha_x < \alpha_y$。商品 $x$ 的 Marshall 需求隨所得下降；當 $\gamma_y p_y < I < \gamma_y p_y + \gamma_x p_x$ 時，商品 $x$ 為季芬財。
 
-    | 參數 | 預設值 | 意義 |
-    |------|--------|------|
-    | `alpha` | `0.5` | 超額 $x$ 的權重 |
-    | `beta` | `0.5` | 超額 $y$ 的權重 |
-    | `bar_x` | `1.0` | 基本需求量 $\bar{x}$ |
-    | `bar_y` | `1.0` | 基本需求量 $\bar{y}$ |
+所得達到 $\gamma_y p_y + \gamma_x p_x$ 時，效用在預算線上沒有有限最大值，模型會拋出 `InvalidParameterError`。
 
-    **程式碼**
+```python
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.models import Haagsma
 
-    ```python
-    from utility_viz import Canvas, levels, solve
-    from utility_viz.models import StoneGeary
+# 本手冊圖形所用的設定
+Config.load("manual.toml").use()
 
-    model = StoneGeary(alpha=0.5, beta=0.5, bar_x=2.0, bar_y=2.0)
-    eq = solve(model, px=2.0, py=3.0, income=30.0)
+model = Haagsma(gamma_y=10.0)
+eq = solve(model, px=1.0, py=1.0, income=11.0)
 
-    (
-        Canvas(x_max=20, y_max=15, title="Stone-Geary")
-        .add_utility(model, levels=levels.around(eq.utility, n=5))
-        .add_budget(2.0, 3.0, 30.0, fill=True)
-        .add_equilibrium(eq)
-        .save("stone_geary.png")
-    )
-    ```
+cvs = Canvas(x_max=9, y_max=12, x_label="$x$", y_label="$y$")
+cvs.add_utility(model, levels=levels.around(eq.utility, n=4))
+cvs.add_budget(1.0, 1.0, 11.0)
+cvs.add_equilibrium(eq)
+cvs.save("haagsma.png")
+```
 
-    ![Stone-Geary 無異曲線圖](../../../assets/models/stone_geary.png)
+![$\gamma_y = 10$ 的 Haagsma。](../../../assets/utility-viz/agora/models/haagsma.svg){ .ev-figure-sm }
 
-=== "飽和"
+### Stone-Geary
 
-    飽和偏好有一個使效用達到最高的極樂點。
+<!-- api: agora.utility_viz.models_index_9 -->
 
-    $$
-    U(x,y)=-a(x-x^*)^2-b(y-y^*)^2
-    $$
+Stone-Geary [Stone (1954)](../project/references.md#stone1954)[Geary (1950)](../project/references.md#geary1950) 在 Cobb-Douglas 中加入最低消費量：
 
-    離開 $(x^*,y^*)$ 後，效用往任何方向都會下降，因此無異曲線是封閉橢圓，
-    且偏好不具單調性。
+$$
+u(x, y) = (x - \overline{x})^\alpha (y - \overline{y})^\beta.
+$$
 
-    **參數**
+滿足基本需求量 $\overline{x}$ 與 $\overline{y}$ 後，剩餘所得依權重分配。
 
-    | 參數 | 預設值 | 意義 |
-    |------|--------|------|
-    | `bliss_x` | `5.0` | 極樂點座標 $x^*$ |
-    | `bliss_y` | `5.0` | 極樂點座標 $y^*$ |
-    | `a` | `1.0` | $x$ 軸方向的曲率 |
-    | `b` | `1.0` | $y$ 軸方向的曲率 |
+```python
+from utility_viz import Canvas, Config, levels, solve
+from utility_viz.models import StoneGeary
 
-    **程式碼**
+# 本手冊圖形所用的設定
+Config.load("manual.toml").use()
 
-    ```python
-    import numpy as np
-    from utility_viz import Canvas, levels
-    from utility_viz.models import Satiation
+model = StoneGeary(alpha=0.5, beta=0.5, bar_x=2.0, bar_y=2.0)
+eq = solve(model, px=2.0, py=3.0, income=30.0)
 
-    model = Satiation(bliss_x=6.0, bliss_y=4.0)
-    x = np.linspace(0.1, 12.0, 300)
-    y = np.linspace(0.1, 10.0, 300)
-    X, Y = np.meshgrid(x, y)
+cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
+cvs.add_utility(model, levels=levels.around(eq.utility, n=5))
+cvs.add_budget(2.0, 3.0, 30.0, fill=True)
+cvs.add_equilibrium(eq)
+cvs.save("stone_geary.png")
+```
 
-    (
-        Canvas(x_max=12, y_max=10, title="Satiation")
-        .add_utility(
-            model, levels=levels.percentile(model(X, Y), n=5)
-        )
-        .save("satiation.png")
-    )
-    ```
+![Stone-Geary。](../../../assets/utility-viz/agora/models/stone_geary.svg){ .ev-figure-sm }
 
-    ![飽和無異曲線圖](../../../assets/models/satiation.png)
+### 飽和偏好
 
-自訂函數與多商品 Cobb-Douglas 模型請見[進階模型](advanced.md)。
+<!-- api: agora.utility_viz.models_index_10 -->
+
+飽和偏好以 $(x^*, y^*)$ 為效用最高的極樂點：
+
+$$
+u(x, y) = -a (x - x^*)^2 - b (y - y^*)^2.
+$$
+
+當 $a, b > 0$，偏離極樂點會使效用下降，無異曲線為封閉橢圓，偏好不具單調性。
+
+```python
+import numpy as np
+
+from utility_viz import Canvas, Config, levels
+from utility_viz.models import Satiation
+
+# 本手冊圖形所用的設定
+Config.load("manual.toml").use()
+
+model = Satiation(bliss_x=6.0, bliss_y=4.0)
+
+# 曲線取自網格上的效用值 這張圖沒有預算線與最適點
+X, Y = np.meshgrid(
+    np.linspace(0.1, 12.0, 300), np.linspace(0.1, 10.0, 300)
+)
+
+cvs = Canvas(x_max=12, y_max=10, x_label="$x$", y_label="$y$")
+# u 的五個百分位數
+cvs.add_utility(
+    model, levels=levels.percentile(model(X, Y), n=5)
+)
+cvs.save("satiation.png")
+```
+
+![極樂點飽和偏好。](../../../assets/utility-viz/agora/models/satiation.svg){ .ev-figure-sm }

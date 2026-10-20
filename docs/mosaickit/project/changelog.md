@@ -6,10 +6,13 @@ seo_title: "Change history"
 
 # Change history
 
-This history lists releases that affect the use of `mosaickit` and
-omits documentation-only changes. Following l3doc convention, each entry
-is tagged where its feature is documented, so its page number points to
-that documentation.
+Release history of `mosaickit`. Documentation-only changes are not
+listed; each entry is tagged where the feature it describes is documented,
+following l3doc convention, so the page number is the real page.
+
+## 0.8.0
+
+- `DashStyle` — `DashStyle` and `ArrowStyle` accept short forms, so a package can use them as its own line and arrow style enums [Styles and colors](../guides/styles.md)
 
 ## 0.5.1
 

@@ -57,7 +57,7 @@ and Theorem 9.2 of [Munkres (1991)](../project/references.md#munkres1991). It is
     $(F_y, -F_x)$ is orthogonal to $\nabla F$.
 
 The tangent $(F_y, -F_x)$ needs no division, so a vertical tangent
-($F_y = 0$) is as easy as any other, although the slope
+($F_y = 0$) needs no special case, although the slope
 $\mathrm{d} y / \mathrm{d} x = -F_x / F_y$ of the graph form is infinite there.
 
 ## Tracing
@@ -91,18 +91,18 @@ value is at least the level $c$.
 
 An edge has a crossing exactly when its two corners differ in being high.
 
-+ *Sample.* Evaluate $F$ on a regular grid of the viewport.
-+ *March.* In each grid cell, find the crossings of its four edges
++ Sample. Evaluate $F$ on a regular grid of the viewport.
++ March. In each grid cell, find the crossings of its four edges
   ([Edge crossing](implicit.md#def-crossing)). A cell with two crossings contributes one line piece. A
   cell with four crossings is a saddle: two opposite corners are high, the
   other two low, and the rule below decides which crossings to join
   ([Saddle cell, centre (a) high, (b) low; filled corners have $F \ge c$.](implicit.md#fig-saddle)).
-+ *Stitch.* Join pieces that share an end point into chains. A chain that
++ Stitch. Join pieces that share an end point into chains. A chain that
   returns to its start is closed; one that reaches the viewport's edge or a
   branch point is open. Disconnected components stay separate paths.
-+ *Simplify.* Reduce each chain with `fit_polyline` at `tolerance`
++ Simplify. Reduce each chain with `fit_polyline` at `tolerance`
   ([Fitting](fitting.md#sec-fitting)), without corner preservation.
-+ *Bend* (with `gradient`). Replace each straight piece by a cubic whose end
++ Bend (with `gradient`). Replace each straight piece by a cubic whose end
   tangents follow the level set ([Tangent of a level set](implicit.md#thm-gradient)), with handles one third of
   the chord long. The cubic is kept only if it stays within `tolerance` of
   the chord; where $\nabla F = 0$ at either end, the piece stays straight.

@@ -143,3 +143,6 @@
   .md-typeset .ev-api__meta { gap: .4em .65em; }
   .md-typeset .ev-api__default { flex-basis: 100%; margin-left: 0; }
 }
+
+/* Column headings of a reference entry with several descriptive columns. */
+.md-typeset .ev-api__label { color: var(--md-default-fg-color--light); font-size: .87em; margin-right: .5em; }
