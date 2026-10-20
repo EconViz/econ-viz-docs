@@ -57,7 +57,7 @@
   },
   "docs/principle-viz/guides/figures.md": {
     "source": "packages/principle-viz/chapters/en/15-figures.typ",
-    "sha256": "73ca999b1085339f48dc8c38cb2a1c3a71c5ea2be54634aefc9c9e4cbd345e76"
+    "sha256": "08d7d46510ec11cc11ce9558cb71dd5a9e6a86b23b86ddff7a2f9b66da2f1c07"
   },
   "docs/principle-viz/cli.md": {
     "source": "packages/principle-viz/chapters/en/16-cli.typ",
@@ -125,7 +125,7 @@
   },
   "docs/zh-TW/principle-viz/guides/figures.md": {
     "source": "packages/principle-viz/chapters/zh-TW/15-figures.typ",
-    "sha256": "4eab227f852cef4337bc501acc6ebc73d9ebda91a66aed8320c41a5d45a1f566"
+    "sha256": "0c4aae5d335323f7224c76fe9e84215f1f91249bacb37a22acdb2eaf32ef6ae8"
   },
   "docs/zh-TW/principle-viz/cli.md": {
     "source": "packages/principle-viz/chapters/zh-TW/16-cli.typ",
@@ -193,7 +193,7 @@
   },
   "docs/zh-CN/principle-viz/guides/figures.md": {
     "source": "packages/principle-viz/chapters/zh-CN/15-figures.typ",
-    "sha256": "dfe75d648f43b5457c132fb513d2a71ddf7089c020a9dcb2e576c431dd02f3de"
+    "sha256": "71120776023144a19c1543267bb2d6a505b9e26589ba2fa5306e2bb9bed1f7da"
   },
   "docs/zh-CN/principle-viz/cli.md": {
     "source": "packages/principle-viz/chapters/zh-CN/16-cli.typ",
