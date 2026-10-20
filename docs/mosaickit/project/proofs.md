@@ -319,12 +319,12 @@ vectors $u, v$, define $u \times v = u_x v_y - u_y v_x$.
 
     Write $r$ for the radius and $\sigma = \delta / 2r \ge 1$ for the
     stretch. Before stretching, the curve consists of: the arc $A_1$ of the
-    circle of centre $(0, \ell + r)$ from angle $-90 degree$ to $0 degree$; the
+    circle of centre $(0, \ell + r)$ from angle $-90 ^\circ$ to $0 ^\circ$; the
     segment $u = r$ from $v = \ell + r$ to $v = m - r$; the arc $A_2$ of centre
-    $(2 r, m - r)$ from $180 degree$ to $90 degree$; the arc $A_3$ of centre
-    $(2 r, m + r)$ from $270 degree$ to $180 degree$; the segment $u = r$ from
+    $(2 r, m - r)$ from $180 ^\circ$ to $90 ^\circ$; the arc $A_3$ of centre
+    $(2 r, m + r)$ from $270 ^\circ$ to $180 ^\circ$; the segment $u = r$ from
     $m + r$ to $h - r$; and the arc $A_4$ of centre $(0, h - r)$ from
-    $0 degree$ to $90 degree$. (When $r = (h - \ell) / 4$ the segments have
+    $0 ^\circ$ to $90 ^\circ$. (When $r = (h - \ell) / 4$ the segments have
     length zero.) It starts at $(0, \ell)$, ends at $(0, h)$, and $A_2$ and
     $A_3$ meet at $(2 r, m)$, which the stretch $(u, v) |\to (\sigma u, v)$
     sends to $(\delta, m)$.
@@ -339,10 +339,10 @@ vectors $u, v$, define $u \times v = u_x v_y - u_y v_x$.
     (iii) Along an arc traversed with increasing angle the direction of
     motion is $(-\sin \theta, \cos \theta)$, and with decreasing angle
     $(\sin \theta, -\cos \theta)$. At the end of $A_1$ ($\theta = 0$) and the start
-    of $A_2$ ($\theta = 180 degree$) both give $(0, 1)$, the direction of the
+    of $A_2$ ($\theta = 180 ^\circ$) both give $(0, 1)$, the direction of the
     segment between them; likewise at the end of $A_3$ and the start of $A_4$.
-    At the tip, $A_2$ arrives with direction $(1, 0)$ ($\theta = 90 degree$)
-    and $A_3$ leaves with $(-1, 0)$ ($\theta = 270 degree$): a cusp. The stretch
+    At the tip, $A_2$ arrives with direction $(1, 0)$ ($\theta = 90 ^\circ$)
+    and $A_3$ leaves with $(-1, 0)$ ($\theta = 270 ^\circ$): a cusp. The stretch
     and the final placement are invertible affine maps, which carry tangent
     directions along and keep them non-zero, so continuity and the cusp
     survive.

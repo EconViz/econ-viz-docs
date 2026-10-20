@@ -18,7 +18,7 @@ callable must accept two `NumPy` arrays and return an array of the
 same shape. The example below uses
 
 $$
-u(x, y) = ln x + ln y.
+u(x, y) = \ln x + \ln y.
 $$
 
 ```python
@@ -45,11 +45,11 @@ cvs.save("custom.png")
 
 <figure class="ev-fig" markdown>
 
-![A custom model $ln x + ln y$](../../assets/utility-viz/agora/models/custom.svg){ .ev-figure-sm }
+![A custom model $\ln x + \ln y$](../../assets/utility-viz/agora/models/custom.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/utility-viz/agora/models/custom.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
-<figcaption markdown>A custom model $ln x + ln y$</figcaption>
+<figcaption markdown>A custom model $\ln x + \ln y$</figcaption>
 
 </figure>
 
@@ -60,7 +60,7 @@ cvs.save("custom.png")
 Cobb-Douglas preferences over $N$ goods:
 
 $$
-u(x_1, ..., x_N) = product_{i=1}^N x_i^{\alpha_i}.
+u(x_1, ..., x_N) = \prod_{i=1}^N x_i^{\alpha_i}.
 $$
 
 `freeze()` fixes every good except $x$ and $y$ and returns a

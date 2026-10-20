@@ -15,7 +15,7 @@ seo_title: "进阶模型"
 接受向量化的 Python 函数，返回的模型可用于 `solve()` 与 `Canvas`。函数须接受两个 `NumPy` 数组，并返回相同形状的效用数组。以下以对数效用为例：
 
 $$
-u(x, y) = ln x + ln y.
+u(x, y) = \ln x + \ln y.
 $$
 
 ```python
@@ -57,7 +57,7 @@ cvs.save("custom.png")
 `MultiGoodCD` 表示 $N$ 种商品的 Cobb-Douglas：
 
 $$
-u(x_1, ..., x_N) = product_{i=1}^N x_i^{\alpha_i}.
+u(x_1, ..., x_N) = \prod_{i=1}^N x_i^{\alpha_i}.
 $$
 
 使用 `freeze()` 固定 $x$、$y$ 以外的商品数量，返回可用于二维 `Canvas` 的 `CustomUtility`。

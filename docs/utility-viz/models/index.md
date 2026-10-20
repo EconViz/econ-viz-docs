@@ -42,7 +42,7 @@ $$
 
 The elasticity of substitution is $\sigma = 1 / (1 - \rho)$. As $\rho$
 changes, CES approaches Cobb-Douglas ($\rho \to 0$), Leontief
-($\rho \to -infinity$) or perfect substitutes ($\rho \to 1$).
+($\rho \to -\infty$) or perfect substitutes ($\rho \to 1$).
 
 ```python
 from utility_viz import Canvas, Config, levels, solve
@@ -79,7 +79,7 @@ A flexible log-quadratic model for smooth preferences
 [Christensen (1975)](../project/references.md#christensen1975):
 
 $$
-\begin{aligned}ln u(x, y) = & \alpha_0 + \alpha_x ln x + \alpha_y ln y \\ & + 1/2 \beta_{x x} (ln x)^2 + 1/2 \beta_{y y} (ln y)^2 + \beta_{x y} ln x ln y.\end{aligned}
+\begin{aligned}\ln u(x, y) = & \alpha_0 + \alpha_x \ln x + \alpha_y \ln y \\ & + 1/2 \beta_{x x} (\ln x)^2 + 1/2 \beta_{y y} (\ln y)^2 + \beta_{x y} \ln x \ln y.\end{aligned}
 $$
 
 The quadratic and interaction terms let the curvature vary across the
@@ -310,7 +310,7 @@ cvs.save("quasi_linear.png")
 The [Haagsma (2012)](../project/references.md#haagsma2012) utility function,
 
 $$
-u(x, y) = \alpha_x ln(x - \gamma_x) - \alpha_y ln(\gamma_y - y).
+u(x, y) = \alpha_x \ln(x - \gamma_x) - \alpha_y \ln(\gamma_y - y).
 $$
 
 It is defined for $x > \gamma_x$ and $0 \le y < \gamma_y$, and requires
