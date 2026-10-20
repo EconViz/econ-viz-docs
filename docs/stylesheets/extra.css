@@ -545,6 +545,7 @@
 .md-typeset figure.ev-fig figcaption {
   margin-top: .5rem;
   text-align: center;
+  font-style: normal;
   font-size: .75rem;
   color: var(--md-default-fg-color--light);
 }
