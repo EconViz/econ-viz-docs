@@ -87,7 +87,7 @@ seo_title: "样式与颜色"
 
 <span id="sec-fonts"></span>
 
-文字由 `glyphkit` 依字体文件排版。三種通用字体指向字体文件：`"sans"`（默认）、`"serif"` 与 `"mono"`。MosaicKit 默认用 DejaVu Sans、DejaVu Serif 与 DejaVu Sans Mono，也就是 Matplotlib 附的文件。它**不会搜索系统字体**，其他字体一律要自己给文件。
+文字由 `glyphkit` 依字体文件排版。三种通用字体指向字体文件：`"sans"`（默认）、`"serif"` 与 `"mono"`。MosaicKit 默认用 DejaVu Sans、DejaVu Serif 与 DejaVu Sans Mono，也就是 Matplotlib 附的文件。它*不会搜索系统字体*，其他字体一律要自己给文件。
 
 <!-- api: agora.mosaickit.guides_styles_9 -->
 

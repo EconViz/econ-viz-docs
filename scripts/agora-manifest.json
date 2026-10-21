@@ -293,7 +293,7 @@
   },
   "docs/zh-TW/mosaickit/guides/styles.md": {
     "source": "packages/mosaickit/chapters/zh-TW/09-styles.typ",
-    "sha256": "37ad069460306d95696c3d2f3ce011e15b96f6221749820fbdaa130dd7546595"
+    "sha256": "ddabb85b76981c71103902fa5cfc1efccb6bd97747c08844b6a09422695e45fe"
   },
   "docs/zh-TW/mosaickit/guides/themes.md": {
     "source": "packages/mosaickit/chapters/zh-TW/10-themes.typ",
@@ -349,7 +349,7 @@
   },
   "docs/zh-CN/mosaickit/guides/styles.md": {
     "source": "packages/mosaickit/chapters/zh-CN/09-styles.typ",
-    "sha256": "b76fa1622288ecd354c71367b4058412b400854297d510d74a16cb8f4728c7fe"
+    "sha256": "83fd801756ecd6010b994dca99bfe4e242acf46e712382113b3c8b3eb63a804c"
   },
   "docs/zh-CN/mosaickit/guides/themes.md": {
     "source": "packages/mosaickit/chapters/zh-CN/10-themes.typ",
