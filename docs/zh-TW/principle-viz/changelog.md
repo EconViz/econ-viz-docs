@@ -8,6 +8,10 @@ seo_title: "更新紀錄"
 
 本章列出影響套件使用的版本變更，包含以 `principle-econ` 名稱發布的版本，不含僅修改文件的版本；各條目依 l3doc 慣例標註於它所描述的功能旁，頁碼即該功能的實際頁碼。
 
+## 0.11.0
+
+- `PlotTheme` — 新增 `font`、`fonts`、`math_font` 與 `font_roles` [圖形](guides/figures.md)
+
 ## 0.10.1
 
 - CI 測試 Python 3.10–3.13 [簡介](guides/introduction.md)

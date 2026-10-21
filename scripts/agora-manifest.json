@@ -57,7 +57,7 @@
   },
   "docs/principle-viz/guides/figures.md": {
     "source": "packages/principle-viz/chapters/en/15-figures.typ",
-    "sha256": "08d7d46510ec11cc11ce9558cb71dd5a9e6a86b23b86ddff7a2f9b66da2f1c07"
+    "sha256": "6f14afc6b491741bd4815fec3311c2ba6ee09eeea7ddba75b6eaf3eda058e687"
   },
   "docs/principle-viz/cli.md": {
     "source": "packages/principle-viz/chapters/en/16-cli.typ",
@@ -125,7 +125,7 @@
   },
   "docs/zh-TW/principle-viz/guides/figures.md": {
     "source": "packages/principle-viz/chapters/zh-TW/15-figures.typ",
-    "sha256": "0c4aae5d335323f7224c76fe9e84215f1f91249bacb37a22acdb2eaf32ef6ae8"
+    "sha256": "2ca3d81db378ed9f85cde3f33e5ef157c7cf96c04302379df4884e180208dc02"
   },
   "docs/zh-TW/principle-viz/cli.md": {
     "source": "packages/principle-viz/chapters/zh-TW/16-cli.typ",
@@ -193,7 +193,7 @@
   },
   "docs/zh-CN/principle-viz/guides/figures.md": {
     "source": "packages/principle-viz/chapters/zh-CN/15-figures.typ",
-    "sha256": "71120776023144a19c1543267bb2d6a505b9e26589ba2fa5306e2bb9bed1f7da"
+    "sha256": "f8596b4dc345467b3223e4bc4a9fc07b26d80b712b05c76c77adff4e1d329784"
   },
   "docs/zh-CN/principle-viz/cli.md": {
     "source": "packages/principle-viz/chapters/zh-CN/16-cli.typ",
@@ -237,11 +237,11 @@
   },
   "docs/mosaickit/guides/styles.md": {
     "source": "packages/mosaickit/chapters/en/09-styles.typ",
-    "sha256": "6203f8e972c0ba31dfec65b3cc4d602d283254731ae60b810f773968934581ab"
+    "sha256": "a07a6944e99dd35bbe3027b7ca9b09d38828cd90321c68893214457021061c5b"
   },
   "docs/mosaickit/guides/themes.md": {
     "source": "packages/mosaickit/chapters/en/10-themes.typ",
-    "sha256": "5e62e278b2b50c64ec3738f4edf815cc240913b1ce87dfb22a5fbc4018e887a5"
+    "sha256": "70e0ab475bcde9699637f992461e8a4a2554bb638b26f80719056a49fadacee7"
   },
   "docs/mosaickit/guides/parameters.md": {
     "source": "packages/mosaickit/chapters/en/11-parameters.typ",
@@ -293,11 +293,11 @@
   },
   "docs/zh-TW/mosaickit/guides/styles.md": {
     "source": "packages/mosaickit/chapters/zh-TW/09-styles.typ",
-    "sha256": "2bec1c35a4acdda3f1e1954840f83dc8af0ce512e981de1d5f89db0a998254f6"
+    "sha256": "ddabb85b76981c71103902fa5cfc1efccb6bd97747c08844b6a09422695e45fe"
   },
   "docs/zh-TW/mosaickit/guides/themes.md": {
     "source": "packages/mosaickit/chapters/zh-TW/10-themes.typ",
-    "sha256": "bae59283398bb54a21d699a69cc862d772e12452bb36174467e207cc69b6079e"
+    "sha256": "2aba58f1319d2ddc96480e60429c3ca07171d7381d166d5d1ff3ca1c3efa4b72"
   },
   "docs/zh-TW/mosaickit/guides/parameters.md": {
     "source": "packages/mosaickit/chapters/zh-TW/11-parameters.typ",
@@ -349,11 +349,11 @@
   },
   "docs/zh-CN/mosaickit/guides/styles.md": {
     "source": "packages/mosaickit/chapters/zh-CN/09-styles.typ",
-    "sha256": "4cb80fc0f450907b9c33339870358054d0d49452bd724d9832ae86e81fef6064"
+    "sha256": "83fd801756ecd6010b994dca99bfe4e242acf46e712382113b3c8b3eb63a804c"
   },
   "docs/zh-CN/mosaickit/guides/themes.md": {
     "source": "packages/mosaickit/chapters/zh-CN/10-themes.typ",
-    "sha256": "c6d5d88d069ae07088cf9273f6fe142f90c3ab6a675c6e0f8599af0d6afe2f21"
+    "sha256": "236fda6645587ec5bb1652fa23e2791e5863fb08cb193910d6492481039db382"
   },
   "docs/zh-CN/mosaickit/guides/parameters.md": {
     "source": "packages/mosaickit/chapters/zh-CN/11-parameters.typ",
@@ -385,7 +385,7 @@
   },
   "docs/utility-viz/guides/canvas.md": {
     "source": "packages/utility-viz/chapters/en/04-canvas.typ",
-    "sha256": "cb8feec87adab8df0544a56d93ac7ce9439f7f78483ae00d3e89e6ea8dc6019c"
+    "sha256": "889e9bc37eb254c1ccc5fd5ba15dc73c869ae46172b341443f953d6b20c14b06"
   },
   "docs/utility-viz/guides/consumer.md": {
     "source": "packages/utility-viz/chapters/en/05-figures.typ",
@@ -405,7 +405,7 @@
   },
   "docs/utility-viz/guides/themes.md": {
     "source": "packages/utility-viz/chapters/en/09-themes.typ",
-    "sha256": "3acdb1c5109e5f2e168eaa91c529cd7a124ebd68e14d85a16dea78e9665e57ca"
+    "sha256": "92200907bfe73d7b5a488fcefaf00bace81d52d8538753779bc1d740401ed681"
   },
   "docs/utility-viz/guides/export.md": {
     "source": "packages/utility-viz/chapters/en/10-export.typ",
@@ -445,7 +445,7 @@
   },
   "docs/zh-TW/utility-viz/guides/canvas.md": {
     "source": "packages/utility-viz/chapters/zh-TW/04-canvas.typ",
-    "sha256": "39f375e308a2b53d5e0fa788dd4467f39b01567f2cf8361f11dbafbd74593b90"
+    "sha256": "1bc8facc15877a6e3f19f748fb030e7240d7c0006e136221094df4f5a4570322"
   },
   "docs/zh-TW/utility-viz/guides/consumer.md": {
     "source": "packages/utility-viz/chapters/zh-TW/05-figures.typ",
@@ -465,7 +465,7 @@
   },
   "docs/zh-TW/utility-viz/guides/themes.md": {
     "source": "packages/utility-viz/chapters/zh-TW/09-themes.typ",
-    "sha256": "c6ec595e6e5763a48cc38249a80e7a01239dddb96a673271a9c5950d5f49e1a9"
+    "sha256": "e4f130fa605223762a7ecad3949b29040532e64cc77dcc73744c4303752689d0"
   },
   "docs/zh-TW/utility-viz/guides/export.md": {
     "source": "packages/utility-viz/chapters/zh-TW/10-export.typ",
@@ -505,7 +505,7 @@
   },
   "docs/zh-CN/utility-viz/guides/canvas.md": {
     "source": "packages/utility-viz/chapters/zh-CN/04-canvas.typ",
-    "sha256": "5723ab450710534acd448ddb16b514bdab6088f96fe619a100de9d572e68cf3b"
+    "sha256": "b832c67acd079c94caaa53633ee1cfe3b75dea8d2338e0c94ef849fc8dac6361"
   },
   "docs/zh-CN/utility-viz/guides/consumer.md": {
     "source": "packages/utility-viz/chapters/zh-CN/05-figures.typ",
@@ -525,7 +525,7 @@
   },
   "docs/zh-CN/utility-viz/guides/themes.md": {
     "source": "packages/utility-viz/chapters/zh-CN/09-themes.typ",
-    "sha256": "81e9e4f002cb86f5cf1287af3729a0512c6185292f814f6c3abb9bcb98c66dc9"
+    "sha256": "f5d3526d68dd15f641407affd6dcefbcd197a739286709d283524216a8759ba5"
   },
   "docs/zh-CN/utility-viz/guides/export.md": {
     "source": "packages/utility-viz/chapters/zh-CN/10-export.typ",

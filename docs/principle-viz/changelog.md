@@ -11,6 +11,10 @@ Release history of `principle-viz`, including its releases as
 tagged where the feature it describes is documented, following l3doc
 convention, so the page number is the real page.
 
+## 0.11.0
+
+- `PlotTheme` — New `font`, `fonts`, `math_font` and `font_roles` [Figures](guides/figures.md)
+
 ## 0.10.1
 
 - CI tests Python 3.10--3.13 [Introduction](guides/introduction.md)

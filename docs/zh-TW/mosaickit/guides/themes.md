@@ -105,7 +105,7 @@ mytheme = Theme("mypkg", {**default.roles, **roles})
 
 <!-- api: agora.mosaickit.guides_themes_5 -->
 
-新畫布的執行期預設值：主題、規格、繪製器（名稱或 `Renderer`）、在主題之後套用的角色覆寫（[解析順序](themes.md#thm-resolution)中的 $G$），以及色盤。
+新畫布的執行期預設值：主題、規格、繪製器（名稱或 `Renderer`）、在主題之後套用的角色覆寫（[解析順序](themes.md#thm-resolution)中的 $G$），以及色盤。`math_font` 是 `MathFont`，`fonts` 是 `TextFonts`（[字型](styles.md#sec-fonts)）。
 
 <!-- api: agora.mosaickit.guides_themes_6 -->
 
@@ -113,7 +113,7 @@ mytheme = Theme("mypkg", {**default.roles, **roles})
 
 <!-- api: agora.mosaickit.guides_themes_7 -->
 
-讀取嚴格的 TOML 設定。最上層的鍵為 `theme`（只能是 `"default"`；自訂主題須在 Python 中傳入）、`canvas`（`CanvasSpec` 的欄位）、`renderer`（只能是 `"matplotlib"`）、`palette` 與 `styles`。其他鍵、未知的樣式、錯誤的值或無法讀取的檔案，都引發指明檔案與鍵的 `ConfigurationError`。
+讀取嚴格的 TOML 設定。最上層的鍵為 `theme`（只能是 `"default"`；自訂主題須在 Python 中傳入）、`canvas`（`CanvasSpec` 的欄位）、`renderer`（只能是 `"matplotlib"`）、`palette`、`styles`、`math`（`font` 為數學字型的路徑，另有 `italic`）與 `fonts`（`sans`、`serif`、`mono`，各是一份字型檔清單）。相對路徑以設定檔所在資料夾為準。其他鍵、未知的樣式、錯誤的值或無法讀取的檔案，都引發指明檔案與鍵的 `ConfigurationError`。
 
 ```toml
 [canvas]

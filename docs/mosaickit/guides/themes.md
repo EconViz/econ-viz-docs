@@ -139,7 +139,7 @@ mytheme = Theme("mypkg", {**default.roles, **roles})
 
 Runtime defaults for new canvases: the theme, the specification, the
 renderer (a name or a `Renderer`), role overrides applied after the theme
-($G$ in [Resolution order](themes.md#thm-resolution)) and the palette.
+($G$ in [Resolution order](themes.md#thm-resolution)) and the palette. `math_font` is a `MathFont` and `fonts` a `TextFonts` ([Fonts](styles.md#sec-fonts)).
 
 <!-- api: agora.mosaickit.guides_themes_6 -->
 
@@ -151,7 +151,7 @@ own configuration. Arguments passed to `Canvas` always take precedence.
 
 Reads a strict TOML configuration. Top-level keys are `theme` (only
 `"default"`; custom themes are passed in Python), `canvas` (fields of
-`CanvasSpec`), `renderer` (only `"matplotlib"`), `palette` and `styles`.
+`CanvasSpec`), `renderer` (only `"matplotlib"`), `palette`, `styles`, `math` (`font`, the path of a math font, and `italic`) and `fonts` (`sans`, `serif` and `mono`, each a list of font files). A relative path is read from the folder of the file.
 Any other key, unknown style, bad value or unreadable file raises
 `ConfigurationError` naming the file and the key.
 

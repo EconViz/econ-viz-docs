@@ -8,6 +8,21 @@ seo_title: "更新记录"
 
 本章列出影响软件包使用的版本变更，不列仅修改文档的版本。按照 l3doc 惯例，每个条目都标注在它所描述的功能旁，因此所列页码就是该功能的实际页码。
 
+## 0.9.2
+
+- `TikZ` — `font` 对应到 TeX 字体家族 [样式与颜色](../guides/styles.md)
+
+## 0.9.1
+
+- `TextStyle` — 新增 `font` 字段；`family` 弃用 [样式与颜色](../guides/styles.md)
+- `TextFonts` — 新增 `serif` 与 `mono`；默认为 DejaVu [样式与颜色](../guides/styles.md)
+
+## 0.9.0
+
+- `TextStyle` — `weight` 不再弃用 [样式与颜色](../guides/styles.md)
+- `TextFonts` — 新增；sans 接一个文件列表 [样式与颜色](../guides/styles.md)
+- `Config` — 新增 `Config.math_font` 与 `Config.fonts` [主题与配置](../guides/themes.md)
+
 ## 0.8.0
 
 - `DashStyle` — `DashStyle` 与 `ArrowStyle` 接受简写，让其他包可直接当作自己的线型与箭头枚举 [样式与颜色](../guides/styles.md)

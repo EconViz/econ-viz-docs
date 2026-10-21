@@ -8,6 +8,21 @@ seo_title: "更新紀錄"
 
 本章列出影響套件使用的版本變更，不列僅修改文件的版本。依 l3doc 慣例，每個條目都標註在它所描述的功能旁，因此所列頁碼就是該功能的實際頁碼。
 
+## 0.9.2
+
+- `TikZ` — `font` 對應到 TeX 字型家族 [樣式與顏色](../guides/styles.md)
+
+## 0.9.1
+
+- `TextStyle` — 新增 `font` 欄位；`family` 棄用 [樣式與顏色](../guides/styles.md)
+- `TextFonts` — 新增 `serif` 與 `mono`；預設為 DejaVu [樣式與顏色](../guides/styles.md)
+
+## 0.9.0
+
+- `TextStyle` — `weight` 不再棄用 [樣式與顏色](../guides/styles.md)
+- `TextFonts` — 新增；sans 接一份檔案清單 [樣式與顏色](../guides/styles.md)
+- `Config` — 新增 `Config.math_font` 與 `Config.fonts` [主題與設定](../guides/themes.md)
+
 ## 0.8.0
 
 - `DashStyle` — `DashStyle` 與 `ArrowStyle` 接受簡寫，讓其他套件可直接當作自己的線型與箭頭列舉 [樣式與顏色](../guides/styles.md)

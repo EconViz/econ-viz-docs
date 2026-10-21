@@ -2374,30 +2374,46 @@
     "name": "TextStyle",
     "anchor": "mosaickit-guides-styles-8",
     "signatures": [
-      "TextStyle(\n    color=None,\n    size=None,\n    family=None,\n    weight=None,\n    opacity=None,\n    rotation=None\n)"
+      "TextStyle(\n    color=None,\n    size=None,\n    font=None,\n    weight=None,\n    opacity=None,\n    rotation=None\n)"
     ],
     "parameters": []
   },
   "agora.mosaickit.guides_styles_9": {
-    "name": "LegendStyle",
+    "name": "TextFonts",
     "anchor": "mosaickit-guides-styles-9",
+    "signatures": [
+      "TextFonts(\n    sans=None,\n    serif=None,\n    mono=None\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_styles_10": {
+    "name": "MathFont",
+    "anchor": "mosaickit-guides-styles-10",
+    "signatures": [
+      "MathFont(path, italic=True)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_styles_11": {
+    "name": "LegendStyle",
+    "anchor": "mosaickit-guides-styles-11",
     "signatures": [
       "LegendStyle(\n    visible=None,\n    location=None,\n    frame=None,\n    size=None\n)"
     ],
     "parameters": []
   },
-  "agora.mosaickit.guides_styles_10": {
+  "agora.mosaickit.guides_styles_12": {
     "name": "Color",
-    "anchor": "mosaickit-guides-styles-10",
+    "anchor": "mosaickit-guides-styles-12",
     "signatures": [
       "Color(\n    red,\n    green,\n    blue,\n    alpha=1.0\n)",
       "Color.from_hex(\"#RGB\" | \"#RRGGBB\" | \"#RRGGBBAA\")"
     ],
     "parameters": []
   },
-  "agora.mosaickit.guides_styles_11": {
+  "agora.mosaickit.guides_styles_13": {
     "name": "Palette",
-    "anchor": "mosaickit-guides-styles-11",
+    "anchor": "mosaickit-guides-styles-13",
     "signatures": [
       "Palette(name, colors)"
     ],
@@ -2439,7 +2455,7 @@
     "name": "Config",
     "anchor": "mosaickit-guides-themes-5",
     "signatures": [
-      "Config(\n    theme=default,\n    canvas_spec=CanvasSpec(),\n    renderer=\"matplotlib\",\n    role_overrides={},\n    palette=DEFAULT_PALETTE\n)"
+      "Config(\n    theme=default,\n    canvas_spec=CanvasSpec(),\n    renderer=\"matplotlib\",\n    role_overrides={},\n    palette=DEFAULT_PALETTE,\n    math_font=None,\n    fonts=None\n)"
     ],
     "parameters": []
   },
@@ -2803,24 +2819,36 @@
       {
         "name": "font",
         "types": [
-          "str | list"
+          "str"
         ],
         "description": {
-          "en": "Font for all text, or a list of candidate fonts. It applies to this canvas\nonly and leaves `matplotlib`'s global configuration alone.",
-          "zh-TW": "所有文字使用的字型，或候選字型清單。此項設定僅作用於指定畫布，不會更動 `matplotlib` 的全域設定。",
-          "zh-CN": "所有文字使用的字体，或候选字体列表。此项设置仅作用于指定画布，不会改变 `matplotlib` 的全局设置。"
+          "en": "Generic font for all text: `\"sans\"` (the default), `\"serif\"` or `\"mono\"`.\nAn installed family name such as `\"Arial\"` is an error; pass `fonts` instead.",
+          "zh-TW": "所有文字使用的通用字型：`\"sans\"`（預設）、`\"serif\"` 或 `\"mono\"`。已安裝的字型名稱（如 `\"Arial\"`）會報錯，請改用 `fonts`。",
+          "zh-CN": "所有文字使用的通用字体：`\"sans\"`（默认）、`\"serif\"` 或 `\"mono\"`。已安装的字体名称（如 `\"Arial\"`）会报错，请改用 `fonts`。"
+        },
+        "default": "None"
+      },
+      {
+        "name": "fonts",
+        "types": [
+          "TextFonts"
+        ],
+        "description": {
+          "en": "Font files that replace the generic fonts, such as\n`TextFonts(serif=\"MyFont-Regular.otf\")`. A slot takes one file or a list of\nfiles (regular, bold and so on); the slots you leave out keep the DejaVu\ndefaults. Nothing searches the system for fonts, so pass the paths.",
+          "zh-TW": "取代通用字型的字型檔，如 `TextFonts(serif=\"MyFont-Regular.otf\")`。每個欄位可給一個檔案或檔案清單（一般、粗體等）；沒給的欄位沿用 DejaVu 預設。系統字型不會被搜尋，請直接給路徑。",
+          "zh-CN": "取代通用字体的字体文件，如 `TextFonts(serif=\"MyFont-Regular.otf\")`。每个字段可给一个文件或文件列表（常规、粗体等）；没给的字段沿用 DejaVu 默认。系统字体不会被搜索，请直接给路径。"
         },
         "default": "None"
       },
       {
         "name": "math_font",
         "types": [
-          "str"
+          "MathFont | str"
         ],
         "description": {
-          "en": "`matplotlib` math font set: `dejavusans`, `dejavuserif`, `cm`,\n`stix`, `stixsans` and so on.",
-          "zh-TW": "`matplotlib` 的數學字型：`dejavusans`、`dejavuserif`、`cm`、`stix` 或 `stixsans` 等。",
-          "zh-CN": "`matplotlib` 的数学字体：`dejavusans`、`dejavuserif`、`cm`、`stix` 或 `stixsans` 等。"
+          "en": "An OpenType math font, or the path of its file, such as STIX Two Math. It\nsets math through `glyphkit`. Without it `matplotlib` sets math.\nThe old font set names (`stix`, `cm`, `dejavusans`) are errors.",
+          "zh-TW": "OpenType 數學字型或其檔案路徑，如 STIX Two Math，經由 `glyphkit` 排版數學式。未設定時由 `matplotlib` 排版。舊的字型組名稱（`stix`、`cm`、`dejavusans`）會報錯。",
+          "zh-CN": "OpenType 数学字体或其文件路径，如 STIX Two Math，经由 `glyphkit` 排版数学式。未设置时由 `matplotlib` 排版。旧的字体组名称（`stix`、`cm`、`dejavusans`）会报错。"
         },
         "default": "None"
       },

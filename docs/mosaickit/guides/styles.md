@@ -94,11 +94,73 @@ square points (36 is a 6 pt disc). `shape` is a Matplotlib marker such as
 
 <!-- api: agora.mosaickit.guides_styles_8 -->
 
-Text styles. `size` is in points, `family` is a font-family name, `weight`
-may be a value such as `"bold"`, and `rotation` is in degrees
-counter-clockwise.
+Text styles. `size` is in points, `font` is a generic font (`"sans"`,
+`"serif"` or `"mono"`, [Fonts](styles.md#sec-fonts)), `weight` is an integer from 1 to 1000,
+`"normal"` or `"bold"`, and `rotation` is in degrees counter-clockwise.
+`family`, a font-family name, still works but is deprecated: it draws
+through Matplotlib and ignores `glyphkit`. It will go in 1.0.
+
+## Fonts
+
+<span id="sec-fonts"></span>
+
+Text is set by `glyphkit` from font files. Three generic fonts name
+them: `"sans"` (the default), `"serif"` and `"mono"`. MosaicKit starts with
+DejaVu Sans, DejaVu Serif and DejaVu Sans Mono, the files Matplotlib ships.
+It never searches the system for fonts, so any other face is a file you pass.
 
 <!-- api: agora.mosaickit.guides_styles_9 -->
+
+Font files that replace the generic fonts. Each slot takes one file or a
+list; list every face it needs, such as a regular and a bold file. A style's
+`weight` picks the nearest listed face, and the order of the files is the
+order tried for a character the first one lacks. The slots you leave out
+keep the DejaVu defaults.
+
+<!-- api: agora.mosaickit.guides_styles_10 -->
+
+An OpenType math font such as STIX Two Math, Libertinus Math or Fira Math.
+The file needs a `MATH` table. `italic` sets single Latin and lowercase
+Greek letters in the italic alphabet, as TeX does. Without a math font,
+math in `$...$` is set by Matplotlib.
+
+```python
+from mosaickit import (
+    Canvas,
+    CanvasSpec,
+    Config,
+    MathFont,
+    TextFonts,
+    TextLayer,
+    TextStyle,
+    use_config,
+)
+
+fonts = TextFonts(
+    serif=[
+        "fonts/Pagella-Regular.otf",
+        "fonts/Pagella-Bold.otf",
+    ]
+)
+config = Config(
+    fonts=fonts, math_font=MathFont("fonts/Pagella-Math.otf")
+)
+
+with use_config(config):
+    canvas = Canvas(CanvasSpec(x_range=(0, 1), y_range=(0, 1)))
+    canvas.add(
+        TextLayer(
+            (0.5, 0.5),
+            "$u = x^{0.5}$",
+            style=TextStyle(font="serif"),
+        )
+    )
+```
+
+The TikZ renderer maps `sans`, `serif` and `mono` to `\sffamily`, `\rmfamily`
+and `\ttfamily`.
+
+<!-- api: agora.mosaickit.guides_styles_11 -->
 
 Legend styles, including a Matplotlib location such as `"best"` or
 `"upper right"`, a frame setting and the font size.
@@ -118,7 +180,7 @@ be finite and non-negative, opacities in $[0, 1]$, rotation finite.
 
 ## Colors
 
-<!-- api: agora.mosaickit.guides_styles_10 -->
+<!-- api: agora.mosaickit.guides_styles_12 -->
 
 An immutable RGBA color with channels in $[0, 1]$. `channels` returns the
 four values, `from_channels()` builds one, and
@@ -139,7 +201,7 @@ at once) or any other string, which is kept as a _palette name_.
 
 ## Palettes
 
-<!-- api: agora.mosaickit.guides_styles_11 -->
+<!-- api: agora.mosaickit.guides_styles_13 -->
 
 A named table of colors. Values may be `Color`s or hex strings.
 `palette[name]` looks up a color and raises `ConfigurationError`, naming

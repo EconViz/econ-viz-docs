@@ -10,6 +10,21 @@ Release history of `mosaickit`. Documentation-only changes are not
 listed; each entry is tagged where the feature it describes is documented,
 following l3doc convention, so the page number is the real page.
 
+## 0.9.2
+
+- `TikZ` — `font` maps to the TeX font families [Styles and colors](../guides/styles.md)
+
+## 0.9.1
+
+- `TextStyle` — New `font` field; `family` is deprecated [Styles and colors](../guides/styles.md)
+- `TextFonts` — `serif` and `mono` slots; defaults to DejaVu [Styles and colors](../guides/styles.md)
+
+## 0.9.0
+
+- `TextStyle` — `weight` is no longer deprecated [Styles and colors](../guides/styles.md)
+- `TextFonts` — Added; one list of files for sans [Styles and colors](../guides/styles.md)
+- `Config` — `Config.math_font` and `Config.fonts` added [Themes and configuration](../guides/themes.md)
+
 ## 0.8.0
 
 - `DashStyle` — `DashStyle` and `ArrowStyle` accept short forms, so a package can use them as its own line and arrow style enums [Styles and colors](../guides/styles.md)
