@@ -81,9 +81,58 @@ seo_title: "样式与颜色"
 
 <!-- api: agora.mosaickit.guides_styles_8 -->
 
-文字。`size` 以点为单位，`family` 为字体家族名称，`weight` 例如 `"bold"`，`rotation` 为逆时针角度（度）。
+文字样式。`size` 以點为单位，`font` 是通用字体（`"sans"`、`"serif"` 或 `"mono"`，见[字体](styles.md#sec-fonts)），`weight` 是 1 到 1000 的整数、`"normal"` 或 `"bold"`，`rotation` 为逆时针旋转的角度（度）。`family`（字体家族名称）仍可用但已弃用：它走 Matplotlib 绘制，不经过 `glyphkit`，1.0 会移除。
+
+## 字体
+
+<span id="sec-fonts"></span>
+
+文字由 `glyphkit` 依字体文件排版。三種通用字体指向字体文件：`"sans"`（默认）、`"serif"` 与 `"mono"`。MosaicKit 默认用 DejaVu Sans、DejaVu Serif 与 DejaVu Sans Mono，也就是 Matplotlib 附的文件。它**不会搜索系统字体**，其他字体一律要自己给文件。
 
 <!-- api: agora.mosaickit.guides_styles_9 -->
+
+取代通用字体的字体文件。每个字段可给一个文件或一个列表；需要的字面都要列出，例如常规与粗体两个文件。样式的 `weight` 会选最接近的字面，文件顺序则是第一个文件缺字时依次尝试的顺序。没给的字段沿用 DejaVu 默认。
+
+<!-- api: agora.mosaickit.guides_styles_10 -->
+
+OpenType 数学字体，如 STIX Two Math、Libertinus Math 或 Fira Math，文件要有 `MATH` 表。`italic` 让单个拉丁字母与小写希腊字母用斜体字母表，和 TeX 一樣。没有数学字体时，`$...$` 内的数学式由 Matplotlib 排版。
+
+```python
+from mosaickit import (
+    Canvas,
+    CanvasSpec,
+    Config,
+    MathFont,
+    TextFonts,
+    TextLayer,
+    TextStyle,
+    use_config,
+)
+
+fonts = TextFonts(
+    serif=[
+        "fonts/Pagella-Regular.otf",
+        "fonts/Pagella-Bold.otf",
+    ]
+)
+config = Config(
+    fonts=fonts, math_font=MathFont("fonts/Pagella-Math.otf")
+)
+
+with use_config(config):
+    canvas = Canvas(CanvasSpec(x_range=(0, 1), y_range=(0, 1)))
+    canvas.add(
+        TextLayer(
+            (0.5, 0.5),
+            "$u = x^{0.5}$",
+            style=TextStyle(font="serif"),
+        )
+    )
+```
+
+TikZ 渲染器把 `sans`、`serif`、`mono` 对应到 `\sffamily`、`\rmfamily` 与 `\ttfamily`。
+
+<!-- api: agora.mosaickit.guides_styles_11 -->
 
 图例：Matplotlib 的位置名称，例如 `"best"` 或 `"upper right"`、外框，以及字号。
 
@@ -101,7 +150,7 @@ seo_title: "样式与颜色"
 
 ## 颜色
 
-<!-- api: agora.mosaickit.guides_styles_10 -->
+<!-- api: agora.mosaickit.guides_styles_12 -->
 
 不可变的 RGBA 颜色，各通道在 $[0, 1]$ 内。`channels` 返回四个值，`from_channels()` 创建颜色，`to_hex(include_alpha=None)` 写出 `#RRGGBB`，当 `include_alpha` 为真、或默认情况下 alpha 不为 1 时加上 `AA`。`TRANSPARENT` 为 `Color(0, 0, 0, 0)`。
 
@@ -115,7 +164,7 @@ seo_title: "样式与颜色"
 
 ## 调色板
 
-<!-- api: agora.mosaickit.guides_styles_11 -->
+<!-- api: agora.mosaickit.guides_styles_13 -->
 
 命名的颜色表。值可以是 `Color` 或十六进制字符串；`palette[name]` 查询颜色，名称不存在时引发指出该调色板的 `ConfigurationError`，`name in palette` 检查名称是否存在。
 

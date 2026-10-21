@@ -261,7 +261,7 @@ cvs.save("show_save.png")
 `LineStyle` 就是 MosaicKit 的 `DashStyle`，沿用旧名称。
 
 ```python
-import matplotlib.pyplot as plt
+from mosaickit import CanvasGrid
 
 from utility_viz import Canvas, Config, LineStyle
 
@@ -275,24 +275,21 @@ styles = [
     LineStyle.DASHDOT,
 ]
 titles = ["实线", "虚线", "点线", "点划线"]
-
-fig, axes = plt.subplots(1, 4, figsize=(7.6, 2.0))
-for ax, style, title in zip(axes, styles, titles):
+panels = [
     Canvas(
         title=title,
         x_label="$x$",
         y_label="$y$",
+        x_label_pos="bottom",
         x_line_style=style,
         y_line_style=style,
-        # 使用有中文字形的字体
-        font="Noto Serif SC",
-        fig=fig,
-        ax=ax,
     )
-
-# 预留轴标签的空间
-fig.subplots_adjust(wspace=0.62)
-fig.savefig("line_styles.png", dpi=160)
+    for style, title in zip(styles, titles)
+]
+for panel in panels:
+    # 小画布
+    panel.spec = panel.spec.replace(width=2.2, height=2.0)
+CanvasGrid([panels]).save("line_styles.png")
 ```
 
 <span id="fig-line-styles"></span>
@@ -315,7 +312,7 @@ fig.savefig("line_styles.png", dpi=160)
 `ArrowStyle` 是 MosaicKit 的；`SIMPLE` 即 `OPEN`，仍接受 `"->"` 与 `"-|>"`。
 
 ```python
-import matplotlib.pyplot as plt
+from mosaickit import CanvasGrid
 
 from utility_viz import ArrowStyle, Canvas, Config
 
@@ -329,24 +326,21 @@ styles = [
     ArrowStyle.WEDGE,
 ]
 titles = ["简单", "三角形", "花式", "楔形"]
-
-fig, axes = plt.subplots(1, 4, figsize=(7.6, 2.0))
-for ax, style, title in zip(axes, styles, titles):
+panels = [
     Canvas(
         title=title,
         x_label="$x$",
         y_label="$y$",
+        x_label_pos="bottom",
         x_arrow_style=style,
         y_arrow_style=style,
-        # 使用有中文字形的字体
-        font="Noto Serif SC",
-        fig=fig,
-        ax=ax,
     )
-
-# 预留轴标签的空间
-fig.subplots_adjust(wspace=0.62)
-fig.savefig("arrow_styles.png", dpi=160)
+    for style, title in zip(styles, titles)
+]
+for panel in panels:
+    # 小画布
+    panel.spec = panel.spec.replace(width=2.2, height=2.0)
+CanvasGrid([panels]).save("arrow_styles.png")
 ```
 
 <span id="fig-arrow-styles"></span>

@@ -271,7 +271,7 @@ the enum or the matching string; other lines use `Stroke(style=...)`.
 `LineStyle` is MosaicKit's `DashStyle` under its old name.
 
 ```python
-import matplotlib.pyplot as plt
+from mosaickit import CanvasGrid
 
 from utility_viz import Canvas, Config, LineStyle
 
@@ -284,22 +284,21 @@ styles = [
     LineStyle.DOTTED,
     LineStyle.DASHDOT,
 ]
-
-fig, axes = plt.subplots(1, 4, figsize=(7.6, 2.0))
-for ax, style in zip(axes, styles):
+panels = [
     Canvas(
         title=style.value,
         x_label="$x$",
         y_label="$y$",
+        x_label_pos="bottom",
         x_line_style=style,
         y_line_style=style,
-        fig=fig,
-        ax=ax,
     )
-
-# leave room for axis labels
-fig.subplots_adjust(wspace=0.62)
-fig.savefig("line_styles.png", dpi=160)
+    for style in styles
+]
+for panel in panels:
+    # small panels
+    panel.spec = panel.spec.replace(width=2.2, height=2.0)
+CanvasGrid([panels]).save("line_styles.png")
 ```
 
 <span id="fig-line-styles"></span>
@@ -323,7 +322,7 @@ Four arrowhead styles ([The four arrow styles](canvas.md#fig-arrow-styles)). Axe
 `ArrowStyle` is MosaicKit's; `SIMPLE` is its `OPEN`, and `"->"` and `"-|>"` are still accepted.
 
 ```python
-import matplotlib.pyplot as plt
+from mosaickit import CanvasGrid
 
 from utility_viz import ArrowStyle, Canvas, Config
 
@@ -336,22 +335,21 @@ styles = [
     ArrowStyle.FANCY,
     ArrowStyle.WEDGE,
 ]
-
-fig, axes = plt.subplots(1, 4, figsize=(7.6, 2.0))
-for ax, style in zip(axes, styles):
+panels = [
     Canvas(
-        title=style.name,
+        title=style.value,
         x_label="$x$",
         y_label="$y$",
+        x_label_pos="bottom",
         x_arrow_style=style,
         y_arrow_style=style,
-        fig=fig,
-        ax=ax,
     )
-
-# leave room for axis labels
-fig.subplots_adjust(wspace=0.62)
-fig.savefig("arrow_styles.png", dpi=160)
+    for style in styles
+]
+for panel in panels:
+    # small panels
+    panel.spec = panel.spec.replace(width=2.2, height=2.0)
+CanvasGrid([panels]).save("arrow_styles.png")
 ```
 
 <span id="fig-arrow-styles"></span>

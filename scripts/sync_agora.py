@@ -460,6 +460,30 @@ class Converter:
         raise ValueError(f'Unsupported macro #{name} in {self.package}/{self.locale}/{self.destination}')
 
 
+def font_files(edition:str)->dict[str,Path]:
+    """The font files manual.toml names, from the TeX distribution, for the examples zip.
+
+    TeX Gyre Pagella (GUST Font License) is copied beside manual.toml. The Chinese editions also
+    name Noto Serif, which is large and stays out of the zip; FONTS.txt says where to get it.
+    """
+    import subprocess
+    try:
+        texmf=Path(subprocess.run(['kpsewhich','-var-value','TEXMFDIST'],capture_output=True,text=True,check=True).stdout.strip())
+    except (OSError,subprocess.CalledProcessError):
+        return {}
+    gyre=texmf/'fonts/opentype/public'
+    names={'tex-gyre':['regular','italic','bold','bolditalic'],'tex-gyre-math':['math']}
+    found={f"texgyrepagella-{name}.otf":gyre/folder/f'texgyrepagella-{name}.otf' for folder,styles in names.items() for name in styles}
+    found={name:path for name,path in found.items() if path.exists()}
+    notice=['TeX Gyre Pagella: GUST Font License, https://www.gust.org.pl/projects/e-foundry/licenses']
+    if edition!='en':
+        notice.append('Noto Serif TC and SC: SIL Open Font License, https://fonts.google.com/noto (put the files beside manual.toml)')
+    notice_path=ROOT/'build'/'FONTS.txt'
+    notice_path.parent.mkdir(exist_ok=True); notice_path.write_text('\n'.join(notice)+'\n')
+    found['FONTS.txt']=notice_path
+    return found
+
+
 def build_example_zips(agora:Path)->None:
     """One zip per language: the figure scripts sorted into folders by topic, with the settings file they load."""
     import zipfile
@@ -468,6 +492,7 @@ def build_example_zips(agora:Path)->None:
     for edition in LANGS:
         suffix='' if edition=='en' else '.'+edition
         files={'manual.toml':package/'config'/('manual.toml' if edition=='en' else f'manual.{edition}.toml')}
+        files.update(font_files(edition))
         for script in sorted((package/'figures').rglob('*.py')):
             parts=script.name[:-3].split('.')
             wanted=parts[-1]==edition if edition!='en' else not parts[-1].startswith('zh-')
