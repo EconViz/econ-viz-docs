@@ -78,7 +78,7 @@ from utility_viz import Canvas, solve
 <!-- api: agora.utility_viz.getting_started_installation_1 -->
 
 ```bash
-uv add "utility-viz[animation]"    # GIF 匯出（Pillow）
+uv add "utility-viz[animation]"    # 以 Pillow 匯出 GIF
 uv add "utility-viz[interactive]"  # 筆記本互動元件
 uv add "utility-viz[all]"          # 全部選用依賴
 ```

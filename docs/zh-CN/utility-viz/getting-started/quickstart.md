@@ -28,7 +28,7 @@ eq = solve(model, px=2.0, py=3.0, income=30.0)
 
 # 斜体的 x 与 y
 cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
-# 五条曲线 一条过最优点
+# 含过最优点的五条曲线
 lvls = levels.around(eq.utility, n=5)
 cvs.add_utility(model, levels=lvls)
 # 预算线与可行集合

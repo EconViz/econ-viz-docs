@@ -91,7 +91,7 @@ path = PricePath(
     n=40,
 )
 
-# 圍繞路徑中段最適點的曲線
+# 圍繞中段最適點的曲線
 eq = path.equilibria[len(path.equilibria) // 2]
 
 cvs = Canvas(x_max=25, y_max=20, x_label="$x$", y_label="$y$")
