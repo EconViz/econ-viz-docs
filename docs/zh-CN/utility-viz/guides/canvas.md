@@ -53,7 +53,7 @@ cvs.add_utility(
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
-# 图形设置
+# 载入图形设置
 Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
@@ -85,7 +85,7 @@ cvs.save("add_utility.png")
 ```python
 from utility_viz import Canvas, Config
 
-# 图形设置
+# 载入图形设置
 Config.load("manual.toml").use()
 
 # 斜体的 x 与 y
@@ -113,7 +113,7 @@ cvs.save("add_budget.png")
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
-# 图形设置
+# 载入图形设置
 Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
@@ -123,7 +123,7 @@ eq = solve(model, px=2.0, py=3.0, income=30.0)
 cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
 cvs.add_utility(model, levels=levels.around(eq.utility, n=3))
 cvs.add_budget(2.0, 3.0, 30.0, fill=True)
-# 最优点与到轴的虚线
+# 最优点与两条辅助虚线
 cvs.add_equilibrium(eq)
 cvs.save("add_equilibrium.png")
 ```
@@ -146,7 +146,7 @@ cvs.save("add_equilibrium.png")
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
-# 图形设置
+# 载入图形设置
 Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
@@ -180,7 +180,7 @@ cvs.save("add_ray.png")
 from utility_viz import Canvas, Config, Label, levels, solve
 from utility_viz.models import CobbDouglas
 
-# 图形设置
+# 载入图形设置
 Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
@@ -220,7 +220,7 @@ cvs.save("add_point.png")
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
-# 图形设置
+# 载入图形设置
 Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
@@ -265,7 +265,7 @@ from mosaickit import CanvasGrid
 
 from utility_viz import Canvas, Config, LineStyle
 
-# 图形设置
+# 载入图形设置
 Config.load("manual.toml").use()
 
 styles = [
@@ -316,7 +316,7 @@ from mosaickit import CanvasGrid
 
 from utility_viz import ArrowStyle, Canvas, Config
 
-# 图形设置
+# 载入图形设置
 Config.load("manual.toml").use()
 
 styles = [

@@ -24,10 +24,10 @@ import numpy as np
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CustomUtility
 
-# 图形设置
+# 载入图形设置
 Config.load("manual.toml").use()
 
-# 数组函数都能作效用
+# 数组函数都能当作效用
 model = CustomUtility(
     func=lambda x, y: np.log(x) + np.log(y), name="log+log"
 )
@@ -66,7 +66,7 @@ $$
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import MultiGoodCD
 
-# 图形设置
+# 载入图形设置
 Config.load("manual.toml").use()
 
 # 三种商品且 z 固定为 10

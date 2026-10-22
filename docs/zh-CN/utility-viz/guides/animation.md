@@ -82,7 +82,7 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.core.animation import Animator
 from utility_viz.models import CobbDouglas
 
-# 图形设置
+# 载入图形设置
 Config.load("manual.toml").use()
 
 
@@ -127,7 +127,7 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.core.animation import Animator
 from utility_viz.models import CobbDouglas
 
-# 图形设置
+# 载入图形设置
 Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
@@ -173,7 +173,7 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.core.animation import Animator
 from utility_viz.models import CobbDouglas
 
-# 图形设置
+# 载入图形设置
 Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)

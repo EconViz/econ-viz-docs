@@ -40,7 +40,7 @@ $$
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CES
 
-# 圖形設定
+# 載入圖形設定
 Config.load("manual.toml").use()
 
 model = CES(alpha=0.5, beta=0.5, rho=-0.5)
@@ -79,7 +79,7 @@ $$
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import Translog
 
-# 圖形設定
+# 載入圖形設定
 Config.load("manual.toml").use()
 
 model = Translog(alpha_x=0.6, alpha_y=0.4, beta_xy=0.12)
@@ -124,7 +124,7 @@ $$
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import Leontief
 
-# 圖形設定
+# 載入圖形設定
 Config.load("manual.toml").use()
 
 model = Leontief(a=1.0, b=1.0)
@@ -169,7 +169,7 @@ $$
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import PerfectSubstitutes
 
-# 圖形設定
+# 載入圖形設定
 Config.load("manual.toml").use()
 
 model = PerfectSubstitutes(a=1.0, b=2.0)
@@ -210,7 +210,7 @@ import numpy as np
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CustomUtility
 
-# 圖形設定
+# 載入圖形設定
 Config.load("manual.toml").use()
 
 model = CustomUtility(
@@ -257,7 +257,7 @@ import numpy as np
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import QuasiLinear
 
-# 圖形設定
+# 載入圖形設定
 Config.load("manual.toml").use()
 
 model = QuasiLinear(v_func=np.log, linear_in="y")
@@ -298,7 +298,7 @@ $$
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import Haagsma
 
-# 圖形設定
+# 載入圖形設定
 Config.load("manual.toml").use()
 
 model = Haagsma(gamma_y=10.0)
@@ -337,7 +337,7 @@ $$
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import StoneGeary
 
-# 圖形設定
+# 載入圖形設定
 Config.load("manual.toml").use()
 
 model = StoneGeary(alpha=0.5, beta=0.5, bar_x=2.0, bar_y=2.0)
@@ -378,7 +378,7 @@ import numpy as np
 from utility_viz import Canvas, Config, levels
 from utility_viz.models import Satiation
 
-# 圖形設定
+# 載入圖形設定
 Config.load("manual.toml").use()
 
 model = Satiation(bliss_x=6.0, bliss_y=4.0)

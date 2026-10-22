@@ -24,10 +24,10 @@ import numpy as np
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CustomUtility
 
-# 圖形設定
+# 載入圖形設定
 Config.load("manual.toml").use()
 
-# 陣列函數都能當效用
+# 陣列函式都能當作效用
 model = CustomUtility(
     func=lambda x, y: np.log(x) + np.log(y), name="log+log"
 )
@@ -66,7 +66,7 @@ $$
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import MultiGoodCD
 
-# 圖形設定
+# 載入圖形設定
 Config.load("manual.toml").use()
 
 # 三種商品且 z 固定為 10
