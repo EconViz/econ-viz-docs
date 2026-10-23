@@ -8,6 +8,20 @@ seo_title: "更新纪录"
 
 本章列出影响软件包使用的版本变更，不含仅修改文件的版本；各条目按 l3doc 惯例标注于它所描述的功能旁，页码即该功能的实际页码。
 
+## 2.0.0b8
+
+- `Label` — 添加 `top`、`bottom`、`left` 与 `right`，可微调已定位的单个标签 [Canvas 画布](../guides/canvas.md)
+- `themes` — 内置主题改为 EconViz 共享主题，同一名称在各 EconViz 软件包中外观一致；添加 `manual` 主题 [主题与设置](../guides/themes.md)
+- `themes` — 移除 `dark` 主题：`themes.dark` 与 `base = "dark"` 会发出警告并改用 `default` [主题与设置](../guides/themes.md)
+- `Config` — utility-viz 自身的配置移至 `[utility]` 下；改由 `mosaickit` 读取并检查文件；旧格式仍可读取，但会发出警告 [主题与设置](../guides/themes.md)
+- `utility-viz init` — 改为写出新格式，utility-viz 的表位于 `[utility]` 下；`--migrate` 会把表移到该处 [命令行工具](../getting-started/cli.md)
+- `utility-viz plot` — `--theme` 接受所有内置主题，包括 `colorblind` 与 `manual`；`dark` 会发出警告并改用 `default` [命令行工具](../getting-started/cli.md)
+
+## 2.0.0b7
+
+- `Config` — 配置文件恢复为 `econ-viz.toml`，由所有 EconViz 软件包共享；`utility-viz.toml` 仍可读取，但会发出警告 [主题与设置](../guides/themes.md)
+- `utility-viz plot` — 未指定 `--config` 时，读取当前目录的 `econ-viz.toml`（或 `utility-viz.toml`，并发出警告） [命令行工具](../getting-started/cli.md)
+
 ## 2.0.0b1
 
 - 由 `econ-viz` 更名为 `utility-viz`：发行包、导入名称、命令与配置文件一并更名 [简介](../guides/introduction.md)

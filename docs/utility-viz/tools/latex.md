@@ -54,7 +54,7 @@ from utility_viz import (
 )
 
 # figure settings
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 # Leontief(a=2.0, b=3.0)
 model = parse_latex(r"\min(2x, 3y)")
@@ -91,7 +91,7 @@ from utility_viz import (
 )
 
 # figure settings
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 # PerfectSubstitutes(a=2.0, b=3.0)
 model = parse_latex(r"2x + 3y")

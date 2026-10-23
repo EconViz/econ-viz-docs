@@ -28,7 +28,7 @@ from utility_viz import Config, Figure, Layout, levels, solve
 from utility_viz.models import CobbDouglas
 
 # figure settings
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 fig = Figure(
     Layout.SIDE_BY_SIDE,
@@ -97,7 +97,7 @@ from utility_viz import (
 from utility_viz.models import CobbDouglas
 
 # figure settings
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 budget = LinearBudget(px=2.0, py=2.0, income=40.0)

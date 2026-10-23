@@ -20,7 +20,7 @@ that it is deprecated and runs `utility-viz` with the same arguments
 | `utility-viz models` | List all supported utility models |
 | `utility-viz plot ...` | Generate and export a diagram |
 | `utility-viz solve-tex ...` | Print a closed-form Marshallian demand as TeX |
-| `utility-viz init [path]` | Create an `utility-viz.toml` configuration template |
+| `utility-viz init [path]` | Create an `econ-viz.toml` configuration template |
 
 ## Help and models
 
@@ -150,16 +150,19 @@ as well.
 
 <!-- api: agora.utility_viz.getting_started_cli_4 -->
 
-Write a commented `utility-viz.toml` template. Without a path it goes in the
-current directory; an existing file is overwritten only with `--force`.
-`--migrate` instead creates `utility-viz.toml` from a legacy
-`econ-viz.toml` in the same directory and keeps the old file.
+Write a commented `econ-viz.toml` template: the shared settings at the top
+level and utility-viz's own under `[utility]`. Without a path it goes in
+the current directory; an existing file is overwritten only with `--force`.
+`--migrate` instead moves utility-viz's top-level tables under
+`[utility]`, keeping the comments: it rewrites a `utility-viz.toml` in the
+same directory into `econ-viz.toml` and keeps the old file, or, without
+one, rewrites an old-layout `econ-viz.toml` in place.
 
 ```bash
 utility-viz init
 utility-viz init config/figures.toml
 utility-viz init --migrate
-utility-viz plot --config utility-viz.toml --model cobb-douglas \
+utility-viz plot --config econ-viz.toml --model cobb-douglas \
               --px 2 --py 3 --income 30 --output figure.png
 ```
 

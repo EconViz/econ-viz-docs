@@ -76,7 +76,9 @@ braces).
 
 An override for one built-in label. Fields left as `None` keep the
 package's default. An `offset` in points opts the label out of automatic
-placement and moves it by exactly that much.
+placement and moves it by exactly that much. `top`, `bottom`, `left` and
+`right` instead move the label after it has been placed, so principle-viz
+still picks the spot and you only fine-tune it.
 
 <!-- api: agora.principle_viz.guides_figures_7 -->
 
@@ -120,13 +122,34 @@ fig.finalize()
 
 </figure>
 
+### Nudging a label
+
+A length is a number of points or a string with a unit: `"10pt"`, `"0.5em"`
+(the label's font size) or `"2mm"`. `top` and `bottom` combine, as do
+`right` and `left`. A nudge applies after automatic placement, or after an
+`offset`; later labels still avoid the moved one, and figures without
+nudges are unchanged. Axis tick labels do not take nudges. The equilibrium
+label's id is `market.equilibrium`:
+
+```python
+from principle_viz import Label, MarketFigure
+
+fig = MarketFigure(
+    labels={"market.equilibrium": Label(top="4pt")}
+)
+fig.configure_label("market.supply", Label(right="8pt"))
+fig.configure_label("market.demand", text="$D_0$", left="0.5em")
+```
+
 ## Palettes and themes
 
 <span id="sec-palettes"></span>
 
 A `ColorModel` assigns a colour to each economic role; a `PlotTheme` adds line
 widths and axis options and compiles both into a `mosaickit` theme.
-[Built-in colour models](figures.md#tab-palettes) lists the four built-in colour models.
+The built-in colour models are the themes every EconViz package shares
+([Built-in colour models](figures.md#tab-palettes)): the same name gives the same look in utility-viz and
+principle-viz.
 
 <!-- api: agora.principle_viz.guides_figures_8 -->
 
@@ -138,16 +161,27 @@ such as `"blue"`.
 
 <span id="tab-palettes"></span>
 
-| Name | Character |
+| Name | Character and use |
 | --- | --- |
-| `default` | `mosaickit` hues: demand blue, supply red, deadweight loss teal; surpluses in the curve hues at 15% opacity |
-| `colorblind` | A colour-blind-friendly qualitative palette |
-| `nord` | The Nord palette |
-| `monochrome` | Black, white and greys, for print |
+| `manual` | The greys of the EconViz manuals: black axes, supply and arrows, a grey demand curve, grey surplus regions. For print and handouts |
+| `default` | Demand blue, supply green, deadweight loss red, taxes and controls orange; the surpluses follow the curves. The everyday choice |
+| `colorblind` | The colours of `default` under an explicit name |
+| `monochrome` | Black curves and a grey ladder for the regions, for black-and-white printing |
+| `nord` | Cool colours of the Nord palette, for screens and slides |
+| `paper` | Muted colours, for papers |
+| `presentation` | Brighter colours, with lines 1.5 and the equilibrium dot 1.3 times as large, for projection |
+
+A shared theme gives a colour to each role, and `principle_viz.visuals.roles`
+says which role each element takes: the axis, labels, baseline and arrows
+take ink, demand primary, supply secondary, shifted curves tertiary, taxes
+and controls intervention, and consumer surplus, producer surplus,
+deadweight loss and tax revenue the light, mid, dark and faint fills. The
+theme's line and marker scales multiply principle-viz's own line widths and
+equilibrium dot. There is no dark theme.
 
 `list_color_models()` returns the names and `get_color_model(name)` the
-model; the four are also exported as `DEFAULT_COLOR_MODEL`,
-`COLORBLIND_COLOR_MODEL`, `NORD_COLOR_MODEL` and `MONOCHROME_COLOR_MODEL`.
+model; `DEFAULT_COLOR_MODEL`, `COLORBLIND_COLOR_MODEL`, `NORD_COLOR_MODEL`
+and `MONOCHROME_COLOR_MODEL` are also exported.
 
 <!-- api: agora.principle_viz.guides_figures_9 -->
 
@@ -201,9 +235,65 @@ fig = MarketFigure(x_max=12, y_max=12, palette="monochrome")
 
 </figure>
 
-## Canvases
+## Settings file
+
+<span id="sec-settings"></span>
+
+principle-viz reads `econ-viz.toml`, the settings file every EconViz package
+shares; `mosaickit` reads and checks it. The top level sets what every
+package shares: the starting theme (`base`, one of [Built-in colour models](figures.md#tab-palettes)), the fonts
+and the axis and label colours. principle-viz's own settings live in the
+`[principle]` table; the tables of other packages, such as `[utility]`, are
+skipped.
+
+```toml
+base = "manual"      # a shared theme: manual, default, colorblind,
+                     # monochrome, nord, paper or presentation
+
+[font]
+text = "serif"
+math = "fonts/texgyrepagella-math.otf"
+
+[fonts]
+serif = ["fonts/NotoSerifTC-Regular.otf", "fonts/NotoSerifTC-Bold.otf"]
+
+[principle]
+language = "zh-TW"   # built-in figure text
+
+[principle.color]    # a colour-model role, without "_color"
+demand = "#8c8c8c"
+
+[principle.stroke]   # line widths in points
+demand = 3.5
+
+[principle.marker]
+equilibrium = 6.5    # equilibrium dot diameter in points
+```
+
+`base = "manual"` gives the black-and-white look of this manual, so its
+colours and widths need not be spelled out. `[principle] palette` still
+sets the colours for principle-viz alone and wins over `base`;
+`[principle.color]` sets one element. Relative paths are read from the
+folder of the file.
 
 <!-- api: agora.principle_viz.guides_figures_10 -->
+
+`Config.load()` reads the file and `use()` makes it the default: figures
+made without `theme=` or `palette=` then use it, and `default_theme()`
+returns the theme they get. A `theme=` or `palette=` passed to a figure
+still wins. `mosaickit.econ_toml.use("econ-viz.toml")` loads the file for
+every installed EconViz package at once.
+
+A mistake raises `mosaickit.ConfigurationError` naming the file and the
+table, with the closest key when one is close:
+
+```text
+econ-viz.toml: [principle.color] unknown key 'demnad'; did you mean 'demand'?
+```
+
+## Canvases
+
+<!-- api: agora.principle_viz.guides_figures_11 -->
 
 The `mosaickit` `Canvas` with the same `labels=`, `visibility=`,
 `configure_label()`, `configure_layer()`, `hide()`, `show()`,

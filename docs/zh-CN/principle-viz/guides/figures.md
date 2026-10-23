@@ -53,7 +53,7 @@ seo_title: "图形"
 
 <!-- api: agora.principle_viz.guides_figures_6 -->
 
-覆盖一个内建标签。值为 `None` 的字段保留软件包的默认值。指定 `offset`（单位为点）时，标签不再自动放置，改为精确移动该距离。
+覆盖一个内建标签。值为 `None` 的字段保留软件包的默认值。指定 `offset`（单位为点）时，标签不再自动放置，改为精确移动该距离。`top`、`bottom`、`left` 与 `right` 则在标签定位之后再移动，位置仍由 principle-viz 决定，只做细部调整。
 
 <!-- api: agora.principle_viz.guides_figures_7 -->
 
@@ -93,11 +93,25 @@ fig.finalize()
 
 </figure>
 
+### 微调标签
+
+距离可为点数，或带单位的字符串：`"10pt"`、`"0.5em"`（以标签字号为单位）或 `"2mm"`。`top` 与 `bottom` 可以合并使用，`right` 与 `left` 亦同。微调在自动定位或 `offset` 之后应用；之后加入的标签仍会避开移动后的标签，未设置微调的图形保持不变。坐标轴刻度标签不支持微调。均衡点标签的 id 为 `market.equilibrium`：
+
+```python
+from principle_viz import Label, MarketFigure
+
+fig = MarketFigure(
+    labels={"market.equilibrium": Label(top="4pt")}
+)
+fig.configure_label("market.supply", Label(right="8pt"))
+fig.configure_label("market.demand", text="$D_0$", left="0.5em")
+```
+
 ## 配色与主题
 
 <span id="sec-palettes"></span>
 
-`ColorModel` 为每个经济角色指定颜色；`PlotTheme` 再加上线宽与坐标轴选项，并将两者编译为 `mosaickit` 主题。内建的四种配色如[内建配色](figures.md#tab-palettes)。
+`ColorModel` 为每个经济角色指定颜色；`PlotTheme` 再加上线宽与坐标轴选项，并将两者编译为 `mosaickit` 主题。内置配色就是所有 EconViz 软件包共享的主题（[内置配色](figures.md#tab-palettes)），同一名称在 utility-viz 与 principle-viz 中外观一致。
 
 <!-- api: agora.principle_viz.guides_figures_8 -->
 
@@ -105,14 +119,19 @@ fig.finalize()
 
 <span id="tab-palettes"></span>
 
-| 名称 | 特色 |
+| 名称 | 特色与用途 |
 | --- | --- |
-| `default` | `mosaickit` 色相：需求蓝、供给红、无谓损失青；剩余沿用曲线色相，透明度 15% |
-| `colorblind` | 色盲友善的质性配色 |
-| `nord` | Nord 配色 |
-| `monochrome` | 黑、白与灰阶，供印刷使用 |
+| `manual` | EconViz 手册的灰阶：黑色坐标轴、供给曲线与箭头，灰色需求曲线与剩余区域，适合打印与讲义 |
+| `default` | 需求蓝、供给绿、无谓损失红，税收与价格管制橙；剩余区域沿用曲线颜色，适合日常使用 |
+| `colorblind` | 与 `default` 相同的配色，以明确名称标示 |
+| `monochrome` | 黑色曲线搭配灰阶区域，适合黑白打印 |
+| `nord` | 采用 Nord 色盘的冷色系，适合屏幕与幻灯片 |
+| `paper` | 柔和颜色，适合论文 |
+| `presentation` | 颜色更鲜明，线条放大为 1.5 倍、均衡点放大为 1.3 倍，适合投影 |
 
-`list_color_models()` 返回所有名称，`get_color_model(name)` 返回对应的配色；四种配色也以 `DEFAULT_COLOR_MODEL`、`COLORBLIND_COLOR_MODEL`、`NORD_COLOR_MODEL` 与 `MONOCHROME_COLOR_MODEL` 导出。
+共享主题为各个角色指定颜色，`principle_viz.visuals.roles` 则决定各元素使用的角色：坐标轴、标签、基准线与箭头使用 ink，需求使用 primary，供给使用 secondary，移动后的曲线使用 tertiary，税收与价格管制使用 intervention，消费者剩余、生产者剩余、无谓损失与税收收入分别使用 light、mid、dark 与 faint 填色。主题的线条与标记比例会乘以 principle-viz 自身的线宽与均衡点大小。内置主题不含深色主题。
+
+`list_color_models()` 返回所有名称，`get_color_model(name)` 返回对应的配色；另导出 `DEFAULT_COLOR_MODEL`、`COLORBLIND_COLOR_MODEL`、`NORD_COLOR_MODEL` 与 `MONOCHROME_COLOR_MODEL`。
 
 <!-- api: agora.principle_viz.guides_figures_9 -->
 
@@ -155,8 +174,49 @@ fig = MarketFigure(x_max=12, y_max=12, palette="monochrome")
 
 </figure>
 
-## 画布
+## 配置文件
+
+<span id="sec-settings"></span>
+
+principle-viz 读取所有 EconViz 软件包共享的配置文件 `econ-viz.toml`，并由 `mosaickit` 读取与检查。顶层放置所有软件包共享的配置：起始主题（`base`，可选[内置配色](figures.md#tab-palettes)中的名称）、字体，以及坐标轴与标签颜色。principle-viz 自身的配置放在 `[principle]` 表中；其他软件包的表（例如 `[utility]`）会被跳过。
+
+```toml
+base = "manual"      # 共享主题名称
+
+[font]
+text = "serif"
+math = "fonts/texgyrepagella-math.otf"
+
+[fonts]
+serif = ["fonts/NotoSerifSC-Regular.ttf", "fonts/NotoSerifSC-Bold.ttf"]
+
+[principle]
+language = "zh-CN"   # 内置图形文字
+
+[principle.color]    # 配色角色名称
+demand = "#8c8c8c"
+
+[principle.stroke]   # 线宽以点为单位
+demand = 3.5
+
+[principle.marker]
+equilibrium = 6.5    # 均衡点直径
+```
+
+`base = "manual"` 即为本手册的黑白样式，无须逐一写出颜色与线宽。`[principle] palette` 仍可只为 principle-viz 设置配色，并优先于 `base`；`[principle.color]` 则设置单个元素。相对路径以配置文件所在文件夹为准。
 
 <!-- api: agora.principle_viz.guides_figures_10 -->
+
+`Config.load()` 读取配置文件，`use()` 将其设为默认值：未传入 `theme=` 或 `palette=` 的图形都会采用，`default_theme()` 则返回这些图形使用的主题。直接传入图形的 `theme=` 或 `palette=` 仍优先。`mosaickit.econ_toml.use("econ-viz.toml")` 会一次为所有已安装的 EconViz 软件包加载此文件。
+
+配置文件写错时会抛出 `mosaickit.ConfigurationError`，指出文件与表，并在有相近名称时提示可能的正确写法：
+
+```text
+econ-viz.toml: [principle.color] unknown key 'demnad'; did you mean 'demand'?
+```
+
+## 画布
+
+<!-- api: agora.principle_viz.guides_figures_11 -->
 
 `mosaickit` 的 `Canvas`，并具备与 `MarketFigure` 相同的 `labels=`、`visibility=`、`configure_label()`、`configure_layer()`、`hide()`、`show()`、`layer_ids` 与 `label_ids`。生产可能性曲线、公共物品与总收益各章的画布函数都返回此类别；以 `save()` 保存，或以 `mosaickit.CanvasGrid` 组合多张画布。

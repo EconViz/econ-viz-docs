@@ -54,7 +54,7 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
 # 載入圖形設定
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
@@ -86,7 +86,7 @@ cvs.save("add_utility.png")
 from utility_viz import Canvas, Config
 
 # 載入圖形設定
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 # 斜體的 x 與 y
 cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
@@ -114,7 +114,7 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
 # 載入圖形設定
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
@@ -147,7 +147,7 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
 # 載入圖形設定
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
@@ -181,7 +181,7 @@ from utility_viz import Canvas, Config, Label, levels, solve
 from utility_viz.models import CobbDouglas
 
 # 載入圖形設定
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
@@ -221,7 +221,7 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
 # 載入圖形設定
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
@@ -266,7 +266,7 @@ from mosaickit import CanvasGrid
 from utility_viz import Canvas, Config, LineStyle
 
 # 載入圖形設定
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 styles = [
     LineStyle.SOLID,
@@ -317,7 +317,7 @@ from mosaickit import CanvasGrid
 from utility_viz import ArrowStyle, Canvas, Config
 
 # 載入圖形設定
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 styles = [
     ArrowStyle.SIMPLE,
@@ -404,6 +404,15 @@ cvs.add_point(
     marker=Marker(color="black", shape="D"),
     label=Label(text="A", position="left", fontsize=14),
 )
+```
+
+`top`、`bottom`、`left` 與 `right` 會在標籤自動定位之後再微調位置：可傳入點數，或帶單位的字串，例如 `"10pt"`、`"0.5em"`（以標籤字級為單位）或 `"2mm"`。位置仍由自動定位決定，之後加入的標籤也會避開移動後的標籤。在 `econ-viz.toml` 的 `[utility.label.<name>]` 寫入 `top = "2pt"`，可為該類標籤設定預設值（單位可用 pt、mm、cm 或 in，不支援 em）；標籤本身指定的值會取代該方向的預設值。未設定微調時，所有圖形維持不變。
+
+```python
+from utility_viz import Label
+
+cvs.add_equilibrium(eq, label=Label(top="10pt"))
+cvs.add_point(5, 3, label=Label(text="A", left="6pt"))
 ```
 
 ### Fill

@@ -122,6 +122,6 @@ uv add --prerelease allow utility-viz
 
 ## 範例
 
-文件裡每張圖都附有畫出它的腳本，已依主題分資料夾。一次下載全部，內含腳本載入的設定檔 `manual.toml`。
+文件裡每張圖都附有畫出它的腳本，已依主題分資料夾。一次下載全部，內含腳本載入的設定檔 `econ-viz.toml`（`base = "manual"`）。
 
 [下載全部範例](../../assets/utility-viz/agora/utility-viz-examples-zh-TW.zip){ .md-button download="" }

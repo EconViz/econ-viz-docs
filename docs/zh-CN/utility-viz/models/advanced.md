@@ -25,7 +25,7 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CustomUtility
 
 # 载入图形设置
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 # 数组函数都能当作效用
 model = CustomUtility(
@@ -67,7 +67,7 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import MultiGoodCD
 
 # 载入图形设置
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 # 三种商品且 z 固定为 10
 model = MultiGoodCD({"x": 0.3, "y": 0.3, "z": 0.4})

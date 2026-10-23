@@ -122,6 +122,6 @@ Requires Python 3.10 or later. See [Installation](getting-started/installation.m
 
 ## Examples
 
-Every figure in this documentation comes with the script that draws it, sorted into folders by topic. Download them all in one file, with `manual.toml`, the settings the scripts load.
+Every figure in this documentation comes with the script that draws it, sorted into folders by topic. Download them all in one file, with `econ-viz.toml`, the settings the scripts load (`base = "manual"`).
 
 [Download all examples](../assets/utility-viz/agora/utility-viz-examples-en.zip){ .md-button download="" }

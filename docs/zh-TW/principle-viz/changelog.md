@@ -8,6 +8,20 @@ seo_title: "更新紀錄"
 
 本章列出影響套件使用的版本變更，包含以 `principle-econ` 名稱發布的版本，不含僅修改文件的版本；各條目依 l3doc 慣例標註於它所描述的功能旁，頁碼即該功能的實際頁碼。
 
+## 0.12.1
+
+- `Label` — 新增 `top`、`bottom`、`left` 與 `right`，可在標籤定位後微調單一標籤 [圖形](guides/figures.md)
+- `ColorModel` — 配色改為 EconViz 共用主題，同一名稱在各 EconViz 套件中外觀一致；新增 `paper` 與 `presentation` [圖形](guides/figures.md)
+- `Config` — 改由 `mosaickit` 依 principle-viz 宣告的結構讀取並檢查檔案；共用的 `base` 決定起始主題 [圖形](guides/figures.md)
+
+## 0.12.0
+
+- `Config` — `Config.load("econ-viz.toml").use()` 讀取所有 EconViz 套件共用的設定檔 [圖形](guides/figures.md)
+
+## 0.11.2
+
+- `ColorModel` — 新增 `manual` 配色，即本手冊的灰階 [圖形](guides/figures.md)
+
 ## 0.11.0
 
 - `PlotTheme` — 新增 `font`、`fonts`、`math_font` 與 `font_roles` [圖形](guides/figures.md)

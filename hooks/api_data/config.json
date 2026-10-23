@@ -13,9 +13,9 @@
         ],
         "default": "None",
         "description": {
-          "en": "TOML file to read; it must exist. With `None`, `utility-viz.toml` in the working directory is used, and an error is raised when it is missing.",
-          "zh-TW": "要讀取的 TOML 檔，必須存在。傳入 `None` 時讀取工作目錄的 `utility-viz.toml`，找不到會引發錯誤。",
-          "zh-CN": "要读取的 TOML 文件，必须存在。传入 `None` 时读取工作目录的 `utility-viz.toml`，找不到会引发错误。"
+          "en": "TOML file to read; it must exist. With `None`, `econ-viz.toml` (or the older `utility-viz.toml`, with a warning) in the working directory is used, and an error is raised when neither exists.",
+          "zh-TW": "要讀取的 TOML 檔，必須存在。傳入 `None` 時讀取工作目錄的 `econ-viz.toml`（或較舊的 `utility-viz.toml`，並發出警告），兩者都不存在時會引發錯誤。",
+          "zh-CN": "要读取的 TOML 文件，必须存在。传入 `None` 时读取工作目录的 `econ-viz.toml`（或较旧的 `utility-viz.toml`，并发出警告），两者都不存在时会引发错误。"
         }
       }
     ]
@@ -49,9 +49,9 @@
         "default": "None",
         "keyword_only": true,
         "description": {
-          "en": "Directory searched for `utility-viz.toml`; the working directory by default.",
-          "zh-TW": "尋找 `utility-viz.toml` 的資料夾，預設為工作目錄。",
-          "zh-CN": "查找 `utility-viz.toml` 的文件夹，默认为工作目录。"
+          "en": "Directory searched for `econ-viz.toml`; the working directory by default.",
+          "zh-TW": "尋找 `econ-viz.toml` 的資料夾，預設為工作目錄。",
+          "zh-CN": "查找 `econ-viz.toml` 的文件夹，默认为工作目录。"
         }
       }
     ]

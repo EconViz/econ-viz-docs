@@ -41,7 +41,7 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CES
 
 # 载入图形设置
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 model = CES(alpha=0.5, beta=0.5, rho=-0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
@@ -80,7 +80,7 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import Translog
 
 # 载入图形设置
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 model = Translog(alpha_x=0.6, alpha_y=0.4, beta_xy=0.12)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
@@ -125,7 +125,7 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import Leontief
 
 # 载入图形设置
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 model = Leontief(a=1.0, b=1.0)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
@@ -170,7 +170,7 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import PerfectSubstitutes
 
 # 载入图形设置
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 model = PerfectSubstitutes(a=1.0, b=2.0)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
@@ -211,7 +211,7 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CustomUtility
 
 # 载入图形设置
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 model = CustomUtility(
     func=lambda x, y: np.maximum(x, y), name="maximum"
@@ -258,7 +258,7 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import QuasiLinear
 
 # 载入图形设置
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 model = QuasiLinear(v_func=np.log, linear_in="y")
 eq = solve(model, px=1.0, py=2.0, income=20.0)
@@ -299,7 +299,7 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import Haagsma
 
 # 载入图形设置
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 model = Haagsma(gamma_y=10.0)
 eq = solve(model, px=1.0, py=1.0, income=11.0)
@@ -338,7 +338,7 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import StoneGeary
 
 # 载入图形设置
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 model = StoneGeary(alpha=0.5, beta=0.5, bar_x=2.0, bar_y=2.0)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
@@ -379,7 +379,7 @@ from utility_viz import Canvas, Config, levels
 from utility_viz.models import Satiation
 
 # 载入图形设置
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 model = Satiation(bliss_x=6.0, bliss_y=4.0)
 
