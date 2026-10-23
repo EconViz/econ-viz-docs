@@ -1,7 +1,7 @@
 """Render the sweep GIFs of the Animation page.
 
 The page shows the same sweeps as the manual's Animation chapter, drawn with the manual's settings
-(`manual.toml`, loaded the way the manual's examples load it): grey curves, black axes, a white page,
+(`econ-viz.toml`, loaded the way the manual's examples load it): grey curves, black axes, a white page,
 no title and no text on the frame. Each sweep holds some inputs fixed and varies one.
 
     parameter   prices and income fixed, one utility parameter varies
@@ -37,7 +37,7 @@ from utility_viz.models import CES, CobbDouglas, Leontief, PerfectSubstitutes  #
 from utility_viz.models.curves.layers import Layer  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
-SETTINGS = ROOT.parent / "agora" / "packages" / "utility-viz" / "config" / "manual.toml"
+SETTINGS = ROOT.parent / "agora" / "packages" / "utility-viz" / "config" / "econ-viz.toml"
 OUT = ROOT / "docs" / "assets" / "animation"
 
 X_MAX, Y_MAX = 14, 12

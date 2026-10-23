@@ -67,8 +67,11 @@ saves the picture, so the PDF and the site show what the printed code produces. 
 `make figures PACKAGE=utility-viz`, rebuild the PDFs with `make publish PACKAGE=utility-viz`, and
 sync again, which copies the SVGs.
 
-* The house look (grey curves, black axes, white page) is `config/manual.toml`, which every example
-  loads and which the themes chapter prints in full; the script checks the two agree.
+* The house look (grey curves, black axes, white page) is `config/econ-viz.toml` (`base = "manual"`
+  plus the edition's fonts; `econ-viz.zh-TW.toml` and `econ-viz.zh-CN.toml` for the other editions),
+  which every example loads with `Config.load("econ-viz.toml").use()`; the script checks the editions
+  agree beyond their comments and fonts. principle-viz's figure script loads its own
+  `config/econ-viz[.<edition>].toml` the same way.
 * A figure whose code differs between editions (a translated title, a CJK font) gets its own file,
   `<name>.zh-TW.svg` or `<name>.zh-CN.svg`; otherwise the editions share one.
 * The Themes page is converted from its chapter (six figures, one per built-in theme).
@@ -77,6 +80,6 @@ sync again, which copies the SVGs.
 
 Each figure's script is offered for download: `make_figures.py` writes the code it ran next to the SVG
 (`<name>.py`), `sync_agora.py` copies it and adds a download link under the figure, and the Themes page
-links `manual.toml` the same way. The figures drawn from MosaicKit layers (`consumer/demand`, `hicks`,
+links `econ-viz.toml` the same way. The figures drawn from MosaicKit layers (`consumer/demand`, `hicks`,
 `edgeworth`) are too long to print, so the manual shows the API call and their scripts live in
 `agora/packages/utility-viz/scripts/scenes/`.

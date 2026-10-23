@@ -10,6 +10,20 @@ Release history of `utility-viz`. Documentation-only changes are not
 listed; each entry is tagged where the feature it describes is documented,
 following l3doc convention, so the page number is the real page.
 
+## 2.0.0b8
+
+- `Label` — `top`, `bottom`, `left` and `right` nudge one placed label [Canvas](../guides/canvas.md)
+- `themes` — The built-in themes are the shared EconViz themes, so one name gives the same look in every EconViz package; new `manual` theme [Themes and configuration](../guides/themes.md)
+- `themes` — No `dark` theme: `themes.dark` and `base = "dark"` warn and use `default` [Themes and configuration](../guides/themes.md)
+- `Config` — utility-viz's own settings live under `[utility]`; `mosaickit` reads and checks the file; the old layout is still read with a warning [Themes and configuration](../guides/themes.md)
+- `utility-viz init` — Writes the new layout, with utility-viz's tables under `[utility]`; `--migrate` moves them there [Command-line interface](../getting-started/cli.md)
+- `utility-viz plot` — `--theme` accepts every built-in theme, including `colorblind` and `manual`; `dark` warns and uses `default` [Command-line interface](../getting-started/cli.md)
+
+## 2.0.0b7
+
+- `Config` — `econ-viz.toml` is the settings file again, shared by every EconViz package; `utility-viz.toml` is still read with a warning [Themes and configuration](../guides/themes.md)
+- `utility-viz plot` — Without `--config`, reads `econ-viz.toml` (or `utility-viz.toml`, with a warning) from the current directory [Command-line interface](../getting-started/cli.md)
+
 ## 2.0.0b1
 
 - Renamed from `econ-viz` to `utility-viz`: distribution, import package, command and configuration file [Introduction](../guides/introduction.md)

@@ -22,7 +22,7 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
 # figure settings
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)

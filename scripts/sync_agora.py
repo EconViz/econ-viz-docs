@@ -461,9 +461,9 @@ class Converter:
 
 
 def font_files(edition:str)->dict[str,Path]:
-    """The font files manual.toml names, from the TeX distribution, for the examples zip.
+    """The font files econ-viz.toml names, from the TeX distribution, for the examples zip.
 
-    TeX Gyre Pagella (GUST Font License) is copied beside manual.toml. The Chinese editions also
+    TeX Gyre Pagella (GUST Font License) is copied beside econ-viz.toml. The Chinese editions also
     name Noto Serif, which is large and stays out of the zip; FONTS.txt says where to get it.
     """
     import subprocess
@@ -477,7 +477,7 @@ def font_files(edition:str)->dict[str,Path]:
     found={name:path for name,path in found.items() if path.exists()}
     notice=['TeX Gyre Pagella: GUST Font License, https://www.gust.org.pl/projects/e-foundry/licenses']
     if edition!='en':
-        notice.append('Noto Serif TC and SC: SIL Open Font License, https://fonts.google.com/noto (put the files beside manual.toml)')
+        notice.append('Noto Serif TC and SC: SIL Open Font License, https://fonts.google.com/noto (put the files beside econ-viz.toml)')
     notice_path=ROOT/'build'/'FONTS.txt'
     notice_path.parent.mkdir(exist_ok=True); notice_path.write_text('\n'.join(notice)+'\n')
     found['FONTS.txt']=notice_path
@@ -491,7 +491,7 @@ def build_example_zips(agora:Path)->None:
     out=ROOT/'docs/assets/utility-viz/agora'; out.mkdir(parents=True,exist_ok=True)
     for edition in LANGS:
         suffix='' if edition=='en' else '.'+edition
-        files={'manual.toml':package/'config'/('manual.toml' if edition=='en' else f'manual.{edition}.toml')}
+        files={'econ-viz.toml':package/'config'/('econ-viz.toml' if edition=='en' else f'econ-viz.{edition}.toml')}
         files.update(font_files(edition))
         for script in sorted((package/'figures').rglob('*.py')):
             parts=script.name[:-3].split('.')

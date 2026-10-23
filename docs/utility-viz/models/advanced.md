@@ -28,7 +28,7 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CustomUtility
 
 # figure settings
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 # any array function works
 model = CustomUtility(
@@ -71,7 +71,7 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import MultiGoodCD
 
 # figure settings
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 # three goods with z held at 10
 model = MultiGoodCD({"x": 0.3, "y": 0.3, "z": 0.4})

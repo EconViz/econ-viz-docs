@@ -1665,7 +1665,7 @@
     "name": "Label",
     "anchor": "principle-viz-guides-figures-6",
     "signatures": [
-      "Label(\n    text=None,\n    visible=None,\n    offset=None\n)"
+      "Label(\n    text=None,\n    visible=None,\n    offset=None,\n    top=None,\n    bottom=None,\n    left=None,\n    right=None\n)"
     ],
     "parameters": []
   },
@@ -1673,7 +1673,7 @@
     "name": "MarketFigure.configure_label",
     "anchor": "principle-viz-guides-figures-7",
     "signatures": [
-      "MarketFigure.configure_label(\n    layer id,\n    label=None,\n    *,\n    text=None,\n    visible=None,\n    offset=None\n)",
+      "MarketFigure.configure_label(\n    layer id,\n    label=None,\n    *,\n    text=None,\n    visible=None,\n    offset=None,\n    top=None,\n    bottom=None,\n    left=None,\n    right=None\n)",
       "MarketFigure.configure_layer(\n    layer id,\n    *,\n    visible\n)"
     ],
     "parameters": []
@@ -1696,8 +1696,18 @@
     "parameters": []
   },
   "agora.principle_viz.guides_figures_10": {
-    "name": "Canvas",
+    "name": "Config.load",
     "anchor": "principle-viz-guides-figures-10",
+    "signatures": [
+      "Config.load",
+      "Config.use",
+      "default_theme"
+    ],
+    "parameters": []
+  },
+  "agora.principle_viz.guides_figures_11": {
+    "name": "Canvas",
+    "anchor": "principle-viz-guides-figures-11",
     "signatures": [
       "Canvas"
     ],
@@ -4811,9 +4821,9 @@
         "name": "--theme",
         "types": [],
         "description": {
-          "en": "Theme name: `default`, `nord`, `paper`, `monochrome`, `presentation` or `dark` ([Themes and configuration](../guides/themes.md#sec-themes)).",
-          "zh-TW": "主題名稱：`default`、`nord`、`paper`、`monochrome`、`presentation` 或 `dark`（詳見[主題與設定](../guides/themes.md#sec-themes)）。",
-          "zh-CN": "主题名称：`default`、`nord`、`paper`、`monochrome`、`presentation` 或 `dark`（详见[主题与设置](../guides/themes.md#sec-themes)）。"
+          "en": "Theme name: `manual`, `default`, `colorblind`, `monochrome`, `nord`, `paper` or `presentation` ([Themes and configuration](../guides/themes.md#sec-themes)). Without it, the `base` of the configuration file.",
+          "zh-TW": "主題名稱：`manual`、`default`、`colorblind`、`monochrome`、`nord`、`paper` 或 `presentation`（詳見[主題與設定](../guides/themes.md#sec-themes)）。省略時使用設定檔的 `base`。",
+          "zh-CN": "主题名称：`manual`、`default`、`colorblind`、`monochrome`、`nord`、`paper` 或 `presentation`（详见[主题与设置](../guides/themes.md#sec-themes)）。省略时使用配置文件的 `base`。"
         },
         "default": "default"
       },
@@ -4821,9 +4831,9 @@
         "name": "--config",
         "types": [],
         "description": {
-          "en": "Path to a TOML configuration file. Command-line options take precedence over the file. Without it, `utility-viz.toml` (or the legacy `econ-viz.toml`) in the current directory is used if present ([File lookup](../guides/themes.md#sec-config-lookup)).",
-          "zh-TW": "TOML 設定檔路徑。命令列參數的優先順序高於設定檔。省略時，若目前目錄有 `utility-viz.toml`（或舊的 `econ-viz.toml`）則自動使用（詳見[設定檔查找順序](../guides/themes.md#sec-config-lookup)）。",
-          "zh-CN": "TOML 配置文件路径。命令行参数的优先级高于配置文件。省略时，若当前目录有 `utility-viz.toml`（或旧的 `econ-viz.toml`）则自动使用（详见[配置文件查找顺序](../guides/themes.md#sec-config-lookup)）。"
+          "en": "Path to a TOML configuration file. Command-line options take precedence over the file. Without it, `econ-viz.toml` (or the older `utility-viz.toml`) in the current directory is used if present ([File lookup](../guides/themes.md#sec-config-lookup)). Relative font paths are read from the folder of the file.",
+          "zh-TW": "TOML 設定檔路徑。命令列參數的優先順序高於設定檔。省略時，若目前目錄有 `econ-viz.toml`（或較舊的 `utility-viz.toml`）則自動使用（詳見[設定檔查找順序](../guides/themes.md#sec-config-lookup)）。相對的字型路徑以設定檔所在資料夾為準。",
+          "zh-CN": "TOML 配置文件路径。命令行参数的优先级高于配置文件。省略时，若当前目录有 `econ-viz.toml`（或较旧的 `utility-viz.toml`）则自动使用（详见[配置文件查找顺序](../guides/themes.md#sec-config-lookup)）。相对的字体路径以配置文件所在文件夹为准。"
         }
       },
       {

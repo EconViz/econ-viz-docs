@@ -19,7 +19,8 @@ description: "econ-viz was renamed to utility-viz in 2.0. What changed, which pa
 | Distribution | `uv add econ-viz` | `uv add utility-viz` |
 | Import | `import econ_viz` | `import utility_viz` |
 | CLI | `econ-viz` | `utility-viz` |
-| Config file | `econ-viz.toml` | `utility-viz.toml` (section names unchanged) |
+| Config file | `econ-viz.toml` | `econ-viz.toml`, shared by every EconViz package |
+| Config layout | `[color]`, `[stroke.*]`, `[legend]`, ... at the top level | utility-viz's tables under `[utility]`; `base`, `[font]`, `[fonts]` and the shared colours at the top level |
 
 ## Which package to install
 
@@ -64,13 +65,13 @@ Throughout 2.x, documented 1.x code keeps working through the `econ-viz` distrib
 Config files are looked up in this order:
 
 1. The explicit path.
-2. `utility-viz.toml`.
-3. Legacy `econ-viz.toml`, with a warning.
+2. `econ-viz.toml`.
+3. `utility-viz.toml`, the name the 2.0 betas used up to 2.0.0b6, with a warning.
 4. Defaults.
 
 !!! warning "Both files exist"
 
-    The new file wins and the legacy one is ignored with a warning.
+    `econ-viz.toml` wins and `utility-viz.toml` is ignored with a warning.
 
 | Call | Behavior |
 |---|---|
@@ -86,7 +87,22 @@ Config files are looked up in this order:
 utility-viz init --migrate
 ```
 
-This writes `utility-viz.toml` from `econ-viz.toml` and keeps the old file.
+Files from 1.x and from 2.0.0b7 and earlier keep utility-viz's tables at the top level. They are still read, with one
+`UtilityVizDeprecationWarning` per load, and a key under `[utility]` wins over the same key at the top level.
+`utility-viz init --migrate` moves the tables under `[utility]` and keeps your comments: it rewrites a `utility-viz.toml`
+into `econ-viz.toml` (the old file is kept) or, without one, an old-layout `econ-viz.toml` in place.
+
+```toml
+# before (1.x and 2.0.0b7)
+[color]
+ic = "#2E86AB"
+
+# after (2.0.0b8)
+[utility.color]
+ic = "#2E86AB"
+```
+
+See [Settings File](guides/config.md) for the whole layout.
 
 ## Removal timeline
 
@@ -96,7 +112,8 @@ The compatibility layer is removed in 3.0.0, not 2.0.0.
 |---|
 | `econ_viz` package |
 | `econ-viz` command |
-| `econ-viz.toml` lookup |
+| `utility-viz.toml` lookup |
+| utility-viz's tables at the top level of `econ-viz.toml` |
 
 !!! info "What the compatibility contract covers"
 

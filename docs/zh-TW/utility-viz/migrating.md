@@ -19,7 +19,8 @@ description: "econ-viz 在 2.0 更名為 utility-viz：有哪些變動、該安�
 | 發行套件 | `uv add econ-viz` | `uv add utility-viz` |
 | 匯入 | `import econ_viz` | `import utility_viz` |
 | 命令列 | `econ-viz` | `utility-viz` |
-| 設定檔 | `econ-viz.toml` | `utility-viz.toml`（區段名稱不變） |
+| 設定檔 | `econ-viz.toml` | `econ-viz.toml`，由所有 EconViz 套件共用 |
+| 設定檔格式 | `[color]`、`[stroke.*]`、`[legend]` 等位於頂層 | utility-viz 的表格位於 `[utility]` 下；`base`、`[font]`、`[fonts]` 與共用顏色位於頂層 |
 
 ## 該安裝哪個套件
 
@@ -63,13 +64,13 @@ uv add --upgrade-package econ-viz econ-viz
 設定檔依下列順序查找：
 
 1. 明確指定的路徑。
-2. `utility-viz.toml`。
-3. 舊版 `econ-viz.toml`（會發出警告）。
+2. `econ-viz.toml`。
+3. `utility-viz.toml`（2.0 測試版至 2.0.0b6 使用的名稱，會發出警告）。
 4. 預設值。
 
 !!! warning "兩個檔案同時存在"
 
-    以新檔案為準，並以警告提示舊檔案已被忽略。
+    以 `econ-viz.toml` 為準，並以警告提示 `utility-viz.toml` 已被忽略。
 
 | 呼叫 | 行為 |
 |---|---|
@@ -85,7 +86,19 @@ uv add --upgrade-package econ-viz econ-viz
 utility-viz init --migrate
 ```
 
-這會依據 `econ-viz.toml` 產生 `utility-viz.toml`，並保留舊檔案。
+1.x 與 2.0.0b7 以前版本的設定檔，把 utility-viz 的表格放在頂層。這類檔案仍可讀取，每次載入會發出一次 `UtilityVizDeprecationWarning`；同一個鍵同時出現在 `[utility]` 與頂層時，以 `[utility]` 為準。`utility-viz init --migrate` 會把表格移到 `[utility]` 下並保留註解：有 `utility-viz.toml` 時，將其改寫為 `econ-viz.toml` 並保留舊檔；沒有時，則直接改寫舊格式的 `econ-viz.toml`。
+
+```toml
+# 舊格式
+[color]
+ic = "#2E86AB"
+
+# 新格式
+[utility.color]
+ic = "#2E86AB"
+```
+
+完整格式請參閱[設定檔](guides/config.md)。
 
 ## 移除時程
 
@@ -95,7 +108,8 @@ utility-viz init --migrate
 |---|
 | `econ_viz` 套件 |
 | `econ-viz` 指令 |
-| `econ-viz.toml` 查找 |
+| `utility-viz.toml` 查找 |
+| `econ-viz.toml` 頂層的 utility-viz 表格 |
 
 !!! info "相容保證的範圍"
 

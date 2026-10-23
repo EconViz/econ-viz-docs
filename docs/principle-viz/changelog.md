@@ -11,6 +11,20 @@ Release history of `principle-viz`, including its releases as
 tagged where the feature it describes is documented, following l3doc
 convention, so the page number is the real page.
 
+## 0.12.1
+
+- `Label` — `top`, `bottom`, `left` and `right` nudge one label after it has been placed [Figures](guides/figures.md)
+- `ColorModel` — The colour models are the shared EconViz themes, so one name gives the same look in every EconViz package; new `paper` and `presentation` [Figures](guides/figures.md)
+- `Config` — `mosaickit` reads and checks the file from the schema principle-viz declares; the shared `base` picks the starting theme [Figures](guides/figures.md)
+
+## 0.12.0
+
+- `Config` — `Config.load("econ-viz.toml").use()` reads the settings file every EconViz package shares [Figures](guides/figures.md)
+
+## 0.11.2
+
+- `ColorModel` — New `manual` palette: the greys of this manual [Figures](guides/figures.md)
+
 ## 0.11.0
 
 - `PlotTheme` — New `font`, `fonts`, `math_font` and `font_roles` [Figures](guides/figures.md)

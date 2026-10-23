@@ -95,7 +95,7 @@ from utility_viz.core.animation import Animator
 from utility_viz.models import CobbDouglas
 
 # figure settings
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 
 def draw(alpha: float) -> Canvas:
@@ -140,7 +140,7 @@ from utility_viz.core.animation import Animator
 from utility_viz.models import CobbDouglas
 
 # figure settings
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 # same curves in every frame
@@ -186,7 +186,7 @@ from utility_viz.core.animation import Animator
 from utility_viz.models import CobbDouglas
 
 # figure settings
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 # same curves in every frame

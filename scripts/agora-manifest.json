@@ -57,7 +57,7 @@
   },
   "docs/principle-viz/guides/figures.md": {
     "source": "packages/principle-viz/chapters/en/15-figures.typ",
-    "sha256": "6f14afc6b491741bd4815fec3311c2ba6ee09eeea7ddba75b6eaf3eda058e687"
+    "sha256": "12fbd3b1c0f75565632c029d41b5dc84ddfd6213ebc9bde797929eab3b276794"
   },
   "docs/principle-viz/cli.md": {
     "source": "packages/principle-viz/chapters/en/16-cli.typ",
@@ -125,7 +125,7 @@
   },
   "docs/zh-TW/principle-viz/guides/figures.md": {
     "source": "packages/principle-viz/chapters/zh-TW/15-figures.typ",
-    "sha256": "2ca3d81db378ed9f85cde3f33e5ef157c7cf96c04302379df4884e180208dc02"
+    "sha256": "e5c73a8f136518b278e2ce88b953cca335f408ca4bcbebcbaa776c0da844b74c"
   },
   "docs/zh-TW/principle-viz/cli.md": {
     "source": "packages/principle-viz/chapters/zh-TW/16-cli.typ",
@@ -193,7 +193,7 @@
   },
   "docs/zh-CN/principle-viz/guides/figures.md": {
     "source": "packages/principle-viz/chapters/zh-CN/15-figures.typ",
-    "sha256": "f8596b4dc345467b3223e4bc4a9fc07b26d80b712b05c76c77adff4e1d329784"
+    "sha256": "2a786033ed3bb5bf2014051d1ed7bf3cef5de0120bc20e51004645ae66ae49f1"
   },
   "docs/zh-CN/principle-viz/cli.md": {
     "source": "packages/principle-viz/chapters/zh-CN/16-cli.typ",
@@ -377,27 +377,27 @@
   },
   "docs/utility-viz/getting-started/installation.md": {
     "source": "packages/utility-viz/chapters/en/02-installation.typ",
-    "sha256": "28acb97562e4a549a54c62c944b1d658894e674e035ff88c4dba6a439c726e86"
+    "sha256": "4b86ef4e738463c4df4cf16989744cd5dc0dd558eda73dcf8db8607c4abff424"
   },
   "docs/utility-viz/getting-started/quickstart.md": {
     "source": "packages/utility-viz/chapters/en/03-quickstart.typ",
-    "sha256": "0785356f5c51e8f577532f707c62fa2b297635f48dfd785e63b8199c9e5e4a85"
+    "sha256": "2243b793e4fbf3c4b79ec4b3d61f55624901868f433bfc73b248801031a7c2e6"
   },
   "docs/utility-viz/guides/canvas.md": {
     "source": "packages/utility-viz/chapters/en/04-canvas.typ",
-    "sha256": "889e9bc37eb254c1ccc5fd5ba15dc73c869ae46172b341443f953d6b20c14b06"
+    "sha256": "bf47a9aee02509b8d3278ad1e7b9345de9fb7c69de877362d452608e97b48f54"
   },
   "docs/utility-viz/guides/consumer.md": {
     "source": "packages/utility-viz/chapters/en/05-figures.typ",
-    "sha256": "64768d2b394700c1e3573883c5c6fb3b5e031aa137c1ad4a0c35051476bbdfca"
+    "sha256": "cdd60ffd58866ce9e66db780439ec9fda5a0510c7fc514847bfa1c64f892affd"
   },
   "docs/utility-viz/models/index.md": {
     "source": "packages/utility-viz/chapters/en/06-models.typ",
-    "sha256": "545d9d56bc86bdf798fc48b9841701af66238abcf942db5fe217eb1f0b972998"
+    "sha256": "ec3290b3e8045d4e916e3e7f4afce710b690426e070a793145b070b5ec20b86f"
   },
   "docs/utility-viz/models/advanced.md": {
     "source": "packages/utility-viz/chapters/en/07-advanced.typ",
-    "sha256": "044c884913e4f55732d4910e4f50a461fb27b7a0d2ecf9a0dca67c2249deacc9"
+    "sha256": "1f9078c05c1903024030945890bb80a71a05e900f21c01f386e51c8867aee651"
   },
   "docs/utility-viz/tools/analysis.md": {
     "source": "packages/utility-viz/chapters/en/08-analysis.typ",
@@ -405,7 +405,7 @@
   },
   "docs/utility-viz/guides/themes.md": {
     "source": "packages/utility-viz/chapters/en/09-themes.typ",
-    "sha256": "92200907bfe73d7b5a488fcefaf00bace81d52d8538753779bc1d740401ed681"
+    "sha256": "2652fcce65192619606fc7be2fd229e6dabfa9eccd2cd02af370a9bf5159a163"
   },
   "docs/utility-viz/guides/export.md": {
     "source": "packages/utility-viz/chapters/en/10-export.typ",
@@ -413,11 +413,11 @@
   },
   "docs/utility-viz/getting-started/cli.md": {
     "source": "packages/utility-viz/chapters/en/11-cli.typ",
-    "sha256": "754e6e2cfee9239a00676633ba8626528b7e1b59f81b02f7012e551fbe801bba"
+    "sha256": "aaf31c1994268ffa3de10f5c48c503a56d2de3df3a6aecac766e228332e85176"
   },
   "docs/utility-viz/guides/animation.md": {
     "source": "packages/utility-viz/chapters/en/12-animation.typ",
-    "sha256": "c65706440357c4088c287b5c679dbe1d2eaa762624b1dc941b3941c4394a082f"
+    "sha256": "f6fe327d9d034e4a4bd033bbd65cee6f4e3ca1529a486cef6e492138333c175b"
   },
   "docs/utility-viz/guides/interactive.md": {
     "source": "packages/utility-viz/chapters/en/13-widgets.typ",
@@ -425,7 +425,7 @@
   },
   "docs/utility-viz/tools/latex.md": {
     "source": "packages/utility-viz/chapters/en/14-latex.typ",
-    "sha256": "6400b69694ade68531ed6d9f9dcd628a9712fb86d8554423c21f10d830aeeb34"
+    "sha256": "fc75dfe7e6fb5f1b6e7f401bbb7bcdfe62bc0f2c72cc2d9a5237304e9dcd8418"
   },
   "docs/utility-viz/project/changelog.md": {
     "source": "packages/utility-viz/chapters/en/15-changelog.typ",
@@ -437,27 +437,27 @@
   },
   "docs/zh-TW/utility-viz/getting-started/installation.md": {
     "source": "packages/utility-viz/chapters/zh-TW/02-installation.typ",
-    "sha256": "3e01e3e2957632d31ee4c2665c500ef04ff194c5bda272841f658486ac1607f8"
+    "sha256": "c50288d2462e0caee9710ca06f2f4d31c3f22c167f20865f2450acea266a312f"
   },
   "docs/zh-TW/utility-viz/getting-started/quickstart.md": {
     "source": "packages/utility-viz/chapters/zh-TW/03-quickstart.typ",
-    "sha256": "5180e8a0e4c08399f21f509d990fc9567161283a70bafd88d1869d57d9323bb3"
+    "sha256": "20b3e850d467092d5466aea829253374a74075c6d3a54742af9135ae8064304f"
   },
   "docs/zh-TW/utility-viz/guides/canvas.md": {
     "source": "packages/utility-viz/chapters/zh-TW/04-canvas.typ",
-    "sha256": "1bc8facc15877a6e3f19f748fb030e7240d7c0006e136221094df4f5a4570322"
+    "sha256": "a2677a732be97674787919bcfb4d690c87b11dc18053df5e97b293173c082381"
   },
   "docs/zh-TW/utility-viz/guides/consumer.md": {
     "source": "packages/utility-viz/chapters/zh-TW/05-figures.typ",
-    "sha256": "43eb5ab6838d38b9d865a6bfd3a4e77ffec336ec5f2d4ba06dd5570c7ee4ff3e"
+    "sha256": "850836409bd6e7bfd87457eb2bd06761345b1bbf06cb6a86b9638fcce8016207"
   },
   "docs/zh-TW/utility-viz/models/index.md": {
     "source": "packages/utility-viz/chapters/zh-TW/06-models.typ",
-    "sha256": "2b7132e1435545c170a8ad0ef8c9f355f3265720f187c7c03f6b242ea0fe7b06"
+    "sha256": "8779a7f76738cb73e08eab661af3112cd1edaceeede7559236681b84fbf3df6e"
   },
   "docs/zh-TW/utility-viz/models/advanced.md": {
     "source": "packages/utility-viz/chapters/zh-TW/07-advanced.typ",
-    "sha256": "e062a6e422cbc0bf017155727760f1bc6627c85a0af34a3bb12e09b5221f912f"
+    "sha256": "8c012940fa11d4466b71b8087c44346b43c89fc78cdafccae94a0c39f06a894a"
   },
   "docs/zh-TW/utility-viz/tools/analysis.md": {
     "source": "packages/utility-viz/chapters/zh-TW/08-analysis.typ",
@@ -465,7 +465,7 @@
   },
   "docs/zh-TW/utility-viz/guides/themes.md": {
     "source": "packages/utility-viz/chapters/zh-TW/09-themes.typ",
-    "sha256": "e4f130fa605223762a7ecad3949b29040532e64cc77dcc73744c4303752689d0"
+    "sha256": "b5438dd25a5d51be5cbd6389540d6d5322376f876d0289394d022303bf2f0a51"
   },
   "docs/zh-TW/utility-viz/guides/export.md": {
     "source": "packages/utility-viz/chapters/zh-TW/10-export.typ",
@@ -473,11 +473,11 @@
   },
   "docs/zh-TW/utility-viz/getting-started/cli.md": {
     "source": "packages/utility-viz/chapters/zh-TW/11-cli.typ",
-    "sha256": "a1ddf33f07f7829068dc21095dab60c1da0bc741feee1477fa69a8f235959e6b"
+    "sha256": "4a78eefa1c5f8a6e4f5c81df78ce0a3c51b671b47fc4485bf28184ff015ce9ad"
   },
   "docs/zh-TW/utility-viz/guides/animation.md": {
     "source": "packages/utility-viz/chapters/zh-TW/12-animation.typ",
-    "sha256": "6f267413dd0df8fda2cb5756a4cdd237df924fb9e99db6ef16c0748ab2866ea1"
+    "sha256": "95cad2a55fe2c1930cfebf9d39664b8179e099fb8c0fd5bb3610d26ea554fc9b"
   },
   "docs/zh-TW/utility-viz/guides/interactive.md": {
     "source": "packages/utility-viz/chapters/zh-TW/13-widgets.typ",
@@ -485,7 +485,7 @@
   },
   "docs/zh-TW/utility-viz/tools/latex.md": {
     "source": "packages/utility-viz/chapters/zh-TW/14-latex.typ",
-    "sha256": "db4bf76d9cdddb1cf5c4befa06cddddb69cdf3c807fdd51ebfe7bf7aca72dde5"
+    "sha256": "60929ef55c9270cae1c866685b447b13560e1dcfba6a126a5d475e3f0c0701c9"
   },
   "docs/zh-TW/utility-viz/project/changelog.md": {
     "source": "packages/utility-viz/chapters/zh-TW/15-changelog.typ",
@@ -497,27 +497,27 @@
   },
   "docs/zh-CN/utility-viz/getting-started/installation.md": {
     "source": "packages/utility-viz/chapters/zh-CN/02-installation.typ",
-    "sha256": "0360956b85dc96c480b168a1fd0ed61f42dea17565cbefadfb5a885579f68b15"
+    "sha256": "62ec89d43cc3ad46b89dad6ba659a76bd00e0e4af6f329539f133ba0e3fe4570"
   },
   "docs/zh-CN/utility-viz/getting-started/quickstart.md": {
     "source": "packages/utility-viz/chapters/zh-CN/03-quickstart.typ",
-    "sha256": "ceb154ac7c0f8db4cd1ee0a8fd0c4d6f0e3c76f21190ab4a32a627fcff6d70d0"
+    "sha256": "b77ca35afc33eb01f183f565339144d120c03434f8cb61f052f732405f1c1865"
   },
   "docs/zh-CN/utility-viz/guides/canvas.md": {
     "source": "packages/utility-viz/chapters/zh-CN/04-canvas.typ",
-    "sha256": "b832c67acd079c94caaa53633ee1cfe3b75dea8d2338e0c94ef849fc8dac6361"
+    "sha256": "9afdf34e59f9e24eda4e9ec3df52e360147252c4a92b307d66977daac37858ed"
   },
   "docs/zh-CN/utility-viz/guides/consumer.md": {
     "source": "packages/utility-viz/chapters/zh-CN/05-figures.typ",
-    "sha256": "790698483a1a39621f43175c9e2ecd8fb4b8c1786583a7d6754ccf1b5670b69e"
+    "sha256": "a15cc5d47d1e488918f74d9dd0a38c1f587bc5e0fc0420c176fb772d10eace41"
   },
   "docs/zh-CN/utility-viz/models/index.md": {
     "source": "packages/utility-viz/chapters/zh-CN/06-models.typ",
-    "sha256": "2efa0003e5e6e25e25105cc680bbb2ab8da9822cfed0ed5eecc875b8633cf57e"
+    "sha256": "fe655d399ff5c5b6dfa92e4276bd67fa9aac387f45df350742dcac727f0d89b4"
   },
   "docs/zh-CN/utility-viz/models/advanced.md": {
     "source": "packages/utility-viz/chapters/zh-CN/07-advanced.typ",
-    "sha256": "4c0cbf6e414a11f5da32a0532a21e0448dc166387f7de7c498782eadb645e886"
+    "sha256": "0446103b60969e926e089c47d6e65567c7b75ed347efcb62e3bfe3eb67d8b06b"
   },
   "docs/zh-CN/utility-viz/tools/analysis.md": {
     "source": "packages/utility-viz/chapters/zh-CN/08-analysis.typ",
@@ -525,7 +525,7 @@
   },
   "docs/zh-CN/utility-viz/guides/themes.md": {
     "source": "packages/utility-viz/chapters/zh-CN/09-themes.typ",
-    "sha256": "f5d3526d68dd15f641407affd6dcefbcd197a739286709d283524216a8759ba5"
+    "sha256": "f34c4db1f07950746938870b3b834304c9f0cd5109ad07127b230cf61e574469"
   },
   "docs/zh-CN/utility-viz/guides/export.md": {
     "source": "packages/utility-viz/chapters/zh-CN/10-export.typ",
@@ -533,11 +533,11 @@
   },
   "docs/zh-CN/utility-viz/getting-started/cli.md": {
     "source": "packages/utility-viz/chapters/zh-CN/11-cli.typ",
-    "sha256": "74a625cfccbdc7898f3a2f1eab0caa49ad2cc1b48771576c69ba418e3b0babef"
+    "sha256": "f10f2d943c0a828b5777db58bdb06144f140783b848c38f24be9e49beb3d5f5b"
   },
   "docs/zh-CN/utility-viz/guides/animation.md": {
     "source": "packages/utility-viz/chapters/zh-CN/12-animation.typ",
-    "sha256": "f2213b884460fa1ce5b688612228c3f0a78907f359a713167ef4759f8038f92f"
+    "sha256": "8c8f701e5e97122c755f25298de80d76de90509cb8e683e6efb996077ba6bb09"
   },
   "docs/zh-CN/utility-viz/guides/interactive.md": {
     "source": "packages/utility-viz/chapters/zh-CN/13-widgets.typ",
@@ -545,7 +545,7 @@
   },
   "docs/zh-CN/utility-viz/tools/latex.md": {
     "source": "packages/utility-viz/chapters/zh-CN/14-latex.typ",
-    "sha256": "8b3af7f88ed99764dcdecd6959d81a05970245162443728ac21343dcea8fa869"
+    "sha256": "1526ee751d026fffbf500b93de6e5d9cfc0892884e8a9830d9017543e1e53726"
   },
   "docs/zh-CN/utility-viz/project/changelog.md": {
     "source": "packages/utility-viz/chapters/zh-CN/15-changelog.typ",

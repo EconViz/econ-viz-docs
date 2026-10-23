@@ -58,7 +58,7 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
 # figure settings
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
@@ -90,7 +90,7 @@ Draw the budget line $p_x x + p_y y = I$.
 from utility_viz import Canvas, Config
 
 # figure settings
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 # italic x and y
 cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
@@ -118,7 +118,7 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
 # figure settings
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
@@ -152,7 +152,7 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
 # figure settings
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
@@ -186,7 +186,7 @@ from utility_viz import Canvas, Config, Label, levels, solve
 from utility_viz.models import CobbDouglas
 
 # figure settings
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
@@ -228,7 +228,7 @@ from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
 # figure settings
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
 eq = solve(model, px=2.0, py=3.0, income=30.0)
@@ -276,7 +276,7 @@ from mosaickit import CanvasGrid
 from utility_viz import Canvas, Config, LineStyle
 
 # figure settings
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 styles = [
     LineStyle.SOLID,
@@ -327,7 +327,7 @@ from mosaickit import CanvasGrid
 from utility_viz import ArrowStyle, Canvas, Config
 
 # figure settings
-Config.load("manual.toml").use()
+Config.load("econ-viz.toml").use()
 
 styles = [
     ArrowStyle.SIMPLE,
@@ -420,6 +420,22 @@ cvs.add_point(
     marker=Marker(color="black", shape="D"),
     label=Label(text="A", position="left", fontsize=14),
 )
+```
+
+`top`, `bottom`, `left` and `right` move one label after it has been
+placed: by a number of points or by a string with a unit, such as
+`"10pt"`, `"0.5em"` (the label's font size) or `"2mm"`. Automatic
+placement still picks the spot, and later labels still avoid the moved
+one. `top = "2pt"` under `[utility.label.<name>]` in `econ-viz.toml` sets
+a default for every label of that kind (pt, mm, cm or in, no em); a
+label's own value replaces it for that direction. Without nudges every
+figure is unchanged.
+
+```python
+from utility_viz import Label
+
+cvs.add_equilibrium(eq, label=Label(top="10pt"))
+cvs.add_point(5, 3, label=Label(text="A", left="6pt"))
 ```
 
 ### Fill

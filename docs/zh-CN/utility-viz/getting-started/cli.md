@@ -14,7 +14,7 @@ seo_title: "命令行工具"
 | `utility-viz models` | 列出所有支持的效用模型 |
 | `utility-viz plot ...` | 生成并导出图形 |
 | `utility-viz solve-tex ...` | 以 TeX 格式输出 Marshall 需求的闭式解 |
-| `utility-viz init [path]` | 创建 `utility-viz.toml` 配置模板 |
+| `utility-viz init [path]` | 创建 `econ-viz.toml` 配置模板 |
 
 ## 说明与模型
 
@@ -133,13 +133,13 @@ utility-viz plot --model stone-geary --bar-x 2 --bar-y 2 \
 
 <!-- api: agora.utility_viz.getting_started_cli_4 -->
 
-创建带注释的 `utility-viz.toml` 模板。省略路径时写入当前目录；文件已存在时，必须使用 `--force` 才会覆盖。`--migrate` 则改为从同一目录中旧的 `econ-viz.toml` 创建 `utility-viz.toml`，并保留旧文件。
+创建带注释的 `econ-viz.toml` 模板：顶层为共享配置，utility-viz 自身的配置位于 `[utility]` 下。省略路径时写入当前目录；文件已存在时，必须使用 `--force` 才会覆盖。`--migrate` 则改为把 utility-viz 位于顶层的表移到 `[utility]` 下，并保留注释：同一目录有 `utility-viz.toml` 时，将其改写为 `econ-viz.toml` 并保留旧文件；没有时，则直接改写旧格式的 `econ-viz.toml`。
 
 ```bash
 utility-viz init
 utility-viz init config/figures.toml
 utility-viz init --migrate
-utility-viz plot --config utility-viz.toml --model cobb-douglas \
+utility-viz plot --config econ-viz.toml --model cobb-douglas \
               --px 2 --py 3 --income 30 --output figure.png
 ```
 
