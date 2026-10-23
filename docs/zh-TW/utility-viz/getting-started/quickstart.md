@@ -20,7 +20,7 @@ $$
 from utility_viz import Canvas, Config, levels, solve
 from utility_viz.models import CobbDouglas
 
-# 圖形設定
+# 載入圖形設定
 Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
@@ -28,7 +28,7 @@ eq = solve(model, px=2.0, py=3.0, income=30.0)
 
 # 斜體的 x 與 y
 cvs = Canvas(x_max=20, y_max=15, x_label="$x$", y_label="$y$")
-# 五條曲線 一條過最適點
+# 其中一條通過最適點
 lvls = levels.around(eq.utility, n=5)
 cvs.add_utility(model, levels=lvls)
 # 預算線與可行集合

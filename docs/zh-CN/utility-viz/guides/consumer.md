@@ -16,7 +16,7 @@ seo_title: "多面板图与需求图"
 from utility_viz import Config, Figure, Layout, levels, solve
 from utility_viz.models import CobbDouglas
 
-# 图形设置
+# 载入图形设置
 Config.load("manual.toml").use()
 
 fig = Figure(
@@ -34,7 +34,7 @@ cases = [
 ]
 for idx, (model, px, py, income) in enumerate(cases):
     eq = solve(model, px=px, py=py, income=income)
-    # 面板都是 Canvas
+    # 每個面板都是 Canvas
     panel = fig[idx]
     panel.add_utility(
         model, levels=levels.around(eq.utility, n=5)
@@ -78,7 +78,7 @@ from utility_viz import (
 )
 from utility_viz.models import CobbDouglas
 
-# 图形设置
+# 载入图形设置
 Config.load("manual.toml").use()
 
 model = CobbDouglas(alpha=0.5, beta=0.5)
@@ -91,7 +91,7 @@ path = PricePath(
     n=40,
 )
 
-# 围绕路径中段最优点的曲线
+# 围绕中段最优点的曲线
 eq = path.equilibria[len(path.equilibria) // 2]
 
 cvs = Canvas(x_max=25, y_max=20, x_label="$x$", y_label="$y$")

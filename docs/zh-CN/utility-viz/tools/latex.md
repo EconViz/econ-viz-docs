@@ -51,7 +51,7 @@ from utility_viz import (
     solve,
 )
 
-# 图形设置
+# 载入图形设置
 Config.load("manual.toml").use()
 
 # Leontief(a=2.0, b=3.0)
@@ -88,7 +88,7 @@ from utility_viz import (
     solve,
 )
 
-# 图形设置
+# 载入图形设置
 Config.load("manual.toml").use()
 
 # PerfectSubstitutes(a=2.0, b=3.0)
