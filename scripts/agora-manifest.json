@@ -5,7 +5,7 @@
   },
   "docs/principle-viz/installation.md": {
     "source": "packages/principle-viz/chapters/en/02-installation.typ",
-    "sha256": "d840953b05cf4293ec99c5de3551f5ea35cd520804ad0265673b4844318468b9"
+    "sha256": "e512749f8b430278ac5ad1a2b655b5692773cab4831570be656e52212688a8bc"
   },
   "docs/principle-viz/quickstart.md": {
     "source": "packages/principle-viz/chapters/en/03-quickstart.typ",
@@ -57,7 +57,7 @@
   },
   "docs/principle-viz/guides/figures.md": {
     "source": "packages/principle-viz/chapters/en/15-figures.typ",
-    "sha256": "12fbd3b1c0f75565632c029d41b5dc84ddfd6213ebc9bde797929eab3b276794"
+    "sha256": "32208c7b4c1e07a67aa4e005ac6157024ad152111fb75329f08d1cd5efe7e30c"
   },
   "docs/principle-viz/cli.md": {
     "source": "packages/principle-viz/chapters/en/16-cli.typ",
@@ -73,7 +73,7 @@
   },
   "docs/zh-TW/principle-viz/installation.md": {
     "source": "packages/principle-viz/chapters/zh-TW/02-installation.typ",
-    "sha256": "2dea93f30044f4190211bdb41868ecba7e679342d31c6778ccb37350e66c6750"
+    "sha256": "db72f0c19e09623415a00fa11b4c6b7752f1102fd04b59912885fc22d49be3ca"
   },
   "docs/zh-TW/principle-viz/quickstart.md": {
     "source": "packages/principle-viz/chapters/zh-TW/03-quickstart.typ",
@@ -125,7 +125,7 @@
   },
   "docs/zh-TW/principle-viz/guides/figures.md": {
     "source": "packages/principle-viz/chapters/zh-TW/15-figures.typ",
-    "sha256": "e5c73a8f136518b278e2ce88b953cca335f408ca4bcbebcbaa776c0da844b74c"
+    "sha256": "e920ca4914b643a1fb781ba3ee8d4d92123e5d85702f7cd1f03b0c43a78bdbd0"
   },
   "docs/zh-TW/principle-viz/cli.md": {
     "source": "packages/principle-viz/chapters/zh-TW/16-cli.typ",
@@ -141,7 +141,7 @@
   },
   "docs/zh-CN/principle-viz/installation.md": {
     "source": "packages/principle-viz/chapters/zh-CN/02-installation.typ",
-    "sha256": "e6f18201a4d0e7256f151238e5473599ce9df8e277b5d225a5a60d510151d876"
+    "sha256": "0aa0f63a03d6a09647ea25916aeb412699caf9efc0a8c2955376a5e327528801"
   },
   "docs/zh-CN/principle-viz/quickstart.md": {
     "source": "packages/principle-viz/chapters/zh-CN/03-quickstart.typ",
@@ -193,7 +193,7 @@
   },
   "docs/zh-CN/principle-viz/guides/figures.md": {
     "source": "packages/principle-viz/chapters/zh-CN/15-figures.typ",
-    "sha256": "2a786033ed3bb5bf2014051d1ed7bf3cef5de0120bc20e51004645ae66ae49f1"
+    "sha256": "c36fea4204e3a2aeaaae7a77630f34697c080970106b40569f91243279102937"
   },
   "docs/zh-CN/principle-viz/cli.md": {
     "source": "packages/principle-viz/chapters/zh-CN/16-cli.typ",

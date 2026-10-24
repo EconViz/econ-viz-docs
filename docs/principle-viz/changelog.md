@@ -11,6 +11,10 @@ Release history of `principle-viz`, including its releases as
 tagged where the feature it describes is documented, following l3doc
 convention, so the page number is the real page.
 
+## 0.14.0
+
+- `Config` — `[principle.label.<group>]` in `econ-viz.toml` moves whole groups of labels by default [Figures](guides/figures.md)
+
 ## 0.13.0
 
 - `elasticity_revenue_canvases` — `titles=(demand_title, revenue_title)` sets the two figure titles; `None` draws none [Elasticity and total revenue](guides/elasticity.md)
