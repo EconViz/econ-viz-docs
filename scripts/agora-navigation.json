@@ -138,9 +138,9 @@
       "zh-CN": "主题与配置"
     },
     "guides/parameters": {
-      "en": "Parameters, grids and animation",
-      "zh-TW": "參數、網格與動畫",
-      "zh-CN": "参数、网格与动画"
+      "en": "Parameters and grids",
+      "zh-TW": "參數與網格",
+      "zh-CN": "参数与网格"
     },
     "guides/rendering": {
       "en": "Rendering",

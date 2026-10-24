@@ -6,7 +6,7 @@ seo_title: "简介"
 
 <span id="sec-intro"></span>
 
-`mosaickit` 软件包以小型且不可变的组件组装二维图形：场景是一份有序的图层列表（路径、填色区域、标记、文字、箭头、标签、大括号）；每个图层标明一个语义角色，主题将角色转换为样式，渲染器再将结果输出为 PNG、SVG、PDF、GIF 或 MP4。它不包含任何特定领域的知识。`principle-viz`、`utility-viz` 等领域软件包自行定义模型与角色名称，再将要绘制的图层交给 `mosaickit`；曲线构造与 TikZ 导出则由 `bezierkit` 等几何软件包负责。
+`mosaickit` 软件包以小型且不可变的组件组装二维图形：场景是一份有序的图层列表（路径、填色区域、标记、文字、箭头、标签、大括号）；每个图层标明一个语义角色，主题将角色转换为样式，渲染器再将结果输出为 PNG、SVG 或 PDF。它不包含任何特定领域的知识。`principle-viz`、`utility-viz` 等领域软件包自行定义模型与角色名称，再将要绘制的图层交给 `mosaickit`；曲线构造与 TikZ 导出则由 `bezierkit` 等几何软件包负责。
 
 ## 设计
 
@@ -34,7 +34,7 @@ seo_title: "简介"
 |  | 区域标签与点标签 | [区域标签与点标签](labels.md#sec-labels) |
 | 外观 | 样式、颜色、调色板 | [样式与颜色](styles.md#sec-styles) |
 |  | 主题、角色、配置 | [主题与配置](themes.md#sec-themes) |
-| 输出 | 参数、网格、动画 | [参数、网格与动画](parameters.md#sec-parameters) |
+| 输出 | 参数与网格 | [参数与网格](parameters.md#sec-parameters) |
 |  | 渲染器、缓存、保存 | [绘制](rendering.md#sec-rendering) |
 
 初次使用请先读[快速入门](../quickstart.md#sec-quickstart)、[画布与场景](canvas.md#sec-canvas)与[图层与坐标轴](layers.md#sec-layers)。本手册的图都是 `mosaickit` 自己的输出：每张图由它所示范的画布或网格绘制，并以印在此处的尺寸存成 PDF。

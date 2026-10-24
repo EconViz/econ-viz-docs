@@ -20,7 +20,7 @@ description: "Open-source Python library for publication-quality microeconomics 
 
 !!! warning "utility-viz 2.0 is in beta"
 
-    utility-viz 2.0.0b1 is a pre-release. `econ-viz` 1.x remains the stable line until 2.0 final is released.
+    utility-viz 2.0.0b8 is a pre-release. `econ-viz` 1.x remains the stable line until 2.0 final is released.
     Coming from `econ-viz`? See [Migration guide](migrating.md).
 
 ```python

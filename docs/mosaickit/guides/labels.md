@@ -84,6 +84,37 @@ edge, because that is where the label belongs.
 
 </figure>
 
+## Nudging a label
+
+<span id="sec-nudge"></span>
+
+<!-- api: agora.mosaickit.guides_labels_3 -->
+
+Fine-tunes one label after the renderer has placed it. `Nudge(dx, dy)`
+moves the label `dx` points right and `dy` points up; `nudge_from` builds
+the same move from directions, with `dy = top - bottom` and
+`dx = right - left`. A length is a number of points or a string with a
+unit (`"10pt"`, `"0.5em"`, `"2mm"`, `"0.1in"`); `em` needs `font_size`.
+`parse_length` reads one length in points. Point, region, brace and text
+labels take `nudge=`; a leader follows the moved label and later labels
+avoid it. Without a nudge the output is unchanged.
+
+```python
+from mosaickit import (
+    Canvas,
+    CanvasSpec,
+    PointLabelLayer,
+    nudge_from,
+)
+
+canvas = Canvas(CanvasSpec(x_range=(0, 10), y_range=(0, 10)))
+canvas.add(
+    PointLabelLayer(
+        (5, 5), "$E$", nudge=nudge_from(top="3pt", right="2pt")
+    )
+)
+```
+
 ## Hard constraints
 
 Both kinds of label must cover nothing. Obstacles are collected from the
@@ -93,7 +124,7 @@ region polygons. The searches below are defined in
 from `mosaickit.layout`. Like the geometry functions, they work in display
 pixels. `scale` converts their point-based gaps to pixels.
 
-<!-- api: agora.mosaickit.guides_labels_3 -->
+<!-- api: agora.mosaickit.guides_labels_4 -->
 
 `Obstacles` records what a label must avoid. `Placement` records the
 resulting rectangle, the leader segment (`None` for a label without one)
@@ -119,7 +150,7 @@ Each term is computed exactly by [Segments and rectangles](geometry.md#lem-rect-
 
 ## Callouts
 
-<!-- api: agora.mosaickit.guides_labels_4 -->
+<!-- api: agora.mosaickit.guides_labels_5 -->
 
 Searches around a region for a callout of the given size. For each of 16
 directions $r$ from the pole $o$, it places a candidate rectangle at
@@ -179,7 +210,7 @@ When the returned charge is not zero, the renderer still draws the callout
 there and emits a `LayoutWarning` naming the layer; enlarging the canvas or
 shortening the text usually removes it.
 
-<!-- api: agora.mosaickit.guides_labels_5 -->
+<!-- api: agora.mosaickit.guides_labels_6 -->
 
 `fits_inside` returns a rectangle centred on the pole if it fits and
 touches nothing except its own region. `place_point_label` performs the

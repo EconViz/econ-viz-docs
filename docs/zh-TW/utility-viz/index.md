@@ -20,7 +20,7 @@ description: "開源 Python 套件，繪製出版品質的個體經濟學圖形�
 
 !!! warning "utility-viz 2.0 目前為 Beta 版"
 
-    utility-viz 2.0.0b1 是預先發行版（pre-release）。在 2.0 正式版釋出之前，穩定版仍是 `econ-viz` 1.x。
+    utility-viz 2.0.0b8 是預先發行版（pre-release）。在 2.0 正式版釋出之前，穩定版仍是 `econ-viz` 1.x。
     從 `econ-viz` 升級？請見[遷移指南](migrating.md)。
 
 ```python

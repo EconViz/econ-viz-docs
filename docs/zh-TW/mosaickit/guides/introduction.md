@@ -6,7 +6,7 @@ seo_title: "簡介"
 
 <span id="sec-intro"></span>
 
-`mosaickit` 套件以小型且不可變的元件組裝二維圖形：場景是一份有序的圖層清單（路徑、填色區域、標記、文字、箭頭、標籤、大括號）；每個圖層標明一個語意角色，主題將角色轉成樣式，繪製器再將結果輸出為 PNG、SVG、PDF、GIF 或 MP4。它不含任何特定領域的知識。`principle-viz`、`utility-viz` 等領域套件自行定義模型與角色名稱，再將要繪製的圖層交給 `mosaickit`；曲線建構與 TikZ 匯出則由 `bezierkit` 等幾何套件負責。
+`mosaickit` 套件以小型且不可變的元件組裝二維圖形：場景是一份有序的圖層清單（路徑、填色區域、標記、文字、箭頭、標籤、大括號）；每個圖層標明一個語意角色，主題將角色轉成樣式，繪製器再將結果輸出為 PNG、SVG 或 PDF。它不含任何特定領域的知識。`principle-viz`、`utility-viz` 等領域套件自行定義模型與角色名稱，再將要繪製的圖層交給 `mosaickit`；曲線建構與 TikZ 匯出則由 `bezierkit` 等幾何套件負責。
 
 ## 設計
 
@@ -34,7 +34,7 @@ seo_title: "簡介"
 |  | 區域標籤與點標籤 | [區域標籤與點標籤](labels.md#sec-labels) |
 | 外觀 | 樣式、顏色、色盤 | [樣式與顏色](styles.md#sec-styles) |
 |  | 主題、角色、設定 | [主題與設定](themes.md#sec-themes) |
-| 輸出 | 參數、網格、動畫 | [參數、網格與動畫](parameters.md#sec-parameters) |
+| 輸出 | 參數與網格 | [參數與網格](parameters.md#sec-parameters) |
 |  | 繪製器、快取、儲存 | [繪製](rendering.md#sec-rendering) |
 
 初次使用請先讀[快速入門](../quickstart.md#sec-quickstart)、[畫布與場景](canvas.md#sec-canvas)與[圖層與座標軸](layers.md#sec-layers)。本手冊的圖都是 `mosaickit` 自己的輸出：每張圖由它所示範的畫布或網格繪製，並以印在此處的尺寸存成 PDF。

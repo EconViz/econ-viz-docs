@@ -70,7 +70,7 @@ canvas.save("diagram.svg")
 
 -   :material-view-grid-outline: **Parameters and grids**
 
-    Parameters and expressions, `CanvasGrid` layouts and `Animation` sweeps.
+    Parameters and expressions, `CanvasGrid` layouts and parameter sweeps.
 
 -   :material-file-image-outline: **Pluggable rendering**
 
@@ -80,8 +80,8 @@ canvas.save("diagram.svg")
 
 ## Scope
 
-mosaickit owns domain-neutral scene composition, styles, themes, parameter binding, grid layout, animation frames,
-renderer contracts and static or animated output. Domain semantics belong to the packages built on it. Curve
+mosaickit owns domain-neutral scene composition, styles, themes, parameter binding, grid layout,
+renderer contracts and static output. Domain semantics belong to the packages built on it. Curve
 construction and native TikZ path generation belong to geometry packages such as
 [bezierkit](../bezierkit/index.md).
 
@@ -97,7 +97,7 @@ Requires Python 3.10 or later. See [Installation](installation.md) for extras an
 
 ## Documentation
 
-The following chapters cover mosaickit 0.5.1.
+The following chapters cover mosaickit 1.0.0rc6.
 
 - [Introduction](guides/introduction.md)
 - [Installation](installation.md)
@@ -109,7 +109,7 @@ The following chapters cover mosaickit 0.5.1.
 - [Region and point labels](guides/labels.md)
 - [Styles and colors](guides/styles.md)
 - [Themes and configuration](guides/themes.md)
-- [Parameters, grids and animation](guides/parameters.md)
+- [Parameters and grids](guides/parameters.md)
 - [Rendering](guides/rendering.md)
 - [Proofs](project/proofs.md)
 - [Change history](project/changelog.md)

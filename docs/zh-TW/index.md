@@ -77,7 +77,7 @@ EconViz 由四個套件組成：兩個負責繪製經濟學圖形，另外兩個
     uv add bezierkit
     ```
 
-    目前的穩定版本為 1.0.1。
+    目前的穩定版本為 1.1.0。
 
     [:octicons-arrow-right-24: bezierkit](bezierkit/index.md)
 

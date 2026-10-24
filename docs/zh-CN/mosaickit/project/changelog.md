@@ -8,6 +8,35 @@ seo_title: "更新记录"
 
 本章列出影响软件包使用的版本变更，不列仅修改文档的版本。按照 l3doc 惯例，每个条目都标注在它所描述的功能旁，因此所列页码就是该功能的实际页码。
 
+## 1.0.0rc6
+
+- 各软件包声明 `econ_toml.Schema`，由 mosaickit 解析 `econ-viz.toml`；新增共用主题（`mosaickit.themes`）与标签微调（`Nudge`） [简介](../guides/introduction.md)
+- `Nudge` — 新增 [区域标签与点标签](../guides/labels.md)
+- `Schema` — 新增；软件包声明自己的键，由 mosaickit 解析文件 [主题与配置](../guides/themes.md)
+- `get_tokens` — 新增 [主题与配置](../guides/themes.md)
+
+## 1.0.0rc5
+
+- 新增 `mosaickit.econ_toml`，读取每个 EconViz 软件包共用的 `econ-viz.toml` 区段 [简介](../guides/introduction.md)
+
+## 1.0.0rc4
+
+- 已解析的字体可跨符号链接共用；设置字体后的标题基线与 Matplotlib 的标题一致 [简介](../guides/introduction.md)
+
+## 1.0.0rc3
+
+- 标题与夹有 `$...$` 数学式的文字改用设置的文字字体排版，中文不再显示为方框 [简介](../guides/introduction.md)
+
+## 1.0.0rc2
+
+- 绘制更快，输出不变：标签布置、点的检查与 Matplotlib 的 mathtext 解析改用数组，并使用只在单次绘制或保存期间有效的缓存 [简介](../guides/introduction.md)
+
+## 1.0.0rc1
+
+- 移除已弃用的 `Animation` 与 `TextStyle.family`（详见参数与样式两章） [简介](../guides/introduction.md)
+- `TextStyle` — 移除 `family`；改以 `font` 选择字体，并用 `TextFonts` 换成自己的字体文件。字段请以名称传入；含 `"family": null` 的场景文档仍可加载，指定字体家族名称的则会被拒绝 [样式与颜色](../guides/styles.md)
+- `Animation` — 移除 0.6.0 起弃用的 `Animation`、`Animation.sweep()` 与 Matplotlib 播放辅助函数；动画改由 `kinetickit` 负责，`CanvasGrid.sweep()` 与 `canvas.bind()` 仍为每个值画一格 [参数与网格](../guides/parameters.md)
+
 ## 0.9.2
 
 - `TikZ` — `font` 对应到 TeX 字体家族 [样式与颜色](../guides/styles.md)
@@ -34,7 +63,7 @@ seo_title: "更新记录"
 ## 0.5.0
 
 - 虚线、点线或点划线应用在箭身；箭头维持实线 [图层与坐标轴](../guides/layers.md)
-- `CanvasGrid` — 新增 `links` [参数、网格与动画](../guides/parameters.md)
+- `CanvasGrid` — 新增 `links` [参数与网格](../guides/parameters.md)
 
 ## 0.4.0
 

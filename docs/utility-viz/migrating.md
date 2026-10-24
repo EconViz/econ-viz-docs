@@ -9,7 +9,7 @@ description: "econ-viz was renamed to utility-viz in 2.0. What changed, which pa
 
 !!! warning "utility-viz 2.0 is in beta"
 
-    2.0.0b1 is a pre-release. `econ-viz` 1.x remains the stable line until 2.0 final is released.
+    2.0.0b8 is a pre-release. `econ-viz` 1.x remains the stable line until 2.0 final is released.
     Pre-releases need `--prerelease allow`, for example `uv add --prerelease allow utility-viz`.
 
 ## What changed

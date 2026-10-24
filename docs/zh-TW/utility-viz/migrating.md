@@ -9,7 +9,7 @@ description: "econ-viz 在 2.0 更名為 utility-viz：有哪些變動、該安�
 
 !!! warning "utility-viz 2.0 目前為 Beta 版"
 
-    2.0.0b1 是預先發行版（pre-release）。在 2.0 正式版釋出之前，穩定版仍是 `econ-viz` 1.x。
+    2.0.0b8 是預先發行版（pre-release）。在 2.0 正式版釋出之前，穩定版仍是 `econ-viz` 1.x。
     安裝預先發行版需要加上 `--prerelease allow`，例如 `uv add --prerelease allow utility-viz`。
 
 ## 變動一覽

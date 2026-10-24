@@ -97,8 +97,7 @@ square points (36 is a 6 pt disc). `shape` is a Matplotlib marker such as
 Text styles. `size` is in points, `font` is a generic font (`"sans"`,
 `"serif"` or `"mono"`, [Fonts](styles.md#sec-fonts)), `weight` is an integer from 1 to 1000,
 `"normal"` or `"bold"`, and `rotation` is in degrees counter-clockwise.
-`family`, a font-family name, still works but is deprecated: it draws
-through Matplotlib and ignores `glyphkit`. It will go in 1.0.
+Pass the fields by name.
 
 ## Fonts
 

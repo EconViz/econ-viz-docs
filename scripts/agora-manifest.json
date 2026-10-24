@@ -5,7 +5,7 @@
   },
   "docs/principle-viz/installation.md": {
     "source": "packages/principle-viz/chapters/en/02-installation.typ",
-    "sha256": "d6ec14a4e8e547cd0a040b65602238c4b3d0d23e4fa06ee64a03a1c7e6f080e8"
+    "sha256": "80be2e267d556be81ad9b58e5ed546eff2c07e20e067c7b6b5b148f01a77a9b3"
   },
   "docs/principle-viz/quickstart.md": {
     "source": "packages/principle-viz/chapters/en/03-quickstart.typ",
@@ -73,7 +73,7 @@
   },
   "docs/zh-TW/principle-viz/installation.md": {
     "source": "packages/principle-viz/chapters/zh-TW/02-installation.typ",
-    "sha256": "7d658f42d35c1692552321d724c9162869672ad3eca819180420d8a5b7d8b540"
+    "sha256": "c2e961884e87b9c418c8c33811d4c8d851c068d5b0163e913a2ac5467a48b52b"
   },
   "docs/zh-TW/principle-viz/quickstart.md": {
     "source": "packages/principle-viz/chapters/zh-TW/03-quickstart.typ",
@@ -141,7 +141,7 @@
   },
   "docs/zh-CN/principle-viz/installation.md": {
     "source": "packages/principle-viz/chapters/zh-CN/02-installation.typ",
-    "sha256": "d08107ac9a4d6110e75a160a92cd0ff403a1e5298e117ab5651196427d92fe99"
+    "sha256": "32021c1f15f9227de20d526d323a607258ae6f5bac946acf61f16ee476254e28"
   },
   "docs/zh-CN/principle-viz/quickstart.md": {
     "source": "packages/principle-viz/chapters/zh-CN/03-quickstart.typ",
@@ -205,11 +205,11 @@
   },
   "docs/mosaickit/guides/introduction.md": {
     "source": "packages/mosaickit/chapters/en/01-introduction.typ",
-    "sha256": "0dd51552057c60ab903c55325c9681b76d83bd85aed92fd13dfea2ab736ab056"
+    "sha256": "b694df78ef4e0f04d010a536f757d172da3d3ec9093d409b25a435a7dc8eb73c"
   },
   "docs/mosaickit/installation.md": {
     "source": "packages/mosaickit/chapters/en/02-installation.typ",
-    "sha256": "f3e3c15cd3af87ccf7aeb179efdddf809657719bc59898820dbb7b79e92b5fdd"
+    "sha256": "c6195fedad58b7a31137383d19f8d13d115ba24ae55bccd75d43e6edb8455385"
   },
   "docs/mosaickit/quickstart.md": {
     "source": "packages/mosaickit/chapters/en/03-quickstart.typ",
@@ -233,23 +233,23 @@
   },
   "docs/mosaickit/guides/labels.md": {
     "source": "packages/mosaickit/chapters/en/08-labels.typ",
-    "sha256": "f659e10cc29191b10b2b2f4ba9583ee8432fafe34a8d307c52f8d18d06faf775"
+    "sha256": "2010cf03aabf5dfd50cd46f05bbe8d33d767c7de4bfe6132d87422ee14ffc1df"
   },
   "docs/mosaickit/guides/styles.md": {
     "source": "packages/mosaickit/chapters/en/09-styles.typ",
-    "sha256": "a07a6944e99dd35bbe3027b7ca9b09d38828cd90321c68893214457021061c5b"
+    "sha256": "40d113b35db0efbfb1efeea14d5e471d730bba361eb7c58aefeb008e750baac9"
   },
   "docs/mosaickit/guides/themes.md": {
     "source": "packages/mosaickit/chapters/en/10-themes.typ",
-    "sha256": "70e0ab475bcde9699637f992461e8a4a2554bb638b26f80719056a49fadacee7"
+    "sha256": "e8402888aa38fbf77368dd7bb35967d91df87c5f7c81ca4c0bbc3afb8b2e2ac1"
   },
   "docs/mosaickit/guides/parameters.md": {
     "source": "packages/mosaickit/chapters/en/11-parameters.typ",
-    "sha256": "847f29c4cf3b4dba246260a706b47053d799736d4e874731b5ab72515807d52e"
+    "sha256": "b49565b97e011f23ca4ea5368eefcb557ea94e92a70d8b4ff1181a3552488ffa"
   },
   "docs/mosaickit/guides/rendering.md": {
     "source": "packages/mosaickit/chapters/en/12-rendering.typ",
-    "sha256": "af06fac901bd50342ed8842d0aae6a589f638639847fe7df403f69b41f46d43f"
+    "sha256": "cf81a34405b3ab18b9a52cbe9b18641e74c76a16adc8cd94cb5264547549c047"
   },
   "docs/mosaickit/project/proofs.md": {
     "source": "packages/mosaickit/chapters/en/a-proofs.typ",
@@ -261,11 +261,11 @@
   },
   "docs/zh-TW/mosaickit/guides/introduction.md": {
     "source": "packages/mosaickit/chapters/zh-TW/01-introduction.typ",
-    "sha256": "70c6e909f054560143e09b84cce313453af81ea2fbc0b4d407bfa0f2c4fb7d36"
+    "sha256": "695bfa22ef686d607bb9376d9594ef92363a9d2a12e28816fa0bed9dc8d4c0ca"
   },
   "docs/zh-TW/mosaickit/installation.md": {
     "source": "packages/mosaickit/chapters/zh-TW/02-installation.typ",
-    "sha256": "ca580b402072113f1a7f20eab1402776b40f2497d1fbd731751cb207dd94eac1"
+    "sha256": "bdbc06906931c1aaac45cbfbd7b2ec0aa8c30c84b3281806247c57ebc04e7064"
   },
   "docs/zh-TW/mosaickit/quickstart.md": {
     "source": "packages/mosaickit/chapters/zh-TW/03-quickstart.typ",
@@ -289,23 +289,23 @@
   },
   "docs/zh-TW/mosaickit/guides/labels.md": {
     "source": "packages/mosaickit/chapters/zh-TW/08-labels.typ",
-    "sha256": "25865c0f4a5855d1e04c05fa17885b250fa6842c4ea3d180864c7c1e84b35944"
+    "sha256": "27d55150506f61ae603fcfd9869dafb87b4e237f892f0a5e58c4bd512a00084a"
   },
   "docs/zh-TW/mosaickit/guides/styles.md": {
     "source": "packages/mosaickit/chapters/zh-TW/09-styles.typ",
-    "sha256": "ddabb85b76981c71103902fa5cfc1efccb6bd97747c08844b6a09422695e45fe"
+    "sha256": "b901f5938439c2070d209489bfc37ce05af20466da3feab349e4ab688bb32d5e"
   },
   "docs/zh-TW/mosaickit/guides/themes.md": {
     "source": "packages/mosaickit/chapters/zh-TW/10-themes.typ",
-    "sha256": "2aba58f1319d2ddc96480e60429c3ca07171d7381d166d5d1ff3ca1c3efa4b72"
+    "sha256": "e0df7cb0cf7083f581eb801fdf06b671ece9e6d39d841f0b1a2e6904b04ccdf8"
   },
   "docs/zh-TW/mosaickit/guides/parameters.md": {
     "source": "packages/mosaickit/chapters/zh-TW/11-parameters.typ",
-    "sha256": "2d0d56b99dc1527507be3ffc03edffdcc0c6c70786b3cdf107fb08fa0849ddf5"
+    "sha256": "2befee460aaeb485892e44725f536342c44df86bbb906daeb325af1ac6af6812"
   },
   "docs/zh-TW/mosaickit/guides/rendering.md": {
     "source": "packages/mosaickit/chapters/zh-TW/12-rendering.typ",
-    "sha256": "05bf2545370c05846b4de8ff404ddd185f57c61872898c93039e96485a51e240"
+    "sha256": "2e0e63767e4505c67794939548ee6b5222832e6f5cded4a23bdbc215b5494404"
   },
   "docs/zh-TW/mosaickit/project/proofs.md": {
     "source": "packages/mosaickit/chapters/zh-TW/a-proofs.typ",
@@ -317,11 +317,11 @@
   },
   "docs/zh-CN/mosaickit/guides/introduction.md": {
     "source": "packages/mosaickit/chapters/zh-CN/01-introduction.typ",
-    "sha256": "53d8568bb52833eeae1b24921f95cef2498d547f4120a7c6a0d88f38456cb084"
+    "sha256": "7914924700a664bb16daa807f6c95386dc1ab0d5c42db2e77c20aaf53a612cca"
   },
   "docs/zh-CN/mosaickit/installation.md": {
     "source": "packages/mosaickit/chapters/zh-CN/02-installation.typ",
-    "sha256": "91b5f317248bb7c610e60c7f3c28c2fed38f3483aee56001c20670d2e092a18d"
+    "sha256": "ffebef452867c7c266eb553946970398129dd858ee52c1123979a0b5dd653a7d"
   },
   "docs/zh-CN/mosaickit/quickstart.md": {
     "source": "packages/mosaickit/chapters/zh-CN/03-quickstart.typ",
@@ -345,23 +345,23 @@
   },
   "docs/zh-CN/mosaickit/guides/labels.md": {
     "source": "packages/mosaickit/chapters/zh-CN/08-labels.typ",
-    "sha256": "6276f3640af0528c130d02230f6ad07a9e1ae1ebaca37b203e8e8d70f0b3ee47"
+    "sha256": "ed18c0a47f2eec659a56c3955f4b978b47249d143036fd21f966c802f4dbed6c"
   },
   "docs/zh-CN/mosaickit/guides/styles.md": {
     "source": "packages/mosaickit/chapters/zh-CN/09-styles.typ",
-    "sha256": "83fd801756ecd6010b994dca99bfe4e242acf46e712382113b3c8b3eb63a804c"
+    "sha256": "72f0020d1511db3f37c69574d213564482c2792476d6402da5be5d2ce803a5a0"
   },
   "docs/zh-CN/mosaickit/guides/themes.md": {
     "source": "packages/mosaickit/chapters/zh-CN/10-themes.typ",
-    "sha256": "236fda6645587ec5bb1652fa23e2791e5863fb08cb193910d6492481039db382"
+    "sha256": "99d5deaaadb2440eb4000a55fcc8699d73f792a5d662aaafea7c95cc0fc207c7"
   },
   "docs/zh-CN/mosaickit/guides/parameters.md": {
     "source": "packages/mosaickit/chapters/zh-CN/11-parameters.typ",
-    "sha256": "786ad26f3ce98e7a4618855c08f4af6a3eaefbc37cfb9fbab7097899e3f7b585"
+    "sha256": "d0c0c3dc45b087911b216b43daeb5caec30c57d0f8cdd2ea8135dbf1c6b2018f"
   },
   "docs/zh-CN/mosaickit/guides/rendering.md": {
     "source": "packages/mosaickit/chapters/zh-CN/12-rendering.typ",
-    "sha256": "ea8f93ab371cb2f356ae4ddb43989c230722f23a1402b7c3f4a4b0535216cd3f"
+    "sha256": "214ec5638342d0d8d64186f568db975a621dc64423a4161d69f1c004f249a87a"
   },
   "docs/zh-CN/mosaickit/project/proofs.md": {
     "source": "packages/mosaickit/chapters/zh-CN/a-proofs.typ",
@@ -373,11 +373,11 @@
   },
   "docs/utility-viz/guides/introduction.md": {
     "source": "packages/utility-viz/chapters/en/01-introduction.typ",
-    "sha256": "cb8b9f7f281d2f90ba404ad91441e6e7c380e56cbf9effb0e2f863e204933428"
+    "sha256": "f00740bb127b812056254cd4adab80b72d11a043fc6ae2c3384954237141138d"
   },
   "docs/utility-viz/getting-started/installation.md": {
     "source": "packages/utility-viz/chapters/en/02-installation.typ",
-    "sha256": "4b86ef4e738463c4df4cf16989744cd5dc0dd558eda73dcf8db8607c4abff424"
+    "sha256": "fb6cbbb5d3e69bc2ab347023a542b9c815f44e60cfaa03be356aa94944aad424"
   },
   "docs/utility-viz/getting-started/quickstart.md": {
     "source": "packages/utility-viz/chapters/en/03-quickstart.typ",
@@ -433,11 +433,11 @@
   },
   "docs/zh-TW/utility-viz/guides/introduction.md": {
     "source": "packages/utility-viz/chapters/zh-TW/01-introduction.typ",
-    "sha256": "9e761696b4801f3af2b52732171f06e4eb1b298e129046ccf95a540968981212"
+    "sha256": "ed160a3ec0eaa0e9ba903e91b3d47dc00c7b67f9c523969a07406d995ac0197c"
   },
   "docs/zh-TW/utility-viz/getting-started/installation.md": {
     "source": "packages/utility-viz/chapters/zh-TW/02-installation.typ",
-    "sha256": "c50288d2462e0caee9710ca06f2f4d31c3f22c167f20865f2450acea266a312f"
+    "sha256": "aa1a7e3d4c99b9f4bbf0f389798918eb3e1ffe86fe0af2cfeed0d5f950f8b9a3"
   },
   "docs/zh-TW/utility-viz/getting-started/quickstart.md": {
     "source": "packages/utility-viz/chapters/zh-TW/03-quickstart.typ",
@@ -493,11 +493,11 @@
   },
   "docs/zh-CN/utility-viz/guides/introduction.md": {
     "source": "packages/utility-viz/chapters/zh-CN/01-introduction.typ",
-    "sha256": "61caab44eadbd382d00cf74c3581eab158dfbc05ea47f70826645ab8fc12eb76"
+    "sha256": "a5fe1d64a93cdf1b79367face7150f3157bc3640c80afb2366325c2099fd448d"
   },
   "docs/zh-CN/utility-viz/getting-started/installation.md": {
     "source": "packages/utility-viz/chapters/zh-CN/02-installation.typ",
-    "sha256": "62ec89d43cc3ad46b89dad6ba659a76bd00e0e4af6f329539f133ba0e3fe4570"
+    "sha256": "710c5107825492190d6b89a36790e8330179b059409b2512982e568c72215b27"
   },
   "docs/zh-CN/utility-viz/getting-started/quickstart.md": {
     "source": "packages/utility-viz/chapters/zh-CN/03-quickstart.typ",
@@ -553,11 +553,11 @@
   },
   "docs/bezierkit/guides/introduction.md": {
     "source": "packages/bezierkit/chapters/en/01-introduction.typ",
-    "sha256": "e264a7d1f2c0cf32a63f048c144c809b05374aedb4d42052cf50dbc3c67dde98"
+    "sha256": "c50cf0961ddf85d3ee7ecd7c83a436932410fa2b7061c68e6f0b29ef9f9bb49d"
   },
   "docs/bezierkit/installation.md": {
     "source": "packages/bezierkit/chapters/en/02-installation.typ",
-    "sha256": "aceae9920a2b2572d6da2db8e87a6fac6f4b413fc7747d38ac57831d328fc33d"
+    "sha256": "e284c96c7b2bb6ab14b15bb0543856bcc60610cc2069a482edfac13e60e58903"
   },
   "docs/bezierkit/quickstart.md": {
     "source": "packages/bezierkit/chapters/en/03-quickstart.typ",
@@ -589,7 +589,7 @@
   },
   "docs/bezierkit/guides/implicit.md": {
     "source": "packages/bezierkit/chapters/en/10-implicit.typ",
-    "sha256": "366f11c6c76831db2e1796a7621e6c33f12babaadcabcd2ff74921d772d940d5"
+    "sha256": "14a988cf74efc9c85557a96072b7495cbcf734f275d5cd28b2faa9fd339373eb"
   },
   "docs/bezierkit/guides/export.md": {
     "source": "packages/bezierkit/chapters/en/11-export.typ",
@@ -613,11 +613,11 @@
   },
   "docs/zh-TW/bezierkit/guides/introduction.md": {
     "source": "packages/bezierkit/chapters/zh-TW/01-introduction.typ",
-    "sha256": "763a63a0433ed07d23829587525170feacd90f09e05f46db29c23615db7cea8a"
+    "sha256": "d1d2c661e1d2020bb35afdf294c3916fa3221eb52498e7fd0dc73c12655fef2c"
   },
   "docs/zh-TW/bezierkit/installation.md": {
     "source": "packages/bezierkit/chapters/zh-TW/02-installation.typ",
-    "sha256": "586d0417bec8186c73b6daf8f76c1053903906d2d107a1a9be239675df5967f9"
+    "sha256": "90f7b01aa635bb12a5b09948e5891d827b231a756dbdf9606568647fb6ce669f"
   },
   "docs/zh-TW/bezierkit/quickstart.md": {
     "source": "packages/bezierkit/chapters/zh-TW/03-quickstart.typ",
@@ -649,7 +649,7 @@
   },
   "docs/zh-TW/bezierkit/guides/implicit.md": {
     "source": "packages/bezierkit/chapters/zh-TW/10-implicit.typ",
-    "sha256": "782448fe9f436d876a113074a817f36f020c096c9debb0602439c84291806bce"
+    "sha256": "8d658cbb180bdcd9707e7d2c682d28d652a9a8caf57f384f35929ad3e8531a4e"
   },
   "docs/zh-TW/bezierkit/guides/export.md": {
     "source": "packages/bezierkit/chapters/zh-TW/11-export.typ",
@@ -673,11 +673,11 @@
   },
   "docs/zh-CN/bezierkit/guides/introduction.md": {
     "source": "packages/bezierkit/chapters/zh-CN/01-introduction.typ",
-    "sha256": "4404967518df2960b6381734810a8fb99094c4dcd6cd5dda8049a90a965382e3"
+    "sha256": "8b06974b70d5c0d516127ea23e2f8e559e76f41dcc087c77d1670c27e9aa4d81"
   },
   "docs/zh-CN/bezierkit/installation.md": {
     "source": "packages/bezierkit/chapters/zh-CN/02-installation.typ",
-    "sha256": "cf28da9a4a6692c4fca006c245cb6a8c1845b37d4e57c47aee54f73cdbb211cc"
+    "sha256": "9dc65481c29cda4163743b66bddd5586ad8b161102d437188828aae4630ef00d"
   },
   "docs/zh-CN/bezierkit/quickstart.md": {
     "source": "packages/bezierkit/chapters/zh-CN/03-quickstart.typ",
@@ -709,7 +709,7 @@
   },
   "docs/zh-CN/bezierkit/guides/implicit.md": {
     "source": "packages/bezierkit/chapters/zh-CN/10-implicit.typ",
-    "sha256": "5f6dfd73c68a4f8f414999dcce750b0468fa472fc61e3b023b5cbf38e629ff4d"
+    "sha256": "c41a1303fb9833bf724312e4482431fe70c8644647704890685a7d9af5d7ce4f"
   },
   "docs/zh-CN/bezierkit/guides/export.md": {
     "source": "packages/bezierkit/chapters/zh-CN/11-export.typ",

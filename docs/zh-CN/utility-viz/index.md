@@ -20,7 +20,7 @@ description: "开源 Python 包，绘制出版质量的微观经济学图形：�
 
 !!! warning "utility-viz 2.0 目前处于 Beta 阶段"
 
-    utility-viz 2.0.0b1 是预发布版本（pre-release）。在 2.0 正式版发布之前，稳定版仍是 `econ-viz` 1.x。
+    utility-viz 2.0.0b8 是预发布版本（pre-release）。在 2.0 正式版发布之前，稳定版仍是 `econ-viz` 1.x。
     从 `econ-viz` 升级？请见[迁移指南](migrating.md)。
 
 ```python

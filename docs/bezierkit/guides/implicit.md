@@ -70,6 +70,15 @@ so it handles curves that turn back, close up or break into several pieces.
 Trace $F(x, y) = c$ for each level $c$ inside the rectangle `viewport`
 $= (x_{\min}, x_{\max}, y_{\min}, y_{\max})$, in `bezierkit.implicit`.
 
+<!-- api: agora.bezierkit.guides_implicit_2 -->
+
+Trace $F(x, y) = c$ on a grid whose values are already computed, in
+`bezierkit.implicit`. `values[row, column]` is $F$ at `(xs[column], ys[row])`,
+so a vectorized $F$ can fill the whole grid in one call instead of one call
+per point. `levels`, `tolerance` and `gradient` are as for `trace_implicit`;
+`xs` and `ys` must be increasing, and `ValueError` is raised for a mismatched
+shape or a non-finite value.
+
 The algorithm is marching squares, the two-dimensional analogue of the
 marching cubes of [Lorensen (1987)](../project/references.md#lorensen1987). A grid cell has corners
 $v_{00}, v_{10}, v_{11}, v_{01}$, counter-clockwise from the lower left,
@@ -182,14 +191,14 @@ print(len(contours.for_level(4)[0].segments))
 
 ## Results
 
-<!-- api: agora.bezierkit.guides_implicit_2 -->
+<!-- api: agora.bezierkit.guides_implicit_3 -->
 
 `trace_implicit` returns a `ContourSet` whose `contours` hold one
 `LevelContours` per level, in the order given. `level_values` lists the
 levels, `paths` all paths together, and `for_level(c)` the paths of one
 level (`KeyError` if it was not traced).
 
-<!-- api: agora.bezierkit.guides_implicit_3 -->
+<!-- api: agora.bezierkit.guides_implicit_4 -->
 
 The `level` and its `paths`, one `PiecewiseBezier` per connected
 component.

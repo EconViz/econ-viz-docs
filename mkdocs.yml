@@ -185,7 +185,7 @@ plugins:
             "Region and point labels": "區域標籤與點標籤"
             "Styles and colors": "樣式與顏色"
             "Themes and configuration": "主題與設定"
-            "Parameters, grids and animation": "參數、網格與動畫"
+            "Parameters and grids": "參數與網格"
             "Rendering": "繪製"
             "Proofs": "證明"
             "Geometry values": "幾何數值物件"
@@ -305,7 +305,7 @@ plugins:
             "Region and point labels": "区域标签与点标签"
             "Styles and colors": "样式与颜色"
             "Themes and configuration": "主题与配置"
-            "Parameters, grids and animation": "参数、网格与动画"
+            "Parameters and grids": "参数与网格"
             "Rendering": "绘制"
             "Proofs": "证明"
             "Geometry values": "几何数值对象"
@@ -492,7 +492,7 @@ nav:
           - Styles and colors: mosaickit/guides/styles.md
           - Themes and configuration: mosaickit/guides/themes.md
       - Rendering & Animation:
-          - Parameters, grids and animation: mosaickit/guides/parameters.md
+          - Parameters and grids: mosaickit/guides/parameters.md
           - Rendering: mosaickit/guides/rendering.md
       - Project:
           - Proofs: mosaickit/project/proofs.md

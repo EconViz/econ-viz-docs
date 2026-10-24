@@ -9,7 +9,7 @@ seo_title: "Introduction"
 The `mosaickit` package assembles two-dimensional diagrams from small,
 immutable pieces. A scene is an ordered list of layers (paths, filled regions,
 markers, text, arrows, labels, braces). Each layer names a semantic role, a
-theme maps roles to styles, and a renderer produces PNG, SVG, PDF, GIF or MP4.
+theme maps roles to styles, and a renderer produces PNG, SVG or PDF.
 The package is domain-neutral. Domain packages such as `principle-viz`
 and `utility-viz` define their own models and role names, then pass
 `mosaickit` the layers to draw. Curve construction and TikZ export
@@ -60,7 +60,7 @@ order-restricted least squares behind [Spreading is optimal](annotations.md#thm-
 |  | Region and point labels | [Region and point labels](labels.md#sec-labels) |
 | Appearance | Styles, colors, palettes | [Styles and colors](styles.md#sec-styles) |
 |  | Themes, roles, configuration | [Themes and configuration](themes.md#sec-themes) |
-| Output | Parameters, grids, animation | [Parameters, grids and animation](parameters.md#sec-parameters) |
+| Output | Parameters and grids | [Parameters and grids](parameters.md#sec-parameters) |
 |  | Renderers, caches, saving | [Rendering](rendering.md#sec-rendering) |
 
 Start with [Quick start](../quickstart.md#sec-quickstart), [Canvases and scenes](canvas.md#sec-canvas) and [Layers and axes](layers.md#sec-layers). Every

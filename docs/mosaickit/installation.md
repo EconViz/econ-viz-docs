@@ -9,17 +9,21 @@ seo_title: "Installation"
 ## Requirements
 
 `mosaickit` requires Python 3.10 or later, `NumPy`
-1.24 or later and `Matplotlib` 3.6 or later (below 4). On Python 3.10,
-it also installs `tomli` to read TOML. GIF output uses `Pillow`,
-which Matplotlib already depends on. MP4 output needs `ffmpeg` on the
-`PATH`.
+1.24 or later, `Matplotlib` 3.6 or later (below 4) and `glyphkit`
+1.0.0b3 or later (below 2), which sets the text. On Python 3.10, it also
+installs `tomli` to read TOML.
 
 ## Installing the package
 
 ```bash
 uv add mosaickit                 # the library
-uv add "mosaickit==0.5.1"        # the version this manual describes
+uv add "mosaickit==1.0.0rc6"     # the version this manual describes
 ```
+
+Version 1.0.0rc6 is a pre-release. Until 1.0 final is published, plain
+`uv add mosaickit` and `pip install mosaickit` install 0.9.2; opt in to
+pre-releases with `uv add --prerelease allow mosaickit` or
+`pip install --pre mosaickit`.
 
 With `pip`, use `python -m pip install mosaickit`. Importing
 `mosaickit` does not import Matplotlib: the built-in renderer is loaded by

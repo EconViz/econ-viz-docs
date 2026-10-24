@@ -81,7 +81,7 @@ seo_title: "样式与颜色"
 
 <!-- api: agora.mosaickit.guides_styles_8 -->
 
-文字样式。`size` 以點为单位，`font` 是通用字体（`"sans"`、`"serif"` 或 `"mono"`，见[字体](styles.md#sec-fonts)），`weight` 是 1 到 1000 的整数、`"normal"` 或 `"bold"`，`rotation` 为逆时针旋转的角度（度）。`family`（字体家族名称）仍可用但已弃用：它走 Matplotlib 绘制，不经过 `glyphkit`，1.0 会移除。
+文字样式。`size` 以点为单位，`font` 是通用字体（`"sans"`、`"serif"` 或 `"mono"`，见[字体](styles.md#sec-fonts)），`weight` 是 1 到 1000 的整数、`"normal"` 或 `"bold"`，`rotation` 为逆时针旋转的角度（度）。字段请以名称传入。
 
 ## 字体
 

@@ -50,6 +50,10 @@ seo_title: "等值线"
 
 在矩形 `viewport` $= (x_{\min}, x_{\max}, y_{\min}, y_{\max})$ 内，描绘每个水平 $c$ 的 $F(x, y) = c$，位于 `bezierkit.implicit`。
 
+<!-- api: agora.bezierkit.guides_implicit_2 -->
+
+对已算好值的网格描绘 $F(x, y) = c$，位于 `bezierkit.implicit`。`values[row, column]` 是 $F$ 在 `(xs[column], ys[row])` 的值，因此向量化的 $F$ 可一次填满整个网格，不必逐点调用。`levels`、`tolerance` 与 `gradient` 同 `trace_implicit`；`xs` 与 `ys` 必须递增，形状不符或含非有限值时抛出 `ValueError`。
+
 算法是行进方格法，即 [Lorensen (1987)](../project/references.md#lorensen1987) 行进立方体法的二维模拟。网格单元的角点为 $v_{00}, v_{10}, v_{11}, v_{01}$，由左下角起逆时针排列，$F$ 的值分别为 $f_{00}, f_{10}, f_{11}, f_{01}$。角点的值不小于水平 $c$ 时称为高。
 
 <span id="def-crossing"></span>
@@ -139,11 +143,11 @@ print(len(contours.for_level(4)[0].segments))
 
 ## 结果
 
-<!-- api: agora.bezierkit.guides_implicit_2 -->
+<!-- api: agora.bezierkit.guides_implicit_3 -->
 
 `trace_implicit` 回传 `ContourSet`，其 `contours` 依给定顺序为每个水平保存一个 `LevelContours`。`level_values` 列出各水平，`paths` 汇集所有路径，`for_level(c)` 回传某一水平的路径（未描绘的水平抛出 `KeyError`）。
 
-<!-- api: agora.bezierkit.guides_implicit_3 -->
+<!-- api: agora.bezierkit.guides_implicit_4 -->
 
 水平值 `level` 与路径 `paths`，每个连通部分一条 `PiecewiseBezier`。
 

@@ -47,7 +47,7 @@ Upgrading from principle-econ 0.1.0 also brings the figure changes made up to v0
 | Welfare labels | Regions are named ("Consumer surplus", "DWL", ...) instead of lettered `A/B/C/D` |
 | `LabeledRegion` | Carries `key`, `label` and `short_label` instead of `letter` |
 | Curve names | Placed beside the curve end instead of only in the legend |
-| Dependency | Requires `mosaickit>=0.5.1,<0.6.0`, installed automatically |
+| Dependency | Requires `mosaickit>=1.0.0rc6,<2`, installed automatically |
 
 !!! note "Calculations are unchanged"
 

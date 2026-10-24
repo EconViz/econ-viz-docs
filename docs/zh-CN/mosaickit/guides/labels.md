@@ -66,11 +66,35 @@ seo_title: "区域标签与点标签"
 
 </figure>
 
+## 微调标签
+
+<span id="sec-nudge"></span>
+
+<!-- api: agora.mosaickit.guides_labels_3 -->
+
+在渲染器布置好标签之后，再微调单个标签的位置。`Nudge(dx, dy)` 使标签向右移 `dx` 点、向上移 `dy` 点；`nudge_from` 以方向建立同样的位移，其中 `dy = top - bottom`、`dx = right - left`。长度可以是以点为单位的数字，或带单位的字符串（`"10pt"`、`"0.5em"`、`"2mm"`、`"0.1in"`）；使用 `em` 时须给出 `font_size`。`parse_length` 把单个长度转成点。点标签、区域标签、大括号标签与文字图层都接受 `nudge=`；引线会跟着移动后的标签，之后的标签也会避开它。没有微调时，输出不变。
+
+```python
+from mosaickit import (
+    Canvas,
+    CanvasSpec,
+    PointLabelLayer,
+    nudge_from,
+)
+
+canvas = Canvas(CanvasSpec(x_range=(0, 10), y_range=(0, 10)))
+canvas.add(
+    PointLabelLayer(
+        (5, 5), "$E$", nudge=nudge_from(top="3pt", right="2pt")
+    )
+)
+```
+
 ## 硬性限制
 
 两种标签都遵守同一条规则：不遮盖任何对象。障碍物包括坐标轴上已绘制的内容：路径的线段、标记与文字的矩形，以及填色区域的多边形。以下搜索函数位于 `mosaickit.layout.placement`；除 `place_beside` 外，也都由 `mosaickit.layout` 导出。它们与几何模块一样，以显示像素为单位运算；`scale` 则将以点为单位的间距换算为像素。
 
-<!-- api: agora.mosaickit.guides_labels_3 -->
+<!-- api: agora.mosaickit.guides_labels_4 -->
 
 `Obstacles` 表示标签必须避开的障碍物；`Placement` 表示标签的放置结果，包括矩形、引线线段（不画引线的标签为 `None`）及违反的限制数。`Obstacles.extended(segments=..., rects=...)` 加入刚放置的标签。
 
@@ -90,7 +114,7 @@ seo_title: "区域标签与点标签"
 
 ## 引线标注
 
-<!-- api: agora.mosaickit.guides_labels_4 -->
+<!-- api: agora.mosaickit.guides_labels_5 -->
 
 在区域周围为给定大小的引线标注搜索位置。从极点 $o$ 沿 16 个方向 $r$，把候选矩形放在距离 `ray_exit(o, r, P)` 再加 12、24 或 40 pt（近环）之处，并以面向极点的边或角对齐，使矩形朝远离区域的方向延伸。引线从极点拉向矩形上的最近点（参见[矩形上的最近点](geometry.md#lem-nearest)），并在距该点 2 pt 处停止。候选位置的代价为 $V(R)$（区域本身也列入多边形），中心不在开阔空间时加一，引线离开自身区域后每穿过一条线、一段文字或一个其他区域加一，每位于一个交叉点之外（参见[开阔空间与交叉点](labels.md#def-beyond)）再加一。
 
@@ -122,6 +146,6 @@ seo_title: "区域标签与点标签"
 
 返回的代价不为零时，渲染器仍会在该处画出引线标注，并发出指出该图层的 `LayoutWarning`；放大画布或缩短文字通常就能消除。
 
-<!-- api: agora.mosaickit.guides_labels_5 -->
+<!-- api: agora.mosaickit.guides_labels_6 -->
 
 其他搜索：置中于极点的矩形，若放得下且除自身区域外不碰到任何对象就返回它；前述的点标签搜索；以及大括号尖端旁的搜索，在尖端外 3 到 45 pt 尝试，并沿跨距以 3 pt 为步长最多滑动 `reach`，位移小者优先。`place_beside` 返回矩形与其违规数。大括号标签在该处没有空位时，渲染器改从尖端尝试引线标注，保留违规较少者。

@@ -8,6 +8,35 @@ seo_title: "更新紀錄"
 
 本章列出影響套件使用的版本變更，不列僅修改文件的版本。依 l3doc 慣例，每個條目都標註在它所描述的功能旁，因此所列頁碼就是該功能的實際頁碼。
 
+## 1.0.0rc6
+
+- 各套件宣告 `econ_toml.Schema`，由 mosaickit 解析 `econ-viz.toml`；新增共用主題（`mosaickit.themes`）與標籤微調（`Nudge`） [簡介](../guides/introduction.md)
+- `Nudge` — 新增 [區域標籤與點標籤](../guides/labels.md)
+- `Schema` — 新增；套件宣告自己的鍵，由 mosaickit 解析檔案 [主題與設定](../guides/themes.md)
+- `get_tokens` — 新增 [主題與設定](../guides/themes.md)
+
+## 1.0.0rc5
+
+- 新增 `mosaickit.econ_toml`，讀取每個 EconViz 套件共用的 `econ-viz.toml` 區段 [簡介](../guides/introduction.md)
+
+## 1.0.0rc4
+
+- 已解析的字型可跨符號連結共用；設定字型後的標題基線與 Matplotlib 的標題一致 [簡介](../guides/introduction.md)
+
+## 1.0.0rc3
+
+- 標題與夾有 `$...$` 數學式的文字改用設定的文字字型排版，中文不再顯示為方框 [簡介](../guides/introduction.md)
+
+## 1.0.0rc2
+
+- 繪製更快，輸出不變：標籤配置、點的檢查與 Matplotlib 的 mathtext 解析改用陣列，並使用只在單次繪製或儲存期間有效的快取 [簡介](../guides/introduction.md)
+
+## 1.0.0rc1
+
+- 移除已棄用的 `Animation` 與 `TextStyle.family`（詳見參數與樣式兩章） [簡介](../guides/introduction.md)
+- `TextStyle` — 移除 `family`；改以 `font` 選擇字型，並用 `TextFonts` 換成自己的字型檔。欄位請以名稱傳入；含 `"family": null` 的場景文件仍可載入，指定字型家族名稱的則會被拒絕 [樣式與顏色](../guides/styles.md)
+- `Animation` — 移除 0.6.0 起棄用的 `Animation`、`Animation.sweep()` 與 Matplotlib 播放輔助函式；動畫改由 `kinetickit` 負責，`CanvasGrid.sweep()` 與 `canvas.bind()` 仍為每個值畫一格 [參數與網格](../guides/parameters.md)
+
 ## 0.9.2
 
 - `TikZ` — `font` 對應到 TeX 字型家族 [樣式與顏色](../guides/styles.md)
@@ -34,7 +63,7 @@ seo_title: "更新紀錄"
 ## 0.5.0
 
 - 虛線、點線或點劃線套用在箭身；箭頭維持實線 [圖層與座標軸](../guides/layers.md)
-- `CanvasGrid` — 新增 `links` [參數、網格與動畫](../guides/parameters.md)
+- `CanvasGrid` — 新增 `links` [參數與網格](../guides/parameters.md)
 
 ## 0.4.0
 
