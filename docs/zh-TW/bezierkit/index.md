@@ -128,7 +128,7 @@ uv add bezierkit
 
 ## 文件導覽
 
-以下章節涵蓋 bezierkit 1.0.0。
+以下章節涵蓋 bezierkit 1.1.0。
 
 - [簡介](guides/introduction.md)
 - [安裝](installation.md)

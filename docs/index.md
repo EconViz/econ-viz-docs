@@ -77,7 +77,7 @@ Two general-purpose building blocks that the economics packages share.
     uv add bezierkit
     ```
 
-    Current stable release: 1.0.1.
+    Current stable release: 1.1.0.
 
     [:octicons-arrow-right-24: bezierkit](bezierkit/index.md)
 

@@ -94,7 +94,7 @@ uv add principle-viz
 
 ## 文档导航
 
-以下章节涵盖 principle-viz 0.10.1。
+以下章节涵盖 principle-viz 0.12.1。
 
 - [简介](guides/introduction.md)
 - [安装](installation.md)

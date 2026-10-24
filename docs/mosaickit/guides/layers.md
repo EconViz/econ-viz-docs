@@ -14,7 +14,7 @@ The immutable base of every layer. All layers take these keyword-only
 fields after their own positional ones.
 
 Coordinates are pairs of finite real numbers in data units, or parameter
-expressions ([Parameters, grids and animation](parameters.md#sec-parameters)). Invalid geometry raises `ConfigurationError`
+expressions ([Parameters and grids](parameters.md#sec-parameters)). Invalid geometry raises `ConfigurationError`
 when the layer is created, not when it is drawn.
 
 ## Primitive layers

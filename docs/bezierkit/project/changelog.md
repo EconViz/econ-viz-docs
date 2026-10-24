@@ -10,6 +10,11 @@ Release history of `bezierkit`. Documentation-only changes are not
 listed; each entry is tagged where the feature it describes is documented,
 following l3doc convention, so the page number is the real page.
 
+## 1.1.0
+
+- Faster contour tracing, polyline fitting and path evaluation; the results are identical [Introduction](../guides/introduction.md)
+- `trace_sampled` — Traces level sets of a field that is already sampled on a grid [Level sets](../guides/implicit.md)
+
 ## 1.0.0
 
 - First stable release; the public API follows semantic versioning [Introduction](../guides/introduction.md)

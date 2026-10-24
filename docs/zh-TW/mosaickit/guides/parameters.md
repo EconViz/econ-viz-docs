@@ -1,8 +1,8 @@
 ---
-seo_title: "參數、網格與動畫"
+seo_title: "參數與網格"
 ---
 
-# 參數、網格與動畫
+# 參數與網格
 
 <span id="sec-parameters"></span>
 
@@ -145,16 +145,3 @@ CanvasGrid(cells, cols=3, links=[link]).save("sweep.pdf")
 <figcaption markdown>三個值的掃描</figcaption>
 
 </figure>
-
-## 動畫
-
-<!-- api: agora.mosaickit.guides_parameters_7 -->
-
-每個值對應一個畫面，由範本綁定該參數值而成。`frames()` 逐一產生與繪製器無關的場景；`save(path)` 寫出 GIF（透過 Pillow）或 MP4（透過 `ffmpeg`）。建立動畫時就會依參數檢查各值；值清單為空或 `fps` 非正時，會引發 `ConfigurationError`。
-
-```python
-from mosaickit import Animation
-
-values = shift.values([0.0, 1.0, 2.0, 3.0])
-Animation.sweep(template, values, fps=4).save("sweep.gif")
-```

@@ -18,8 +18,10 @@ The GIFs go to docs/assets/animation/. Pass names to render only some, e.g. `ces
 
 from __future__ import annotations
 
+import shutil
 import subprocess
 import sys
+import tempfile
 from collections.abc import Callable
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -29,15 +31,16 @@ import numpy as np
 
 matplotlib.use("Agg")
 
-from matplotlib import font_manager  # noqa: E402
-
 from utility_viz import Canvas, Config, levels, solve  # noqa: E402
 from utility_viz.core.animation import Animator  # noqa: E402
 from utility_viz.models import CES, CobbDouglas, Leontief, PerfectSubstitutes  # noqa: E402
 from utility_viz.models.curves.layers import Layer  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
-SETTINGS = ROOT.parent / "agora" / "packages" / "utility-viz" / "config" / "econ-viz.toml"
+AGORA = ROOT.parent / "agora"
+SETTINGS = AGORA / "packages" / "utility-viz" / "config" / "econ-viz.toml"
+# Besides agora/fonts, the TeX distribution holds the Latin font files that econ-viz.toml names.
+TEXMF_DIRS = ["fonts/opentype/public/tex-gyre", "fonts/opentype/public/tex-gyre-math"]
 OUT = ROOT / "docs" / "assets" / "animation"
 
 X_MAX, Y_MAX = 14, 12
@@ -165,40 +168,44 @@ def jobs() -> dict[str, tuple[str, Callable[[float], Canvas], np.ndarray]]:
     return found
 
 
-def use_pagella() -> None:
-    """The manual sets its figures in TeX Gyre Pagella; use it when the TeX distribution has it."""
+def font_dirs() -> list[Path]:
+    """Where the font files named in econ-viz.toml live: agora/fonts and the TeX distribution."""
+    dirs = [AGORA / "fonts"]
     try:
         texmf = subprocess.run(
             ["kpsewhich", "-var-value", "TEXMFDIST"], capture_output=True, text=True, check=True
         ).stdout.strip()
     except (OSError, subprocess.CalledProcessError):
-        return
-    for name in ("texgyrepagella-regular", "texgyrepagella-italic", "texgyrepagella-bold"):
-        path = Path(texmf) / "fonts" / "opentype" / "public" / "tex-gyre" / f"{name}.otf"
-        if path.exists():
-            font_manager.fontManager.addfont(str(path))
-    matplotlib.rcParams.update(
-        {
-            "font.family": ["TeX Gyre Pagella"],
-            "mathtext.fontset": "custom",
-            "mathtext.rm": "TeX Gyre Pagella",
-            "mathtext.it": "TeX Gyre Pagella:italic",
-            "mathtext.bf": "TeX Gyre Pagella:bold",
-        }
-    )
+        return dirs
+    return dirs + [Path(texmf) / rel for rel in TEXMF_DIRS]
+
+
+def stage_settings(tmp: str) -> Path:
+    """Copy econ-viz.toml into *tmp* with the font files beside it.
+
+    `Config.load` resolves the font names of [font] and [fonts] against the directory of the file, and
+    the files are not in agora's config folder, so link them in first.
+    """
+    shutil.copy(SETTINGS, Path(tmp) / "econ-viz.toml")
+    for directory in font_dirs():
+        for font in directory.glob("*.[ot]t[fc]"):
+            link = Path(tmp) / font.name
+            if not link.exists():
+                link.symlink_to(font)
+    return Path(tmp) / "econ-viz.toml"
 
 
 def main(only: list[str]) -> None:
-    use_pagella()
-    Config.load(str(SETTINGS)).use()
     todo = {k: v for k, v in jobs().items() if not only or k in only}
     if not todo:
         raise SystemExit(f"no sweep named {only}; choose from {sorted(jobs())}")
-    for name, (folder, draw, frames) in todo.items():
-        path = OUT / folder / f"{name}.gif"
-        path.parent.mkdir(parents=True, exist_ok=True)
-        Animator(draw, frames=frames).save(str(path), fps=12, dpi=120)
-        print(" ", path.relative_to(ROOT))
+    with tempfile.TemporaryDirectory() as tmp:
+        Config.load(str(stage_settings(tmp))).use()
+        for name, (folder, draw, frames) in todo.items():
+            path = OUT / folder / f"{name}.gif"
+            path.parent.mkdir(parents=True, exist_ok=True)
+            Animator(draw, frames=frames).save(str(path), fps=12, dpi=120)
+            print(" ", path.relative_to(ROOT))
 
 
 if __name__ == "__main__":

@@ -77,7 +77,7 @@ EconViz 由四个包组成：两个负责绘制经济学图形，另外两个是
     uv add bezierkit
     ```
 
-    当前稳定版本为 1.0.1。
+    当前稳定版本为 1.1.0。
 
     [:octicons-arrow-right-24: bezierkit](bezierkit/index.md)
 

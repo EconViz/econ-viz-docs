@@ -47,7 +47,7 @@ uv add principle-viz
 | 福利标签 | 区域改用名称（“消费者剩余”“DWL”等），不再用 `A/B/C/D` 字母 |
 | `LabeledRegion` | 以 `key`、`label`、`short_label` 取代 `letter` |
 | 曲线名称 | 直接标在曲线末端旁，不再只出现在图例 |
-| 依赖包 | 需要 `mosaickit>=0.5.1,<0.6.0`，会自动安装 |
+| 依赖包 | 需要 `mosaickit>=1.0.0rc6,<2`，会自动安装 |
 
 !!! note "计算结果不变"
 

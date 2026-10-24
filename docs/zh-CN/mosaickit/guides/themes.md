@@ -131,3 +131,38 @@ dash = "dashed"
 ```
 
 `[palette]` 表叠加在 `DEFAULT_PALETTE` 之上，因此在此覆盖 `blue` 会改变 `primary` 以及所有引用 `blue` 的地方。样式的 `color` 与 `edge_color` 可以是调色板名称；未知名称在加载文件时（任何画布绘制之前）就引发指明文件与键的 `ConfigurationError`。
+
+## EconViz 软件包共用的设置文件
+
+<span id="sec-shared-settings"></span>
+
+每个 EconViz 图形软件包都读取同一个文件 `econ-viz.toml`。最上层放所有图形共用的设置：`base` 是起始的内置主题；`[font]` 有 `text`（通用字体）与 `math`（数学字体文件）；`[fonts]` 是替换通用字体的字体文件；`[color]` 有 `background`、`axis` 与 `label`。每个软件包把自己的设置放在以软件包命名的一个表里，例如 `[principle]` 或 `[utility]`，并跳过其他软件包的表。相对路径从文件所在的文件夹读取。
+
+```toml
+base = "manual"
+
+[font]
+text = "serif"
+math = "fonts/Pagella-Math.otf"
+
+[fonts]
+serif = ["fonts/Pagella-Regular.otf", "fonts/Pagella-Bold.otf"]
+
+[color]
+background = "#ffffff"
+
+[principle.color]
+demand = "#8c8c8c"
+```
+
+<!-- api: agora.mosaickit.guides_themes_8 -->
+
+软件包不自己解析这个文件，而是在 `mosaickit.econ_toml` 中声明一个 `Schema`：内置主题（`base`）、自己的表的各个键与每个键设置的属性、名称自由的表（`patterns`），以及使用的共用设置。`mosaickit` 负责读文件、检查每个值、以文件所在的文件夹解析相对路径，并指出错误所在的文件与表；键名拼错时还会建议最接近的键。未知的最上层键会引发错误。`Schema.config_class()` 返回该软件包的 `Config` 类，`Schema.template()` 写出其表带注释的部分。
+
+<!-- api: agora.mosaickit.guides_themes_9 -->
+
+`load` 由同一个文件建立所有已注册软件包的设置。`use` 做同样的事，并为每个声明了 `econviz.config` 入口点的已安装软件包启用设置。
+
+<!-- api: agora.mosaickit.guides_themes_10 -->
+
+每个 EconViz 软件包都提供的主题有 `manual`、`default`、`colorblind`、`monochrome`、`nord`、`paper` 与 `presentation`。`ThemeTokens` 为 `ROLES` 中每个具名角色（`ink`、`primary`、`secondary`、`constraint`、`accent`、各区域填色等）指定颜色，另有三个尺寸倍率：`line_scale`、`marker_scale` 与 `label_scale`。软件包只需把自己的元素对应到这些角色一次，同一个主题名称在每个软件包中就呈现相同的外观。

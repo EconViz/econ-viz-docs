@@ -70,7 +70,7 @@ canvas.save("diagram.svg")
 
 -   :material-view-grid-outline: **參數與格狀排版**
 
-    參數與運算式、`CanvasGrid` 版面與 `Animation` 掃描。
+    參數與運算式、`CanvasGrid` 版面與參數掃描。
 
 -   :material-file-image-outline: **可替換的渲染器**
 
@@ -80,8 +80,8 @@ canvas.save("diagram.svg")
 
 ## 範圍
 
-mosaickit 負責與領域無關的場景組合、樣式、主題、參數綁定、網格排版、動畫影格、渲染器介面，
-以及靜態與動態輸出。領域語意則屬於建構在它之上的套件。曲線建構與原生 TikZ 路徑產生，
+mosaickit 負責與領域無關的場景組合、樣式、主題、參數綁定、網格排版、渲染器介面，
+以及靜態輸出。領域語意則屬於建構在它之上的套件。曲線建構與原生 TikZ 路徑產生，
 屬於 [bezierkit](../bezierkit/index.md) 這類幾何套件的工作。
 
 ## 安裝
@@ -96,7 +96,7 @@ uv add mosaickit
 
 ## 文件導覽
 
-以下章節涵蓋 mosaickit 0.5.1。
+以下章節涵蓋 mosaickit 1.0.0rc6。
 
 - [簡介](guides/introduction.md)
 - [安裝](installation.md)
@@ -108,7 +108,7 @@ uv add mosaickit
 - [區域標籤與點標籤](guides/labels.md)
 - [樣式與顏色](guides/styles.md)
 - [主題與設定](guides/themes.md)
-- [參數、網格與動畫](guides/parameters.md)
+- [參數與網格](guides/parameters.md)
 - [繪製](guides/rendering.md)
 - [證明](project/proofs.md)
 - [更新紀錄](project/changelog.md)

@@ -66,11 +66,35 @@ seo_title: "區域標籤與點標籤"
 
 </figure>
 
+## 微調標籤
+
+<span id="sec-nudge"></span>
+
+<!-- api: agora.mosaickit.guides_labels_3 -->
+
+在繪製器配置好標籤之後，再微調單一標籤的位置。`Nudge(dx, dy)` 使標籤向右移 `dx` 點、向上移 `dy` 點；`nudge_from` 以方向建立同樣的位移，其中 `dy = top - bottom`、`dx = right - left`。長度可以是以點為單位的數字，或帶單位的字串（`"10pt"`、`"0.5em"`、`"2mm"`、`"0.1in"`）；使用 `em` 時須給 `font_size`。`parse_length` 把單一長度轉成點。點標籤、區域標籤、大括號標籤與文字圖層都接受 `nudge=`；引線會跟著移動後的標籤，之後的標籤也會避開它。沒有微調時，輸出不變。
+
+```python
+from mosaickit import (
+    Canvas,
+    CanvasSpec,
+    PointLabelLayer,
+    nudge_from,
+)
+
+canvas = Canvas(CanvasSpec(x_range=(0, 10), y_range=(0, 10)))
+canvas.add(
+    PointLabelLayer(
+        (5, 5), "$E$", nudge=nudge_from(top="3pt", right="2pt")
+    )
+)
+```
+
 ## 硬性限制
 
 兩種標籤都遵守同一條規則：不遮蓋任何物件。障礙物包括座標軸上已繪製的內容：路徑的線段、標記與文字的矩形，以及填色區域的多邊形。以下搜尋函式位於 `mosaickit.layout.placement`；除 `place_beside` 外，也都由 `mosaickit.layout` 匯出。它們與幾何模組一樣，以顯示像素為單位運算；`scale` 則將以點為單位的間距換算為像素。
 
-<!-- api: agora.mosaickit.guides_labels_3 -->
+<!-- api: agora.mosaickit.guides_labels_4 -->
 
 標籤必須避開的障礙物，以及標籤的配置結果：矩形、引線線段（不畫引線的標籤為 `None`），以及違反的限制數。`Obstacles.extended(segments=..., rects=...)` 會加入剛配置的標籤。
 
@@ -90,7 +114,7 @@ seo_title: "區域標籤與點標籤"
 
 ## 引線標註
 
-<!-- api: agora.mosaickit.guides_labels_4 -->
+<!-- api: agora.mosaickit.guides_labels_5 -->
 
 在區域周圍搜尋能容納指定大小引線標註的位置。搜尋從極點 $o$ 沿 16 個方向 $r$ 進行：把候選矩形放在 `ray_exit(o, r, P)` 的距離之外，再間隔 12、24 或 40 pt（近環），並將面向極點的邊或角對齊，使矩形向遠離區域的方向延伸。引線從極點拉向矩形上的最近點（參見[矩形上的最近點](geometry.md#lem-nearest)），並在距該點 2 pt 處停止。候選位置的代價以 $V(R)$ 為基礎（區域本身也列入多邊形）：若中心不在開闊空間中，加一；引線離開自身區域後，每穿過一條線、一段文字或一個其他區域，加一；每位於一個交叉點之外（參見[開闊空間與交叉點](labels.md#def-beyond)），再加一。
 
@@ -122,6 +146,6 @@ seo_title: "區域標籤與點標籤"
 
 回傳的代價不為零時，繪製器仍會在該處畫出引線標註，並發出指名該圖層的 `LayoutWarning`；放大畫布或縮短文字，通常就能消除警告。
 
-<!-- api: agora.mosaickit.guides_labels_5 -->
+<!-- api: agora.mosaickit.guides_labels_6 -->
 
 其他搜尋包括：置中於極點的矩形，若放得下且除自身區域外不碰到任何物件，就回傳該矩形；前述的點標籤搜尋；以及大括號尖端旁的搜尋。最後一種搜尋會嘗試尖端外 3 到 45 pt 的間隔，並沿跨距以 3 pt 為步長滑動，最多滑動 `reach`，且位移較小者優先。`place_beside` 回傳矩形與其違規數。若該處沒有空間容納大括號標籤，繪製器會改從尖端嘗試引線標註，並保留違規較少的結果。

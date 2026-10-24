@@ -50,10 +50,10 @@ uv run python main.py
 若要固定本手冊使用的版本，可在加入依賴時指定版本號：
 
 ```bash
-uv add "utility-viz==2.0.0b1"
+uv add "utility-viz==2.0.0b8"
 ```
 
-2.0.0b1 是預覽版。在沒有 2.x 正式版之前，`uv add utility-viz` 與 `pip install utility-viz` 會直接安裝此版本；正式版發布後，需以 `uv add --prerelease allow utility-viz` 或 `pip install --pre utility-viz` 才能安裝預覽版。
+2.0.0b8 是預覽版。在沒有 2.x 正式版之前，`uv add utility-viz` 與 `pip install utility-viz` 會直接安裝此版本；正式版發布後，需以 `uv add --prerelease allow utility-viz` 或 `pip install --pre utility-viz` 才能安裝預覽版。
 
 若使用既有的 Python 虛擬環境，可透過 `pip` 安裝：
 
@@ -117,7 +117,7 @@ uv run mypy .
 ## 驗證安裝
 
 ```bash
-uv run utility-viz --version   # utility-viz 2.0.0b1
+uv run utility-viz --version   # utility-viz 2.0.0b8
 uv run utility-viz help
 ```
 

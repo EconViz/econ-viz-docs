@@ -175,3 +175,60 @@ there recolors `primary` and everything else that names `blue`. Style
 `color` and `edge_color` values may be palette names; an unknown name
 raises `ConfigurationError` naming the file and key when the file is
 loaded, before any canvas renders.
+
+## The settings file shared by EconViz packages
+
+<span id="sec-shared-settings"></span>
+
+Every EconViz diagram package reads one file, `econ-viz.toml`. Its top level
+holds what all diagrams share: `base`, the built-in theme to start from;
+`[font]`, with `text` (a generic font) and `math` (a math font file);
+`[fonts]`, the files that replace a generic font; and `[color]`, with
+`background`, `axis` and `label`. Each package keeps its own settings in one
+table named after it, such as `[principle]` or `[utility]`, and skips the
+tables of the others. A relative path is read from the folder of the file.
+
+```toml
+base = "manual"
+
+[font]
+text = "serif"
+math = "fonts/Pagella-Math.otf"
+
+[fonts]
+serif = ["fonts/Pagella-Regular.otf", "fonts/Pagella-Bold.otf"]
+
+[color]
+background = "#ffffff"
+
+[principle.color]
+demand = "#8c8c8c"
+```
+
+<!-- api: agora.mosaickit.guides_themes_8 -->
+
+A package does not parse the file itself; it declares a `Schema` in
+`mosaickit.econ_toml`: its built-in themes (`base`), the keys of its own
+table and the attribute each one sets, tables whose names are free
+(`patterns`), and the shared settings it uses. `mosaickit` reads the
+file, checks every value, resolves relative paths against the folder of the
+file and reports a mistake with the file and table it is in, suggesting the
+closest key for a typo. An unknown top-level key is an error.
+`Schema.config_class()` returns the package's `Config` class and
+`Schema.template()` writes the commented section of its table.
+
+<!-- api: agora.mosaickit.guides_themes_9 -->
+
+`load` builds the configuration of every registered package from one file.
+`use` does the same and activates it for every installed package that
+declares an `econviz.config` entry point.
+
+<!-- api: agora.mosaickit.guides_themes_10 -->
+
+The themes every EconViz package offers are `manual`, `default`,
+`colorblind`, `monochrome`, `nord`, `paper` and `presentation`. A
+`ThemeTokens` gives a color to each named role in `ROLES` (`ink`,
+`primary`, `secondary`, `constraint`, `accent`, the region fills and so on)
+and three size multipliers, `line_scale`, `marker_scale` and `label_scale`.
+A package maps its own elements to these roles once, so one theme name
+looks the same in every package.

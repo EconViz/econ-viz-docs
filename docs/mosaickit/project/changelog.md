@@ -10,6 +10,35 @@ Release history of `mosaickit`. Documentation-only changes are not
 listed; each entry is tagged where the feature it describes is documented,
 following l3doc convention, so the page number is the real page.
 
+## 1.0.0rc6
+
+- Packages declare an `econ_toml.Schema` and mosaickit parses `econ-viz.toml` for them; shared themes (`mosaickit.themes`) and label nudges (`Nudge`) added [Introduction](../guides/introduction.md)
+- `Nudge` — Added [Region and point labels](../guides/labels.md)
+- `Schema` — Added; packages declare their keys and mosaickit parses the file [Themes and configuration](../guides/themes.md)
+- `get_tokens` — Added [Themes and configuration](../guides/themes.md)
+
+## 1.0.0rc5
+
+- New `mosaickit.econ_toml` reads the sections of `econ-viz.toml` that every EconViz package shares [Introduction](../guides/introduction.md)
+
+## 1.0.0rc4
+
+- Parsed fonts are shared across symbolic links; a configured title keeps the baseline Matplotlib gives it [Introduction](../guides/introduction.md)
+
+## 1.0.0rc3
+
+- Titles and text that mixes words with `$...$` math are set in the configured text fonts, so Chinese no longer comes out as boxes [Introduction](../guides/introduction.md)
+
+## 1.0.0rc2
+
+- Faster drawing with identical output: label placement, point validation and Matplotlib's mathtext parsing use arrays and caches scoped to one draw or save [Introduction](../guides/introduction.md)
+
+## 1.0.0rc1
+
+- Removed the deprecated `Animation` and `TextStyle.family` (see the chapters on parameters and styles) [Introduction](../guides/introduction.md)
+- `TextStyle` — Removed `family`; choose `font` and replace the files with `TextFonts`. Pass the fields by name; a scene document that holds `"family": null` still loads, one that names a family is refused [Styles and colors](../guides/styles.md)
+- `Animation` — Removed `Animation`, `Animation.sweep()` and the Matplotlib playback helper, deprecated in 0.6.0; `kinetickit` animates scenes, and `CanvasGrid.sweep()` and `canvas.bind()` still draw one frame per value [Parameters and grids](../guides/parameters.md)
+
 ## 0.9.2
 
 - `TikZ` — `font` maps to the TeX font families [Styles and colors](../guides/styles.md)
@@ -36,7 +65,7 @@ following l3doc convention, so the page number is the real page.
 ## 0.5.0
 
 - A dashed, dotted or dash-dot stroke dashes the shaft; the heads stay solid [Layers and axes](../guides/layers.md)
-- `CanvasGrid` — `links` added [Parameters, grids and animation](../guides/parameters.md)
+- `CanvasGrid` — `links` added [Parameters and grids](../guides/parameters.md)
 
 ## 0.4.0
 

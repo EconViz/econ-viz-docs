@@ -16,7 +16,7 @@ PDF, SVG, TikZ or animated GIF.
 Up to version 1.12 the package was called `econ-viz`. It was
 renamed `utility-viz` in 2.0.0; [Migrating from `econ-viz`](../getting-started/installation.md#sec-migrate) describes what changed
 and how existing code keeps working. This manual describes the pre-release
-2.0.0b1.
+2.0.0b8.
 
 `utility-viz` belongs to the EconViz family of packages. It
 draws through `mosaickit`, a domain-neutral scene and rendering

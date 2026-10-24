@@ -132,7 +132,7 @@ Requires Python 3.10 or later. See [Installation](installation.md) for extras an
 
 ## Documentation
 
-The following chapters cover bezierkit 1.0.0.
+The following chapters cover bezierkit 1.1.0.
 
 - [Introduction](guides/introduction.md)
 - [Installation](installation.md)

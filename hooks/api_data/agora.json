@@ -1828,9 +1828,9 @@
         "name": "bind(parameter, value), bind(mapping)",
         "types": [],
         "description": {
-          "en": "A new canvas whose scene has those parameters replaced by values ([Parameters, grids and animation](parameters.md#sec-parameters)); the original keeps its parameters.",
-          "zh-TW": "新畫布，其場景中的這些參數換成數值（詳見[參數、網格與動畫](parameters.md#sec-parameters)）；原畫布保留參數。",
-          "zh-CN": "新画布，其场景中的这些参数换成数值（详见[参数、网格与动画](parameters.md#sec-parameters)）；原画布保留参数。"
+          "en": "A new canvas whose scene has those parameters replaced by values ([Parameters and grids](parameters.md#sec-parameters)); the original keeps its parameters.",
+          "zh-TW": "新畫布，其場景中的這些參數換成數值（詳見[參數與網格](parameters.md#sec-parameters)）；原畫布保留參數。",
+          "zh-CN": "新画布，其场景中的这些参数换成数值（详见[参数与网格](parameters.md#sec-parameters)）；原画布保留参数。"
         }
       },
       {
@@ -2174,25 +2174,34 @@
     "parameters": []
   },
   "agora.mosaickit.guides_labels_3": {
-    "name": "Obstacles",
+    "name": "Nudge",
     "anchor": "mosaickit-guides-labels-3",
+    "signatures": [
+      "Nudge(dx=0.0, dy=0.0)",
+      "nudge_from(\n    *,\n    top=None,\n    bottom=None,\n    left=None,\n    right=None,\n    font_size=None\n) -> Nudge"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_labels_4": {
+    "name": "Obstacles",
+    "anchor": "mosaickit-guides-labels-4",
     "signatures": [
       "Obstacles(\n    segments=(),\n    rects=(),\n    polygons=()\n)",
       "Placement(\n    rect,\n    leader,\n    violations\n)"
     ],
     "parameters": []
   },
-  "agora.mosaickit.guides_labels_4": {
+  "agora.mosaickit.guides_labels_5": {
     "name": "place_callout",
-    "anchor": "mosaickit-guides-labels-4",
+    "anchor": "mosaickit-guides-labels-5",
     "signatures": [
       "place_callout(\n    polygon,\n    size,\n    obstacles,\n    bounds,\n    *,\n    scale=1.0\n) -> Placement"
     ],
     "parameters": []
   },
-  "agora.mosaickit.guides_labels_5": {
+  "agora.mosaickit.guides_labels_6": {
     "name": "fits_inside",
-    "anchor": "mosaickit-guides-labels-5",
+    "anchor": "mosaickit-guides-labels-6",
     "signatures": [
       "fits_inside(\n    polygon,\n    size,\n    obstacles,\n    bounds\n) -> Rect | None",
       "place_point_label(\n    footprint,\n    size,\n    obstacles,\n    bounds,\n    *,\n    scale=1.0\n) -> Placement",
@@ -2486,6 +2495,32 @@
     ],
     "parameters": []
   },
+  "agora.mosaickit.guides_themes_8": {
+    "name": "Schema",
+    "anchor": "mosaickit-guides-themes-8",
+    "signatures": [
+      "econ_toml.Schema(\n    package,\n    base,\n    fields={},\n    patterns={},\n    shared={},\n    ...\n)"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_themes_9": {
+    "name": "econ_toml.load",
+    "anchor": "mosaickit-guides-themes-9",
+    "signatures": [
+      "econ_toml.load(path=None) -> Mapping",
+      "econ_toml.use(path=None) -> None"
+    ],
+    "parameters": []
+  },
+  "agora.mosaickit.guides_themes_10": {
+    "name": "get_tokens",
+    "anchor": "mosaickit-guides-themes-10",
+    "signatures": [
+      "mosaickit.themes.get_tokens(name) -> ThemeTokens",
+      "mosaickit.themes.list_shared_themes() -> tuple[str, ...]"
+    ],
+    "parameters": []
+  },
   "agora.mosaickit.guides_parameters_1": {
     "name": "Parameter",
     "anchor": "mosaickit-guides-parameters-1",
@@ -2532,15 +2567,6 @@
     "anchor": "mosaickit-guides-parameters-6",
     "signatures": [
       "GridLink(\n    start_cell,\n    start,\n    end_cell,\n    end,\n    role=\"link\",\n    stroke=None\n)"
-    ],
-    "parameters": []
-  },
-  "agora.mosaickit.guides_parameters_7": {
-    "name": "Animation",
-    "anchor": "mosaickit-guides-parameters-7",
-    "signatures": [
-      "Animation(\n    template,\n    parameter,\n    values,\n    fps=30\n)",
-      "Animation.sweep(\n    canvas,\n    values,\n    *,\n    fps=30\n)"
     ],
     "parameters": []
   },
@@ -5629,16 +5655,24 @@
     ]
   },
   "agora.bezierkit.guides_implicit_2": {
-    "name": "ContourSet",
+    "name": "trace_sampled",
     "anchor": "bezierkit-guides-implicit-2",
+    "signatures": [
+      "trace_sampled(\n    xs,\n    ys,\n    values,\n    *,\n    levels,\n    tolerance=1e-2,\n    gradient=None\n)"
+    ],
+    "parameters": []
+  },
+  "agora.bezierkit.guides_implicit_3": {
+    "name": "ContourSet",
+    "anchor": "bezierkit-guides-implicit-3",
     "signatures": [
       "ContourSet"
     ],
     "parameters": []
   },
-  "agora.bezierkit.guides_implicit_3": {
+  "agora.bezierkit.guides_implicit_4": {
     "name": "LevelContours",
-    "anchor": "bezierkit-guides-implicit-3",
+    "anchor": "bezierkit-guides-implicit-4",
     "signatures": [
       "LevelContours"
     ],

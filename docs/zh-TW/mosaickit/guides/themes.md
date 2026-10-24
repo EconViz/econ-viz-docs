@@ -131,3 +131,38 @@ dash = "dashed"
 ```
 
 `[palette]` 表疊加在 `DEFAULT_PALETTE` 之上，因此在此覆寫 `blue` 會改變 `primary` 以及所有指名 `blue` 的地方。樣式的 `color` 與 `edge_color` 可以是色盤名稱；未知名稱在載入檔案時（任何畫布繪製之前）就引發指明檔案與鍵的 `ConfigurationError`。
+
+## EconViz 套件共用的設定檔
+
+<span id="sec-shared-settings"></span>
+
+每個 EconViz 圖形套件都讀取同一個檔案 `econ-viz.toml`。最上層放所有圖形共用的設定：`base` 是起始的內建主題；`[font]` 有 `text`（通用字型）與 `math`（數學字型檔）；`[fonts]` 是取代通用字型的字型檔；`[color]` 有 `background`、`axis` 與 `label`。每個套件把自己的設定放在以套件命名的一個表格裡，例如 `[principle]` 或 `[utility]`，並略過其他套件的表格。相對路徑從檔案所在的資料夾讀取。
+
+```toml
+base = "manual"
+
+[font]
+text = "serif"
+math = "fonts/Pagella-Math.otf"
+
+[fonts]
+serif = ["fonts/Pagella-Regular.otf", "fonts/Pagella-Bold.otf"]
+
+[color]
+background = "#ffffff"
+
+[principle.color]
+demand = "#8c8c8c"
+```
+
+<!-- api: agora.mosaickit.guides_themes_8 -->
+
+套件不自己解析這個檔案，而是在 `mosaickit.econ_toml` 中宣告一個 `Schema`：內建主題（`base`）、自己表格的各個鍵與每個鍵設定的屬性、名稱自由的表格（`patterns`），以及使用的共用設定。`mosaickit` 負責讀檔、檢查每個值、以檔案所在資料夾解析相對路徑，並指出錯誤所在的檔案與表格；鍵名拼錯時還會建議最接近的鍵。未知的最上層鍵會引發錯誤。`Schema.config_class()` 回傳該套件的 `Config` 類別，`Schema.template()` 寫出其表格附註解的區段。
+
+<!-- api: agora.mosaickit.guides_themes_9 -->
+
+`load` 由同一個檔案建立所有已註冊套件的設定。`use` 做同樣的事，並為每個宣告了 `econviz.config` 進入點的已安裝套件啟用設定。
+
+<!-- api: agora.mosaickit.guides_themes_10 -->
+
+每個 EconViz 套件都提供的主題有 `manual`、`default`、`colorblind`、`monochrome`、`nord`、`paper` 與 `presentation`。`ThemeTokens` 為 `ROLES` 中每個具名角色（`ink`、`primary`、`secondary`、`constraint`、`accent`、各區域填色等）指定顏色，另有三個尺寸倍率：`line_scale`、`marker_scale` 與 `label_scale`。套件只需把自己的元素對應到這些角色一次，同一個主題名稱在每個套件中就呈現相同的外觀。

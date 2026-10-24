@@ -1,8 +1,8 @@
 ---
-seo_title: "Parameters, grids and animation"
+seo_title: "Parameters and grids"
 ---
 
-# Parameters, grids and animation
+# Parameters and grids
 
 <span id="sec-parameters"></span>
 
@@ -180,20 +180,3 @@ CanvasGrid(cells, cols=3, links=[link]).save("sweep.pdf")
 <figcaption markdown>A three-value sweep</figcaption>
 
 </figure>
-
-## Animation
-
-<!-- api: agora.mosaickit.guides_parameters_7 -->
-
-Creates one frame per value by binding the parameter in the template.
-`frames()` yields the frames as renderer-neutral scenes; `save(path)`
-writes a GIF (through Pillow) or an MP4 (through `ffmpeg`). The values are checked
-against the parameter when the animation is created; an empty list or a
-non-positive `fps` raises `ConfigurationError`.
-
-```python
-from mosaickit import Animation
-
-values = shift.values([0.0, 1.0, 2.0, 3.0])
-Animation.sweep(template, values, fps=4).save("sweep.gif")
-```
