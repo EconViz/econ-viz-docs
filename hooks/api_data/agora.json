@@ -660,7 +660,7 @@
     "name": "elasticity_revenue_canvases",
     "anchor": "principle-viz-guides-elasticity-3",
     "signatures": [
-      "elasticity_revenue_canvases(\n    demand,\n    result,\n    *,\n    theme=None,\n    labels=None,\n    visibility=None\n)"
+      "elasticity_revenue_canvases(\n    demand,\n    result,\n    *,\n    titles=(\"Demand and Elasticity\", \"Total Revenue\"),\n    theme=None,\n    labels=None,\n    visibility=None\n)"
     ],
     "parameters": []
   },
@@ -1432,7 +1432,7 @@
     "name": "public_good_canvas",
     "anchor": "principle-viz-guides-failures-7",
     "signatures": [
-      "public_good_canvas(\n    result,\n    *,\n    theme=None,\n    labels=None,\n    visibility=None\n)"
+      "public_good_canvas(\n    result,\n    *,\n    title=\"Public Good\",\n    theme=None,\n    labels=None,\n    visibility=None\n)"
     ],
     "parameters": []
   },
@@ -1559,7 +1559,7 @@
     "anchor": "principle-viz-guides-ppf-3",
     "signatures": [
       "analyze_ppf(\n    frontier,\n    points=(),\n    *,\n    samples=101\n)",
-      "ppf_canvas(\n    result,\n    *,\n    theme=None,\n    labels=None,\n    visibility=None\n)"
+      "ppf_canvas(\n    result,\n    *,\n    title=\"Production Possibilities Frontier\",\n    theme=None,\n    labels=None,\n    visibility=None\n)"
     ],
     "parameters": []
   },
@@ -1569,7 +1569,7 @@
     "signatures": [
       "PPFGrowthScenario(x_growth_rate=0.0, y_growth_rate=0.0)",
       "analyze_ppf_growth(\n    frontier,\n    scenario,\n    *,\n    samples=101\n)",
-      "ppf_growth_canvas(\n    result,\n    *,\n    theme=None,\n    labels=None,\n    visibility=None\n)"
+      "ppf_growth_canvas(\n    result,\n    *,\n    title=\"Economic Growth\",\n    theme=None,\n    labels=None,\n    visibility=None\n)"
     ],
     "parameters": []
   },

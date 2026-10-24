@@ -11,6 +11,13 @@ Release history of `principle-viz`, including its releases as
 tagged where the feature it describes is documented, following l3doc
 convention, so the page number is the real page.
 
+## 0.13.0
+
+- `elasticity_revenue_canvases` — `titles=(demand_title, revenue_title)` sets the two figure titles; `None` draws none [Elasticity and total revenue](guides/elasticity.md)
+- `public_good_canvas` — `title=` sets the figure title; `None` draws none [Market failures](guides/failures.md)
+- `ppf_canvas` — `title=` sets the figure title; `None` draws none [Production possibilities](guides/ppf.md)
+- `ppf_growth_canvas` — `title=` sets the figure title; `None` draws none [Production possibilities](guides/ppf.md)
+
 ## 0.12.1
 
 - `Label` — `top`, `bottom`, `left` and `right` nudge one label after it has been placed [Figures](guides/figures.md)
