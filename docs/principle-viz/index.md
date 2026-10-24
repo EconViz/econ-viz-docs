@@ -94,7 +94,7 @@ See [Installation](installation.md) for the development setup, or go straight to
 
 ## Documentation
 
-The following chapters cover principle-viz 0.13.0.
+The following chapters cover principle-viz 0.14.0.
 
 - [Introduction](guides/introduction.md)
 - [Installation](installation.md)

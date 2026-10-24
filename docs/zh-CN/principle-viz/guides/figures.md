@@ -215,6 +215,40 @@ equilibrium = 6.5    # 均衡点直径
 econ-viz.toml: [principle.color] unknown key 'demnad'; did you mean 'demand'?
 ```
 
+### 标签默认值
+
+<span id="sec-label-groups"></span>
+
+`[principle.label.<group>]` 默认移动同一分组的所有标签，因此在配置文件中设置一次，即可取代在每张图上分别写 `Label(top=...)`。标签按其命名的对象分为五个分组，每个分组都有 `top`、`bottom`、`left` 与 `right` 四个键（[标签分组](figures.md#tab-label-groups)）。
+
+<span id="tab-label-groups"></span>
+
+| 分组 | 标签 |
+| --- | --- |
+| `point` | 均衡点（`e_0`、`e^*`、`e_1`、`e_t`、`L^*`，以及离散情形的 `Q^* = ..., p^* = ...`）与生产可能性曲线上的点 |
+| `curve` | 标在曲线末端的曲线名称：`D`、`S`、`D_1`、`S + t`、`MSB`、`MSC`、`MC`、`\Sigma MB`、`PPF`、`PPF_0`、`PPF_1` |
+| `region` | 填色区域内的名称，含以引线标示的说明：消费者剩余、生产者剩余、无谓损失、税收收入、补贴成本、关税收入 |
+| `mark` | 价格线与政策标记：`p_c`、`p_f`、`w_min`、`p_w`、`p_w + t`，以及 `t = ...`、`s = ...` 与 `f = ...` 的价差标示 |
+| `annotation` | 其他文字：括号标签（Shortage、Tax、Subsidy、Imports、Unemployment）、价格区间、指标值与弹性区段名称 |
+
+坐标轴标签（轴名称、原点、轴上的 `Q_0`、`p_1` 等标记及其注记）不属于任何分组，也无法微调。距离可为点数，或带单位 `pt`、`mm`、`cm`、`in` 的字符串；配置文件没有字号，因此不接受 `em`。`top` 与 `bottom` 可以合并使用，`right` 与 `left` 亦同。未设置的键表示不移动；没有 `[principle.label.*]` 设置的图形保持不变：
+
+```toml
+[principle.label.point]
+top = "2pt"          # 均衡点标签上移
+
+[principle.label.curve]
+right = "4pt"        # 曲线名称右移
+
+[principle.label.region]
+bottom = "1mm"
+left = "0.5mm"
+```
+
+单个标签若自行指定 `top`、`bottom`、`left` 或 `right`（通过 `Label(top=...)`、`labels=` 或 `configure_label()`），就只按这些值移动，**不会**再应用所属分组的默认值：单个标签的微调会取代默认值，两者不会相加。只改名、隐藏或指定 `offset` 的 `Label` 则仍保留默认的微调。带引线的说明，其引线会持续指向移动后的标签。
+
+各分组的默认值以 `mosaickit.Nudge` 存放在 `PlotTheme.label_nudges` 中，键为分组名称；`principle_viz.label_groups.label_group(layer)` 返回某个标签图层所属的分组，不应用默认值的标签则返回 `None`。
+
 ## 画布
 
 <!-- api: agora.principle_viz.guides_figures_11 -->

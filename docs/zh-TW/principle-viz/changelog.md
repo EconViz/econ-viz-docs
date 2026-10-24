@@ -8,6 +8,10 @@ seo_title: "更新紀錄"
 
 本章列出影響套件使用的版本變更，包含以 `principle-econ` 名稱發布的版本，不含僅修改文件的版本；各條目依 l3doc 慣例標註於它所描述的功能旁，頁碼即該功能的實際頁碼。
 
+## 0.14.0
+
+- `Config` — `econ-viz.toml` 新增 `[principle.label.<group>]`，可依群組預設移動整批標籤 [圖形](guides/figures.md)
+
 ## 0.13.0
 
 - `elasticity_revenue_canvases` — `titles=(demand_title, revenue_title)` 設定兩張圖的標題；傳入 `None` 則不畫標題 [彈性與總收益](guides/elasticity.md)
