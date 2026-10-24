@@ -113,7 +113,15 @@ print(
 
 <!-- api: agora.principle_viz.guides_failures_7 -->
 
-位于 `principle_viz.visuals.market_failures` 的 `mosaickit` 画布，画出各人的边际利益、其垂直加总、边际成本，并在数量轴上标出 $Q_p$ 与 $Q^*$（参见[边际利益的垂直加总](failures.md#fig-public-good)）。
+位于 `principle_viz.visuals.market_failures` 的 `mosaickit` 画布，画出各人的边际利益、其垂直加总、边际成本，并在数量轴上标出 $Q_p$ 与 $Q^*$（参见[边际利益的垂直加总](failures.md#fig-public-good)）。图标题由 `title` 参数决定：默认为 "Public Good"，**传入 `None` 则不画标题**，其他文字照原样画出；默认的英文标题会依图形语言翻译。
+
+```python
+from principle_viz.visuals.market_failures import (
+    public_good_canvas,
+)
+
+public_good_canvas(result, title=None).save("public_good.png")
+```
 
 <span id="fig-public-good"></span>
 

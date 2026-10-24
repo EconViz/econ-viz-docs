@@ -53,7 +53,7 @@ $p = 12 - Q$ 的总收益最大值为 36，位于 $Q = 6$、$p = 6$。
 
 <!-- api: agora.principle_viz.guides_elasticity_3 -->
 
-返回两张 `mosaickit` 画布，位于 `principle_viz.visuals.revenue`：一张是需求曲线，沿线标出 "Elastic"、"Unit elastic" 与 "Inelastic"，并标记单位弹性点；另一张是总收益对数量的曲线，标记最大值。两张画布各有标题。以 `mosaickit.CanvasGrid` 左右并排（参见[弹性与总收益](elasticity.md#fig-revenue)）。
+返回两张 `mosaickit` 画布，位于 `principle_viz.visuals.revenue`：一张是需求曲线，沿线标出 "Elastic"、"Unit elastic" 与 "Inelastic"，并标记单位弹性点；另一张是总收益对数量的曲线，标记最大值。两张画布各有标题，由 `titles=(demand_title, revenue_title)` 设定：默认为 "Demand and Elasticity" 与 "Total Revenue"；某一项传入 `None` 则**该画布不画标题**，其他文字照原样画出；默认的英文标题会依图形语言翻译。以 `mosaickit.CanvasGrid` 左右并排（参见[弹性与总收益](elasticity.md#fig-revenue)）。
 
 ```python
 from mosaickit import CanvasGrid
@@ -67,6 +67,7 @@ schedule = elasticity_revenue_schedule(demand)
 canvases = elasticity_revenue_canvases(
     demand,
     schedule,
+    titles=(None, None),
     theme=PlotTheme(),
 )
 CanvasGrid(canvases, rows=1).save(

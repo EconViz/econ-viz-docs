@@ -5,7 +5,7 @@
   },
   "docs/principle-viz/installation.md": {
     "source": "packages/principle-viz/chapters/en/02-installation.typ",
-    "sha256": "80be2e267d556be81ad9b58e5ed546eff2c07e20e067c7b6b5b148f01a77a9b3"
+    "sha256": "d840953b05cf4293ec99c5de3551f5ea35cd520804ad0265673b4844318468b9"
   },
   "docs/principle-viz/quickstart.md": {
     "source": "packages/principle-viz/chapters/en/03-quickstart.typ",
@@ -25,7 +25,7 @@
   },
   "docs/principle-viz/guides/elasticity.md": {
     "source": "packages/principle-viz/chapters/en/07-elasticity.typ",
-    "sha256": "3bea6f593f88083f73981539d939bc5e39feb276d950085449ac835c2f08fe98"
+    "sha256": "914a1871584a1cbdb09ae54c0ddd4cf1d0acc5295f6afe0b59572328049c6a9a"
   },
   "docs/principle-viz/guides/welfare.md": {
     "source": "packages/principle-viz/chapters/en/08-welfare.typ",
@@ -45,7 +45,7 @@
   },
   "docs/principle-viz/guides/failures.md": {
     "source": "packages/principle-viz/chapters/en/12-failures.typ",
-    "sha256": "f2086eec3b30525c4a71ecf9fe79ede1cf8c33d068c313afaabeb6e416916f7e"
+    "sha256": "443ab558a8ca137d083bca18109ccbd081216848231f9261b4b58244c4349f84"
   },
   "docs/principle-viz/guides/factor-markets.md": {
     "source": "packages/principle-viz/chapters/en/13-factor-markets.typ",
@@ -53,7 +53,7 @@
   },
   "docs/principle-viz/guides/ppf.md": {
     "source": "packages/principle-viz/chapters/en/14-ppf.typ",
-    "sha256": "7c699ce5ad9d2062eb0391f2757b920757aa9def67544336d9ba8c0e8fecb531"
+    "sha256": "4582c868239601afce0038898d3316d402c4d7666d6a0d822e444d8399710d24"
   },
   "docs/principle-viz/guides/figures.md": {
     "source": "packages/principle-viz/chapters/en/15-figures.typ",
@@ -73,7 +73,7 @@
   },
   "docs/zh-TW/principle-viz/installation.md": {
     "source": "packages/principle-viz/chapters/zh-TW/02-installation.typ",
-    "sha256": "c2e961884e87b9c418c8c33811d4c8d851c068d5b0163e913a2ac5467a48b52b"
+    "sha256": "2dea93f30044f4190211bdb41868ecba7e679342d31c6778ccb37350e66c6750"
   },
   "docs/zh-TW/principle-viz/quickstart.md": {
     "source": "packages/principle-viz/chapters/zh-TW/03-quickstart.typ",
@@ -93,7 +93,7 @@
   },
   "docs/zh-TW/principle-viz/guides/elasticity.md": {
     "source": "packages/principle-viz/chapters/zh-TW/07-elasticity.typ",
-    "sha256": "1eb0f3d5920eb53fd8c201c37746f5c6913c312f5e976e9b2f17a22754da5c52"
+    "sha256": "72539251bda0f056aaf63a3fe6e54477f9ba5c652dac11d330a9a9545da007ae"
   },
   "docs/zh-TW/principle-viz/guides/welfare.md": {
     "source": "packages/principle-viz/chapters/zh-TW/08-welfare.typ",
@@ -113,7 +113,7 @@
   },
   "docs/zh-TW/principle-viz/guides/failures.md": {
     "source": "packages/principle-viz/chapters/zh-TW/12-failures.typ",
-    "sha256": "d08ab07c71a5241ebb3be288235a922f77ca51d0192fb7ccd6a0ef4142429ad4"
+    "sha256": "2d9c30c61634a707b4ba83fe3daabab79387ae00e880011c818cd53c395aaafa"
   },
   "docs/zh-TW/principle-viz/guides/factor-markets.md": {
     "source": "packages/principle-viz/chapters/zh-TW/13-factor-markets.typ",
@@ -121,7 +121,7 @@
   },
   "docs/zh-TW/principle-viz/guides/ppf.md": {
     "source": "packages/principle-viz/chapters/zh-TW/14-ppf.typ",
-    "sha256": "dc037488b2483011844fe93c2b59f0bd8ddef766c5b635ef92cabdb12fd137d6"
+    "sha256": "98dc839b646824f6b74b871cb5c74a43c094d4e76c1551106b9bf46e08c5cbd3"
   },
   "docs/zh-TW/principle-viz/guides/figures.md": {
     "source": "packages/principle-viz/chapters/zh-TW/15-figures.typ",
@@ -141,7 +141,7 @@
   },
   "docs/zh-CN/principle-viz/installation.md": {
     "source": "packages/principle-viz/chapters/zh-CN/02-installation.typ",
-    "sha256": "32021c1f15f9227de20d526d323a607258ae6f5bac946acf61f16ee476254e28"
+    "sha256": "e6f18201a4d0e7256f151238e5473599ce9df8e277b5d225a5a60d510151d876"
   },
   "docs/zh-CN/principle-viz/quickstart.md": {
     "source": "packages/principle-viz/chapters/zh-CN/03-quickstart.typ",
@@ -161,7 +161,7 @@
   },
   "docs/zh-CN/principle-viz/guides/elasticity.md": {
     "source": "packages/principle-viz/chapters/zh-CN/07-elasticity.typ",
-    "sha256": "54d1ba4237fa828c47f5d4d18a3a535c4db112e77e89326c51c02f0ba35dbd64"
+    "sha256": "def61bafa7dfab3279bf76c64ba4eb9229e3fed20ab62525ced7fcce1754b41a"
   },
   "docs/zh-CN/principle-viz/guides/welfare.md": {
     "source": "packages/principle-viz/chapters/zh-CN/08-welfare.typ",
@@ -181,7 +181,7 @@
   },
   "docs/zh-CN/principle-viz/guides/failures.md": {
     "source": "packages/principle-viz/chapters/zh-CN/12-failures.typ",
-    "sha256": "ce1ac32ca72208c16278a19b10c73e75931a50dd1c6b86da4555ac5cbcf48fa4"
+    "sha256": "9ea57859f4a6b8e23cd99c135281162b9f98bbf79d63dcdbef6a6bc95dcfbb36"
   },
   "docs/zh-CN/principle-viz/guides/factor-markets.md": {
     "source": "packages/principle-viz/chapters/zh-CN/13-factor-markets.typ",
@@ -189,7 +189,7 @@
   },
   "docs/zh-CN/principle-viz/guides/ppf.md": {
     "source": "packages/principle-viz/chapters/zh-CN/14-ppf.typ",
-    "sha256": "3363b3dc116139f99a2e2bc5644e255c2b3cab0767356b75550691204e924d85"
+    "sha256": "b1f455c3a9e5f45927dd0fba691c096580606c98dbfc5e075fd9275438a46d53"
   },
   "docs/zh-CN/principle-viz/guides/figures.md": {
     "source": "packages/principle-viz/chapters/zh-CN/15-figures.typ",

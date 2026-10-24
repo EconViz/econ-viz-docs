@@ -38,7 +38,7 @@ print(ppf.assess(4, 3), ppf.assess(7, 6))
 
 <!-- api: agora.principle_viz.guides_ppf_3 -->
 
-在曲线上采样，并评估以 `(x, y, label)` 三元组给定的点；`principle_viz.visuals.ppf` 中的 `ppf_canvas()` 画出曲线、为可达成的区域填色并标出各点（参见[有效率与无效率的点](ppf.md#fig-ppf)）。
+在曲线上采样，并评估以 `(x, y, label)` 三元组给定的点；`principle_viz.visuals.ppf` 中的 `ppf_canvas()` 画出曲线、为可达成的区域填色并标出各点（参见[有效率与无效率的点](ppf.md#fig-ppf)）。图标题由 `title` 参数决定：默认为 "Production Possibilities Frontier"，**传入 `None` 则不画标题**，其他文字照原样画出；默认的英文标题会依图形语言翻译。
 
 ```python
 from principle_viz import analyze_ppf
@@ -46,7 +46,7 @@ from principle_viz.visuals.ppf import ppf_canvas
 
 points = ((6, ppf.y_at(6), "A"), (4, 3, "B"), (7, 6, "C"))
 result = analyze_ppf(ppf, points=points)
-ppf_canvas(result).save("ppf_points.png")
+ppf_canvas(result, title=None).save("ppf_points.png")
 ```
 
 <span id="fig-ppf"></span>
@@ -63,7 +63,7 @@ ppf_canvas(result).save("ppf_points.png")
 
 <!-- api: agora.principle_viz.guides_ppf_4 -->
 
-经济成长使各截距乘以一加上对应的成长率；结果包含 `baseline` 与 `shifted` 两条曲线及其采样点。`ppf_growth_canvas()` 画出两条曲线并命名为 $P P F_0$ 与 $P P F_1$（参见[消费品与资本品增长](ppf.md#fig-ppf-growth)）。
+经济成长使各截距乘以一加上对应的成长率；结果包含 `baseline` 与 `shifted` 两条曲线及其采样点。`ppf_growth_canvas()` 画出两条曲线并命名为 $P P F_0$ 与 $P P F_1$（参见[消费品与资本品增长](ppf.md#fig-ppf-growth)）。其 `title` 的用法与 `ppf_canvas()` 相同，默认为 "Economic Growth"。
 
 <span id="fig-ppf-growth"></span>
 

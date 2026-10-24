@@ -8,6 +8,13 @@ seo_title: "更新纪录"
 
 本章列出影响软件包使用的版本变更，包含以 `principle-econ` 名称发布的版本，不含仅修改文档的版本；各条目依 l3doc 惯例标注于它所描述的功能旁，页码即该功能的实际页码。
 
+## 0.13.0
+
+- `elasticity_revenue_canvases` — `titles=(demand_title, revenue_title)` 设定两张图的标题；传入 `None` 则不画标题 [弹性与总收益](guides/elasticity.md)
+- `public_good_canvas` — `title=` 设定图标题；传入 `None` 则不画标题 [市场失灵](guides/failures.md)
+- `ppf_canvas` — `title=` 设定图标题；传入 `None` 则不画标题 [生产可能性曲线](guides/ppf.md)
+- `ppf_growth_canvas` — `title=` 设定图标题；传入 `None` 则不画标题 [生产可能性曲线](guides/ppf.md)
+
 ## 0.12.1
 
 - `Label` — 添加 `top`、`bottom`、`left` 与 `right`，可在标签定位后微调单个标签 [图形](guides/figures.md)

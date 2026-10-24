@@ -137,7 +137,18 @@ print(
 
 A `mosaickit` canvas, in `principle_viz.visuals.market_failures`,
 with each marginal benefit, their vertical sum, marginal cost, and $Q_p$
-and $Q^*$ on the quantity axis (see [Vertical sum of marginal benefits](failures.md#fig-public-good)).
+and $Q^*$ on the quantity axis (see [Vertical sum of marginal benefits](failures.md#fig-public-good)). The figure title is the
+`title` argument: it defaults to "Public Good", `None` draws no title and
+any other text is drawn as given. A default English title is translated into
+the figure's language.
+
+```python
+from principle_viz.visuals.market_failures import (
+    public_good_canvas,
+)
+
+public_good_canvas(result, title=None).save("public_good.png")
+```
 
 <span id="fig-public-good"></span>
 

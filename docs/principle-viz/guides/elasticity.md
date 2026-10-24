@@ -66,8 +66,11 @@ For $p = 12 - Q$, maximum revenue is 36 at $Q = 6$, $p = 6$.
 Two `mosaickit` canvases, in `principle_viz.visuals.revenue`: the
 demand curve, labelled "Elastic", "Unit elastic" and "Inelastic" along
 its length with the unit-elastic point marked, and total revenue against
-quantity with its maximum marked. Each canvas carries its own title. Place
-them side by side with `mosaickit.CanvasGrid` (see [Elasticity and total revenue](elasticity.md#fig-revenue)).
+quantity with its maximum marked. Each canvas carries its own title, set by
+`titles=(demand_title, revenue_title)`: `None` draws no title for that
+canvas and any other text is drawn as given. A default English title is
+translated into the figure's language. Place them side by side with
+`mosaickit.CanvasGrid` (see [Elasticity and total revenue](elasticity.md#fig-revenue)).
 
 ```python
 from mosaickit import CanvasGrid
@@ -81,6 +84,7 @@ schedule = elasticity_revenue_schedule(demand)
 canvases = elasticity_revenue_canvases(
     demand,
     schedule,
+    titles=(None, None),
     theme=PlotTheme(),
 )
 CanvasGrid(canvases, rows=1).save(
