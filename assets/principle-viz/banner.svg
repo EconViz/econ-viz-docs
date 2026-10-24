@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 160" width="640" height="160" role="img" aria-label="principle-viz">
+  <title>principle-viz</title>
+
+  <!-- Supply and demand crossing at the market equilibrium. -->
+  <g transform="translate(24, 28)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 8 4 V 100 H 116" stroke="#c9c9c9" stroke-width="4"/>
+    <path d="M 64 56 V 100 M 64 56 H 8" stroke="#c9c9c9" stroke-width="2" stroke-dasharray="5 6"/>
+    <path d="M 22 18 L 108 90" stroke="#8a8a8a" stroke-width="6"/>
+    <path d="M 22 90 L 108 18" stroke="#181818" stroke-width="6"/>
+    <circle cx="64" cy="56" r="7" fill="#181818" stroke="#ffffff" stroke-width="2.5"/>
+  </g>
+
+  <!-- Wordmark follows the BezierKit family treatment. -->
+  <text x="168" y="98" font-family="'JetBrains Mono','SFMono-Regular',Consolas,monospace" font-size="52" font-weight="700" letter-spacing="-1" fill="#181818">principle-<tspan fill="#8a8a8a">viz</tspan></text>
+</svg>

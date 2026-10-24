@@ -1,0 +1,64 @@
+{#-
+  Copy of Material's partials/tabs.html. The package sections are grouped into
+  two dropdown tabs (economics packages and foundation packages); every other
+  top-level item renders as a normal tab. Labels follow the locale that
+  mkdocs-static-i18n sets for the page. Package sections are matched by title,
+  which the nav translations leave untouched.
+-#}
+{% import "partials/tabs-item.html" as item with context %}
+{% set locale = i18n_page_locale | default("en") %}
+{% set groups = [
+  {
+    "label": {"en": "Economics packages", "zh-TW": "經濟學套件", "zh-CN": "经济学包"}[locale] | default("Economics packages"),
+    "members": ["utility-viz", "principle-viz"]
+  },
+  {
+    "label": {"en": "Foundation packages", "zh-TW": "底層套件", "zh-CN": "底层包"}[locale] | default("Foundation packages"),
+    "members": ["mosaickit", "bezierkit"]
+  }
+] %}
+<nav class="md-tabs" aria-label="{{ lang.t('tabs') }}" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      {% for nav_item in nav.items %}
+        {% set ns = namespace(group=none) %}
+        {% for group in groups %}
+          {% if nav_item.title in group.members %}
+            {% set ns.group = group %}
+          {% endif %}
+        {% endfor %}
+        {% if not ns.group %}
+          {{ item.render(nav_item) }}
+        {% elif nav_item.title == ns.group.members[0] %}
+          {% set members = [] %}
+          {% for candidate in nav.items %}
+            {% if candidate.title in ns.group.members %}
+              {% set _ = members.append(candidate) %}
+            {% endif %}
+          {% endfor %}
+          {% set class = "md-tabs__item ev-tabs-dropdown" %}
+          {% for member in members %}
+            {% if member.active %}
+              {% set class = class ~ " md-tabs__item--active" %}
+            {% endif %}
+          {% endfor %}
+          <li class="{{ class }}">
+            <a href="{{ (members[0].children | first).url | url }}" class="md-tabs__link" aria-haspopup="true">
+              {{ ns.group.label }}
+            </a>
+            <ul class="ev-tabs-dropdown__menu">
+              {% for member in members %}
+                <li>
+                  <a href="{{ (member.children | first).url | url }}"
+                     class="ev-tabs-dropdown__link{% if member.active %} ev-tabs-dropdown__link--active{% endif %}">
+                    {{ member.title }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</nav>
