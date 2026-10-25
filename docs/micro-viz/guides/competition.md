@@ -8,7 +8,7 @@ seo_title: "Competition and the long run"
 
 Price-taking firms, industry supply, long-run costs and entry.
 
-Each section is one example script and the figures it draws. The scripts come in the archive of this manual; `--help` lists their arguments.
+Each section is one example script and the figures it draws. The scripts come in the examples archive; `--help` lists their arguments.
 
 ## Perfect competition
 
@@ -16,39 +16,39 @@ Each section is one example script and the figures it draws. The scripts come in
 
 The price-taking firm produces where the price equals MC. Profit, loss and shutdown follow from where the price lies against ATC and AVC.
 
-<!-- api: agora.micro_viz.guides_competition_1 -->
+<!-- api: micro_viz.guides_competition_1 -->
 
 `solve_competitive_firm()` returns a `CompetitiveOutcome` whose `Regime` says whether the firm earns a profit, takes a loss or shuts down; `FirmSupply` and `IndustrySupply` give the supply of one firm and the horizontal sum of several; `analyze_revenue_cost()` samples revenue, cost and profit.
 
-<!-- api: agora.micro_viz.guides_competition_2 -->
+<!-- api: micro_viz.guides_competition_2 -->
 
 The price-taking firm: ATC, AVC and MC against the price line `P = MR`.
 
-<!-- api: agora.micro_viz.guides_competition_3 -->
+<!-- api: micro_viz.guides_competition_3 -->
 
 MC before and after a cost increase, with the price line and the two outputs.
 
-<!-- api: agora.micro_viz.guides_competition_4 -->
+<!-- api: micro_viz.guides_competition_4 -->
 
 The firm's supply curve: the part of MC above the lowest AVC, drawn solid.
 
-<!-- api: agora.micro_viz.guides_competition_5 -->
+<!-- api: micro_viz.guides_competition_5 -->
 
 Industry supply as the horizontal sum of the firms' supply curves.
 
-<!-- api: agora.micro_viz.guides_competition_6 -->
+<!-- api: micro_viz.guides_competition_6 -->
 
 The firms' supply curves side by side and the industry supply that sums them.
 
-<!-- api: agora.micro_viz.guides_competition_7 -->
+<!-- api: micro_viz.guides_competition_7 -->
 
 The firm beside the market: horizontal demand `d` at the market price, and the downward market demand `D`, with a dashed link carrying the price across.
 
-<!-- api: agora.micro_viz.guides_competition_8 -->
+<!-- api: micro_viz.guides_competition_8 -->
 
 Producer surplus: the area between the price and MC from zero to `q*`.
 
-<!-- api: agora.micro_viz.guides_competition_9 -->
+<!-- api: micro_viz.guides_competition_9 -->
 
 Total revenue, total cost and the profit curve against output.
 
@@ -179,9 +179,9 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Revenue, cost and profit.* Profit is largest where total revenue exceeds total cost by the most.](../../assets/micro-viz/agora/competition/revenue_cost_profit.svg){ .ev-figure-sm }
+![*Revenue, cost and profit.* Profit is largest where total revenue exceeds total cost by the most.](../../assets/micro-viz/competition/revenue_cost_profit.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/competition/competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/competition/competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Revenue, cost and profit.* Profit is largest where total revenue exceeds total cost by the most.</figcaption>
 
@@ -191,9 +191,9 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Market and firm.* The market demand sets the price; the firm faces a horizontal demand.](../../assets/micro-viz/agora/competition/market_and_firm.svg){ .ev-figure-sm }
+![*Market and firm.* The market demand sets the price; the firm faces a horizontal demand.](../../assets/micro-viz/competition/market_and_firm.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/competition/competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/competition/competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Market and firm.* The market demand sets the price; the firm faces a horizontal demand.</figcaption>
 
@@ -203,9 +203,9 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Firm earning a profit.* With the price above ATC, profit is the rectangle between the price and ATC.](../../assets/micro-viz/agora/competition/firm_profit.svg){ .ev-figure-sm }
+![*Firm earning a profit.* With the price above ATC, profit is the rectangle between the price and ATC.](../../assets/micro-viz/competition/firm_profit.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/competition/competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/competition/competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Firm earning a profit.* With the price above ATC, profit is the rectangle between the price and ATC.</figcaption>
 
@@ -215,9 +215,9 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Profit lost off the optimum.* Any output other than the one where MR = MC loses profit.](../../assets/micro-viz/agora/competition/firm_lost_profit.svg){ .ev-figure-sm }
+![*Profit lost off the optimum.* Any output other than the one where MR = MC loses profit.](../../assets/micro-viz/competition/firm_lost_profit.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/competition/competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/competition/competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Profit lost off the optimum.* Any output other than the one where MR = MC loses profit.</figcaption>
 
@@ -227,9 +227,9 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Firm with a loss.* With the price between AVC and ATC the firm keeps producing at a loss.](../../assets/micro-viz/agora/competition/firm_loss.svg){ .ev-figure-sm }
+![*Firm with a loss.* With the price between AVC and ATC the firm keeps producing at a loss.](../../assets/micro-viz/competition/firm_loss.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/competition/competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/competition/competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Firm with a loss.* With the price between AVC and ATC the firm keeps producing at a loss.</figcaption>
 
@@ -239,9 +239,9 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Shutdown.* With the price below the lowest AVC the firm stops producing.](../../assets/micro-viz/agora/competition/firm_shutdown.svg){ .ev-figure-sm }
+![*Shutdown.* With the price below the lowest AVC the firm stops producing.](../../assets/micro-viz/competition/firm_shutdown.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/competition/competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/competition/competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Shutdown.* With the price below the lowest AVC the firm stops producing.</figcaption>
 
@@ -251,9 +251,9 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Firm supply curve.* The supply curve is the part of MC above the lowest AVC.](../../assets/micro-viz/agora/competition/firm_supply.svg){ .ev-figure-sm }
+![*Firm supply curve.* The supply curve is the part of MC above the lowest AVC.](../../assets/micro-viz/competition/firm_supply.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/competition/competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/competition/competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Firm supply curve.* The supply curve is the part of MC above the lowest AVC.</figcaption>
 
@@ -263,9 +263,9 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Cost shift.* Higher costs shift MC and AVC up and output falls.](../../assets/micro-viz/agora/competition/cost_shift.svg){ .ev-figure-sm }
+![*Cost shift.* Higher costs shift MC and AVC up and output falls.](../../assets/micro-viz/competition/cost_shift.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/competition/competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/competition/competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Cost shift.* Higher costs shift MC and AVC up and output falls.</figcaption>
 
@@ -275,9 +275,9 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Per-unit tax.* A per-unit tax shifts MC up by the tax and the firm cuts output.](../../assets/micro-viz/agora/competition/unit_tax.svg){ .ev-figure-sm }
+![*Per-unit tax.* A per-unit tax shifts MC up by the tax and the firm cuts output.](../../assets/micro-viz/competition/unit_tax.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/competition/competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/competition/competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Per-unit tax.* A per-unit tax shifts MC up by the tax and the firm cuts output.</figcaption>
 
@@ -287,9 +287,9 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Industry supply.* Industry supply is the horizontal sum of the firms' supply curves.](../../assets/micro-viz/agora/competition/industry_supply.svg){ .ev-figure-sm }
+![*Industry supply.* Industry supply is the horizontal sum of the firms' supply curves.](../../assets/micro-viz/competition/industry_supply.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/competition/competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/competition/competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Industry supply.* Industry supply is the horizontal sum of the firms' supply curves.</figcaption>
 
@@ -299,9 +299,9 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Industry supply alone.* Only the industry supply curve and the output at each price.](../../assets/micro-viz/agora/competition/industry_supply_total.svg){ .ev-figure-sm }
+![*Industry supply alone.* Only the industry supply curve and the output at each price.](../../assets/micro-viz/competition/industry_supply_total.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/competition/competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/competition/competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Industry supply alone.* Only the industry supply curve and the output at each price.</figcaption>
 
@@ -311,9 +311,9 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Producer surplus.* Producer surplus is the area between the price and MC.](../../assets/micro-viz/agora/competition/producer_surplus.svg){ .ev-figure-sm }
+![*Producer surplus.* Producer surplus is the area between the price and MC.](../../assets/micro-viz/competition/producer_surplus.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/competition/competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/competition/competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Producer surplus.* Producer surplus is the area between the price and MC.</figcaption>
 
@@ -325,19 +325,19 @@ def competition_examples(
 
 LAC envelops the short-run average cost curves of plants of different size; LMC passes through its lowest point. Sources: [Viner (1931)](../project/references.md#viner1931).
 
-<!-- api: agora.micro_viz.guides_competition_10 -->
+<!-- api: micro_viz.guides_competition_10 -->
 
 `PlantFamily` holds the SAC curves of plants that touch LAC; `EnvelopeFigure` is the textbook envelope with the tangency and lowest-point outputs.
 
-<!-- api: agora.micro_viz.guides_competition_11 -->
+<!-- api: micro_viz.guides_competition_11 -->
 
 LAC enveloping SAC1 to SAC3 as in a textbook figure of long-run cost.
 
-<!-- api: agora.micro_viz.guides_competition_12 -->
+<!-- api: micro_viz.guides_competition_12 -->
 
 U-shaped LAC with LMC cutting it at its lowest point `C_min` (output `Q_e`).
 
-<!-- api: agora.micro_viz.guides_competition_13 -->
+<!-- api: micro_viz.guides_competition_13 -->
 
 SAC curves of the plants in `sizes` touching LAC, with LAC and LMC.
 
@@ -390,9 +390,9 @@ def long_run_examples(
 
 <figure class="ev-fig" markdown>
 
-![*LAC and LMC.* LMC passes through the lowest point of LAC.](../../assets/micro-viz/agora/long_run_costs/lac_lmc.svg){ .ev-figure-sm }
+![*LAC and LMC.* LMC passes through the lowest point of LAC.](../../assets/micro-viz/long_run_costs/lac_lmc.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/long_run_costs/long_run_costs.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/long_run_costs/long_run_costs.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*LAC and LMC.* LMC passes through the lowest point of LAC.</figcaption>
 
@@ -402,9 +402,9 @@ def long_run_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Short-run envelope.* LAC envelops SAC1 to SAC3; each SAC touches LAC and SMC passes through the lowest point of its SAC.](../../assets/micro-viz/agora/long_run_costs/short_run_envelope.svg){ .ev-figure-sm }
+![*Short-run envelope.* LAC envelops SAC1 to SAC3; each SAC touches LAC and SMC passes through the lowest point of its SAC.](../../assets/micro-viz/long_run_costs/short_run_envelope.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/long_run_costs/long_run_costs.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/long_run_costs/long_run_costs.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Short-run envelope.* LAC envelops SAC1 to SAC3; each SAC touches LAC and SMC passes through the lowest point of its SAC.</figcaption>
 
@@ -414,9 +414,9 @@ def long_run_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Plant family.* Each plant's SAC touches LAC, and SMC meets LMC at the point of tangency.](../../assets/micro-viz/agora/long_run_costs/plant_family.svg){ .ev-figure-sm }
+![*Plant family.* Each plant's SAC touches LAC, and SMC meets LMC at the point of tangency.](../../assets/micro-viz/long_run_costs/plant_family.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/long_run_costs/long_run_costs.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/long_run_costs/long_run_costs.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Plant family.* Each plant's SAC touches LAC, and SMC meets LMC at the point of tangency.</figcaption>
 
@@ -428,27 +428,27 @@ def long_run_examples(
 
 Entry and exit move the industry to zero profit. The long-run supply curve is horizontal, rising or, with a scarce advantage, shows a rent.
 
-<!-- api: agora.micro_viz.guides_competition_14 -->
+<!-- api: micro_viz.guides_competition_14 -->
 
 `IndustryEntry` solves the long-run industry for a demand curve and a firm's cost: the zero-profit price, the number of firms and the points before and after entry.
 
-<!-- api: agora.micro_viz.guides_competition_15 -->
+<!-- api: micro_viz.guides_competition_15 -->
 
 Constant-cost industry: demand rises, price jumps then returns to the same lowest ATC; the long-run supply curve LRS is horizontal.
 
-<!-- api: agora.micro_viz.guides_competition_16 -->
+<!-- api: micro_viz.guides_competition_16 -->
 
 Profit draws entry: the firm (profit rectangle) beside the industry, where more firms shift supply right until the price has fallen to the lowest ATC.
 
-<!-- api: agora.micro_viz.guides_competition_17 -->
+<!-- api: micro_viz.guides_competition_17 -->
 
 Increasing-cost industry: entry raises input prices by `cost_shift` per unit of extra industry output, so every firm's cost curves rise and LRS slopes up.
 
-<!-- api: agora.micro_viz.guides_competition_18 -->
+<!-- api: micro_viz.guides_competition_18 -->
 
 LAC, LMC and the price line: the firm produces where `price = LMC` with the plant whose SAC touches LAC there, and the profit is the rectangle between price and LAC.
 
-<!-- api: agora.micro_viz.guides_competition_19 -->
+<!-- api: micro_viz.guides_competition_19 -->
 
 Zero profit for the marginal firm, and a rent rectangle for a firm with lower costs (a scarce advantage), beside the long-run industry.
 
@@ -517,9 +517,9 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Firm in the long run.* Long-run output is where the price equals LMC; profit is the rectangle between the price and LAC.](../../assets/micro-viz/agora/long_run_competition/long_run_firm.svg){ .ev-figure-sm }
+![*Firm in the long run.* Long-run output is where the price equals LMC; profit is the rectangle between the price and LAC.](../../assets/micro-viz/long_run_competition/long_run_firm.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/long_run_competition/long_run_competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/long_run_competition/long_run_competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Firm in the long run.* Long-run output is where the price equals LMC; profit is the rectangle between the price and LAC.</figcaption>
 
@@ -529,9 +529,9 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Entry.* Profit draws entry; industry supply shifts right until the price falls to the lowest ATC.](../../assets/micro-viz/agora/long_run_competition/entry.svg){ .ev-figure-sm }
+![*Entry.* Profit draws entry; industry supply shifts right until the price falls to the lowest ATC.](../../assets/micro-viz/long_run_competition/entry.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/long_run_competition/long_run_competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/long_run_competition/long_run_competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Entry.* Profit draws entry; industry supply shifts right until the price falls to the lowest ATC.</figcaption>
 
@@ -541,9 +541,9 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Economic rent.* A firm with lower costs earns an economic rent at the zero-profit price.](../../assets/micro-viz/agora/long_run_competition/economic_rent.svg){ .ev-figure-sm }
+![*Economic rent.* A firm with lower costs earns an economic rent at the zero-profit price.](../../assets/micro-viz/long_run_competition/economic_rent.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/long_run_competition/long_run_competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/long_run_competition/long_run_competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Economic rent.* A firm with lower costs earns an economic rent at the zero-profit price.</figcaption>
 
@@ -553,9 +553,9 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Constant-cost industry.* The long-run supply of a constant-cost industry is horizontal.](../../assets/micro-viz/agora/long_run_competition/constant_cost.svg){ .ev-figure-sm }
+![*Constant-cost industry.* The long-run supply of a constant-cost industry is horizontal.](../../assets/micro-viz/long_run_competition/constant_cost.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/long_run_competition/long_run_competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/long_run_competition/long_run_competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Constant-cost industry.* The long-run supply of a constant-cost industry is horizontal.</figcaption>
 
@@ -565,9 +565,9 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Increasing-cost industry.* The long-run supply of an increasing-cost industry slopes upward.](../../assets/micro-viz/agora/long_run_competition/increasing_cost.svg){ .ev-figure-sm }
+![*Increasing-cost industry.* The long-run supply of an increasing-cost industry slopes upward.](../../assets/micro-viz/long_run_competition/increasing_cost.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/long_run_competition/long_run_competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/long_run_competition/long_run_competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Increasing-cost industry.* The long-run supply of an increasing-cost industry slopes upward.</figcaption>
 

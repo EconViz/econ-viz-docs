@@ -44,11 +44,11 @@ def demand_canvas(
 
 <span id="sec-plane"></span>
 
-<!-- api: agora.micro_viz.guides_adding_figure_1 -->
+<!-- api: micro_viz.guides_adding_figure_1 -->
 
 One plane diagram in `micro_viz.visuals.plane`. Its methods add layers with stable ids built from `prefix`; `finish()` returns the `Canvas`.
 
-<!-- api: agora.micro_viz.guides_adding_figure_2 -->
+<!-- api: micro_viz.guides_adding_figure_2 -->
 
 The segment $y = \text{intercept} + \text{slope} \cdot x$ from `x_min` to `x_max`, as two points.
 

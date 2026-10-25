@@ -8,7 +8,7 @@ seo_title: "生產與成本"
 
 短期生產，以及由此得到的成本曲線。
 
-每一節是一支範例腳本與它畫出的圖。腳本隨手冊的壓縮檔提供，參數可用 `--help` 查看。
+每一節是一支範例腳本與它畫出的圖。腳本在範例壓縮檔中提供，參數可用 `--help` 查看。
 
 ## 短期生產
 
@@ -16,15 +16,15 @@ seo_title: "生產與成本"
 
 一種變動投入與一種固定投入，得到總產量、平均產量與邊際產量。邊際報酬的區間由模型分類，圖中以底色標出。
 
-<!-- api: agora.micro_viz.guides_production_costs_1 -->
+<!-- api: micro_viz.guides_production_costs_1 -->
 
 `ShortRunProductionFunction` 是三次生產函數 $Q = a L + b L^2 + c L^3$；`analyze_production()` 取樣 TP、AP 與 MP，並把範圍分成邊際報酬遞增、遞減與為負的區間。
 
-<!-- api: agora.micro_viz.guides_production_costs_2 -->
+<!-- api: micro_viz.guides_production_costs_2 -->
 
 平均與邊際產量圖：含邊際報酬區間，並標出 AP = MP 與 MP = 0 的點。
 
-<!-- api: agora.micro_viz.guides_production_costs_3 -->
+<!-- api: micro_viz.guides_production_costs_3 -->
 
 總產量圖：曲線、三個邊際報酬區間與分界線。
 
@@ -85,9 +85,9 @@ def production_examples(
 
 <figure class="ev-fig" markdown>
 
-![*總產量曲線。* 短期總產量曲線，並標出邊際報酬遞增與遞減的區間。](../../../assets/micro-viz/agora/production/total_product.zh-TW.svg){ .ev-figure-sm }
+![*總產量曲線。* 短期總產量曲線，並標出邊際報酬遞增與遞減的區間。](../../../assets/micro-viz/production/total_product.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/production/production.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/production/production.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*總產量曲線。* 短期總產量曲線，並標出邊際報酬遞增與遞減的區間。</figcaption>
 
@@ -97,9 +97,9 @@ def production_examples(
 
 <figure class="ev-fig" markdown>
 
-![*平均與邊際產量。* 平均產量與邊際產量曲線，MP 通過 AP 的最高點。](../../../assets/micro-viz/agora/production/average_marginal_product.zh-TW.svg){ .ev-figure-sm }
+![*平均與邊際產量。* 平均產量與邊際產量曲線，MP 通過 AP 的最高點。](../../../assets/micro-viz/production/average_marginal_product.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/production/production.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/production/production.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*平均與邊際產量。* 平均產量與邊際產量曲線，MP 通過 AP 的最高點。</figcaption>
 
@@ -109,9 +109,9 @@ def production_examples(
 
 <figure class="ev-fig" markdown>
 
-![*總產量，底色在曲線下。* 區域底色只填到曲線為止。](../../../assets/micro-viz/agora/production/total_product_under_curve.zh-TW.svg){ .ev-figure-sm }
+![*總產量，底色在曲線下。* 區域底色只填到曲線為止。](../../../assets/micro-viz/production/total_product_under_curve.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/production/production.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/production/production.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*總產量，底色在曲線下。* 區域底色只填到曲線為止。</figcaption>
 
@@ -121,9 +121,9 @@ def production_examples(
 
 <figure class="ev-fig" markdown>
 
-![*平均與邊際產量，底色在曲線下。* 區域底色只填到 AP、MP 的上緣為止。](../../../assets/micro-viz/agora/production/average_marginal_product_under_curve.zh-TW.svg){ .ev-figure-sm }
+![*平均與邊際產量，底色在曲線下。* 區域底色只填到 AP、MP 的上緣為止。](../../../assets/micro-viz/production/average_marginal_product_under_curve.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/production/production.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/production/production.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*平均與邊際產量，底色在曲線下。* 區域底色只填到 AP、MP 的上緣為止。</figcaption>
 
@@ -135,23 +135,23 @@ def production_examples(
 
 三次成本函數得到總成本、變動成本、固定成本與四條單位成本曲線。MC 通過 AVC 與 ATC 的最低點。
 
-<!-- api: agora.micro_viz.guides_production_costs_4 -->
+<!-- api: micro_viz.guides_production_costs_4 -->
 
 `CubicCost` 是 $\text{TC} = \text{FC} + b Q + c Q^2 + d Q^3$；`analyze_costs()` 在產量範圍內計算各種成本，並找出 AVC 與 ATC 的最低點。
 
-<!-- api: agora.micro_viz.guides_production_costs_5 -->
+<!-- api: micro_viz.guides_production_costs_5 -->
 
 上方是總成本、下方是單位成本，共用產量軸。
 
-<!-- api: agora.micro_viz.guides_production_costs_6 -->
+<!-- api: micro_viz.guides_production_costs_6 -->
 
 把 `cost_curves_grid` 的兩欄分成兩張畫布，各自可獨立成圖。
 
-<!-- api: agora.micro_viz.guides_production_costs_7 -->
+<!-- api: micro_viz.guides_production_costs_7 -->
 
 TC、VC 與 FC 對產量。
 
-<!-- api: agora.micro_viz.guides_production_costs_8 -->
+<!-- api: micro_viz.guides_production_costs_8 -->
 
 MC、ATC、AVC 與 AFC 對產量；`curves` 可選子集。
 
@@ -220,9 +220,9 @@ def cost_examples(
 
 <figure class="ev-fig" markdown>
 
-![*總成本曲線。* 總成本、變動成本與固定成本曲線。](../../../assets/micro-viz/agora/costs/total_cost.zh-TW.svg){ .ev-figure-sm }
+![*總成本曲線。* 總成本、變動成本與固定成本曲線。](../../../assets/micro-viz/costs/total_cost.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/costs/costs.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/costs/costs.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*總成本曲線。* 總成本、變動成本與固定成本曲線。</figcaption>
 
@@ -232,9 +232,9 @@ def cost_examples(
 
 <figure class="ev-fig" markdown>
 
-![*單位成本曲線。* MC、ATC、AVC 與 AFC 曲線，MC 通過 AVC 與 ATC 的最低點。](../../../assets/micro-viz/agora/costs/unit_cost.zh-TW.svg){ .ev-figure-sm }
+![*單位成本曲線。* MC、ATC、AVC 與 AFC 曲線，MC 通過 AVC 與 ATC 的最低點。](../../../assets/micro-viz/costs/unit_cost.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/costs/costs.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/costs/costs.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*單位成本曲線。* MC、ATC、AVC 與 AFC 曲線，MC 通過 AVC 與 ATC 的最低點。</figcaption>
 
@@ -244,9 +244,9 @@ def cost_examples(
 
 <figure class="ev-fig" markdown>
 
-![*三次函數的 AVC 與 MC。* 三次成本函數的 AVC 與 MC。](../../../assets/micro-viz/agora/costs/cubic_avc_mc.zh-TW.svg){ .ev-figure-sm }
+![*三次函數的 AVC 與 MC。* 三次成本函數的 AVC 與 MC。](../../../assets/micro-viz/costs/cubic_avc_mc.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/costs/costs.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/costs/costs.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*三次函數的 AVC 與 MC。* 三次成本函數的 AVC 與 MC。</figcaption>
 
@@ -256,9 +256,9 @@ def cost_examples(
 
 <figure class="ev-fig" markdown>
 
-![*成本曲線上下對照。* 總成本與單位成本的兩欄對照圖。](../../../assets/micro-viz/agora/costs/cost_curves.zh-TW.svg){ .ev-figure-sm }
+![*成本曲線上下對照。* 總成本與單位成本的兩欄對照圖。](../../../assets/micro-viz/costs/cost_curves.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/costs/costs.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/costs/costs.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*成本曲線上下對照。* 總成本與單位成本的兩欄對照圖。</figcaption>
 
@@ -268,9 +268,9 @@ def cost_examples(
 
 <figure class="ev-fig" markdown>
 
-![*總成本圖。* 兩欄對照圖中的總成本圖，可單獨使用。](../../../assets/micro-viz/agora/costs/cost_curves_total.zh-TW.svg){ .ev-figure-sm }
+![*總成本圖。* 兩欄對照圖中的總成本圖，可單獨使用。](../../../assets/micro-viz/costs/cost_curves_total.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/costs/costs.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/costs/costs.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*總成本圖。* 兩欄對照圖中的總成本圖，可單獨使用。</figcaption>
 
@@ -280,9 +280,9 @@ def cost_examples(
 
 <figure class="ev-fig" markdown>
 
-![*單位成本圖。* 兩欄對照圖中的單位成本圖，可單獨使用。](../../../assets/micro-viz/agora/costs/cost_curves_unit.zh-TW.svg){ .ev-figure-sm }
+![*單位成本圖。* 兩欄對照圖中的單位成本圖，可單獨使用。](../../../assets/micro-viz/costs/cost_curves_unit.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/costs/costs.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/costs/costs.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*單位成本圖。* 兩欄對照圖中的單位成本圖，可單獨使用。</figcaption>
 
@@ -294,11 +294,11 @@ def cost_examples(
 
 數個容量固定的廠房得到階梯式邊際成本；一個有產能限制的廠房得到折線邊際成本。
 
-<!-- api: agora.micro_viz.guides_production_costs_9 -->
+<!-- api: micro_viz.guides_production_costs_9 -->
 
 `PiecewiseCost` 把各有容量與邊際成本的 `CostSegment` 接起來；它是 `CostFunction`，因此 `analyze_costs()` 可以使用。
 
-<!-- api: agora.micro_viz.guides_production_costs_10 -->
+<!-- api: micro_viz.guides_production_costs_10 -->
 
 階梯或折線邊際成本，含容量與價格帶。
 
@@ -363,9 +363,9 @@ def piecewise_examples(
 
 <figure class="ev-fig" markdown>
 
-![*階梯式邊際成本。* 多個廠房的階梯式邊際成本。](../../../assets/micro-viz/agora/piecewise_costs/stepped_cost.zh-TW.svg){ .ev-figure-sm }
+![*階梯式邊際成本。* 多個廠房的階梯式邊際成本。](../../../assets/micro-viz/piecewise_costs/stepped_cost.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/piecewise_costs/piecewise_costs.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/piecewise_costs/piecewise_costs.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*階梯式邊際成本。* 多個廠房的階梯式邊際成本。</figcaption>
 
@@ -375,9 +375,9 @@ def piecewise_examples(
 
 <figure class="ev-fig" markdown>
 
-![*階梯成本與產量。* 價格穿過階梯時產量隨之跳動。](../../../assets/micro-viz/agora/piecewise_costs/stepped_cost_prices.zh-TW.svg){ .ev-figure-sm }
+![*階梯成本與產量。* 價格穿過階梯時產量隨之跳動。](../../../assets/micro-viz/piecewise_costs/stepped_cost_prices.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/piecewise_costs/piecewise_costs.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/piecewise_costs/piecewise_costs.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*階梯成本與產量。* 價格穿過階梯時產量隨之跳動。</figcaption>
 
@@ -387,9 +387,9 @@ def piecewise_examples(
 
 <figure class="ev-fig" markdown>
 
-![*折線邊際成本。* 有產能限制的折線邊際成本。](../../../assets/micro-viz/agora/piecewise_costs/kinked_marginal_cost.zh-TW.svg){ .ev-figure-sm }
+![*折線邊際成本。* 有產能限制的折線邊際成本。](../../../assets/micro-viz/piecewise_costs/kinked_marginal_cost.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/piecewise_costs/piecewise_costs.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/piecewise_costs/piecewise_costs.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*折線邊際成本。* 有產能限制的折線邊際成本。</figcaption>
 

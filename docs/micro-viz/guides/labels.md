@@ -69,9 +69,9 @@ The rule is `drop_covered_guides` in `micro_viz.visuals.common`, applied once wh
 
 <figure class="ev-fig" markdown>
 
-![A loss: the price mark stays, the dashed price line is dropped](../../assets/micro-viz/agora/competition/firm_loss.svg){ .ev-figure-sm }
+![A loss: the price mark stays, the dashed price line is dropped](../../assets/micro-viz/competition/firm_loss.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/competition/competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/competition/competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>A loss: the price mark stays, the dashed price line is dropped</figcaption>
 

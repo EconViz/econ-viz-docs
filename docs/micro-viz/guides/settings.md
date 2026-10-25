@@ -8,7 +8,7 @@ seo_title: "Settings"
 
 `micro-viz` reads the shared `econ-viz.toml`. `mosaickit` parses and checks the file; `micro-viz` only declares what it takes, under `[micro]`.
 
-<!-- api: agora.micro_viz.guides_settings_1 -->
+<!-- api: micro_viz.guides_settings_1 -->
 
 The theme read from an `econ-viz.toml`. `load()` reads `path`, or `econ-viz.toml` in the working directory. `use()` makes it the default, so every figure made without an explicit `theme` uses it, and returns the config. Relative paths in the file are resolved against the file's directory.
 
@@ -41,7 +41,7 @@ fill = true
 extent = "top"
 ```
 
-The manual builds each edition's figures from the files `config/econ-viz.toml`, `config/econ-viz.zh-TW.toml` and `config/econ-viz.zh-CN.toml`, which differ in the fonts and the language only.
+The figures of these pages are drawn from the files `config/econ-viz.toml`, `config/econ-viz.zh-TW.toml` and `config/econ-viz.zh-CN.toml`, which differ in the fonts and the language only.
 
 ## Shared keys
 
@@ -75,7 +75,7 @@ A curve after a change is always thin and solid, a parallel shift is a straight 
 
 ## Themes in code
 
-<!-- api: agora.micro_viz.guides_settings_2 -->
+<!-- api: micro_viz.guides_settings_2 -->
 
 `PlotTheme` holds the look of one figure: colours, line widths, marker size, region shading, fonts and the language. `shared_theme(name)` builds one from a shared `mosaickit` theme name such as `"manual"`; `default_theme()` returns the theme a figure uses without an explicit one, that of the active `Config`.
 
@@ -107,9 +107,9 @@ total_product_canvas(
 
 <figure class="ev-fig" markdown>
 
-![Shade to the top](../../assets/micro-viz/agora/production/total_product.svg){ .ev-figure-sm }
+![Shade to the top](../../assets/micro-viz/production/total_product.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/production/production.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/production/production.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>Shade to the top</figcaption>
 
@@ -119,9 +119,9 @@ total_product_canvas(
 
 <figure class="ev-fig" markdown>
 
-![Shade under the curve](../../assets/micro-viz/agora/production/total_product_under_curve.svg){ .ev-figure-sm }
+![Shade under the curve](../../assets/micro-viz/production/total_product_under_curve.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/production/production.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/production/production.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>Shade under the curve</figcaption>
 

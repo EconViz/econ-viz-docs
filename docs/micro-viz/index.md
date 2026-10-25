@@ -31,7 +31,7 @@ result = analyze_production(production, input_range=(0, 6))
 total_product_canvas(result).save("total_product.svg")
 ```
 
-![Total product](../assets/micro-viz/agora/production/total_product.svg){ .ev-figure-sm }
+![Total product](../assets/micro-viz/production/total_product.svg){ .ev-figure-sm }
 
 ## Models and figures
 

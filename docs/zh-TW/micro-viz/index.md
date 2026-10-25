@@ -28,7 +28,7 @@ result = analyze_production(production, input_range=(0, 6))
 total_product_canvas(result).save("total_product.svg")
 ```
 
-![總產量](../../assets/micro-viz/agora/production/total_product.zh-TW.svg){ .ev-figure-sm }
+![總產量](../../assets/micro-viz/production/total_product.zh-TW.svg){ .ev-figure-sm }
 
 ## 模型與圖形
 

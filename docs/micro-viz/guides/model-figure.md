@@ -36,9 +36,9 @@ monopoly_canvas(outcome, analysis, profit=True).save(
 
 <span id="sec-options"></span>
 
-Every builder returns a `Canvas` and accepts the same keyword options. In the signatures of this manual they are written `**options`.
+Every builder returns a `Canvas` and accepts the same keyword options. In the signatures on these pages they are written `**options`.
 
-<!-- api: agora.micro_viz.guides_model_figure_1 -->
+<!-- api: micro_viz.guides_model_figure_1 -->
 
 Builders that draw several panels take `titles` (one per panel) instead of `title`.
 
@@ -53,7 +53,7 @@ Builders that draw several panels take `titles` (one per panel) instead of `titl
 | `micro_viz/locale/labels.json` | Every built-in word, by id and language |
 | `micro_viz/theme.py`, `config.py` | The theme and the `[micro]` settings schema |
 | `micro_viz/animation/` | Optional animation over a parameter |
-| `examples/scripts/` | One script per topic; the figures of this manual |
+| `examples/scripts/` | One script per topic; the figures of these pages |
 
 ## Layer ids
 

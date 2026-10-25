@@ -8,7 +8,7 @@ seo_title: "設定"
 
 `micro-viz` 讀取共用的 `econ-viz.toml`。檔案由 `mosaickit` 解析與檢查；`micro-viz` 只在 `[micro]` 下宣告自己接受的項目。
 
-<!-- api: agora.micro_viz.guides_settings_1 -->
+<!-- api: micro_viz.guides_settings_1 -->
 
 讀自 `econ-viz.toml` 的主題。`load()` 讀取 `path`，省略時讀工作目錄中的 `econ-viz.toml`。`use()` 把它設為預設並回傳該設定，之後沒有明確指定 `theme` 的圖形都使用它。檔案中的相對路徑相對於檔案所在的目錄。
 
@@ -41,7 +41,7 @@ fill = true
 extent = "top"
 ```
 
-本手冊各版本的圖形分別由 `config/econ-viz.toml`、`config/econ-viz.zh-TW.toml` 與 `config/econ-viz.zh-CN.toml` 繪製；三份檔案只有字型與語言不同。
+本頁的圖形分別由 `config/econ-viz.toml`、`config/econ-viz.zh-TW.toml` 與 `config/econ-viz.zh-CN.toml` 繪製；三份檔案只有字型與語言不同。
 
 ## 共用項目
 
@@ -75,7 +75,7 @@ extent = "top"
 
 ## 程式中的主題
 
-<!-- api: agora.micro_viz.guides_settings_2 -->
+<!-- api: micro_viz.guides_settings_2 -->
 
 `PlotTheme` 保存一張圖的外觀：顏色、線寬、標記大小、區域底色、字型與語言。`shared_theme(name)` 由 `mosaickit` 的共用主題名稱（例如 `"manual"`）建立；`default_theme()` 回傳沒有明確指定時圖形使用的主題，也就是目前啟用的 `Config` 的主題。
 
@@ -107,9 +107,9 @@ total_product_canvas(
 
 <figure class="ev-fig" markdown>
 
-![底色填到圖頂](../../../assets/micro-viz/agora/production/total_product.zh-TW.svg){ .ev-figure-sm }
+![底色填到圖頂](../../../assets/micro-viz/production/total_product.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/production/production.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/production/production.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>底色填到圖頂</figcaption>
 
@@ -119,9 +119,9 @@ total_product_canvas(
 
 <figure class="ev-fig" markdown>
 
-![底色填到曲線](../../../assets/micro-viz/agora/production/total_product_under_curve.zh-TW.svg){ .ev-figure-sm }
+![底色填到曲線](../../../assets/micro-viz/production/total_product_under_curve.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/production/production.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/production/production.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>底色填到曲線</figcaption>
 

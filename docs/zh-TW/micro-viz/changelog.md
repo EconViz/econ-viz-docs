@@ -10,7 +10,7 @@ seo_title: "更新紀錄"
 
 ## 0.2.0.dev0
 
-- 開發版的第一版手冊：生產者理論、市場結構、要素市場、不確定性與資訊 [簡介](guides/introduction.md)
+- 開發版的第一版文件：生產者理論、市場結構、要素市場、不確定性與資訊 [簡介](guides/introduction.md)
 - 圖形以 `mosaickit` 繪製（`mosaickit>=1.0.0rc9,<2.0.0`） [簡介](guides/introduction.md)
 - `Config` — 設定讀自共用的 `econ-viz.toml`；`micro-viz` 在 `[micro]` 下宣告自己的表 [設定](guides/settings.md)
 - `Config` — `[micro.region]` 決定是否為邊際報酬區間上色，以及底色填到圖頂或只填到曲線 [設定](guides/settings.md)

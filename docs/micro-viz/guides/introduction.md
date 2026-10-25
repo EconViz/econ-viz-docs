@@ -36,4 +36,4 @@ The package covers six groups of topics, each with its own chapter ([Chapter gui
 
 On first use, read [Quick start](../quickstart.md#sec-quickstart) and [Model and figure](model-figure.md#sec-model-figure). Each topic chapter then shows the model first and the figures second.
 
-The scripts that draw the figures of this manual come as one zip, sorted by topic: [micro-viz-examples.zip](https://econ-viz.org/assets/micro-viz/agora/micro-viz-examples.zip).
+The scripts that draw the figures of these pages come as one zip, sorted by topic: [micro-viz-examples.zip](https://econ-viz.org/assets/micro-viz/micro-viz-examples.zip).

@@ -1,0 +1,1382 @@
+{
+  "micro_viz.guides_model_figure_1": {
+    "name": "title",
+    "anchor": "micro-viz-guides-model-figure-1",
+    "signatures": [],
+    "parameters": [
+      {
+        "name": "title",
+        "types": [
+          "str | None"
+        ],
+        "description": {
+          "en": "A title. `None` draws none.",
+          "zh-TW": "標題。`None` 不畫標題。",
+          "zh-CN": "标题。`None` 不画标题。"
+        },
+        "default": "None"
+      },
+      {
+        "name": "theme",
+        "types": [
+          "PlotTheme | None"
+        ],
+        "description": {
+          "en": "The look of the figure. `None` uses the theme of the loaded settings ([Settings](settings.md#sec-settings)).",
+          "zh-TW": "圖形的外觀。`None` 使用已載入設定的主題（參見 [設定](settings.md#sec-settings)）。",
+          "zh-CN": "图形的外观。`None` 使用已加载设置的主题（参见 [设置](settings.md#sec-settings)）。"
+        },
+        "default": "None"
+      },
+      {
+        "name": "labels",
+        "types": [
+          "Mapping[str, str] | None"
+        ],
+        "description": {
+          "en": "Replacement text by label id ([Labels and placement](labels.md#sec-labels)).",
+          "zh-TW": "依標籤編號取代的文字（參見 [標籤與位置](labels.md#sec-labels)）。",
+          "zh-CN": "依标签编号取代的文本（参见 [标签与位置](labels.md#sec-labels)）。"
+        },
+        "default": "None"
+      },
+      {
+        "name": "x_label",
+        "types": [
+          "str | None"
+        ],
+        "description": {
+          "en": "The horizontal axis title; the default is set by the builder.",
+          "zh-TW": "橫軸標題；預設由繪圖函式決定。",
+          "zh-CN": "横轴标题；缺省由绘图函数决定。"
+        },
+        "default": "None"
+      },
+      {
+        "name": "y_label",
+        "types": [
+          "str | None"
+        ],
+        "description": {
+          "en": "The vertical axis title; the default is set by the builder.",
+          "zh-TW": "縱軸標題；預設由繪圖函式決定。",
+          "zh-CN": "纵轴标题；缺省由绘图函数决定。"
+        },
+        "default": "None"
+      },
+      {
+        "name": "x_max",
+        "types": [
+          "float | None"
+        ],
+        "description": {
+          "en": "The upper end of the horizontal axis; fix it, together with `y_range`, to keep the axes still in an animation ([Animation](animation.md#sec-animation)).",
+          "zh-TW": "橫軸上界；與 `y_range` 一起固定，動畫中的座標軸才不會跳動（參見 [動畫](animation.md#sec-animation)）。",
+          "zh-CN": "横轴上界；与 `y_range` 一起固定，动画中的座标轴才不会跳动（参见 [动画](animation.md#sec-animation)）。"
+        },
+        "default": "None"
+      },
+      {
+        "name": "y_range",
+        "types": [
+          "tuple[float, float] | None"
+        ],
+        "description": {
+          "en": "The vertical range.",
+          "zh-TW": "縱軸範圍。",
+          "zh-CN": "纵轴范围。"
+        },
+        "default": "None"
+      },
+      {
+        "name": "margin",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Extra room beyond the largest plotted value on each axis, as a fraction.",
+          "zh-TW": "座標軸在資料最大值之外多留的比例。",
+          "zh-CN": "座标轴在数据最大值之外多留的比例。"
+        },
+        "default": "0.1"
+      },
+      {
+        "name": "size",
+        "types": [
+          "tuple[float, float]"
+        ],
+        "description": {
+          "en": "Figure size in inches.",
+          "zh-TW": "圖形大小，單位為英寸。",
+          "zh-CN": "图形大小，单位为英寸。"
+        },
+        "default": "(6.0, 6.0)"
+      },
+      {
+        "name": "dpi",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "Resolution of PNG output.",
+          "zh-TW": "PNG 輸出的解析度。",
+          "zh-CN": "PNG 输出的分辨率。"
+        },
+        "default": "150"
+      }
+    ]
+  },
+  "micro_viz.guides_production_costs_1": {
+    "name": "ShortRunProductionFunction",
+    "anchor": "micro-viz-guides-production-costs-1",
+    "signatures": [
+      "ShortRunProductionFunction",
+      "analyze_production"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_production_costs_2": {
+    "name": "average_marginal_product_canvas",
+    "anchor": "micro-viz-guides-production-costs-2",
+    "signatures": [
+      "average_marginal_product_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_production_costs_3": {
+    "name": "total_product_canvas",
+    "anchor": "micro-viz-guides-production-costs-3",
+    "signatures": [
+      "total_product_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_production_costs_4": {
+    "name": "CubicCost",
+    "anchor": "micro-viz-guides-production-costs-4",
+    "signatures": [
+      "CubicCost",
+      "analyze_costs"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_production_costs_5": {
+    "name": "cost_curves_grid",
+    "anchor": "micro-viz-guides-production-costs-5",
+    "signatures": [
+      "cost_curves_grid"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_production_costs_6": {
+    "name": "cost_curves_panels",
+    "anchor": "micro-viz-guides-production-costs-6",
+    "signatures": [
+      "cost_curves_panels"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_production_costs_7": {
+    "name": "total_cost_canvas",
+    "anchor": "micro-viz-guides-production-costs-7",
+    "signatures": [
+      "total_cost_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_production_costs_8": {
+    "name": "unit_cost_canvas",
+    "anchor": "micro-viz-guides-production-costs-8",
+    "signatures": [
+      "unit_cost_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_production_costs_9": {
+    "name": "PiecewiseCost",
+    "anchor": "micro-viz-guides-production-costs-9",
+    "signatures": [
+      "PiecewiseCost",
+      "CostSegment"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_production_costs_10": {
+    "name": "piecewise_cost_canvas",
+    "anchor": "micro-viz-guides-production-costs-10",
+    "signatures": [
+      "piecewise_cost_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_competition_1": {
+    "name": "LinearDemand",
+    "anchor": "micro-viz-guides-competition-1",
+    "signatures": [
+      "LinearDemand",
+      "solve_competitive_firm",
+      "CompetitiveOutcome",
+      "FirmSupply",
+      "IndustrySupply",
+      "analyze_revenue_cost",
+      "Regime"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_competition_2": {
+    "name": "competitive_firm_canvas",
+    "anchor": "micro-viz-guides-competition-2",
+    "signatures": [
+      "competitive_firm_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_competition_3": {
+    "name": "cost_shift_canvas",
+    "anchor": "micro-viz-guides-competition-3",
+    "signatures": [
+      "cost_shift_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_competition_4": {
+    "name": "firm_supply_canvas",
+    "anchor": "micro-viz-guides-competition-4",
+    "signatures": [
+      "firm_supply_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_competition_5": {
+    "name": "industry_supply_canvas",
+    "anchor": "micro-viz-guides-competition-5",
+    "signatures": [
+      "industry_supply_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_competition_6": {
+    "name": "industry_supply_panels",
+    "anchor": "micro-viz-guides-competition-6",
+    "signatures": [
+      "industry_supply_panels"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_competition_7": {
+    "name": "market_and_firm_canvas",
+    "anchor": "micro-viz-guides-competition-7",
+    "signatures": [
+      "market_and_firm_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_competition_8": {
+    "name": "producer_surplus_canvas",
+    "anchor": "micro-viz-guides-competition-8",
+    "signatures": [
+      "producer_surplus_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_competition_9": {
+    "name": "revenue_cost_profit_canvas",
+    "anchor": "micro-viz-guides-competition-9",
+    "signatures": [
+      "revenue_cost_profit_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_competition_10": {
+    "name": "PlantFamily",
+    "anchor": "micro-viz-guides-competition-10",
+    "signatures": [
+      "PlantFamily",
+      "EnvelopeFigure"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_competition_11": {
+    "name": "envelope_figure_canvas",
+    "anchor": "micro-viz-guides-competition-11",
+    "signatures": [
+      "envelope_figure_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_competition_12": {
+    "name": "lac_lmc_canvas",
+    "anchor": "micro-viz-guides-competition-12",
+    "signatures": [
+      "lac_lmc_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_competition_13": {
+    "name": "plant_family_canvas",
+    "anchor": "micro-viz-guides-competition-13",
+    "signatures": [
+      "plant_family_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_competition_14": {
+    "name": "IndustryEntry",
+    "anchor": "micro-viz-guides-competition-14",
+    "signatures": [
+      "IndustryEntry",
+      "MarketPoint"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_competition_15": {
+    "name": "constant_cost_canvas",
+    "anchor": "micro-viz-guides-competition-15",
+    "signatures": [
+      "constant_cost_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_competition_16": {
+    "name": "entry_canvas",
+    "anchor": "micro-viz-guides-competition-16",
+    "signatures": [
+      "entry_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_competition_17": {
+    "name": "increasing_cost_canvas",
+    "anchor": "micro-viz-guides-competition-17",
+    "signatures": [
+      "increasing_cost_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_competition_18": {
+    "name": "long_run_firm_canvas",
+    "anchor": "micro-viz-guides-competition-18",
+    "signatures": [
+      "long_run_firm_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_competition_19": {
+    "name": "rent_canvas",
+    "anchor": "micro-viz-guides-competition-19",
+    "signatures": [
+      "rent_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_1": {
+    "name": "Monopolist",
+    "anchor": "micro-viz-guides-monopoly-1",
+    "signatures": [
+      "Monopolist",
+      "MonopolyOutcome",
+      "MultiplantMonopoly",
+      "MultiplantOutcome",
+      "elasticity"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_2": {
+    "name": "lerner_markup_canvas",
+    "anchor": "micro-viz-guides-monopoly-2",
+    "signatures": [
+      "lerner_markup_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_3": {
+    "name": "monopoly_canvas",
+    "anchor": "micro-viz-guides-monopoly-3",
+    "signatures": [
+      "monopoly_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_4": {
+    "name": "monopoly_demand_shift_canvas",
+    "anchor": "micro-viz-guides-monopoly-4",
+    "signatures": [
+      "monopoly_demand_shift_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_5": {
+    "name": "monopoly_dwl_canvas",
+    "anchor": "micro-viz-guides-monopoly-5",
+    "signatures": [
+      "monopoly_dwl_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_6": {
+    "name": "monopoly_tax_canvas",
+    "anchor": "micro-viz-guides-monopoly-6",
+    "signatures": [
+      "monopoly_tax_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_7": {
+    "name": "monopoly_totals_canvas",
+    "anchor": "micro-viz-guides-monopoly-7",
+    "signatures": [
+      "monopoly_totals_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_8": {
+    "name": "monopoly_totals_grid",
+    "anchor": "micro-viz-guides-monopoly-8",
+    "signatures": [
+      "monopoly_totals_grid"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_9": {
+    "name": "multiplant_canvas",
+    "anchor": "micro-viz-guides-monopoly-9",
+    "signatures": [
+      "multiplant_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_10": {
+    "name": "solve_monopolistic_competition",
+    "anchor": "micro-viz-guides-monopoly-10",
+    "signatures": [
+      "solve_monopolistic_competition",
+      "MonopolisticOutcome",
+      "long_run_demand"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_11": {
+    "name": "excess_capacity_grid",
+    "anchor": "micro-viz-guides-monopoly-11",
+    "signatures": [
+      "excess_capacity_grid"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_12": {
+    "name": "monopolistic_long_run_canvas",
+    "anchor": "micro-viz-guides-monopoly-12",
+    "signatures": [
+      "monopolistic_long_run_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_13": {
+    "name": "monopolistic_short_run_canvas",
+    "anchor": "micro-viz-guides-monopoly-13",
+    "signatures": [
+      "monopolistic_short_run_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_14": {
+    "name": "price_ceiling_outcome",
+    "anchor": "micro-viz-guides-monopoly-14",
+    "signatures": [
+      "price_ceiling_outcome",
+      "CeilingOutcome",
+      "natural_monopoly_pricing",
+      "NaturalMonopolyPricing",
+      "PricingPoint"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_15": {
+    "name": "natural_monopoly_canvas",
+    "anchor": "micro-viz-guides-monopoly-15",
+    "signatures": [
+      "natural_monopoly_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_16": {
+    "name": "price_ceiling_canvas",
+    "anchor": "micro-viz-guides-monopoly-16",
+    "signatures": [
+      "price_ceiling_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_17": {
+    "name": "first_degree",
+    "anchor": "micro-viz-guides-monopoly-17",
+    "signatures": [
+      "first_degree",
+      "block_pricing",
+      "third_degree",
+      "FirstDegree",
+      "BlockPricing",
+      "ThirdDegree",
+      "Block",
+      "MarketSale"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_18": {
+    "name": "block_pricing_canvas",
+    "anchor": "micro-viz-guides-monopoly-18",
+    "signatures": [
+      "block_pricing_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_19": {
+    "name": "first_degree_canvas",
+    "anchor": "micro-viz-guides-monopoly-19",
+    "signatures": [
+      "first_degree_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_20": {
+    "name": "single_price_canvas",
+    "anchor": "micro-viz-guides-monopoly-20",
+    "signatures": [
+      "single_price_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_21": {
+    "name": "third_degree_canvas",
+    "anchor": "micro-viz-guides-monopoly-21",
+    "signatures": [
+      "third_degree_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_22": {
+    "name": "BuyerType",
+    "anchor": "micro-viz-guides-monopoly-22",
+    "signatures": [
+      "BuyerType",
+      "best_tariff",
+      "evaluate_tariff",
+      "profit_by_entry_fee"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_23": {
+    "name": "tariff_profit_canvas",
+    "anchor": "micro-viz-guides-monopoly-23",
+    "signatures": [
+      "tariff_profit_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_24": {
+    "name": "two_part_tariff_canvas",
+    "anchor": "micro-viz-guides-monopoly-24",
+    "signatures": [
+      "two_part_tariff_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_25": {
+    "name": "ValuationProfile",
+    "anchor": "micro-viz-guides-monopoly-25",
+    "signatures": [
+      "ValuationProfile",
+      "Offer",
+      "best_separate",
+      "best_pure",
+      "best_mixed",
+      "evaluate_offer",
+      "choice",
+      "choice_regions"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_26": {
+    "name": "mixed_bundling_canvas",
+    "anchor": "micro-viz-guides-monopoly-26",
+    "signatures": [
+      "mixed_bundling_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_27": {
+    "name": "pure_bundling_canvas",
+    "anchor": "micro-viz-guides-monopoly-27",
+    "signatures": [
+      "pure_bundling_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_28": {
+    "name": "separate_selling_regions_canvas",
+    "anchor": "micro-viz-guides-monopoly-28",
+    "signatures": [
+      "separate_selling_regions_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_29": {
+    "name": "valuation_scatter_canvas",
+    "anchor": "micro-viz-guides-monopoly-29",
+    "signatures": [
+      "valuation_scatter_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_30": {
+    "name": "IntertemporalPricing",
+    "anchor": "micro-viz-guides-monopoly-30",
+    "signatures": [
+      "IntertemporalPricing",
+      "PeakLoadPricing",
+      "IntertemporalOutcome",
+      "PeakLoadOutcome"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_31": {
+    "name": "intertemporal_pricing_canvas",
+    "anchor": "micro-viz-guides-monopoly-31",
+    "signatures": [
+      "intertemporal_pricing_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_32": {
+    "name": "peak_load_canvas",
+    "anchor": "micro-viz-guides-monopoly-32",
+    "signatures": [
+      "peak_load_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_33": {
+    "name": "AdvertisingDecision",
+    "anchor": "micro-viz-guides-monopoly-33",
+    "signatures": [
+      "AdvertisingDecision",
+      "AdvertisingOutcome"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_34": {
+    "name": "advertising_effect_canvas",
+    "anchor": "micro-viz-guides-monopoly-34",
+    "signatures": [
+      "advertising_effect_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_35": {
+    "name": "ExhaustibleResourcePath",
+    "anchor": "micro-viz-guides-monopoly-35",
+    "signatures": [
+      "ExhaustibleResourcePath"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_monopoly_36": {
+    "name": "resource_price_path_canvas",
+    "anchor": "micro-viz-guides-monopoly-36",
+    "signatures": [
+      "resource_price_path_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_oligopoly_1": {
+    "name": "Duopoly",
+    "anchor": "micro-viz-guides-oligopoly-1",
+    "signatures": [
+      "Duopoly",
+      "DifferentiatedDuopoly",
+      "CournotEquilibrium",
+      "BertrandEquilibrium"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_oligopoly_2": {
+    "name": "price_reaction_canvas",
+    "anchor": "micro-viz-guides-oligopoly-2",
+    "signatures": [
+      "price_reaction_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_oligopoly_3": {
+    "name": "reaction_curves_canvas",
+    "anchor": "micro-viz-guides-oligopoly-3",
+    "signatures": [
+      "reaction_curves_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_oligopoly_4": {
+    "name": "residual_demand_canvas",
+    "anchor": "micro-viz-guides-oligopoly-4",
+    "signatures": [
+      "residual_demand_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_oligopoly_5": {
+    "name": "KinkedDemand",
+    "anchor": "micro-viz-guides-oligopoly-5",
+    "signatures": [
+      "KinkedDemand",
+      "DominantFirm",
+      "DominantFirmOutcome"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_oligopoly_6": {
+    "name": "cartel_elasticity_canvas",
+    "anchor": "micro-viz-guides-oligopoly-6",
+    "signatures": [
+      "cartel_elasticity_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_oligopoly_7": {
+    "name": "dominant_firm_canvas",
+    "anchor": "micro-viz-guides-oligopoly-7",
+    "signatures": [
+      "dominant_firm_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_oligopoly_8": {
+    "name": "kinked_demand_canvas",
+    "anchor": "micro-viz-guides-oligopoly-8",
+    "signatures": [
+      "kinked_demand_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_oligopoly_9": {
+    "name": "VerticalChain",
+    "anchor": "micro-viz-guides-oligopoly-9",
+    "signatures": [
+      "VerticalChain",
+      "ChainOutcome",
+      "transfer_pricing",
+      "TransferPricingOutcome"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_oligopoly_10": {
+    "name": "double_marginalization_canvas",
+    "anchor": "micro-viz-guides-oligopoly-10",
+    "signatures": [
+      "double_marginalization_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_oligopoly_11": {
+    "name": "integrated_firm_canvas",
+    "anchor": "micro-viz-guides-oligopoly-11",
+    "signatures": [
+      "integrated_firm_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_oligopoly_12": {
+    "name": "transfer_price_outside_market_canvas",
+    "anchor": "micro-viz-guides-oligopoly-12",
+    "signatures": [
+      "transfer_price_outside_market_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_1": {
+    "name": "CobbDouglas",
+    "anchor": "micro-viz-guides-inputs-1",
+    "signatures": [
+      "CobbDouglas",
+      "PerfectSubstitutes",
+      "FixedProportions",
+      "Technology",
+      "Returns"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_2": {
+    "name": "isoquant_map_canvas",
+    "anchor": "micro-viz-guides-inputs-2",
+    "signatures": [
+      "isoquant_map_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_3": {
+    "name": "mrts_steps_canvas",
+    "anchor": "micro-viz-guides-inputs-3",
+    "signatures": [
+      "mrts_steps_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_4": {
+    "name": "returns_to_scale_grid",
+    "anchor": "micro-viz-guides-inputs-4",
+    "signatures": [
+      "returns_to_scale_grid"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_5": {
+    "name": "Bundle",
+    "anchor": "micro-viz-guides-inputs-5",
+    "signatures": [
+      "Bundle",
+      "cost_minimizing_bundle",
+      "cost_of",
+      "isocost_segment",
+      "expansion_path",
+      "ray_points"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_6": {
+    "name": "cost_minimization_canvas",
+    "anchor": "micro-viz-guides-inputs-6",
+    "signatures": [
+      "cost_minimization_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_7": {
+    "name": "expansion_path_canvas",
+    "anchor": "micro-viz-guides-inputs-7",
+    "signatures": [
+      "expansion_path_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_8": {
+    "name": "fixed_capital_canvas",
+    "anchor": "micro-viz-guides-inputs-8",
+    "signatures": [
+      "fixed_capital_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_9": {
+    "name": "input_price_change_canvas",
+    "anchor": "micro-viz-guides-inputs-9",
+    "signatures": [
+      "input_price_change_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_10": {
+    "name": "technical_change_canvas",
+    "anchor": "micro-viz-guides-inputs-10",
+    "signatures": [
+      "technical_change_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_11": {
+    "name": "LearningCurve",
+    "anchor": "micro-viz-guides-inputs-11",
+    "signatures": [
+      "LearningCurve",
+      "LearningAverageCost",
+      "ProductTransformation",
+      "TechnologyShift",
+      "ProductionFrontier"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_12": {
+    "name": "learning_curve_canvas",
+    "anchor": "micro-viz-guides-inputs-12",
+    "signatures": [
+      "learning_curve_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_13": {
+    "name": "product_transformation_canvas",
+    "anchor": "micro-viz-guides-inputs-13",
+    "signatures": [
+      "product_transformation_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_14": {
+    "name": "production_frontier_canvas",
+    "anchor": "micro-viz-guides-inputs-14",
+    "signatures": [
+      "production_frontier_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_15": {
+    "name": "scale_vs_learning_canvas",
+    "anchor": "micro-viz-guides-inputs-15",
+    "signatures": [
+      "scale_vs_learning_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_16": {
+    "name": "technology_shift_canvas",
+    "anchor": "micro-viz-guides-inputs-16",
+    "signatures": [
+      "technology_shift_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_17": {
+    "name": "FactorMarket",
+    "anchor": "micro-viz-guides-inputs-17",
+    "signatures": [
+      "FactorMarket",
+      "DerivedDemand",
+      "IndustryFactorDemand",
+      "InputAdjustment",
+      "CapitalAdjustment",
+      "LandMarket",
+      "LinearSupply",
+      "LinearValue"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_18": {
+    "name": "capital_adjustment_canvas",
+    "anchor": "micro-viz-guides-inputs-18",
+    "signatures": [
+      "capital_adjustment_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_19": {
+    "name": "derived_demand_canvas",
+    "anchor": "micro-viz-guides-inputs-19",
+    "signatures": [
+      "derived_demand_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_20": {
+    "name": "economic_rent_canvas",
+    "anchor": "micro-viz-guides-inputs-20",
+    "signatures": [
+      "economic_rent_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_21": {
+    "name": "factor_equilibrium_canvas",
+    "anchor": "micro-viz-guides-inputs-21",
+    "signatures": [
+      "factor_equilibrium_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_22": {
+    "name": "firm_hiring_canvas",
+    "anchor": "micro-viz-guides-inputs-22",
+    "signatures": [
+      "firm_hiring_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_23": {
+    "name": "industry_factor_demand_canvas",
+    "anchor": "micro-viz-guides-inputs-23",
+    "signatures": [
+      "industry_factor_demand_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_24": {
+    "name": "land_rent_canvas",
+    "anchor": "micro-viz-guides-inputs-24",
+    "signatures": [
+      "land_rent_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_25": {
+    "name": "market_supply_canvas",
+    "anchor": "micro-viz-guides-inputs-25",
+    "signatures": [
+      "market_supply_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_26": {
+    "name": "short_long_run_canvas",
+    "anchor": "micro-viz-guides-inputs-26",
+    "signatures": [
+      "short_long_run_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_27": {
+    "name": "Monopsonist",
+    "anchor": "micro-viz-guides-inputs-27",
+    "signatures": [
+      "Monopsonist",
+      "UnionWageSetting",
+      "TwoSectorLabor"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_28": {
+    "name": "competitive_pair_canvas",
+    "anchor": "micro-viz-guides-inputs-28",
+    "signatures": [
+      "competitive_pair_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_29": {
+    "name": "monopoly_monopsony_pair_canvas",
+    "anchor": "micro-viz-guides-inputs-29",
+    "signatures": [
+      "monopoly_monopsony_pair_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_30": {
+    "name": "monopsony_canvas",
+    "anchor": "micro-viz-guides-inputs-30",
+    "signatures": [
+      "monopsony_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_31": {
+    "name": "monopsony_dwl_canvas",
+    "anchor": "micro-viz-guides-inputs-31",
+    "signatures": [
+      "monopsony_dwl_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_32": {
+    "name": "supply_elasticity_canvas",
+    "anchor": "micro-viz-guides-inputs-32",
+    "signatures": [
+      "supply_elasticity_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_33": {
+    "name": "two_sector_labor_canvas",
+    "anchor": "micro-viz-guides-inputs-33",
+    "signatures": [
+      "two_sector_labor_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_inputs_34": {
+    "name": "union_wage_canvas",
+    "anchor": "micro-viz-guides-inputs-34",
+    "signatures": [
+      "union_wage_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_uncertainty_1": {
+    "name": "Gamble",
+    "anchor": "micro-viz-guides-uncertainty-1",
+    "signatures": [
+      "Gamble",
+      "IncomeUtility",
+      "UniformLottery",
+      "MeanVarianceInvestor",
+      "RiskReturnLine",
+      "StateClaims",
+      "TwoAssetFrontier",
+      "cdf_crossing",
+      "first_order_dominates",
+      "second_order_dominates"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_uncertainty_2": {
+    "name": "mean_variance_frontier_canvas",
+    "anchor": "micro-viz-guides-uncertainty-2",
+    "signatures": [
+      "mean_variance_frontier_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_uncertainty_3": {
+    "name": "risk_attitude_canvas",
+    "anchor": "micro-viz-guides-uncertainty-3",
+    "signatures": [
+      "risk_attitude_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_uncertainty_4": {
+    "name": "risk_premium_canvas",
+    "anchor": "micro-viz-guides-uncertainty-4",
+    "signatures": [
+      "risk_premium_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_uncertainty_5": {
+    "name": "risk_return_choice_canvas",
+    "anchor": "micro-viz-guides-uncertainty-5",
+    "signatures": [
+      "risk_return_choice_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_uncertainty_6": {
+    "name": "state_claims_canvas",
+    "anchor": "micro-viz-guides-uncertainty-6",
+    "signatures": [
+      "state_claims_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_uncertainty_7": {
+    "name": "stochastic_dominance_canvas",
+    "anchor": "micro-viz-guides-uncertainty-7",
+    "signatures": [
+      "stochastic_dominance_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_uncertainty_8": {
+    "name": "utility_of_income_canvas",
+    "anchor": "micro-viz-guides-uncertainty-8",
+    "signatures": [
+      "utility_of_income_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_uncertainty_9": {
+    "name": "Auction",
+    "anchor": "micro-viz-guides-uncertainty-9",
+    "signatures": [
+      "Auction"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_uncertainty_10": {
+    "name": "bid_functions_canvas",
+    "anchor": "micro-viz-guides-uncertainty-10",
+    "signatures": [
+      "bid_functions_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_uncertainty_11": {
+    "name": "revenue_equivalence_canvas",
+    "anchor": "micro-viz-guides-uncertainty-11",
+    "signatures": [
+      "revenue_equivalence_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_uncertainty_12": {
+    "name": "LemonsMarket",
+    "anchor": "micro-viz-guides-uncertainty-12",
+    "signatures": [
+      "LemonsMarket",
+      "Signaling",
+      "MoralHazard",
+      "BonusSchedule",
+      "EfficiencyWage",
+      "EfficiencyWageOutcome"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_uncertainty_13": {
+    "name": "bonus_schedule_canvas",
+    "anchor": "micro-viz-guides-uncertainty-13",
+    "signatures": [
+      "bonus_schedule_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_uncertainty_14": {
+    "name": "efficiency_wage_canvas",
+    "anchor": "micro-viz-guides-uncertainty-14",
+    "signatures": [
+      "efficiency_wage_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_uncertainty_15": {
+    "name": "lemons_market_canvas",
+    "anchor": "micro-viz-guides-uncertainty-15",
+    "signatures": [
+      "lemons_market_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_uncertainty_16": {
+    "name": "moral_hazard_canvas",
+    "anchor": "micro-viz-guides-uncertainty-16",
+    "signatures": [
+      "moral_hazard_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_uncertainty_17": {
+    "name": "signaling_canvas",
+    "anchor": "micro-viz-guides-uncertainty-17",
+    "signatures": [
+      "signaling_canvas"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_settings_1": {
+    "name": "Config",
+    "anchor": "micro-viz-guides-settings-1",
+    "signatures": [
+      "Config"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_settings_2": {
+    "name": "PlotTheme",
+    "anchor": "micro-viz-guides-settings-2",
+    "signatures": [
+      "PlotTheme",
+      "shared_theme",
+      "default_theme"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_adding_figure_1": {
+    "name": "Plane",
+    "anchor": "micro-viz-guides-adding-figure-1",
+    "signatures": [
+      "Plane"
+    ],
+    "parameters": [
+      {
+        "name": "line(points, name=None, *, role=\"micro.curve.marginal\", at=1.0)",
+        "types": [],
+        "description": {
+          "en": "A curve through `points`, named at the fraction `at` along it (1 is the right end).",
+          "zh-TW": "經過 `points` 的曲線，名稱放在沿曲線 `at` 的比例處（1 是右端）。",
+          "zh-CN": "经过 `points` 的曲线，名称放在沿曲线 `at` 的比例处（1 是右端）。"
+        }
+      },
+      {
+        "name": "thin(points, name=None, *, at=1.0)",
+        "types": [],
+        "description": {
+          "en": "A curve after a change: thin and solid.",
+          "zh-TW": "變動後的曲線：細實線。",
+          "zh-CN": "变动后的曲线：细实线。"
+        }
+      },
+      {
+        "name": "guide(a, b)",
+        "types": [],
+        "description": {
+          "en": "A dashed guide between two points.",
+          "zh-TW": "兩點之間的虛線輔助線。",
+          "zh-CN": "两点之间的虚线辅助线。"
+        }
+      },
+      {
+        "name": "dot(point)",
+        "types": [],
+        "description": {
+          "en": "A dot.",
+          "zh-TW": "一個點。",
+          "zh-CN": "一个点。"
+        }
+      },
+      {
+        "name": "point(x, y, *, xtext=None, ytext=None, name=None, marker=True)",
+        "types": [],
+        "description": {
+          "en": "A dot with dashed guides to the axes and the given axis marks.",
+          "zh-TW": "一個點，附有通到座標軸的虛線輔助線與給定的軸上記號。",
+          "zh-CN": "一个点，附有通到座标轴的虚线辅助线与给定的轴上记号。"
+        }
+      },
+      {
+        "name": "xmark(x, text)",
+        "types": [],
+        "description": {
+          "en": "A mark on the horizontal axis.",
+          "zh-TW": "橫軸上的記號。",
+          "zh-CN": "横轴上的记号。"
+        }
+      },
+      {
+        "name": "ymark(y, text)",
+        "types": [],
+        "description": {
+          "en": "A mark on the vertical axis.",
+          "zh-TW": "縱軸上的記號。",
+          "zh-CN": "纵轴上的记号。"
+        }
+      },
+      {
+        "name": "area(polygon, name=None, *, shade=\"mid\")",
+        "types": [],
+        "description": {
+          "en": "A shaded region, optionally named inside it.",
+          "zh-TW": "上色的區域，可在區域內標示名稱。",
+          "zh-CN": "上色的区域，可在区域内标示名称。"
+        }
+      },
+      {
+        "name": "arrow(a, b, *, rotate=False, label=None)",
+        "types": [],
+        "description": {
+          "en": "A solid movement arrow: straight for a shift, curved with `rotate` for a slope change.",
+          "zh-TW": "實線的移動箭頭：預設為直線表示平行移動，`rotate` 為彎箭頭表示斜率改變。",
+          "zh-CN": "实线的移动箭头：缺省为直线表示平行移动，`rotate` 为弯箭头表示斜率改变。"
+        }
+      },
+      {
+        "name": "t(key, **fields)",
+        "types": [],
+        "description": {
+          "en": "The built-in (or overridden) text for a label id.",
+          "zh-TW": "標籤編號對應的內建（或已取代的）文字。",
+          "zh-CN": "标签编号对应的内置（或已取代的）文本。"
+        }
+      },
+      {
+        "name": "finish()",
+        "types": [],
+        "description": {
+          "en": "The finished `Canvas`.",
+          "zh-TW": "完成的 `Canvas`。",
+          "zh-CN": "完成的 `Canvas`。"
+        }
+      }
+    ]
+  },
+  "micro_viz.guides_adding_figure_2": {
+    "name": "linear",
+    "anchor": "micro-viz-guides-adding-figure-2",
+    "signatures": [
+      "linear"
+    ],
+    "parameters": []
+  },
+  "micro_viz.guides_animation_1": {
+    "name": "save_svg",
+    "anchor": "micro-viz-guides-animation-1",
+    "signatures": [
+      "save_svg",
+      "save_gif"
+    ],
+    "parameters": []
+  }
+}

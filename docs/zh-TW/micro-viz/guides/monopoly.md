@@ -8,7 +8,7 @@ seo_title: "獨占與定價"
 
 市場力量：單一價格的獨占、對它的管制，以及不只一個價格的定價。
 
-每一節是一支範例腳本與它畫出的圖。腳本隨手冊的壓縮檔提供，參數可用 `--help` 查看。
+每一節是一支範例腳本與它畫出的圖。腳本在範例壓縮檔中提供，參數可用 `--help` 查看。
 
 ## 獨占
 
@@ -16,39 +16,39 @@ seo_title: "獨占與定價"
 
 獨占者在 MR = MC 處生產，價格由需求曲線決定。總量、稅、需求移動、多個廠房與勒納指數都是這張圖的變化。 出處：[Lerner (1934)](../project/references.md#lerner1934)。
 
-<!-- api: agora.micro_viz.guides_monopoly_1 -->
+<!-- api: micro_viz.guides_monopoly_1 -->
 
 `Monopolist.solve()` 回傳含產量、價格與利潤的 `MonopolyOutcome`；`MultiplantMonopoly` 把產量分給各廠房；`elasticity()` 是線性需求的價格彈性。
 
-<!-- api: agora.micro_viz.guides_monopoly_2 -->
+<!-- api: micro_viz.guides_monopoly_2 -->
 
 每個需求一欄：以大括號標出 `p - MC` 的加成，需求有彈性時小、缺乏彈性時大。
 
-<!-- api: agora.micro_viz.guides_monopoly_3 -->
+<!-- api: micro_viz.guides_monopoly_3 -->
 
 獨占者：需求 `D`（= AR）、`MR` 與 `curves` 中的成本曲線。
 
-<!-- api: agora.micro_viz.guides_monopoly_4 -->
+<!-- api: micro_viz.guides_monopoly_4 -->
 
 需求移動（細實線 `D'` 與 `MR'`）：平行移動，或以 `rotate` 繞數量軸端點轉動。
 
-<!-- api: agora.micro_viz.guides_monopoly_5 -->
+<!-- api: micro_viz.guides_monopoly_5 -->
 
 獨占與競爭結果 `p = MC` 的比較：移轉長方形與需求和 MC 之間的無謂損失三角形。
 
-<!-- api: agora.micro_viz.guides_monopoly_6 -->
+<!-- api: micro_viz.guides_monopoly_6 -->
 
 從量稅使 MC 上移（細實線 `MC'`）；箭頭從 `Q_m` 處的舊 MC 指向新 MC，價格由 `p_m` 變為 `p'`。
 
-<!-- api: agora.micro_viz.guides_monopoly_7 -->
+<!-- api: micro_viz.guides_monopoly_7 -->
 
 總收益、總成本與利潤對產量，利潤最大處 `Q_m` 的 R 與 TC 斜率相等。
 
-<!-- api: agora.micro_viz.guides_monopoly_8 -->
+<!-- api: micro_viz.guides_monopoly_8 -->
 
 上方是總量，下方是單位曲線與利潤長方形，共用最適點 `Q_m`。
 
-<!-- api: agora.micro_viz.guides_monopoly_9 -->
+<!-- api: micro_viz.guides_monopoly_9 -->
 
 各廠房的 MC 與水平加總的 `MC_T`，對 `D` 與 `MR`。
 
@@ -167,9 +167,9 @@ def monopoly_examples(
 
 <figure class="ev-fig" markdown>
 
-![*獨占均衡。* 獨占者在 MR = MC 處生產，價格由需求曲線決定。](../../../assets/micro-viz/agora/monopoly/monopoly.zh-TW.svg){ .ev-figure-sm }
+![*獨占均衡。* 獨占者在 MR = MC 處生產，價格由需求曲線決定。](../../../assets/micro-viz/monopoly/monopoly.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/monopoly/monopoly.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/monopoly/monopoly.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*獨占均衡。* 獨占者在 MR = MC 處生產，價格由需求曲線決定。</figcaption>
 
@@ -179,9 +179,9 @@ def monopoly_examples(
 
 <figure class="ev-fig" markdown>
 
-![*偏離最適產量的損失。* 偏離 MR = MC 的產量都使利潤下降。](../../../assets/micro-viz/agora/monopoly/monopoly_lost_profit.zh-TW.svg){ .ev-figure-sm }
+![*偏離最適產量的損失。* 偏離 MR = MC 的產量都使利潤下降。](../../../assets/micro-viz/monopoly/monopoly_lost_profit.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/monopoly/monopoly.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/monopoly/monopoly.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*偏離最適產量的損失。* 偏離 MR = MC 的產量都使利潤下降。</figcaption>
 
@@ -191,9 +191,9 @@ def monopoly_examples(
 
 <figure class="ev-fig" markdown>
 
-![*獨占利潤。* 利潤為價格與 ATC 之間的長方形。](../../../assets/micro-viz/agora/monopoly/monopoly_profit.zh-TW.svg){ .ev-figure-sm }
+![*獨占利潤。* 利潤為價格與 ATC 之間的長方形。](../../../assets/micro-viz/monopoly/monopoly_profit.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/monopoly/monopoly.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/monopoly/monopoly.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*獨占利潤。* 利潤為價格與 ATC 之間的長方形。</figcaption>
 
@@ -203,9 +203,9 @@ def monopoly_examples(
 
 <figure class="ev-fig" markdown>
 
-![*總收益、總成本與利潤。* TR、TC 與利潤曲線，利潤最大處的斜率相等。](../../../assets/micro-viz/agora/monopoly/monopoly_totals.zh-TW.svg){ .ev-figure-sm }
+![*總收益、總成本與利潤。* TR、TC 與利潤曲線，利潤最大處的斜率相等。](../../../assets/micro-viz/monopoly/monopoly_totals.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/monopoly/monopoly.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/monopoly/monopoly.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*總收益、總成本與利潤。* TR、TC 與利潤曲線，利潤最大處的斜率相等。</figcaption>
 
@@ -215,9 +215,9 @@ def monopoly_examples(
 
 <figure class="ev-fig" markdown>
 
-![*總量與單位曲線。* 上圖為總量，下圖為單位曲線與利潤長方形。](../../../assets/micro-viz/agora/monopoly/monopoly_totals_grid.zh-TW.svg){ .ev-figure-sm }
+![*總量與單位曲線。* 上圖為總量，下圖為單位曲線與利潤長方形。](../../../assets/micro-viz/monopoly/monopoly_totals_grid.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/monopoly/monopoly.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/monopoly/monopoly.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*總量與單位曲線。* 上圖為總量，下圖為單位曲線與利潤長方形。</figcaption>
 
@@ -227,9 +227,9 @@ def monopoly_examples(
 
 <figure class="ev-fig" markdown>
 
-![*獨占的無謂損失。* 與完全競爭相比的移轉長方形與無謂損失三角形。](../../../assets/micro-viz/agora/monopoly/monopoly_dwl.zh-TW.svg){ .ev-figure-sm }
+![*獨占的無謂損失。* 與完全競爭相比的移轉長方形與無謂損失三角形。](../../../assets/micro-viz/monopoly/monopoly_dwl.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/monopoly/monopoly.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/monopoly/monopoly.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*獨占的無謂損失。* 與完全競爭相比的移轉長方形與無謂損失三角形。</figcaption>
 
@@ -239,9 +239,9 @@ def monopoly_examples(
 
 <figure class="ev-fig" markdown>
 
-![*對獨占者課從量稅。* 從量稅使 MC 上移，價格與產量隨之調整。](../../../assets/micro-viz/agora/monopoly/monopoly_tax.zh-TW.svg){ .ev-figure-sm }
+![*對獨占者課從量稅。* 從量稅使 MC 上移，價格與產量隨之調整。](../../../assets/micro-viz/monopoly/monopoly_tax.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/monopoly/monopoly.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/monopoly/monopoly.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*對獨占者課從量稅。* 從量稅使 MC 上移，價格與產量隨之調整。</figcaption>
 
@@ -251,9 +251,9 @@ def monopoly_examples(
 
 <figure class="ev-fig" markdown>
 
-![*需求移動。* 需求平行外移，獨占者沒有供給曲線，產量與價格隨 MR' = MC 改變。](../../../assets/micro-viz/agora/monopoly/monopoly_demand_shift.zh-TW.svg){ .ev-figure-sm }
+![*需求移動。* 需求平行外移，獨占者沒有供給曲線，產量與價格隨 MR' = MC 改變。](../../../assets/micro-viz/monopoly/monopoly_demand_shift.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/monopoly/monopoly.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/monopoly/monopoly.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*需求移動。* 需求平行外移，獨占者沒有供給曲線，產量與價格隨 MR' = MC 改變。</figcaption>
 
@@ -263,9 +263,9 @@ def monopoly_examples(
 
 <figure class="ev-fig" markdown>
 
-![*需求轉動。* 需求曲線轉動時，價格與產量的變動方向取決於轉動的方式。](../../../assets/micro-viz/agora/monopoly/monopoly_demand_rotate.zh-TW.svg){ .ev-figure-sm }
+![*需求轉動。* 需求曲線轉動時，價格與產量的變動方向取決於轉動的方式。](../../../assets/micro-viz/monopoly/monopoly_demand_rotate.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/monopoly/monopoly.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/monopoly/monopoly.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*需求轉動。* 需求曲線轉動時，價格與產量的變動方向取決於轉動的方式。</figcaption>
 
@@ -275,9 +275,9 @@ def monopoly_examples(
 
 <figure class="ev-fig" markdown>
 
-![*多廠房獨占。* 各廠房 MC 水平加總後與 MR 相交，並決定各廠產量。](../../../assets/micro-viz/agora/monopoly/multiplant.zh-TW.svg){ .ev-figure-sm }
+![*多廠房獨占。* 各廠房 MC 水平加總後與 MR 相交，並決定各廠產量。](../../../assets/micro-viz/monopoly/multiplant.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/monopoly/monopoly.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/monopoly/monopoly.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*多廠房獨占。* 各廠房 MC 水平加總後與 MR 相交，並決定各廠產量。</figcaption>
 
@@ -287,9 +287,9 @@ def monopoly_examples(
 
 <figure class="ev-fig" markdown>
 
-![*勒納加成。* 需求愈缺乏彈性，加成 (p − MC) 愈大。](../../../assets/micro-viz/agora/monopoly/lerner_markup.zh-TW.svg){ .ev-figure-sm }
+![*勒納加成。* 需求愈缺乏彈性，加成 (p − MC) 愈大。](../../../assets/micro-viz/monopoly/lerner_markup.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/monopoly/monopoly.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/monopoly/monopoly.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*勒納加成。* 需求愈缺乏彈性，加成 (p − MC) 愈大。</figcaption>
 
@@ -301,19 +301,19 @@ def monopoly_examples(
 
 每家廠商面對向下的需求。進入使需求左移，直到與 ATC 相切，價格高於 MC，產能閒置。 出處：[Chamberlin (1933)](../project/references.md#chamberlin1933)。
 
-<!-- api: agora.micro_viz.guides_monopoly_10 -->
+<!-- api: micro_viz.guides_monopoly_10 -->
 
 `solve_monopolistic_competition()` 回傳短期最適點與進入後的長期相切點；`long_run_demand()` 建立斜率相同且與 ATC 相切的需求曲線。
 
-<!-- api: agora.micro_viz.guides_monopoly_11 -->
+<!-- api: micro_viz.guides_monopoly_11 -->
 
 獨占性競爭（價格高於 MC、有超額產能）與完全競爭（`p = MC` 在最低 ATC）並列。
 
-<!-- api: agora.micro_viz.guides_monopoly_12 -->
+<!-- api: micro_viz.guides_monopoly_12 -->
 
 長期：需求在 `MR = MC` 的產量與 ATC 相切，價格高於 MC。
 
-<!-- api: agora.micro_viz.guides_monopoly_13 -->
+<!-- api: micro_viz.guides_monopoly_13 -->
 
 短期：獨占最適點與進入前的利潤長方形。
 
@@ -361,9 +361,9 @@ def monopolistic_examples(
 
 <figure class="ev-fig" markdown>
 
-![*短期均衡。* 短期有利潤，利潤矩形為價格與 ATC 之差乘以產量。](../../../assets/micro-viz/agora/monopolistic_competition/short_run.zh-TW.svg){ .ev-figure-sm }
+![*短期均衡。* 短期有利潤，利潤矩形為價格與 ATC 之差乘以產量。](../../../assets/micro-viz/monopolistic_competition/short_run.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/monopolistic_competition/monopolistic_competition.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/monopolistic_competition/monopolistic_competition.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*短期均衡。* 短期有利潤，利潤矩形為價格與 ATC 之差乘以產量。</figcaption>
 
@@ -373,9 +373,9 @@ def monopolistic_examples(
 
 <figure class="ev-fig" markdown>
 
-![*長期相切。* 長期均衡：需求與 ATC 相切於 MR = MC 的產量，價格高於 MC。](../../../assets/micro-viz/agora/monopolistic_competition/long_run.zh-TW.svg){ .ev-figure-sm }
+![*長期相切。* 長期均衡：需求與 ATC 相切於 MR = MC 的產量，價格高於 MC。](../../../assets/micro-viz/monopolistic_competition/long_run.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/monopolistic_competition/monopolistic_competition.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/monopolistic_competition/monopolistic_competition.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*長期相切。* 長期均衡：需求與 ATC 相切於 MR = MC 的產量，價格高於 MC。</figcaption>
 
@@ -385,9 +385,9 @@ def monopolistic_examples(
 
 <figure class="ev-fig" markdown>
 
-![*超額產能。* 獨占性競爭的產量低於最低 ATC 的產量，差距為超額產能。](../../../assets/micro-viz/agora/monopolistic_competition/excess_capacity.zh-TW.svg){ .ev-figure-sm }
+![*超額產能。* 獨占性競爭的產量低於最低 ATC 的產量，差距為超額產能。](../../../assets/micro-viz/monopolistic_competition/excess_capacity.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/monopolistic_competition/monopolistic_competition.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/monopolistic_competition/monopolistic_competition.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*超額產能。* 獨占性競爭的產量低於最低 ATC 的產量，差距為超額產能。</figcaption>
 
@@ -399,15 +399,15 @@ def monopolistic_examples(
 
 價格上限使獨占者的平均收益變平；ATC 遞減的自然獨占比較不管制、邊際成本定價與平均成本定價。
 
-<!-- api: agora.micro_viz.guides_monopoly_14 -->
+<!-- api: micro_viz.guides_monopoly_14 -->
 
 `price_ceiling_outcome()` 求價格上限下的最適產量；`natural_monopoly_pricing()` 以 `PricingPoint` 回傳三種價格。
 
-<!-- api: agora.micro_viz.guides_monopoly_15 -->
+<!-- api: micro_viz.guides_monopoly_15 -->
 
 ATC 遞減的自然獨占：不管制價格、`P = MC`（虧損以底色標出）與 `P = ATC`（零利潤）。
 
-<!-- api: agora.micro_viz.guides_monopoly_16 -->
+<!-- api: micro_viz.guides_monopoly_16 -->
 
 價格上限：平均收益在上限處到 `Q_max` 為水平，邊際收益在該點等於上限，之後跳降回未管制的 MR。
 
@@ -478,9 +478,9 @@ def regulation_examples(
 
 <figure class="ev-fig" markdown>
 
-![*價格上限。* 價格上限使平均收益在上限處變平，邊際收益在該點跳降。](../../../assets/micro-viz/agora/regulation/price_ceiling.zh-TW.svg){ .ev-figure-sm }
+![*價格上限。* 價格上限使平均收益在上限處變平，邊際收益在該點跳降。](../../../assets/micro-viz/regulation/price_ceiling.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/regulation/regulation.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/regulation/regulation.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*價格上限。* 價格上限使平均收益在上限處變平，邊際收益在該點跳降。</figcaption>
 
@@ -490,9 +490,9 @@ def regulation_examples(
 
 <figure class="ev-fig" markdown>
 
-![*自然獨占定價。* 比較不管制價格、邊際成本定價（虧損）與平均成本定價。](../../../assets/micro-viz/agora/regulation/natural_monopoly.zh-TW.svg){ .ev-figure-sm }
+![*自然獨占定價。* 比較不管制價格、邊際成本定價（虧損）與平均成本定價。](../../../assets/micro-viz/regulation/natural_monopoly.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/regulation/regulation.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/regulation/regulation.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*自然獨占定價。* 比較不管制價格、邊際成本定價（虧損）與平均成本定價。</figcaption>
 
@@ -504,23 +504,23 @@ def regulation_examples(
 
 完全、分段與三級差別訂價，與單一獨占價格對照。
 
-<!-- api: agora.micro_viz.guides_monopoly_17 -->
+<!-- api: micro_viz.guides_monopoly_17 -->
 
 `first_degree()`、`block_pricing()` 與 `third_degree()` 回傳對應的結果物件，含數量、價格與利潤。
 
-<!-- api: agora.micro_viz.guides_monopoly_18 -->
+<!-- api: micro_viz.guides_monopoly_18 -->
 
 每一段以最後一位買者的價格出售：需求下方的階梯，到 `D = MC` 為止；`average_cost` 另加遞減的 ATC。
 
-<!-- api: agora.micro_viz.guides_monopoly_19 -->
+<!-- api: micro_viz.guides_monopoly_19 -->
 
 完全差別訂價：價格隨需求到 `D = MC`，利潤為需求與 MC 之間的面積。
 
-<!-- api: agora.micro_viz.guides_monopoly_20 -->
+<!-- api: micro_viz.guides_monopoly_20 -->
 
 單一獨占價格（`MR = MC`）：其上的消費者剩餘，以及 `Q^*` 之後需求與 MC 之間未被攫取的剩餘；`groups` 可另加分組。
 
-<!-- api: agora.micro_viz.guides_monopoly_21 -->
+<!-- api: micro_viz.guides_monopoly_21 -->
 
 每個市場一欄（`D_i`、`MR_i` 與共同水準 `MC*`），最後一欄是加總的 `MR_T` 與 MC 相交。
 
@@ -589,9 +589,9 @@ def discrimination_examples(
 
 <figure class="ev-fig" markdown>
 
-![*單一價格。* 單一價格下有未攫取的剩餘。](../../../assets/micro-viz/agora/price_discrimination/single_price.zh-TW.svg){ .ev-figure-sm }
+![*單一價格。* 單一價格下有未攫取的剩餘。](../../../assets/micro-viz/price_discrimination/single_price.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/price_discrimination/price_discrimination.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/price_discrimination/price_discrimination.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*單一價格。* 單一價格下有未攫取的剩餘。</figcaption>
 
@@ -601,9 +601,9 @@ def discrimination_examples(
 
 <figure class="ev-fig" markdown>
 
-![*完全差別訂價。* 價格隨需求曲線，利潤為需求與 MC 之間的面積。](../../../assets/micro-viz/agora/price_discrimination/first_degree.zh-TW.svg){ .ev-figure-sm }
+![*完全差別訂價。* 價格隨需求曲線，利潤為需求與 MC 之間的面積。](../../../assets/micro-viz/price_discrimination/first_degree.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/price_discrimination/price_discrimination.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/price_discrimination/price_discrimination.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*完全差別訂價。* 價格隨需求曲線，利潤為需求與 MC 之間的面積。</figcaption>
 
@@ -613,9 +613,9 @@ def discrimination_examples(
 
 <figure class="ev-fig" markdown>
 
-![*三段式定價。* 三段式定價是不完全的一級差別訂價。](../../../assets/micro-viz/agora/price_discrimination/block_pricing_three.zh-TW.svg){ .ev-figure-sm }
+![*三段式定價。* 三段式定價是不完全的一級差別訂價。](../../../assets/micro-viz/price_discrimination/block_pricing_three.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/price_discrimination/price_discrimination.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/price_discrimination/price_discrimination.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*三段式定價。* 三段式定價是不完全的一級差別訂價。</figcaption>
 
@@ -625,9 +625,9 @@ def discrimination_examples(
 
 <figure class="ev-fig" markdown>
 
-![*遞減 ATC 的分段定價。* 需求在遞減平均成本之上，分段定價。](../../../assets/micro-viz/agora/price_discrimination/block_pricing.zh-TW.svg){ .ev-figure-sm }
+![*遞減 ATC 的分段定價。* 需求在遞減平均成本之上，分段定價。](../../../assets/micro-viz/price_discrimination/block_pricing.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/price_discrimination/price_discrimination.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/price_discrimination/price_discrimination.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*遞減 ATC 的分段定價。* 需求在遞減平均成本之上，分段定價。</figcaption>
 
@@ -637,9 +637,9 @@ def discrimination_examples(
 
 <figure class="ev-fig" markdown>
 
-![*三級差別訂價。* MR1 = MR2 = MC，加總的邊際收益決定總產量。](../../../assets/micro-viz/agora/price_discrimination/third_degree.zh-TW.svg){ .ev-figure-sm }
+![*三級差別訂價。* MR1 = MR2 = MC，加總的邊際收益決定總產量。](../../../assets/micro-viz/price_discrimination/third_degree.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/price_discrimination/price_discrimination.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/price_discrimination/price_discrimination.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*三級差別訂價。* MR1 = MR2 = MC，加總的邊際收益決定總產量。</figcaption>
 
@@ -649,9 +649,9 @@ def discrimination_examples(
 
 <figure class="ev-fig" markdown>
 
-![*角解。* 邊際成本上升時，小市場可能不被服務。](../../../assets/micro-viz/agora/price_discrimination/third_degree_corner.zh-TW.svg){ .ev-figure-sm }
+![*角解。* 邊際成本上升時，小市場可能不被服務。](../../../assets/micro-viz/price_discrimination/third_degree_corner.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/price_discrimination/price_discrimination.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/price_discrimination/price_discrimination.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*角解。* 邊際成本上升時，小市場可能不被服務。</figcaption>
 
@@ -663,15 +663,15 @@ def discrimination_examples(
 
 入場費加使用費。入場費取走被服務買者中剩餘最小者的剩餘，由此得到利潤。 出處：[Oi (1971)](../project/references.md#oi1971)。
 
-<!-- api: agora.micro_viz.guides_monopoly_22 -->
+<!-- api: micro_viz.guides_monopoly_22 -->
 
 `BuyerType` 是附權重的需求曲線；`best_tariff()` 搜尋使用費，`evaluate_tariff()` 給出一組費用的利潤。
 
-<!-- api: agora.micro_viz.guides_monopoly_23 -->
+<!-- api: micro_viz.guides_monopoly_23 -->
 
 入場費利潤、銷售利潤與總利潤對入場費 `T`：每當一類買者被擠出就向下跳。
 
-<!-- api: agora.micro_viz.guides_monopoly_24 -->
+<!-- api: micro_viz.guides_monopoly_24 -->
 
 各類買者的需求、固定的 MC 與使用費 `p^*`；入場費是剩餘最小的買者的消費者剩餘三角形。
 
@@ -725,9 +725,9 @@ def tariff_examples(
 
 <figure class="ev-fig" markdown>
 
-![*兩部定價，單一買者。* 使用費等於 MC，入場費取走整個消費者剩餘。](../../../assets/micro-viz/agora/two_part_tariff/single_buyer.zh-TW.svg){ .ev-figure-sm }
+![*兩部定價，單一買者。* 使用費等於 MC，入場費取走整個消費者剩餘。](../../../assets/micro-viz/two_part_tariff/single_buyer.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/two_part_tariff/two_part_tariff.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/two_part_tariff/two_part_tariff.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*兩部定價，單一買者。* 使用費等於 MC，入場費取走整個消費者剩餘。</figcaption>
 
@@ -737,9 +737,9 @@ def tariff_examples(
 
 <figure class="ev-fig" markdown>
 
-![*兩部定價，兩類買者。* 使用費高於 MC，入場費等於需求較小者的剩餘。](../../../assets/micro-viz/agora/two_part_tariff/two_buyers.zh-TW.svg){ .ev-figure-sm }
+![*兩部定價，兩類買者。* 使用費高於 MC，入場費等於需求較小者的剩餘。](../../../assets/micro-viz/two_part_tariff/two_buyers.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/two_part_tariff/two_part_tariff.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/two_part_tariff/two_part_tariff.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*兩部定價，兩類買者。* 使用費高於 MC，入場費等於需求較小者的剩餘。</figcaption>
 
@@ -749,9 +749,9 @@ def tariff_examples(
 
 <figure class="ev-fig" markdown>
 
-![*利潤與入場費。* 入場費利潤、銷售利潤與總利潤隨入場費變動。](../../../assets/micro-viz/agora/two_part_tariff/tariff_profit.zh-TW.svg){ .ev-figure-sm }
+![*利潤與入場費。* 入場費利潤、銷售利潤與總利潤隨入場費變動。](../../../assets/micro-viz/two_part_tariff/tariff_profit.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/two_part_tariff/two_part_tariff.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/two_part_tariff/two_part_tariff.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*利潤與入場費。* 入場費利潤、銷售利潤與總利潤隨入場費變動。</figcaption>
 
@@ -763,23 +763,23 @@ def tariff_examples(
 
 消費者位於保留價格空間。分開銷售、純粹搭售與混合搭售把這個空間切成購買區域。 出處：[Adams (1976)](../project/references.md#adamsyellen1976)。
 
-<!-- api: agora.micro_viz.guides_monopoly_25 -->
+<!-- api: micro_viz.guides_monopoly_25 -->
 
 `ValuationProfile` 保存消費者的保留價格；`best_separate()`、`best_pure()` 與 `best_mixed()` 搜尋利潤最大的價格；`choice_regions()` 以多邊形給出購買區域。
 
-<!-- api: agora.micro_viz.guides_monopoly_26 -->
+<!-- api: micro_viz.guides_monopoly_26 -->
 
 混合搭售的區域（商品價格 `P1`、`P2`，組合價格 `P_B`）；成本為正時標出成本線，`numbered` 以編號標示區域。
 
-<!-- api: agora.micro_viz.guides_monopoly_27 -->
+<!-- api: micro_viz.guides_monopoly_27 -->
 
 保留價格空間被對角線 `r1 + r2 = P_B` 切開，線上方的消費者購買。
 
-<!-- api: agora.micro_viz.guides_monopoly_28 -->
+<!-- api: micro_viz.guides_monopoly_28 -->
 
 `r1 = P1` 與 `r2 = P2` 切出的四個購買區域（分開銷售）。
 
-<!-- api: agora.micro_viz.guides_monopoly_29 -->
+<!-- api: micro_viz.guides_monopoly_29 -->
 
 消費者是保留價格空間中的點 `(r1, r2)`；`names` 標出前幾個點。
 
@@ -862,9 +862,9 @@ def bundling_examples(
 
 <figure class="ev-fig" markdown>
 
-![*保留價格空間。* 以保留價格 r1、r2 標出各消費者的位置。](../../../assets/micro-viz/agora/bundling/valuation_points.zh-TW.svg){ .ev-figure-sm }
+![*保留價格空間。* 以保留價格 r1、r2 標出各消費者的位置。](../../../assets/micro-viz/bundling/valuation_points.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/bundling/bundling.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/bundling/bundling.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*保留價格空間。* 以保留價格 r1、r2 標出各消費者的位置。</figcaption>
 
@@ -874,9 +874,9 @@ def bundling_examples(
 
 <figure class="ev-fig" markdown>
 
-![*分開銷售。* 價格 P1、P2 把保留價格空間分成四個購買區域。](../../../assets/micro-viz/agora/bundling/separate_regions.zh-TW.svg){ .ev-figure-sm }
+![*分開銷售。* 價格 P1、P2 把保留價格空間分成四個購買區域。](../../../assets/micro-viz/bundling/separate_regions.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/bundling/bundling.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/bundling/bundling.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*分開銷售。* 價格 P1、P2 把保留價格空間分成四個購買區域。</figcaption>
 
@@ -886,9 +886,9 @@ def bundling_examples(
 
 <figure class="ev-fig" markdown>
 
-![*純粹搭售。* 對角線 r1 + r2 = PB 以上的消費者購買組合。](../../../assets/micro-viz/agora/bundling/pure_bundling.zh-TW.svg){ .ev-figure-sm }
+![*純粹搭售。* 對角線 r1 + r2 = PB 以上的消費者購買組合。](../../../assets/micro-viz/bundling/pure_bundling.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/bundling/bundling.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/bundling/bundling.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*純粹搭售。* 對角線 r1 + r2 = PB 以上的消費者購買組合。</figcaption>
 
@@ -898,9 +898,9 @@ def bundling_examples(
 
 <figure class="ev-fig" markdown>
 
-![*混合搭售。* 混合搭售下四個購買區域。](../../../assets/micro-viz/agora/bundling/mixed_bundling.zh-TW.svg){ .ev-figure-sm }
+![*混合搭售。* 混合搭售下四個購買區域。](../../../assets/micro-viz/bundling/mixed_bundling.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/bundling/bundling.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/bundling/bundling.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*混合搭售。* 混合搭售下四個購買區域。</figcaption>
 
@@ -910,9 +910,9 @@ def bundling_examples(
 
 <figure class="ev-fig" markdown>
 
-![*有成本的混合搭售。* 邊際成本為正時的混合搭售區域。](../../../assets/micro-viz/agora/bundling/mixed_with_costs.zh-TW.svg){ .ev-figure-sm }
+![*有成本的混合搭售。* 邊際成本為正時的混合搭售區域。](../../../assets/micro-viz/bundling/mixed_with_costs.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/bundling/bundling.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/bundling/bundling.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*有成本的混合搭售。* 邊際成本為正時的混合搭售區域。</figcaption>
 
@@ -922,9 +922,9 @@ def bundling_examples(
 
 <figure class="ev-fig" markdown>
 
-![*區域編號。* 以編號 I 至 IV 標示混合搭售的區域。](../../../assets/micro-viz/agora/bundling/regions_numbered.zh-TW.svg){ .ev-figure-sm }
+![*區域編號。* 以編號 I 至 IV 標示混合搭售的區域。](../../../assets/micro-viz/bundling/regions_numbered.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/bundling/bundling.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/bundling/bundling.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*區域編號。* 以編號 I 至 IV 標示混合搭售的區域。</figcaption>
 
@@ -936,15 +936,15 @@ def bundling_examples(
 
 兩群買者在不同時間面對不同價格，或兩個時期分攤容量成本。
 
-<!-- api: agora.micro_viz.guides_monopoly_30 -->
+<!-- api: micro_viz.guides_monopoly_30 -->
 
 `IntertemporalPricing` 與 `PeakLoadPricing` 求解兩個市場，回傳對應的結果物件。
 
-<!-- api: agora.micro_viz.guides_monopoly_31 -->
+<!-- api: micro_viz.guides_monopoly_31 -->
 
 兩個需求與其邊際收益對固定 MC：高價給較早的一群，低價給較晚的一群。
 
-<!-- api: agora.micro_viz.guides_monopoly_32 -->
+<!-- api: micro_viz.guides_monopoly_32 -->
 
 尖峰與離峰需求與各自的邊際收益；兩期都有營運成本 `MC`，尖峰另加容量成本 `MC + MC_K`。
 
@@ -990,9 +990,9 @@ def time_pricing_examples(
 
 <figure class="ev-fig" markdown>
 
-![*跨期訂價。* 先對高估價的買者索取高價，之後再降價。](../../../assets/micro-viz/agora/time_pricing/intertemporal.zh-TW.svg){ .ev-figure-sm }
+![*跨期訂價。* 先對高估價的買者索取高價，之後再降價。](../../../assets/micro-viz/time_pricing/intertemporal.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/time_pricing/time_pricing.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/time_pricing/time_pricing.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*跨期訂價。* 先對高估價的買者索取高價，之後再降價。</figcaption>
 
@@ -1002,9 +1002,9 @@ def time_pricing_examples(
 
 <figure class="ev-fig" markdown>
 
-![*尖峰訂價。* 尖峰與離峰需求分別訂價，容量成本由尖峰負擔。](../../../assets/micro-viz/agora/time_pricing/peak_load.zh-TW.svg){ .ev-figure-sm }
+![*尖峰訂價。* 尖峰與離峰需求分別訂價，容量成本由尖峰負擔。](../../../assets/micro-viz/time_pricing/peak_load.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/time_pricing/time_pricing.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/time_pricing/time_pricing.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*尖峰訂價。* 尖峰與離峰需求分別訂價，容量成本由尖峰負擔。</figcaption>
 
@@ -1016,11 +1016,11 @@ def time_pricing_examples(
 
 廣告使平均收益外移、平均成本上升；圖中比較前後的利潤。
 
-<!-- api: agora.micro_viz.guides_monopoly_33 -->
+<!-- api: micro_viz.guides_monopoly_33 -->
 
 `AdvertisingDecision` 比較有無廣告的利潤，回傳 `AdvertisingOutcome`。
 
-<!-- api: agora.micro_viz.guides_monopoly_34 -->
+<!-- api: micro_viz.guides_monopoly_34 -->
 
 `AR` 外移到 `AR'`、平均成本上升到 `AC'`；長方形顯示前（淺）後（深）的利潤。
 
@@ -1047,9 +1047,9 @@ def advertising_examples(
 
 <figure class="ev-fig" markdown>
 
-![*廣告。* 廣告使 AR 外移、平均成本上升，比較前後利潤。](../../../assets/micro-viz/agora/advertising/advertising.zh-TW.svg){ .ev-figure-sm }
+![*廣告。* 廣告使 AR 外移、平均成本上升，比較前後利潤。](../../../assets/micro-viz/advertising/advertising.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/advertising/advertising.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/advertising/advertising.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*廣告。* 廣告使 AR 外移、平均成本上升，比較前後利潤。</figcaption>
 
@@ -1061,11 +1061,11 @@ def advertising_examples(
 
 價格減去邊際開採成本以利率成長，直到存量耗盡時達到禁止價格。 出處：[Hotelling (1931)](../project/references.md#hotelling1931)。
 
-<!-- api: agora.micro_viz.guides_monopoly_35 -->
+<!-- api: micro_viz.guides_monopoly_35 -->
 
 `ExhaustibleResourcePath` 給出價格路徑 $p(t)$，以及對應的靜態需求與存量。
 
-<!-- api: agora.micro_viz.guides_monopoly_36 -->
+<!-- api: micro_viz.guides_monopoly_36 -->
 
 左圖是價格路徑 `p(t)`，從 `p_0` 上升到時間 `T` 的禁止價格，高於邊際開採成本 `c`；右圖是對應的靜態圖。
 
@@ -1092,9 +1092,9 @@ def resource_examples(
 
 <figure class="ev-fig" markdown>
 
-![*可耗竭資源。* 價格減邊際開採成本以利率成長，並對應靜態需求。](../../../assets/micro-viz/agora/exhaustible_resource/resource_price_path.zh-TW.svg){ .ev-figure-sm }
+![*可耗竭資源。* 價格減邊際開採成本以利率成長，並對應靜態需求。](../../../assets/micro-viz/exhaustible_resource/resource_price_path.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/exhaustible_resource/exhaustible_resource.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/exhaustible_resource/exhaustible_resource.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*可耗竭資源。* 價格減邊際開採成本以利率成長，並對應靜態需求。</figcaption>
 
