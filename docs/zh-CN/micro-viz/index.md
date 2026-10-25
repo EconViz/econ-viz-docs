@@ -9,7 +9,7 @@ description: "micro-viz 用 Python 绘制教科书的个体经济学模型：生
   <img src="../../assets/micro-viz/banner.svg" alt="micro-viz" style="max-width: 480px; width: 100%; margin: 2rem 0 1rem;">
 </p>
 
-<p align="center"><em>厂商与市场的教科书分析与图形 Python 套件。</em></p>
+<p align="center"><em>厂商与市场的教科书分析与图形 Python 软件包。</em></p>
 
 `micro-viz` 负责个体经济学的厂商端：生产、成本、市场结构、定价、要素市场、不确定性与信息。每个模型都是有类型的对象，**不负责绘图**；每张图都是由模型创建的 `mosaickit` 画布。统计数据图与方块加箭头的流程图不在范围内。
 
@@ -28,7 +28,7 @@ result = analyze_production(production, input_range=(0, 6))
 total_product_canvas(result).save("total_product.svg")
 ```
 
-![总产量](../../assets/micro-viz/agora/production/total_product.zh-CN.svg){ .ev-figure-sm }
+![总产量](../../assets/micro-viz/production/total_product.zh-CN.svg){ .ev-figure-sm }
 
 ## 模型与图形
 
@@ -41,7 +41,7 @@ total_product_canvas(result).save("total_product.svg")
 | 双占、凹折需求、主导厂商、垂直关系 | `oligopoly`、`vertical` | [寡占与垂直关系](guides/oligopoly.md) |
 | 期望效用、风险、拍卖、逆向选择、信号、道德危害 | `uncertainty`、`auctions`、`information` | [不确定性与信息](guides/uncertainty.md) |
 
-每个绘图函数都接受 `title=None`，回传 `mosaickit` 的 `Canvas`，并产生稳定的 `micro.*` 图层编号。文本来自英文、繁体中文与简体中文的语系表，任何一句都能用 `labels=` 取代。尺寸、线宽、颜色与字体来自主题和共用的 `econ-viz.toml`，**不写在绘图程序里**。
+每个绘图函数都接受 `title=None`，返回 `mosaickit` 的 `Canvas`，并产生稳定的 `micro.*` 图层 ID。文本来自英文、繁体中文与简体中文的语系表，任何一句都能用 `labels=` 取代。尺寸、线宽、颜色与字体来自主题和共用的 `econ-viz.toml`，**不写在绘图程序里**。
 
 !!! note "状态"
 
@@ -52,4 +52,4 @@ total_product_canvas(result).save("total_product.svg")
 - `micro-viz` 负责生产者理论、市场结构、要素市场、不确定性与信息。
 - 消费者理论与一般均衡属于 [utility-viz](../utility-viz/index.md)。
 - 入门的供需政策图属于 [principle-viz](../principle-viz/index.md)。
-- 赛局理论不在这个套件内。
+- 赛局理论不在这个软件包内。

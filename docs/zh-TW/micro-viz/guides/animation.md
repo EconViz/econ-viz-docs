@@ -10,7 +10,7 @@ seo_title: "動畫"
 
 這裡的繪圖函式是從一個數字（移動量、價格、產量）到 `mosaickit` 畫布的函式：就是畫靜態圖的那個函式，並由呼叫端固定所有座標軸範圍與尺寸，座標軸才不會跳動。
 
-<!-- api: agora.micro_viz.guides_animation_1 -->
+<!-- api: micro_viz.guides_animation_1 -->
 
 `save_svg()` 依穩定的圖層編號配對各影格的圖層，做成原生動畫 SVG。`save_gif()` 透過 `mosaickit` 繪出每個影格，輸出 GIF。兩者都在 `micro_viz.animation` 中，並回傳路徑。
 
@@ -27,15 +27,15 @@ def frame(output: float):
 save_svg(frame, [2, 4, 6, 8, 10], "unit_cost_output.svg")
 ```
 
-`save_svg()` 從字型檔設定文字，所以 `econ-viz.toml` 需要 `[font]` 與 `[fonts]` 表；`save_gif()` 不需要。PDF 只顯示下列每個動畫的第一個影格，網站上才會播放。
+`save_svg()` 從字型檔設定文字，所以 `econ-viz.toml` 需要 `[font]` 與 `[fonts]` 表；`save_gif()` 不需要。下列動畫在頁面上播放。
 
 <span id="fig-anim-cost"></span>
 
 <figure class="ev-fig" markdown>
 
-![產量增加時的單位成本](../../../assets/micro-viz/agora/animation/unit_cost_output_animated.zh-TW.svg){ .ev-figure-sm }
+![產量增加時的單位成本](../../../assets/micro-viz/animation/unit_cost_output_animated.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/animation/unit_cost_output_animated.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/animation/unit_cost_output_animated.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>產量增加時的單位成本</figcaption>
 
@@ -45,9 +45,9 @@ save_svg(frame, [2, 4, 6, 8, 10], "unit_cost_output.svg")
 
 <figure class="ev-fig" markdown>
 
-![獨占下的需求移動](../../../assets/micro-viz/agora/animation/monopoly_demand_shift_animated.zh-TW.svg){ .ev-figure-sm }
+![獨占下的需求移動](../../../assets/micro-viz/animation/monopoly_demand_shift_animated.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/animation/monopoly_demand_shift_animated.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/animation/monopoly_demand_shift_animated.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>獨占下的需求移動</figcaption>
 
@@ -57,9 +57,9 @@ save_svg(frame, [2, 4, 6, 8, 10], "unit_cost_output.svg")
 
 <figure class="ev-fig" markdown>
 
-![獨占性競爭中的進入](../../../assets/micro-viz/agora/animation/monopolistic_entry_animated.zh-TW.svg){ .ev-figure-lg }
+![獨占性競爭中的進入](../../../assets/micro-viz/animation/monopolistic_entry_animated.zh-TW.svg){ .ev-figure-lg }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/animation/monopolistic_entry_animated.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/animation/monopolistic_entry_animated.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>獨占性競爭中的進入</figcaption>
 

@@ -8,7 +8,7 @@ seo_title: "Monopoly and pricing"
 
 Market power: the single-price monopoly, its regulation, and pricing beyond one price.
 
-Each section is one example script and the figures it draws. The scripts come in the archive of this manual; `--help` lists their arguments.
+Each section is one example script and the figures it draws. The scripts come in the examples archive; `--help` lists their arguments.
 
 ## Monopoly
 
@@ -16,39 +16,39 @@ Each section is one example script and the figures it draws. The scripts come in
 
 The monopolist produces where MR = MC and reads the price off demand. Totals, taxes, demand shifts, several plants and the Lerner index are variations on that figure. Sources: [Lerner (1934)](../project/references.md#lerner1934).
 
-<!-- api: agora.micro_viz.guides_monopoly_1 -->
+<!-- api: micro_viz.guides_monopoly_1 -->
 
 `Monopolist.solve()` returns a `MonopolyOutcome` with the output, price and profit; `MultiplantMonopoly` splits output across plants; `elasticity()` is the price elasticity of linear demand.
 
-<!-- api: agora.micro_viz.guides_monopoly_2 -->
+<!-- api: micro_viz.guides_monopoly_2 -->
 
 One panel per demand: a brace on `p - MC` shows the markup, small with elastic demand and large with inelastic demand (the Lerner index is `1 / |e|`).
 
-<!-- api: agora.micro_viz.guides_monopoly_3 -->
+<!-- api: micro_viz.guides_monopoly_3 -->
 
 The monopolist: demand `D` (= AR), `MR`, and the cost curves in `curves`.
 
-<!-- api: agora.micro_viz.guides_monopoly_4 -->
+<!-- api: micro_viz.guides_monopoly_4 -->
 
 Demand moves (thin solid `D'` and `MR'`): a parallel shift or, with `rotate`, a change of slope around the quantity-axis end. A monopolist has no supply curve, so the same price can go with different outputs, and the new optimum is read off `MR' = MC`.
 
-<!-- api: agora.micro_viz.guides_monopoly_5 -->
+<!-- api: micro_viz.guides_monopoly_5 -->
 
 Monopoly against the competitive outcome `p = MC`: a transfer rectangle and the deadweight-loss triangle between demand and MC from `Q_m` to `Q_c`.
 
-<!-- api: agora.micro_viz.guides_monopoly_6 -->
+<!-- api: micro_viz.guides_monopoly_6 -->
 
 A per-unit tax lifts MC (thin solid `MC'`); the arrow rises from the old MC at `Q_m` to the new one and the price moves from `p_m` to `p'`.
 
-<!-- api: agora.micro_viz.guides_monopoly_7 -->
+<!-- api: micro_viz.guides_monopoly_7 -->
 
 Total revenue `R`, total cost `TC` and profit against output, with the maximum profit at `Q_m` where the slopes of `R` and `TC` are equal.
 
-<!-- api: agora.micro_viz.guides_monopoly_8 -->
+<!-- api: micro_viz.guides_monopoly_8 -->
 
 Totals above, unit curves with the profit rectangle below, sharing the optimum `Q_m`.
 
-<!-- api: agora.micro_viz.guides_monopoly_9 -->
+<!-- api: micro_viz.guides_monopoly_9 -->
 
 Each plant's MC beside the horizontally summed `MC_T` against `D` and `MR`.
 
@@ -167,9 +167,9 @@ def monopoly_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Monopoly: MR = MC.* The monopolist produces where MR = MC and the price is read off demand.](../../assets/micro-viz/agora/monopoly/monopoly.svg){ .ev-figure-sm }
+![*Monopoly: MR = MC.* The monopolist produces where MR = MC and the price is read off demand.](../../assets/micro-viz/monopoly/monopoly.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/monopoly/monopoly.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/monopoly/monopoly.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Monopoly: MR = MC.* The monopolist produces where MR = MC and the price is read off demand.</figcaption>
 
@@ -179,9 +179,9 @@ def monopoly_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Monopoly: profit lost off the optimum.* Any output other than the one where MR = MC lowers profit.](../../assets/micro-viz/agora/monopoly/monopoly_lost_profit.svg){ .ev-figure-sm }
+![*Monopoly: profit lost off the optimum.* Any output other than the one where MR = MC lowers profit.](../../assets/micro-viz/monopoly/monopoly_lost_profit.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/monopoly/monopoly.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/monopoly/monopoly.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Monopoly: profit lost off the optimum.* Any output other than the one where MR = MC lowers profit.</figcaption>
 
@@ -191,9 +191,9 @@ def monopoly_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Monopoly profit.* Profit is the rectangle between the price and ATC.](../../assets/micro-viz/agora/monopoly/monopoly_profit.svg){ .ev-figure-sm }
+![*Monopoly profit.* Profit is the rectangle between the price and ATC.](../../assets/micro-viz/monopoly/monopoly_profit.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/monopoly/monopoly.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/monopoly/monopoly.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Monopoly profit.* Profit is the rectangle between the price and ATC.</figcaption>
 
@@ -203,9 +203,9 @@ def monopoly_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Revenue, cost and profit.* TR, TC and profit; the slopes are equal where profit is largest.](../../assets/micro-viz/agora/monopoly/monopoly_totals.svg){ .ev-figure-sm }
+![*Revenue, cost and profit.* TR, TC and profit; the slopes are equal where profit is largest.](../../assets/micro-viz/monopoly/monopoly_totals.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/monopoly/monopoly.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/monopoly/monopoly.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Revenue, cost and profit.* TR, TC and profit; the slopes are equal where profit is largest.</figcaption>
 
@@ -215,9 +215,9 @@ def monopoly_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Totals and unit curves.* Totals above, unit curves with the profit rectangle below.](../../assets/micro-viz/agora/monopoly/monopoly_totals_grid.svg){ .ev-figure-sm }
+![*Totals and unit curves.* Totals above, unit curves with the profit rectangle below.](../../assets/micro-viz/monopoly/monopoly_totals_grid.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/monopoly/monopoly.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/monopoly/monopoly.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Totals and unit curves.* Totals above, unit curves with the profit rectangle below.</figcaption>
 
@@ -227,9 +227,9 @@ def monopoly_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Deadweight loss of monopoly.* The transfer rectangle and deadweight-loss triangle against perfect competition.](../../assets/micro-viz/agora/monopoly/monopoly_dwl.svg){ .ev-figure-sm }
+![*Deadweight loss of monopoly.* The transfer rectangle and deadweight-loss triangle against perfect competition.](../../assets/micro-viz/monopoly/monopoly_dwl.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/monopoly/monopoly.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/monopoly/monopoly.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Deadweight loss of monopoly.* The transfer rectangle and deadweight-loss triangle against perfect competition.</figcaption>
 
@@ -239,9 +239,9 @@ def monopoly_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Per-unit tax on a monopolist.* A per-unit tax lifts MC; price and output adjust.](../../assets/micro-viz/agora/monopoly/monopoly_tax.svg){ .ev-figure-sm }
+![*Per-unit tax on a monopolist.* A per-unit tax lifts MC; price and output adjust.](../../assets/micro-viz/monopoly/monopoly_tax.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/monopoly/monopoly.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/monopoly/monopoly.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Per-unit tax on a monopolist.* A per-unit tax lifts MC; price and output adjust.</figcaption>
 
@@ -251,9 +251,9 @@ def monopoly_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Demand shift.* A parallel demand shift; a monopolist has no supply curve, so output and price follow MR' = MC.](../../assets/micro-viz/agora/monopoly/monopoly_demand_shift.svg){ .ev-figure-sm }
+![*Demand shift.* A parallel demand shift; a monopolist has no supply curve, so output and price follow MR' = MC.](../../assets/micro-viz/monopoly/monopoly_demand_shift.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/monopoly/monopoly.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/monopoly/monopoly.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Demand shift.* A parallel demand shift; a monopolist has no supply curve, so output and price follow MR' = MC.</figcaption>
 
@@ -263,9 +263,9 @@ def monopoly_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Demand rotation.* When demand rotates, the direction of the price change depends on how.](../../assets/micro-viz/agora/monopoly/monopoly_demand_rotate.svg){ .ev-figure-sm }
+![*Demand rotation.* When demand rotates, the direction of the price change depends on how.](../../assets/micro-viz/monopoly/monopoly_demand_rotate.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/monopoly/monopoly.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/monopoly/monopoly.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Demand rotation.* When demand rotates, the direction of the price change depends on how.</figcaption>
 
@@ -275,9 +275,9 @@ def monopoly_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Multiplant monopoly.* The plants' MC curves sum horizontally and meet MR, which fixes each plant's output.](../../assets/micro-viz/agora/monopoly/multiplant.svg){ .ev-figure-sm }
+![*Multiplant monopoly.* The plants' MC curves sum horizontally and meet MR, which fixes each plant's output.](../../assets/micro-viz/monopoly/multiplant.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/monopoly/monopoly.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/monopoly/monopoly.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Multiplant monopoly.* The plants' MC curves sum horizontally and meet MR, which fixes each plant's output.</figcaption>
 
@@ -287,9 +287,9 @@ def monopoly_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Lerner markup.* The less elastic demand is, the larger the markup (p - MC).](../../assets/micro-viz/agora/monopoly/lerner_markup.svg){ .ev-figure-sm }
+![*Lerner markup.* The less elastic demand is, the larger the markup (p - MC).](../../assets/micro-viz/monopoly/lerner_markup.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/monopoly/monopoly.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/monopoly/monopoly.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Lerner markup.* The less elastic demand is, the larger the markup (p - MC).</figcaption>
 
@@ -301,19 +301,19 @@ def monopoly_examples(
 
 Each firm faces a downward demand. Entry shifts demand left until it is tangent to ATC, leaving the price above MC and capacity unused. Sources: [Chamberlin (1933)](../project/references.md#chamberlin1933).
 
-<!-- api: agora.micro_viz.guides_monopoly_10 -->
+<!-- api: micro_viz.guides_monopoly_10 -->
 
 `solve_monopolistic_competition()` returns the short-run optimum and the long-run tangency after entry; `long_run_demand()` builds the demand curve of equal slope that is tangent to ATC.
 
-<!-- api: agora.micro_viz.guides_monopoly_11 -->
+<!-- api: micro_viz.guides_monopoly_11 -->
 
 Monopolistic competition (price above MC, excess capacity) beside perfect competition (`p = MC` at minimum ATC).
 
-<!-- api: agora.micro_viz.guides_monopoly_12 -->
+<!-- api: micro_viz.guides_monopoly_12 -->
 
 The long run: demand tangent to ATC at the output where `MR = MC`, price above MC.
 
-<!-- api: agora.micro_viz.guides_monopoly_13 -->
+<!-- api: micro_viz.guides_monopoly_13 -->
 
 The short run: the monopoly optimum with the profit rectangle before entry.
 
@@ -361,9 +361,9 @@ def monopolistic_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Short run.* In the short run there is a profit: output times the gap between price and ATC.](../../assets/micro-viz/agora/monopolistic_competition/short_run.svg){ .ev-figure-sm }
+![*Short run.* In the short run there is a profit: output times the gap between price and ATC.](../../assets/micro-viz/monopolistic_competition/short_run.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/monopolistic_competition/monopolistic_competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/monopolistic_competition/monopolistic_competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Short run.* In the short run there is a profit: output times the gap between price and ATC.</figcaption>
 
@@ -373,9 +373,9 @@ def monopolistic_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Long-run tangency.* Long-run equilibrium: demand is tangent to ATC at the output where MR = MC, with the price above MC.](../../assets/micro-viz/agora/monopolistic_competition/long_run.svg){ .ev-figure-sm }
+![*Long-run tangency.* Long-run equilibrium: demand is tangent to ATC at the output where MR = MC, with the price above MC.](../../assets/micro-viz/monopolistic_competition/long_run.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/monopolistic_competition/monopolistic_competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/monopolistic_competition/monopolistic_competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Long-run tangency.* Long-run equilibrium: demand is tangent to ATC at the output where MR = MC, with the price above MC.</figcaption>
 
@@ -385,9 +385,9 @@ def monopolistic_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Excess capacity.* Output falls short of the lowest-ATC output; the gap is excess capacity.](../../assets/micro-viz/agora/monopolistic_competition/excess_capacity.svg){ .ev-figure-sm }
+![*Excess capacity.* Output falls short of the lowest-ATC output; the gap is excess capacity.](../../assets/micro-viz/monopolistic_competition/excess_capacity.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/monopolistic_competition/monopolistic_competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/monopolistic_competition/monopolistic_competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Excess capacity.* Output falls short of the lowest-ATC output; the gap is excess capacity.</figcaption>
 
@@ -399,15 +399,15 @@ def monopolistic_examples(
 
 A price ceiling flattens a monopolist's average revenue; a natural monopoly with falling ATC compares unregulated, marginal-cost and average-cost pricing.
 
-<!-- api: agora.micro_viz.guides_monopoly_14 -->
+<!-- api: micro_viz.guides_monopoly_14 -->
 
 `price_ceiling_outcome()` finds the best output under a ceiling; `natural_monopoly_pricing()` returns the three prices as `PricingPoint` values.
 
-<!-- api: agora.micro_viz.guides_monopoly_15 -->
+<!-- api: micro_viz.guides_monopoly_15 -->
 
 A natural monopoly with falling ATC: the unregulated price, `P = MC` (with the loss shaded) and `P = ATC` (no profit).
 
-<!-- api: agora.micro_viz.guides_monopoly_16 -->
+<!-- api: micro_viz.guides_monopoly_16 -->
 
 A price ceiling: average revenue is flat at the ceiling up to `Q_max` and marginal revenue equals the ceiling there, then jumps down to the unregulated `MR`.
 
@@ -478,9 +478,9 @@ def regulation_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Price ceiling on a monopolist.* A price ceiling flattens average revenue at the ceiling; marginal revenue drops at that point.](../../assets/micro-viz/agora/regulation/price_ceiling.svg){ .ev-figure-sm }
+![*Price ceiling on a monopolist.* A price ceiling flattens average revenue at the ceiling; marginal revenue drops at that point.](../../assets/micro-viz/regulation/price_ceiling.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/regulation/regulation.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/regulation/regulation.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Price ceiling on a monopolist.* A price ceiling flattens average revenue at the ceiling; marginal revenue drops at that point.</figcaption>
 
@@ -490,9 +490,9 @@ def regulation_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Natural monopoly pricing.* The unregulated price, marginal-cost pricing (a loss) and average-cost pricing.](../../assets/micro-viz/agora/regulation/natural_monopoly.svg){ .ev-figure-sm }
+![*Natural monopoly pricing.* The unregulated price, marginal-cost pricing (a loss) and average-cost pricing.](../../assets/micro-viz/regulation/natural_monopoly.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/regulation/regulation.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/regulation/regulation.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Natural monopoly pricing.* The unregulated price, marginal-cost pricing (a loss) and average-cost pricing.</figcaption>
 
@@ -504,23 +504,23 @@ def regulation_examples(
 
 Perfect, block and third-degree discrimination, against the single monopoly price.
 
-<!-- api: agora.micro_viz.guides_monopoly_17 -->
+<!-- api: micro_viz.guides_monopoly_17 -->
 
 The functions `first_degree()`, `block_pricing()` and `third_degree()` return the matching outcome objects with the quantities, prices and profit.
 
-<!-- api: agora.micro_viz.guides_monopoly_18 -->
+<!-- api: micro_viz.guides_monopoly_18 -->
 
 Equal blocks each sold at the price of its last buyer: a staircase under demand ending at `D = MC`. `average_cost` adds the (declining) ATC of the cost function.
 
-<!-- api: agora.micro_viz.guides_monopoly_19 -->
+<!-- api: micro_viz.guides_monopoly_19 -->
 
 Perfect discrimination: price follows demand to `D = MC`; the profit is the area between demand and MC, with the extra gain over the single monopoly price shaded darker.
 
-<!-- api: agora.micro_viz.guides_monopoly_20 -->
+<!-- api: micro_viz.guides_monopoly_20 -->
 
 One monopoly price (`MR = MC`): the consumer surplus above it and the surplus left uncaptured between demand and MC beyond `Q^*`; `groups` also marks the buyers who pay far less than they would and those who are priced out.
 
-<!-- api: agora.micro_viz.guides_monopoly_21 -->
+<!-- api: micro_viz.guides_monopoly_21 -->
 
 One panel per market (`D_i`, `MR_i`, the common level `MC*`) and a last panel with the summed `MR_T` meeting MC. A market whose demand starts below `MC*` is not served.
 
@@ -589,9 +589,9 @@ def discrimination_examples(
 
 <figure class="ev-fig" markdown>
 
-![*One monopoly price.* At one price some surplus is left uncaptured.](../../assets/micro-viz/agora/price_discrimination/single_price.svg){ .ev-figure-sm }
+![*One monopoly price.* At one price some surplus is left uncaptured.](../../assets/micro-viz/price_discrimination/single_price.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/price_discrimination/price_discrimination.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/price_discrimination/price_discrimination.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*One monopoly price.* At one price some surplus is left uncaptured.</figcaption>
 
@@ -601,9 +601,9 @@ def discrimination_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Perfect discrimination.* Price follows demand; profit is the area between demand and MC.](../../assets/micro-viz/agora/price_discrimination/first_degree.svg){ .ev-figure-sm }
+![*Perfect discrimination.* Price follows demand; profit is the area between demand and MC.](../../assets/micro-viz/price_discrimination/first_degree.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/price_discrimination/price_discrimination.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/price_discrimination/price_discrimination.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Perfect discrimination.* Price follows demand; profit is the area between demand and MC.</figcaption>
 
@@ -613,9 +613,9 @@ def discrimination_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Block pricing.* Three-block pricing is an imperfect form of first-degree discrimination.](../../assets/micro-viz/agora/price_discrimination/block_pricing_three.svg){ .ev-figure-sm }
+![*Block pricing.* Three-block pricing is an imperfect form of first-degree discrimination.](../../assets/micro-viz/price_discrimination/block_pricing_three.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/price_discrimination/price_discrimination.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/price_discrimination/price_discrimination.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Block pricing.* Three-block pricing is an imperfect form of first-degree discrimination.</figcaption>
 
@@ -625,9 +625,9 @@ def discrimination_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Block pricing with falling ATC.* Block pricing when demand lies above a falling ATC.](../../assets/micro-viz/agora/price_discrimination/block_pricing.svg){ .ev-figure-sm }
+![*Block pricing with falling ATC.* Block pricing when demand lies above a falling ATC.](../../assets/micro-viz/price_discrimination/block_pricing.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/price_discrimination/price_discrimination.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/price_discrimination/price_discrimination.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Block pricing with falling ATC.* Block pricing when demand lies above a falling ATC.</figcaption>
 
@@ -637,9 +637,9 @@ def discrimination_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Third-degree discrimination.* MR1 = MR2 = MC; the summed marginal revenue fixes total output.](../../assets/micro-viz/agora/price_discrimination/third_degree.svg){ .ev-figure-sm }
+![*Third-degree discrimination.* MR1 = MR2 = MC; the summed marginal revenue fixes total output.](../../assets/micro-viz/price_discrimination/third_degree.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/price_discrimination/price_discrimination.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/price_discrimination/price_discrimination.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Third-degree discrimination.* MR1 = MR2 = MC; the summed marginal revenue fixes total output.</figcaption>
 
@@ -649,9 +649,9 @@ def discrimination_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Third degree, corner.* With rising marginal cost a small market may go unserved.](../../assets/micro-viz/agora/price_discrimination/third_degree_corner.svg){ .ev-figure-sm }
+![*Third degree, corner.* With rising marginal cost a small market may go unserved.](../../assets/micro-viz/price_discrimination/third_degree_corner.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/price_discrimination/price_discrimination.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/price_discrimination/price_discrimination.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Third degree, corner.* With rising marginal cost a small market may go unserved.</figcaption>
 
@@ -663,15 +663,15 @@ def discrimination_examples(
 
 An entry fee plus a usage fee. The fee that takes the surplus of the least-surplus buyer served gives the profit. Sources: [Oi (1971)](../project/references.md#oi1971).
 
-<!-- api: agora.micro_viz.guides_monopoly_22 -->
+<!-- api: micro_viz.guides_monopoly_22 -->
 
 `BuyerType` is a demand curve with a weight; `best_tariff()` searches the usage fees, and `evaluate_tariff()` gives the profit of a given pair of fees.
 
-<!-- api: agora.micro_viz.guides_monopoly_23 -->
+<!-- api: micro_viz.guides_monopoly_23 -->
 
 Profit from entry fees, from sales and in total against the entry fee `T` at a fixed usage fee: it steps down each time a buyer type is priced out.
 
-<!-- api: agora.micro_viz.guides_monopoly_24 -->
+<!-- api: micro_viz.guides_monopoly_24 -->
 
 Demand of each buyer type, the constant `MC` and the usage fee `p^*`. The entry fee is the shaded consumer-surplus triangle of the buyer with the least surplus served; when the usage fee is above MC the rectangle `(p^* - MC) Q` is the sales profit.
 
@@ -725,9 +725,9 @@ def tariff_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Two-part tariff, one buyer.* The usage fee equals MC and the entry fee takes all consumer surplus.](../../assets/micro-viz/agora/two_part_tariff/single_buyer.svg){ .ev-figure-sm }
+![*Two-part tariff, one buyer.* The usage fee equals MC and the entry fee takes all consumer surplus.](../../assets/micro-viz/two_part_tariff/single_buyer.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/two_part_tariff/two_part_tariff.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/two_part_tariff/two_part_tariff.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Two-part tariff, one buyer.* The usage fee equals MC and the entry fee takes all consumer surplus.</figcaption>
 
@@ -737,9 +737,9 @@ def tariff_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Two-part tariff, two buyer types.* The usage fee exceeds MC; the entry fee equals the surplus of the smaller buyer.](../../assets/micro-viz/agora/two_part_tariff/two_buyers.svg){ .ev-figure-sm }
+![*Two-part tariff, two buyer types.* The usage fee exceeds MC; the entry fee equals the surplus of the smaller buyer.](../../assets/micro-viz/two_part_tariff/two_buyers.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/two_part_tariff/two_part_tariff.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/two_part_tariff/two_part_tariff.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Two-part tariff, two buyer types.* The usage fee exceeds MC; the entry fee equals the surplus of the smaller buyer.</figcaption>
 
@@ -749,9 +749,9 @@ def tariff_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Profit against the entry fee.* Profit from fees, from sales and in total, against the entry fee.](../../assets/micro-viz/agora/two_part_tariff/tariff_profit.svg){ .ev-figure-sm }
+![*Profit against the entry fee.* Profit from fees, from sales and in total, against the entry fee.](../../assets/micro-viz/two_part_tariff/tariff_profit.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/two_part_tariff/two_part_tariff.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/two_part_tariff/two_part_tariff.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Profit against the entry fee.* Profit from fees, from sales and in total, against the entry fee.</figcaption>
 
@@ -763,23 +763,23 @@ def tariff_examples(
 
 Consumers sit in a space of reservation prices. Separate selling, pure bundling and mixed bundling cut that space into purchase regions. Sources: [Adams (1976)](../project/references.md#adamsyellen1976).
 
-<!-- api: agora.micro_viz.guides_monopoly_25 -->
+<!-- api: micro_viz.guides_monopoly_25 -->
 
 `ValuationProfile` holds the consumers' reservation prices; `best_separate()`, `best_pure()` and `best_mixed()` search for the profit-maximising prices; `choice_regions()` gives the purchase regions as polygons.
 
-<!-- api: agora.micro_viz.guides_monopoly_26 -->
+<!-- api: micro_viz.guides_monopoly_26 -->
 
 Regions of mixed bundling (goods at `P1`, `P2` and the bundle at `P_B`). With positive costs the cost lines are marked; `numbered` labels the regions I to IV.
 
-<!-- api: agora.micro_viz.guides_monopoly_27 -->
+<!-- api: micro_viz.guides_monopoly_27 -->
 
 Valuation space split by the diagonal `r1 + r2 = P_B`: consumers above it buy.
 
-<!-- api: agora.micro_viz.guides_monopoly_28 -->
+<!-- api: micro_viz.guides_monopoly_28 -->
 
 The four purchase regions cut by `r1 = P1` and `r2 = P2` (goods sold apart).
 
-<!-- api: agora.micro_viz.guides_monopoly_29 -->
+<!-- api: micro_viz.guides_monopoly_29 -->
 
 Consumers as points `(r1, r2)` in valuation space; `names` labels the first points.
 
@@ -862,9 +862,9 @@ def bundling_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Valuation space.* Consumers placed by their reservation prices r1 and r2.](../../assets/micro-viz/agora/bundling/valuation_points.svg){ .ev-figure-sm }
+![*Valuation space.* Consumers placed by their reservation prices r1 and r2.](../../assets/micro-viz/bundling/valuation_points.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/bundling/bundling.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/bundling/bundling.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Valuation space.* Consumers placed by their reservation prices r1 and r2.</figcaption>
 
@@ -874,9 +874,9 @@ def bundling_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Separate selling.* The prices P1 and P2 cut the valuation space into four purchase regions.](../../assets/micro-viz/agora/bundling/separate_regions.svg){ .ev-figure-sm }
+![*Separate selling.* The prices P1 and P2 cut the valuation space into four purchase regions.](../../assets/micro-viz/bundling/separate_regions.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/bundling/bundling.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/bundling/bundling.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Separate selling.* The prices P1 and P2 cut the valuation space into four purchase regions.</figcaption>
 
@@ -886,9 +886,9 @@ def bundling_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Pure bundling.* Consumers above the diagonal r1 + r2 = PB buy the bundle.](../../assets/micro-viz/agora/bundling/pure_bundling.svg){ .ev-figure-sm }
+![*Pure bundling.* Consumers above the diagonal r1 + r2 = PB buy the bundle.](../../assets/micro-viz/bundling/pure_bundling.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/bundling/bundling.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/bundling/bundling.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Pure bundling.* Consumers above the diagonal r1 + r2 = PB buy the bundle.</figcaption>
 
@@ -898,9 +898,9 @@ def bundling_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Mixed bundling.* The four purchase regions under mixed bundling.](../../assets/micro-viz/agora/bundling/mixed_bundling.svg){ .ev-figure-sm }
+![*Mixed bundling.* The four purchase regions under mixed bundling.](../../assets/micro-viz/bundling/mixed_bundling.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/bundling/bundling.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/bundling/bundling.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Mixed bundling.* The four purchase regions under mixed bundling.</figcaption>
 
@@ -910,9 +910,9 @@ def bundling_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Mixed bundling with costs.* Mixed-bundling regions when marginal costs are positive.](../../assets/micro-viz/agora/bundling/mixed_with_costs.svg){ .ev-figure-sm }
+![*Mixed bundling with costs.* Mixed-bundling regions when marginal costs are positive.](../../assets/micro-viz/bundling/mixed_with_costs.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/bundling/bundling.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/bundling/bundling.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Mixed bundling with costs.* Mixed-bundling regions when marginal costs are positive.</figcaption>
 
@@ -922,9 +922,9 @@ def bundling_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Regions I to IV.* The regions of mixed bundling numbered I to IV.](../../assets/micro-viz/agora/bundling/regions_numbered.svg){ .ev-figure-sm }
+![*Regions I to IV.* The regions of mixed bundling numbered I to IV.](../../assets/micro-viz/bundling/regions_numbered.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/bundling/bundling.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/bundling/bundling.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Regions I to IV.* The regions of mixed bundling numbered I to IV.</figcaption>
 
@@ -936,15 +936,15 @@ def bundling_examples(
 
 Two groups of buyers are charged different prices over time, or two periods share a capacity cost.
 
-<!-- api: agora.micro_viz.guides_monopoly_30 -->
+<!-- api: micro_viz.guides_monopoly_30 -->
 
 `IntertemporalPricing` and `PeakLoadPricing` solve the two markets and return the matching outcome objects.
 
-<!-- api: agora.micro_viz.guides_monopoly_31 -->
+<!-- api: micro_viz.guides_monopoly_31 -->
 
 Two demands and their marginal revenues against a constant `MC`: the high price is charged to the early group, the lower price to the later one.
 
-<!-- api: agora.micro_viz.guides_monopoly_32 -->
+<!-- api: micro_viz.guides_monopoly_32 -->
 
 Peak and off-peak demands with their marginal revenues; running cost `MC` for both periods and `MC + MC_K` (the capacity cost) for the peak.
 
@@ -990,9 +990,9 @@ def time_pricing_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Intertemporal pricing.* The high-valuation group pays a high price first; the price is cut later.](../../assets/micro-viz/agora/time_pricing/intertemporal.svg){ .ev-figure-sm }
+![*Intertemporal pricing.* The high-valuation group pays a high price first; the price is cut later.](../../assets/micro-viz/time_pricing/intertemporal.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/time_pricing/time_pricing.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/time_pricing/time_pricing.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Intertemporal pricing.* The high-valuation group pays a high price first; the price is cut later.</figcaption>
 
@@ -1002,9 +1002,9 @@ def time_pricing_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Peak-load pricing.* Peak and off-peak demands are priced apart; the peak bears the capacity cost.](../../assets/micro-viz/agora/time_pricing/peak_load.svg){ .ev-figure-sm }
+![*Peak-load pricing.* Peak and off-peak demands are priced apart; the peak bears the capacity cost.](../../assets/micro-viz/time_pricing/peak_load.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/time_pricing/time_pricing.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/time_pricing/time_pricing.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Peak-load pricing.* Peak and off-peak demands are priced apart; the peak bears the capacity cost.</figcaption>
 
@@ -1016,11 +1016,11 @@ def time_pricing_examples(
 
 Advertising shifts average revenue out and raises average cost; the figure compares profit before and after.
 
-<!-- api: agora.micro_viz.guides_monopoly_33 -->
+<!-- api: micro_viz.guides_monopoly_33 -->
 
 `AdvertisingDecision` compares the profit with and without advertising and returns an `AdvertisingOutcome`.
 
-<!-- api: agora.micro_viz.guides_monopoly_34 -->
+<!-- api: micro_viz.guides_monopoly_34 -->
 
 `AR` shifts out to `AR'` and average cost up to `AC'`; the rectangles show profit before (lighter) and after (darker). Changed curves are thin and solid.
 
@@ -1047,9 +1047,9 @@ def advertising_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Advertising.* Advertising shifts AR out and raises average cost; profit before and after is compared.](../../assets/micro-viz/agora/advertising/advertising.svg){ .ev-figure-sm }
+![*Advertising.* Advertising shifts AR out and raises average cost; profit before and after is compared.](../../assets/micro-viz/advertising/advertising.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/advertising/advertising.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/advertising/advertising.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Advertising.* Advertising shifts AR out and raises average cost; profit before and after is compared.</figcaption>
 
@@ -1061,11 +1061,11 @@ def advertising_examples(
 
 The price net of marginal extraction cost rises at the rate of interest until the choke price at the date the stock runs out. Sources: [Hotelling (1931)](../project/references.md#hotelling1931).
 
-<!-- api: agora.micro_viz.guides_monopoly_35 -->
+<!-- api: micro_viz.guides_monopoly_35 -->
 
 `ExhaustibleResourcePath` gives the price path $p(t)$ and the matching static view of demand and the stock.
 
-<!-- api: agora.micro_viz.guides_monopoly_36 -->
+<!-- api: micro_viz.guides_monopoly_36 -->
 
 Left, the price path `p(t)` rising from `p_0` to the choke price at `T` above the marginal extraction cost `c`; right, the matching static view: demand `D` with the quantities extracted at the start and at `T / 2`, moving up the demand curve.
 
@@ -1092,9 +1092,9 @@ def resource_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Exhaustible resource.* Price less marginal extraction cost grows at the interest rate; the static view is beside it.](../../assets/micro-viz/agora/exhaustible_resource/resource_price_path.svg){ .ev-figure-sm }
+![*Exhaustible resource.* Price less marginal extraction cost grows at the interest rate; the static view is beside it.](../../assets/micro-viz/exhaustible_resource/resource_price_path.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/exhaustible_resource/exhaustible_resource.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/exhaustible_resource/exhaustible_resource.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Exhaustible resource.* Price less marginal extraction cost grows at the interest rate; the static view is beside it.</figcaption>
 

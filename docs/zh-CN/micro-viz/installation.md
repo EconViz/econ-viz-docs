@@ -12,7 +12,7 @@ seo_title: "安装"
 
 ## 安装 `uv`
 
-本手册的指令以 `uv` (`uv` 是 Astral 开发的 Python 套件与项目管理工具，速度快且可一并管理 Python 版本；安装方式与完整说明见官方文档：[https://docs.astral.sh/uv/](https://docs.astral.sh/uv/)。) 为准。既有项目仍可使用 `pip`；套件 API 不受管理工具影响。
+本页的指令以 `uv` (`uv` 是 Astral 开发的 Python 软件包与项目管理工具，速度快且可一并管理 Python 版本；安装方式与完整说明见官方文档：[https://docs.astral.sh/uv/](https://docs.astral.sh/uv/)。) 为准。既有项目仍可使用 `pip`；软件包 API 不受管理工具影响。
 
 ### macOS、Linux
 
@@ -57,11 +57,11 @@ uv sync --locked
 uv run pytest
 ```
 
-## 运行范例
+## 运行示例
 
 <span id="sec-run-examples"></span>
 
-`examples/scripts/` 中的脚本把 SVG 档写入 `examples/output/`。它们使用黑白的 `manual` 外观，需要 TeX Gyre Pagella 字体；找不到时，以 `--fonts-dir` 指定字库所在的目录。
+`examples/scripts/` 中的脚本把 SVG 档写入 `examples/output/`。它们使用黑白的 `manual` 外观，需要 TeX Gyre Pagella 字体；找不到时，以 `--fonts-dir` 指定字体所在的目录。
 
 ```bash
 uv run python examples/scripts/production.py
@@ -70,4 +70,4 @@ uv run python examples/scripts/production.py \
     --fonts-dir path/to/NotoSerifTC
 ```
 
-本手册的图形就是由这些脚本绘制；[简介](guides/introduction.md#sec-intro) 链接的压缩档包含这些脚本与三份设置档。
+本页的图形就是由这些脚本绘制；[简介](guides/introduction.md#sec-intro) 链接的压缩包包含这些脚本与三份设置档。

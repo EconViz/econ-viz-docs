@@ -36,9 +36,9 @@ monopoly_canvas(outcome, analysis, profit=True).save(
 
 <span id="sec-options"></span>
 
-每個繪圖函式都回傳 `Canvas`，並接受相同的關鍵字選項。本手冊的函式簽名以 `**options` 表示它們。
+每個繪圖函式都回傳 `Canvas`，並接受相同的關鍵字選項。本頁的函式簽名以 `**options` 表示它們。
 
-<!-- api: agora.micro_viz.guides_model_figure_1 -->
+<!-- api: micro_viz.guides_model_figure_1 -->
 
 畫多欄的繪圖函式以 `titles`（每欄一個）取代 `title`。
 
@@ -53,7 +53,7 @@ monopoly_canvas(outcome, analysis, profit=True).save(
 | `micro_viz/locale/labels.json` | 所有內建文字，依編號與語言整理 |
 | `micro_viz/theme.py`、`config.py` | 主題與 `[micro]` 設定結構 |
 | `micro_viz/animation/` | 選用的參數動畫 |
-| `examples/scripts/` | 每個主題一支腳本；本手冊的圖形 |
+| `examples/scripts/` | 每個主題一支腳本；本頁的圖形 |
 
 ## 圖層編號
 

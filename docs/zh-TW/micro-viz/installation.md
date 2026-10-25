@@ -12,7 +12,7 @@ seo_title: "安裝"
 
 ## 安裝 `uv`
 
-本手冊的指令以 `uv` (`uv` 是 Astral 開發的 Python 套件與專案管理工具，速度快且可一併管理 Python 版本；安裝方式與完整說明見官方文件：[https://docs.astral.sh/uv/](https://docs.astral.sh/uv/)。) 為準。既有專案仍可使用 `pip`；套件 API 不受管理工具影響。
+本頁的指令以 `uv` (`uv` 是 Astral 開發的 Python 套件與專案管理工具，速度快且可一併管理 Python 版本；安裝方式與完整說明見官方文件：[https://docs.astral.sh/uv/](https://docs.astral.sh/uv/)。) 為準。既有專案仍可使用 `pip`；套件 API 不受管理工具影響。
 
 ### macOS、Linux
 
@@ -70,4 +70,4 @@ uv run python examples/scripts/production.py \
     --fonts-dir path/to/NotoSerifTC
 ```
 
-本手冊的圖形就是由這些腳本繪製；[簡介](guides/introduction.md#sec-intro) 連結的壓縮檔包含這些腳本與三份設定檔。
+本頁的圖形就是由這些腳本繪製；[簡介](guides/introduction.md#sec-intro) 連結的壓縮檔包含這些腳本與三份設定檔。

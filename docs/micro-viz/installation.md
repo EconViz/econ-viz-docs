@@ -12,7 +12,7 @@ seo_title: "Installation"
 
 ## Installing `uv`
 
-The commands in this manual use `uv` (`uv` is a fast Python package and project manager by Astral that also manages Python versions. Installation and full documentation: [https://docs.astral.sh/uv/](https://docs.astral.sh/uv/).). Existing projects can keep using `pip`; the package API does not depend on the tool.
+The commands on these pages use `uv` (`uv` is a fast Python package and project manager by Astral that also manages Python versions. Installation and full documentation: [https://docs.astral.sh/uv/](https://docs.astral.sh/uv/).). Existing projects can keep using `pip`; the package API does not depend on the tool.
 
 ### macOS and Linux
 
@@ -70,4 +70,4 @@ uv run python examples/scripts/production.py \
     --fonts-dir path/to/NotoSerifTC
 ```
 
-The figures of this manual are drawn by these scripts; the archive linked in [Introduction](guides/introduction.md#sec-intro) holds them together with the three settings files.
+The figures of these pages are drawn by these scripts; the archive linked in [Introduction](guides/introduction.md#sec-intro) holds them together with the three settings files.

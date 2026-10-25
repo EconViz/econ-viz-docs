@@ -44,11 +44,11 @@ def demand_canvas(
 
 <span id="sec-plane"></span>
 
-<!-- api: agora.micro_viz.guides_adding_figure_1 -->
+<!-- api: micro_viz.guides_adding_figure_1 -->
 
 `micro_viz.visuals.plane` 中的一張平面圖。它的方法以 `prefix` 為基礎加入有穩定編號的圖層；`finish()` 回傳 `Canvas`。
 
-<!-- api: agora.micro_viz.guides_adding_figure_2 -->
+<!-- api: micro_viz.guides_adding_figure_2 -->
 
 從 `x_min` 到 `x_max` 的線段 $y = \text{intercept} + \text{slope} \cdot x$，以兩個點表示。
 

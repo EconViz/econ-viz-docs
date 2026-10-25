@@ -8,7 +8,7 @@ seo_title: "投入與技術"
 
 長期技術、投入選擇與要素市場。
 
-每一節是一支範例腳本與它畫出的圖。腳本隨手冊的壓縮檔提供，參數可用 `--help` 查看。
+每一節是一支範例腳本與它畫出的圖。腳本在範例壓縮檔中提供，參數可用 `--help` 查看。
 
 ## 等產量線
 
@@ -16,19 +16,19 @@ seo_title: "投入與技術"
 
 柯布－道格拉斯、完全替代與固定比例技術的等產量線，以及 MRTS 與規模報酬。
 
-<!-- api: agora.micro_viz.guides_inputs_1 -->
+<!-- api: micro_viz.guides_inputs_1 -->
 
 每種技術都是 `Technology`：給出投入組合下的產量、某產量所需的資本、MRTS 與規模報酬 `Returns`。
 
-<!-- api: agora.micro_viz.guides_inputs_2 -->
+<!-- api: micro_viz.guides_inputs_2 -->
 
 `bounds = (L_max, K_max)` 方框內給定 `outputs` 的等產量線。
 
-<!-- api: agora.micro_viz.guides_inputs_3 -->
+<!-- api: micro_viz.guides_inputs_3 -->
 
 一條等產量線上在 `labors` 處的點，相鄰兩點間畫弦與 `ΔK`、`ΔL` 的直角三角形，其比值是（平均）MRTS。
 
-<!-- api: agora.micro_viz.guides_inputs_4 -->
+<!-- api: micro_viz.guides_inputs_4 -->
 
 每種技術一欄：給定產量的等產量線被一條射線截斷；固定報酬下等距，規模報酬遞增下愈來愈近。
 
@@ -113,9 +113,9 @@ def isoquant_examples(
 
 <figure class="ev-fig" markdown>
 
-![*等產量線圖。* 等產量線圖：愈遠離原點產量愈高。](../../../assets/micro-viz/agora/isoquants/isoquant_map.zh-TW.svg){ .ev-figure-sm }
+![*等產量線圖。* 等產量線圖：愈遠離原點產量愈高。](../../../assets/micro-viz/isoquants/isoquant_map.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/isoquants/isoquants.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/isoquants/isoquants.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*等產量線圖。* 等產量線圖：愈遠離原點產量愈高。</figcaption>
 
@@ -125,9 +125,9 @@ def isoquant_examples(
 
 <figure class="ev-fig" markdown>
 
-![*MRTS 遞減。* 沿等產量線向右，邊際技術替代率遞減。](../../../assets/micro-viz/agora/isoquants/mrts_steps.zh-TW.svg){ .ev-figure-sm }
+![*MRTS 遞減。* 沿等產量線向右，邊際技術替代率遞減。](../../../assets/micro-viz/isoquants/mrts_steps.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/isoquants/isoquants.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/isoquants/isoquants.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*MRTS 遞減。* 沿等產量線向右，邊際技術替代率遞減。</figcaption>
 
@@ -137,9 +137,9 @@ def isoquant_examples(
 
 <figure class="ev-fig" markdown>
 
-![*MRTS 三角形。* 兩點間的 ΔK 與 ΔL 之比定義邊際技術替代率。](../../../assets/micro-viz/agora/isoquants/mrts_triangle.zh-TW.svg){ .ev-figure-sm }
+![*MRTS 三角形。* 兩點間的 ΔK 與 ΔL 之比定義邊際技術替代率。](../../../assets/micro-viz/isoquants/mrts_triangle.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/isoquants/isoquants.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/isoquants/isoquants.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*MRTS 三角形。* 兩點間的 ΔK 與 ΔL 之比定義邊際技術替代率。</figcaption>
 
@@ -149,9 +149,9 @@ def isoquant_examples(
 
 <figure class="ev-fig" markdown>
 
-![*完全替代。* 完全替代的等產量線為直線，MRTS 為常數。](../../../assets/micro-viz/agora/isoquants/perfect_substitutes.zh-TW.svg){ .ev-figure-sm }
+![*完全替代。* 完全替代的等產量線為直線，MRTS 為常數。](../../../assets/micro-viz/isoquants/perfect_substitutes.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/isoquants/isoquants.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/isoquants/isoquants.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*完全替代。* 完全替代的等產量線為直線，MRTS 為常數。</figcaption>
 
@@ -161,9 +161,9 @@ def isoquant_examples(
 
 <figure class="ev-fig" markdown>
 
-![*固定比例。* 固定比例的等產量線呈 L 形，轉折點在同一條射線上。](../../../assets/micro-viz/agora/isoquants/fixed_proportions.zh-TW.svg){ .ev-figure-sm }
+![*固定比例。* 固定比例的等產量線呈 L 形，轉折點在同一條射線上。](../../../assets/micro-viz/isoquants/fixed_proportions.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/isoquants/isoquants.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/isoquants/isoquants.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*固定比例。* 固定比例的等產量線呈 L 形，轉折點在同一條射線上。</figcaption>
 
@@ -173,9 +173,9 @@ def isoquant_examples(
 
 <figure class="ev-fig" markdown>
 
-![*規模報酬。* 沿射線，固定報酬下等產量線等距，規模報酬遞增則愈來愈近。](../../../assets/micro-viz/agora/isoquants/returns_to_scale.zh-TW.svg){ .ev-figure-sm }
+![*規模報酬。* 沿射線，固定報酬下等產量線等距，規模報酬遞增則愈來愈近。](../../../assets/micro-viz/isoquants/returns_to_scale.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/isoquants/isoquants.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/isoquants/isoquants.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*規模報酬。* 沿射線，固定報酬下等產量線等距，規模報酬遞增則愈來愈近。</figcaption>
 
@@ -187,27 +187,27 @@ def isoquant_examples(
 
 等成本線在成本最低的組合與等產量線相切；圖中改變投入價格、技術與固定資本。
 
-<!-- api: agora.micro_viz.guides_inputs_5 -->
+<!-- api: micro_viz.guides_inputs_5 -->
 
 `cost_minimizing_bundle()` 在投入價格下回傳某產量的最低成本 `Bundle`；`expansion_path()` 給出各產量的最低成本組合，其成本即長期總成本。
 
-<!-- api: agora.micro_viz.guides_inputs_6 -->
+<!-- api: micro_viz.guides_inputs_6 -->
 
 `output` 的等產量線與在最低成本組合相切的等成本線，另有一條較低與一條較高的等成本線。
 
-<!-- api: agora.micro_viz.guides_inputs_7 -->
+<!-- api: micro_viz.guides_inputs_7 -->
 
 上圖是等產量線、相切的等成本線與經過切點的擴張線；下圖是長期總成本 `C` 對產量。
 
-<!-- api: agora.micro_viz.guides_inputs_8 -->
+<!-- api: micro_viz.guides_inputs_8 -->
 
 資本固定在 `K_0` 時產量只能沿水平線增加；超過某點後，經過切點的長期擴張線較便宜。
 
-<!-- api: agora.micro_viz.guides_inputs_9 -->
+<!-- api: micro_viz.guides_inputs_9 -->
 
 勞動變貴（`new_wage`）：等成本線變陡，新切點用較少勞動、較多資本；`along` 另畫沿等產量線的箭頭。
 
-<!-- api: agora.micro_viz.guides_inputs_10 -->
+<!-- api: micro_viz.guides_inputs_10 -->
 
 技術進步：同一 `output` 的等產量線內移（細線 `Q'`），最低成本組合落在較低的等成本線上。
 
@@ -287,9 +287,9 @@ def cost_examples(
 
 <figure class="ev-fig" markdown>
 
-![*成本最小化。* 等成本線與等產量線相切處為成本最低的組合。](../../../assets/micro-viz/agora/cost_minimization/cost_minimization.zh-TW.svg){ .ev-figure-sm }
+![*成本最小化。* 等成本線與等產量線相切處為成本最低的組合。](../../../assets/micro-viz/cost_minimization/cost_minimization.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/cost_minimization/cost_minimization.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/cost_minimization/cost_minimization.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*成本最小化。* 等成本線與等產量線相切處為成本最低的組合。</figcaption>
 
@@ -299,9 +299,9 @@ def cost_examples(
 
 <figure class="ev-fig" markdown>
 
-![*工資上升。* 工資上升使等成本線變陡，新切點使用較少勞動。](../../../assets/micro-viz/agora/cost_minimization/input_price_change.zh-TW.svg){ .ev-figure-sm }
+![*工資上升。* 工資上升使等成本線變陡，新切點使用較少勞動。](../../../assets/micro-viz/cost_minimization/input_price_change.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/cost_minimization/cost_minimization.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/cost_minimization/cost_minimization.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*工資上升。* 工資上升使等成本線變陡，新切點使用較少勞動。</figcaption>
 
@@ -311,9 +311,9 @@ def cost_examples(
 
 <figure class="ev-fig" markdown>
 
-![*技術進步。* 技術進步使等產量線內移，成本降低。](../../../assets/micro-viz/agora/cost_minimization/technical_change.zh-TW.svg){ .ev-figure-sm }
+![*技術進步。* 技術進步使等產量線內移，成本降低。](../../../assets/micro-viz/cost_minimization/technical_change.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/cost_minimization/cost_minimization.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/cost_minimization/cost_minimization.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*技術進步。* 技術進步使等產量線內移，成本降低。</figcaption>
 
@@ -323,9 +323,9 @@ def cost_examples(
 
 <figure class="ev-fig" markdown>
 
-![*擴張線。* 擴張線連接各切點，並推得長期總成本曲線。](../../../assets/micro-viz/agora/cost_minimization/expansion_path.zh-TW.svg){ .ev-figure-sm }
+![*擴張線。* 擴張線連接各切點，並推得長期總成本曲線。](../../../assets/micro-viz/cost_minimization/expansion_path.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/cost_minimization/cost_minimization.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/cost_minimization/cost_minimization.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*擴張線。* 擴張線連接各切點，並推得長期總成本曲線。</figcaption>
 
@@ -335,9 +335,9 @@ def cost_examples(
 
 <figure class="ev-fig" markdown>
 
-![*資本固定。* 資本固定時產量只能沿水平線擴張，長期擴張線較便宜。](../../../assets/micro-viz/agora/cost_minimization/fixed_capital.zh-TW.svg){ .ev-figure-sm }
+![*資本固定。* 資本固定時產量只能沿水平線擴張，長期擴張線較便宜。](../../../assets/micro-viz/cost_minimization/fixed_capital.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/cost_minimization/cost_minimization.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/cost_minimization/cost_minimization.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*資本固定。* 資本固定時產量只能沿水平線擴張，長期擴張線較便宜。</figcaption>
 
@@ -349,27 +349,27 @@ def cost_examples(
 
 學習使單位投入隨累積產量下降；範疇、技術進步與生產前緣擴充生產模型。 出處：[Wright (1936)](../project/references.md#wright1936)、[Arrow (1962)](../project/references.md#arrow1962)。
 
-<!-- api: agora.micro_viz.guides_inputs_11 -->
+<!-- api: micro_viz.guides_inputs_11 -->
 
 `LearningCurve` 與 `LearningAverageCost` 給出單位投入與成本對累積產量的關係；`ProductTransformation`、`TechnologyShift` 與 `ProductionFrontier` 是對應的模型。
 
-<!-- api: agora.micro_viz.guides_inputs_12 -->
+<!-- api: micro_viz.guides_inputs_12 -->
 
 單位產出的投入量對累積產量：向下趨近下限 `A`。
 
-<!-- api: agora.micro_viz.guides_inputs_13 -->
+<!-- api: micro_viz.guides_inputs_13 -->
 
 產品轉換曲線 `PT`；`reference` 加上連接兩個最大值的直線（沒有聯合生產的利益），顯示外凸。
 
-<!-- api: agora.micro_viz.guides_inputs_14 -->
+<!-- api: micro_viz.guides_inputs_14 -->
 
 邊際報酬遞減的生產前緣；內部的點嚴格在前緣之下（投入使用無效率）；`names` 依序標點。
 
-<!-- api: agora.micro_viz.guides_inputs_15 -->
+<!-- api: micro_viz.guides_inputs_15 -->
 
 兩條平均成本曲線：沿 `AC_1` 從 `A` 到 `B` 是規模利益；從 `B` 垂直下移到 `AC_2`（`C`）是學習。
 
-<!-- api: agora.micro_viz.guides_inputs_16 -->
+<!-- api: micro_viz.guides_inputs_16 -->
 
 技術進步使總產量曲線上移；基準曲線為粗線，其餘為細實線；`arrow_input` 畫垂直箭頭。
 
@@ -436,9 +436,9 @@ def extension_examples(
 
 <figure class="ev-fig" markdown>
 
-![*學習曲線。* 單位產出投入量隨累積產量下降並趨近下限。](../../../assets/micro-viz/agora/production_extensions/learning_curve.zh-TW.svg){ .ev-figure-sm }
+![*學習曲線。* 單位產出投入量隨累積產量下降並趨近下限。](../../../assets/micro-viz/production_extensions/learning_curve.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/production_extensions/production_extensions.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/production_extensions/production_extensions.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*學習曲線。* 單位產出投入量隨累積產量下降並趨近下限。</figcaption>
 
@@ -448,9 +448,9 @@ def extension_examples(
 
 <figure class="ev-fig" markdown>
 
-![*規模與學習。* 沿 AC 移動是規模效果，下移到另一條 AC 是學習效果。](../../../assets/micro-viz/agora/production_extensions/scale_vs_learning.zh-TW.svg){ .ev-figure-sm }
+![*規模與學習。* 沿 AC 移動是規模效果，下移到另一條 AC 是學習效果。](../../../assets/micro-viz/production_extensions/scale_vs_learning.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/production_extensions/production_extensions.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/production_extensions/production_extensions.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*規模與學習。* 沿 AC 移動是規模效果，下移到另一條 AC 是學習效果。</figcaption>
 
@@ -460,9 +460,9 @@ def extension_examples(
 
 <figure class="ev-fig" markdown>
 
-![*產品轉換曲線。* 向外凸的轉換曲線表示範疇經濟。](../../../assets/micro-viz/agora/production_extensions/product_transformation.zh-TW.svg){ .ev-figure-sm }
+![*產品轉換曲線。* 向外凸的轉換曲線表示範疇經濟。](../../../assets/micro-viz/production_extensions/product_transformation.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/production_extensions/production_extensions.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/production_extensions/production_extensions.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*產品轉換曲線。* 向外凸的轉換曲線表示範疇經濟。</figcaption>
 
@@ -472,9 +472,9 @@ def extension_examples(
 
 <figure class="ev-fig" markdown>
 
-![*技術進步。* 技術進步使總產量曲線向上移動。](../../../assets/micro-viz/agora/production_extensions/technology_shift.zh-TW.svg){ .ev-figure-sm }
+![*技術進步。* 技術進步使總產量曲線向上移動。](../../../assets/micro-viz/production_extensions/technology_shift.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/production_extensions/production_extensions.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/production_extensions/production_extensions.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*技術進步。* 技術進步使總產量曲線向上移動。</figcaption>
 
@@ -484,9 +484,9 @@ def extension_examples(
 
 <figure class="ev-fig" markdown>
 
-![*生產前緣。* 前緣之下的點表示投入使用無效率。](../../../assets/micro-viz/agora/production_extensions/production_frontier.zh-TW.svg){ .ev-figure-sm }
+![*生產前緣。* 前緣之下的點表示投入使用無效率。](../../../assets/micro-viz/production_extensions/production_frontier.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/production_extensions/production_extensions.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/production_extensions/production_extensions.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*生產前緣。* 前緣之下的點表示投入使用無效率。</figcaption>
 
@@ -498,43 +498,43 @@ def extension_examples(
 
 廠商在 MRP 等於要素價格處僱用；圖中比較競爭與獨占的產品市場、短期與長期，以及經濟租。
 
-<!-- api: agora.micro_viz.guides_inputs_17 -->
+<!-- api: micro_viz.guides_inputs_17 -->
 
 `LinearValue` 是邊際價值產量，`LinearSupply` 是要素供給；`FactorMarket` 求均衡，`DerivedDemand` 比較 VMP 與 MRP，`LandMarket` 的供給為垂直。
 
-<!-- api: agora.micro_viz.guides_inputs_18 -->
+<!-- api: micro_viz.guides_inputs_18 -->
 
 資本增加時的 MRP 曲線，每條曲線上一個僱用點，對應 `wages` 中的工資（工資下降使廠商增加資本）。
 
-<!-- api: agora.micro_viz.guides_inputs_19 -->
+<!-- api: micro_viz.guides_inputs_19 -->
 
 `VMP`（競爭產品市場）在 `MRP`（獨占產品市場）之上：兩者都是以價格計算的邊際產量，獨占者的邊際收益較低。
 
-<!-- api: agora.micro_viz.guides_inputs_20 -->
+<!-- api: micro_viz.guides_inputs_20 -->
 
 經濟租：市場工資與供給曲線之間、到僱用量為止的三角形。
 
-<!-- api: agora.micro_viz.guides_inputs_21 -->
+<!-- api: micro_viz.guides_inputs_21 -->
 
 產品市場競爭（`MRP = VMP`）與獨占（較低的 MRP：工資與僱用量較低）的要素市場均衡並列。
 
-<!-- api: agora.micro_viz.guides_inputs_22 -->
+<!-- api: micro_viz.guides_inputs_22 -->
 
 面對水平供給 `W*` 的廠商在 `MRP = W*` 處僱用；`lower_wage` 使水平供給下移（細實線），僱用沿 MRP 增加。
 
-<!-- api: agora.micro_viz.guides_inputs_23 -->
+<!-- api: micro_viz.guides_inputs_23 -->
 
 廠商需求與產業需求並列：細線是廠商需求的水平加總，產業需求更陡。
 
-<!-- api: agora.micro_viz.guides_inputs_24 -->
+<!-- api: micro_viz.guides_inputs_24 -->
 
 垂直的土地供給 `supply`，需求決定地租 `R*`；地租以下的整個長方形都是經濟租。
 
-<!-- api: agora.micro_viz.guides_inputs_25 -->
+<!-- api: micro_viz.guides_inputs_25 -->
 
 向上的投入市場供給，與單一廠商在市場工資下面對的水平供給並列。
 
-<!-- api: agora.micro_viz.guides_inputs_26 -->
+<!-- api: micro_viz.guides_inputs_26 -->
 
 經過同一點的短期與長期投入需求，長期更平坦。
 
@@ -627,9 +627,9 @@ def factor_examples(
 
 <figure class="ev-fig" markdown>
 
-![*VMP 與 MRP。* 完全競爭產品市場的 VMP 高於獨佔產品市場的 MRP。](../../../assets/micro-viz/agora/factor_markets/derived_demand.zh-TW.svg){ .ev-figure-sm }
+![*VMP 與 MRP。* 完全競爭產品市場的 VMP 高於獨佔產品市場的 MRP。](../../../assets/micro-viz/factor_markets/derived_demand.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/factor_markets/factor_markets.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/factor_markets/factor_markets.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*VMP 與 MRP。* 完全競爭產品市場的 VMP 高於獨佔產品市場的 MRP。</figcaption>
 
@@ -639,9 +639,9 @@ def factor_examples(
 
 <figure class="ev-fig" markdown>
 
-![*廠商僱用。* 廠商面對水平的供給，在 MRP = W 處僱用。](../../../assets/micro-viz/agora/factor_markets/firm_hiring.zh-TW.svg){ .ev-figure-sm }
+![*廠商僱用。* 廠商面對水平的供給，在 MRP = W 處僱用。](../../../assets/micro-viz/factor_markets/firm_hiring.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/factor_markets/factor_markets.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/factor_markets/factor_markets.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*廠商僱用。* 廠商面對水平的供給，在 MRP = W 處僱用。</figcaption>
 
@@ -651,9 +651,9 @@ def factor_examples(
 
 <figure class="ev-fig" markdown>
 
-![*市場工資下降。* 工資下降使水平供給下移，僱用量沿 MRP 增加。](../../../assets/micro-viz/agora/factor_markets/wage_decline.zh-TW.svg){ .ev-figure-sm }
+![*市場工資下降。* 工資下降使水平供給下移，僱用量沿 MRP 增加。](../../../assets/micro-viz/factor_markets/wage_decline.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/factor_markets/factor_markets.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/factor_markets/factor_markets.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*市場工資下降。* 工資下降使水平供給下移，僱用量沿 MRP 增加。</figcaption>
 
@@ -663,9 +663,9 @@ def factor_examples(
 
 <figure class="ev-fig" markdown>
 
-![*資本調整。* 資本增加使 MRP 右移，各僱用點連成長期需求軌跡。](../../../assets/micro-viz/agora/factor_markets/capital_adjustment.zh-TW.svg){ .ev-figure-sm }
+![*資本調整。* 資本增加使 MRP 右移，各僱用點連成長期需求軌跡。](../../../assets/micro-viz/factor_markets/capital_adjustment.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/factor_markets/factor_markets.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/factor_markets/factor_markets.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*資本調整。* 資本增加使 MRP 右移，各僱用點連成長期需求軌跡。</figcaption>
 
@@ -675,9 +675,9 @@ def factor_examples(
 
 <figure class="ev-fig" markdown>
 
-![*廠商與產業需求。* 產業需求比廠商需求的水平加總更陡。](../../../assets/micro-viz/agora/factor_markets/industry_demand.zh-TW.svg){ .ev-figure-sm }
+![*廠商與產業需求。* 產業需求比廠商需求的水平加總更陡。](../../../assets/micro-viz/factor_markets/industry_demand.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/factor_markets/factor_markets.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/factor_markets/factor_markets.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*廠商與產業需求。* 產業需求比廠商需求的水平加總更陡。</figcaption>
 
@@ -687,9 +687,9 @@ def factor_examples(
 
 <figure class="ev-fig" markdown>
 
-![*短期與長期投入需求。* 長期投入需求比短期更平坦。](../../../assets/micro-viz/agora/factor_markets/short_long_run.zh-TW.svg){ .ev-figure-sm }
+![*短期與長期投入需求。* 長期投入需求比短期更平坦。](../../../assets/micro-viz/factor_markets/short_long_run.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/factor_markets/factor_markets.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/factor_markets/factor_markets.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*短期與長期投入需求。* 長期投入需求比短期更平坦。</figcaption>
 
@@ -699,9 +699,9 @@ def factor_examples(
 
 <figure class="ev-fig" markdown>
 
-![*市場與廠商供給。* 向上的市場供給與單一廠商面對的水平供給。](../../../assets/micro-viz/agora/factor_markets/market_supply.zh-TW.svg){ .ev-figure-sm }
+![*市場與廠商供給。* 向上的市場供給與單一廠商面對的水平供給。](../../../assets/micro-viz/factor_markets/market_supply.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/factor_markets/factor_markets.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/factor_markets/factor_markets.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*市場與廠商供給。* 向上的市場供給與單一廠商面對的水平供給。</figcaption>
 
@@ -711,9 +711,9 @@ def factor_examples(
 
 <figure class="ev-fig" markdown>
 
-![*要素市場均衡。* 產品市場獨佔使 MRP 較低，工資與僱用量也較低。](../../../assets/micro-viz/agora/factor_markets/factor_equilibrium.zh-TW.svg){ .ev-figure-sm }
+![*要素市場均衡。* 產品市場獨佔使 MRP 較低，工資與僱用量也較低。](../../../assets/micro-viz/factor_markets/factor_equilibrium.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/factor_markets/factor_markets.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/factor_markets/factor_markets.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*要素市場均衡。* 產品市場獨佔使 MRP 較低，工資與僱用量也較低。</figcaption>
 
@@ -723,9 +723,9 @@ def factor_examples(
 
 <figure class="ev-fig" markdown>
 
-![*勞動的經濟租。* 工資與供給曲線之間的面積是勞動的經濟租。](../../../assets/micro-viz/agora/factor_markets/economic_rent.zh-TW.svg){ .ev-figure-sm }
+![*勞動的經濟租。* 工資與供給曲線之間的面積是勞動的經濟租。](../../../assets/micro-viz/factor_markets/economic_rent.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/factor_markets/factor_markets.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/factor_markets/factor_markets.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*勞動的經濟租。* 工資與供給曲線之間的面積是勞動的經濟租。</figcaption>
 
@@ -735,9 +735,9 @@ def factor_examples(
 
 <figure class="ev-fig" markdown>
 
-![*地租。* 土地供給垂直，需求決定地租。](../../../assets/micro-viz/agora/factor_markets/land_rent.zh-TW.svg){ .ev-figure-sm }
+![*地租。* 土地供給垂直，需求決定地租。](../../../assets/micro-viz/factor_markets/land_rent.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/factor_markets/factor_markets.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/factor_markets/factor_markets.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*地租。* 土地供給垂直，需求決定地租。</figcaption>
 
@@ -749,35 +749,35 @@ def factor_examples(
 
 單一買者在 ME = MV 處購買，並支付供給價格；工會在勞動需求上選點。
 
-<!-- api: agora.micro_viz.guides_inputs_27 -->
+<!-- api: micro_viz.guides_inputs_27 -->
 
 `Monopsonist` 求買者的選擇與無謂損失；`UnionWageSetting` 與 `TwoSectorLabor` 求解工會的情形。
 
-<!-- api: agora.micro_viz.guides_inputs_28 -->
+<!-- api: micro_viz.guides_inputs_28 -->
 
 競爭買方（水平的 `ME = AE` 對 `MV`）與競爭賣方（水平的 `MR = AR` 對 `MC`）並列。
 
-<!-- api: agora.micro_viz.guides_inputs_29 -->
+<!-- api: micro_viz.guides_inputs_29 -->
 
 獨占（`AR`、`MR`、`MC`）與買方獨佔（`MV`、`ME`、`AE`）並列，由同一組線性曲線建成。
 
-<!-- api: agora.micro_viz.guides_inputs_30 -->
+<!-- api: micro_viz.guides_inputs_30 -->
 
 買方獨佔：買者在 `ME = MV`（勞動為 `MRP`）處僱用，支付該數量下的供給價格，低於競爭的數量與價格。
 
-<!-- api: agora.micro_viz.guides_inputs_31 -->
+<!-- api: micro_viz.guides_inputs_31 -->
 
 買方獨佔與競爭結果的比較：長方形 `A` 是由賣者移轉給買者，三角形 `B`、`C` 是無謂損失。
 
-<!-- api: agora.micro_viz.guides_inputs_32 -->
+<!-- api: micro_viz.guides_inputs_32 -->
 
 每條供給曲線一欄，共用座標軸：供給愈平坦（愈有彈性），`ME` 愈接近 `AE`。
 
-<!-- api: agora.micro_viz.guides_inputs_33 -->
+<!-- api: micro_viz.guides_inputs_33 -->
 
 兩部門：高於競爭工資 `W_c` 的工會工資使部門 1 就業下降，失業工人湧入部門 2 並壓低其工資。
 
-<!-- api: agora.micro_viz.guides_inputs_34 -->
+<!-- api: micro_viz.guides_inputs_34 -->
 
 工會在廠商勞動需求上選點：僱用量 `L`、工資總額長方形，以及高於會員供給價格的租。
 
@@ -842,9 +842,9 @@ def monopsony_examples(
 
 <figure class="ev-fig" markdown>
 
-![*競爭的買方與賣方。* 競爭買方面對水平的 ME = AE，競爭賣方面對水平的 MR = AR。](../../../assets/micro-viz/agora/monopsony/competitive_pair.zh-TW.svg){ .ev-figure-sm }
+![*競爭的買方與賣方。* 競爭買方面對水平的 ME = AE，競爭賣方面對水平的 MR = AR。](../../../assets/micro-viz/monopsony/competitive_pair.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/monopsony/monopsony.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/monopsony/monopsony.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*競爭的買方與賣方。* 競爭買方面對水平的 ME = AE，競爭賣方面對水平的 MR = AR。</figcaption>
 
@@ -854,9 +854,9 @@ def monopsony_examples(
 
 <figure class="ev-fig" markdown>
 
-![*買方獨佔。* 買方獨佔在 ME = MV 處購買，支付 AE 上的價格。](../../../assets/micro-viz/agora/monopsony/monopsony.zh-TW.svg){ .ev-figure-sm }
+![*買方獨佔。* 買方獨佔在 ME = MV 處購買，支付 AE 上的價格。](../../../assets/micro-viz/monopsony/monopsony.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/monopsony/monopsony.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/monopsony/monopsony.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*買方獨佔。* 買方獨佔在 ME = MV 處購買，支付 AE 上的價格。</figcaption>
 
@@ -866,9 +866,9 @@ def monopsony_examples(
 
 <figure class="ev-fig" markdown>
 
-![*獨占與買方獨佔。* 獨佔的 AR、MR、MC 與買方獨佔的 MV、ME、AE 並列。](../../../assets/micro-viz/agora/monopsony/monopoly_monopsony.zh-TW.svg){ .ev-figure-sm }
+![*獨占與買方獨佔。* 獨佔的 AR、MR、MC 與買方獨佔的 MV、ME、AE 並列。](../../../assets/micro-viz/monopsony/monopoly_monopsony.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/monopsony/monopsony.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/monopsony/monopsony.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*獨占與買方獨佔。* 獨佔的 AR、MR、MC 與買方獨佔的 MV、ME、AE 並列。</figcaption>
 
@@ -878,9 +878,9 @@ def monopsony_examples(
 
 <figure class="ev-fig" markdown>
 
-![*供給彈性。* 供給愈有彈性，ME 愈接近 AE。](../../../assets/micro-viz/agora/monopsony/supply_elasticity.zh-TW.svg){ .ev-figure-sm }
+![*供給彈性。* 供給愈有彈性，ME 愈接近 AE。](../../../assets/micro-viz/monopsony/supply_elasticity.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/monopsony/monopsony.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/monopsony/monopsony.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*供給彈性。* 供給愈有彈性，ME 愈接近 AE。</figcaption>
 
@@ -890,9 +890,9 @@ def monopsony_examples(
 
 <figure class="ev-fig" markdown>
 
-![*買方獨佔的無謂損失。* 移轉長方形 A 與無謂損失三角形 B、C。](../../../assets/micro-viz/agora/monopsony/monopsony_dwl.zh-TW.svg){ .ev-figure-sm }
+![*買方獨佔的無謂損失。* 移轉長方形 A 與無謂損失三角形 B、C。](../../../assets/micro-viz/monopsony/monopsony_dwl.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/monopsony/monopsony.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/monopsony/monopsony.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*買方獨佔的無謂損失。* 移轉長方形 A 與無謂損失三角形 B、C。</figcaption>
 
@@ -902,9 +902,9 @@ def monopsony_examples(
 
 <figure class="ev-fig" markdown>
 
-![*勞動買方獨佔。* 勞動市場的買方獨佔：僱用量與工資都低於競爭水準。](../../../assets/micro-viz/agora/monopsony/labor_monopsony.zh-TW.svg){ .ev-figure-sm }
+![*勞動買方獨佔。* 勞動市場的買方獨佔：僱用量與工資都低於競爭水準。](../../../assets/micro-viz/monopsony/labor_monopsony.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/monopsony/monopsony.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/monopsony/monopsony.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*勞動買方獨佔。* 勞動市場的買方獨佔：僱用量與工資都低於競爭水準。</figcaption>
 
@@ -914,9 +914,9 @@ def monopsony_examples(
 
 <figure class="ev-fig" markdown>
 
-![*工會訂工資。* 工會在勞動需求上選點：就業、租與機會成本。](../../../assets/micro-viz/agora/monopsony/union.zh-TW.svg){ .ev-figure-sm }
+![*工會訂工資。* 工會在勞動需求上選點：就業、租與機會成本。](../../../assets/micro-viz/monopsony/union.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/monopsony/monopsony.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/monopsony/monopsony.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*工會訂工資。* 工會在勞動需求上選點：就業、租與機會成本。</figcaption>
 
@@ -926,9 +926,9 @@ def monopsony_examples(
 
 <figure class="ev-fig" markdown>
 
-![*兩部門勞動市場。* 工會工資使部門 1 就業下降，工人流入部門 2 而壓低其工資。](../../../assets/micro-viz/agora/monopsony/two_sector.zh-TW.svg){ .ev-figure-sm }
+![*兩部門勞動市場。* 工會工資使部門 1 就業下降，工人流入部門 2 而壓低其工資。](../../../assets/micro-viz/monopsony/two_sector.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/monopsony/monopsony.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/monopsony/monopsony.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>*兩部門勞動市場。* 工會工資使部門 1 就業下降，工人流入部門 2 而壓低其工資。</figcaption>
 

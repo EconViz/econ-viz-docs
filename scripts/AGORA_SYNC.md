@@ -83,3 +83,5 @@ Each figure's script is offered for download: `make_figures.py` writes the code 
 links `econ-viz.toml` the same way. The figures drawn from MosaicKit layers (`consumer/demand`, `hicks`,
 `edgeworth`) are too long to print, so the manual shows the API call and their scripts live in
 `agora/packages/utility-viz/scripts/scenes/`.
+
+micro-viz is not synchronised from agora. Its pages under `docs/micro-viz/`, the matching `docs/zh-TW/` and `docs/zh-CN/` pages and `hooks/api_data/micro-viz.json` are maintained by hand here.

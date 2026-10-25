@@ -36,4 +36,4 @@ seo_title: "簡介"
 
 初次使用時，依序閱讀 [快速開始](../quickstart.md#sec-quickstart) 與 [模型與圖形](model-figure.md#sec-model-figure)。各主題章節先說明模型，再展示圖形。
 
-本手冊所有圖形的繪製腳本依主題整理成一個壓縮檔：[micro-viz-examples.zip](https://econ-viz.org/assets/micro-viz/agora/micro-viz-examples.zip)。
+所有圖形的繪製腳本依主題整理成一個壓縮檔：[micro-viz-examples.zip](https://econ-viz.org/assets/micro-viz/micro-viz-examples.zip)。

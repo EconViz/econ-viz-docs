@@ -8,7 +8,7 @@ seo_title: "Production and costs"
 
 Short-run production and the cost curves that follow from it.
 
-Each section is one example script and the figures it draws. The scripts come in the archive of this manual; `--help` lists their arguments.
+Each section is one example script and the figures it draws. The scripts come in the examples archive; `--help` lists their arguments.
 
 ## Short-run production
 
@@ -16,15 +16,15 @@ Each section is one example script and the figures it draws. The scripts come in
 
 One variable input and one fixed input give total, average and marginal product. The marginal-return regions are classified from the model and shaded in the figure.
 
-<!-- api: agora.micro_viz.guides_production_costs_1 -->
+<!-- api: micro_viz.guides_production_costs_1 -->
 
 `ShortRunProductionFunction` is the cubic production function $Q = a L + b L^2 + c L^3$; `analyze_production()` samples TP, AP and MP and classifies the range into regions of increasing, diminishing and negative marginal returns.
 
-<!-- api: agora.micro_viz.guides_production_costs_2 -->
+<!-- api: micro_viz.guides_production_costs_2 -->
 
 An AP/MP diagram with the marginal-return regions and the AP = MP and MP = 0 points.
 
-<!-- api: agora.micro_viz.guides_production_costs_3 -->
+<!-- api: micro_viz.guides_production_costs_3 -->
 
 A TP diagram: the curve, its three marginal-return regions and the boundary guides.
 
@@ -85,9 +85,9 @@ def production_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Total product.* Short-run total product, with the regions of increasing and diminishing marginal returns marked.](../../assets/micro-viz/agora/production/total_product.svg){ .ev-figure-sm }
+![*Total product.* Short-run total product, with the regions of increasing and diminishing marginal returns marked.](../../assets/micro-viz/production/total_product.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/production/production.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/production/production.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Total product.* Short-run total product, with the regions of increasing and diminishing marginal returns marked.</figcaption>
 
@@ -97,9 +97,9 @@ def production_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Average and marginal product.* Average and marginal product; MP crosses AP at the top of AP.](../../assets/micro-viz/agora/production/average_marginal_product.svg){ .ev-figure-sm }
+![*Average and marginal product.* Average and marginal product; MP crosses AP at the top of AP.](../../assets/micro-viz/production/average_marginal_product.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/production/production.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/production/production.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Average and marginal product.* Average and marginal product; MP crosses AP at the top of AP.</figcaption>
 
@@ -109,9 +109,9 @@ def production_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Total product, shade under the curve.* The same regions, shaded only down to the curve.](../../assets/micro-viz/agora/production/total_product_under_curve.svg){ .ev-figure-sm }
+![*Total product, shade under the curve.* The same regions, shaded only down to the curve.](../../assets/micro-viz/production/total_product_under_curve.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/production/production.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/production/production.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Total product, shade under the curve.* The same regions, shaded only down to the curve.</figcaption>
 
@@ -121,9 +121,9 @@ def production_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Average and marginal product, shade under the curve.* The same regions, shaded only down to the AP and MP curves.](../../assets/micro-viz/agora/production/average_marginal_product_under_curve.svg){ .ev-figure-sm }
+![*Average and marginal product, shade under the curve.* The same regions, shaded only down to the AP and MP curves.](../../assets/micro-viz/production/average_marginal_product_under_curve.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/production/production.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/production/production.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Average and marginal product, shade under the curve.* The same regions, shaded only down to the AP and MP curves.</figcaption>
 
@@ -135,23 +135,23 @@ def production_examples(
 
 A cubic cost function gives total, variable and fixed cost and the four unit costs. MC passes through the lowest points of AVC and ATC.
 
-<!-- api: agora.micro_viz.guides_production_costs_4 -->
+<!-- api: micro_viz.guides_production_costs_4 -->
 
 `CubicCost` is $\text{TC} = \text{FC} + b Q + c Q^2 + d Q^3$; `analyze_costs()` evaluates every cost measure over an output range and finds the minima of AVC and ATC.
 
-<!-- api: agora.micro_viz.guides_production_costs_5 -->
+<!-- api: micro_viz.guides_production_costs_5 -->
 
 The total-cost panel above the per-unit panel, sharing the output axis.
 
-<!-- api: agora.micro_viz.guides_production_costs_6 -->
+<!-- api: micro_viz.guides_production_costs_6 -->
 
 The two panels of `cost_curves_grid` as separate canvases: total cost, then unit costs, on the same output axis. Each stands alone as a figure.
 
-<!-- api: agora.micro_viz.guides_production_costs_7 -->
+<!-- api: micro_viz.guides_production_costs_7 -->
 
 TC, VC and FC against output.
 
-<!-- api: agora.micro_viz.guides_production_costs_8 -->
+<!-- api: micro_viz.guides_production_costs_8 -->
 
 MC, ATC, AVC and AFC against output (choose a subset with `curves`).
 
@@ -220,9 +220,9 @@ def cost_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Total, variable and fixed cost.* Total, variable and fixed cost.](../../assets/micro-viz/agora/costs/total_cost.svg){ .ev-figure-sm }
+![*Total, variable and fixed cost.* Total, variable and fixed cost.](../../assets/micro-viz/costs/total_cost.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/costs/costs.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/costs/costs.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Total, variable and fixed cost.* Total, variable and fixed cost.</figcaption>
 
@@ -232,9 +232,9 @@ def cost_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Unit costs.* MC, ATC, AVC and AFC; MC passes through the lowest points of AVC and ATC.](../../assets/micro-viz/agora/costs/unit_cost.svg){ .ev-figure-sm }
+![*Unit costs.* MC, ATC, AVC and AFC; MC passes through the lowest points of AVC and ATC.](../../assets/micro-viz/costs/unit_cost.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/costs/costs.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/costs/costs.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Unit costs.* MC, ATC, AVC and AFC; MC passes through the lowest points of AVC and ATC.</figcaption>
 
@@ -244,9 +244,9 @@ def cost_examples(
 
 <figure class="ev-fig" markdown>
 
-![*AVC and MC of a cubic cost.* AVC and MC of a cubic cost function.](../../assets/micro-viz/agora/costs/cubic_avc_mc.svg){ .ev-figure-sm }
+![*AVC and MC of a cubic cost.* AVC and MC of a cubic cost function.](../../assets/micro-viz/costs/cubic_avc_mc.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/costs/costs.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/costs/costs.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*AVC and MC of a cubic cost.* AVC and MC of a cubic cost function.</figcaption>
 
@@ -256,9 +256,9 @@ def cost_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Cost curves.* Total cost above unit costs on a shared output axis.](../../assets/micro-viz/agora/costs/cost_curves.svg){ .ev-figure-sm }
+![*Cost curves.* Total cost above unit costs on a shared output axis.](../../assets/micro-viz/costs/cost_curves.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/costs/costs.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/costs/costs.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Cost curves.* Total cost above unit costs on a shared output axis.</figcaption>
 
@@ -268,9 +268,9 @@ def cost_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Total cost panel.* The total-cost panel of the two-panel figure, usable on its own.](../../assets/micro-viz/agora/costs/cost_curves_total.svg){ .ev-figure-sm }
+![*Total cost panel.* The total-cost panel of the two-panel figure, usable on its own.](../../assets/micro-viz/costs/cost_curves_total.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/costs/costs.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/costs/costs.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Total cost panel.* The total-cost panel of the two-panel figure, usable on its own.</figcaption>
 
@@ -280,9 +280,9 @@ def cost_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Unit cost panel.* The unit-cost panel of the two-panel figure, usable on its own.](../../assets/micro-viz/agora/costs/cost_curves_unit.svg){ .ev-figure-sm }
+![*Unit cost panel.* The unit-cost panel of the two-panel figure, usable on its own.](../../assets/micro-viz/costs/cost_curves_unit.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/costs/costs.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/costs/costs.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Unit cost panel.* The unit-cost panel of the two-panel figure, usable on its own.</figcaption>
 
@@ -294,11 +294,11 @@ def cost_examples(
 
 Several plants of fixed capacity give a stepped marginal cost; one plant with a capacity limit gives a kinked one.
 
-<!-- api: agora.micro_viz.guides_production_costs_9 -->
+<!-- api: micro_viz.guides_production_costs_9 -->
 
 `PiecewiseCost` joins `CostSegment` pieces, each with its own capacity and marginal cost; it is a `CostFunction`, so `analyze_costs()` accepts it.
 
-<!-- api: agora.micro_viz.guides_production_costs_10 -->
+<!-- api: micro_viz.guides_production_costs_10 -->
 
 Stepped or kinked marginal cost with its capacity and price bands.
 
@@ -363,9 +363,9 @@ def piecewise_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Stepped marginal cost.* Stepped marginal cost of several plants.](../../assets/micro-viz/agora/piecewise_costs/stepped_cost.svg){ .ev-figure-sm }
+![*Stepped marginal cost.* Stepped marginal cost of several plants.](../../assets/micro-viz/piecewise_costs/stepped_cost.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/piecewise_costs/piecewise_costs.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/piecewise_costs/piecewise_costs.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Stepped marginal cost.* Stepped marginal cost of several plants.</figcaption>
 
@@ -375,9 +375,9 @@ def piecewise_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Stepped cost and output.* Output jumps as the price crosses a step.](../../assets/micro-viz/agora/piecewise_costs/stepped_cost_prices.svg){ .ev-figure-sm }
+![*Stepped cost and output.* Output jumps as the price crosses a step.](../../assets/micro-viz/piecewise_costs/stepped_cost_prices.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/piecewise_costs/piecewise_costs.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/piecewise_costs/piecewise_costs.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Stepped cost and output.* Output jumps as the price crosses a step.</figcaption>
 
@@ -387,9 +387,9 @@ def piecewise_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Kinked marginal cost.* Kinked marginal cost with a capacity limit.](../../assets/micro-viz/agora/piecewise_costs/kinked_marginal_cost.svg){ .ev-figure-sm }
+![*Kinked marginal cost.* Kinked marginal cost with a capacity limit.](../../assets/micro-viz/piecewise_costs/kinked_marginal_cost.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/agora/piecewise_costs/piecewise_costs.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/piecewise_costs/piecewise_costs.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>*Kinked marginal cost.* Kinked marginal cost with a capacity limit.</figcaption>
 

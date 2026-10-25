@@ -8,7 +8,7 @@ seo_title: "不确定性与信息"
 
 风险、拍卖与信息不对称。
 
-每一节是一支范例脚本与它画出的图。脚本随手册的压缩档提供，参数可用 `--help` 查看。
+每一节是一支示例脚本与它画出的图。脚本在示例压缩包中提供，参数可用 `--help` 查看。
 
 ## 不确定下的选择
 
@@ -16,35 +16,35 @@ seo_title: "不确定性与信息"
 
 期望效用与风险态度、均数变异数选择、状态请求权与随机优势。 出处：[Pratt (1964)](../project/references.md#pratt1964)、[Rothschild (1970)](../project/references.md#rothschildstiglitz1970)、[Markowitz (1952)](../project/references.md#markowitz1952)。
 
-<!-- api: agora.micro_viz.guides_uncertainty_1 -->
+<!-- api: micro_viz.guides_uncertainty_1 -->
 
 `Gamble` 与 `IncomeUtility` 给出期望效用、确定等值与风险贴水；`MeanVarianceInvestor` 与 `RiskReturnLine` 求风险报酬选择；`StateClaims`、`UniformLottery` 与 `TwoAssetFrontier` 处理保险、优势与前缘。
 
-<!-- api: agora.micro_viz.guides_uncertainty_2 -->
+<!-- api: micro_viz.guides_uncertainty_2 -->
 
 两资产组合在标准差－平均数平面上的前缘：最小变异数组合 `G` 以上的效率部分为粗线。
 
-<!-- api: agora.micro_viz.guides_uncertainty_3 -->
+<!-- api: micro_viz.guides_uncertainty_3 -->
 
 标准差－所得平面上每位投资人一栏的无异曲线：愈趋避风险，曲线愈陡。
 
-<!-- api: agora.micro_viz.guides_uncertainty_4 -->
+<!-- api: micro_viz.guides_uncertainty_4 -->
 
 凹的 `u` 与弦：确定等值 `CE` 的效用等于赌局的 `EU`，风险贴水是 `E(I)` 与 `CE` 之差。
 
-<!-- api: agora.micro_viz.guides_uncertainty_5 -->
+<!-- api: micro_viz.guides_uncertainty_5 -->
 
 风险报酬线与各投资人和它相切的无异曲线；`market_sd` 另标市场投资组合 `M`，其外是借款。
 
-<!-- api: agora.micro_viz.guides_uncertainty_6 -->
+<!-- api: micro_viz.guides_uncertainty_6 -->
 
 状态请求权：45 度的确定线、禀赋 `E`、每个保费率一条预算线（第一条画粗；公平保费导致完全保险）。
 
-<!-- api: agora.micro_viz.guides_uncertainty_7 -->
+<!-- api: micro_viz.guides_uncertainty_7 -->
 
 两个赌局的 CDF `F_A` 与 `F_B`：`kind="first"` 显示 `F_A` 处处在 `F_B` 之下，`kind="second"` 显示二阶优势。
 
-<!-- api: agora.micro_viz.guides_uncertainty_8 -->
+<!-- api: micro_viz.guides_uncertainty_8 -->
 
 每个效用函数一小栏：`u(I)`、两个结果间的弦，以及弦上高于期望所得处的期望效用。
 
@@ -153,9 +153,9 @@ def uncertainty_examples(
 
 <figure class="ev-fig" markdown>
 
-![*所得效用。* 三种风险态度的所得效用与期望效用弦。](../../../assets/micro-viz/agora/uncertainty/utility_of_income.zh-CN.svg){ .ev-figure-sm }
+![*所得效用。* 三种风险态度的所得效用与期望效用弦。](../../../assets/micro-viz/uncertainty/utility_of_income.zh-CN.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/uncertainty/uncertainty.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/uncertainty/uncertainty.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>*所得效用。* 三种风险态度的所得效用与期望效用弦。</figcaption>
 
@@ -165,9 +165,9 @@ def uncertainty_examples(
 
 <figure class="ev-fig" markdown>
 
-![*风险贴水。* 确定等值与风险贴水。](../../../assets/micro-viz/agora/uncertainty/risk_premium.zh-CN.svg){ .ev-figure-sm }
+![*风险贴水。* 确定等值与风险贴水。](../../../assets/micro-viz/uncertainty/risk_premium.zh-CN.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/uncertainty/uncertainty.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/uncertainty/uncertainty.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>*风险贴水。* 确定等值与风险贴水。</figcaption>
 
@@ -177,9 +177,9 @@ def uncertainty_examples(
 
 <figure class="ev-fig" markdown>
 
-![*风险态度。* 风险趋避愈强，无异曲线愈陡。](../../../assets/micro-viz/agora/uncertainty/risk_attitude.zh-CN.svg){ .ev-figure-sm }
+![*风险态度。* 风险趋避愈强，无异曲线愈陡。](../../../assets/micro-viz/uncertainty/risk_attitude.zh-CN.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/uncertainty/uncertainty.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/uncertainty/uncertainty.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>*风险态度。* 风险趋避愈强，无异曲线愈陡。</figcaption>
 
@@ -189,9 +189,9 @@ def uncertainty_examples(
 
 <figure class="ev-fig" markdown>
 
-![*风险报酬选择。* 无异曲线与风险报酬线相切。](../../../assets/micro-viz/agora/uncertainty/risk_return_choice.zh-CN.svg){ .ev-figure-sm }
+![*风险报酬选择。* 无异曲线与风险报酬线相切。](../../../assets/micro-viz/uncertainty/risk_return_choice.zh-CN.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/uncertainty/uncertainty.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/uncertainty/uncertainty.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>*风险报酬选择。* 无异曲线与风险报酬线相切。</figcaption>
 
@@ -201,9 +201,9 @@ def uncertainty_examples(
 
 <figure class="ev-fig" markdown>
 
-![*两位投资人。* 不同风险趋避者选择不同切点。](../../../assets/micro-viz/agora/uncertainty/risk_return_two_investors.zh-CN.svg){ .ev-figure-sm }
+![*两位投资人。* 不同风险趋避者选择不同切点。](../../../assets/micro-viz/uncertainty/risk_return_two_investors.zh-CN.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/uncertainty/uncertainty.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/uncertainty/uncertainty.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>*两位投资人。* 不同风险趋避者选择不同切点。</figcaption>
 
@@ -213,9 +213,9 @@ def uncertainty_examples(
 
 <figure class="ev-fig" markdown>
 
-![*状态请求权，公平保费。* 公平保费下，消费者选择两状态所得相等的*完全保险*。](../../../assets/micro-viz/agora/uncertainty/state_claims_fair.zh-CN.svg){ .ev-figure-sm }
+![*状态请求权，公平保费。* 公平保费下，消费者选择两状态所得相等的*完全保险*。](../../../assets/micro-viz/uncertainty/state_claims_fair.zh-CN.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/uncertainty/uncertainty.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/uncertainty/uncertainty.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>*状态请求权，公平保费。* 公平保费下，消费者选择两状态所得相等的*完全保险*。</figcaption>
 
@@ -225,9 +225,9 @@ def uncertainty_examples(
 
 <figure class="ev-fig" markdown>
 
-![*状态请求权，高保费。* 保费高于公平时，消费者只买*部分保险*。](../../../assets/micro-viz/agora/uncertainty/state_claims_unfair.zh-CN.svg){ .ev-figure-sm }
+![*状态请求权，高保费。* 保费高于公平时，消费者只买*部分保险*。](../../../assets/micro-viz/uncertainty/state_claims_unfair.zh-CN.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/uncertainty/uncertainty.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/uncertainty/uncertainty.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>*状态请求权，高保费。* 保费高于公平时，消费者只买*部分保险*。</figcaption>
 
@@ -237,9 +237,9 @@ def uncertainty_examples(
 
 <figure class="ev-fig" markdown>
 
-![*一阶随机优势。* 一条 CDF 处处在另一条之下，即*一阶随机优势*。](../../../assets/micro-viz/agora/uncertainty/first_order_dominance.zh-CN.svg){ .ev-figure-sm }
+![*一阶随机优势。* 一条 CDF 处处在另一条之下，即*一阶随机优势*。](../../../assets/micro-viz/uncertainty/first_order_dominance.zh-CN.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/uncertainty/uncertainty.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/uncertainty/uncertainty.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>*一阶随机优势。* 一条 CDF 处处在另一条之下，即*一阶随机优势*。</figcaption>
 
@@ -249,9 +249,9 @@ def uncertainty_examples(
 
 <figure class="ev-fig" markdown>
 
-![*二阶随机优势。* 平均数相同、较不分散者*二阶随机优势*。](../../../assets/micro-viz/agora/uncertainty/second_order_dominance.zh-CN.svg){ .ev-figure-sm }
+![*二阶随机优势。* 平均数相同、较不分散者*二阶随机优势*。](../../../assets/micro-viz/uncertainty/second_order_dominance.zh-CN.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/uncertainty/uncertainty.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/uncertainty/uncertainty.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>*二阶随机优势。* 平均数相同、较不分散者*二阶随机优势*。</figcaption>
 
@@ -261,9 +261,9 @@ def uncertainty_examples(
 
 <figure class="ev-fig" markdown>
 
-![*均数变异数前缘。* 两资产组合的*效率前缘*与无效率部分。](../../../assets/micro-viz/agora/uncertainty/mean_variance_frontier.zh-CN.svg){ .ev-figure-sm }
+![*均数变异数前缘。* 两资产组合的*效率前缘*与无效率部分。](../../../assets/micro-viz/uncertainty/mean_variance_frontier.zh-CN.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/uncertainty/uncertainty.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/uncertainty/uncertainty.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>*均数变异数前缘。* 两资产组合的*效率前缘*与无效率部分。</figcaption>
 
@@ -273,9 +273,9 @@ def uncertainty_examples(
 
 <figure class="ev-fig" markdown>
 
-![*借款。* 借款可持有超过市场投资组合的风险。](../../../assets/micro-viz/agora/uncertainty/risk_return_borrowing.zh-CN.svg){ .ev-figure-sm }
+![*借款。* 借款可持有超过市场投资组合的风险。](../../../assets/micro-viz/uncertainty/risk_return_borrowing.zh-CN.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/uncertainty/uncertainty.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/uncertainty/uncertainty.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>*借款。* 借款可持有超过市场投资组合的风险。</figcaption>
 
@@ -287,15 +287,15 @@ def uncertainty_examples(
 
 独立均匀估值下的第一与第二价格密封拍卖：出价函数与收益相等。 出处：[Vickrey (1961)](../project/references.md#vickrey1961)。
 
-<!-- api: agora.micro_viz.guides_uncertainty_9 -->
+<!-- api: micro_viz.guides_uncertainty_9 -->
 
 `Auction` 给出某估值下的出价，以及两种形式的预期收益。
 
-<!-- api: agora.micro_viz.guides_uncertainty_10 -->
+<!-- api: micro_viz.guides_uncertainty_10 -->
 
 出价对估值：45 度的第二价格出价 `b = v`，以及 `auctions` 中每个拍卖的第一价格出价 `b = (n - 1) v / n`。
 
-<!-- api: agora.micro_viz.guides_uncertainty_11 -->
+<!-- api: micro_viz.guides_uncertainty_11 -->
 
 两种形式下卖者的预期收益对竞标者数目：两条曲线重合（收益相等），并随人数上升。
 
@@ -341,9 +341,9 @@ def auction_examples(
 
 <figure class="ev-fig" markdown>
 
-![*出价函数。* 第二价格拍卖出价等于估值，第一价格出价*低于估值*。](../../../assets/micro-viz/agora/auctions/bid_functions.zh-CN.svg){ .ev-figure-sm }
+![*出价函数。* 第二价格拍卖出价等于估值，第一价格出价*低于估值*。](../../../assets/micro-viz/auctions/bid_functions.zh-CN.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/auctions/auctions.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/auctions/auctions.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>*出价函数。* 第二价格拍卖出价等于估值，第一价格出价*低于估值*。</figcaption>
 
@@ -353,9 +353,9 @@ def auction_examples(
 
 <figure class="ev-fig" markdown>
 
-![*出价折减。* 竞标者愈多，第一价格出价愈*接近估值*。](../../../assets/micro-viz/agora/auctions/bid_functions_by_bidders.zh-CN.svg){ .ev-figure-sm }
+![*出价折减。* 竞标者愈多，第一价格出价愈*接近估值*。](../../../assets/micro-viz/auctions/bid_functions_by_bidders.zh-CN.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/auctions/auctions.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/auctions/auctions.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>*出价折减。* 竞标者愈多，第一价格出价愈*接近估值*。</figcaption>
 
@@ -365,9 +365,9 @@ def auction_examples(
 
 <figure class="ev-fig" markdown>
 
-![*收益相等。* 两种拍卖的*预期收益相同*，且随竞标者增加。](../../../assets/micro-viz/agora/auctions/revenue_equivalence.zh-CN.svg){ .ev-figure-sm }
+![*收益相等。* 两种拍卖的*预期收益相同*，且随竞标者增加。](../../../assets/micro-viz/auctions/revenue_equivalence.zh-CN.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/auctions/auctions.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/auctions/auctions.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>*收益相等。* 两种拍卖的*预期收益相同*，且随竞标者增加。</figcaption>
 
@@ -379,27 +379,27 @@ def auction_examples(
 
 逆选择、信号、道德风险、诱因兼容的奖金与效率工资。 出处：[Akerlof (1970)](../project/references.md#akerlof1970)、[Spence (1973)](../project/references.md#spence1973)、[Shapiro (1984)](../project/references.md#shapirostiglitz1984)。
 
-<!-- api: agora.micro_viz.guides_uncertainty_12 -->
+<!-- api: micro_viz.guides_uncertainty_12 -->
 
 每个模型求解一种信息不对称的情形；`Signaling` 有分离与混同两种信号。
 
-<!-- api: agora.micro_viz.guides_uncertainty_13 -->
+<!-- api: micro_viz.guides_uncertainty_13 -->
 
 奖金对申报的厂房规模 `R`，每种真实产能一条：每条在申报等于产能处最高，所以诚实申报是最适。
 
-<!-- api: agora.micro_viz.guides_uncertainty_14 -->
+<!-- api: micro_viz.guides_uncertainty_14 -->
 
 劳动需求 `D`、供给 `S` 与不偷懒条件 `NSC`：均衡在 `NSC` 与 `D` 相交处，工资高于竞争工资。
 
-<!-- api: agora.micro_viz.guides_uncertainty_15 -->
+<!-- api: micro_viz.guides_uncertainty_15 -->
 
 每个高品质比例一栏：高、低品质的需求 `D_H`、`D_L`，卖者的保留线 `S_H`、`S_L` 与混合需求。
 
-<!-- api: agora.micro_viz.guides_uncertainty_16 -->
+<!-- api: micro_viz.guides_uncertainty_16 -->
 
 需求 `D` 对真实边际成本 `MC`，以及被保险病人面对的较低价格 `MC'`：使用量由 `Q_e` 增至 `Q_i`，三角形是无谓损失。
 
-<!-- api: agora.micro_viz.guides_uncertainty_17 -->
+<!-- api: micro_viz.guides_uncertainty_17 -->
 
 低能力组（左）与高能力组（右）的教育成本对工资利益：在分离信号 `y*` 下只有高能力者购买。
 
@@ -453,9 +453,9 @@ def information_examples(
 
 <figure class="ev-fig" markdown>
 
-![*混同信号。* 信号成本低时，两类型皆购买，形成*混同均衡*。](../../../assets/micro-viz/agora/information/pooling.zh-CN.svg){ .ev-figure-sm }
+![*混同信号。* 信号成本低时，两类型皆购买，形成*混同均衡*。](../../../assets/micro-viz/information/pooling.zh-CN.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/information/information.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/information/information.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>*混同信号。* 信号成本低时，两类型皆购买，形成*混同均衡*。</figcaption>
 
@@ -465,9 +465,9 @@ def information_examples(
 
 <figure class="ev-fig" markdown>
 
-![*柠檬市场。* 高品质比例过低时，高品质被逐出市场。](../../../assets/micro-viz/agora/information/lemons.zh-CN.svg){ .ev-figure-sm }
+![*柠檬市场。* 高品质比例过低时，高品质被逐出市场。](../../../assets/micro-viz/information/lemons.zh-CN.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/information/information.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/information/information.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>*柠檬市场。* 高品质比例过低时，高品质被逐出市场。</figcaption>
 
@@ -477,9 +477,9 @@ def information_examples(
 
 <figure class="ev-fig" markdown>
 
-![*信号。* 分离信号只有高能力者愿意购买。](../../../assets/micro-viz/agora/information/signaling.zh-CN.svg){ .ev-figure-sm }
+![*信号。* 分离信号只有高能力者愿意购买。](../../../assets/micro-viz/information/signaling.zh-CN.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/information/information.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/information/information.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>*信号。* 分离信号只有高能力者愿意购买。</figcaption>
 
@@ -489,9 +489,9 @@ def information_examples(
 
 <figure class="ev-fig" markdown>
 
-![*道德风险。* 保险降低价格，造成过度使用。](../../../assets/micro-viz/agora/information/moral_hazard.zh-CN.svg){ .ev-figure-sm }
+![*道德风险。* 保险降低价格，造成过度使用。](../../../assets/micro-viz/information/moral_hazard.zh-CN.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/information/information.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/information/information.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>*道德风险。* 保险降低价格，造成过度使用。</figcaption>
 
@@ -501,9 +501,9 @@ def information_examples(
 
 <figure class="ev-fig" markdown>
 
-![*奖金表。* 诚实申报时奖金最大，诱因兼容。](../../../assets/micro-viz/agora/information/bonus_schedule.zh-CN.svg){ .ev-figure-sm }
+![*奖金表。* 诚实申报时奖金最大，诱因兼容。](../../../assets/micro-viz/information/bonus_schedule.zh-CN.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/information/information.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/information/information.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>*奖金表。* 诚实申报时奖金最大，诱因兼容。</figcaption>
 
@@ -513,9 +513,9 @@ def information_examples(
 
 <figure class="ev-fig" markdown>
 
-![*效率工资。* 不偷懒条件使工资高于均衡并产生失业。](../../../assets/micro-viz/agora/information/efficiency_wage.zh-CN.svg){ .ev-figure-sm }
+![*效率工资。* 不偷懒条件使工资高于均衡并产生失业。](../../../assets/micro-viz/information/efficiency_wage.zh-CN.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/information/information.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/information/information.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>*效率工资。* 不偷懒条件使工资高于均衡并产生失业。</figcaption>
 

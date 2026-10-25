@@ -8,7 +8,7 @@ seo_title: "标签与位置"
 
 ## 语系表
 
-`micro-viz` 放进图中的每个字都在 `src/micro_viz/locale/labels.json`，先依稳定的编号（`production.tp`）、再依语言（`en`、`zh-TW`、`zh-CN`）索引。语言来自 `[micro] language`、`PlotTheme.language`，或范例脚本的 `--language`。
+`micro-viz` 放进图中的每个字都在 `src/micro_viz/locale/labels.json`，先依稳定的编号（`production.tp`）、再依语言（`en`、`zh-TW`、`zh-CN`）索引。语言来自 `[micro] language`、`PlotTheme.language`，或示例脚本的 `--language`。
 
 含字段的文本在表中使用双层大括号，例如 `$D_{{{index}}}$`；不含字段的文本使用单层大括号。数学式写在 `$...$` 中，不使用 Unicode 下标。
 
@@ -27,7 +27,7 @@ unit_cost_canvas(
 )
 ```
 
-`title=None`（缺省）不画标题。要依图层编号修改某张已保存图形的某个标签，使用共用的逐图表，`mosaickit` 会在保存图形时套用：
+`title=None`（缺省）不画标题。要依图层 ID修改某张已保存图形的某个标签，使用共用的逐图表，`mosaickit` 会在保存图形时套用：
 
 ```toml
 [figure.unit_cost.label."micro.cost.avc.label"]
@@ -69,9 +69,9 @@ right = "2mm"
 
 <figure class="ev-fig" markdown>
 
-![亏损：保留价格记号](../../../assets/micro-viz/agora/competition/firm_loss.zh-CN.svg){ .ev-figure-sm }
+![亏损：保留价格记号](../../../assets/micro-viz/competition/firm_loss.zh-CN.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/competition/competition.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/competition/competition.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
 <figcaption markdown>亏损：保留价格记号</figcaption>
 
