@@ -5,6 +5,10 @@ description: "micro-viz draws textbook microeconomic models in Python: productio
 
 <h1 class="ev-visually-hidden">micro-viz: microeconomics diagrams in Python</h1>
 
+<p align="center">
+  <img src="../assets/micro-viz/banner.svg" alt="micro-viz" style="max-width: 480px; width: 100%; margin: 2rem 0 1rem;">
+</p>
+
 <p align="center"><em>Python package for textbook analysis and diagrams of firms and markets.</em></p>
 
 `micro-viz` covers the firm side of microeconomics: production, costs, market structure, pricing,

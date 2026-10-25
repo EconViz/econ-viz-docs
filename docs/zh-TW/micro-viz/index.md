@@ -5,6 +5,10 @@ description: "micro-viz 用 Python 繪製教科書的個體經濟學模型：生
 
 <h1 class="ev-visually-hidden">micro-viz：用 Python 繪製個體經濟學圖形</h1>
 
+<p align="center">
+  <img src="../../assets/micro-viz/banner.svg" alt="micro-viz" style="max-width: 480px; width: 100%; margin: 2rem 0 1rem;">
+</p>
+
 <p align="center"><em>廠商與市場的教科書分析與圖形 Python 套件。</em></p>
 
 `micro-viz` 負責個體經濟學的廠商端：生產、成本、市場結構、定價、要素市場、不確定性與資訊。每個模型都是有型別的物件，**不負責繪圖**；每張圖都是由模型建立的 `mosaickit` 畫布。統計資料圖與方塊加箭頭的流程圖不在範圍內。
