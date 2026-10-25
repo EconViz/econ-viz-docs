@@ -5,6 +5,10 @@ description: "macro-viz draws textbook macroeconomic models in Python: the Keyne
 
 <h1 class="ev-visually-hidden">macro-viz: macroeconomics diagrams in Python</h1>
 
+<p align="center">
+  <img src="../assets/macro-viz/banner.svg" alt="macro-viz" style="max-width: 480px; width: 100%; margin: 2rem 0 1rem;">
+</p>
+
 <p align="center"><em>Python package for textbook macroeconomic analysis and diagrams.</em></p>
 
 `macro-viz` is for introductory and intermediate macroeconomics models whose equations are given
