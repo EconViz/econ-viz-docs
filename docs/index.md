@@ -63,6 +63,18 @@ Two packages draw economics diagrams.
 
     [:octicons-arrow-right-24: macro-viz](macro-viz/index.md)
 
+-   :material-factory: **micro-viz**
+
+    Textbook microeconomic models and diagrams of firms and markets: production, costs, competition, monopoly, pricing, uncertainty and information.
+
+    ```bash
+    uv add "micro-viz @ git+https://github.com/EconViz/micro-viz"
+    ```
+
+    Development version, not on PyPI yet.
+
+    [:octicons-arrow-right-24: micro-viz](micro-viz/index.md)
+
 </div>
 
 ### Foundation packages
