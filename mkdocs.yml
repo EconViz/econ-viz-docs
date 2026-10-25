@@ -162,6 +162,18 @@ plugins:
               cookies:
                 analytics: Google Analytics
           nav_translations:
+            "Concepts": "概念"
+            "How it works": "運作方式"
+            "Adding a figure": "新增圖形"
+            "Settings and Text": "設定與文字"
+            "Settings": "設定"
+            "Labels and placement": "文字與位置"
+            "Production and costs": "生產與成本"
+            "Inputs and technology": "投入與技術"
+            "Competition and the long run": "競爭與長期"
+            "Monopoly and pricing": "獨占與定價"
+            "Oligopoly and vertical chains": "寡占與垂直關係"
+            "Uncertainty and information": "不確定性與資訊"
             "Goods and Money": "商品與貨幣"
             "Short-run Models": "短期模型"
             "Growth and Labor": "成長與勞動"
@@ -292,6 +304,18 @@ plugins:
               cookies:
                 analytics: Google Analytics
           nav_translations:
+            "Concepts": "概念"
+            "How it works": "运作方式"
+            "Adding a figure": "新增图形"
+            "Settings and Text": "设置与文字"
+            "Settings": "设置"
+            "Labels and placement": "文字与位置"
+            "Production and costs": "生产与成本"
+            "Inputs and technology": "投入与技术"
+            "Competition and the long run": "竞争与长期"
+            "Monopoly and pricing": "垄断与定价"
+            "Oligopoly and vertical chains": "寡头与垂直关系"
+            "Uncertainty and information": "不确定性与信息"
             "Goods and Money": "商品与货币"
             "Short-run Models": "短期模型"
             "Growth and Labor": "增长与劳动"
@@ -513,6 +537,27 @@ nav:
       - Animation: macro-viz/guides/animation.md
       - Project:
           - Change history: macro-viz/project/changelog.md
+  - micro-viz:
+      - Overview: micro-viz/index.md
+      - Getting Started:
+          - Installation: micro-viz/installation.md
+          - Quick start: micro-viz/quickstart.md
+      - Concepts:
+          - How it works: micro-viz/guides/how-it-works.md
+          - Adding a figure: micro-viz/guides/adding-figure.md
+      - Settings and Text:
+          - Settings: micro-viz/guides/settings.md
+          - Labels and placement: micro-viz/guides/labels.md
+      - Figures:
+          - Production and costs: micro-viz/guides/production-costs.md
+          - Inputs and technology: micro-viz/guides/inputs.md
+          - Competition and the long run: micro-viz/guides/competition.md
+          - Monopoly and pricing: micro-viz/guides/monopoly.md
+          - Oligopoly and vertical chains: micro-viz/guides/oligopoly.md
+          - Uncertainty and information: micro-viz/guides/uncertainty.md
+      - Animation: micro-viz/guides/animation.md
+      - Project:
+          - Change history: micro-viz/project/changelog.md
   - mosaickit:
       - Overview: mosaickit/index.md
       - Getting Started:
