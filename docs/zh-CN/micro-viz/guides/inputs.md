@@ -1,245 +1,935 @@
 ---
-seo_title: "投入與技術"
+seo_title: "投入与技术"
 ---
 
-# 投入與技術
+# 投入与技术
 
 <span id="sec-inputs"></span>
 
-長期技術、投入選擇與要素市場。
+长期技术、投入选择与要素市场。
 
-每個小節是一支範例腳本和它產生的圖；腳本在儲存庫的 `examples/scripts/`，參數用 `--help` 查看。
+每一节是一支范例脚本与它画出的图。脚本随手册的压缩档提供，参数可用 `--help` 查看。
 
-## 等產量線
+## 等产量线
 
-```bash
-uv run python examples/scripts/isoquants.py --output-dir out
+<span id="sec-ex-isoquants"></span>
+
+柯布－道格拉斯、完全替代与固定比例技术的等产量线，以及 MRTS 与规模报酬。
+
+<!-- api: agora.micro_viz.guides_inputs_1 -->
+
+每种技术都是 `Technology`：给出投入组合下的产量、某产量所需的资本、MRTS 与规模报酬 `Returns`。
+
+<!-- api: agora.micro_viz.guides_inputs_2 -->
+
+`bounds = (L_max, K_max)` 方框内给定 `outputs` 的等产量线。
+
+<!-- api: agora.micro_viz.guides_inputs_3 -->
+
+一条等产量在线在 `labors` 处的点，相邻两点间画弦与 `ΔK`、`ΔL` 的直角三角形，其比值是（平均）MRTS。
+
+<!-- api: agora.micro_viz.guides_inputs_4 -->
+
+每种技术一栏：给定产量的等产量线被一条射线截断；固定报酬下等距，规模报酬递增下愈来愈近。
+
+下面是脚本中画图的函数，与图形使用相同的代码。
+
+```python
+def isoquant_examples(
+    output_dir: Path,
+    theme: PlotTheme,
+    *,
+    technology: CobbDouglas,
+    outputs: list[float],
+    bounds: tuple[float, float],
+    steps: list[float],
+    triangle: list[float],
+    substitutes: PerfectSubstitutes,
+    proportions: FixedProportions,
+    increasing: CobbDouglas,
+    scale_outputs: list[float],
+    direction: tuple[float, float],
+    title: str | None = None,
+) -> list[Path]:
+    """Write the isoquant figures into ``output_dir`` and return their paths."""
+    output_dir.mkdir(parents=True, exist_ok=True)
+    middle = outputs[len(outputs) // 2]
+    figures = {
+        "isoquant_map.svg": isoquant_map_canvas(
+            technology,
+            outputs,
+            bounds,
+            theme=theme,
+            title=title,
+        ),
+        "mrts_steps.svg": mrts_steps_canvas(
+            technology,
+            middle,
+            steps,
+            bounds,
+            theme=theme,
+            title=title,
+        ),
+        "mrts_triangle.svg": mrts_steps_canvas(
+            technology,
+            middle,
+            triangle,
+            bounds,
+            delta_labels=True,
+            theme=theme,
+            title=title,
+        ),
+        "perfect_substitutes.svg": isoquant_map_canvas(
+            substitutes,
+            outputs,
+            bounds,
+            theme=theme,
+            title=title,
+        ),
+        "fixed_proportions.svg": isoquant_map_canvas(
+            proportions,
+            outputs,
+            bounds,
+            ray=True,
+            theme=theme,
+            title=title,
+        ),
+        "returns_to_scale.svg": returns_to_scale_grid(
+            (technology, increasing),
+            (scale_outputs, scale_outputs),
+            bounds,
+            direction,
+            theme=theme,
+        ),
+    }
+    paths = []
+    for name, figure in figures.items():
+        figure.save(output_dir / name)
+        paths.append(output_dir / name)
+    return paths
 ```
 
-### Isoquant map
+<span id="fig-isoquants-isoquant-map"></span>
 
-等產量線圖：愈遠離原點產量愈高。
+<figure class="ev-fig" markdown>
 
-![Isoquant map](../../../assets/micro-viz/zh-CN/isoquants/isoquant_map.svg){ .ev-figure-sm }
+![*等产量线图。* 等产量线图：愈远离原点产量愈高。](../../../assets/micro-viz/agora/isoquants/isoquant_map.zh-CN.svg){ .ev-figure-sm }
 
-### Diminishing MRTS
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/isoquants/isoquants.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-沿等產量線向右，邊際技術替代率遞減。
+<figcaption markdown>*等产量线图。* 等产量线图：愈远离原点产量愈高。</figcaption>
 
-![Diminishing MRTS](../../../assets/micro-viz/zh-CN/isoquants/mrts_steps.svg){ .ev-figure-sm }
+</figure>
 
-### MRTS triangle
+<span id="fig-isoquants-mrts-steps"></span>
 
-兩點間的 ΔK 與 ΔL 之比定義邊際技術替代率。
+<figure class="ev-fig" markdown>
 
-![MRTS triangle](../../../assets/micro-viz/zh-CN/isoquants/mrts_triangle.svg){ .ev-figure-sm }
+![*MRTS 递减。* 沿等产量线向右，边际技术替代率递减。](../../../assets/micro-viz/agora/isoquants/mrts_steps.zh-CN.svg){ .ev-figure-sm }
 
-### Perfect substitutes
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/isoquants/isoquants.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-完全替代的等產量線為直線，MRTS 為常數。
+<figcaption markdown>*MRTS 递减。* 沿等产量线向右，边际技术替代率递减。</figcaption>
 
-![Perfect substitutes](../../../assets/micro-viz/zh-CN/isoquants/perfect_substitutes.svg){ .ev-figure-sm }
+</figure>
 
-### Fixed proportions
+<span id="fig-isoquants-mrts-triangle"></span>
 
-固定比例的等產量線呈 L 形，轉折點在同一條射線上。
+<figure class="ev-fig" markdown>
 
-![Fixed proportions](../../../assets/micro-viz/zh-CN/isoquants/fixed_proportions.svg){ .ev-figure-sm }
+![*MRTS 三角形。* 两点间的 ΔK 与 ΔL 之比定义边际技术替代率。](../../../assets/micro-viz/agora/isoquants/mrts_triangle.zh-CN.svg){ .ev-figure-sm }
 
-### Returns to scale
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/isoquants/isoquants.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-沿射線，固定報酬下等產量線等距，規模報酬遞增則愈來愈近。
+<figcaption markdown>*MRTS 三角形。* 两点间的 ΔK 与 ΔL 之比定义边际技术替代率。</figcaption>
 
-![Returns to scale](../../../assets/micro-viz/zh-CN/isoquants/returns_to_scale.svg){ .ev-figure-lg }
+</figure>
+
+<span id="fig-isoquants-perfect-substitutes"></span>
+
+<figure class="ev-fig" markdown>
+
+![*完全替代。* 完全替代的等产量线为直线，MRTS 为常数。](../../../assets/micro-viz/agora/isoquants/perfect_substitutes.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/isoquants/isoquants.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>*完全替代。* 完全替代的等产量线为直线，MRTS 为常数。</figcaption>
+
+</figure>
+
+<span id="fig-isoquants-fixed-proportions"></span>
+
+<figure class="ev-fig" markdown>
+
+![*固定比例。* 固定比例的等产量线呈 L 形，转折点在同一条射在线。](../../../assets/micro-viz/agora/isoquants/fixed_proportions.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/isoquants/isoquants.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>*固定比例。* 固定比例的等产量线呈 L 形，转折点在同一条射在线。</figcaption>
+
+</figure>
+
+<span id="fig-isoquants-returns-to-scale"></span>
+
+<figure class="ev-fig" markdown>
+
+![*规模报酬。* 沿射线，固定报酬下等产量线等距，规模报酬递增则愈来愈近。](../../../assets/micro-viz/agora/isoquants/returns_to_scale.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/isoquants/isoquants.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>*规模报酬。* 沿射线，固定报酬下等产量线等距，规模报酬递增则愈来愈近。</figcaption>
+
+</figure>
 
 ## 成本最小化
 
-```bash
-uv run python examples/scripts/cost_minimization.py --output-dir out
+<span id="sec-ex-cost-minimization"></span>
+
+等成本线在成本最低的组合与等产量线相切；图中改变投入价格、技术与固定资本。
+
+<!-- api: agora.micro_viz.guides_inputs_5 -->
+
+`cost_minimizing_bundle()` 在投入价格下回传某产量的最低成本 `Bundle`；`expansion_path()` 给出各产量的最低成本组合，其成本即长期总成本。
+
+<!-- api: agora.micro_viz.guides_inputs_6 -->
+
+`output` 的等产量线与在最低成本组合相切的等成本线，另有一条较低与一条较高的等成本线。
+
+<!-- api: agora.micro_viz.guides_inputs_7 -->
+
+上图是等产量线、相切的等成本线与经过切点的扩张线；下图是长期总成本 `C` 对产量。
+
+<!-- api: agora.micro_viz.guides_inputs_8 -->
+
+资本固定在 `K_0` 时产量只能沿水平线增加；超过某点后，经过切点的长期扩张线较便宜。
+
+<!-- api: agora.micro_viz.guides_inputs_9 -->
+
+劳动变贵（`new_wage`）：等成本线变陡，新切点用较少劳动、较多资本；`along` 另画沿等产量线的箭头。
+
+<!-- api: agora.micro_viz.guides_inputs_10 -->
+
+技术进步：同一 `output` 的等产量线内移（细线 `Q'`），最低成本组合落在较低的等成本在线。
+
+下面是脚本中画图的函数，与图形使用相同的代码。
+
+```python
+def cost_examples(
+    output_dir: Path,
+    theme: PlotTheme,
+    *,
+    technology: CobbDouglas,
+    improved: CobbDouglas,
+    outputs: list[float],
+    output: float,
+    wage: float,
+    rent: float,
+    new_wage: float,
+    capital: float,
+    bounds: tuple[float, float],
+    title: str | None = None,
+) -> list[Path]:
+    """Write the cost-minimization figures into ``output_dir`` and return their paths."""
+    output_dir.mkdir(parents=True, exist_ok=True)
+    figures = {
+        "cost_minimization.svg": cost_minimization_canvas(
+            technology,
+            output,
+            wage,
+            rent,
+            bounds,
+            theme=theme,
+            title=title,
+        ),
+        "input_price_change.svg": input_price_change_canvas(
+            technology,
+            output,
+            wage,
+            rent,
+            new_wage,
+            bounds,
+            along=True,
+            theme=theme,
+            title=title,
+        ),
+        "technical_change.svg": technical_change_canvas(
+            technology,
+            improved,
+            output,
+            wage,
+            rent,
+            bounds,
+            theme=theme,
+            title=title,
+        ),
+        "expansion_path.svg": expansion_path_canvas(
+            technology, outputs, wage, rent, bounds, theme=theme
+        ),
+        "fixed_capital.svg": fixed_capital_canvas(
+            technology,
+            outputs,
+            capital,
+            wage,
+            rent,
+            bounds,
+            theme=theme,
+            title=title,
+        ),
+    }
+    paths = []
+    for name, figure in figures.items():
+        figure.save(output_dir / name)
+        paths.append(output_dir / name)
+    return paths
 ```
 
-### Cost minimization
+<span id="fig-cost-minimization-cost-minimization"></span>
 
-等成本線與等產量線相切處為成本最低的組合。
+<figure class="ev-fig" markdown>
 
-![Cost minimization](../../../assets/micro-viz/zh-CN/cost_minimization/cost_minimization.svg){ .ev-figure-sm }
+![*成本最小化。* 等成本线与等产量线相切处为成本最低的组合。](../../../assets/micro-viz/agora/cost_minimization/cost_minimization.zh-CN.svg){ .ev-figure-sm }
 
-### Dearer labor
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/cost_minimization/cost_minimization.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-工資上升使等成本線變陡，新切點使用較少勞動。
+<figcaption markdown>*成本最小化。* 等成本线与等产量线相切处为成本最低的组合。</figcaption>
 
-![Dearer labor](../../../assets/micro-viz/zh-CN/cost_minimization/input_price_change.svg){ .ev-figure-sm }
+</figure>
 
-### Technical change
+<span id="fig-cost-minimization-input-price-change"></span>
 
-技術進步使等產量線內移，成本降低。
+<figure class="ev-fig" markdown>
 
-![Technical change](../../../assets/micro-viz/zh-CN/cost_minimization/technical_change.svg){ .ev-figure-sm }
+![*工资上升。* 工资上升使等成本线变陡，新切点使用较少劳动。](../../../assets/micro-viz/agora/cost_minimization/input_price_change.zh-CN.svg){ .ev-figure-sm }
 
-### Expansion path
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/cost_minimization/cost_minimization.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-擴張線連接各切點，並推得長期總成本曲線。
+<figcaption markdown>*工资上升。* 工资上升使等成本线变陡，新切点使用较少劳动。</figcaption>
 
-![Expansion path](../../../assets/micro-viz/zh-CN/cost_minimization/expansion_path.svg){ .ev-figure-sm }
+</figure>
 
-### Fixed capital
+<span id="fig-cost-minimization-technical-change"></span>
 
-資本固定時產量只能沿水平線擴張，長期擴張線較便宜。
+<figure class="ev-fig" markdown>
 
-![Fixed capital](../../../assets/micro-viz/zh-CN/cost_minimization/fixed_capital.svg){ .ev-figure-sm }
+![*技术进步。* 技术进步使等产量线内移，成本降低。](../../../assets/micro-viz/agora/cost_minimization/technical_change.zh-CN.svg){ .ev-figure-sm }
 
-## 學習、範疇與生產前緣
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/cost_minimization/cost_minimization.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-```bash
-uv run python examples/scripts/production_extensions.py --output-dir out
+<figcaption markdown>*技术进步。* 技术进步使等产量线内移，成本降低。</figcaption>
+
+</figure>
+
+<span id="fig-cost-minimization-expansion-path"></span>
+
+<figure class="ev-fig" markdown>
+
+![*扩张线。* 扩张线连接各切点，并推得长期总成本曲线。](../../../assets/micro-viz/agora/cost_minimization/expansion_path.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/cost_minimization/cost_minimization.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>*扩张线。* 扩张线连接各切点，并推得长期总成本曲线。</figcaption>
+
+</figure>
+
+<span id="fig-cost-minimization-fixed-capital"></span>
+
+<figure class="ev-fig" markdown>
+
+![*资本固定。* 资本固定时产量只能沿水平线扩张，长期扩张线较便宜。](../../../assets/micro-viz/agora/cost_minimization/fixed_capital.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/cost_minimization/cost_minimization.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>*资本固定。* 资本固定时产量只能沿水平线扩张，长期扩张线较便宜。</figcaption>
+
+</figure>
+
+## 学习、范畴与生产前缘
+
+<span id="sec-ex-production-extensions"></span>
+
+学习使单位投入随累积产量下降；范畴、技术进步与生产前缘扩充生产模型。 出处：[Wright (1936)](../project/references.md#wright1936)、[Arrow (1962)](../project/references.md#arrow1962)。
+
+<!-- api: agora.micro_viz.guides_inputs_11 -->
+
+`LearningCurve` 与 `LearningAverageCost` 给出单位投入与成本对累积产量的关系；`ProductTransformation`、`TechnologyShift` 与 `ProductionFrontier` 是对应的模型。
+
+<!-- api: agora.micro_viz.guides_inputs_12 -->
+
+单位产出的投入量对累积产量：向下趋近下限 `A`。
+
+<!-- api: agora.micro_viz.guides_inputs_13 -->
+
+产品转换曲线 `PT`；`reference` 加上连接两个最大值的直线（没有联合生产的利益），显示外凸。
+
+<!-- api: agora.micro_viz.guides_inputs_14 -->
+
+边际报酬递减的生产前缘；内部的点严格在前缘之下（投入使用无效率）；`names` 依序标点。
+
+<!-- api: agora.micro_viz.guides_inputs_15 -->
+
+两条平均成本曲线：沿 `AC_1` 从 `A` 到 `B` 是规模利益；从 `B` 垂直下移到 `AC_2`（`C`）是学习。
+
+<!-- api: agora.micro_viz.guides_inputs_16 -->
+
+技术进步使总产量曲在线移；基准曲线为粗线，其余为细实线；`arrow_input` 画垂直箭头。
+
+下面是脚本中画图的函数，与图形使用相同的代码。
+
+```python
+def extension_examples(
+    output_dir: Path,
+    theme: PlotTheme,
+    *,
+    learning: LearningCurve,
+    cumulative_max: float,
+    cost: LearningAverageCost,
+    learning_gain: float,
+    scale_range: tuple[float, float],
+    transformation: ProductTransformation,
+    production: ShortRunProductionFunction,
+    factors: tuple[float, ...],
+    input_max: float,
+    frontier: ProductionFrontier,
+    point_names: tuple[str, ...],
+    title: str | None = None,
+) -> list[Path]:
+    """Write the production-extension figures into ``output_dir`` and return their paths."""
+    output_dir.mkdir(parents=True, exist_ok=True)
+    figures = {
+        "learning_curve.svg": learning_curve_canvas(
+            learning, cumulative_max, theme=theme, title=title
+        ),
+        "scale_vs_learning.svg": scale_vs_learning_canvas(
+            cost,
+            learning_gain,
+            scale_range[0],
+            scale_range[1],
+            theme=theme,
+            title=title,
+        ),
+        "product_transformation.svg": product_transformation_canvas(
+            transformation, theme=theme, title=title
+        ),
+        "technology_shift.svg": technology_shift_canvas(
+            TechnologyShift(production, factors),
+            input_max,
+            input_max / 2,
+            theme=theme,
+            title=title,
+        ),
+        "production_frontier.svg": production_frontier_canvas(
+            frontier,
+            input_max,
+            point_names,
+            theme=theme,
+            title=title,
+        ),
+    }
+    paths = []
+    for name, figure in figures.items():
+        figure.save(output_dir / name)
+        paths.append(output_dir / name)
+    return paths
 ```
 
-### Learning curve
+<span id="fig-production-extensions-learning-curve"></span>
 
-單位產出投入量隨累積產量下降並趨近下限。
+<figure class="ev-fig" markdown>
 
-![Learning curve](../../../assets/micro-viz/zh-CN/production_extensions/learning_curve.svg){ .ev-figure-sm }
+![*学习曲线。* 单位产出投入量随累积产量下降并趋近下限。](../../../assets/micro-viz/agora/production_extensions/learning_curve.zh-CN.svg){ .ev-figure-sm }
 
-### Scale versus learning
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/production_extensions/production_extensions.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-沿 AC 移動是規模效果，下移到另一條 AC 是學習效果。
+<figcaption markdown>*学习曲线。* 单位产出投入量随累积产量下降并趋近下限。</figcaption>
 
-![Scale versus learning](../../../assets/micro-viz/zh-CN/production_extensions/scale_vs_learning.svg){ .ev-figure-sm }
+</figure>
 
-### Product transformation curve
+<span id="fig-production-extensions-scale-vs-learning"></span>
 
-向外凸的轉換曲線表示範疇經濟。
+<figure class="ev-fig" markdown>
 
-![Product transformation curve](../../../assets/micro-viz/zh-CN/production_extensions/product_transformation.svg){ .ev-figure-sm }
+![*规模与学习。* 沿 AC 移动是规模效果，下移到另一条 AC 是学习效果。](../../../assets/micro-viz/agora/production_extensions/scale_vs_learning.zh-CN.svg){ .ev-figure-sm }
 
-### Technical progress
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/production_extensions/production_extensions.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-技術進步使總產量曲線向上移動。
+<figcaption markdown>*规模与学习。* 沿 AC 移动是规模效果，下移到另一条 AC 是学习效果。</figcaption>
 
-![Technical progress](../../../assets/micro-viz/zh-CN/production_extensions/technology_shift.svg){ .ev-figure-sm }
+</figure>
 
-### Production frontier
+<span id="fig-production-extensions-product-transformation"></span>
 
-前緣之下的點表示投入使用無效率。
+<figure class="ev-fig" markdown>
 
-![Production frontier](../../../assets/micro-viz/zh-CN/production_extensions/production_frontier.svg){ .ev-figure-sm }
+![*产品转换曲线。* 向外凸的转换曲线表示范畴经济。](../../../assets/micro-viz/agora/production_extensions/product_transformation.zh-CN.svg){ .ev-figure-sm }
 
-## 要素市場
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/production_extensions/production_extensions.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-```bash
-uv run python examples/scripts/factor_markets.py --output-dir out
+<figcaption markdown>*产品转换曲线。* 向外凸的转换曲线表示范畴经济。</figcaption>
+
+</figure>
+
+<span id="fig-production-extensions-technology-shift"></span>
+
+<figure class="ev-fig" markdown>
+
+![*技术进步。* 技术进步使总产量曲线向上移动。](../../../assets/micro-viz/agora/production_extensions/technology_shift.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/production_extensions/production_extensions.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>*技术进步。* 技术进步使总产量曲线向上移动。</figcaption>
+
+</figure>
+
+<span id="fig-production-extensions-production-frontier"></span>
+
+<figure class="ev-fig" markdown>
+
+![*生产前缘。* 前缘之下的点表示投入使用无效率。](../../../assets/micro-viz/agora/production_extensions/production_frontier.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/production_extensions/production_extensions.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>*生产前缘。* 前缘之下的点表示投入使用无效率。</figcaption>
+
+</figure>
+
+## 要素市场
+
+<span id="sec-ex-factor-markets"></span>
+
+厂商在 MRP 等于要素价格处雇用；图中比较竞争与独占的产品市场、短期与长期，以及经济租。
+
+<!-- api: agora.micro_viz.guides_inputs_17 -->
+
+`LinearValue` 是边际价值产量，`LinearSupply` 是要素供给；`FactorMarket` 求均衡，`DerivedDemand` 比较 VMP 与 MRP，`LandMarket` 的供给为垂直。
+
+<!-- api: agora.micro_viz.guides_inputs_18 -->
+
+资本增加时的 MRP 曲线，每条曲在线一个雇用点，对应 `wages` 中的工资（工资下降使厂商增加资本）。
+
+<!-- api: agora.micro_viz.guides_inputs_19 -->
+
+`VMP`（竞争产品市场）在 `MRP`（独占产品市场）之上：两者都是以价格计算的边际产量，独占者的边际收益较低。
+
+<!-- api: agora.micro_viz.guides_inputs_20 -->
+
+经济租：市场工资与供给曲线之间、到雇用量为止的三角形。
+
+<!-- api: agora.micro_viz.guides_inputs_21 -->
+
+产品市场竞争（`MRP = VMP`）与独占（较低的 MRP：工资与雇用量较低）的要素市场均衡并列。
+
+<!-- api: agora.micro_viz.guides_inputs_22 -->
+
+面对水平供给 `W*` 的厂商在 `MRP = W*` 处雇用；`lower_wage` 使水平供给下移（细实线），雇用沿 MRP 增加。
+
+<!-- api: agora.micro_viz.guides_inputs_23 -->
+
+厂商需求与产业需求并列：细线是厂商需求的水平加总，产业需求更陡。
+
+<!-- api: agora.micro_viz.guides_inputs_24 -->
+
+垂直的土地供给 `supply`，需求决定地租 `R*`；地租以下的整个长方形都是经济租。
+
+<!-- api: agora.micro_viz.guides_inputs_25 -->
+
+向上的投入市场供给，与单一厂商在市场工资下面对的水平供给并列。
+
+<!-- api: agora.micro_viz.guides_inputs_26 -->
+
+经过同一点的短期与长期投入需求，长期更平坦。
+
+下面是脚本中画图的函数，与图形使用相同的代码。
+
+```python
+def factor_examples(
+    output_dir: Path,
+    theme: PlotTheme,
+    *,
+    product: LinearValue,
+    price: float,
+    mr_share: float,
+    supply: LinearSupply,
+    wage: float,
+    lower_wage: float,
+    firms: int,
+    price_effect: float,
+    capital: tuple[float, ...],
+    wages: tuple[float, ...],
+    land: tuple[float, float, float],
+    title: str | None = None,
+) -> list[Path]:
+    """Write the factor-market figures into ``output_dir`` and return their paths."""
+    output_dir.mkdir(parents=True, exist_ok=True)
+    competitive = DerivedDemand(product, price)
+    monopoly = DerivedDemand(product, price, mr_share)
+    market = FactorMarket(competitive.demand, supply)
+    anchor = market.equilibrium()
+    firm = FactorMarket(competitive.demand, supply)
+    industry = IndustryFactorDemand(
+        competitive.demand, firms, price_effect
+    )
+    adjustment = InputAdjustment(
+        anchor[0],
+        anchor[1],
+        competitive.demand.slope * 2,
+        competitive.demand.slope / 2,
+    )
+    figures = {
+        "derived_demand.svg": derived_demand_canvas(
+            monopoly, theme=theme, title=title
+        ),
+        "firm_hiring.svg": firm_hiring_canvas(
+            firm, wage, theme=theme, title=title
+        ),
+        "wage_decline.svg": firm_hiring_canvas(
+            firm, wage, lower_wage, theme=theme, title=title
+        ),
+        "capital_adjustment.svg": capital_adjustment_canvas(
+            CapitalAdjustment(competitive.demand, capital),
+            wages,
+            theme=theme,
+            title=title,
+        ),
+        "industry_demand.svg": industry_factor_demand_canvas(
+            industry, anchor[1], theme=theme
+        ),
+        "short_long_run.svg": short_long_run_canvas(
+            adjustment,
+            competitive.demand.intercept,
+            theme=theme,
+            title=title,
+        ),
+        "market_supply.svg": market_supply_canvas(
+            market, theme=theme
+        ),
+        "factor_equilibrium.svg": factor_equilibrium_canvas(
+            market,
+            FactorMarket(monopoly.demand, supply),
+            theme=theme,
+        ),
+        "economic_rent.svg": economic_rent_canvas(
+            market, theme=theme, title=title
+        ),
+        "land_rent.svg": land_rent_canvas(
+            LandMarket(LinearValue(land[0], land[1]), land[2]),
+            theme=theme,
+            title=title,
+        ),
+    }
+    paths = []
+    for name, figure in figures.items():
+        figure.save(output_dir / name)
+        paths.append(output_dir / name)
+    return paths
 ```
 
-### VMP and MRP
+<span id="fig-factor-markets-derived-demand"></span>
 
-完全競爭產品市場的 VMP 高於獨佔產品市場的 MRP。
+<figure class="ev-fig" markdown>
 
-![VMP and MRP](../../../assets/micro-viz/zh-CN/factor_markets/derived_demand.svg){ .ev-figure-sm }
+![*VMP 与 MRP。* 完全竞争产品市场的 VMP 高于独占产品市场的 MRP。](../../../assets/micro-viz/agora/factor_markets/derived_demand.zh-CN.svg){ .ev-figure-sm }
 
-### Firm hiring
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/factor_markets/factor_markets.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-廠商面對水平的供給，在 MRP = W 處僱用。
+<figcaption markdown>*VMP 与 MRP。* 完全竞争产品市场的 VMP 高于独占产品市场的 MRP。</figcaption>
 
-![Firm hiring](../../../assets/micro-viz/zh-CN/factor_markets/firm_hiring.svg){ .ev-figure-sm }
+</figure>
 
-### A lower market wage
+<span id="fig-factor-markets-firm-hiring"></span>
 
-工資下降使水平供給下移，僱用量沿 MRP 增加。
+<figure class="ev-fig" markdown>
 
-![A lower market wage](../../../assets/micro-viz/zh-CN/factor_markets/wage_decline.svg){ .ev-figure-sm }
+![*厂商雇用。* 厂商面对水平的供给，在 MRP = W 处雇用。](../../../assets/micro-viz/agora/factor_markets/firm_hiring.zh-CN.svg){ .ev-figure-sm }
 
-### MRP as capital adjusts
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/factor_markets/factor_markets.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-資本增加使 MRP 右移，各僱用點連成長期需求軌跡。
+<figcaption markdown>*厂商雇用。* 厂商面对水平的供给，在 MRP = W 处雇用。</figcaption>
 
-![MRP as capital adjusts](../../../assets/micro-viz/zh-CN/factor_markets/capital_adjustment.svg){ .ev-figure-sm }
+</figure>
 
-### Firm and industry demand
+<span id="fig-factor-markets-wage-decline"></span>
 
-產業需求比廠商需求的水平加總更陡。
+<figure class="ev-fig" markdown>
 
-![Firm and industry demand](../../../assets/micro-viz/zh-CN/factor_markets/industry_demand.svg){ .ev-figure-lg }
+![*市场工资下降。* 工资下降使水平供给下移，雇用量沿 MRP 增加。](../../../assets/micro-viz/agora/factor_markets/wage_decline.zh-CN.svg){ .ev-figure-sm }
 
-### Short- and long-run input demand
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/factor_markets/factor_markets.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-長期投入需求比短期更平坦。
+<figcaption markdown>*市场工资下降。* 工资下降使水平供给下移，雇用量沿 MRP 增加。</figcaption>
 
-![Short- and long-run input demand](../../../assets/micro-viz/zh-CN/factor_markets/short_long_run.svg){ .ev-figure-sm }
+</figure>
 
-### Market and firm supply
+<span id="fig-factor-markets-capital-adjustment"></span>
 
-向上的市場供給與單一廠商面對的水平供給。
+<figure class="ev-fig" markdown>
 
-![Market and firm supply](../../../assets/micro-viz/zh-CN/factor_markets/market_supply.svg){ .ev-figure-lg }
+![*资本调整。* 资本增加使 MRP 右移，各雇用点连成长期需求轨迹。](../../../assets/micro-viz/agora/factor_markets/capital_adjustment.zh-CN.svg){ .ev-figure-sm }
 
-### Factor-market equilibrium
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/factor_markets/factor_markets.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-產品市場獨佔使 MRP 較低，工資與僱用量也較低。
+<figcaption markdown>*资本调整。* 资本增加使 MRP 右移，各雇用点连成长期需求轨迹。</figcaption>
 
-![Factor-market equilibrium](../../../assets/micro-viz/zh-CN/factor_markets/factor_equilibrium.svg){ .ev-figure-lg }
+</figure>
 
-### Economic rent of labor
+<span id="fig-factor-markets-industry-demand"></span>
 
-工資與供給曲線之間的面積是勞動的經濟租。
+<figure class="ev-fig" markdown>
 
-![Economic rent of labor](../../../assets/micro-viz/zh-CN/factor_markets/economic_rent.svg){ .ev-figure-sm }
+![*厂商与产业需求。* 产业需求比厂商需求的水平加总更陡。](../../../assets/micro-viz/agora/factor_markets/industry_demand.zh-CN.svg){ .ev-figure-sm }
 
-### Land rent
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/factor_markets/factor_markets.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-土地供給垂直，需求決定地租。
+<figcaption markdown>*厂商与产业需求。* 产业需求比厂商需求的水平加总更陡。</figcaption>
 
-![Land rent](../../../assets/micro-viz/zh-CN/factor_markets/land_rent.svg){ .ev-figure-sm }
+</figure>
 
-## 買方獨占與工會
+<span id="fig-factor-markets-short-long-run"></span>
 
-```bash
-uv run python examples/scripts/monopsony.py --output-dir out
+<figure class="ev-fig" markdown>
+
+![*短期与长期投入需求。* 长期投入需求比短期更平坦。](../../../assets/micro-viz/agora/factor_markets/short_long_run.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/factor_markets/factor_markets.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>*短期与长期投入需求。* 长期投入需求比短期更平坦。</figcaption>
+
+</figure>
+
+<span id="fig-factor-markets-market-supply"></span>
+
+<figure class="ev-fig" markdown>
+
+![*市场与厂商供给。* 向上的市场供给与单一厂商面对的水平供给。](../../../assets/micro-viz/agora/factor_markets/market_supply.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/factor_markets/factor_markets.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>*市场与厂商供给。* 向上的市场供给与单一厂商面对的水平供给。</figcaption>
+
+</figure>
+
+<span id="fig-factor-markets-factor-equilibrium"></span>
+
+<figure class="ev-fig" markdown>
+
+![*要素市场均衡。* 产品市场独占使 MRP 较低，工资与雇用量也较低。](../../../assets/micro-viz/agora/factor_markets/factor_equilibrium.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/factor_markets/factor_markets.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>*要素市场均衡。* 产品市场独占使 MRP 较低，工资与雇用量也较低。</figcaption>
+
+</figure>
+
+<span id="fig-factor-markets-economic-rent"></span>
+
+<figure class="ev-fig" markdown>
+
+![*劳动的经济租。* 工资与供给曲线之间的面积是劳动的经济租。](../../../assets/micro-viz/agora/factor_markets/economic_rent.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/factor_markets/factor_markets.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>*劳动的经济租。* 工资与供给曲线之间的面积是劳动的经济租。</figcaption>
+
+</figure>
+
+<span id="fig-factor-markets-land-rent"></span>
+
+<figure class="ev-fig" markdown>
+
+![*地租。* 土地供给垂直，需求决定地租。](../../../assets/micro-viz/agora/factor_markets/land_rent.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/factor_markets/factor_markets.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>*地租。* 土地供给垂直，需求决定地租。</figcaption>
+
+</figure>
+
+## 买方独占与工会
+
+<span id="sec-ex-monopsony"></span>
+
+单一买者在 ME = MV 处购买，并支付供给价格；工会在劳动需求上选点。
+
+<!-- api: agora.micro_viz.guides_inputs_27 -->
+
+`Monopsonist` 求买者的选择与无谓损失；`UnionWageSetting` 与 `TwoSectorLabor` 求解工会的情形。
+
+<!-- api: agora.micro_viz.guides_inputs_28 -->
+
+竞争买方（水平的 `ME = AE` 对 `MV`）与竞争卖方（水平的 `MR = AR` 对 `MC`）并列。
+
+<!-- api: agora.micro_viz.guides_inputs_29 -->
+
+独占（`AR`、`MR`、`MC`）与买方独占（`MV`、`ME`、`AE`）并列，由同一组线性曲线建成。
+
+<!-- api: agora.micro_viz.guides_inputs_30 -->
+
+买方独占：买者在 `ME = MV`（劳动为 `MRP`）处雇用，支付该数量下的供给价格，低于竞争的数量与价格。
+
+<!-- api: agora.micro_viz.guides_inputs_31 -->
+
+买方独占与竞争结果的比较：长方形 `A` 是由卖者移转给买者，三角形 `B`、`C` 是无谓损失。
+
+<!-- api: agora.micro_viz.guides_inputs_32 -->
+
+每条供给曲线一栏，共用座标轴：供给愈平坦（愈有弹性），`ME` 愈接近 `AE`。
+
+<!-- api: agora.micro_viz.guides_inputs_33 -->
+
+两部门：高于竞争工资 `W_c` 的工会工资使部门 1 就业下降，失业工人涌入部门 2 并压低其工资。
+
+<!-- api: agora.micro_viz.guides_inputs_34 -->
+
+工会在厂商劳动需求上选点：雇用量 `L`、工资总额长方形，以及高于会员供给价格的租。
+
+下面是脚本中画图的函数，与图形使用相同的代码。
+
+```python
+def monopsony_examples(
+    output_dir: Path,
+    theme: PlotTheme,
+    *,
+    value: LinearValue,
+    supply: LinearSupply,
+    elastic: LinearSupply,
+    inelastic: LinearSupply,
+    price: float,
+    sector_2: LinearValue,
+    total: float,
+    union_wage: float,
+    title: str | None = None,
+) -> list[Path]:
+    """Write the monopsony figures into ``output_dir`` and return their paths."""
+    output_dir.mkdir(parents=True, exist_ok=True)
+    model = Monopsonist(supply, value)
+    figures = {
+        "competitive_pair.svg": competitive_pair_canvas(
+            value, supply, price, theme=theme
+        ),
+        "monopsony.svg": monopsony_canvas(
+            model, theme=theme, title=title
+        ),
+        "monopoly_monopsony.svg": monopoly_monopsony_pair_canvas(
+            model, theme=theme
+        ),
+        "supply_elasticity.svg": supply_elasticity_canvas(
+            value, (elastic, inelastic), theme=theme
+        ),
+        "monopsony_dwl.svg": monopsony_dwl_canvas(
+            model, theme=theme, title=title
+        ),
+        "labor_monopsony.svg": monopsony_canvas(
+            model, labor=True, theme=theme, title=title
+        ),
+        "union.svg": union_wage_canvas(
+            UnionWageSetting(value, supply),
+            theme=theme,
+            title=title,
+        ),
+        "two_sector.svg": two_sector_labor_canvas(
+            TwoSectorLabor(value, sector_2, total),
+            union_wage,
+            theme=theme,
+        ),
+    }
+    paths = []
+    for name, figure in figures.items():
+        figure.save(output_dir / name)
+        paths.append(output_dir / name)
+    return paths
 ```
 
-### Competitive buyer and seller
+<span id="fig-monopsony-competitive-pair"></span>
 
-競爭買方面對水平的 ME = AE，競爭賣方面對水平的 MR = AR。
+<figure class="ev-fig" markdown>
 
-![Competitive buyer and seller](../../../assets/micro-viz/zh-CN/monopsony/competitive_pair.svg){ .ev-figure-lg }
+![*竞争的买方与卖方。* 竞争买方面对水平的 ME = AE，竞争卖方面对水平的 MR = AR。](../../../assets/micro-viz/agora/monopsony/competitive_pair.zh-CN.svg){ .ev-figure-sm }
 
-### Monopsony
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/monopsony/monopsony.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-買方獨佔在 ME = MV 處購買，支付 AE 上的價格。
+<figcaption markdown>*竞争的买方与卖方。* 竞争买方面对水平的 ME = AE，竞争卖方面对水平的 MR = AR。</figcaption>
 
-![Monopsony](../../../assets/micro-viz/zh-CN/monopsony/monopsony.svg){ .ev-figure-sm }
+</figure>
 
-### Monopoly and monopsony
+<span id="fig-monopsony-monopsony"></span>
 
-獨佔的 AR、MR、MC 與買方獨佔的 MV、ME、AE 並列。
+<figure class="ev-fig" markdown>
 
-![Monopoly and monopsony](../../../assets/micro-viz/zh-CN/monopsony/monopoly_monopsony.svg){ .ev-figure-lg }
+![*买方独占。* 买方独占在 ME = MV 处购买，支付 AE 上的价格。](../../../assets/micro-viz/agora/monopsony/monopsony.zh-CN.svg){ .ev-figure-sm }
 
-### Supply elasticity
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/monopsony/monopsony.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-供給愈有彈性，ME 愈接近 AE。
+<figcaption markdown>*买方独占。* 买方独占在 ME = MV 处购买，支付 AE 上的价格。</figcaption>
 
-![Supply elasticity](../../../assets/micro-viz/zh-CN/monopsony/supply_elasticity.svg){ .ev-figure-lg }
+</figure>
 
-### Monopsony deadweight loss
+<span id="fig-monopsony-monopoly-monopsony"></span>
 
-移轉長方形 A 與無謂損失三角形 B、C。
+<figure class="ev-fig" markdown>
 
-![Monopsony deadweight loss](../../../assets/micro-viz/zh-CN/monopsony/monopsony_dwl.svg){ .ev-figure-sm }
+![*独占与买方独占。* 独占的 AR、MR、MC 与买方独占的 MV、ME、AE 并列。](../../../assets/micro-viz/agora/monopsony/monopoly_monopsony.zh-CN.svg){ .ev-figure-sm }
 
-### Labor monopsony
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/monopsony/monopsony.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-勞動市場的買方獨佔：僱用量與工資都低於競爭水準。
+<figcaption markdown>*独占与买方独占。* 独占的 AR、MR、MC 与买方独占的 MV、ME、AE 并列。</figcaption>
 
-![Labor monopsony](../../../assets/micro-viz/zh-CN/monopsony/labor_monopsony.svg){ .ev-figure-sm }
+</figure>
 
-### Union wage setting
+<span id="fig-monopsony-supply-elasticity"></span>
 
-工會在勞動需求上選點：就業、租與機會成本。
+<figure class="ev-fig" markdown>
 
-![Union wage setting](../../../assets/micro-viz/zh-CN/monopsony/union.svg){ .ev-figure-sm }
+![*供给弹性。* 供给愈有弹性，ME 愈接近 AE。](../../../assets/micro-viz/agora/monopsony/supply_elasticity.zh-CN.svg){ .ev-figure-sm }
 
-### Two-sector labor market
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/monopsony/monopsony.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-工會工資使部門 1 就業下降，工人流入部門 2 而壓低其工資。
+<figcaption markdown>*供给弹性。* 供给愈有弹性，ME 愈接近 AE。</figcaption>
 
-![Two-sector labor market](../../../assets/micro-viz/zh-CN/monopsony/two_sector.svg){ .ev-figure-lg }
+</figure>
+
+<span id="fig-monopsony-monopsony-dwl"></span>
+
+<figure class="ev-fig" markdown>
+
+![*买方独占的无谓损失。* 移转长方形 A 与无谓损失三角形 B、C。](../../../assets/micro-viz/agora/monopsony/monopsony_dwl.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/monopsony/monopsony.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>*买方独占的无谓损失。* 移转长方形 A 与无谓损失三角形 B、C。</figcaption>
+
+</figure>
+
+<span id="fig-monopsony-labor-monopsony"></span>
+
+<figure class="ev-fig" markdown>
+
+![*劳动买方独占。* 劳动市场的买方独占：雇用量与工资都低于竞争水准。](../../../assets/micro-viz/agora/monopsony/labor_monopsony.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/monopsony/monopsony.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>*劳动买方独占。* 劳动市场的买方独占：雇用量与工资都低于竞争水准。</figcaption>
+
+</figure>
+
+<span id="fig-monopsony-union"></span>
+
+<figure class="ev-fig" markdown>
+
+![*工会订工资。* 工会在劳动需求上选点：就业、租与机会成本。](../../../assets/micro-viz/agora/monopsony/union.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/monopsony/monopsony.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>*工会订工资。* 工会在劳动需求上选点：就业、租与机会成本。</figcaption>
+
+</figure>
+
+<span id="fig-monopsony-two-sector"></span>
+
+<figure class="ev-fig" markdown>
+
+![*两部门劳动市场。* 工会工资使部门 1 就业下降，工人流入部门 2 而压低其工资。](../../../assets/micro-viz/agora/monopsony/two_sector.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/monopsony/monopsony.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>*两部门劳动市场。* 工会工资使部门 1 就业下降，工人流入部门 2 而压低其工资。</figcaption>
+
+</figure>

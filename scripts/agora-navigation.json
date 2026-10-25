@@ -86,6 +86,83 @@
       "zh-CN": "更新纪录"
     }
   },
+  "micro-viz": {
+    "guides/introduction": {
+      "en": "Introduction",
+      "zh-TW": "簡介",
+      "zh-CN": "简介"
+    },
+    "installation": {
+      "en": "Installation",
+      "zh-TW": "安裝",
+      "zh-CN": "安装"
+    },
+    "quickstart": {
+      "en": "Quick start",
+      "zh-TW": "快速開始",
+      "zh-CN": "快速开始"
+    },
+    "guides/model-figure": {
+      "en": "Model and figure",
+      "zh-TW": "模型與圖形",
+      "zh-CN": "模型与图形"
+    },
+    "guides/production-costs": {
+      "en": "Production and costs",
+      "zh-TW": "生產與成本",
+      "zh-CN": "生产与成本"
+    },
+    "guides/competition": {
+      "en": "Competition and the long run",
+      "zh-TW": "競爭與長期",
+      "zh-CN": "竞争与长期"
+    },
+    "guides/monopoly": {
+      "en": "Monopoly and pricing",
+      "zh-TW": "獨占與定價",
+      "zh-CN": "独占与定价"
+    },
+    "guides/oligopoly": {
+      "en": "Oligopoly and vertical chains",
+      "zh-TW": "寡占與垂直關係",
+      "zh-CN": "寡占与垂直关系"
+    },
+    "guides/inputs": {
+      "en": "Inputs and technology",
+      "zh-TW": "投入與技術",
+      "zh-CN": "投入与技术"
+    },
+    "guides/uncertainty": {
+      "en": "Uncertainty and information",
+      "zh-TW": "不確定性與資訊",
+      "zh-CN": "不确定性与信息"
+    },
+    "guides/settings": {
+      "en": "Settings",
+      "zh-TW": "設定",
+      "zh-CN": "设置"
+    },
+    "guides/labels": {
+      "en": "Labels and placement",
+      "zh-TW": "標籤與位置",
+      "zh-CN": "标签与位置"
+    },
+    "guides/adding-figure": {
+      "en": "Adding a figure",
+      "zh-TW": "新增圖形",
+      "zh-CN": "添加图形"
+    },
+    "guides/animation": {
+      "en": "Animation",
+      "zh-TW": "動畫",
+      "zh-CN": "动画"
+    },
+    "changelog": {
+      "en": "Change history",
+      "zh-TW": "更新紀錄",
+      "zh-CN": "更新纪录"
+    }
+  },
   "mosaickit": {
     "guides/introduction": {
       "en": "Introduction",

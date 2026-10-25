@@ -203,6 +203,186 @@
     "source": "packages/principle-viz/chapters/zh-CN/17-changelog.typ",
     "sha256": "d78a61112cc98bb2a4e1143e129e6b430e01bf4ea65e76fcd293760d34b46ccc"
   },
+  "docs/micro-viz/guides/introduction.md": {
+    "source": "packages/micro-viz/chapters/en/01-introduction.typ",
+    "sha256": "158c89d6d71379352910be40f1c56bbb004cfe6e999fad97ae708759f8db3c9c"
+  },
+  "docs/micro-viz/installation.md": {
+    "source": "packages/micro-viz/chapters/en/02-installation.typ",
+    "sha256": "bace2962c10f21168eba75ca842c785009a09abcef879c5ff11a7ddd838d7706"
+  },
+  "docs/micro-viz/quickstart.md": {
+    "source": "packages/micro-viz/chapters/en/03-quickstart.typ",
+    "sha256": "a1878a2dbab42a8dcd0249a153f1f9d2e2aa8b51390e1c36510f2e8040d30920"
+  },
+  "docs/micro-viz/guides/model-figure.md": {
+    "source": "packages/micro-viz/chapters/en/04-model-figure.typ",
+    "sha256": "8766e89734ff5379f03a57945a2f74d5ce61fe9ce21d2af7a0c6e6f46d9a2b5c"
+  },
+  "docs/micro-viz/guides/production-costs.md": {
+    "source": "packages/micro-viz/chapters/en/05-production-costs.typ",
+    "sha256": "12a2577694ca8645008de5a08a95529ae9531f1c3eccb133a0cc6a3382c33ccb"
+  },
+  "docs/micro-viz/guides/competition.md": {
+    "source": "packages/micro-viz/chapters/en/06-competition.typ",
+    "sha256": "22a3261292863f3f31386cb842c103aca47d48f84edebe5658980aa2eec2571f"
+  },
+  "docs/micro-viz/guides/monopoly.md": {
+    "source": "packages/micro-viz/chapters/en/07-monopoly.typ",
+    "sha256": "ae9c92f9ce2bbf37f50e9653d4cf8ca8403a39a7036ca1b40a2dcb551a5d8002"
+  },
+  "docs/micro-viz/guides/oligopoly.md": {
+    "source": "packages/micro-viz/chapters/en/08-oligopoly.typ",
+    "sha256": "dffcb95dae85fa82b80e324b61ab61e5aefb5862748e726de0e12066b937d08a"
+  },
+  "docs/micro-viz/guides/inputs.md": {
+    "source": "packages/micro-viz/chapters/en/09-inputs.typ",
+    "sha256": "bdebab8b2e344b9c746a6c69a79e136c6720c63e1ccf55b352dc67eceb7907d4"
+  },
+  "docs/micro-viz/guides/uncertainty.md": {
+    "source": "packages/micro-viz/chapters/en/10-uncertainty.typ",
+    "sha256": "8fe333290c15dfca613156994615ef6b40e3d372e63daafbe13ef469a00d0177"
+  },
+  "docs/micro-viz/guides/settings.md": {
+    "source": "packages/micro-viz/chapters/en/11-settings.typ",
+    "sha256": "d390311e3f5213519b37f368f85af2c34d386e4b97fd450a9c99c17f65ca2c44"
+  },
+  "docs/micro-viz/guides/labels.md": {
+    "source": "packages/micro-viz/chapters/en/12-labels.typ",
+    "sha256": "e3f7d4b7128bfbc554a902046e89c4e09c543323ef31a45553f0ab326531c29c"
+  },
+  "docs/micro-viz/guides/adding-figure.md": {
+    "source": "packages/micro-viz/chapters/en/13-adding-figure.typ",
+    "sha256": "b2051751b1e59353edbc30d67af219a9264407545c51ead8b19a2870132d945e"
+  },
+  "docs/micro-viz/guides/animation.md": {
+    "source": "packages/micro-viz/chapters/en/14-animation.typ",
+    "sha256": "bf1c7cd99c5804c0d338bd6df720e9f1bbf355b9e29310cb5ddbd8d2bc0f08c8"
+  },
+  "docs/micro-viz/changelog.md": {
+    "source": "packages/micro-viz/chapters/en/15-changelog.typ",
+    "sha256": "c18898958e9dae3bddca86fe217dd98aae69768838a9bb6d23acf6bfeb2dcf95"
+  },
+  "docs/zh-TW/micro-viz/guides/introduction.md": {
+    "source": "packages/micro-viz/chapters/zh-TW/01-introduction.typ",
+    "sha256": "6de838554c311fa93103f21bb047f966c65fc3f3084e7298b2a0237af4af3d4a"
+  },
+  "docs/zh-TW/micro-viz/installation.md": {
+    "source": "packages/micro-viz/chapters/zh-TW/02-installation.typ",
+    "sha256": "9d2e994585ebe5b996a5f4f57f4c37b14fd54bc28a7e44c216cc5f006ca86d0b"
+  },
+  "docs/zh-TW/micro-viz/quickstart.md": {
+    "source": "packages/micro-viz/chapters/zh-TW/03-quickstart.typ",
+    "sha256": "8dbd1ce3f5038dbfb26f57516647e5451247bb5585ac2d266e20b6ba1da1f46d"
+  },
+  "docs/zh-TW/micro-viz/guides/model-figure.md": {
+    "source": "packages/micro-viz/chapters/zh-TW/04-model-figure.typ",
+    "sha256": "e0ced78d2e23b9c62bafc68d548535ecab483f8ffff3e438b357731d69699540"
+  },
+  "docs/zh-TW/micro-viz/guides/production-costs.md": {
+    "source": "packages/micro-viz/chapters/zh-TW/05-production-costs.typ",
+    "sha256": "11a35c8e70369f4f81af480b8ed7a8759f3890e554a05641b0e38af777582afb"
+  },
+  "docs/zh-TW/micro-viz/guides/competition.md": {
+    "source": "packages/micro-viz/chapters/zh-TW/06-competition.typ",
+    "sha256": "27b6b35d79a4baa82e225c0953e91d81fe2cf318bdc3be51ce46588d9669e8dc"
+  },
+  "docs/zh-TW/micro-viz/guides/monopoly.md": {
+    "source": "packages/micro-viz/chapters/zh-TW/07-monopoly.typ",
+    "sha256": "4538824e55215d94dbc2b71a20088231c17257ef8f9aaa19f20aea30fe1c1871"
+  },
+  "docs/zh-TW/micro-viz/guides/oligopoly.md": {
+    "source": "packages/micro-viz/chapters/zh-TW/08-oligopoly.typ",
+    "sha256": "13c98ab8f3ae39d2f5fc50d394a2590c1459151d9aad05a3b2b2a11d11a6abd8"
+  },
+  "docs/zh-TW/micro-viz/guides/inputs.md": {
+    "source": "packages/micro-viz/chapters/zh-TW/09-inputs.typ",
+    "sha256": "9c412fd9ed01ca9d6ab2bde1002794b8ba125fc00b19f0eb1d7b650b086921e1"
+  },
+  "docs/zh-TW/micro-viz/guides/uncertainty.md": {
+    "source": "packages/micro-viz/chapters/zh-TW/10-uncertainty.typ",
+    "sha256": "8ccf6210ea9398f6cc098789607cabb6bd8df5c1b964da08549131914485746a"
+  },
+  "docs/zh-TW/micro-viz/guides/settings.md": {
+    "source": "packages/micro-viz/chapters/zh-TW/11-settings.typ",
+    "sha256": "5f78278c676de2968055f1a1a74174a74aa22b11378f5938ddbf2de459148084"
+  },
+  "docs/zh-TW/micro-viz/guides/labels.md": {
+    "source": "packages/micro-viz/chapters/zh-TW/12-labels.typ",
+    "sha256": "830ca7ee0ce599f2dfb20b953dd3627cbab34b040d9922893b4416e1b896e18b"
+  },
+  "docs/zh-TW/micro-viz/guides/adding-figure.md": {
+    "source": "packages/micro-viz/chapters/zh-TW/13-adding-figure.typ",
+    "sha256": "62a40af40b0ff178a0a6256e42f0ac2683adecafa2630361d23f61a406ef6d34"
+  },
+  "docs/zh-TW/micro-viz/guides/animation.md": {
+    "source": "packages/micro-viz/chapters/zh-TW/14-animation.typ",
+    "sha256": "569082cefc44743976360ae8191dfb0cf0f3b74697189fe0d0026acb1f06bca9"
+  },
+  "docs/zh-TW/micro-viz/changelog.md": {
+    "source": "packages/micro-viz/chapters/zh-TW/15-changelog.typ",
+    "sha256": "7bc62057565a5ba35def47d3466f4c621b467094ce040a76b13e60db5b2da8b5"
+  },
+  "docs/zh-CN/micro-viz/guides/introduction.md": {
+    "source": "packages/micro-viz/chapters/zh-CN/01-introduction.typ",
+    "sha256": "f56ebe3d6781009e7ee88433d026e912ff3d4fccfafe099984c15eebc99f59a6"
+  },
+  "docs/zh-CN/micro-viz/installation.md": {
+    "source": "packages/micro-viz/chapters/zh-CN/02-installation.typ",
+    "sha256": "6fd158b0f1869c7c24ce74d1e9ae7614fef3461ceb69731db5bd6ed1c02d79a7"
+  },
+  "docs/zh-CN/micro-viz/quickstart.md": {
+    "source": "packages/micro-viz/chapters/zh-CN/03-quickstart.typ",
+    "sha256": "fc5aa537956b6028dbd1b3e49cae22917381682e308af3d25dad42b9f719b3e8"
+  },
+  "docs/zh-CN/micro-viz/guides/model-figure.md": {
+    "source": "packages/micro-viz/chapters/zh-CN/04-model-figure.typ",
+    "sha256": "c0dfb39e002128fbbdbdb63c253f1ea572455f24188bf6fdf9de9e9b33d45c04"
+  },
+  "docs/zh-CN/micro-viz/guides/production-costs.md": {
+    "source": "packages/micro-viz/chapters/zh-CN/05-production-costs.typ",
+    "sha256": "8a40d5eac8c643b1361d913461c6bdd568e816a64387331e495a5954e5fea636"
+  },
+  "docs/zh-CN/micro-viz/guides/competition.md": {
+    "source": "packages/micro-viz/chapters/zh-CN/06-competition.typ",
+    "sha256": "2f52bd046c943f6135e9b1ff1b3b56664a00193d122d82c7d6e91cb3e1d4324e"
+  },
+  "docs/zh-CN/micro-viz/guides/monopoly.md": {
+    "source": "packages/micro-viz/chapters/zh-CN/07-monopoly.typ",
+    "sha256": "0bde4c23e39d4453cbaea2aa3a9b876c5c2bc6c73be9c63883476ac0e1045813"
+  },
+  "docs/zh-CN/micro-viz/guides/oligopoly.md": {
+    "source": "packages/micro-viz/chapters/zh-CN/08-oligopoly.typ",
+    "sha256": "2136107e390072a864bf18f991bb8bbda75ce93f72371a2cb874692e1a92530e"
+  },
+  "docs/zh-CN/micro-viz/guides/inputs.md": {
+    "source": "packages/micro-viz/chapters/zh-CN/09-inputs.typ",
+    "sha256": "d1210211c3df68a230eaae216afb6710e1a0b7cadde2c3294e9a80e72159c45c"
+  },
+  "docs/zh-CN/micro-viz/guides/uncertainty.md": {
+    "source": "packages/micro-viz/chapters/zh-CN/10-uncertainty.typ",
+    "sha256": "a1d263dbac41bfbd5acd32b7ac00205cf7e20486c42546148933370587fe9d98"
+  },
+  "docs/zh-CN/micro-viz/guides/settings.md": {
+    "source": "packages/micro-viz/chapters/zh-CN/11-settings.typ",
+    "sha256": "d45c068ef447d242faa7301d2af792283b28841e539d64430c0a2658c3e577b9"
+  },
+  "docs/zh-CN/micro-viz/guides/labels.md": {
+    "source": "packages/micro-viz/chapters/zh-CN/12-labels.typ",
+    "sha256": "b7076adf676bdff91aedbf2f3b16c7def6ff85402271356312f7724299cac35a"
+  },
+  "docs/zh-CN/micro-viz/guides/adding-figure.md": {
+    "source": "packages/micro-viz/chapters/zh-CN/13-adding-figure.typ",
+    "sha256": "949530c1ac3ba698fac9f46dd83bb93df7a4d10e96625d8b4655a1ceeb63fe32"
+  },
+  "docs/zh-CN/micro-viz/guides/animation.md": {
+    "source": "packages/micro-viz/chapters/zh-CN/14-animation.typ",
+    "sha256": "5a9041b356b628841d138bd88547fe0eca3249305da3c95b8d05ad39a3176b87"
+  },
+  "docs/zh-CN/micro-viz/changelog.md": {
+    "source": "packages/micro-viz/chapters/zh-CN/15-changelog.typ",
+    "sha256": "6de1bcdaa13143738330f78bae7345e2ef633bc16e3ad249c163b36b995c94a4"
+  },
   "docs/mosaickit/guides/introduction.md": {
     "source": "packages/mosaickit/chapters/en/01-introduction.typ",
     "sha256": "b694df78ef4e0f04d010a536f757d172da3d3ec9093d409b25a435a7dc8eb73c"
@@ -305,7 +485,7 @@
   },
   "docs/zh-TW/mosaickit/guides/rendering.md": {
     "source": "packages/mosaickit/chapters/zh-TW/12-rendering.typ",
-    "sha256": "2e0e63767e4505c67794939548ee6b5222832e6f5cded4a23bdbc215b5494404"
+    "sha256": "7b98d04e315e11c19ad83d7caa5537e7b8bfb5c464b944abc7c67156e0eb0f94"
   },
   "docs/zh-TW/mosaickit/project/proofs.md": {
     "source": "packages/mosaickit/chapters/zh-TW/a-proofs.typ",

@@ -14,15 +14,21 @@ description: "micro-viz 用 Python 繪製教科書的個體經濟學模型：生
 `micro-viz` 負責個體經濟學的廠商端：生產、成本、市場結構、定價、要素市場、不確定性與資訊。每個模型都是有型別的物件，**不負責繪圖**；每張圖都是由模型建立的 `mosaickit` 畫布。統計資料圖與方塊加箭頭的流程圖不在範圍內。
 
 ```python
-from micro_viz import ShortRunProductionFunction, analyze_production, total_product_canvas
+from micro_viz import (
+    ShortRunProductionFunction,
+    analyze_production,
+    total_product_canvas,
+)
 
-production = ShortRunProductionFunction(linear=6, quadratic=3, cubic=-0.5)
+production = ShortRunProductionFunction(
+    linear=6, quadratic=3, cubic=-0.5
+)
 result = analyze_production(production, input_range=(0, 6))
 
 total_product_canvas(result).save("total_product.svg")
 ```
 
-![總產量](../../assets/micro-viz/zh-TW/production/total_product.svg){ .ev-figure-sm }
+![總產量](../../assets/micro-viz/agora/production/total_product.zh-TW.svg){ .ev-figure-sm }
 
 ## 模型與圖形
 
