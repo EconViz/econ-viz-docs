@@ -162,6 +162,16 @@ plugins:
               cookies:
                 analytics: Google Analytics
           nav_translations:
+            "Goods and Money": "商品與貨幣"
+            "Short-run Models": "短期模型"
+            "Growth and Labor": "成長與勞動"
+            "Keynesian goods market": "凱因斯商品市場"
+            "Money market": "貨幣市場"
+            "Aggregate supply and demand": "總合供給與需求"
+            "IS-LM": "IS-LM"
+            "Linked panels": "連動面板"
+            "Solow growth": "Solow 成長"
+            "Natural rate of unemployment": "自然失業率"
             "Introduction": "簡介"
             "Quick start": "快速開始"
             "Linear markets": "線性市場"
@@ -282,6 +292,16 @@ plugins:
               cookies:
                 analytics: Google Analytics
           nav_translations:
+            "Goods and Money": "商品与货币"
+            "Short-run Models": "短期模型"
+            "Growth and Labor": "增长与劳动"
+            "Keynesian goods market": "凯恩斯商品市场"
+            "Money market": "货币市场"
+            "Aggregate supply and demand": "总供给与需求"
+            "IS-LM": "IS-LM"
+            "Linked panels": "联动面板"
+            "Solow growth": "Solow 增长"
+            "Natural rate of unemployment": "自然失业率"
             "Introduction": "简介"
             "Quick start": "快速开始"
             "Linear markets": "线性市场"
@@ -475,6 +495,24 @@ nav:
       - Project:
           - Change history: principle-viz/changelog.md
           - References: principle-viz/project/references.md
+  - macro-viz:
+      - Overview: macro-viz/index.md
+      - Getting Started:
+          - Installation: macro-viz/installation.md
+          - Quick start: macro-viz/quickstart.md
+      - Goods and Money:
+          - Keynesian goods market: macro-viz/guides/keynesian.md
+          - Money market: macro-viz/guides/money.md
+      - Short-run Models:
+          - Aggregate supply and demand: macro-viz/guides/adas.md
+          - IS-LM: macro-viz/guides/islm.md
+          - Linked panels: macro-viz/guides/panels.md
+      - Growth and Labor:
+          - Solow growth: macro-viz/guides/growth.md
+          - Natural rate of unemployment: macro-viz/guides/labor.md
+      - Animation: macro-viz/guides/animation.md
+      - Project:
+          - Change history: macro-viz/project/changelog.md
   - mosaickit:
       - Overview: mosaickit/index.md
       - Getting Started:
