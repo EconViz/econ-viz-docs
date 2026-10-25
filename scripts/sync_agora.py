@@ -50,6 +50,16 @@ MAPPING = {
         '13-factor-markets': 'guides/factor-markets', '14-ppf': 'guides/ppf',
         '15-figures': 'guides/figures', '16-cli': 'cli', '17-changelog': 'changelog',
     },
+    'micro-viz': {
+        '01-introduction': 'guides/introduction', '02-installation': 'installation',
+        '03-quickstart': 'quickstart', '04-model-figure': 'guides/model-figure',
+        '05-production-costs': 'guides/production-costs', '06-competition': 'guides/competition',
+        '07-monopoly': 'guides/monopoly', '08-oligopoly': 'guides/oligopoly',
+        '09-inputs': 'guides/inputs', '10-uncertainty': 'guides/uncertainty',
+        '11-settings': 'guides/settings', '12-labels': 'guides/labels',
+        '13-adding-figure': 'guides/adding-figure', '14-animation': 'guides/animation',
+        '15-changelog': 'changelog',
+    },
     'mosaickit': {
         '01-introduction': 'guides/introduction', '02-installation': 'installation',
         '03-quickstart': 'quickstart', '04-canvas': 'guides/canvas',
@@ -275,7 +285,7 @@ class Converter:
             title=f'{author} ({year})'
             url=os.path.relpath('project/references.md',Path(self.destination).parent)
             return '['+title+']('+url+'#'+key+')'
-        if name in ('box','full-width'):
+        if name in ('box','block','full-width'):
             return self.convert(body)
         if name=='link':
             return f'[{self.convert(body)}]({string(split_args(args)[0])})'
@@ -510,7 +520,7 @@ def build_example_zips(agora:Path)->None:
 def build_figure_zips(agora:Path)->None:
     """One zip per other package: each figure group's script, sorted by topic, with the settings it reads."""
     import zipfile
-    for name in ('principle-viz','mosaickit','bezierkit'):
+    for name in ('principle-viz','micro-viz','mosaickit','bezierkit'):
         package=agora/'packages'/name
         files={f'config/{f.name}':f for f in sorted((package/'config').glob('*.toml'))}
         for script in sorted((package/'figures').rglob('*.py')):

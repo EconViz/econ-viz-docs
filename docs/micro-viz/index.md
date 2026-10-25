@@ -17,15 +17,21 @@ to draw; each figure is a `mosaickit` canvas built from it. Statistics-style dat
 box-and-arrow flowcharts are out of scope.
 
 ```python
-from micro_viz import ShortRunProductionFunction, analyze_production, total_product_canvas
+from micro_viz import (
+    ShortRunProductionFunction,
+    analyze_production,
+    total_product_canvas,
+)
 
-production = ShortRunProductionFunction(linear=6, quadratic=3, cubic=-0.5)
+production = ShortRunProductionFunction(
+    linear=6, quadratic=3, cubic=-0.5
+)
 result = analyze_production(production, input_range=(0, 6))
 
 total_product_canvas(result).save("total_product.svg")
 ```
 
-![Total product](../assets/micro-viz/en/production/total_product.svg){ .ev-figure-sm }
+![Total product](../assets/micro-viz/agora/production/total_product.svg){ .ev-figure-sm }
 
 ## Models and figures
 

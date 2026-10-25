@@ -1,107 +1,354 @@
 ---
-seo_title: "寡占與垂直關係"
+seo_title: "寡占与垂直关系"
 ---
 
-# 寡占與垂直關係
+# 寡占与垂直关系
 
 <span id="sec-oligopoly"></span>
 
-少數廠商，以及同一條供應鏈上不同階段的廠商。
+少数厂商，以及同一条供应链上不同阶段的厂商。
 
-每個小節是一支範例腳本和它產生的圖；腳本在儲存庫的 `examples/scripts/`，參數用 `--help` 查看。
+每一节是一支范例脚本与它画出的图。脚本随手册的压缩档提供，参数可用 `--help` 查看。
 
-## 雙占
+## 双占
 
-```bash
-uv run python examples/scripts/oligopoly.py --output-dir out
+<span id="sec-ex-oligopoly"></span>
+
+产量与价格的反应曲线给出古诺、史塔克柏格、柏川与勾结的结果。 出处：[Cournot (1838)](../project/references.md#cournot1838)、[von Stackelberg (1934)](../project/references.md#stackelberg1934)、[Bertrand (1883)](../project/references.md#bertrand1883)。
+
+<!-- api: agora.micro_viz.guides_oligopoly_1 -->
+
+`Duopoly` 有 `cournot()`、`stackelberg()`、`competitive_total()` 与 `collusive_total()`；`DifferentiatedDuopoly` 的 `bertrand()` 处理价格竞争。
+
+<!-- api: agora.micro_viz.guides_oligopoly_2 -->
+
+`(p1, p2)` 空间中向上倾斜的价格反应曲线 `R1`、`R2`、纳许价格 `N`，以及可选的勾结价格。
+
+<!-- api: agora.micro_viz.guides_oligopoly_3 -->
+
+`(Q1, Q2)` 空间中的反应曲线 `R1`、`R2` 相交于古诺点 `N`；`competitive` 与 `collusive` 另加总产量固定线。
+
+<!-- api: agora.micro_viz.guides_oligopoly_4 -->
+
+厂商 1 对各种对手产量猜测下的剩余需求 `D1(q2)` 与 `MR1(q2)`，以及它的边际成本。
+
+下面是脚本中画图的函数，与图形使用相同的代码。
+
+```python
+def oligopoly_examples(
+    output_dir: Path,
+    theme: PlotTheme,
+    *,
+    duopoly: Duopoly,
+    guesses: tuple[float, ...],
+    differentiated: DifferentiatedDuopoly,
+    title: str | None = None,
+) -> list[Path]:
+    """Write the oligopoly figures into ``output_dir`` and return their paths."""
+    output_dir.mkdir(parents=True, exist_ok=True)
+    figures = {
+        "residual_demand.svg": residual_demand_canvas(
+            duopoly, guesses, theme=theme, title=title
+        ),
+        "cournot.svg": reaction_curves_canvas(
+            duopoly, theme=theme, title=title
+        ),
+        "cournot_points.svg": reaction_curves_canvas(
+            duopoly,
+            competitive=True,
+            collusive=True,
+            theme=theme,
+            title=title,
+        ),
+        "stackelberg.svg": reaction_curves_canvas(
+            duopoly, leader=1, theme=theme, title=title
+        ),
+        "price_reaction.svg": price_reaction_canvas(
+            differentiated, theme=theme, title=title
+        ),
+    }
+    paths = []
+    for name, figure in figures.items():
+        figure.save(output_dir / name)
+        paths.append(output_dir / name)
+    return paths
 ```
 
-### Residual demand
+<span id="fig-oligopoly-residual-demand"></span>
 
-對手產量的各種猜測對應的剩餘需求與邊際收益。
+<figure class="ev-fig" markdown>
 
-![Residual demand](../../../assets/micro-viz/zh-CN/oligopoly/residual_demand.svg){ .ev-figure-sm }
+![*剩余需求。* 对手产量的各种猜测对应的剩余需求与边际收益。](../../../assets/micro-viz/agora/oligopoly/residual_demand.zh-CN.svg){ .ev-figure-sm }
 
-### Reaction curves
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/oligopoly/oligopoly.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-兩條反應曲線的交點即古諾均衡 N。
+<figcaption markdown>*剩余需求。* 对手产量的各种猜测对应的剩余需求与边际收益。</figcaption>
 
-![Reaction curves](../../../assets/micro-viz/zh-CN/oligopoly/cournot.svg){ .ev-figure-sm }
+</figure>
 
-### Competitive, Cournot and collusive
+<span id="fig-oligopoly-cournot"></span>
 
-競爭、古諾與勾結的點，以及勾結曲線。
+<figure class="ev-fig" markdown>
 
-![Competitive, Cournot and collusive](../../../assets/micro-viz/zh-CN/oligopoly/cournot_points.svg){ .ev-figure-sm }
+![*反应曲线。* 两条反应曲线的交点即古诺均衡 N。](../../../assets/micro-viz/agora/oligopoly/cournot.zh-CN.svg){ .ev-figure-sm }
 
-### Stackelberg
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/oligopoly/oligopoly.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-領導者沿追隨者的反應曲線選擇產量。
+<figcaption markdown>*反应曲线。* 两条反应曲线的交点即古诺均衡 N。</figcaption>
 
-![Stackelberg](../../../assets/micro-viz/zh-CN/oligopoly/stackelberg.svg){ .ev-figure-sm }
+</figure>
 
-### Price reaction curves
+<span id="fig-oligopoly-cournot-points"></span>
 
-差異化產品的價格反應曲線、納許價格與勾結價格。
+<figure class="ev-fig" markdown>
 
-![Price reaction curves](../../../assets/micro-viz/zh-CN/oligopoly/price_reaction.svg){ .ev-figure-sm }
+![*竞争、古诺与勾结。* 竞争、古诺与勾结的点，以及勾结曲线。](../../../assets/micro-viz/agora/oligopoly/cournot_points.zh-CN.svg){ .ev-figure-sm }
 
-## 凹折需求、主導廠商與卡特爾
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/oligopoly/oligopoly.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-```bash
-uv run python examples/scripts/dominant_firm.py --output-dir out
+<figcaption markdown>*竞争、古诺与勾结。* 竞争、古诺与勾结的点，以及勾结曲线。</figcaption>
+
+</figure>
+
+<span id="fig-oligopoly-stackelberg"></span>
+
+<figure class="ev-fig" markdown>
+
+![*史塔克柏格。* 领导者沿追随者的反应曲线选择产量。](../../../assets/micro-viz/agora/oligopoly/stackelberg.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/oligopoly/oligopoly.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>*史塔克柏格。* 领导者沿追随者的反应曲线选择产量。</figcaption>
+
+</figure>
+
+<span id="fig-oligopoly-price-reaction"></span>
+
+<figure class="ev-fig" markdown>
+
+![*价格反应曲线。* 差异化产品的价格反应曲线、纳许价格与勾结价格。](../../../assets/micro-viz/agora/oligopoly/price_reaction.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/oligopoly/oligopoly.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>*价格反应曲线。* 差异化产品的价格反应曲线、纳许价格与勾结价格。</figcaption>
+
+</figure>
+
+## 拗折需求、支配厂商与卡特尔
+
+<span id="sec-ex-dominant-firm"></span>
+
+对手跟进降价但不跟进涨价，需求出现拗折；有边缘厂商的厂商面对剩余需求。 出处：[Sweezy (1939)](../project/references.md#sweezy1939)。
+
+<!-- api: agora.micro_viz.guides_oligopoly_5 -->
+
+`KinkedDemand` 给出拗折点与边际收益的缺口；`DominantFirm` 对边缘厂商求解剩余需求。
+
+<!-- api: agora.micro_viz.guides_oligopoly_6 -->
+
+卡特尔与边缘厂商：缺乏弹性的需求与有弹性的需求（市场力量小）并列。
+
+<!-- api: agora.micro_viz.guides_oligopoly_7 -->
+
+市场需求 `D`、边缘厂商供给 `S_F`，以及剩余需求 `D_D = D - S_F`、其边际收益与厂商的边际成本。
+
+<!-- api: agora.micro_viz.guides_oligopoly_8 -->
+
+拗折需求与其边际收益在拗折点的垂直缺口；`marginal_costs` 中每条 MC 画成水平线。
+
+下面是脚本中画图的函数，与图形使用相同的代码。
+
+```python
+def dominant_examples(
+    output_dir: Path,
+    theme: PlotTheme,
+    *,
+    kinked: KinkedDemand,
+    costs: tuple[float, ...],
+    firm: DominantFirm,
+    inelastic: DominantFirm,
+    elastic: DominantFirm,
+    title: str | None = None,
+) -> list[Path]:
+    """Write the dominant-firm figures into ``output_dir`` and return their paths."""
+    output_dir.mkdir(parents=True, exist_ok=True)
+    figures = {
+        "kinked_demand.svg": kinked_demand_canvas(
+            kinked, costs, theme=theme, title=title
+        ),
+        "dominant_firm.svg": dominant_firm_canvas(
+            firm, theme=theme, title=title
+        ),
+        "cartel_fringe.svg": dominant_firm_canvas(
+            firm,
+            cartel=True,
+            theme=theme,
+            title=title,
+            prefix="oligopoly.cartel",
+        ),
+        "cartel_elasticity.svg": cartel_elasticity_canvas(
+            inelastic, elastic, theme=theme
+        ),
+    }
+    paths = []
+    for name, figure in figures.items():
+        figure.save(output_dir / name)
+        paths.append(output_dir / name)
+    return paths
 ```
 
-### Kinked demand
+<span id="fig-dominant-firm-kinked-demand"></span>
 
-拗折需求與 MR 的缺口，缺口內的 MC 變動不影響價格。
+<figure class="ev-fig" markdown>
 
-![Kinked demand](../../../assets/micro-viz/zh-CN/dominant_firm/kinked_demand.svg){ .ev-figure-sm }
+![*拗折需求。* 拗折需求与 MR 的缺口，缺口内的 MC 变动不影响价格。](../../../assets/micro-viz/agora/dominant_firm/kinked_demand.zh-CN.svg){ .ev-figure-sm }
 
-### Dominant firm
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/dominant_firm/dominant_firm.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-市場需求減去邊緣廠商供給即支配廠商的剩餘需求。
+<figcaption markdown>*拗折需求。* 拗折需求与 MR 的缺口，缺口内的 MC 变动不影响价格。</figcaption>
 
-![Dominant firm](../../../assets/micro-viz/zh-CN/dominant_firm/dominant_firm.svg){ .ev-figure-sm }
+</figure>
 
-### Cartel with a competitive fringe
+<span id="fig-dominant-firm-dominant-firm"></span>
 
-卡特爾面對總需求減去邊緣廠商供給後的需求。
+<figure class="ev-fig" markdown>
 
-![Cartel with a competitive fringe](../../../assets/micro-viz/zh-CN/dominant_firm/cartel_fringe.svg){ .ev-figure-sm }
+![*支配厂商。* 市场需求减去边缘厂商供给即支配厂商的剩余需求。](../../../assets/micro-viz/agora/dominant_firm/dominant_firm.zh-CN.svg){ .ev-figure-sm }
 
-### Cartel, inelastic and elastic demand
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/dominant_firm/dominant_firm.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-需求愈有彈性，卡特爾的市場力量愈小。
+<figcaption markdown>*支配厂商。* 市场需求减去边缘厂商供给即支配厂商的剩余需求。</figcaption>
 
-![Cartel, inelastic and elastic demand](../../../assets/micro-viz/zh-CN/dominant_firm/cartel_elasticity.svg){ .ev-figure-lg }
+</figure>
 
-## 垂直關係
+<span id="fig-dominant-firm-cartel-fringe"></span>
 
-```bash
-uv run python examples/scripts/vertical.py --output-dir out
+<figure class="ev-fig" markdown>
+
+![*卡特尔与边缘厂商。* 卡特尔面对总需求减去边缘厂商供给后的需求。](../../../assets/micro-viz/agora/dominant_firm/cartel_fringe.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/dominant_firm/dominant_firm.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>*卡特尔与边缘厂商。* 卡特尔面对总需求减去边缘厂商供给后的需求。</figcaption>
+
+</figure>
+
+<span id="fig-dominant-firm-cartel-elasticity"></span>
+
+<figure class="ev-fig" markdown>
+
+![*卡特尔与需求弹性。* 需求愈有弹性，卡特尔的市场力量愈小。](../../../assets/micro-viz/agora/dominant_firm/cartel_elasticity.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/dominant_firm/dominant_firm.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>*卡特尔与需求弹性。* 需求愈有弹性，卡特尔的市场力量愈小。</figcaption>
+
+</figure>
+
+## 垂直关系
+
+<span id="sec-ex-vertical"></span>
+
+两个上下游的独占者各加成一次。集成厂商只有一次加成；外部市场决定移转价格。 出处：[Spengler (1950)](../project/references.md#spengler1950)。
+
+<!-- api: agora.micro_viz.guides_oligopoly_9 -->
+
+`VerticalChain` 求解分开与集成的结果；`transfer_pricing()` 在有外部市场时给出最适移转价格。
+
+<!-- api: agora.micro_viz.guides_oligopoly_10 -->
+
+两个叠起来的独占：最终需求 `D`、`NMR`（上游面对的需求）、上游边际收益 `MR_u` 与 `MC_u`。
+
+<!-- api: agora.micro_viz.guides_oligopoly_11 -->
+
+集成厂商令 `NMR = MC_u`：产量 `Q_i` 高于分开时的 `Q_s`，最终价格 `p_i` 较低。
+
+<!-- api: agora.micro_viz.guides_oligopoly_12 -->
+
+有外部市场价格 `P_m` 时，有效边际成本在 `Q_u` 以下为 `MC_u`，之后为水平的 `P_m`。
+
+下面是脚本中画图的函数，与图形使用相同的代码。
+
+```python
+def vertical_examples(
+    output_dir: Path,
+    theme: PlotTheme,
+    *,
+    chain: VerticalChain,
+    market_price: float,
+    title: str | None = None,
+) -> list[Path]:
+    """Write the vertical-chain figures into ``output_dir`` and return their paths."""
+    output_dir.mkdir(parents=True, exist_ok=True)
+    figures = {
+        "double_marginalization.svg": double_marginalization_canvas(
+            chain, theme=theme, title=title
+        ),
+        "integrated_firm.svg": integrated_firm_canvas(
+            chain, theme=theme, title=title
+        ),
+        "transfer_kinked.svg": transfer_price_outside_market_canvas(
+            chain, market_price, theme=theme, title=title
+        ),
+        "transfer_price.svg": transfer_price_outside_market_canvas(
+            chain,
+            market_price,
+            kinked=False,
+            theme=theme,
+            title=title,
+        ),
+    }
+    paths = []
+    for name, figure in figures.items():
+        figure.save(output_dir / name)
+        paths.append(output_dir / name)
+    return paths
 ```
 
-### Double marginalization
+<span id="fig-vertical-double-marginalization"></span>
 
-下游 NMR 即上游需求，兩次加成使產量更低。
+<figure class="ev-fig" markdown>
 
-![Double marginalization](../../../assets/micro-viz/zh-CN/vertical/double_marginalization.svg){ .ev-figure-sm }
+![*双重加成。* 下游 NMR 即上游需求，两次加成使产量更低。](../../../assets/micro-viz/agora/vertical/double_marginalization.zh-CN.svg){ .ev-figure-sm }
 
-### Integrated firm
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/vertical/vertical.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-整合廠商令 NMR 等於上游 MC，產量較高、價格較低。
+<figcaption markdown>*双重加成。* 下游 NMR 即上游需求，两次加成使产量更低。</figcaption>
 
-![Integrated firm](../../../assets/micro-viz/zh-CN/vertical/integrated_firm.svg){ .ev-figure-sm }
+</figure>
 
-### Transfer price, kinked MC
+<span id="fig-vertical-integrated-firm"></span>
 
-有外部市場時，MC 在市場價格處拗折。
+<figure class="ev-fig" markdown>
 
-![Transfer price, kinked MC](../../../assets/micro-viz/zh-CN/vertical/transfer_kinked.svg){ .ev-figure-sm }
+![*集成厂商。* 集成厂商令 NMR 等于上游 MC，产量较高、价格较低。](../../../assets/micro-viz/agora/vertical/integrated_firm.zh-CN.svg){ .ev-figure-sm }
 
-### Optimal transfer price
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/vertical/vertical.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-最適內部移轉價格等於市場價格，餘量在外部出售。
+<figcaption markdown>*集成厂商。* 集成厂商令 NMR 等于上游 MC，产量较高、价格较低。</figcaption>
 
-![Optimal transfer price](../../../assets/micro-viz/zh-CN/vertical/transfer_price.svg){ .ev-figure-sm }
+</figure>
+
+<span id="fig-vertical-transfer-kinked"></span>
+
+<figure class="ev-fig" markdown>
+
+![*折线移转价格。* 有外部市场时，MC 在市场价格处拗折。](../../../assets/micro-viz/agora/vertical/transfer_kinked.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/vertical/vertical.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>*折线移转价格。* 有外部市场时，MC 在市场价格处拗折。</figcaption>
+
+</figure>
+
+<span id="fig-vertical-transfer-price"></span>
+
+<figure class="ev-fig" markdown>
+
+![*最适移转价格。* 最适内部移转价格等于市场价格，余量在外部出售。](../../../assets/micro-viz/agora/vertical/transfer_price.zh-CN.svg){ .ev-figure-sm }
+
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/agora/vertical/vertical.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
+
+<figcaption markdown>*最适移转价格。* 最适内部移转价格等于市场价格，余量在外部出售。</figcaption>
+
+</figure>

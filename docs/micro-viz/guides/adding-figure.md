@@ -6,26 +6,25 @@ seo_title: "Adding a figure"
 
 <span id="sec-adding"></span>
 
-Which figures exist is decided by the issues and milestones of the repository. Statistics charts
-and box-and-arrow flowcharts are not drawn. A new figure follows five steps.
+Which figures exist is decided by the issues and milestones of the repository. Statistics charts and box-and-arrow flowcharts are not drawn. A new figure follows five steps.
 
-1. **Model.** Put the equations in a frozen dataclass in `micro_viz/<topic>.py`. Check the inputs
-   and raise a subclass of the package's errors. No renderer is imported.
-2. **Builder.** Write `micro_viz/visuals/<topic>.py`. `Plane` collects curves, guides, points,
-   marks, regions and arrows with stable layer ids (`micro.<prefix>.<kind>.<n>`).
-3. **Text.** Add the words to `locale/labels.json` in all three languages. Never write display
-   text in the builder.
-4. **Export and example.** Add the names to `micro_viz/__init__.py`, `visuals/__init__.py` and
-   `tests/test_package.py`; write `examples/scripts/<topic>.py` with the shared `parser` and
-   `Session` from `common.py`, so ranges and options are arguments.
-5. **Tests and changelog.** Test the model, that a changed parameter changes the figure, that
-   `title=None` draws no title, that labels find free places, and that the example runs.
++ *Model.* Put the equations in a frozen dataclass in `micro_viz/<topic>.py`. Check the inputs and raise a subclass of the package's errors. No renderer is imported.
++ *Builder.* Write `micro_viz/visuals/<topic>.py`. `Plane` collects curves, guides, points, marks, regions and arrows with stable layer ids (`micro.<prefix>.<kind>.<n>`).
++ *Text.* Add the words to `locale/labels.json` in all three languages. Never write display text in the builder.
++ *Export and example.* Add the names to `micro_viz/__init__.py`, `visuals/__init__.py` and `tests/test_package.py`; write `examples/scripts/<topic>.py` with the shared `parser` and `Session` from `common.py`, so ranges and options are arguments.
++ *Tests and changelog.* Test the model, that a changed parameter changes the figure, that `title=None` draws no title, that labels find free places, and that the example runs.
 
 ```python
-from micro_viz.visuals.plane import Plane, linear, sample
+from micro_viz.visuals.plane import Plane, linear
 
 
-def demand_canvas(intercept: float, slope: float, x_max: float, *, title: str | None = None):
+def demand_canvas(
+    intercept: float,
+    slope: float,
+    x_max: float,
+    *,
+    title: str | None = None,
+):
     plane = Plane(
         prefix="demo",
         x_label="Q",
@@ -34,17 +33,31 @@ def demand_canvas(intercept: float, slope: float, x_max: float, *, title: str | 
         y_max=intercept,
         title=title,
     )
-    plane.line(linear(intercept, -slope, x_max), plane.t("monopoly.demand"))
+    plane.line(
+        linear(intercept, -slope, x_max),
+        plane.t("monopoly.demand"),
+    )
     return plane.finish()
 ```
 
+## The plane kit
+
+<span id="sec-plane"></span>
+
+<!-- api: agora.micro_viz.guides_adding_figure_1 -->
+
+One plane diagram in `micro_viz.visuals.plane`. Its methods add layers with stable ids built from `prefix`; `finish()` returns the `Canvas`.
+
+<!-- api: agora.micro_viz.guides_adding_figure_2 -->
+
+The segment $y = \text{intercept} + \text{slope} \cdot x$ from `x_min` to `x_max`, as two points.
+
 ## Conventions
 
-- A changed curve is a thin solid line, never dashed. A parallel shift is a straight arrow from
-  the old point onto the new curve; a curved arrow means rotation.
+- A changed curve is a thin solid line, never dashed. A parallel shift is a straight arrow from the old point onto the new curve; a curved arrow means rotation.
 - Curve names sit at the line end, point labels beside the point, and nothing overlaps.
 - Direction logic of shifts stays in `visuals/movement.py`.
-- The theme is always on white. Bundled examples use `manual`.
+- The theme is always on white. The examples use `manual`.
 
 ## Checks
 
