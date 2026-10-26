@@ -23,17 +23,23 @@ description: "開源 Python 套件，繪製教科書的廠商與市場圖形：�
 
 ```python
 from micro_viz import (
-    ShortRunProductionFunction,
-    analyze_production,
-    total_product_canvas,
+    Config,
+    CubicCost,
+    LinearDemand,
+    Monopolist,
+    analyze_costs,
+    monopoly_canvas,
 )
 
-production = ShortRunProductionFunction(
-    linear=6, quadratic=3, cubic=-0.5
-)
-result = analyze_production(production, input_range=(0, 6))
+Config.load("econ-viz.toml").use()
 
-total_product_canvas(result).save("total_product.png")
+demand = LinearDemand(intercept=30, slope=2)
+cost = CubicCost(fixed_cost=20, linear=6, quadratic=-1.5, cubic=0.15)
+outcome = Monopolist(demand, cost).solve()
+analysis = analyze_costs(cost, output_range=(2, 10))
+
+canvas = monopoly_canvas(outcome, analysis, profit=True)
+canvas.save("monopoly.png")
 ```
 
 ## 功能
