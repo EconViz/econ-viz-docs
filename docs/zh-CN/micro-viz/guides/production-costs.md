@@ -250,11 +250,11 @@ def cost_examples(
 
 <figure class="ev-fig" markdown>
 
-![*成本曲在线下对照。* 总成本与单位成本的两栏对照图。](../../../assets/micro-viz/costs/cost_curves.zh-CN.svg){ .ev-figure-sm }
+![*成本曲线上下对照。* 总成本与单位成本的两栏对照图。](../../../assets/micro-viz/costs/cost_curves.zh-CN.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/costs/costs.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-<figcaption markdown>*成本曲在线下对照。* 总成本与单位成本的两栏对照图。</figcaption>
+<figcaption markdown>*成本曲线上下对照。* 总成本与单位成本的两栏对照图。</figcaption>
 
 </figure>
 

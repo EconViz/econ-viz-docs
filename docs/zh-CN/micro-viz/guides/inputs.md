@@ -26,7 +26,7 @@ seo_title: "投入与技术"
 
 <!-- api: micro_viz.guides_inputs_3 -->
 
-一条等产量在线在 `labors` 处的点，相邻两点间画弦与 `ΔK`、`ΔL` 的直角三角形，其比值是（平均）MRTS。
+一条等产量线上在 `labors` 处的点，相邻两点间画弦与 `ΔK`、`ΔL` 的直角三角形，其比值是（平均）MRTS。
 
 <!-- api: micro_viz.guides_inputs_4 -->
 
@@ -159,11 +159,11 @@ def isoquant_examples(
 
 <figure class="ev-fig" markdown>
 
-![*固定比例。* 固定比例的等产量线呈 L 形，转折点在同一条射在线。](../../../assets/micro-viz/isoquants/fixed_proportions.zh-CN.svg){ .ev-figure-sm }
+![*固定比例。* 固定比例的等产量线呈 L 形，转折点在同一条射线上。](../../../assets/micro-viz/isoquants/fixed_proportions.zh-CN.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/isoquants/isoquants.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-<figcaption markdown>*固定比例。* 固定比例的等产量线呈 L 形，转折点在同一条射在线。</figcaption>
+<figcaption markdown>*固定比例。* 固定比例的等产量线呈 L 形，转折点在同一条射线上。</figcaption>
 
 </figure>
 
@@ -207,7 +207,7 @@ def isoquant_examples(
 
 <!-- api: micro_viz.guides_inputs_10 -->
 
-技术进步：同一 `output` 的等产量线内移（细线 `Q'`），最低成本组合落在较低的等成本在线。
+技术进步：同一 `output` 的等产量线内移（细线 `Q'`），最低成本组合落在较低的等成本线上。
 
 ```python
 def cost_examples(
@@ -367,7 +367,7 @@ def cost_examples(
 
 <!-- api: micro_viz.guides_inputs_16 -->
 
-技术进步使总产量曲在线移；基准曲线为粗线，其余为细实线；`arrow_input` 画垂直箭头。
+技术进步使总产量曲线上移；基准曲线为粗线，其余为细实线；`arrow_input` 画垂直箭头。
 
 ```python
 def extension_examples(
@@ -498,7 +498,7 @@ def extension_examples(
 
 <!-- api: micro_viz.guides_inputs_18 -->
 
-资本增加时的 MRP 曲线，每条曲在线一个雇用点，对应 `wages` 中的工资（工资下降使厂商增加资本）。
+资本增加时的 MRP 曲线，每条曲线上一个雇用点，对应 `wages` 中的工资（工资下降使厂商增加资本）。
 
 <!-- api: micro_viz.guides_inputs_19 -->
 
@@ -763,7 +763,7 @@ def factor_examples(
 
 <!-- api: micro_viz.guides_inputs_32 -->
 
-每条供给曲线一栏，共用座标轴：供给愈平坦（愈有弹性），`ME` 愈接近 `AE`。
+每条供给曲线一栏，共用坐标轴：供给愈平坦（愈有弹性），`ME` 愈接近 `AE`。
 
 <!-- api: micro_viz.guides_inputs_33 -->
 

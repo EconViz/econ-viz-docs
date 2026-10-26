@@ -761,7 +761,7 @@ def tariff_examples(
 
 <!-- api: micro_viz.guides_monopoly_27 -->
 
-保留价格空间被对角线 `r1 + r2 = P_B` 切开，在线方的消费者购买。
+保留价格空间被对角线 `r1 + r2 = P_B` 切开，线上方的消费者购买。
 
 <!-- api: micro_viz.guides_monopoly_28 -->
 
