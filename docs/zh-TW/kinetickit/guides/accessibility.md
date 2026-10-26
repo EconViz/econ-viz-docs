@@ -40,7 +40,7 @@ SVG 與 HTML 會保留標題、說明、穩定的物件編號與各節點的語�
 
 <span id="sec-interaction"></span>
 
-互動是資料。它指定某個節點上的事件，並指定要執行的動作。KineticKit 在寫出任何檔案之前，會拿場景的節點編號與標記逐一驗證每個綁定。
+互動是資料，指定某個節點上的事件和要執行的動作。KineticKit 在寫出任何檔案之前，會拿場景的節點編號與標記逐一驗證每個綁定。
 
 <!-- api: kinetickit.guides_accessibility_4 -->
 

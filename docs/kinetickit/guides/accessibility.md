@@ -40,7 +40,7 @@ SVG and HTML keep titles, descriptions, stable object ids and per-node semantics
 
 <span id="sec-interaction"></span>
 
-An interaction is data. It names an event on a node, and it names actions to run. KineticKit validates every binding against the node ids and the markers of the scene before it writes anything.
+An interaction is data: it names an event on a node and the actions to run. KineticKit validates every binding against the node ids and the markers of the scene before it writes anything.
 
 <!-- api: kinetickit.guides_accessibility_4 -->
 

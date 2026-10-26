@@ -12,7 +12,7 @@ seo_title: "示例"
 
 <span id="sec-example-chart"></span>
 
-长条是 `Shape2D` 矩形，用 `morph_to` 长高；趋势线用 `draw_progress` 自己画出来。`kinetickit.guides` 的 `Axis2D` 与 `Grid2D` 会依解析后的版面编译成一般节点，所以它们和其他东西一样，都是场景内容。
+长条是 `Shape2D` 矩形，用 `morph_to` 长高；趋势线用 `draw_progress` 自己画出来。`kinetickit.guides` 的 `Axis2D` 与 `Grid2D` 会依解析后的版面编译成一般节点。
 
 ```python
 from kinetickit import ease
