@@ -188,11 +188,11 @@ islm_expectations_canvas(inflation).save(
 
 <figure class="ev-fig" markdown>
 
-![座标轴为名目利率，实质利率是其下方的差距](../../../assets/macro-viz/islm/islm_expected_inflation.zh-CN.svg){ .ev-figure-sm }
+![坐标轴为名目利率，实质利率是其下方的差距](../../../assets/macro-viz/islm/islm_expected_inflation.zh-CN.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/islm/islm_expectations.py" download aria-label="下载生图原始档"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图原始档</span></a></div>
 
-<figcaption markdown>座标轴为名目利率，实质利率是其下方的差距</figcaption>
+<figcaption markdown>坐标轴为名目利率，实质利率是其下方的差距</figcaption>
 
 </figure>
 

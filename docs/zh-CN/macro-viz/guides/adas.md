@@ -233,7 +233,7 @@ adas_adjustment_canvas(path).save("adjustment_money.svg")
 </figure>
 
 
-均衡 A、A'、A''、……以直线实线箭头相连，沿着总合需求滑动，最后停在自然产出垂直在线的中期均衡。
+均衡 A、A'、A''、……以直线实线箭头相连，沿着总合需求滑动，最后停在自然产出垂直线上的中期均衡。
 
 ## 动画
 
