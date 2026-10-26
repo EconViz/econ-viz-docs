@@ -6,7 +6,7 @@ seo_title: "Keynesian goods market"
 
 <span id="sec-keynesian"></span>
 
-The goods market of a closed economy with a fixed price level: demand $Z = C + I + G$ and the multiplier. Each section is one part of `examples/scripts/keynesian.py`.
+The goods market of a closed economy with a fixed price level: demand $Z = C + I + G$ and the multiplier. Each section is one part of `examples/scripts/keynesian/keynesian.py`.
 
 ## Models
 
@@ -137,15 +137,15 @@ A curved demand draws no brace for autonomous spending; `show_autonomous=True` f
 
 
 
-`examples/scripts/keynesian_animation.py` animates the multiplier as the autonomous change grows ([Animation](animation.md#sec-animation)).
+`examples/scripts/animation/keynesian_animation.py` animates the multiplier as the autonomous change grows ([Animation](animation.md#sec-animation)).
 
 <span id="fig-multiplier-animation"></span>
 
 <figure class="ev-fig" markdown>
 
-![The demand line climbs toward its new position](../../assets/macro-viz/keynesian/multiplier_animation.svg){ .ev-figure-sm }
+![The demand line climbs toward its new position](../../assets/macro-viz/animation/multiplier_animation.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/macro-viz/keynesian/keynesian_animation.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../assets/macro-viz/animation/keynesian_animation.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
 <figcaption markdown>The demand line climbs toward its new position</figcaption>
 

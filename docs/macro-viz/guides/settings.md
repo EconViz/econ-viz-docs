@@ -85,10 +85,10 @@ MANUAL_THEME.resolve("macro.movement", fallback_category="path").stroke
 
 ## The examples
 
-The examples archive holds `examples/scripts/*.py`, the sample numbers `examples.toml` and the three settings files. Every script takes `--output`, `--config`, `--data` and `--suffix`; `--help` lists them. Nothing is written into the scripts: the numbers come from `examples.toml`.
+The examples archive holds `examples/scripts/<topic>/*.py`, the sample numbers `examples.toml` and the three settings files. Every script takes `--output`, `--config`, `--data` and `--suffix`; `--help` lists them. Nothing is written into the scripts: the numbers come from `examples.toml`.
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/macro-viz/macro-viz-examples.zip" download aria-label="Download the examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the examples</span></a></div>
 
 ```bash
-uv run python examples/scripts/islm.py --output out --config examples/econ-viz.toml
+uv run python examples/scripts/islm/islm.py --output out --config examples/econ-viz.toml
 ```

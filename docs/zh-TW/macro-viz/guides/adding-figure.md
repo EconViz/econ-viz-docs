@@ -12,7 +12,7 @@ seo_title: "新增圖形"
 + *比較。*在 `analysis.py` 加一個 `analyze_*` 函式，回傳兩個模型與各項變動的方向。
 + *繪圖函式。*用 `_theory.py` 的工具寫 `macro_viz/visuals/<topic>.py`。裡面不寫任何顯示文字。
 + *文字。*把每個詞以穩定的編號（`islm.curve.is`）加入 `locale/labels.json` 的三種語言。
-+ *匯出、範例與測試。*把名稱加進 `visuals/__init__.py`，寫一個從 `examples/examples.toml` 讀數字的 `examples/scripts/<topic>.py`，並測試模型、參數改變會讓圖形改變、`title=None` 不畫標題，以及沒有標籤蓋到線。
++ *匯出、範例與測試。*把名稱加進 `visuals/__init__.py`，寫一個從 `examples/examples.toml` 讀數字的 `examples/scripts/<topic>/<script>.py`，並測試模型、參數改變會讓圖形改變、`title=None` 不畫標題，以及沒有標籤蓋到線。
 
 ```python
 from macro_viz.i18n import Labels

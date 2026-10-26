@@ -12,7 +12,7 @@ seo_title: "添加图形"
 + *比较。*在 `analysis.py` 加一个 `analyze_*` 函数，返回两个模型与各项变动的方向。
 + *绘图函数。*用 `_theory.py` 的工具写 `macro_viz/visuals/<topic>.py`。里面不写任何显示文本。
 + *文本。*把每个词以稳定的编号（`islm.curve.is`）加入 `locale/labels.json` 的三种语言。
-+ *导出、示例与测试。*把名称加进 `visuals/__init__.py`，写一个从 `examples/examples.toml` 读数字的 `examples/scripts/<topic>.py`，并测试模型、参数改变会让图形改变、`title=None` 不画标题，以及没有标签盖到线。
++ *导出、示例与测试。*把名称加进 `visuals/__init__.py`，写一个从 `examples/examples.toml` 读数字的 `examples/scripts/<topic>/<script>.py`，并测试模型、参数改变会让图形改变、`title=None` 不画标题，以及没有标签盖到线。
 
 ```python
 from macro_viz.i18n import Labels

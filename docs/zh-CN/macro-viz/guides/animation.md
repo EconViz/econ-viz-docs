@@ -54,9 +54,9 @@ save_svg(
 
 <figure class="ev-fig" markdown>
 
-![需求线向新位置爬升](../../../assets/macro-viz/keynesian/multiplier_animation.zh-CN.svg){ .ev-figure-sm }
+![需求线向新位置爬升](../../../assets/macro-viz/animation/multiplier_animation.zh-CN.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/keynesian/keynesian_animation.py" download aria-label="下载生图原始档"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图原始档</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/animation/keynesian_animation.py" download aria-label="下载生图原始档"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图原始档</span></a></div>
 
 <figcaption markdown>需求线向新位置爬升</figcaption>
 
@@ -66,9 +66,9 @@ save_svg(
 
 <figure class="ev-fig" markdown>
 
-![货币供给增加、利率下降](../../../assets/macro-viz/money/money_supply_animation.zh-CN.svg){ .ev-figure-sm }
+![货币供给增加、利率下降](../../../assets/macro-viz/animation/money_supply_animation.zh-CN.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/money/money_animation.py" download aria-label="下载生图原始档"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图原始档</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/animation/money_animation.py" download aria-label="下载生图原始档"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图原始档</span></a></div>
 
 <figcaption markdown>货币供给增加、利率下降</figcaption>
 
@@ -78,9 +78,9 @@ save_svg(
 
 <figure class="ev-fig" markdown>
 
-![AD 沿 AS 移动](../../../assets/macro-viz/adas/adas_animation.zh-CN.svg){ .ev-figure-sm }
+![AD 沿 AS 移动](../../../assets/macro-viz/animation/adas_animation.zh-CN.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/adas/adas_animation.py" download aria-label="下载生图原始档"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图原始档</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/animation/adas_animation.py" download aria-label="下载生图原始档"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图原始档</span></a></div>
 
 <figcaption markdown>AD 沿 AS 移动</figcaption>
 
@@ -90,9 +90,9 @@ save_svg(
 
 <figure class="ev-fig" markdown>
 
-![实质货币增加使 LM 移动](../../../assets/macro-viz/islm/islm_animation.zh-CN.svg){ .ev-figure-sm }
+![实质货币增加使 LM 移动](../../../assets/macro-viz/animation/islm_animation.zh-CN.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/islm/islm_animation.py" download aria-label="下载生图原始档"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图原始档</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/animation/islm_animation.py" download aria-label="下载生图原始档"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图原始档</span></a></div>
 
 <figcaption markdown>实质货币增加使 LM 移动</figcaption>
 
@@ -102,9 +102,9 @@ save_svg(
 
 <figure class="ev-fig" markdown>
 
-![储蓄率上升](../../../assets/macro-viz/growth/solow_animation.zh-CN.svg){ .ev-figure-sm }
+![储蓄率上升](../../../assets/macro-viz/animation/solow_animation.zh-CN.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/growth/growth_animation.py" download aria-label="下载生图原始档"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图原始档</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/animation/growth_animation.py" download aria-label="下载生图原始档"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图原始档</span></a></div>
 
 <figcaption markdown>储蓄率上升</figcaption>
 

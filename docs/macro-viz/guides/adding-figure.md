@@ -12,7 +12,7 @@ Which figures exist is decided by the issues and milestones of the repository. S
 + *Comparison.* Add an `analyze_*` function in `analysis.py` that returns both models and the direction of each change.
 + *Builder.* Write `macro_viz/visuals/<topic>.py` with the helpers of `_theory.py`. Never write display text in it.
 + *Text.* Add every word to `locale/labels.json` in all three languages under a stable id (`islm.curve.is`).
-+ *Export, example and tests.* Add the names to `visuals/__init__.py`, write `examples/scripts/<topic>.py` that reads its numbers from `examples/examples.toml`, test the model, that a changed parameter changes the figure, that `title=None` draws no title, and that no label overlaps a line.
++ *Export, example and tests.* Add the names to `visuals/__init__.py`, write `examples/scripts/<topic>/<script>.py` that reads its numbers from `examples/examples.toml`, test the model, that a changed parameter changes the figure, that `title=None` draws no title, and that no label overlaps a line.
 
 ```python
 from macro_viz.i18n import Labels

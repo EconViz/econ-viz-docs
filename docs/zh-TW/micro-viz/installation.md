@@ -61,11 +61,11 @@ uv run pytest
 
 <span id="sec-run-examples"></span>
 
-`examples/scripts/` 中的腳本把 SVG 檔寫入 `examples/output/`。它們使用黑白的 `manual` 外觀，需要 TeX Gyre Pagella 字型；找不到時，以 `--fonts-dir` 指定字型檔所在的目錄。
+`examples/scripts/<topic>/` 中的腳本把 SVG 檔寫入 `examples/output/<topic>/`。它們使用黑白的 `manual` 外觀，需要 TeX Gyre Pagella 字型；找不到時，以 `--fonts-dir` 指定字型檔所在的目錄。
 
 ```bash
-uv run python examples/scripts/production.py
-uv run python examples/scripts/production.py \
+uv run python examples/scripts/production/production.py
+uv run python examples/scripts/production/production.py \
     --config examples/econ-viz.zh-TW.toml \
     --fonts-dir path/to/NotoSerifTC
 ```

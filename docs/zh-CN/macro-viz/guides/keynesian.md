@@ -6,7 +6,7 @@ seo_title: "凯因斯商品市场"
 
 <span id="sec-keynesian"></span>
 
-固定物价水准下的封闭经济商品市场：需求 $Z = C + I + G$ 与乘数。每一节是 `examples/scripts/keynesian.py` 的一部分。
+固定物价水准下的封闭经济商品市场：需求 $Z = C + I + G$ 与乘数。每一节是 `examples/scripts/keynesian/keynesian.py` 的一部分。
 
 ## 模型
 
@@ -137,15 +137,15 @@ keynesian_cross_canvas(curved).save("keynesian_cross_curved.svg")
 
 
 
-`examples/scripts/keynesian_animation.py` 让乘数图随自发性变动增大而动起来（参见 [动画](animation.md#sec-animation)）。
+`examples/scripts/animation/keynesian_animation.py` 让乘数图随自发性变动增大而动起来（参见 [动画](animation.md#sec-animation)）。
 
 <span id="fig-multiplier-animation"></span>
 
 <figure class="ev-fig" markdown>
 
-![需求线向新位置爬升](../../../assets/macro-viz/keynesian/multiplier_animation.zh-CN.svg){ .ev-figure-sm }
+![需求线向新位置爬升](../../../assets/macro-viz/animation/multiplier_animation.zh-CN.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/keynesian/keynesian_animation.py" download aria-label="下载生图原始档"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图原始档</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/animation/keynesian_animation.py" download aria-label="下载生图原始档"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图原始档</span></a></div>
 
 <figcaption markdown>需求线向新位置爬升</figcaption>
 
