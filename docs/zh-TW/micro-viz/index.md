@@ -33,10 +33,8 @@ production = ShortRunProductionFunction(
 )
 result = analyze_production(production, input_range=(0, 6))
 
-total_product_canvas(result).save("total_product.svg")
+total_product_canvas(result).save("total_product.png")
 ```
-
-![總產量](../../assets/micro-viz/production/total_product.zh-TW.svg){ .ev-figure-sm }
 
 ## 功能
 
