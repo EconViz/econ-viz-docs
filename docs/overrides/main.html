@@ -33,6 +33,10 @@
       {
         "label": {"en": "Foundation packages", "zh-TW": "底層套件", "zh-CN": "底层包"}[locale] | default("Foundation packages"),
         "members": ["mosaickit", "bezierkit"]
+      },
+      {
+        "label": {"en": "Animation and fonts", "zh-TW": "動畫與字型", "zh-CN": "动画与字体"}[locale] | default("Animation and fonts"),
+        "members": ["kinetickit", "glyphkit"]
       }
     ] %}
     <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
@@ -85,7 +89,7 @@
 {% block htmltitle %}
   {% set locale = i18n_page_locale | default("en") %}
   {# the package section the page belongs to; its name replaces the site name in the tab title #}
-  {% set packages = ["utility-viz", "principle-viz", "macro-viz", "micro-viz", "mosaickit", "bezierkit"] %}
+  {% set packages = ["utility-viz", "principle-viz", "macro-viz", "micro-viz", "mosaickit", "bezierkit", "kinetickit", "glyphkit"] %}
   {% set parts = page.url.split("/") if page else [] %}
   {% set first = parts[1] if parts and parts[0] in ["zh-TW", "zh-CN"] and parts | length > 1 else (parts[0] if parts else "") %}
   {% set package = first if first in packages else "" %}

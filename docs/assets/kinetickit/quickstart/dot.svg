@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" role="img">
+  <g id="world" transform="matrix(30 0 0 -30 0 300)">
+    <g id="dot" data-kk-id="dot" data-kk-kind="point" transform="translate(1 1)">
+      <path d="M1 0A1 1 0 1 0-1 0A1 1 0 1 0 1 0Z" fill="#e4572e" stroke="none" transform="scale(0.2667 0.2667)"/>
+      <animateTransform attributeName="transform" type="translate" begin="0s" dur="1.5s" values="1 1;1.9589 1.9589;2.838 2.838;3.6406 3.6406;4.3704 4.3704;5.0307 5.0307;5.625 5.625;6.1568 6.1568;6.6296 6.6296;7.0469 7.0469;7.412 7.412;7.7286 7.7286;8 8;8.2297 8.2297;8.4213 8.4213;8.5781 8.5781;8.7037 8.7037;8.8015 8.8015;8.875 8.875;8.9277 8.9277;8.963 8.963;8.9844 8.9844;8.9954 8.9954;8.9994 8.9994;9 9" keyTimes="0;0.041667;0.083333;0.125;0.166667;0.208333;0.25;0.291667;0.333333;0.375;0.416667;0.458333;0.5;0.541667;0.583333;0.625;0.666667;0.708333;0.75;0.791667;0.833333;0.875;0.916667;0.958333;1" calcMode="spline" keySplines="0 0 1 1;0 0 1 1;0 0 1 1;0 0 1 1;0 0 1 1;0 0 1 1;0 0 1 1;0 0 1 1;0 0 1 1;0 0 1 1;0 0 1 1;0 0 1 1;0 0 1 1;0 0 1 1;0 0 1 1;0 0 1 1;0 0 1 1;0 0 1 1;0 0 1 1;0 0 1 1;0 0 1 1;0 0 1 1;0 0 1 1;0 0 1 1" fill="freeze" repeatCount="indefinite"/>
+    </g>
+  </g>
+  <script type="application/ecmascript">(function(){var s=document.currentScript.ownerSVGElement;if(window.matchMedia&amp;&amp;matchMedia("(prefers-reduced-motion: reduce)").matches&amp;&amp;s.pauseAnimations){s.pauseAnimations();s.setCurrentTime(1.5);}})();</script>
+</svg>

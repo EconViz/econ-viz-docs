@@ -106,3 +106,35 @@ EconViz 由四個套件組成：兩個負責繪製經濟學圖形，另外兩個
     [:octicons-arrow-right-24: bezierkit](bezierkit/index.md)
 
 </div>
+
+### 動畫與字型
+
+兩個各自獨立的引擎：KineticKit 負責動畫，GlyphKit 負責排版。兩者都不依賴經濟學套件。
+
+<div class="grid cards ev-package-cards" markdown>
+
+-   :material-animation-play: **kinetickit**
+
+    確定性的 2D 與 3D 動畫，可輸出動態 SVG、串流 GIF 或互動 HTML。
+
+    ```bash
+    uv add --prerelease allow kinetickit
+    ```
+
+    預發行版本：1.0.0b2。
+
+    [:octicons-arrow-right-24: kinetickit](kinetickit/index.md)
+
+-   :material-format-font: **glyphkit**
+
+    與繪圖端無關的排版：字型、字形處理、段落與數學式排版、精確輪廓與字型子集。
+
+    ```bash
+    uv add --prerelease allow glyphkit
+    ```
+
+    預發行版本：1.0.0b4。
+
+    [:octicons-arrow-right-24: glyphkit](glyphkit/index.md)
+
+</div>
