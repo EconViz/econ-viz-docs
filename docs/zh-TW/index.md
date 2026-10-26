@@ -51,6 +51,18 @@ EconViz 由四個套件組成：兩個負責繪製經濟學圖形，另外兩個
 
     [:octicons-arrow-right-24: principle-viz](principle-viz/index.md)
 
+-   :material-chart-bell-curve-cumulative: **macro-viz**
+
+    總體經濟學模型與圖形：凱因斯十字、貨幣市場、AS-AD、IS-LM、梭羅成長、開放經濟與連動面板。
+
+    ```bash
+    uv add "macro-viz @ git+https://github.com/EconViz/macro-viz"
+    ```
+
+    開發版，尚未上架 PyPI。
+
+    [:octicons-arrow-right-24: macro-viz](macro-viz/index.md)
+
 -   :material-factory: **micro-viz**
 
     廠商與市場的個體經濟學模型與圖形：生產、成本、競爭、獨占、定價、不確定性與資訊。

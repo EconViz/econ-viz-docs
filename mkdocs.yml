@@ -182,6 +182,7 @@ plugins:
             "Aggregate supply and demand": "總合供給與需求"
             "IS-LM": "IS-LM"
             "Linked panels": "連動面板"
+            "Open economy": "開放經濟"
             "Solow growth": "Solow 成長"
             "Natural rate of unemployment": "自然失業率"
             "Introduction": "簡介"
@@ -324,6 +325,7 @@ plugins:
             "Aggregate supply and demand": "总供给与需求"
             "IS-LM": "IS-LM"
             "Linked panels": "联动面板"
+            "Open economy": "开放经济"
             "Solow growth": "Solow 增长"
             "Natural rate of unemployment": "自然失业率"
             "Introduction": "简介"
@@ -524,12 +526,19 @@ nav:
       - Getting Started:
           - Installation: macro-viz/installation.md
           - Quick start: macro-viz/quickstart.md
+      - Concepts:
+          - Model and figure: macro-viz/guides/model-figure.md
+          - Adding a figure: macro-viz/guides/adding-figure.md
+      - Settings and Text:
+          - Settings: macro-viz/guides/settings.md
+          - Labels and placement: macro-viz/guides/labels.md
       - Goods and Money:
           - Keynesian goods market: macro-viz/guides/keynesian.md
           - Money market: macro-viz/guides/money.md
       - Short-run Models:
           - Aggregate supply and demand: macro-viz/guides/adas.md
           - IS-LM: macro-viz/guides/islm.md
+          - Open economy: macro-viz/guides/open-economy.md
           - Linked panels: macro-viz/guides/panels.md
       - Growth and Labor:
           - Solow growth: macro-viz/guides/growth.md

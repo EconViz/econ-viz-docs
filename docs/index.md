@@ -53,7 +53,7 @@ Two packages draw economics diagrams.
 
 -   :material-chart-bell-curve-cumulative: **macro-viz**
 
-    Textbook macroeconomic models and diagrams: Keynesian cross, AS-AD, IS-LM, Solow growth and linked panels.
+    Textbook macroeconomic models and diagrams: Keynesian cross, money market, AS-AD, IS-LM, Solow growth, the open economy and linked panels.
 
     ```bash
     uv add "macro-viz @ git+https://github.com/EconViz/macro-viz"
