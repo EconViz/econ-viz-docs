@@ -6,8 +6,6 @@ seo_title: "独占与定价"
 
 <span id="sec-monopoly"></span>
 
-市场力量：单一价格的独占、对它的管制，以及不只一个价格的定价。
-
 每一节是一支示例脚本与它画出的图。脚本在示例压缩包中提供，参数可用 `--help` 查看。
 
 ## 独占
@@ -51,8 +49,6 @@ seo_title: "独占与定价"
 <!-- api: micro_viz.guides_monopoly_9 -->
 
 各厂房的 MC 与水平加总的 `MC_T`，对 `D` 与 `MR`。
-
-下面是脚本中画图的函数，与图形使用相同的代码。
 
 ```python
 def monopoly_examples(
@@ -317,8 +313,6 @@ def monopoly_examples(
 
 短期：独占最适点与进入前的利润长方形。
 
-下面是脚本中画图的函数，与图形使用相同的代码。
-
 ```python
 def monopolistic_examples(
     output_dir: Path,
@@ -410,8 +404,6 @@ ATC 递减的自然独占：不管制价格、`P = MC`（亏损以底色标出�
 <!-- api: micro_viz.guides_monopoly_16 -->
 
 价格上限：平均收益在上限处到 `Q_max` 为水平，边际收益在该点等于上限，之后跳降回未管制的 MR。
-
-下面是脚本中画图的函数，与图形使用相同的代码。
 
 ```python
 def regulation_examples(
@@ -523,8 +515,6 @@ def regulation_examples(
 <!-- api: micro_viz.guides_monopoly_21 -->
 
 每个市场一栏（`D_i`、`MR_i` 与共同水准 `MC*`），最后一栏是加总的 `MR_T` 与 MC 相交。
-
-下面是脚本中画图的函数，与图形使用相同的代码。
 
 ```python
 def discrimination_examples(
@@ -675,8 +665,6 @@ def discrimination_examples(
 
 各类买者的需求、固定的 MC 与使用费 `p^*`；入场费是剩余最小的买者的消费者剩余三角形。
 
-下面是脚本中画图的函数，与图形使用相同的代码。
-
 ```python
 def tariff_examples(
     output_dir: Path,
@@ -773,7 +761,7 @@ def tariff_examples(
 
 <!-- api: micro_viz.guides_monopoly_27 -->
 
-保留价格空间被对角线 `r1 + r2 = P_B` 切开，在线方的消费者购买。
+保留价格空间被对角线 `r1 + r2 = P_B` 切开，线上方的消费者购买。
 
 <!-- api: micro_viz.guides_monopoly_28 -->
 
@@ -782,8 +770,6 @@ def tariff_examples(
 <!-- api: micro_viz.guides_monopoly_29 -->
 
 消费者是保留价格空间中的点 `(r1, r2)`；`names` 标出前几个点。
-
-下面是脚本中画图的函数，与图形使用相同的代码。
 
 ```python
 def bundling_examples(
@@ -948,8 +934,6 @@ def bundling_examples(
 
 尖峰与离峰需求与各自的边际收益；两期都有营运成本 `MC`，尖峰另加容量成本 `MC + MC_K`。
 
-下面是脚本中画图的函数，与图形使用相同的代码。
-
 ```python
 def time_pricing_examples(
     output_dir: Path,
@@ -1024,8 +1008,6 @@ def time_pricing_examples(
 
 `AR` 外移到 `AR'`、平均成本上升到 `AC'`；长方形显示前（浅）后（深）的利润。
 
-下面是脚本中画图的函数，与图形使用相同的代码。
-
 ```python
 def advertising_examples(
     output_dir: Path,
@@ -1068,8 +1050,6 @@ def advertising_examples(
 <!-- api: micro_viz.guides_monopoly_36 -->
 
 左图是价格路径 `p(t)`，从 `p_0` 上升到时间 `T` 的禁止价格，高于边际开采成本 `c`；右图是对应的静态图。
-
-下面是脚本中画图的函数，与图形使用相同的代码。
 
 ```python
 def resource_examples(

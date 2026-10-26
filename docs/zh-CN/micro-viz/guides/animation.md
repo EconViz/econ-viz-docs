@@ -8,11 +8,11 @@ seo_title: "动画"
 
 描述移动、扫描或调整的图，可以用画出静态图的同一个绘图函数做成动画。它需要 `animation` 选用依赖（参见 [选用依赖](../installation.md#sec-extras)），会加装 `kinetickit`。
 
-这里的绘图函数是从一个数字（移动量、价格、产量）到 `mosaickit` 画布的函数：就是画静态图的那个函数，并由调用端固定所有座标轴范围与尺寸，座标轴才不会跳动。
+这里的绘图函数是从一个数字（移动量、价格、产量）到 `mosaickit` 画布的函数：就是画静态图的那个函数，并由调用端固定所有坐标轴范围与尺寸，坐标轴才不会跳动。
 
 <!-- api: micro_viz.guides_animation_1 -->
 
-`save_svg()` 依稳定的图层 ID配对各帧的图层，做成原生动画 SVG。`save_gif()` 通过 `mosaickit` 绘出每个帧，输出 GIF。两者都在 `micro_viz.animation` 中，并返回路径。
+`save_svg()` 依稳定的图层 ID 配对各帧的图层，做成原生动画 SVG。`save_gif()` 通过 `mosaickit` 绘出每个帧，输出 GIF。两者都在 `micro_viz.animation` 中，并返回路径。
 
 ```python
 from micro_viz.animation import save_svg

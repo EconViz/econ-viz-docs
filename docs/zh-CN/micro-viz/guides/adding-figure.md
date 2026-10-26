@@ -8,7 +8,7 @@ seo_title: "添加图形"
 
 有哪些图形由保存库的议题与里程碑决定。统计图与方块加箭头的流程图不在绘制范围内。添加一张图分五个步骤。
 
-+ *模型。* 把方程序放进 `micro_viz/<topic>.py` 的冻结数据类别，检查输入，并抛出软件包例外的子类别。不引入任何绘图器。
++ *模型。* 把方程式放进 `micro_viz/<topic>.py` 的冻结数据类别，检查输入，并抛出软件包例外的子类别。不引入任何绘图器。
 + *绘图函数。* 撰写 `micro_viz/visuals/<topic>.py`。`Plane` 以稳定的图层 ID（`micro.<prefix>.<kind>.<n>`）收集曲线、辅助线、点、标记、区域与箭头。
 + *文本。* 把文本以三种语言加入 `locale/labels.json`。绘图函数中不写显示用的文本。
 + *导出与示例。* 把名称加入 `micro_viz/__init__.py`、`visuals/__init__.py` 与 `tests/test_package.py`；以 `common.py` 的共用 `parser` 与 `Session` 撰写 `examples/scripts/<topic>.py`，让范围与选项成为参数。

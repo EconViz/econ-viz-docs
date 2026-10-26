@@ -48,8 +48,6 @@ seo_title: "不確定性與資訊"
 
 每個效用函數一小欄：`u(I)`、兩個結果間的弦，以及弦上高於期望所得處的期望效用。
 
-下面是腳本中畫圖的函式，與圖形使用相同的程式碼。
-
 ```python
 def uncertainty_examples(
     output_dir: Path,
@@ -299,8 +297,6 @@ def uncertainty_examples(
 
 兩種形式下賣者的預期收益對競標者數目：兩條曲線重合（收益相等），並隨人數上升。
 
-下面是腳本中畫圖的函式，與圖形使用相同的程式碼。
-
 ```python
 def auction_examples(
     output_dir: Path,
@@ -402,8 +398,6 @@ def auction_examples(
 <!-- api: micro_viz.guides_uncertainty_17 -->
 
 低能力組（左）與高能力組（右）的教育成本對工資利益：在分離訊號 `y*` 下只有高能力者購買。
-
-下面是腳本中畫圖的函式，與圖形使用相同的程式碼。
 
 ```python
 def information_examples(

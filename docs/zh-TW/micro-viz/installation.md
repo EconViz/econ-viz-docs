@@ -8,11 +8,11 @@ seo_title: "安裝"
 
 ## 系統需求
 
-`micro-viz` 需要 Python 3.10 以上版本 (Python 官方網站提供各作業系統的安裝程式：[https://www.python.org/downloads/](https://www.python.org/downloads/)。)。唯一的執行期依賴是 `mosaickit`（1.0.0rc9 以上、2 以下），它透過 `matplotlib` 繪製圖形。
+`micro-viz` 需要 Python 3.10 以上版本 (Python 官方網站提供各作業系統的安裝程式：[https://www.python.org/downloads/](https://www.python.org/downloads/))。唯一的執行期依賴是 `mosaickit`（1.0.0rc9 以上、2 以下），它透過 `matplotlib` 繪製圖形。
 
 ## 安裝 `uv`
 
-本頁的指令以 `uv` (`uv` 是 Astral 開發的 Python 套件與專案管理工具，速度快且可一併管理 Python 版本；安裝方式與完整說明見官方文件：[https://docs.astral.sh/uv/](https://docs.astral.sh/uv/)。) 為準。既有專案仍可使用 `pip`；套件 API 不受管理工具影響。
+本頁的指令以 `uv` (`uv` 是 Astral 開發的 Python 套件與專案管理工具，速度快且可一併管理 Python 版本；安裝方式與完整說明見官方文件：[https://docs.astral.sh/uv/](https://docs.astral.sh/uv/)) 為準。既有專案仍可使用 `pip`；套件 API 不受管理工具影響。
 
 ### macOS、Linux
 

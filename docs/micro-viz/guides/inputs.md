@@ -32,8 +32,6 @@ One isoquant with points at the given `labors`; between neighbours the chord and
 
 One panel per technology: isoquants of the listed outputs cut by a ray with direction `(L, K)`; they are evenly spaced under constant returns and closer under increasing.
 
-The function of the script that draws the figures follows.
-
 ```python
 def isoquant_examples(
     output_dir: Path,
@@ -211,8 +209,6 @@ Labour becomes dearer (`new_wage`): the isocost line steepens, its new tangency 
 
 Technical change: the isoquant of the same `output` moves inward (thin `Q'`) and the cheapest bundle falls onto a lower isocost line.
 
-The function of the script that draws the figures follows.
-
 ```python
 def cost_examples(
     output_dir: Path,
@@ -372,8 +368,6 @@ Two average-cost curves: moving from `A` to `B` along `AC_1` is a gain from scal
 <!-- api: micro_viz.guides_inputs_16 -->
 
 Total-product curves shifted upward by better technology; the base curve is thick, the others thin and solid. `arrow_input` draws a vertical arrow from the base curve.
-
-The function of the script that draws the figures follows.
 
 ```python
 def extension_examples(
@@ -537,8 +531,6 @@ Upward market supply of an input beside the flat supply one firm faces at the ma
 <!-- api: micro_viz.guides_inputs_26 -->
 
 Short- and long-run input demand through one point, the long run flatter.
-
-The function of the script that draws the figures follows.
 
 ```python
 def factor_examples(
@@ -780,8 +772,6 @@ Two sectors: a union wage above the competitive wage `W_c` cuts employment in se
 <!-- api: micro_viz.guides_inputs_34 -->
 
 A union picks a point on the firm's labour demand: employment `L`, the wage-bill rectangle and the rent above members' supply price.
-
-The function of the script that draws the figures follows.
 
 ```python
 def monopsony_examples(

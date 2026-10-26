@@ -6,8 +6,6 @@ seo_title: "獨占與定價"
 
 <span id="sec-monopoly"></span>
 
-市場力量：單一價格的獨占、對它的管制，以及不只一個價格的定價。
-
 每一節是一支範例腳本與它畫出的圖。腳本在範例壓縮檔中提供，參數可用 `--help` 查看。
 
 ## 獨占
@@ -51,8 +49,6 @@ seo_title: "獨占與定價"
 <!-- api: micro_viz.guides_monopoly_9 -->
 
 各廠房的 MC 與水平加總的 `MC_T`，對 `D` 與 `MR`。
-
-下面是腳本中畫圖的函式，與圖形使用相同的程式碼。
 
 ```python
 def monopoly_examples(
@@ -317,8 +313,6 @@ def monopoly_examples(
 
 短期：獨占最適點與進入前的利潤長方形。
 
-下面是腳本中畫圖的函式，與圖形使用相同的程式碼。
-
 ```python
 def monopolistic_examples(
     output_dir: Path,
@@ -410,8 +404,6 @@ ATC 遞減的自然獨占：不管制價格、`P = MC`（虧損以底色標出�
 <!-- api: micro_viz.guides_monopoly_16 -->
 
 價格上限：平均收益在上限處到 `Q_max` 為水平，邊際收益在該點等於上限，之後跳降回未管制的 MR。
-
-下面是腳本中畫圖的函式，與圖形使用相同的程式碼。
 
 ```python
 def regulation_examples(
@@ -523,8 +515,6 @@ def regulation_examples(
 <!-- api: micro_viz.guides_monopoly_21 -->
 
 每個市場一欄（`D_i`、`MR_i` 與共同水準 `MC*`），最後一欄是加總的 `MR_T` 與 MC 相交。
-
-下面是腳本中畫圖的函式，與圖形使用相同的程式碼。
 
 ```python
 def discrimination_examples(
@@ -675,8 +665,6 @@ def discrimination_examples(
 
 各類買者的需求、固定的 MC 與使用費 `p^*`；入場費是剩餘最小的買者的消費者剩餘三角形。
 
-下面是腳本中畫圖的函式，與圖形使用相同的程式碼。
-
 ```python
 def tariff_examples(
     output_dir: Path,
@@ -782,8 +770,6 @@ def tariff_examples(
 <!-- api: micro_viz.guides_monopoly_29 -->
 
 消費者是保留價格空間中的點 `(r1, r2)`；`names` 標出前幾個點。
-
-下面是腳本中畫圖的函式，與圖形使用相同的程式碼。
 
 ```python
 def bundling_examples(
@@ -948,8 +934,6 @@ def bundling_examples(
 
 尖峰與離峰需求與各自的邊際收益；兩期都有營運成本 `MC`，尖峰另加容量成本 `MC + MC_K`。
 
-下面是腳本中畫圖的函式，與圖形使用相同的程式碼。
-
 ```python
 def time_pricing_examples(
     output_dir: Path,
@@ -1024,8 +1008,6 @@ def time_pricing_examples(
 
 `AR` 外移到 `AR'`、平均成本上升到 `AC'`；長方形顯示前（淺）後（深）的利潤。
 
-下面是腳本中畫圖的函式，與圖形使用相同的程式碼。
-
 ```python
 def advertising_examples(
     output_dir: Path,
@@ -1068,8 +1050,6 @@ def advertising_examples(
 <!-- api: micro_viz.guides_monopoly_36 -->
 
 左圖是價格路徑 `p(t)`，從 `p_0` 上升到時間 `T` 的禁止價格，高於邊際開採成本 `c`；右圖是對應的靜態圖。
-
-下面是腳本中畫圖的函式，與圖形使用相同的程式碼。
 
 ```python
 def resource_examples(

@@ -6,8 +6,6 @@ seo_title: "Monopoly and pricing"
 
 <span id="sec-monopoly"></span>
 
-Market power: the single-price monopoly, its regulation, and pricing beyond one price.
-
 Each section is one example script and the figures it draws. The scripts come in the examples archive; `--help` lists their arguments.
 
 ## Monopoly
@@ -51,8 +49,6 @@ Totals above, unit curves with the profit rectangle below, sharing the optimum `
 <!-- api: micro_viz.guides_monopoly_9 -->
 
 Each plant's MC beside the horizontally summed `MC_T` against `D` and `MR`.
-
-The function of the script that draws the figures follows.
 
 ```python
 def monopoly_examples(
@@ -317,8 +313,6 @@ The long run: demand tangent to ATC at the output where `MR = MC`, price above M
 
 The short run: the monopoly optimum with the profit rectangle before entry.
 
-The function of the script that draws the figures follows.
-
 ```python
 def monopolistic_examples(
     output_dir: Path,
@@ -410,8 +404,6 @@ A natural monopoly with falling ATC: the unregulated price, `P = MC` (with the l
 <!-- api: micro_viz.guides_monopoly_16 -->
 
 A price ceiling: average revenue is flat at the ceiling up to `Q_max` and marginal revenue equals the ceiling there, then jumps down to the unregulated `MR`.
-
-The function of the script that draws the figures follows.
 
 ```python
 def regulation_examples(
@@ -523,8 +515,6 @@ One monopoly price (`MR = MC`): the consumer surplus above it and the surplus le
 <!-- api: micro_viz.guides_monopoly_21 -->
 
 One panel per market (`D_i`, `MR_i`, the common level `MC*`) and a last panel with the summed `MR_T` meeting MC. A market whose demand starts below `MC*` is not served.
-
-The function of the script that draws the figures follows.
 
 ```python
 def discrimination_examples(
@@ -675,8 +665,6 @@ Profit from entry fees, from sales and in total against the entry fee `T` at a f
 
 Demand of each buyer type, the constant `MC` and the usage fee `p^*`. The entry fee is the shaded consumer-surplus triangle of the buyer with the least surplus served; when the usage fee is above MC the rectangle `(p^* - MC) Q` is the sales profit.
 
-The function of the script that draws the figures follows.
-
 ```python
 def tariff_examples(
     output_dir: Path,
@@ -782,8 +770,6 @@ The four purchase regions cut by `r1 = P1` and `r2 = P2` (goods sold apart).
 <!-- api: micro_viz.guides_monopoly_29 -->
 
 Consumers as points `(r1, r2)` in valuation space; `names` labels the first points.
-
-The function of the script that draws the figures follows.
 
 ```python
 def bundling_examples(
@@ -948,8 +934,6 @@ Two demands and their marginal revenues against a constant `MC`: the high price 
 
 Peak and off-peak demands with their marginal revenues; running cost `MC` for both periods and `MC + MC_K` (the capacity cost) for the peak.
 
-The function of the script that draws the figures follows.
-
 ```python
 def time_pricing_examples(
     output_dir: Path,
@@ -1024,8 +1008,6 @@ Advertising shifts average revenue out and raises average cost; the figure compa
 
 `AR` shifts out to `AR'` and average cost up to `AC'`; the rectangles show profit before (lighter) and after (darker). Changed curves are thin and solid.
 
-The function of the script that draws the figures follows.
-
 ```python
 def advertising_examples(
     output_dir: Path,
@@ -1068,8 +1050,6 @@ The price net of marginal extraction cost rises at the rate of interest until th
 <!-- api: micro_viz.guides_monopoly_36 -->
 
 Left, the price path `p(t)` rising from `p_0` to the choke price at `T` above the marginal extraction cost `c`; right, the matching static view: demand `D` with the quantities extracted at the start and at `T / 2`, moving up the demand curve.
-
-The function of the script that draws the figures follows.
 
 ```python
 def resource_examples(

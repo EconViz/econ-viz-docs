@@ -48,8 +48,6 @@ The CDFs `F_A` and `F_B` of two lotteries. `kind="first"` shows `F_A` lying ever
 
 One small panel per utility function: `u(I)`, the chord between the two outcomes and the expected utility on it above expected income.
 
-The function of the script that draws the figures follows.
-
 ```python
 def uncertainty_examples(
     output_dir: Path,
@@ -299,8 +297,6 @@ Bid against value: the 45-degree second-price bid `b = v` and, for each auction 
 
 Expected seller revenue against the number of bidders under both formats: the curves coincide (revenue equivalence), rising toward the largest possible value.
 
-The function of the script that draws the figures follows.
-
 ```python
 def auction_examples(
     output_dir: Path,
@@ -402,8 +398,6 @@ Demand `D` against the true marginal cost `MC` and the lower price `MC'` an insu
 <!-- api: micro_viz.guides_uncertainty_17 -->
 
 Education cost against the wage benefit for the low-ability group (left) and the high-ability group (right): at a separating signal `y*` only the high group's cost lies below the benefit.
-
-The function of the script that draws the figures follows.
 
 ```python
 def information_examples(

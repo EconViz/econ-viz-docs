@@ -6,8 +6,6 @@ seo_title: "Production and costs"
 
 <span id="sec-production-costs"></span>
 
-Short-run production and the cost curves that follow from it.
-
 Each section is one example script and the figures it draws. The scripts come in the examples archive; `--help` lists their arguments.
 
 ## Short-run production
@@ -27,8 +25,6 @@ An AP/MP diagram with the marginal-return regions and the AP = MP and MP = 0 poi
 <!-- api: micro_viz.guides_production_costs_3 -->
 
 A TP diagram: the curve, its three marginal-return regions and the boundary guides.
-
-The function of the script that draws the figures follows.
 
 ```python
 def production_examples(
@@ -154,8 +150,6 @@ TC, VC and FC against output.
 <!-- api: micro_viz.guides_production_costs_8 -->
 
 MC, ATC, AVC and AFC against output (choose a subset with `curves`).
-
-The function of the script that draws the figures follows.
 
 ```python
 def cost_examples(
@@ -301,8 +295,6 @@ Several plants of fixed capacity give a stepped marginal cost; one plant with a 
 <!-- api: micro_viz.guides_production_costs_10 -->
 
 Stepped or kinked marginal cost with its capacity and price bands.
-
-The function of the script that draws the figures follows.
 
 ```python
 def piecewise_examples(

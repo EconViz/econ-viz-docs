@@ -52,8 +52,6 @@ Producer surplus: the area between the price and MC from zero to `q*`.
 
 Total revenue, total cost and the profit curve against output.
 
-The function of the script that draws the figures follows.
-
 ```python
 def competition_examples(
     output_dir: Path,
@@ -341,8 +339,6 @@ U-shaped LAC with LMC cutting it at its lowest point `C_min` (output `Q_e`).
 
 SAC curves of the plants in `sizes` touching LAC, with LAC and LMC.
 
-The function of the script that draws the figures follows.
-
 ```python
 def long_run_examples(
     output_dir: Path,
@@ -451,8 +447,6 @@ LAC, LMC and the price line: the firm produces where `price = LMC` with the plan
 <!-- api: micro_viz.guides_competition_19 -->
 
 Zero profit for the marginal firm, and a rent rectangle for a firm with lower costs (a scarce advantage), beside the long-run industry.
-
-The function of the script that draws the figures follows.
 
 ```python
 def competition_examples(

@@ -6,8 +6,6 @@ seo_title: "生产与成本"
 
 <span id="sec-production-costs"></span>
 
-短期生产，以及由此得到的成本曲线。
-
 每一节是一支示例脚本与它画出的图。脚本在示例压缩包中提供，参数可用 `--help` 查看。
 
 ## 短期生产
@@ -27,8 +25,6 @@ seo_title: "生产与成本"
 <!-- api: micro_viz.guides_production_costs_3 -->
 
 总产量图：曲线、三个边际报酬区间与分界线。
-
-下面是脚本中画图的函数，与图形使用相同的代码。
 
 ```python
 def production_examples(
@@ -155,8 +151,6 @@ TC、VC 与 FC 对产量。
 
 MC、ATC、AVC 与 AFC 对产量；`curves` 可选子集。
 
-下面是脚本中画图的函数，与图形使用相同的代码。
-
 ```python
 def cost_examples(
     output_dir: Path,
@@ -256,11 +250,11 @@ def cost_examples(
 
 <figure class="ev-fig" markdown>
 
-![*成本曲在线下对照。* 总成本与单位成本的两栏对照图。](../../../assets/micro-viz/costs/cost_curves.zh-CN.svg){ .ev-figure-sm }
+![*成本曲线上下对照。* 总成本与单位成本的两栏对照图。](../../../assets/micro-viz/costs/cost_curves.zh-CN.svg){ .ev-figure-sm }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/costs/costs.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-<figcaption markdown>*成本曲在线下对照。* 总成本与单位成本的两栏对照图。</figcaption>
+<figcaption markdown>*成本曲线上下对照。* 总成本与单位成本的两栏对照图。</figcaption>
 
 </figure>
 
@@ -301,8 +295,6 @@ def cost_examples(
 <!-- api: micro_viz.guides_production_costs_10 -->
 
 阶梯或折线边际成本，含容量与价格带。
-
-下面是脚本中画图的函数，与图形使用相同的代码。
 
 ```python
 def piecewise_examples(

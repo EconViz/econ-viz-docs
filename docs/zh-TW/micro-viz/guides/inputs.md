@@ -32,8 +32,6 @@ seo_title: "投入與技術"
 
 每種技術一欄：給定產量的等產量線被一條射線截斷；固定報酬下等距，規模報酬遞增下愈來愈近。
 
-下面是腳本中畫圖的函式，與圖形使用相同的程式碼。
-
 ```python
 def isoquant_examples(
     output_dir: Path,
@@ -211,8 +209,6 @@ def isoquant_examples(
 
 技術進步：同一 `output` 的等產量線內移（細線 `Q'`），最低成本組合落在較低的等成本線上。
 
-下面是腳本中畫圖的函式，與圖形使用相同的程式碼。
-
 ```python
 def cost_examples(
     output_dir: Path,
@@ -372,8 +368,6 @@ def cost_examples(
 <!-- api: micro_viz.guides_inputs_16 -->
 
 技術進步使總產量曲線上移；基準曲線為粗線，其餘為細實線；`arrow_input` 畫垂直箭頭。
-
-下面是腳本中畫圖的函式，與圖形使用相同的程式碼。
 
 ```python
 def extension_examples(
@@ -537,8 +531,6 @@ def extension_examples(
 <!-- api: micro_viz.guides_inputs_26 -->
 
 經過同一點的短期與長期投入需求，長期更平坦。
-
-下面是腳本中畫圖的函式，與圖形使用相同的程式碼。
 
 ```python
 def factor_examples(
@@ -780,8 +772,6 @@ def factor_examples(
 <!-- api: micro_viz.guides_inputs_34 -->
 
 工會在廠商勞動需求上選點：僱用量 `L`、工資總額長方形，以及高於會員供給價格的租。
-
-下面是腳本中畫圖的函式，與圖形使用相同的程式碼。
 
 ```python
 def monopsony_examples(

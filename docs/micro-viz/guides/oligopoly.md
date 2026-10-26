@@ -6,8 +6,6 @@ seo_title: "Oligopoly and vertical chains"
 
 <span id="sec-oligopoly"></span>
 
-A few firms, and firms at different stages of one chain.
-
 Each section is one example script and the figures it draws. The scripts come in the examples archive; `--help` lists their arguments.
 
 ## Duopoly
@@ -31,8 +29,6 @@ Reaction curves `R1` and `R2` in `(Q1, Q2)` space meeting at the Cournot-Nash po
 <!-- api: micro_viz.guides_oligopoly_4 -->
 
 Firm 1's residual demand `D1(q2)` and `MR1(q2)` for each guess of the rival's output, with its marginal cost. Each guess shifts both curves left by `q2`.
-
-The function of the script that draws the figures follows.
 
 ```python
 def oligopoly_examples(
@@ -156,8 +152,6 @@ Market demand `D`, fringe supply `S_F` and the residual demand `D_D = D - S_F` w
 
 Kinked demand and its marginal revenue with the vertical gap at the kink. Each marginal cost in `marginal_costs` is drawn flat; the first is the thick curve and the rest thin and solid. Those inside the gap leave price and quantity at the kink.
 
-The function of the script that draws the figures follows.
-
 ```python
 def dominant_examples(
     output_dir: Path,
@@ -266,8 +260,6 @@ An integrated firm sets `NMR = MC_u`: output `Q_i` exceeds the stacked output `Q
 <!-- api: micro_viz.guides_oligopoly_12 -->
 
 With an outside market at `P_m` the firm's effective marginal cost is `MC_u` up to the quantity `Q_u` where it meets `P_m` and flat at `P_m` beyond (`kinked`); without it, the figure shows the optimal transfer price `P_m` with downstream use `Q_d` and the surplus `Q_u - Q_d` sold outside.
-
-The function of the script that draws the figures follows.
 
 ```python
 def vertical_examples(

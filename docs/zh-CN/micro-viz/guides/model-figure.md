@@ -11,7 +11,7 @@ seo_title: "模型与图形"
 每个主题分成两层。
 
 - *模型*是冻结的数据类别（frozen dataclass），检查输入，并以方法回答问题：`CubicCost.marginal_cost`、`Monopolist.solve`、`IndustrySupply.quantity`。模型从不引入绘图器，输入不当时抛出自己的例外（`CostError`、`CompetitionError`、`UncertaintyError`）。
-- `micro_viz.visuals` 中的*绘图函数*把模型结果转成 `mosaickit` 的 `Canvas`：`unit_cost_canvas(analysis)`、`monopoly_canvas(outcome, analysis)`。绘图函数不含方程序，只安置模型算出的内容。
+- `micro_viz.visuals` 中的*绘图函数*把模型结果转成 `mosaickit` 的 `Canvas`：`unit_cost_canvas(analysis)`、`monopoly_canvas(outcome, analysis)`。绘图函数不含方程式，只安置模型算出的内容。
 
 ```python
 from micro_viz import (
