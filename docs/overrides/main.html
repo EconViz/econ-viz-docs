@@ -84,15 +84,22 @@
 
 {% block htmltitle %}
   {% set locale = i18n_page_locale | default("en") %}
+  {# the package section the page belongs to; its name replaces the site name in the tab title #}
+  {% set packages = ["utility-viz", "principle-viz", "macro-viz", "micro-viz", "mosaickit", "bezierkit"] %}
+  {% set parts = page.url.split("/") if page else [] %}
+  {% set first = parts[1] if parts and parts[0] in ["zh-TW", "zh-CN"] and parts | length > 1 else (parts[0] if parts else "") %}
+  {% set package = first if first in packages else "" %}
   {% set name = page.meta.seo_title if page and page.meta and page.meta.seo_title else (page.title | striptags if page and page.title else "") %}
   {% if page and page.url in ["", "zh-TW/", "zh-CN/"] and locale == "zh-TW" %}
     <title>{{ config.site_name }} | Python 經濟學套件</title>
   {% elif page and page.url in ["", "zh-TW/", "zh-CN/"] and locale == "zh-CN" %}
     <title>{{ config.site_name }} | Python 经济学套件</title>
   {% elif page and locale in ["zh-TW", "zh-CN"] %}
-    <title>{{ config.site_name }} | {{ page.title | striptags }}</title>
+    <title>{{ package or config.site_name }} | {{ page.title | striptags }}</title>
+  {% elif name and package and name.lower().startswith(package) %}
+    <title>{{ name }}</title>
   {% elif name %}
-    <title>{{ config.site_name }} | {{ name }}</title>
+    <title>{{ package or config.site_name }} | {{ name }}</title>
   {% else %}
     <title>{{ config.site_name }}</title>
   {% endif %}
