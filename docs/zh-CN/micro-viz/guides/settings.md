@@ -10,7 +10,7 @@ seo_title: "设置"
 
 <!-- api: micro_viz.guides_settings_1 -->
 
-读自 `econ-viz.toml` 的主题。`load()` 读取 `path`，省略时读工作目录中的 `econ-viz.toml`。`use()` 把它设为缺省并返回该设置，之后没有明确指定 `theme` 的图形都使用它。文件中的相对路径相对于文件所在的目录。
+从 `econ-viz.toml` 文件载入的主题。`load()` 读取 `path`，省略时读工作目录中的 `econ-viz.toml`。`use()` 把它设为缺省并返回该设置，之后没有明确指定 `theme` 的图形都使用它。文件中的相对路径相对于文件所在的目录。
 
 ```python
 from micro_viz import Config

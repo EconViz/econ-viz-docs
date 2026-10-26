@@ -72,7 +72,7 @@
         "description": {
           "en": "The upper end of the horizontal axis; fix it, together with `y_range`, to keep the axes still in an animation ([Animation](animation.md#sec-animation)).",
           "zh-TW": "橫軸上界；與 `y_range` 一起固定，動畫中的座標軸才不會跳動（參見 [動畫](animation.md#sec-animation)）。",
-          "zh-CN": "横轴上界；与 `y_range` 一起固定，动画中的座标轴才不会跳动（参见 [动画](animation.md#sec-animation)）。"
+          "zh-CN": "横轴上界；与 `y_range` 一起固定，动画中的坐标轴才不会跳动（参见 [动画](animation.md#sec-animation)）。"
         },
         "default": "None"
       },
@@ -96,7 +96,7 @@
         "description": {
           "en": "Extra room beyond the largest plotted value on each axis, as a fraction.",
           "zh-TW": "座標軸在資料最大值之外多留的比例。",
-          "zh-CN": "座标轴在数据最大值之外多留的比例。"
+          "zh-CN": "坐标轴在数据最大值之外多留的比例。"
         },
         "default": "0.1"
       },
@@ -1303,7 +1303,7 @@
         "description": {
           "en": "A dot with dashed guides to the axes and the given axis marks.",
           "zh-TW": "一個點，附有通到座標軸的虛線輔助線與給定的軸上記號。",
-          "zh-CN": "一个点，附有通到座标轴的虚线辅助线与给定的轴上记号。"
+          "zh-CN": "一个点，附有通到坐标轴的虚线辅助线与给定的轴上记号。"
         }
       },
       {

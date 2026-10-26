@@ -518,7 +518,7 @@ A firm facing the flat supply `W*` hires where `MRP = W*`. With `lower_wage` the
 
 <!-- api: micro_viz.guides_inputs_23 -->
 
-A firm's demand beside the industry's: the dashed-free pair shows the horizontal sum of firm demands (thin) and the steeper industry demand through the same anchor.
+A firm's demand beside the industry's: the right panel shows the horizontal sum of the firm demands (thin line) and the steeper industry demand through the same anchor point.
 
 <!-- api: micro_viz.guides_inputs_24 -->
 

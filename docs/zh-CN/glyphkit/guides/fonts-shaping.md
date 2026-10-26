@@ -10,11 +10,11 @@ seo_title: "字体与字形处理"
 
 <!-- api: glyphkit.guides_fonts_shaping_1 -->
 
-描述字体配对时偏好的字族、字重、字宽、斜体与可变字体座标。
+描述字体配对时偏好的字族、字重、字宽、斜体与可变字体坐标。
 
 <!-- api: glyphkit.guides_fonts_shaping_2 -->
 
-记录一次查找的结果，包括选到的字体面与最后采用的可变字体座标。
+记录一次查找的结果，包括选到的字体面与最后采用的可变字体坐标。
 
 <!-- api: glyphkit.guides_fonts_shaping_3 -->
 

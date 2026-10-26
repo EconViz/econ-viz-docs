@@ -40,7 +40,7 @@ print(v.norm())
 
 <!-- api: agora.bezierkit.guides_geometry_2 -->
 
-一批不可变的点，背后是只读的 $(\text{count}, d)$ NumPy 数组，批量求值与采样都返回此对象。提供 `count`、`dimension`、`array`（只读副本）、各栏 `x`、`y`、`z`，可逐个取出 `Point`，也可用索引存取。
+一批不可变的点，背后是只读的 $(\text{count}, d)$ NumPy 数组，批量求值与采样都返回此对象。提供 `count`、`dimension`、`array`（只读副本）、各栏 `x`、`y`、`z`，可逐个取出 `Point`，也可用索引访问。
 
 ## 参数
 

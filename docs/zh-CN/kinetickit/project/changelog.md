@@ -1,8 +1,8 @@
 ---
-seo_title: "变更纪录"
+seo_title: "变更记录"
 ---
 
-# 变更纪录
+# 变更记录
 
 <span id="sec-changelog"></span>
 

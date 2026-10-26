@@ -1,8 +1,8 @@
 ---
-seo_title: "更新纪录"
+seo_title: "更新记录"
 ---
 
-# 更新纪录
+# 更新记录
 
 `macro-viz` 版本为 `0.2.0.dev0`。保存库的 [CHANGELOG](https://github.com/EconViz/macro-viz/blob/main/CHANGELOG.md) 列出每一项变更。
 
@@ -11,7 +11,7 @@ seo_title: "更新纪录"
 ### 添加
 
 - 模型家族 `keynesian`、`money`、`adas`、`islm`、`growth`、`labor`、`open_economy` 与 `panels`，各有类型化模型、比较与绘图函数。
-- 已注册的 `[macro.*]` 设置结构，以及英文、繁体中文与简体中文的语系表。
+- 已注册的 `[macro.*]` 设置结构，以及英文、繁体中文与简体中文的语言表。
 - `macro_viz.animation` 与 `macro-viz[animation]` 选项：任何绘图函数都能输出 GIF 与动画 SVG。
 - 带类型化曲线移动的连动四面板与五面板图。
 

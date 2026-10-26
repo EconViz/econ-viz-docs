@@ -93,7 +93,7 @@ print(demand.control_points[1])
 
 !!! abstract "命题 · Hermite 插值"
 
-    对 `parametric_hermite` 回传的线段，令 $H(t) = B((t - t_0) / h)$。则 $H(t_0) = P_0$、$H(t_1) = P_3$、$H'(t_0) = D_0$、$H'(t_1) = D_1$。
+    对 `parametric_hermite` 返回的线段，令 $H(t) = B((t - t_0) / h)$。则 $H(t_0) = P_0$、$H(t_1) = P_3$、$H'(t_0) = D_0$、$H'(t_1) = D_1$。
 
 <!-- api: agora.bezierkit.guides_construction_5 -->
 

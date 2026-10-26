@@ -53,7 +53,7 @@ seo_title: "图形"
 
 <!-- api: agora.principle_viz.guides_figures_6 -->
 
-覆盖一个内建标签。值为 `None` 的字段保留软件包的默认值。指定 `offset`（单位为点）时，标签不再自动放置，改为精确移动该距离。`top`、`bottom`、`left` 与 `right` 则在标签定位之后再移动，位置仍由 principle-viz 决定，只做细部调整。
+覆盖一个内置标签。值为 `None` 的字段保留软件包的默认值。指定 `offset`（单位为点）时，标签不再自动放置，改为精确移动该距离。`top`、`bottom`、`left` 与 `right` 则在标签定位之后再移动，位置仍由 principle-viz 决定，只做细部调整。
 
 <!-- api: agora.principle_viz.guides_figures_7 -->
 
@@ -135,7 +135,7 @@ fig.configure_label("market.demand", text="$D_0$", left="0.5em")
 
 <!-- api: agora.principle_viz.guides_figures_9 -->
 
-配色加上线宽（`demand_linewidth`、`supply_linewidth`、`shifted_linewidth`、`tax_linewidth`、`arrow_linewidth`、`dashed_linewidth`）、`equilibrium_marker_size`，以及开关 `show_grid`、`show_ticks`、`show_axis_arrows` 与 `show_origin_label`。`from_palette()` 以内建配色为起点，并可设置上述任一字段。
+配色加上线宽（`demand_linewidth`、`supply_linewidth`、`shifted_linewidth`、`tax_linewidth`、`arrow_linewidth`、`dashed_linewidth`）、`equilibrium_marker_size`，以及开关 `show_grid`、`show_ticks`、`show_axis_arrows` 与 `show_origin_label`。`from_palette()` 以内置配色为起点，并可设置上述任一字段。
 
 字体有三个字段。`font` 是 `"sans"`（默认）、`"serif"` 或 `"mono"`，已安装的字体名称（如 `"Arial"`）会报错。`fonts` 是 `mosaickit.TextFonts`，用字体文件取代三者之一，没给的沿用 `mosaickit` 的 DejaVu 默认。`math_font` 是 `MathFont` 或 OpenType 数学字体的路径，经由 `glyphkit` 排版 `$...$`。`font_roles` 把样式角色对应到通用字体，例如 `{"axes": "mono"}`。系统字体不会被搜索，请直接给路径。
 

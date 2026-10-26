@@ -38,11 +38,11 @@ curve = 3.5                # 点
 scale = 1.5                # 所有文本大小的倍数
 ```
 
-这些页面的图形由 `config/econ-viz.toml`、`config/econ-viz.zh-TW.toml` 与 `config/econ-viz.zh-CN.toml` 画出（[下载范例](#sec-download)），三者只有字体与语言不同。
+这些页面的图形由 `config/econ-viz.toml`、`config/econ-viz.zh-TW.toml` 与 `config/econ-viz.zh-CN.toml` 画出（[下载示例](#sec-download)），三者只有字体与语言不同。
 
 ## 共用的键
 
-`base`、`[font]`、`[fonts]`、`background`、`axis` 与 `label` 由所有 EconViz 套件共用，说明见 `mosaickit`。没有深色主题：背景一律是白色。
+`base`、`[font]`、`[fonts]`、`background`、`axis` 与 `label` 由所有 EconViz 软件包共用，说明见 `mosaickit`。没有深色主题：背景一律是白色。
 
 ## `[macro]` 各表
 
@@ -83,11 +83,11 @@ MANUAL_THEME.resolve("macro.movement", fallback_category="path").stroke
 
 <span id="sec-download"></span>
 
-## 范例
+## 示例
 
-范例压缩档包含 `examples/scripts/*.py`、范例数字 `examples.toml` 与三份设置档。每个脚本都接受 `--output`、`--config`、`--data` 与 `--suffix`；`--help` 会列出。脚本里没有写死任何数字：数字来自 `examples.toml`。
+示例压缩包包含 `examples/scripts/*.py`、示例数字 `examples.toml` 与三份配置文件。每个脚本都接受 `--output`、`--config`、`--data` 与 `--suffix`；`--help` 会列出。脚本里没有写死任何数字：数字来自 `examples.toml`。
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/macro-viz-examples.zip" download aria-label="下载范例"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载范例</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/macro-viz-examples.zip" download aria-label="下载范例"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载示例</span></a></div>
 
 ```bash
 uv run python examples/scripts/islm.py --output out --config examples/econ-viz.toml

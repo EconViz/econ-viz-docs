@@ -141,7 +141,7 @@ def production_examples(
 
 <!-- api: micro_viz.guides_production_costs_6 -->
 
-把 `cost_curves_grid` 的两栏分成两张画布，各自可独立成图。
+把 `cost_curves_grid` 的两栏分成两张画布：先是总成本，再是单位成本，共用产量轴。各自可独立成图。
 
 <!-- api: micro_viz.guides_production_costs_7 -->
 

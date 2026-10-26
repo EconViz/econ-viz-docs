@@ -104,7 +104,7 @@ $$
     u(1/2, 1/2) = (f_{00} + f_{10} + f_{11} + f_{01}) / 4.
     $$
 
-此平均值不小于 $c$ 时，套件将中心视为高。在鞍点单元格中，与中心同侧的两个角点在格内相连，另外两个角点各自被一条线段切开（参见[鞍点格子的两种中心](implicit.md#fig-saddle)）。这就是中点决定法（midpoint decider）[Athawale (2019)](../project/references.md#athawale2019)。[Nielson (1991)](../project/references.md#nielson1991) 的渐近决定法（asymptotic decider）则比较 $u$ 在其鞍点的值
+此平均值不小于 $c$ 时，软件包将中心视为高。在鞍点单元格中，与中心同侧的两个角点在格内相连，另外两个角点各自被一条线段切开（参见[鞍点格子的两种中心](implicit.md#fig-saddle)）。这就是中点决定法（midpoint decider）[Athawale (2019)](../project/references.md#athawale2019)。[Nielson (1991)](../project/references.md#nielson1991) 的渐近决定法（asymptotic decider）则比较 $u$ 在其鞍点的值
 
 $$
 u^* = (f_{00} f_{11} - f_{10} f_{01}) / (f_{00} - f_{10} - f_{01} + f_{11}),
@@ -145,7 +145,7 @@ print(len(contours.for_level(4)[0].segments))
 
 <!-- api: agora.bezierkit.guides_implicit_3 -->
 
-`trace_implicit` 回传 `ContourSet`，其 `contours` 依给定顺序为每个水平保存一个 `LevelContours`。`level_values` 列出各水平，`paths` 汇集所有路径，`for_level(c)` 回传某一水平的路径（未描绘的水平抛出 `KeyError`）。
+`trace_implicit` 返回 `ContourSet`，其 `contours` 依给定顺序为每个水平保存一个 `LevelContours`。`level_values` 列出各水平，`paths` 汇集所有路径，`for_level(c)` 返回某一水平的路径（未描绘的水平抛出 `KeyError`）。
 
 <!-- api: agora.bezierkit.guides_implicit_4 -->
 

@@ -1,10 +1,10 @@
 ---
-seo_title: "更新纪录"
+seo_title: "更新记录"
 ---
 
 <span id="sec-changelog"></span>
 
-# 更新纪录
+# 更新记录
 
 本章列出影响软件包使用的版本变更，包含以 `principle-econ` 名称发布的版本，不含仅修改文档的版本；各条目依 l3doc 惯例标注于它所描述的功能旁，页码即该功能的实际页码。
 
@@ -41,7 +41,7 @@ seo_title: "更新纪录"
 
 - CI 测试 Python 3.10–3.13 [简介](guides/introduction.md)
 - `demand_aggregation_figure` — 市场曲线在折点处标出当时有效的需求 [由个人加总市场曲线](guides/aggregation.md)
-- `Label` — 每个内建标签都可改名、隐藏或移动：新增 `Label`、`labels=`、`configure_label()` 与 `label_ids` [图形](guides/figures.md)
+- `Label` — 每个内置标签都可改名、隐藏或移动：新增 `Label`、`labels=`、`configure_label()` 与 `label_ids` [图形](guides/figures.md)
 - `MarketFigure.configure_layer` — 每个图层都可隐藏或显示：新增 `visibility=`、`configure_layer()`、`hide()`、`show()` 与 `layer_ids` [图形](guides/figures.md)
 
 ## 0.10.0

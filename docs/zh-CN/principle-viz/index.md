@@ -112,7 +112,7 @@ uv add principle-viz
 - [生产可能性曲线](guides/ppf.md)
 - [图形](guides/figures.md)
 - [命令行界面](cli.md)
-- [更新纪录](changelog.md)
+- [更新记录](changelog.md)
 
 <!-- /agora-navigation -->
 

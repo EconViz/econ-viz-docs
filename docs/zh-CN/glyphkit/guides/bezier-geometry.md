@@ -26,7 +26,7 @@ $$
 
 <!-- api: glyphkit.guides_bezier_geometry_1 -->
 
-以字体座标保存精确且不绑定绘图端的轮廓；截取时会展开复合字形。
+以字体坐标保存精确且不绑定绘图端的轮廓；截取时会展开复合字形。
 
 <!-- api: glyphkit.guides_bezier_geometry_2 -->
 

@@ -44,4 +44,4 @@ bezierkit construct slopes --start "0,5" --end "5,0" \
 
 ## 错误
 
-无效输入（例如格式错误的点，或超出 $[0, 1]$ 的参数）会在标准错误输出打印 `Error: ...`，退出状态为 1，不显示 traceback。在命令前加上全域选项 `--debug` 可改为显示 Python traceback。
+无效输入（例如格式错误的点，或超出 $[0, 1]$ 的参数）会在标准错误输出打印 `Error: ...`，退出状态为 1，不显示 traceback。在命令前加上全局选项 `--debug` 可改为显示 Python traceback。

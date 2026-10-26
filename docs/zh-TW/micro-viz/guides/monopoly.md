@@ -20,7 +20,7 @@ seo_title: "獨占與定價"
 
 <!-- api: micro_viz.guides_monopoly_2 -->
 
-每個需求一欄：以大括號標出 `p - MC` 的加成，需求有彈性時小、缺乏彈性時大。
+每個需求一欄：以大括號標出 `p - MC` 的加成，需求有彈性時小、缺乏彈性時大（勒納指數為 `1 / |e|`）。
 
 <!-- api: micro_viz.guides_monopoly_3 -->
 
@@ -28,7 +28,7 @@ seo_title: "獨占與定價"
 
 <!-- api: micro_viz.guides_monopoly_4 -->
 
-需求移動（細實線 `D'` 與 `MR'`）：平行移動，或以 `rotate` 繞數量軸端點轉動。
+需求移動（細實線 `D'` 與 `MR'`）：平行移動，或以 `rotate` 繞數量軸端點轉動，斜率改變。獨占者沒有供給曲線，同一價格可對應不同產量，新的最適點由 `MR' = MC` 讀出。
 
 <!-- api: micro_viz.guides_monopoly_5 -->
 
@@ -506,7 +506,7 @@ def regulation_examples(
 
 <!-- api: micro_viz.guides_monopoly_19 -->
 
-完全差別訂價：價格隨需求到 `D = MC`，利潤為需求與 MC 之間的面積。
+完全差別訂價：價格隨需求到 `D = MC`；利潤為需求與 MC 之間的面積，其中比單一獨占價格多得的部分以較深的陰影標出。
 
 <!-- api: micro_viz.guides_monopoly_20 -->
 

@@ -10,7 +10,7 @@ seo_title: "模型与图形"
 
 每个主题分成两层。
 
-- *模型*是冻结的数据类别（frozen dataclass），检查输入，并以方法回答问题：`CubicCost.marginal_cost`、`Monopolist.solve`、`IndustrySupply.quantity`。模型从不引入绘图器，输入不当时抛出自己的例外（`CostError`、`CompetitionError`、`UncertaintyError`）。
+- *模型*是冻结的数据类（frozen dataclass），检查输入，并以方法回答问题：`CubicCost.marginal_cost`、`Monopolist.solve`、`IndustrySupply.quantity`。模型从不引入绘图器，输入不当时抛出自己的异常（`CostError`、`CompetitionError`、`UncertaintyError`）。
 - `micro_viz.visuals` 中的*绘图函数*把模型结果转成 `mosaickit` 的 `Canvas`：`unit_cost_canvas(analysis)`、`monopoly_canvas(outcome, analysis)`。绘图函数不含方程式，只安置模型算出的内容。
 
 ```python
@@ -57,7 +57,7 @@ monopoly_canvas(outcome, analysis, profit=True).save(
 
 ## 图层 ID
 
-绘图函数替每个图层指定稳定的编号，格式为 `micro.<prefix>.<kind>.<n>`，例如 `micro.cost.avc.label`。设置档的逐图标签表以这些编号为对象（参见 [标签与位置](labels.md#sec-labels)），动画也以它们在帧之间配对图层（参见 [动画](animation.md#sec-animation)）。
+绘图函数替每个图层指定稳定的编号，格式为 `micro.<prefix>.<kind>.<n>`，例如 `micro.cost.avc.label`。配置文件的逐图标签表以这些编号为对象（参见 [标签与位置](labels.md#sec-labels)），动画也以它们在帧之间配对图层（参见 [动画](animation.md#sec-animation)）。
 
 ## 多栏图
 

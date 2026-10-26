@@ -43,6 +43,6 @@ cost.marginal_cost(5.0)
 ## 标题、标签与设置
 
 - `title=None` 不画标题，`title="..."` 设置标题。
-- 内置文本（坐标轴标题、曲线名称、点名）是语系表的标签编号；`labels={"id": "text"}` 可取代其中任何一个（参见 [标签与位置](guides/labels.md#sec-labels)）。
+- 内置文本（坐标轴标题、曲线名称、点名）是语言表的标签编号；`labels={"id": "text"}` 可取代其中任何一个（参见 [标签与位置](guides/labels.md#sec-labels)）。
 - 颜色、线宽、字体与大小来自主题与共用 `econ-viz.toml` 的 `[micro]` 表（参见 [设置](guides/settings.md#sec-settings)），绘图代码不含这些值。
 - 范围、产量标记与采样数等数字是绘图函数的参数。

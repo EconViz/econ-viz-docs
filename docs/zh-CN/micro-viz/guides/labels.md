@@ -6,7 +6,7 @@ seo_title: "标签与位置"
 
 <span id="sec-labels"></span>
 
-## 语系表
+## 语言表
 
 `micro-viz` 放进图中的每个字都在 `src/micro_viz/locale/labels.json`，先依稳定的编号（`production.tp`）、再依语言（`en`、`zh-TW`、`zh-CN`）索引。语言来自 `[micro] language`、`PlotTheme.language`，或示例脚本的 `--language`。
 

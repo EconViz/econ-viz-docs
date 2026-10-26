@@ -92,6 +92,8 @@ uv add --prerelease allow "kinetickit[studio]"
 
 需要 Python 3.10 到 3.13。選用的額外安裝項見[安裝](installation.md)。
 
+<span id="examples"></span>
+
 ## 範例
 
 本文件的每張圖都附上生成它的腳本。可一次下載全部。

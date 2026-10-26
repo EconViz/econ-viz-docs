@@ -6,7 +6,7 @@ seo_title: "Change history"
 
 # Change history
 
-Release history of `micro-viz`. The package is at version 0.2.0.dev0 and is not on PyPI yet; the repository's [CHANGELOG](https://github.com/EconViz/micro-viz/blob/main/CHANGELOG.md) lists every change. Documentation-only changes are not listed; each entry is tagged where the feature it describes is documented, following l3doc convention, so the page number is the real page.
+Release history of `micro-viz`. The package is at version 0.2.0.dev0 and is not on PyPI yet; the repository's [CHANGELOG](https://github.com/EconViz/micro-viz/blob/main/CHANGELOG.md) lists every change. Documentation-only changes are not listed; each entry links to the page that documents the feature.
 
 ## 0.2.0.dev0
 

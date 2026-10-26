@@ -20,7 +20,7 @@ seo_title: "动画"
 
 <!-- api: macro_viz.guides_animation_3 -->
 
-`save_gif` 把每一帧交给 `mosaickit` 绘制，再把像素串流成 GIF；不需要字库。它也能处理回传面板格线的绘图函数，并把各帧补成同样大小。
+`save_gif` 把每一帧交给 `mosaickit` 绘制，再把像素串流成 GIF；不需要字库。它也能处理返回面板格线的绘图函数，并把各帧补成同样大小。
 
 ```python
 from macro_viz.animation import linear_values, save_svg
@@ -113,6 +113,6 @@ save_svg(
 
 ## 现况
 
-动画范例涵盖凯因斯十字、货币市场、AS-AD、IS-LM、梭罗成长与连动面板，其他图形尚无。动画 SVG 不画移动箭头；GIF 则完全采用 `mosaickit` 的位置安排。
+动画示例涵盖凯因斯十字、货币市场、AS-AD、IS-LM、梭罗成长与连动面板，其他图形尚无。动画 SVG 不画移动箭头；GIF 则完全采用 `mosaickit` 的位置安排。
 
 没有 `kinetickit` 时，静态图形照常运作。

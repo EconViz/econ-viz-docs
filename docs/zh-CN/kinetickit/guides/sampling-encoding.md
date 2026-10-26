@@ -30,7 +30,7 @@ $$
 
 <!-- api: kinetickit.guides_sampling_encoding_2 -->
 
-验证并保存动画范围内不递减的自订采样时间。
+验证并保存动画范围内不递减的自定义采样时间。
 
 <!-- api: kinetickit.guides_sampling_encoding_3 -->
 

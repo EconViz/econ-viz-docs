@@ -6,7 +6,7 @@ seo_title: "数学语法"
 
 <span id="sec-math-grammar"></span>
 
-`parse_math()` 是有范围限制、类 TeX 的适配器，不是 TeX 的实作。它保留语意上的原文范围，绝不运行 TeX、宏、软件包或外部程序。在 Python 原代码里，请把算式写成原始字符串 `r"\frac{a}{b}"`，每个命令才会只有一个反斜线。
+`parse_math()` 是有范围限制、类 TeX 的适配器，不是 TeX 的实现。它保留语义上的原文范围，绝不运行 TeX、宏、软件包或外部程序。在 Python 原代码里，请把算式写成原始字符串 `r"\frac{a}{b}"`，每个命令才会只有一个反斜线。
 
 | 形式 | 示例 |
 | --- | --- |
@@ -34,6 +34,8 @@ from glyphkit.math import parse_math
 
 tree = parse_math(r"\frac{\partial U}{\partial x_1} = \lambda p_1")
 ```
+
+<span id="how-a-formula-is-set"></span>
 
 ## 算式如何排版
 

@@ -191,7 +191,7 @@ def isoquant_examples(
 
 <!-- api: micro_viz.guides_inputs_6 -->
 
-`output` 的等产量线与在最低成本组合相切的等成本线，另有一条较低与一条较高的等成本线。
+`output` 的等产量线与在最低成本组合相切的等成本线，另有一条较低与一条较高的等成本线（以 `cost_offsets` 缩放）：较低的碰不到该产量，较高的成本超过所需。
 
 <!-- api: micro_viz.guides_inputs_7 -->
 
@@ -199,7 +199,7 @@ def isoquant_examples(
 
 <!-- api: micro_viz.guides_inputs_8 -->
 
-资本固定在 `K_0` 时产量只能沿水平线增加；超过某点后，经过切点的长期扩张线较便宜。
+资本固定在 `K_0` 时产量只能沿水平线增加；超过设计产量后，经过切点的长期扩张线较便宜。
 
 <!-- api: micro_viz.guides_inputs_9 -->
 
@@ -355,7 +355,7 @@ def cost_examples(
 
 <!-- api: micro_viz.guides_inputs_13 -->
 
-产品转换曲线 `PT`；`reference` 加上连接两个最大值的直线（没有联合生产的利益），显示外凸。
+产品转换曲线 `PT`；`reference` 加上连接两个最大值的直线（没有联合生产的利益），使曲线的外凸可读作范围经济。
 
 <!-- api: micro_viz.guides_inputs_14 -->
 
@@ -498,7 +498,7 @@ def extension_examples(
 
 <!-- api: micro_viz.guides_inputs_18 -->
 
-资本增加时的 MRP 曲线，每条曲线上一个雇用点，对应 `wages` 中的工资（工资下降使厂商增加资本）。
+资本增加时的 MRP 曲线，每条曲线在 `wages` 中对应的工资处有一个雇用点（工资下降使厂商增加资本），再以需求轨迹连起。
 
 <!-- api: micro_viz.guides_inputs_19 -->
 
@@ -518,7 +518,7 @@ def extension_examples(
 
 <!-- api: micro_viz.guides_inputs_23 -->
 
-厂商需求与产业需求并列：细线是厂商需求的水平加总，产业需求更陡。
+厂商需求与产业需求并列：右图的细线是厂商需求的水平加总，较陡的是通过同一锚点的产业需求。
 
 <!-- api: micro_viz.guides_inputs_24 -->
 
@@ -759,7 +759,7 @@ def factor_examples(
 
 <!-- api: micro_viz.guides_inputs_31 -->
 
-买方独占与竞争结果的比较：长方形 `A` 是由卖者移转给买者，三角形 `B`、`C` 是无谓损失。
+买方独占与竞争结果的比较：长方形 `A` 是由卖者转移给买者的部分，竞争价格上下的三角形 `B` 与 `C` 合起来是无谓损失。
 
 <!-- api: micro_viz.guides_inputs_32 -->
 

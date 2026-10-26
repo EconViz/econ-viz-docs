@@ -6,11 +6,11 @@ seo_title: "OpenType 数学排版"
 
 <span id="sec-glyph-math-model"></span>
 
-## 语意方框树
+## 语义方框树
 
-GlyphKit 先把一套小型的语意语言解析出来，再排成 `MathBox` 树。树把字形排版、子节点原点、范围、基线与横线彼此分开，所以绘图端不必实作 TeX，也能重现 [以 OpenType MATH 度量与精确字形轮廓排出的 Cobb–Douglas 效用函数](layout-math.md#fig-glyph-math)。
+GlyphKit 先把一套小型的语义语言解析出来，再排成 `MathBox` 树。树把字形排版、子节点原点、范围、基线与横线彼此分开，所以绘图端不必实现 TeX，也能重现 [以 OpenType MATH 度量与精确字形轮廓排出的 Cobb–Douglas 效用函数](layout-math.md#fig-glyph-math)。
 
-节点的 `kind` 说明它是什么：`text`（字形）、`sequence`（子节点并排）、`script`、`shifted`、`fraction`、`root`、`limits`、`operator`、`delimited`、`matrix`、`hat` 与 `overline`（重音符号与横线）以及 `space`。子节点的 `origin` 是它相对于父节点的位置，使用排版单位、y 轴向上；`baseline` 与 `bounds` 则在节点自己的座标框里。
+节点的 `kind` 说明它是什么：`text`（字形）、`sequence`（子节点并排）、`script`、`shifted`、`fraction`、`root`、`limits`、`operator`、`delimited`、`matrix`、`hat` 与 `overline`（重音符号与横线）以及 `space`。子节点的 `origin` 是它相对于父节点的位置，使用排版单位、y 轴向上；`baseline` 与 `bounds` 则在节点自己的坐标框里。
 
 ```python
 def walk(node, depth=0):
@@ -28,7 +28,7 @@ walk(box)
 
 ## 常数来自字体
 
-位移、间距、横线粗细与操作符大小都来自字体的 MATH 表，例如 `SuperscriptShiftUp`、`SubscriptShiftDown`、`AxisHeight`、`FractionRuleThickness`、`RadicalVerticalGap` 与 `DisplayOperatorMinHeight`。每种结构如何使用它们，见[数学语法](math-grammar.md#算式如何排版)。字体没有提供的常数，会改用以点为单位的值，而且不会再缩放第二次。
+位移、间距、横线粗细与操作符大小都来自字体的 MATH 表，例如 `SuperscriptShiftUp`、`SubscriptShiftDown`、`AxisHeight`、`FractionRuleThickness`、`RadicalVerticalGap` 与 `DisplayOperatorMinHeight`。每种结构如何使用它们，见[数学语法](math-grammar.md#how-a-formula-is-set)。字体没有提供的常数，会改用以点为单位的值，而且不会再缩放第二次。
 
 ## 样式与常数的覆写
 

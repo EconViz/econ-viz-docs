@@ -1,12 +1,12 @@
 ---
-seo_title: "更新纪录"
+seo_title: "更新记录"
 ---
 
 <span id="sec-changelog"></span>
 
-# 更新纪录
+# 更新记录
 
-`micro-viz` 的发行纪录。软件包目前为 0.2.0.dev0 版，尚未发布到 PyPI；保存库的 [CHANGELOG](https://github.com/EconViz/micro-viz/blob/main/CHANGELOG.md) 列出每一项变更。纯文档的变更不列入；每一条纪录标记在它所描述功能的说明处，依 l3doc 惯例，页码即实际页码。
+`micro-viz` 的发行记录。软件包目前为 0.2.0.dev0 版，尚未发布到 PyPI；保存库的 [CHANGELOG](https://github.com/EconViz/micro-viz/blob/main/CHANGELOG.md) 列出每一项变更。纯文档的变更不列入；每一条记录都链接到说明该功能的页面。
 
 ## 0.2.0.dev0
 

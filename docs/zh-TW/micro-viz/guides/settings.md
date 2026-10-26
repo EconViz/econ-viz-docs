@@ -10,7 +10,7 @@ seo_title: "設定"
 
 <!-- api: micro_viz.guides_settings_1 -->
 
-讀自 `econ-viz.toml` 的主題。`load()` 讀取 `path`，省略時讀工作目錄中的 `econ-viz.toml`。`use()` 把它設為預設並回傳該設定，之後沒有明確指定 `theme` 的圖形都使用它。檔案中的相對路徑相對於檔案所在的目錄。
+從 `econ-viz.toml` 檔案載入的主題。`load()` 讀取 `path`，省略時讀工作目錄中的 `econ-viz.toml`。`use()` 把它設為預設並回傳該設定，之後沒有明確指定 `theme` 的圖形都使用它。檔案中的相對路徑相對於檔案所在的目錄。
 
 ```python
 from micro_viz import Config

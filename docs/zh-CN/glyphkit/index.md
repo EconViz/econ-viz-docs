@@ -15,7 +15,7 @@ description: "GlyphKit 使用明确指定的字体、处理 Unicode、排出段�
 
 !!! warning "glyphkit 1.0 为测试版"
 
-    glyphkit 1.0.0b4 是预发行版本。预发行版本之间的每项变更都记录在[变更纪录](project/changelog.md)。
+    glyphkit 1.0.0b4 是预发行版本。预发行版本之间的每项变更都记录在[变更记录](project/changelog.md)。
 
 ```python
 from glyphkit import FontLibrary, FontSource, Paragraph, TextSpan, TextStyle
@@ -70,11 +70,11 @@ print(layout.logical_bounds)
 
     [:octicons-arrow-right-24: 字体安全](guides/reproducibility.md)
 
--   :material-axis-arrow: **座标与度量**
+-   :material-axis-arrow: **坐标与度量**
 
     字体单位、缩放、字幅与墨迹的差别，以及对齐、裁切或做碰撞检查时该用哪个方框。
 
-    [:octicons-arrow-right-24: 座标与度量](guides/coordinate-metrics.md)
+    [:octicons-arrow-right-24: 坐标与度量](guides/coordinate-metrics.md)
 
 </div>
 

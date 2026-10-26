@@ -35,6 +35,8 @@ from glyphkit.math import parse_math
 tree = parse_math(r"\frac{\partial U}{\partial x_1} = \lambda p_1")
 ```
 
+<span id="how-a-formula-is-set"></span>
+
 ## 算式如何排版
 
 排版依循 TeX 的規則（附錄 G），並使用字型 `MATH` 表裡的常數。

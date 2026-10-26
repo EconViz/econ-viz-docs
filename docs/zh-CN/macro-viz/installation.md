@@ -10,7 +10,7 @@ seo_title: "安装"
 
 `macro-viz` 需要 Python 3.10 或更新版本。运行时依赖 `mosaickit`（1.0.0rc10 以上、2 以下），它通过 `matplotlib` 绘图；以及 `bezierkit`（1.1.1 以上、2 以下），它提供转动记号的曲线几何。
 
-## 安装套件
+## 安装软件包
 
 `macro-viz` 尚未发布到 PyPI。从 GitHub 安装开发版：
 
@@ -32,7 +32,7 @@ uv add "macro-viz[animation] @ git+https://github.com/EconViz/macro-viz"
 
 ## 字体
 
-这些页面的图形以 TeX Gyre Pagella 排版文本与数学，中文则用思源宋体（Noto Serif TC 或 SC）。字库写在 `econ-viz.toml` 的 `[font]` 与 `[fonts]` 表（参见 [设置](guides/settings.md#sec-settings)）；没有字库时，图形会退回缺省的衬线字体。范例会在 TeX 发行版或环境变量 `MACRO_VIZ_FONT_DIR` 列出的文件夹中寻找 TeX Gyre 字库。
+这些页面的图形以 TeX Gyre Pagella 排版文本与数学，中文则用思源宋体（Noto Serif TC 或 SC）。字库写在 `econ-viz.toml` 的 `[font]` 与 `[fonts]` 表（参见 [设置](guides/settings.md#sec-settings)）；没有字库时，图形会退回缺省的衬线字体。示例会在 TeX 发行版或环境变量 `MACRO_VIZ_FONT_DIR` 列出的文件夹中寻找 TeX Gyre 字库。
 
 ## 开发环境
 

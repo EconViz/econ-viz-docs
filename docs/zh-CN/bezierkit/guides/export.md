@@ -52,11 +52,11 @@ print(sample.x)
 
 <!-- api: agora.bezierkit.guides_export_4 -->
 
-验证文档并回传 `PathDocument`，内含 `path` 与 `metadata`。格式或版本不明、线段不是恰好四个点、点的维度不符或数值非有限时，抛出 `ValueError`。
+验证文档并返回 `PathDocument`，内含 `path` 与 `metadata`。格式或版本不明、线段不是恰好四个点、点的维度不符或数值非有限时，抛出 `ValueError`。
 
 <!-- api: agora.bezierkit.guides_export_5 -->
 
-路径与调用端的 metadata，即 `loads()` 的回传值。
+路径与调用端的 metadata，即 `loads()` 的返回值。
 
 <span id="tab-json"></span>
 
@@ -77,13 +77,13 @@ text = dumps(path, metadata={"name": "arch"})
 assert loads(text).path.segments == path.segments
 ```
 
-第 1 版已冻结：添加必要的键、改变封闭的语意或控制点的排列方式，都需要第 2 版。
+第 1 版已冻结：添加必要的键、改变封闭的语义或控制点的排列方式，都需要第 2 版。
 
 ## SVG
 
 <!-- api: agora.bezierkit.guides_export_6 -->
 
-位于 `bezierkit.export.svg`。回传平面路径的路径数据字符串（即 `d` 属性），只使用绝对坐标的 `M`、`C` 与 `Z` 命令，每条子路径一个 `M`；不产生 SVG 文档或样式。`from_svg_path_data()` 解析同一子集；相对命令、直线与圆弧抛出 `ValueError`。
+位于 `bezierkit.export.svg`。返回平面路径的路径数据字符串（即 `d` 属性），只使用绝对坐标的 `M`、`C` 与 `Z` 命令，每条子路径一个 `M`；不产生 SVG 文档或样式。`from_svg_path_data()` 解析同一子集；相对命令、直线与圆弧抛出 `ValueError`。
 
 ```python
 from bezierkit.export.svg import to_svg_path_data

@@ -6,7 +6,7 @@ seo_title: "快速开始"
 
 <span id="sec-quickstart"></span>
 
-## 基本范例
+## 基本示例
 
 本章以一个市场说明完整流程，后续各章也沿用这个市场：
 
