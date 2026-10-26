@@ -1,0 +1,1693 @@
+{
+  "kinetickit.guides_accessibility_1": {
+    "name": "Semantics",
+    "anchor": "kinetickit-guides-accessibility-1",
+    "signatures": [
+      "Semantics(role=None, label=None, description=None, reading_order=None, hidden=False)"
+    ],
+    "parameters": [
+      {
+        "name": "role",
+        "types": [
+          "str | None"
+        ],
+        "description": {
+          "en": "An ARIA-style role such as `\"graphics-symbol\"`.",
+          "zh-TW": "ARIA 風格的角色，例如 `\"graphics-symbol\"`。",
+          "zh-CN": "ARIA 风格的角色，例如 `\"graphics-symbol\"`。"
+        },
+        "keyword_only": false,
+        "default": "None"
+      },
+      {
+        "name": "label",
+        "types": [
+          "str | None"
+        ],
+        "description": {
+          "en": "The short accessible name.",
+          "zh-TW": "簡短的可存取名稱。",
+          "zh-CN": "简短的可访问名称。"
+        },
+        "keyword_only": false,
+        "default": "None"
+      },
+      {
+        "name": "description",
+        "types": [
+          "str | None"
+        ],
+        "description": {
+          "en": "A longer description.",
+          "zh-TW": "較長的說明。",
+          "zh-CN": "较长的说明。"
+        },
+        "keyword_only": false,
+        "default": "None"
+      },
+      {
+        "name": "reading_order",
+        "types": [
+          "int | None"
+        ],
+        "description": {
+          "en": "Rank for linear reading; lower comes first, unranked objects follow in scene order.",
+          "zh-TW": "線性閱讀時的順位，數字小的先讀；沒有順位的依場景順序接在後面。",
+          "zh-CN": "线性阅读时的顺位，数字小的先读；没有顺位的依场景顺序接在后面。"
+        },
+        "keyword_only": false,
+        "default": "None"
+      },
+      {
+        "name": "hidden",
+        "types": [
+          "bool"
+        ],
+        "description": {
+          "en": "Mark a purely decorative object.",
+          "zh-TW": "標示純裝飾的物件。",
+          "zh-CN": "标示纯装饰的对象。"
+        },
+        "keyword_only": false,
+        "default": "False"
+      }
+    ]
+  },
+  "kinetickit.guides_accessibility_2": {
+    "name": "AccessibilityInfo",
+    "anchor": "kinetickit-guides-accessibility-2",
+    "signatures": [
+      "AccessibilityInfo(\n    title=None,\n    description=None,\n    alt_text=None,\n    long_description=None,\n    lang='en',\n    reduced_motion=...,\n)"
+    ],
+    "parameters": [
+      {
+        "name": "title",
+        "types": [
+          "str | None"
+        ],
+        "description": {
+          "en": "The title of the animation.",
+          "zh-TW": "動畫的標題。",
+          "zh-CN": "动画的标题。"
+        },
+        "keyword_only": false,
+        "default": "None"
+      },
+      {
+        "name": "description",
+        "types": [
+          "str | None"
+        ],
+        "description": {
+          "en": "A short description.",
+          "zh-TW": "簡短說明。",
+          "zh-CN": "简短说明。"
+        },
+        "keyword_only": false,
+        "default": "None"
+      },
+      {
+        "name": "alt_text",
+        "types": [
+          "str | None"
+        ],
+        "description": {
+          "en": "The short alternative for GIF and images.",
+          "zh-TW": "GIF 與圖片使用的簡短替代文字。",
+          "zh-CN": "GIF 与图片使用的简短替代文本。"
+        },
+        "keyword_only": false,
+        "default": "None"
+      },
+      {
+        "name": "long_description",
+        "types": [
+          "str | None"
+        ],
+        "description": {
+          "en": "The full text alternative.",
+          "zh-TW": "完整的文字替代內容。",
+          "zh-CN": "完整的文本替代内容。"
+        },
+        "keyword_only": false,
+        "default": "None"
+      },
+      {
+        "name": "lang",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "Language tag of the texts.",
+          "zh-TW": "文字的語言標籤。",
+          "zh-CN": "文本的语言标签。"
+        },
+        "keyword_only": false,
+        "default": "\"en\""
+      },
+      {
+        "name": "reduced_motion",
+        "types": [
+          "ReducedMotion"
+        ],
+        "description": {
+          "en": "What to show when the viewer asks for reduced motion.",
+          "zh-TW": "觀看者要求減少動態時要顯示的內容。",
+          "zh-CN": "观看者要求减少动态时要显示的内容。"
+        },
+        "keyword_only": false,
+        "default": "..."
+      }
+    ]
+  },
+  "kinetickit.guides_accessibility_3": {
+    "name": "ReducedMotion",
+    "anchor": "kinetickit-guides-accessibility-3",
+    "signatures": [
+      "ReducedMotion(mode='final', time=None)"
+    ],
+    "parameters": [
+      {
+        "name": "mode",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "`\"final\"`, `\"first\"` or `\"time\"`.",
+          "zh-TW": "`\"final\"`、`\"first\"` 或 `\"time\"`。",
+          "zh-CN": "`\"final\"`、`\"first\"` 或 `\"time\"`。"
+        },
+        "keyword_only": false,
+        "default": "\"final\""
+      },
+      {
+        "name": "time",
+        "types": [
+          "float | None"
+        ],
+        "description": {
+          "en": "Seconds into the animation; only valid with `mode=\"time\"`.",
+          "zh-TW": "動畫中的秒數；只在 `mode=\"time\"` 時有效。",
+          "zh-CN": "动画中的秒数；只在 `mode=\"time\"` 时有效。"
+        },
+        "keyword_only": false,
+        "default": "None"
+      }
+    ]
+  },
+  "kinetickit.guides_accessibility_4": {
+    "name": "Event",
+    "anchor": "kinetickit-guides-accessibility-4",
+    "signatures": [
+      "Event(*values)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_accessibility_5": {
+    "name": "Binding",
+    "anchor": "kinetickit-guides-accessibility-5",
+    "signatures": [
+      "Binding(event, actions, target=None, required=False)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_accessibility_6": {
+    "name": "InteractionSpec",
+    "anchor": "kinetickit-guides-accessibility-6",
+    "signatures": [
+      "InteractionSpec(bindings=(), ranges=...)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.examples_playrange": {
+    "name": "PlayRange",
+    "anchor": "kinetickit-examples-playrange",
+    "signatures": [
+      "PlayRange(name='')"
+    ],
+    "parameters": [
+      {
+        "name": "name",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "Name of a range in `InteractionSpec.ranges`.",
+          "zh-TW": "`InteractionSpec.ranges` 中的區間名稱。",
+          "zh-CN": "`InteractionSpec.ranges` 中的区间名称。"
+        },
+        "keyword_only": false,
+        "default": "''"
+      }
+    ]
+  },
+  "kinetickit.examples_select": {
+    "name": "Select",
+    "anchor": "kinetickit-examples-select",
+    "signatures": [
+      "Select(target=None, mode='toggle')"
+    ],
+    "parameters": [
+      {
+        "name": "target",
+        "types": [
+          "str | None"
+        ],
+        "description": {
+          "en": "Node id, or `None` for the node that was hit.",
+          "zh-TW": "節點編號，`None` 表示被點到的節點。",
+          "zh-CN": "节点编号，`None` 表示被点到的节点。"
+        },
+        "keyword_only": false,
+        "default": "None"
+      },
+      {
+        "name": "mode",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "`\"select\"`, `\"deselect\"` or `\"toggle\"`.",
+          "zh-TW": "`\"select\"`、`\"deselect\"` 或 `\"toggle\"`。",
+          "zh-CN": "`\"select\"`、`\"deselect\"` 或 `\"toggle\"`。"
+        },
+        "keyword_only": false,
+        "default": "'toggle'"
+      }
+    ]
+  },
+  "kinetickit.examples_setproperty": {
+    "name": "SetProperty",
+    "anchor": "kinetickit-examples-setproperty",
+    "signatures": [
+      "SetProperty(target=None, property='opacity', value=1.0)"
+    ],
+    "parameters": [
+      {
+        "name": "target",
+        "types": [
+          "str | None"
+        ],
+        "description": {
+          "en": "Node id, or `None` for the node that was hit.",
+          "zh-TW": "節點編號，`None` 表示被點到的節點。",
+          "zh-CN": "节点编号，`None` 表示被点到的节点。"
+        },
+        "keyword_only": false,
+        "default": "None"
+      },
+      {
+        "name": "property",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "Property name.",
+          "zh-TW": "屬性名稱。",
+          "zh-CN": "属性名称。"
+        },
+        "keyword_only": false,
+        "default": "'opacity'"
+      },
+      {
+        "name": "value",
+        "types": [
+          "float | bool"
+        ],
+        "description": {
+          "en": "The new value.",
+          "zh-TW": "新的值。",
+          "zh-CN": "新的值。"
+        },
+        "keyword_only": false,
+        "default": "1.0"
+      }
+    ]
+  },
+  "kinetickit.examples_axis2d": {
+    "name": "Axis2D",
+    "anchor": "kinetickit-examples-axis2d",
+    "signatures": [
+      "Axis2D(id, orientation, range, at=0.0, tick_count=5, tick_length=6.0)"
+    ],
+    "parameters": [
+      {
+        "name": "orientation",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "`\"x\"` or `\"y\"`.",
+          "zh-TW": "`\"x\"` 或 `\"y\"`。",
+          "zh-CN": "`\"x\"` 或 `\"y\"`。"
+        },
+        "keyword_only": false
+      },
+      {
+        "name": "range",
+        "types": [
+          "tuple[float, float]"
+        ],
+        "description": {
+          "en": "Data range of the axis.",
+          "zh-TW": "座標軸的資料範圍。",
+          "zh-CN": "座标轴的数据范围。"
+        },
+        "keyword_only": false
+      },
+      {
+        "name": "at",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Where the axis crosses the other one.",
+          "zh-TW": "座標軸與另一軸的交會位置。",
+          "zh-CN": "座标轴与另一轴的交会位置。"
+        },
+        "keyword_only": false,
+        "default": "0.0"
+      },
+      {
+        "name": "tick_count",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "Number of ticks.",
+          "zh-TW": "刻度數量。",
+          "zh-CN": "刻度数量。"
+        },
+        "keyword_only": false,
+        "default": "5"
+      }
+    ]
+  },
+  "kinetickit.examples_grid2d": {
+    "name": "Grid2D",
+    "anchor": "kinetickit-examples-grid2d",
+    "signatures": [
+      "Grid2D(id, x_range, y_range, tick_count=5)"
+    ],
+    "parameters": [
+      {
+        "name": "x_range",
+        "types": [
+          "tuple[float, float]"
+        ],
+        "description": {
+          "en": "Range of the vertical lines.",
+          "zh-TW": "垂直格線的範圍。",
+          "zh-CN": "垂直格线的范围。"
+        },
+        "keyword_only": false
+      },
+      {
+        "name": "y_range",
+        "types": [
+          "tuple[float, float]"
+        ],
+        "description": {
+          "en": "Range of the horizontal lines.",
+          "zh-TW": "水平格線的範圍。",
+          "zh-CN": "水平格线的范围。"
+        },
+        "keyword_only": false
+      },
+      {
+        "name": "tick_count",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "Number of lines per direction.",
+          "zh-TW": "每個方向的格線數量。",
+          "zh-CN": "每个方向的格线数量。"
+        },
+        "keyword_only": false,
+        "default": "5"
+      }
+    ]
+  },
+  "kinetickit.examples_viewport": {
+    "name": "Viewport",
+    "anchor": "kinetickit-examples-viewport",
+    "signatures": [
+      "Viewport(width, height, margins=...)"
+    ],
+    "parameters": [
+      {
+        "name": "width",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Width of the frame.",
+          "zh-TW": "畫框寬度。",
+          "zh-CN": "画框宽度。"
+        },
+        "keyword_only": false
+      },
+      {
+        "name": "height",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Height of the frame.",
+          "zh-TW": "畫框高度。",
+          "zh-CN": "画框高度。"
+        },
+        "keyword_only": false
+      },
+      {
+        "name": "margins",
+        "types": [
+          "Margins"
+        ],
+        "description": {
+          "en": "Space kept free around the content.",
+          "zh-TW": "內容周圍保留的空白。",
+          "zh-CN": "内容周围保留的空白。"
+        },
+        "keyword_only": false
+      }
+    ]
+  },
+  "kinetickit.examples_resolve_layout": {
+    "name": "resolve_layout",
+    "anchor": "kinetickit-examples-resolve-layout",
+    "signatures": [
+      "resolve_layout(animation, viewport, *, padding=0.05) → LayoutResult"
+    ],
+    "parameters": [
+      {
+        "name": "animation",
+        "types": [
+          "Animation"
+        ],
+        "description": {
+          "en": "The animation to resolve.",
+          "zh-TW": "要解析的動畫。",
+          "zh-CN": "要解析的动画。"
+        },
+        "keyword_only": false
+      },
+      {
+        "name": "viewport",
+        "types": [
+          "Viewport"
+        ],
+        "description": {
+          "en": "The frame that the layout is made for.",
+          "zh-TW": "版面所針對的畫框。",
+          "zh-CN": "版面所针对的画框。"
+        },
+        "keyword_only": false
+      },
+      {
+        "name": "padding",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Fraction of the frame kept free.",
+          "zh-TW": "畫框保留的空白比例。",
+          "zh-CN": "画框保留的空白比例。"
+        },
+        "keyword_only": true,
+        "default": "0.05"
+      }
+    ]
+  },
+  "kinetickit.examples_adapt": {
+    "name": "adapt",
+    "anchor": "kinetickit-examples-adapt",
+    "signatures": [
+      "adapt(objects, adapter, *, overlay=(), camera=None, dimension=2) → SceneBase"
+    ],
+    "parameters": [
+      {
+        "name": "objects",
+        "types": [
+          "Iterable[T]"
+        ],
+        "description": {
+          "en": "Your objects.",
+          "zh-TW": "你的物件。",
+          "zh-CN": "你的对象。"
+        },
+        "keyword_only": false
+      },
+      {
+        "name": "adapter",
+        "types": [
+          "Callable[[T], Iterable[Node]]"
+        ],
+        "description": {
+          "en": "Your depiction function. Every node needs a stable id.",
+          "zh-TW": "你的描繪函式。每個節點都需要穩定的編號。",
+          "zh-CN": "你的描绘函数。每个节点都需要稳定的编号。"
+        },
+        "keyword_only": false
+      },
+      {
+        "name": "overlay",
+        "types": [
+          "Iterable[Node]"
+        ],
+        "description": {
+          "en": "Extra nodes that stay in the scene.",
+          "zh-TW": "留在場景中的額外節點。",
+          "zh-CN": "留在场景中的额外节点。"
+        },
+        "keyword_only": true,
+        "default": "()"
+      },
+      {
+        "name": "camera",
+        "types": [
+          "Node | None"
+        ],
+        "description": {
+          "en": "The camera, when the default is not wanted.",
+          "zh-TW": "不想用預設相機時指定的相機。",
+          "zh-CN": "不想用缺省相机时指定的相机。"
+        },
+        "keyword_only": true,
+        "default": "None"
+      },
+      {
+        "name": "dimension",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "2 or 3.",
+          "zh-TW": "2 或 3。",
+          "zh-CN": "2 或 3。"
+        },
+        "keyword_only": true,
+        "default": "2"
+      }
+    ]
+  },
+  "kinetickit.examples_transition": {
+    "name": "transition",
+    "anchor": "kinetickit-examples-transition",
+    "signatures": [
+      "transition(before, after, adapter, **options) → Transition"
+    ],
+    "parameters": [
+      {
+        "name": "before",
+        "types": [
+          "Iterable[T]"
+        ],
+        "description": {
+          "en": "Objects of the first state.",
+          "zh-TW": "第一個狀態的物件。",
+          "zh-CN": "第一个状态的对象。"
+        },
+        "keyword_only": false
+      },
+      {
+        "name": "after",
+        "types": [
+          "Iterable[T]"
+        ],
+        "description": {
+          "en": "Objects of the second state.",
+          "zh-TW": "第二個狀態的物件。",
+          "zh-CN": "第二个状态的对象。"
+        },
+        "keyword_only": false
+      },
+      {
+        "name": "adapter",
+        "types": [
+          "Callable[[T], Iterable[Node]]"
+        ],
+        "description": {
+          "en": "Your depiction function.",
+          "zh-TW": "你的描繪函式。",
+          "zh-CN": "你的描绘函数。"
+        },
+        "keyword_only": false
+      },
+      {
+        "name": "**options",
+        "types": [
+          "Any"
+        ],
+        "description": {
+          "en": "Timing options such as `duration`.",
+          "zh-TW": "時間選項，例如 `duration`。",
+          "zh-CN": "时间选项，例如 `duration`。"
+        },
+        "keyword_only": false
+      }
+    ]
+  },
+  "kinetickit.guides_interpolation_transforms_1": {
+    "name": "Quaternion",
+    "anchor": "kinetickit-guides-interpolation-transforms-1",
+    "signatures": [
+      "Quaternion(w=1.0, x=0.0, y=0.0, z=0.0)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_interpolation_transforms_2": {
+    "name": "Transform2D",
+    "anchor": "kinetickit-guides-interpolation-transforms-2",
+    "signatures": [
+      "Transform2D(\n    translate=Vec2(x=0.0, y=0.0),\n    rotation=0.0,\n    scale=Vec2(x=1.0, y=1.0),\n    pivot=Vec2(x=0.0, y=0.0),\n)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_interpolation_transforms_3": {
+    "name": "Transform3D",
+    "anchor": "kinetickit-guides-interpolation-transforms-3",
+    "signatures": [
+      "Transform3D(\n    translate=Vec3(x=0.0, y=0.0, z=0.0),\n    rotation=...,\n    scale=Vec3(x=1.0, y=1.0, z=1.0),\n    pivot=Vec3(x=0.0, y=0.0, z=0.0),\n)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_morphing_1": {
+    "name": "Path2D",
+    "anchor": "kinetickit-guides-morphing-1",
+    "signatures": [
+      "Path2D(commands)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_morphing_2": {
+    "name": "MeshData",
+    "anchor": "kinetickit-guides-morphing-2",
+    "signatures": [
+      "MeshData(vertices, faces, normals=None, colors=None)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_morphing_3": {
+    "name": "SurfaceGrid",
+    "anchor": "kinetickit-guides-morphing-3",
+    "signatures": [
+      "SurfaceGrid(points)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_outputs_1": {
+    "name": "ExportManifest",
+    "anchor": "kinetickit-guides-outputs-1",
+    "signatures": [
+      "ExportManifest(\n    format,\n    renderer,\n    destination,\n    width=None,\n    height=None,\n    duration=0.0,\n    frames=None,\n    bytes_written=0,\n    description=None,\n    representative_frame=None,\n    warnings=(),\n    preserved=(),\n    degraded=(),\n    network_dependencies=(),\n    details=...,\n)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_outputs_2": {
+    "name": "available_formats",
+    "anchor": "kinetickit-guides-outputs-2",
+    "signatures": [
+      "available_formats() → tuple[str, ...]"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_outputs_3": {
+    "name": "export",
+    "anchor": "kinetickit-guides-outputs-3",
+    "signatures": [
+      "export(animation, target, *, renderer=None, format=None, **options) → Any"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_outputs_4": {
+    "name": "RendererCapabilities",
+    "anchor": "kinetickit-guides-outputs-4",
+    "signatures": [
+      "RendererCapabilities(\n    name,\n    dimensions=frozenset(),\n    geometry=frozenset(),\n    features=frozenset(),\n    outputs=frozenset(),\n    interactions=frozenset(),\n    notes=(),\n)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_outputs_5": {
+    "name": "Requirements",
+    "anchor": "kinetickit-guides-outputs-5",
+    "signatures": [
+      "Requirements(\n    dimensions=frozenset(),\n    geometry=frozenset(),\n    features=frozenset(),\n    outputs=frozenset(),\n    interactions=frozenset(),\n)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_outputs_6": {
+    "name": "requirements_for",
+    "anchor": "kinetickit-guides-outputs-6",
+    "signatures": [
+      "requirements_for(animation, *, outputs=()) → Requirements"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_outputs_7": {
+    "name": "GifSettings",
+    "anchor": "kinetickit-guides-outputs-7",
+    "signatures": [
+      "GifSettings(\n    fps=30,\n    timestamps=None,\n    loop=0,\n    colors=256,\n    dither='none',\n    palette='adaptive',\n    disposal=1,\n    metadata=True,\n    degradation='drop',\n    accessibility=False,\n    description=None,\n    companion_png=None,\n    companion_json=None,\n)"
+    ],
+    "parameters": [
+      {
+        "name": "fps",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "Frames per second.",
+          "zh-TW": "每秒影格數。",
+          "zh-CN": "每秒帧数。"
+        },
+        "keyword_only": false,
+        "default": "30"
+      },
+      {
+        "name": "loop",
+        "types": [
+          "int | None"
+        ],
+        "description": {
+          "en": "Number of repeats. `0` loops forever and `None` plays once.",
+          "zh-TW": "重複次數。`0` 表示無限循環，`None` 表示只播一次。",
+          "zh-CN": "重复次数。`0` 表示无限循环，`None` 表示只播一次。"
+        },
+        "keyword_only": false,
+        "default": "0"
+      },
+      {
+        "name": "colors",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "Palette size, up to 256.",
+          "zh-TW": "調色盤大小，最多 256 色。",
+          "zh-CN": "调色板大小，最多 256 色。"
+        },
+        "keyword_only": false,
+        "default": "256"
+      },
+      {
+        "name": "dither",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "Dithering method.",
+          "zh-TW": "遞色方法。",
+          "zh-CN": "递色方法。"
+        },
+        "keyword_only": false,
+        "default": "\"none\""
+      },
+      {
+        "name": "palette",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "Palette strategy.",
+          "zh-TW": "調色盤策略。",
+          "zh-CN": "调色板策略。"
+        },
+        "keyword_only": false,
+        "default": "\"adaptive\""
+      },
+      {
+        "name": "timestamps",
+        "types": [
+          "tuple[float, ...] | None"
+        ],
+        "description": {
+          "en": "Explicit sample times in seconds, in place of a fixed rate.",
+          "zh-TW": "明確的取樣時間（秒），取代固定影格率。",
+          "zh-CN": "明确的采样时间（秒），取代固定帧率。"
+        },
+        "keyword_only": false,
+        "default": "None"
+      },
+      {
+        "name": "accessibility",
+        "types": [
+          "bool"
+        ],
+        "description": {
+          "en": "Return a text alternative and a representative PNG; needs `description`.",
+          "zh-TW": "一併回傳文字說明與代表性 PNG；需要 `description`。",
+          "zh-CN": "一并返回文本说明与代表性 PNG；需要 `description`。"
+        },
+        "keyword_only": false,
+        "default": "False"
+      },
+      {
+        "name": "description",
+        "types": [
+          "str | None"
+        ],
+        "description": {
+          "en": "The text alternative a GIF cannot carry itself.",
+          "zh-TW": "GIF 本身帶不了的文字說明。",
+          "zh-CN": "GIF 本身带不了的文本说明。"
+        },
+        "keyword_only": false,
+        "default": "None"
+      }
+    ]
+  },
+  "kinetickit.guides_outputs_8": {
+    "name": "export_png_frames",
+    "anchor": "kinetickit-guides-outputs-8",
+    "signatures": [
+      "export_png_frames(\n    frames,\n    target,\n    *,\n    fps=30,\n    loop=0,\n    colors=256,\n    dither='none',\n    palette='adaptive',\n    disposal=2,\n) → ExportManifest"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_projection_1": {
+    "name": "Camera3D",
+    "anchor": "kinetickit-guides-projection-1",
+    "signatures": [
+      "Camera3D(\n    *,\n    id='camera',\n    opacity=1.0,\n    z=0.0,\n    visible=True,\n    semantics=None,\n    position=Vec3(x=5.0, y=-7.0, z=4.0),\n    target=Vec3(x=0.0, y=0.0, z=0.0),\n    up=Vec3(x=0.0, y=0.0, z=1.0),\n    projection='perspective',\n    fov=0.6981317007977318,\n    ortho_height=6.0,\n    near=0.1,\n    far=1000.0,\n)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_projection_2": {
+    "name": "Surface3D",
+    "anchor": "kinetickit-guides-projection-2",
+    "signatures": [
+      "Surface3D(\n    *,\n    id,\n    opacity=1.0,\n    z=0.0,\n    visible=True,\n    semantics=None,\n    color=...,\n    material=...,\n    edge_color=None,\n    edge_width=0.5,\n    two_sided=True,\n    grid=...,\n    colorscale=None,\n    value_range=None,\n)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_projection_3": {
+    "name": "Mesh3D",
+    "anchor": "kinetickit-guides-projection-3",
+    "signatures": [
+      "Mesh3D(\n    *,\n    id,\n    opacity=1.0,\n    z=0.0,\n    visible=True,\n    semantics=None,\n    color=...,\n    material=...,\n    edge_color=None,\n    edge_width=0.5,\n    two_sided=True,\n    mesh=...,\n)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_sampling_encoding_1": {
+    "name": "FixedFPS",
+    "anchor": "kinetickit-guides-sampling-encoding-1",
+    "signatures": [
+      "FixedFPS(fps)"
+    ],
+    "parameters": [
+      {
+        "name": "fps",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "A positive integer frame rate.",
+          "zh-TW": "正整數的影格率。",
+          "zh-CN": "正整数的帧率。"
+        },
+        "keyword_only": false
+      }
+    ]
+  },
+  "kinetickit.guides_sampling_encoding_2": {
+    "name": "Timestamps",
+    "anchor": "kinetickit-guides-sampling-encoding-2",
+    "signatures": [
+      "Timestamps(stamps)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_sampling_encoding_3": {
+    "name": "Frame",
+    "anchor": "kinetickit-guides-sampling-encoding-3",
+    "signatures": [
+      "Frame(index, time, progress, snapshot)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_scenes_motion_1": {
+    "name": "Line2D",
+    "anchor": "kinetickit-guides-scenes-motion-1",
+    "signatures": [
+      "Line2D(\n    *,\n    id,\n    opacity=1.0,\n    z=0.0,\n    visible=True,\n    semantics=None,\n    color=...,\n    width=2.0,\n    cap='round',\n    join='round',\n    dash=(),\n    draw_progress=1.0,\n    start=Vec2(x=0.0, y=0.0),\n    end=Vec2(x=1.0, y=0.0),\n)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_scenes_motion_2": {
+    "name": "PathNode2D",
+    "anchor": "kinetickit-guides-scenes-motion-2",
+    "signatures": [
+      "PathNode2D(\n    *,\n    id,\n    opacity=1.0,\n    z=0.0,\n    visible=True,\n    semantics=None,\n    color=...,\n    width=2.0,\n    cap='round',\n    join='round',\n    dash=(),\n    draw_progress=1.0,\n    path=...,\n)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_scenes_motion_3": {
+    "name": "Shape2D",
+    "anchor": "kinetickit-guides-scenes-motion-3",
+    "signatures": [
+      "Shape2D(\n    *,\n    id,\n    opacity=1.0,\n    z=0.0,\n    visible=True,\n    semantics=None,\n    path=...,\n    fill=...,\n    fill_rule='nonzero',\n    stroke=None,\n    stroke_width=1.0,\n    join='round',\n    dash=(),\n)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_scenes_motion_4": {
+    "name": "Group2D",
+    "anchor": "kinetickit-guides-scenes-motion-4",
+    "signatures": [
+      "Group2D(\n    *,\n    id,\n    opacity=1.0,\n    z=0.0,\n    visible=True,\n    semantics=None,\n    children=(),\n    transform=...,\n    clip=None,\n)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_scenes_motion_5": {
+    "name": "Text2D",
+    "anchor": "kinetickit-guides-scenes-motion-5",
+    "signatures": [
+      "Text2D(\n    *,\n    id,\n    opacity=1.0,\n    z=0.0,\n    visible=True,\n    semantics=None,\n    asset=None,\n    position=Vec2(x=0.0, y=0.0),\n    rotation=0.0,\n    scale=1.0,\n    color=...,\n)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_scenes_motion_6": {
+    "name": "Camera2D",
+    "anchor": "kinetickit-guides-scenes-motion-6",
+    "signatures": [
+      "Camera2D(\n    *,\n    id='camera',\n    opacity=1.0,\n    z=0.0,\n    visible=True,\n    semantics=None,\n    view=None,\n    pan=Vec2(x=0.0, y=0.0),\n    zoom=1.0,\n)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_scenes_motion_7": {
+    "name": "Scene3D",
+    "anchor": "kinetickit-guides-scenes-motion-7",
+    "signatures": [
+      "Scene3D(*nodes, overlay=(), camera=None)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_scenes_motion_8": {
+    "name": "Point3D",
+    "anchor": "kinetickit-guides-scenes-motion-8",
+    "signatures": [
+      "Point3D(\n    *,\n    id,\n    opacity=1.0,\n    z=0.0,\n    visible=True,\n    semantics=None,\n    position=Vec3(x=0.0, y=0.0, z=0.0),\n    size=4.0,\n    symbol='circle',\n    color=...,\n)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_scenes_motion_9": {
+    "name": "Line3D",
+    "anchor": "kinetickit-guides-scenes-motion-9",
+    "signatures": [
+      "Line3D(\n    *,\n    id,\n    opacity=1.0,\n    z=0.0,\n    visible=True,\n    semantics=None,\n    color=...,\n    width=2.0,\n    cap='round',\n    join='round',\n    dash=(),\n    draw_progress=1.0,\n    start=Vec3(x=0.0, y=0.0, z=0.0),\n    end=Vec3(x=1.0, y=0.0, z=0.0),\n)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_scenes_motion_10": {
+    "name": "Polyline3D",
+    "anchor": "kinetickit-guides-scenes-motion-10",
+    "signatures": [
+      "Polyline3D(\n    *,\n    id,\n    opacity=1.0,\n    z=0.0,\n    visible=True,\n    semantics=None,\n    color=...,\n    width=2.0,\n    cap='round',\n    join='round',\n    dash=(),\n    draw_progress=1.0,\n    points=...,\n    closed=False,\n)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_scenes_motion_11": {
+    "name": "Mesh3D",
+    "anchor": "kinetickit-guides-scenes-motion-11",
+    "signatures": [
+      "Mesh3D(\n    *,\n    id,\n    opacity=1.0,\n    z=0.0,\n    visible=True,\n    semantics=None,\n    color=...,\n    material=...,\n    edge_color=None,\n    edge_width=0.5,\n    two_sided=True,\n    mesh=...,\n)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_scenes_motion_12": {
+    "name": "Surface3D",
+    "anchor": "kinetickit-guides-scenes-motion-12",
+    "signatures": [
+      "Surface3D(\n    *,\n    id,\n    opacity=1.0,\n    z=0.0,\n    visible=True,\n    semantics=None,\n    color=...,\n    material=...,\n    edge_color=None,\n    edge_width=0.5,\n    two_sided=True,\n    grid=...,\n    colorscale=None,\n    value_range=None,\n)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_scenes_motion_13": {
+    "name": "Group3D",
+    "anchor": "kinetickit-guides-scenes-motion-13",
+    "signatures": [
+      "Group3D(\n    *,\n    id,\n    opacity=1.0,\n    z=0.0,\n    visible=True,\n    semantics=None,\n    children=(),\n    transform=...,\n)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_scenes_motion_14": {
+    "name": "Camera3D",
+    "anchor": "kinetickit-guides-scenes-motion-14",
+    "signatures": [
+      "Camera3D(\n    *,\n    id='camera',\n    opacity=1.0,\n    z=0.0,\n    visible=True,\n    semantics=None,\n    position=Vec3(x=5.0, y=-7.0, z=4.0),\n    target=Vec3(x=0.0, y=0.0, z=0.0),\n    up=Vec3(x=0.0, y=0.0, z=1.0),\n    projection='perspective',\n    fov=0.6981317007977318,\n    ortho_height=6.0,\n    near=0.1,\n    far=1000.0,\n)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.scenes_vec3": {
+    "name": "Vec3",
+    "anchor": "kinetickit-scenes-vec3",
+    "signatures": [
+      "Vec3(x, y, z)"
+    ],
+    "parameters": [
+      {
+        "name": "x",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "x component.",
+          "zh-TW": "x 分量。",
+          "zh-CN": "x 分量。"
+        },
+        "keyword_only": false
+      },
+      {
+        "name": "y",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "y component.",
+          "zh-TW": "y 分量。",
+          "zh-CN": "y 分量。"
+        },
+        "keyword_only": false
+      },
+      {
+        "name": "z",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "z component.",
+          "zh-TW": "z 分量。",
+          "zh-CN": "z 分量。"
+        },
+        "keyword_only": false
+      }
+    ]
+  },
+  "kinetickit.scenes_colorscale": {
+    "name": "ColorScale",
+    "anchor": "kinetickit-scenes-colorscale",
+    "signatures": [
+      "ColorScale(stops)"
+    ],
+    "parameters": [
+      {
+        "name": "stops",
+        "types": [
+          "tuple[tuple[float, Color | str], ...]"
+        ],
+        "description": {
+          "en": "Ordered `(position, colour)` pairs from 0 to 1.",
+          "zh-TW": "由 0 到 1、依序排列的 `(位置, 顏色)` 配對。",
+          "zh-CN": "由 0 到 1、依序排列的 `(位置, 颜色)` 配对。"
+        },
+        "keyword_only": false
+      }
+    ]
+  },
+  "kinetickit.scenes_material": {
+    "name": "Material",
+    "anchor": "kinetickit-scenes-material",
+    "signatures": [
+      "Material(ambient=0.35, diffuse=0.65, specular=0.0, shininess=32.0)"
+    ],
+    "parameters": [
+      {
+        "name": "ambient",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Share that is always lit.",
+          "zh-TW": "永遠被照亮的比例。",
+          "zh-CN": "永远被照亮的比例。"
+        },
+        "keyword_only": false,
+        "default": "0.35"
+      },
+      {
+        "name": "diffuse",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Share that follows the light.",
+          "zh-TW": "隨光線變化的比例。",
+          "zh-CN": "随光线变化的比例。"
+        },
+        "keyword_only": false,
+        "default": "0.65"
+      },
+      {
+        "name": "specular",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Strength of the highlight.",
+          "zh-TW": "高光強度。",
+          "zh-CN": "高光强度。"
+        },
+        "keyword_only": false,
+        "default": "0.0"
+      },
+      {
+        "name": "shininess",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Tightness of the highlight.",
+          "zh-TW": "高光的集中程度。",
+          "zh-CN": "高光的集中程度。"
+        },
+        "keyword_only": false,
+        "default": "32.0"
+      }
+    ]
+  },
+  "kinetickit.scenes_light": {
+    "name": "DirectionalLight3D",
+    "anchor": "kinetickit-scenes-light",
+    "signatures": [
+      "DirectionalLight3D(\n    *,\n    id,\n    opacity=1.0,\n    z=0.0,\n    visible=True,\n    semantics=None,\n    direction=Vec3(x=-0.4, y=0.6, z=-0.7),\n    color=...,\n    intensity=1.0,\n)"
+    ],
+    "parameters": [
+      {
+        "name": "id",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "Stable id.",
+          "zh-TW": "穩定的編號。",
+          "zh-CN": "稳定的编号。"
+        },
+        "keyword_only": true
+      },
+      {
+        "name": "direction",
+        "types": [
+          "Vec3"
+        ],
+        "description": {
+          "en": "Direction the light travels.",
+          "zh-TW": "光線行進的方向。",
+          "zh-CN": "光线行进的方向。"
+        },
+        "keyword_only": true
+      },
+      {
+        "name": "intensity",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Brightness.",
+          "zh-TW": "亮度。",
+          "zh-CN": "亮度。"
+        },
+        "keyword_only": true,
+        "default": "1.0"
+      }
+    ]
+  },
+  "kinetickit.guides_scenes_motion_15": {
+    "name": "Motion",
+    "anchor": "kinetickit-guides-scenes-motion-15",
+    "signatures": [
+      "Motion"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_scenes_motion_16": {
+    "name": "Timeline",
+    "anchor": "kinetickit-guides-scenes-motion-16",
+    "signatures": [
+      "Timeline(motion, base, registry=...)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_scenes_motion_17": {
+    "name": "Keyframe",
+    "anchor": "kinetickit-guides-scenes-motion-17",
+    "signatures": [
+      "Keyframe(time, value, easing=None, hold=False)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_scenes_motion_18": {
+    "name": "Keyframes",
+    "anchor": "kinetickit-guides-scenes-motion-18",
+    "signatures": [
+      "Keyframes(target, frames, easing=...)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_scenes_motion_19": {
+    "name": "SceneTransition",
+    "anchor": "kinetickit-guides-scenes-motion-19",
+    "signatures": [
+      "SceneTransition()"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_scenes_motion_20": {
+    "name": "TransitionPolicy",
+    "anchor": "kinetickit-guides-scenes-motion-20",
+    "signatures": [
+      "TransitionPolicy(enter='fade', exit='fade')"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_time_easing_1": {
+    "name": "ease",
+    "anchor": "kinetickit-guides-time-easing-1",
+    "signatures": [
+      "ease.linear(u)",
+      "ease.in_quad(u), ease.out_quad(u), ease.in_out_quad(u)",
+      "ease.in_cubic(u), ease.out_cubic(u), ease.in_out_cubic(u)",
+      "ease.in_quart(u), ease.in_quint(u), ease.in_sine(u), ease.in_expo(u)",
+      "ease.cubic_bezier(x1, y1, x2, y2)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_typography_1": {
+    "name": "GlyphKitTypography",
+    "anchor": "kinetickit-guides-typography-1",
+    "signatures": [
+      "GlyphKitTypography(\n    engine,\n    *,\n    families,\n    size=14.0,\n    weight=400,\n    slant='normal',\n    max_width=None,\n    embed=True,\n    embedding_use=...,\n    allow_unknown=False,\n)"
+    ],
+    "parameters": [
+      {
+        "name": "engine",
+        "types": [
+          "TypographyEngine"
+        ],
+        "description": {
+          "en": "The typography engine: a GlyphKit `FontLibrary`.",
+          "zh-TW": "排版引擎：GlyphKit 的 `FontLibrary`。",
+          "zh-CN": "排版引擎：GlyphKit 的 `FontLibrary`。"
+        },
+        "keyword_only": false
+      },
+      {
+        "name": "families",
+        "types": [
+          "Sequence[str]"
+        ],
+        "description": {
+          "en": "Font families in fallback order. Each must be in the library.",
+          "zh-TW": "依後備順序排列的字族。每個都要在字型庫裡。",
+          "zh-CN": "依后备顺序排列的字族。每个都要在字体库里。"
+        },
+        "keyword_only": true
+      },
+      {
+        "name": "size",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Font size in the asset's own units; scale the `Text2D` to fit the scene.",
+          "zh-TW": "字級，使用素材自己的單位；用 `Text2D` 的縮放配合場景。",
+          "zh-CN": "字级，使用素材自己的单位；用 `Text2D` 的缩放配合场景。"
+        },
+        "keyword_only": true,
+        "default": "14.0"
+      },
+      {
+        "name": "weight",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "Font weight from 100 to 900.",
+          "zh-TW": "字重，從 100 到 900。",
+          "zh-CN": "字重，从 100 到 900。"
+        },
+        "keyword_only": true,
+        "default": "400"
+      },
+      {
+        "name": "slant",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "`\"normal\"`, `\"italic\"` or `\"oblique\"`.",
+          "zh-TW": "`\"normal\"`、`\"italic\"` 或 `\"oblique\"`。",
+          "zh-CN": "`\"normal\"`、`\"italic\"` 或 `\"oblique\"`。"
+        },
+        "keyword_only": true,
+        "default": "\"normal\""
+      },
+      {
+        "name": "max_width",
+        "types": [
+          "float | None"
+        ],
+        "description": {
+          "en": "Wrap lines at this width. `None` keeps one line.",
+          "zh-TW": "在此寬度換行。`None` 則只排成一行。",
+          "zh-CN": "在此宽度换行。`None` 则只排成一行。"
+        },
+        "keyword_only": true,
+        "default": "None"
+      },
+      {
+        "name": "embed",
+        "types": [
+          "bool"
+        ],
+        "description": {
+          "en": "Embed a permission-checked font subset in the asset.",
+          "zh-TW": "把通過權限檢查的字型子集嵌入素材。",
+          "zh-CN": "把通过权限检查的字体子集嵌入素材。"
+        },
+        "keyword_only": true,
+        "default": "True"
+      },
+      {
+        "name": "embedding_use",
+        "types": [
+          "EmbeddingUse"
+        ],
+        "description": {
+          "en": "The declared use the permission check is made for.",
+          "zh-TW": "權限檢查所對應的宣告用途。",
+          "zh-CN": "权限检查所对应的声明用途。"
+        },
+        "keyword_only": true,
+        "default": "EmbeddingUse.WEB"
+      },
+      {
+        "name": "allow_unknown",
+        "types": [
+          "bool"
+        ],
+        "description": {
+          "en": "Accept fonts whose embedding permission is unknown. The decision is recorded.",
+          "zh-TW": "接受嵌入權限不明的字型，並記錄這個決定。",
+          "zh-CN": "接受嵌入权限不明的字体，并记录这个决定。"
+        },
+        "keyword_only": true,
+        "default": "False"
+      }
+    ]
+  },
+  "kinetickit.guides_typography_2": {
+    "name": "text_asset_from_layout",
+    "anchor": "kinetickit-guides-typography-2",
+    "signatures": [
+      "text_asset_from_layout(\n    engine,\n    layout,\n    *,\n    embed=True,\n    embedding_use=...,\n    container=...,\n    allow_unknown=False,\n) → TextAsset"
+    ],
+    "parameters": []
+  },
+  "kinetickit.guides_typography_3": {
+    "name": "text_asset_from_math",
+    "anchor": "kinetickit-guides-typography-3",
+    "signatures": [
+      "text_asset_from_math(\n    engine,\n    latex,\n    *,\n    families,\n    size,\n    level='display',\n    embed=True,\n    embedding_use=...,\n    allow_unknown=False,\n) → TextAsset"
+    ],
+    "parameters": []
+  },
+  "kinetickit.quickstart_1": {
+    "name": "Animation",
+    "anchor": "kinetickit-quickstart-1",
+    "signatures": [
+      "Animation(scene, motion=None, *, registry=..., interactions=None, accessibility=None)"
+    ],
+    "parameters": [
+      {
+        "name": "scene",
+        "types": [
+          "SceneBase"
+        ],
+        "description": {
+          "en": "The scene: nodes, overlay and camera. 2D and 3D scenes are both accepted.",
+          "zh-TW": "場景：節點、疊層與相機。2D 與 3D 場景都可以。",
+          "zh-CN": "场景：节点、叠层与相机。2D 与 3D 场景都可以。"
+        },
+        "keyword_only": false
+      },
+      {
+        "name": "motion",
+        "types": [
+          "Motion | None"
+        ],
+        "description": {
+          "en": "The motion tree. `None` gives a still animation.",
+          "zh-TW": "動作樹。`None` 表示靜止的動畫。",
+          "zh-CN": "动作树。`None` 表示静止的动画。"
+        },
+        "keyword_only": false,
+        "default": "None"
+      },
+      {
+        "name": "interactions",
+        "types": [
+          "InteractionSpec | None"
+        ],
+        "description": {
+          "en": "Declarative interactions bound to node ids ([Typography and accessibility](guides/typography-accessibility.md#sec-interaction)).",
+          "zh-TW": "綁定到節點編號的宣告式互動（參見[文字與無障礙](guides/typography-accessibility.md#sec-interaction)）。",
+          "zh-CN": "绑定到节点编号的声明式交互（参见[文本与无障碍](guides/typography-accessibility.md#sec-interaction)）。"
+        },
+        "keyword_only": true,
+        "default": "None"
+      },
+      {
+        "name": "accessibility",
+        "types": [
+          "AccessibilityInfo | None"
+        ],
+        "description": {
+          "en": "Title, descriptions, language and the reduced-motion policy.",
+          "zh-TW": "標題、說明文字、語言與減少動態的處理方式。",
+          "zh-CN": "标题、说明文本、语言与减少动态的处理方式。"
+        },
+        "keyword_only": true,
+        "default": "None"
+      }
+    ]
+  },
+  "kinetickit.quickstart_save": {
+    "name": "Animation.save",
+    "anchor": "kinetickit-quickstart-save",
+    "signatures": [
+      "Animation.save(target, *, renderer=None, **options) → Any"
+    ],
+    "parameters": [
+      {
+        "name": "target",
+        "types": [
+          "str | PathLike | Destination"
+        ],
+        "description": {
+          "en": "A file path, a stream or another destination. The suffix of a path picks the format: `.svg`, `.gif` or `.html`.",
+          "zh-TW": "檔案路徑、串流或其他輸出目標。路徑的副檔名決定格式：`.svg`、`.gif` 或 `.html`。",
+          "zh-CN": "文件路径、串流或其他输出目标。路径的扩展名决定格式：`.svg`、`.gif` 或 `.html`。"
+        },
+        "keyword_only": false
+      },
+      {
+        "name": "renderer",
+        "types": [
+          "str | None"
+        ],
+        "description": {
+          "en": "Force a renderer: `vector`, `raster` or `interactive`. `None` follows the format.",
+          "zh-TW": "指定繪圖端：`vector`、`raster` 或 `interactive`。`None` 則依格式決定。",
+          "zh-CN": "指定绘图端：`vector`、`raster` 或 `interactive`。`None` 则依格式决定。"
+        },
+        "keyword_only": true,
+        "default": "None"
+      },
+      {
+        "name": "**options",
+        "types": [
+          "Any"
+        ],
+        "description": {
+          "en": "Options of the chosen output, such as `width`, `height`, `fps` or `title` ([Output formats](guides/outputs.md#sec-options)).",
+          "zh-TW": "所選輸出的選項，例如 `width`、`height`、`fps` 或 `title`（參見[輸出格式](guides/outputs.md#sec-options)）。",
+          "zh-CN": "所选输出的选项，例如 `width`、`height`、`fps` 或 `title`（参见[输出格式](guides/outputs.md#sec-options)）。"
+        },
+        "keyword_only": false
+      }
+    ]
+  },
+  "kinetickit.quickstart_2": {
+    "name": "Scene2D",
+    "anchor": "kinetickit-quickstart-2",
+    "signatures": [
+      "Scene2D(*nodes, overlay=(), camera=None)"
+    ],
+    "parameters": []
+  },
+  "kinetickit.quickstart_3": {
+    "name": "Point2D",
+    "anchor": "kinetickit-quickstart-3",
+    "signatures": [
+      "Point2D(\n    *,\n    id,\n    opacity=1.0,\n    z=0.0,\n    visible=True,\n    semantics=None,\n    position=Vec2(x=0.0, y=0.0),\n    size=4.0,\n    symbol='circle',\n    color=...,\n    stroke=None,\n    stroke_width=1.0,\n)"
+    ],
+    "parameters": [
+      {
+        "name": "id",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "The stable id. Motions, interactions and scene transitions find the node by it.",
+          "zh-TW": "穩定的編號。動作、互動與場景轉場都靠它找到節點。",
+          "zh-CN": "稳定的编号。动作、交互与场景转场都靠它找到节点。"
+        },
+        "keyword_only": true
+      },
+      {
+        "name": "position",
+        "types": [
+          "Vec2"
+        ],
+        "description": {
+          "en": "Where the point sits, in world coordinates.",
+          "zh-TW": "點的位置，使用世界座標。",
+          "zh-CN": "点的位置，使用世界座标。"
+        },
+        "keyword_only": true,
+        "default": "Vec2(x=0.0, y=0.0)"
+      },
+      {
+        "name": "size",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "The marker size in output units.",
+          "zh-TW": "標記大小，單位同輸出。",
+          "zh-CN": "标记大小，单位同输出。"
+        },
+        "keyword_only": true,
+        "default": "4.0"
+      },
+      {
+        "name": "color",
+        "types": [
+          "Color | str"
+        ],
+        "description": {
+          "en": "Fill colour: a `Color` or a CSS-style string such as `\"#e4572e\"`.",
+          "zh-TW": "填色：`Color`，或像 `\"#e4572e\"` 這樣的字串。",
+          "zh-CN": "填色：`Color`，或像 `\"#e4572e\"` 这样的字符串。"
+        },
+        "keyword_only": true,
+        "default": "..."
+      },
+      {
+        "name": "opacity",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "From 0 (hidden) to 1 (opaque).",
+          "zh-TW": "從 0（隱藏）到 1（不透明）。",
+          "zh-CN": "从 0（隐藏）到 1（不透明）。"
+        },
+        "keyword_only": true,
+        "default": "1.0"
+      },
+      {
+        "name": "semantics",
+        "types": [
+          "Semantics | None"
+        ],
+        "description": {
+          "en": "Role, label and reading order for assistive technology.",
+          "zh-TW": "給輔助科技使用的角色、標籤與閱讀順序。",
+          "zh-CN": "给辅助科技使用的角色、标签与阅读顺序。"
+        },
+        "keyword_only": true,
+        "default": "None"
+      }
+    ]
+  },
+  "kinetickit.quickstart_4": {
+    "name": "Bounds2D",
+    "anchor": "kinetickit-quickstart-4",
+    "signatures": [
+      "Bounds2D(min, max)"
+    ],
+    "parameters": [
+      {
+        "name": "min",
+        "types": [
+          "Vec2"
+        ],
+        "description": {
+          "en": "The lower-left corner.",
+          "zh-TW": "左下角。",
+          "zh-CN": "左下角。"
+        },
+        "keyword_only": false
+      },
+      {
+        "name": "max",
+        "types": [
+          "Vec2"
+        ],
+        "description": {
+          "en": "The upper-right corner.",
+          "zh-TW": "右上角。",
+          "zh-CN": "右上角。"
+        },
+        "keyword_only": false
+      }
+    ]
+  },
+  "kinetickit.quickstart_5": {
+    "name": "Vec2",
+    "anchor": "kinetickit-quickstart-5",
+    "signatures": [
+      "Vec2(x, y)"
+    ],
+    "parameters": [
+      {
+        "name": "x",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Horizontal component.",
+          "zh-TW": "水平分量。",
+          "zh-CN": "水平分量。"
+        },
+        "keyword_only": false
+      },
+      {
+        "name": "y",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Vertical component.",
+          "zh-TW": "垂直分量。",
+          "zh-CN": "垂直分量。"
+        },
+        "keyword_only": false
+      }
+    ]
+  },
+  "kinetickit.quickstart_6": {
+    "name": "ease",
+    "anchor": "kinetickit-quickstart-6",
+    "signatures": [
+      "ease.linear(u)",
+      "ease.in_quad(u), ease.out_quad(u), ease.in_out_quad(u)",
+      "ease.in_cubic(u), ease.out_cubic(u), ease.in_out_cubic(u)",
+      "ease.in_quart(u), ease.in_quint(u), ease.in_sine(u), ease.in_expo(u)",
+      "ease.cubic_bezier(x1, y1, x2, y2)"
+    ],
+    "parameters": []
+  }
+}

@@ -106,3 +106,35 @@ Two general-purpose building blocks that the economics packages share.
     [:octicons-arrow-right-24: bezierkit](bezierkit/index.md)
 
 </div>
+
+### Animation and fonts
+
+Two independent engines. KineticKit animates, and GlyphKit sets type. Neither depends on the economics packages.
+
+<div class="grid cards ev-package-cards" markdown>
+
+-   :material-animation-play: **kinetickit**
+
+    Deterministic 2D and 3D animation, written as animated SVG, streamed GIF or interactive HTML.
+
+    ```bash
+    uv add --prerelease allow kinetickit
+    ```
+
+    Pre-release: 1.0.0b2.
+
+    [:octicons-arrow-right-24: kinetickit](kinetickit/index.md)
+
+-   :material-format-font: **glyphkit**
+
+    Renderer-independent typography: fonts, shaping, paragraph and math layout, exact outlines and font subsets.
+
+    ```bash
+    uv add --prerelease allow glyphkit
+    ```
+
+    Pre-release: 1.0.0b4.
+
+    [:octicons-arrow-right-24: glyphkit](glyphkit/index.md)
+
+</div>

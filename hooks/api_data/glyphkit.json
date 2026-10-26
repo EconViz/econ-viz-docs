@@ -1,0 +1,942 @@
+{
+  "glyphkit.guides_bezier_geometry_1": {
+    "name": "GlyphOutline",
+    "anchor": "glyphkit-guides-bezier-geometry-1",
+    "signatures": [
+      "GlyphOutline(glyph_id, commands, bounds, units_per_em, variation_coordinates=())"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_bezier_geometry_2": {
+    "name": "MoveTo",
+    "anchor": "glyphkit-guides-bezier-geometry-2",
+    "signatures": [
+      "MoveTo(point)"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_bezier_geometry_3": {
+    "name": "LineTo",
+    "anchor": "glyphkit-guides-bezier-geometry-3",
+    "signatures": [
+      "LineTo(point)"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_bezier_geometry_4": {
+    "name": "QuadraticTo",
+    "anchor": "glyphkit-guides-bezier-geometry-4",
+    "signatures": [
+      "QuadraticTo(control, point)"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_bezier_geometry_5": {
+    "name": "CubicTo",
+    "anchor": "glyphkit-guides-bezier-geometry-5",
+    "signatures": [
+      "CubicTo(control1, control2, point)"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_bezier_geometry_6": {
+    "name": "ClosePath",
+    "anchor": "glyphkit-guides-bezier-geometry-6",
+    "signatures": [
+      "ClosePath()"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_bezier_geometry_7": {
+    "name": "flatten",
+    "anchor": "glyphkit-guides-bezier-geometry-7",
+    "signatures": [
+      "flatten(outline, *, tolerance) → tuple[Polyline, ...]"
+    ],
+    "parameters": [
+      {
+        "name": "outline",
+        "types": [
+          "GlyphOutline"
+        ],
+        "description": {
+          "en": "The exact outline to approximate.",
+          "zh-TW": "要近似的精確輪廓。",
+          "zh-CN": "要近似的精确轮廓。"
+        },
+        "keyword_only": false
+      },
+      {
+        "name": "tolerance",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Largest distance between a control point and its chord, in font units.",
+          "zh-TW": "控制點與其弦之間的最大距離，單位為字型單位。",
+          "zh-CN": "控制点与其弦之间的最大距离，单位为字体单位。"
+        },
+        "keyword_only": true
+      }
+    ]
+  },
+  "glyphkit.guides_fonts_shaping_1": {
+    "name": "FontQuery",
+    "anchor": "glyphkit-guides-fonts-shaping-1",
+    "signatures": [
+      "FontQuery(families, weight=400, width=100, slant='normal', axes=())"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_fonts_shaping_2": {
+    "name": "FontMatch",
+    "anchor": "glyphkit-guides-fonts-shaping-2",
+    "signatures": [
+      "FontMatch(face, coordinates=(), diagnostics=())"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_fonts_shaping_3": {
+    "name": "FontFace",
+    "anchor": "glyphkit-guides-fonts-shaping-3",
+    "signatures": [
+      "FontFace(\n    id,\n    family,\n    subfamily,\n    full_name,\n    postscript_name,\n    weight,\n    width,\n    slant,\n    metrics,\n    coverage,\n    axes,\n    embedding,\n    has_math,\n    names,\n    _data,\n)"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_fonts_shaping_4": {
+    "name": "ShapingStyle",
+    "anchor": "glyphkit-guides-fonts-shaping-4",
+    "signatures": [
+      "ShapingStyle(\n    families,\n    size,\n    weight=400,\n    width=100,\n    slant='normal',\n    axes=(),\n    features=(),\n    letter_spacing=0.0,\n    word_spacing=0.0,\n)"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_fonts_shaping_5": {
+    "name": "GlyphRun",
+    "anchor": "glyphkit-guides-fonts-shaping-5",
+    "signatures": [
+      "GlyphRun(\n    face_id,\n    family,\n    size,\n    direction,\n    script,\n    language,\n    source_range,\n    text,\n    glyphs,\n    diagnostics=(),\n    variation_coordinates=(),\n    bidi_level=0,\n)"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_fonts_shaping_6": {
+    "name": "PositionedGlyph",
+    "anchor": "glyphkit-guides-fonts-shaping-6",
+    "signatures": [
+      "PositionedGlyph(\n    face_id,\n    glyph_id,\n    cluster,\n    x,\n    y,\n    x_advance,\n    y_advance,\n    x_offset,\n    y_offset,\n    ink_bounds=None,\n    variation_coordinates=(),\n)"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_fonts_shaping_7": {
+    "name": "shape_text",
+    "anchor": "glyphkit-guides-fonts-shaping-7",
+    "signatures": [
+      "shape_text(library, text, style, *, language=None, script=None, direction=None) → tuple[GlyphRun, ...]"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_fonts_shaping_8": {
+    "name": "discover_system_fonts",
+    "anchor": "glyphkit-guides-fonts-shaping-8",
+    "signatures": [
+      "discover_system_fonts(provider=None) → FontManifest"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_layout_math_1": {
+    "name": "layout_paragraph",
+    "anchor": "glyphkit-guides-layout-math-1",
+    "signatures": [
+      "layout_paragraph(library, paragraph) → TextLayout"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_layout_math_2": {
+    "name": "TextMeasurement",
+    "anchor": "glyphkit-guides-layout-math-2",
+    "signatures": [
+      "TextMeasurement(\n    advance,\n    logical_bounds,\n    ink_bounds,\n    baselines,\n    horizontal_overflow,\n    vertical_overflow,\n)"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_layout_math_3": {
+    "name": "LineLayout",
+    "anchor": "glyphkit-guides-layout-math-3",
+    "signatures": [
+      "LineLayout(\n    runs,\n    baseline,\n    advance,\n    logical_bounds,\n    ink_bounds,\n    horizontal_overflow=0.0,\n    source_range=None,\n    explicitly_terminated=False,\n    reading_order=(),\n)"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_layout_math_4": {
+    "name": "parse_math",
+    "anchor": "glyphkit-guides-layout-math-4",
+    "signatures": [
+      "parse_math(source, *, max_length=100000, max_depth=256, max_matrix_cells=10000) → MathNode"
+    ],
+    "parameters": [
+      {
+        "name": "source",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "The LaTeX-like source text.",
+          "zh-TW": "類 LaTeX 的原始文字。",
+          "zh-CN": "类 LaTeX 的原始文本。"
+        },
+        "keyword_only": false
+      },
+      {
+        "name": "max_length",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "Largest input in code points.",
+          "zh-TW": "輸入長度上限，以碼位計。",
+          "zh-CN": "输入长度上限，以码位计。"
+        },
+        "keyword_only": true,
+        "default": "100000"
+      },
+      {
+        "name": "max_depth",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "Deepest nesting of groups.",
+          "zh-TW": "群組巢狀深度上限。",
+          "zh-CN": "群组嵌套深度上限。"
+        },
+        "keyword_only": true,
+        "default": "256"
+      },
+      {
+        "name": "max_matrix_cells",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "Most cells in matrices.",
+          "zh-TW": "矩陣儲存格數量上限。",
+          "zh-CN": "矩阵保存格数量上限。"
+        },
+        "keyword_only": true,
+        "default": "10000"
+      }
+    ]
+  },
+  "glyphkit.layout_math_layout_math": {
+    "name": "FontLibrary.layout_math",
+    "anchor": "glyphkit-layout-math-layout-math",
+    "signatures": [
+      "FontLibrary.layout_math(expression, *, style) → MathBox"
+    ],
+    "parameters": [
+      {
+        "name": "expression",
+        "types": [
+          "MathNode"
+        ],
+        "description": {
+          "en": "The tree returned by `parse_math`.",
+          "zh-TW": "`parse_math` 回傳的樹。",
+          "zh-CN": "`parse_math` 返回的树。"
+        },
+        "keyword_only": false
+      },
+      {
+        "name": "style",
+        "types": [
+          "MathStyle"
+        ],
+        "description": {
+          "en": "Size, math fonts and overrides.",
+          "zh-TW": "大小、數學字型與覆寫值。",
+          "zh-CN": "大小、数学字体与覆写值。"
+        },
+        "keyword_only": true
+      }
+    ]
+  },
+  "glyphkit.guides_layout_math_5": {
+    "name": "MathStyle",
+    "anchor": "glyphkit-guides-layout-math-5",
+    "signatures": [
+      "MathStyle(\n    size,\n    families,\n    level='display',\n    script_scale=None,\n    script_script_scale=None,\n    constants=...,\n    letter_slant='normal',\n)"
+    ],
+    "parameters": [
+      {
+        "name": "size",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "The size of the whole expression in layout units.",
+          "zh-TW": "整個算式的大小，使用排版單位。",
+          "zh-CN": "整个算式的大小，使用排版单位。"
+        },
+        "keyword_only": false
+      },
+      {
+        "name": "families",
+        "types": [
+          "tuple[str, ...]"
+        ],
+        "description": {
+          "en": "Math font family first, then fallbacks. The first needs an OpenType MATH table.",
+          "zh-TW": "先放數學字型字族，再放後備字族。第一個必須有 OpenType MATH 表。",
+          "zh-CN": "先放数学字体字族，再放后备字族。第一个必须有 OpenType MATH 表。"
+        },
+        "keyword_only": false
+      },
+      {
+        "name": "level",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "`\"display\"`, `\"text\"`, `\"script\"` or `\"scriptscript\"`.",
+          "zh-TW": "`\"display\"`、`\"text\"`、`\"script\"` 或 `\"scriptscript\"`。",
+          "zh-CN": "`\"display\"`、`\"text\"`、`\"script\"` 或 `\"scriptscript\"`。"
+        },
+        "keyword_only": false,
+        "default": "\"display\""
+      },
+      {
+        "name": "script_scale",
+        "types": [
+          "float | None"
+        ],
+        "description": {
+          "en": "Replaces `ScriptPercentScaleDown`, as a fraction in (0, 1].",
+          "zh-TW": "取代 `ScriptPercentScaleDown`，為 (0, 1] 的比例。",
+          "zh-CN": "取代 `ScriptPercentScaleDown`，为 (0, 1] 的比例。"
+        },
+        "keyword_only": false,
+        "default": "None"
+      },
+      {
+        "name": "script_script_scale",
+        "types": [
+          "float | None"
+        ],
+        "description": {
+          "en": "Replaces `ScriptScriptPercentScaleDown`.",
+          "zh-TW": "取代 `ScriptScriptPercentScaleDown`。",
+          "zh-CN": "取代 `ScriptScriptPercentScaleDown`。"
+        },
+        "keyword_only": false,
+        "default": "None"
+      },
+      {
+        "name": "constants",
+        "types": [
+          "Mapping[str, float]"
+        ],
+        "description": {
+          "en": "Overrides of other MATH constants by name, in em.",
+          "zh-TW": "以名稱覆寫其他 MATH 常數，單位為 em。",
+          "zh-CN": "以名称覆写其他 MATH 常数，单位为 em。"
+        },
+        "keyword_only": false,
+        "default": "..."
+      },
+      {
+        "name": "letter_slant",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "Draw alphabetic symbols with the italic or oblique face of the family.",
+          "zh-TW": "用字族的斜體或傾斜字型繪製字母符號。",
+          "zh-CN": "用字族的斜体或倾斜字体绘制字母符号。"
+        },
+        "keyword_only": false,
+        "default": "\"normal\""
+      }
+    ]
+  },
+  "glyphkit.guides_layout_math_6": {
+    "name": "MathBox",
+    "anchor": "glyphkit-guides-layout-math-6",
+    "signatures": [
+      "MathBox(\n    kind,\n    bounds,\n    baseline,\n    text_layout=None,\n    children=(),\n    rules=(),\n    origin=(0.0, 0.0),\n    source_range=None,\n    glyph_id=None,\n)"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_line_layout_algorithms_1": {
+    "name": "Paragraph",
+    "anchor": "glyphkit-guides-line-layout-algorithms-1",
+    "signatures": [
+      "Paragraph(\n    spans,\n    max_width=None,\n    max_height=None,\n    align='start',\n    line_height=None,\n    first_line_indent=0.0,\n    hanging_indent=0.0,\n    paragraph_spacing=0.0,\n    tab_stops=(),\n    default_tab_width=None,\n)"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_line_layout_algorithms_2": {
+    "name": "LineLayout",
+    "anchor": "glyphkit-guides-line-layout-algorithms-2",
+    "signatures": [
+      "LineLayout(\n    runs,\n    baseline,\n    advance,\n    logical_bounds,\n    ink_bounds,\n    horizontal_overflow=0.0,\n    source_range=None,\n    explicitly_terminated=False,\n    reading_order=(),\n)"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_line_layout_algorithms_3": {
+    "name": "TextMeasurement",
+    "anchor": "glyphkit-guides-line-layout-algorithms-3",
+    "signatures": [
+      "TextMeasurement(\n    advance,\n    logical_bounds,\n    ink_bounds,\n    baselines,\n    horizontal_overflow,\n    vertical_overflow,\n)"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_math_layout_model_1": {
+    "name": "MathStyle",
+    "anchor": "glyphkit-guides-math-layout-model-1",
+    "signatures": [
+      "MathStyle(\n    size,\n    families,\n    level='display',\n    script_scale=None,\n    script_script_scale=None,\n    constants=...,\n    letter_slant='normal',\n)"
+    ],
+    "parameters": []
+  },
+  "glyphkit.outlines_outline": {
+    "name": "FontLibrary.outline",
+    "anchor": "glyphkit-outlines-outline",
+    "signatures": [
+      "FontLibrary.outline(glyph) → GlyphOutline"
+    ],
+    "parameters": [
+      {
+        "name": "glyph",
+        "types": [
+          "PositionedGlyph"
+        ],
+        "description": {
+          "en": "A glyph from a layout. Its face and glyph id select the outline.",
+          "zh-TW": "排版結果中的一個字形。依它的字型面與字形編號取得輪廓。",
+          "zh-CN": "排版结果中的一个字形。依它的字体面与字形编号取得轮廓。"
+        },
+        "keyword_only": false
+      }
+    ]
+  },
+  "glyphkit.guides_outlines_embedding_1": {
+    "name": "GlyphOutline",
+    "anchor": "glyphkit-guides-outlines-embedding-1",
+    "signatures": [
+      "GlyphOutline(glyph_id, commands, bounds, units_per_em, variation_coordinates=())"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_outlines_embedding_2": {
+    "name": "MoveTo",
+    "anchor": "glyphkit-guides-outlines-embedding-2",
+    "signatures": [
+      "MoveTo(point)"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_outlines_embedding_3": {
+    "name": "LineTo",
+    "anchor": "glyphkit-guides-outlines-embedding-3",
+    "signatures": [
+      "LineTo(point)"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_outlines_embedding_4": {
+    "name": "QuadraticTo",
+    "anchor": "glyphkit-guides-outlines-embedding-4",
+    "signatures": [
+      "QuadraticTo(control, point)"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_outlines_embedding_5": {
+    "name": "CubicTo",
+    "anchor": "glyphkit-guides-outlines-embedding-5",
+    "signatures": [
+      "CubicTo(control1, control2, point)"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_outlines_embedding_6": {
+    "name": "ClosePath",
+    "anchor": "glyphkit-guides-outlines-embedding-6",
+    "signatures": [
+      "ClosePath()"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_outlines_embedding_7": {
+    "name": "flatten",
+    "anchor": "glyphkit-guides-outlines-embedding-7",
+    "signatures": [
+      "flatten(outline, *, tolerance) → tuple[Polyline, ...]"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_outlines_embedding_8": {
+    "name": "Polyline",
+    "anchor": "glyphkit-guides-outlines-embedding-8",
+    "signatures": [
+      "Polyline(points, closed)"
+    ],
+    "parameters": []
+  },
+  "glyphkit.outlines_subset": {
+    "name": "FontLibrary.subset",
+    "anchor": "glyphkit-outlines-subset",
+    "signatures": [
+      "FontLibrary.subset(layout, *, embedding_use, container=..., allow_unknown=False) → FontSubsetBundle"
+    ],
+    "parameters": [
+      {
+        "name": "layout",
+        "types": [
+          "TextLayout"
+        ],
+        "description": {
+          "en": "The layout whose glyphs the subset must cover.",
+          "zh-TW": "子集必須涵蓋其字形的排版結果。",
+          "zh-CN": "子集必须涵盖其字形的排版结果。"
+        },
+        "keyword_only": false
+      },
+      {
+        "name": "embedding_use",
+        "types": [
+          "EmbeddingUse"
+        ],
+        "description": {
+          "en": "Why the subset will be embedded. The permission check depends on it.",
+          "zh-TW": "子集的嵌入用途，權限檢查依此決定。",
+          "zh-CN": "子集的嵌入用途，权限检查依此决定。"
+        },
+        "keyword_only": true
+      },
+      {
+        "name": "container",
+        "types": [
+          "FontContainer"
+        ],
+        "description": {
+          "en": "The font container: `SFNT` or `WOFF2`.",
+          "zh-TW": "字型容器：`SFNT` 或 `WOFF2`。",
+          "zh-CN": "字体容器：`SFNT` 或 `WOFF2`。"
+        },
+        "keyword_only": true,
+        "default": "FontContainer.SFNT"
+      },
+      {
+        "name": "allow_unknown",
+        "types": [
+          "bool"
+        ],
+        "description": {
+          "en": "Accept unknown permissions. The decision is recorded.",
+          "zh-TW": "接受權限不明的字型，並記錄這個決定。",
+          "zh-CN": "接受权限不明的字体，并记录这个决定。"
+        },
+        "keyword_only": true,
+        "default": "False"
+      }
+    ]
+  },
+  "glyphkit.guides_outlines_embedding_9": {
+    "name": "EmbeddingUse",
+    "anchor": "glyphkit-guides-outlines-embedding-9",
+    "signatures": [
+      "EmbeddingUse(*values)"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_outlines_embedding_10": {
+    "name": "FontContainer",
+    "anchor": "glyphkit-guides-outlines-embedding-10",
+    "signatures": [
+      "FontContainer(*values)"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_outlines_embedding_11": {
+    "name": "FontSubsetBundle",
+    "anchor": "glyphkit-guides-outlines-embedding-11",
+    "signatures": [
+      "FontSubsetBundle(fonts, diagnostics=())"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_outlines_embedding_12": {
+    "name": "PortableFont",
+    "anchor": "glyphkit-guides-outlines-embedding-12",
+    "signatures": [
+      "PortableFont(\n    face_id,\n    family,\n    subset_tag,\n    glyph_ids,\n    permission,\n    container,\n    mime_type,\n    data,\n    variation_coordinates=(),\n)"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_outlines_embedding_13": {
+    "name": "to_data",
+    "anchor": "glyphkit-guides-outlines-embedding-13",
+    "signatures": [
+      "to_data(value) → dict[str, JSONValue]"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_outlines_embedding_14": {
+    "name": "from_data",
+    "anchor": "glyphkit-guides-outlines-embedding-14",
+    "signatures": [
+      "from_data(kind, data) → object"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_reproducibility_1": {
+    "name": "FontManifest",
+    "anchor": "glyphkit-guides-reproducibility-1",
+    "signatures": [
+      "FontManifest(faces, generic_families, diagnostics=())"
+    ],
+    "parameters": []
+  },
+  "glyphkit.guides_reproducibility_2": {
+    "name": "FontUse",
+    "anchor": "glyphkit-guides-reproducibility-2",
+    "signatures": [
+      "FontUse(face_id, source_ranges, variation_coordinates=())"
+    ],
+    "parameters": []
+  },
+  "glyphkit.quickstart_1": {
+    "name": "FontSource",
+    "anchor": "glyphkit-quickstart-1",
+    "signatures": [
+      "FontSource(_kind, _value, label)",
+      "FontSource.path(path) → FontSource",
+      "FontSource.bytes(data, *, label) → FontSource",
+      "FontSource.stream(stream, *, label) → FontSource"
+    ],
+    "parameters": [
+      {
+        "name": "path",
+        "types": [
+          "str | PathLike[str]"
+        ],
+        "description": {
+          "en": "A font file. Its content is read once, when the library is built.",
+          "zh-TW": "字型檔。內容只在建立字型庫時讀取一次。",
+          "zh-CN": "字体文档。内容只在创建字体库时读取一次。"
+        },
+        "keyword_only": false
+      }
+    ]
+  },
+  "glyphkit.quickstart_2": {
+    "name": "FontLibrary",
+    "anchor": "glyphkit-quickstart-2",
+    "signatures": [
+      "FontLibrary(faces, *, generic_families=None, strict=True)",
+      "FontLibrary.from_sources(sources, *, generic_families=None, strict=True) → FontLibrary"
+    ],
+    "parameters": [
+      {
+        "name": "sources",
+        "types": [
+          "Iterable[FontSource]"
+        ],
+        "description": {
+          "en": "Caller-owned font sources. Their order breaks ties in matching.",
+          "zh-TW": "由呼叫端提供的字型來源。配對時如果分不出高下，就依這個順序。",
+          "zh-CN": "由调用端提供的字体来源。配对时如果分不出高下，就依这个顺序。"
+        },
+        "keyword_only": false
+      },
+      {
+        "name": "generic_families",
+        "types": [
+          "Mapping[str, Iterable[str]] | None"
+        ],
+        "description": {
+          "en": "Maps a generic name such as `\"sans-serif\"` to an ordered list of families.",
+          "zh-TW": "把 `\"sans-serif\"` 這類通用名稱對應到一串依序的字族。",
+          "zh-CN": "把 `\"sans-serif\"` 这类通用名称对应到一串依序的字族。"
+        },
+        "keyword_only": true,
+        "default": "None"
+      },
+      {
+        "name": "strict",
+        "types": [
+          "bool"
+        ],
+        "description": {
+          "en": "Raise on a font that cannot be read instead of skipping it.",
+          "zh-TW": "遇到讀不了的字型就拋出錯誤，而不是略過。",
+          "zh-CN": "遇到读不了的字体就抛出错误，而不是略过。"
+        },
+        "keyword_only": true,
+        "default": "True"
+      }
+    ]
+  },
+  "glyphkit.quickstart_layout": {
+    "name": "FontLibrary.layout",
+    "anchor": "glyphkit-quickstart-layout",
+    "signatures": [
+      "FontLibrary.layout(paragraph) → TextLayout"
+    ],
+    "parameters": [
+      {
+        "name": "paragraph",
+        "types": [
+          "Paragraph"
+        ],
+        "description": {
+          "en": "The styled text and its constraints.",
+          "zh-TW": "帶樣式的文字與排版限制。",
+          "zh-CN": "带样式的文本与排版限制。"
+        },
+        "keyword_only": false
+      }
+    ]
+  },
+  "glyphkit.quickstart_3": {
+    "name": "Paragraph",
+    "anchor": "glyphkit-quickstart-3",
+    "signatures": [
+      "Paragraph(\n    spans,\n    max_width=None,\n    max_height=None,\n    align='start',\n    line_height=None,\n    first_line_indent=0.0,\n    hanging_indent=0.0,\n    paragraph_spacing=0.0,\n    tab_stops=(),\n    default_tab_width=None,\n)"
+    ],
+    "parameters": [
+      {
+        "name": "spans",
+        "types": [
+          "tuple[TextSpan, ...]"
+        ],
+        "description": {
+          "en": "The styled fragments, in logical order.",
+          "zh-TW": "依邏輯順序排列的帶樣式片段。",
+          "zh-CN": "依逻辑顺序排列的带样式片段。"
+        },
+        "keyword_only": false
+      },
+      {
+        "name": "max_width",
+        "types": [
+          "float | None"
+        ],
+        "description": {
+          "en": "Wrap at this width. `None` keeps one unconstrained line.",
+          "zh-TW": "在此寬度換行。`None` 則排成不受限制的一行。",
+          "zh-CN": "在此宽度换行。`None` 则排成不受限制的一行。"
+        },
+        "keyword_only": false,
+        "default": "None"
+      },
+      {
+        "name": "max_height",
+        "types": [
+          "float | None"
+        ],
+        "description": {
+          "en": "Accept lines up to this height; the rest is recorded as vertical overflow.",
+          "zh-TW": "只接受不超過此高度的行，其餘記為垂直溢出。",
+          "zh-CN": "只接受不超过此高度的行，其余记为垂直溢出。"
+        },
+        "keyword_only": false,
+        "default": "None"
+      },
+      {
+        "name": "align",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "`\"start\"`, `\"center\"`, `\"end\"` or `\"justify\"`.",
+          "zh-TW": "`\"start\"`、`\"center\"`、`\"end\"` 或 `\"justify\"`。",
+          "zh-CN": "`\"start\"`、`\"center\"`、`\"end\"` 或 `\"justify\"`。"
+        },
+        "keyword_only": false,
+        "default": "\"start\""
+      },
+      {
+        "name": "line_height",
+        "types": [
+          "float | None"
+        ],
+        "description": {
+          "en": "Distance between baselines. `None` derives it from the largest style.",
+          "zh-TW": "基線間距。`None` 則由最大的樣式推算。",
+          "zh-CN": "基线间距。`None` 则由最大的样式推算。"
+        },
+        "keyword_only": false,
+        "default": "None"
+      },
+      {
+        "name": "first_line_indent",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Indent of the first line.",
+          "zh-TW": "第一行的縮排。",
+          "zh-CN": "第一行的缩进。"
+        },
+        "keyword_only": false,
+        "default": "0.0"
+      },
+      {
+        "name": "hanging_indent",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Indent of every later line.",
+          "zh-TW": "之後每一行的縮排。",
+          "zh-CN": "之后每一行的缩进。"
+        },
+        "keyword_only": false,
+        "default": "0.0"
+      }
+    ]
+  },
+  "glyphkit.quickstart_4": {
+    "name": "TextSpan",
+    "anchor": "glyphkit-quickstart-4",
+    "signatures": [
+      "TextSpan(text, style, semantic_role=None)"
+    ],
+    "parameters": []
+  },
+  "glyphkit.quickstart_5": {
+    "name": "TextStyle",
+    "anchor": "glyphkit-quickstart-5",
+    "signatures": [
+      "TextStyle(\n    families,\n    size,\n    weight=400,\n    width=100,\n    slant='normal',\n    axes=(),\n    features=(),\n    language=None,\n    script=None,\n    direction=None,\n    letter_spacing=0.0,\n    word_spacing=0.0,\n)"
+    ],
+    "parameters": [
+      {
+        "name": "families",
+        "types": [
+          "tuple[str, ...]"
+        ],
+        "description": {
+          "en": "Font families in fallback order, or a generic name from the library.",
+          "zh-TW": "依後備順序排列的字族，或字型庫裡的通用名稱。",
+          "zh-CN": "依后备顺序排列的字族，或字体库里的通用名称。"
+        },
+        "keyword_only": false
+      },
+      {
+        "name": "size",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Font size in layout units.",
+          "zh-TW": "字級，使用排版單位。",
+          "zh-CN": "字级，使用排版单位。"
+        },
+        "keyword_only": false
+      },
+      {
+        "name": "weight",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "Font weight from 100 to 900.",
+          "zh-TW": "字重，從 100 到 900。",
+          "zh-CN": "字重，从 100 到 900。"
+        },
+        "keyword_only": false,
+        "default": "400"
+      },
+      {
+        "name": "width",
+        "types": [
+          "int"
+        ],
+        "description": {
+          "en": "Width class in percent of normal.",
+          "zh-TW": "字寬等級，以正常寬度的百分比表示。",
+          "zh-CN": "字宽等级，以正常宽度的百分比表示。"
+        },
+        "keyword_only": false,
+        "default": "100"
+      },
+      {
+        "name": "slant",
+        "types": [
+          "str"
+        ],
+        "description": {
+          "en": "`\"normal\"`, `\"italic\"` or `\"oblique\"`.",
+          "zh-TW": "`\"normal\"`、`\"italic\"` 或 `\"oblique\"`。",
+          "zh-CN": "`\"normal\"`、`\"italic\"` 或 `\"oblique\"`。"
+        },
+        "keyword_only": false,
+        "default": "\"normal\""
+      },
+      {
+        "name": "features",
+        "types": [
+          "tuple[tuple[str, int], ...]"
+        ],
+        "description": {
+          "en": "OpenType features, for example `((\"liga\", 0),)`.",
+          "zh-TW": "OpenType 功能，例如 `((\"liga\", 0),)`。",
+          "zh-CN": "OpenType 功能，例如 `((\"liga\", 0),)`。"
+        },
+        "keyword_only": false,
+        "default": "()"
+      },
+      {
+        "name": "language",
+        "types": [
+          "str | None"
+        ],
+        "description": {
+          "en": "BCP 47 language tag for language-specific shaping.",
+          "zh-TW": "用於特定語言字形處理的 BCP 47 語言標籤。",
+          "zh-CN": "用于特定语言字形处理的 BCP 47 语言标签。"
+        },
+        "keyword_only": false,
+        "default": "None"
+      },
+      {
+        "name": "letter_spacing",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Extra space after every glyph.",
+          "zh-TW": "每個字形後額外加的間距。",
+          "zh-CN": "每个字形后额外加的间距。"
+        },
+        "keyword_only": false,
+        "default": "0.0"
+      },
+      {
+        "name": "word_spacing",
+        "types": [
+          "float"
+        ],
+        "description": {
+          "en": "Extra space after every space character.",
+          "zh-TW": "每個空白字元後額外加的間距。",
+          "zh-CN": "每个空白字符后额外加的间距。"
+        },
+        "keyword_only": false,
+        "default": "0.0"
+      }
+    ]
+  },
+  "glyphkit.quickstart_6": {
+    "name": "TextLayout",
+    "anchor": "glyphkit-quickstart-6",
+    "signatures": [
+      "TextLayout(\n    text,\n    lines,\n    logical_bounds,\n    ink_bounds,\n    diagnostics=(),\n    vertical_overflow=0.0,\n)"
+    ],
+    "parameters": []
+  }
+}

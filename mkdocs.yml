@@ -258,6 +258,33 @@ plugins:
             References: 參考文獻
             PDF Manual: PDF 手冊
             Migration Guide: 遷移指南
+            Scenes & Motion: 場景與動作
+            Scenes and motion: 場景與動作
+            Time and easing: 時間與緩動
+            Interpolation and transforms: 插補與變換
+            Path, mesh and surface morphing: 路徑、網格與曲面變形
+            Camera geometry and projection: 相機幾何與投影
+            Output: 輸出
+            Output formats: 輸出格式
+            Frame sampling and encoding: 影格取樣與編碼
+            Text & Interaction: 文字與互動
+            Typography: 文字排版
+            Accessibility and interaction: 無障礙與互動
+            Examples: 範例
+            Migrating animation code: 移植動畫程式碼
+            Compatibility: 相容性
+            Fonts & Text: 字型與文字
+            Fonts and shaping: 字型與字形處理
+            Text layout and mathematics: 文字排版與數學式
+            Coordinates, metrics and bounds: 座標、度量與範圍
+            Line construction and spacing: 行的組成與間距
+            Mathematics: 數學式
+            Math grammar: 數學語法
+            OpenType mathematics layout: OpenType 數學排版
+            Outlines & Data: 輪廓與資料
+            Outlines, subsets and portable data: 輪廓、字型子集與可攜資料
+            Bézier outline geometry: Bézier 輪廓幾何
+            Reproducibility and font safety: 可重現性與字型安全
             Curves & Paths: 曲線與路徑
             Geometry Values: 幾何數值物件
             Bézier Curves: Bézier 曲線
@@ -401,6 +428,33 @@ plugins:
             References: 参考文献
             PDF Manual: PDF 手册
             Migration Guide: 迁移指南
+            Scenes & Motion: 场景与动作
+            Scenes and motion: 场景与动作
+            Time and easing: 时间与缓动
+            Interpolation and transforms: 插值与变换
+            Path, mesh and surface morphing: 路径、网格与曲面变形
+            Camera geometry and projection: 相机几何与投影
+            Output: 输出
+            Output formats: 输出格式
+            Frame sampling and encoding: 帧采样与编码
+            Text & Interaction: 文字与交互
+            Typography: 文字排版
+            Accessibility and interaction: 无障碍与交互
+            Examples: 示例
+            Migrating animation code: 迁移动画代码
+            Compatibility: 兼容性
+            Fonts & Text: 字体与文字
+            Fonts and shaping: 字体与字形处理
+            Text layout and mathematics: 文字排版与数学式
+            Coordinates, metrics and bounds: 坐标、度量与范围
+            Line construction and spacing: 行的组成与间距
+            Mathematics: 数学式
+            Math grammar: 数学语法
+            OpenType mathematics layout: OpenType 数学排版
+            Outlines & Data: 轮廓与数据
+            Outlines, subsets and portable data: 轮廓、字体子集与可移植数据
+            Bézier outline geometry: Bézier 轮廓几何
+            Reproducibility and font safety: 可复现性与字体安全
             Curves & Paths: 曲线与路径
             Geometry Values: 几何数值对象
             Bézier Curves: Bézier 曲线
@@ -615,3 +669,50 @@ nav:
           - Approximation proofs: bezierkit/project/proofs-approximation.md
           - Change history: bezierkit/project/changelog.md
           - References: bezierkit/project/references.md
+
+  - kinetickit:
+      - Overview: kinetickit/index.md
+      - Getting Started:
+          - Introduction: kinetickit/guides/introduction.md
+          - Installation: kinetickit/installation.md
+          - Quick start: kinetickit/quickstart.md
+      - Scenes & Motion:
+          - Scenes and motion: kinetickit/guides/scenes-motion.md
+          - Time and easing: kinetickit/guides/time-easing.md
+          - Interpolation and transforms: kinetickit/guides/interpolation-transforms.md
+          - Path, mesh and surface morphing: kinetickit/guides/morphing.md
+          - Camera geometry and projection: kinetickit/guides/projection.md
+      - Output:
+          - Output formats: kinetickit/guides/outputs.md
+          - Frame sampling and encoding: kinetickit/guides/sampling-encoding.md
+      - Text & Interaction:
+          - Typography: kinetickit/guides/typography.md
+          - Accessibility and interaction: kinetickit/guides/accessibility.md
+      - Examples:
+          - Examples: kinetickit/guides/examples.md
+          - Migrating animation code: kinetickit/migration.md
+      - Project:
+          - Compatibility: kinetickit/compatibility.md
+          - Change history: kinetickit/project/changelog.md
+          - References: kinetickit/project/references.md
+  - glyphkit:
+      - Overview: glyphkit/index.md
+      - Getting Started:
+          - Introduction: glyphkit/guides/introduction.md
+          - Installation: glyphkit/installation.md
+          - Quick start: glyphkit/quickstart.md
+      - Fonts & Text:
+          - Fonts and shaping: glyphkit/guides/fonts-shaping.md
+          - Text layout and mathematics: glyphkit/guides/layout-math.md
+          - Coordinates, metrics and bounds: glyphkit/guides/coordinate-metrics.md
+          - Line construction and spacing: glyphkit/guides/line-layout-algorithms.md
+      - Mathematics:
+          - Math grammar: glyphkit/guides/math-grammar.md
+          - OpenType mathematics layout: glyphkit/guides/math-layout-model.md
+      - Outlines & Data:
+          - Outlines, subsets and portable data: glyphkit/guides/outlines-embedding.md
+          - Bézier outline geometry: glyphkit/guides/bezier-geometry.md
+          - Reproducibility and font safety: glyphkit/guides/reproducibility.md
+      - Project:
+          - Change history: glyphkit/project/changelog.md
+          - References: glyphkit/project/references.md
