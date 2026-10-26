@@ -53,7 +53,7 @@ animation.save("dot.html", width=400, height=440)  # 需要 kinetickit[interacti
 
 <!-- api: kinetickit.quickstart_4 -->
 
-与座标轴平行的矩形，用于相机视野、裁切、版面与范围。
+与坐标轴平行的矩形，用于相机视野、裁切、版面与范围。
 
 <!-- api: kinetickit.quickstart_5 -->
 

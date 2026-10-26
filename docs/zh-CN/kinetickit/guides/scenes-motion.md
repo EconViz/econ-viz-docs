@@ -55,7 +55,7 @@ Animation(scene, draw.then(fade).then(move)).save("scene2d.svg", width=455, heig
 
 </figure>
 
-每种节点都能查到哪些属性可以制作动画：`Point2D.animatable_properties()` 返回属性名称与数值类型，`node.animate.<属性>` 则为其中一个属性创建动作。颜色、矢量、角度与变换各依自己的规则插补（参见[插补与变换](interpolation-transforms.md#sec-kinetic-interpolation)）。
+每种节点都能查到哪些属性可以制作动画：`Point2D.animatable_properties()` 返回属性名称与数值类型，`node.animate.<属性>` 则为其中一个属性创建动作。颜色、矢量、角度与变换各依自己的规则插值（参见[插值与变换](interpolation-transforms.md#sec-kinetic-interpolation)）。
 
 <!-- api: kinetickit.guides_scenes_motion_1 -->
 
@@ -198,7 +198,7 @@ motion = (
 
 <!-- api: kinetickit.guides_scenes_motion_19 -->
 
-为两个场景创建动作。编号相同的节点会配成一对，并对兼容的属性做插补。
+为两个场景创建动作。编号相同的节点会配成一对，并对兼容的属性做插值。
 
 <!-- api: kinetickit.guides_scenes_motion_20 -->
 

@@ -22,7 +22,7 @@ seo_title: "不確定性與資訊"
 
 <!-- api: micro_viz.guides_uncertainty_2 -->
 
-兩資產組合在標準差－平均數平面上的前緣：最小變異數組合 `G` 以上的效率部分為粗線。
+兩資產組合在標準差－平均數平面上的前緣：最小變異數組合 `G` 以上的效率部分為粗線，無效率部分為細實線。
 
 <!-- api: micro_viz.guides_uncertainty_3 -->
 
@@ -34,11 +34,11 @@ seo_title: "不確定性與資訊"
 
 <!-- api: micro_viz.guides_uncertainty_5 -->
 
-風險報酬線與各投資人和它相切的無異曲線；`market_sd` 另標市場投資組合 `M`，其外是借款。
+風險報酬線與各投資人和它相切的無異曲線；`market_sd` 另標市場投資組合 `M`，其外（借款以持有更多風險）為細實線段。
 
 <!-- api: micro_viz.guides_uncertainty_6 -->
 
-狀態請求權：45 度的確定線、稟賦 `E`、每個保費率一條預算線（第一條畫粗；公平保費導致完全保險）。
+狀態請求權：45 度的確定線、稟賦 `E`、每個保費率一條預算線（第一條畫粗；公平保費導致確定線上的完全保險，不公平保費則是部分保險），以及通過各選擇的無異曲線。
 
 <!-- api: micro_viz.guides_uncertainty_7 -->
 
@@ -381,7 +381,7 @@ def auction_examples(
 
 <!-- api: micro_viz.guides_uncertainty_13 -->
 
-獎金對申報的廠房規模 `R`，每種真實產能一條：每條在申報等於產能處最高，所以誠實申報是最適。
+獎金對申報的廠房規模 `R`，每種真實產能一條：每條在申報等於產能處最高，所以誠實申報符合誘因相容。
 
 <!-- api: micro_viz.guides_uncertainty_14 -->
 
@@ -389,7 +389,7 @@ def auction_examples(
 
 <!-- api: micro_viz.guides_uncertainty_15 -->
 
-每個高品質比例一欄：高、低品質的需求 `D_H`、`D_L`，賣者的保留線 `S_H`、`S_L` 與混合需求。
+每個高品質比例一欄：高、低品質的需求 `D_H`、`D_L`，賣者的保留線 `S_H`、`S_L`，以及無法分辨品質的買者的需求 `D`。`D` 起點低於 `S_H` 時，高品質被逐出市場。
 
 <!-- api: micro_viz.guides_uncertainty_16 -->
 

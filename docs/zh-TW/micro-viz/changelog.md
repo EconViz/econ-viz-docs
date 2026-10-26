@@ -6,7 +6,7 @@ seo_title: "更新紀錄"
 
 # 更新紀錄
 
-`micro-viz` 的發行紀錄。套件目前為 0.2.0.dev0 版，尚未發布到 PyPI；儲存庫的 [CHANGELOG](https://github.com/EconViz/micro-viz/blob/main/CHANGELOG.md) 列出每一項變更。純文件的變更不列入；每一條紀錄標記在它所描述功能的說明處，依 l3doc 慣例，頁碼即實際頁碼。
+`micro-viz` 的發行紀錄。套件目前為 0.2.0.dev0 版，尚未發布到 PyPI；儲存庫的 [CHANGELOG](https://github.com/EconViz/micro-viz/blob/main/CHANGELOG.md) 列出每一項變更。純文件的變更不列入；每一條紀錄都連結到說明該功能的頁面。
 
 ## 0.2.0.dev0
 

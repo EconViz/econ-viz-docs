@@ -12,7 +12,7 @@ seo_title: "总合供给与需求"
 
 <!-- api: macro_viz.guides_adas_1 -->
 
-`AggregateSupply.linear(expected_price, natural_output, slope)` 是 $p = p^e (1 + s (Y / Y_n - 1))$，其中 `0 < slope < 1`。`AggregateDemand(autonomous, money, multiplier)` 是由 IS-LM 推出的需求。`ASADModel` 解出两者的交点并分类缺口（`Gap`）。冲击函数回传 `ASADShift`，含产出与价格的方向。
+`AggregateSupply.linear(expected_price, natural_output, slope)` 是 $p = p^e (1 + s (Y / Y_n - 1))$，其中 `0 < slope < 1`。`AggregateDemand(autonomous, money, multiplier)` 是由 IS-LM 推出的需求。`ASADModel` 解出两者的交点并分类缺口（`Gap`）。冲击函数返回 `ASADShift`，含产出与价格的方向。
 
 ## 总合供给
 

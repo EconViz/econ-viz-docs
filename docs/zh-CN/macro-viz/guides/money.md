@@ -12,7 +12,7 @@ seo_title: "货币市场"
 
 <!-- api: macro_viz.guides_money_1 -->
 
-`MoneyDemand(nominal_income, liquidity, rate_max)` 是 $M^d = Y \, L(R)$，其中 `liquidity` 是利率的函数；`zero_bound=True` 让需求在利率为零处变平。`MoneyMarket` 再加上供给。`analyze_income_shift` 与 `analyze_supply_shift` 回传基准、变动后的市场，以及利率与货币的方向。
+`MoneyDemand(nominal_income, liquidity, rate_max)` 是 $M^d = Y \, L(R)$，其中 `liquidity` 是利率的函数；`zero_bound=True` 让需求在利率为零处变平。`MoneyMarket` 再加上供给。`analyze_income_shift` 与 `analyze_supply_shift` 返回基准、变动后的市场，以及利率与货币的方向。
 
 ## 需求、供给与货币需求的移动
 

@@ -191,7 +191,7 @@ def isoquant_examples(
 
 <!-- api: micro_viz.guides_inputs_6 -->
 
-`output` 的等產量線與在最低成本組合相切的等成本線，另有一條較低與一條較高的等成本線。
+`output` 的等產量線與在最低成本組合相切的等成本線，另有一條較低與一條較高的等成本線（以 `cost_offsets` 縮放）：較低的碰不到該產量，較高的成本超過所需。
 
 <!-- api: micro_viz.guides_inputs_7 -->
 
@@ -199,7 +199,7 @@ def isoquant_examples(
 
 <!-- api: micro_viz.guides_inputs_8 -->
 
-資本固定在 `K_0` 時產量只能沿水平線增加；超過某點後，經過切點的長期擴張線較便宜。
+資本固定在 `K_0` 時產量只能沿水平線增加；超過設計產量後，經過切點的長期擴張線較便宜。
 
 <!-- api: micro_viz.guides_inputs_9 -->
 
@@ -355,7 +355,7 @@ def cost_examples(
 
 <!-- api: micro_viz.guides_inputs_13 -->
 
-產品轉換曲線 `PT`；`reference` 加上連接兩個最大值的直線（沒有聯合生產的利益），顯示外凸。
+產品轉換曲線 `PT`；`reference` 加上連接兩個最大值的直線（沒有聯合生產的利益），使曲線的外凸可讀作範疇經濟。
 
 <!-- api: micro_viz.guides_inputs_14 -->
 
@@ -498,7 +498,7 @@ def extension_examples(
 
 <!-- api: micro_viz.guides_inputs_18 -->
 
-資本增加時的 MRP 曲線，每條曲線上一個僱用點，對應 `wages` 中的工資（工資下降使廠商增加資本）。
+資本增加時的 MRP 曲線，每條曲線在 `wages` 中對應的工資處有一個僱用點（工資下降使廠商增加資本），再以需求軌跡連起。
 
 <!-- api: micro_viz.guides_inputs_19 -->
 
@@ -518,7 +518,7 @@ def extension_examples(
 
 <!-- api: micro_viz.guides_inputs_23 -->
 
-廠商需求與產業需求並列：細線是廠商需求的水平加總，產業需求更陡。
+廠商需求與產業需求並列：右圖的細線是廠商需求的水平加總，較陡的是通過同一錨點的產業需求。
 
 <!-- api: micro_viz.guides_inputs_24 -->
 
@@ -759,7 +759,7 @@ def factor_examples(
 
 <!-- api: micro_viz.guides_inputs_31 -->
 
-買方獨佔與競爭結果的比較：長方形 `A` 是由賣者移轉給買者，三角形 `B`、`C` 是無謂損失。
+買方獨佔與競爭結果的比較：長方形 `A` 是由賣者移轉給買者的部分，競爭價格上下的三角形 `B` 與 `C` 合起來是無謂損失。
 
 <!-- api: micro_viz.guides_inputs_32 -->
 

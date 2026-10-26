@@ -30,7 +30,7 @@ $$
 
 ## 輸出時才需要換算 DPI
 
-GlyphKit 不決定像素。若輸出解析度為 $d$ DPI，$q$ 點才在輸出邊界換算成 $q d/72$ 像素，因此同一份 `TextLayout` 可供 SVG、PDF、點陣圖與動畫共用。
+GlyphKit 不決定像素。輸出端以 $d$ DPI 匯出時，會把 $q$ 排版點換算成 $q d / 72$ 像素。這個換算放在排版引擎之外，因此同一份 `TextLayout` 可供 SVG、PDF、點陣圖與動畫共用。
 
 !!! warning "1.0.0b4 的已知問題"
 

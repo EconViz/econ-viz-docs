@@ -10,7 +10,7 @@ seo_title: "Settings"
 
 <!-- api: micro_viz.guides_settings_1 -->
 
-The theme read from an `econ-viz.toml`. `load()` reads `path`, or `econ-viz.toml` in the working directory. `use()` makes it the default, so every figure made without an explicit `theme` uses it, and returns the config. Relative paths in the file are resolved against the file's directory.
+A theme loaded from an `econ-viz.toml` file. `load()` reads `path`, or `econ-viz.toml` in the working directory. `use()` makes it the default, so every figure made without an explicit `theme` uses it, and returns the config. Relative paths in the file are resolved against the file's directory.
 
 ```python
 from micro_viz import Config

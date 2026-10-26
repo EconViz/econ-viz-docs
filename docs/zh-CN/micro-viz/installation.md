@@ -8,7 +8,7 @@ seo_title: "安装"
 
 ## 系统需求
 
-`micro-viz` 需要 Python 3.10 以上版本 (Python 官方网站提供各操作系统的安装程序：[https://www.python.org/downloads/](https://www.python.org/downloads/))。唯一的运行期依赖是 `mosaickit`（1.0.0rc9 以上、2 以下），它通过 `matplotlib` 绘制图形。
+`micro-viz` 需要 Python 3.10 以上版本 (Python 官方网站提供各操作系统的安装程序：[https://www.python.org/downloads/](https://www.python.org/downloads/))。唯一的运行时依赖是 `mosaickit`（1.0.0rc9 以上、2 以下），它通过 `matplotlib` 绘制图形。
 
 ## 安装 `uv`
 
@@ -70,4 +70,4 @@ uv run python examples/scripts/production.py \
     --fonts-dir path/to/NotoSerifTC
 ```
 
-本页的图形就是由这些脚本绘制；[简介](guides/introduction.md#sec-intro) 链接的压缩包包含这些脚本与三份设置档。
+本页的图形就是由这些脚本绘制；[简介](guides/introduction.md#sec-intro) 链接的压缩包包含这些脚本与三份配置文件。

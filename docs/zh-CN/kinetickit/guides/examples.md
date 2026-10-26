@@ -6,7 +6,7 @@ seo_title: "示例"
 
 <span id="sec-examples"></span>
 
-每个示例都只用 KineticKit 的公开 API 与一般内容：点、线、路径、图形、文本素材、网格与曲面。没有一个需要 MosaicKit 或可视化软件包。脚本就放在图旁边，[下载档](../index.md#examples)则包含全部。
+每个示例都只用 KineticKit 的公开 API 与一般内容：点、线、路径、图形、文本素材、网格与曲面。没有一个需要 MosaicKit 或可视化软件包。脚本就放在图旁边，[下载文件](../index.md#examples)则包含全部。
 
 ## 用基本图形画图表
 
@@ -64,7 +64,7 @@ Animation(scene, motion).save("chart.svg", width=280, height=420, loop=True)
 
 <!-- api: kinetickit.examples_axis2d -->
 
-编译成座标轴节点的辅助线，依已解析的版面产生。
+编译成坐标轴节点的辅助线，依已解析的版面产生。
 
 <!-- api: kinetickit.examples_grid2d -->
 
@@ -82,7 +82,7 @@ Animation(scene, motion).save("chart.svg", width=280, height=420, loop=True)
 
 <span id="sec-example-adapter"></span>
 
-KineticKit 完全不认识你的类别。你写一个函数，把一个对象翻译成带稳定编号的节点，`transition(before, after, depict)` 就会依编号配对两个状态的节点。只出现在 `after` 的编号会淡入，只出现在 `before` 的编号会淡出，兼容的属性则做插补。
+KineticKit 完全不认识你的类别。你写一个函数，把一个对象翻译成带稳定编号的节点，`transition(before, after, depict)` 就会依编号配对两个状态的节点。只出现在 `after` 的编号会淡入，只出现在 `before` 的编号会淡出，兼容的属性则做插值。
 
 ```python
 import math

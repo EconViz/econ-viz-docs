@@ -12,7 +12,7 @@ seo_title: "梭罗成长"
 
 <!-- api: macro_viz.guides_growth_1 -->
 
-`Solow` 接受每位劳工资本的生产函数，以及储蓄率、折旧率、人口成长率与技术成长率。方法可回答 `steady_state`、`steady_output`、`golden_rule_capital` 与 `consumption_at`；`with_saving`、`with_population_growth`、`with_tech_growth` 与 `with_production` 回传变动后的模型。`simulate` 仿真在指定期间发生变动后的转换路径。
+`Solow` 接受每位劳工资本的生产函数，以及储蓄率、折旧率、人口成长率与技术成长率。方法可回答 `steady_state`、`steady_output`、`golden_rule_capital` 与 `consumption_at`；`with_saving`、`with_population_growth`、`with_tech_growth` 与 `with_production` 返回变动后的模型。`simulate` 仿真在指定期间发生变动后的转换路径。
 
 ## 生产函数
 

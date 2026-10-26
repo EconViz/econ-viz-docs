@@ -12,7 +12,7 @@ seo_title: "自然失业率"
 
 <!-- api: macro_viz.guides_labor_1 -->
 
-`WagePriceSetting(level, slope, benefits, markup)` 的 WS 为 $W/P = F(u, z)$，PS 为 $W/P = 1 / (1 + \mu)$。`natural_rate()` 与 `real_wage()` 给出交点；`with_benefits`、`with_markup` 与 `with_productivity` 回传变动后的模型，`compare` 回传比较结果。
+`WagePriceSetting(level, slope, benefits, markup)` 的 WS 为 $W/P = F(u, z)$，PS 为 $W/P = 1 / (1 + \mu)$。`natural_rate()` 与 `real_wage()` 给出交点；`with_benefits`、`with_markup` 与 `with_productivity` 返回变动后的模型，`compare` 返回比较结果。
 
 ## 均衡
 

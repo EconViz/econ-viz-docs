@@ -438,7 +438,7 @@ def long_run_examples(
 
 <!-- api: micro_viz.guides_competition_17 -->
 
-递增成本产业：进入使投入价格上升，厂商成本曲线上移，LRS 向右上倾斜。
+递增成本产业：产业每多产出一单位，进入就使投入价格上升 `cost_shift`，所以每家厂商的成本曲线上移，LRS 向右上倾斜。
 
 <!-- api: micro_viz.guides_competition_18 -->
 

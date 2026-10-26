@@ -6,7 +6,7 @@ seo_title: "快速开始"
 
 <span id="sec-quickstart"></span>
 
-这个示例使用明确指定的字库。GlyphKit 只在创建字体库时读取字体字节一次，所以之后改了路径，也不会影响排版结果。
+这个示例使用明确指定的字体文件。GlyphKit 只在创建字体库时读取字体字节一次，所以之后改了路径，也不会影响排版结果。
 
 ```python
 from glyphkit import FontLibrary, FontSource, Paragraph, TextSpan, TextStyle
@@ -51,9 +51,9 @@ print(layout.lines[0].runs[0].glyphs[0])
 
 段落排版后不可变的结果：行、字形组、已定位的字形、原文范围、范围、基线、溢出，以及用过的字体。
 
-## 座标
+## 坐标
 
-GlyphKit 使用排版单位，不是绑定 DPI 的像素。这些单位如何对应到画布，由使用端决定。排版结果的 y 轴向上：第一条基线在 `y = 0`，之后每一行的基线 `y` 更小，是负值。已定位的字形带着位于基在线的原点位置 `x`、`y`。
+GlyphKit 使用排版单位，不是绑定 DPI 的像素。这些单位如何对应到画布，由使用端决定。排版结果的 y 轴向上：第一条基线在 `y = 0`，之后每一行的基线 `y` 更小，是负值。已定位的字形带着位于基线上的原点位置 `x`、`y`。
 
 <span id="fig-glyph-metrics"></span>
 

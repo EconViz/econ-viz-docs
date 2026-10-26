@@ -351,7 +351,7 @@
         "description": {
           "en": "Data range of the axis.",
           "zh-TW": "座標軸的資料範圍。",
-          "zh-CN": "座标轴的数据范围。"
+          "zh-CN": "坐标轴的数据范围。"
         },
         "keyword_only": false
       },
@@ -363,7 +363,7 @@
         "description": {
           "en": "Where the axis crosses the other one.",
           "zh-TW": "座標軸與另一軸的交會位置。",
-          "zh-CN": "座标轴与另一轴的交会位置。"
+          "zh-CN": "坐标轴与另一轴的交会位置。"
         },
         "keyword_only": false,
         "default": "0.0"
@@ -1450,9 +1450,9 @@
           "InteractionSpec | None"
         ],
         "description": {
-          "en": "Declarative interactions bound to node ids ([Typography and accessibility](guides/typography-accessibility.md#sec-interaction)).",
-          "zh-TW": "綁定到節點編號的宣告式互動（參見[文字與無障礙](guides/typography-accessibility.md#sec-interaction)）。",
-          "zh-CN": "绑定到节点编号的声明式交互（参见[文本与无障碍](guides/typography-accessibility.md#sec-interaction)）。"
+          "en": "Declarative interactions bound to node ids ([Typography and accessibility](guides/accessibility.md#sec-interaction)).",
+          "zh-TW": "綁定到節點編號的宣告式互動（參見[文字與無障礙](guides/accessibility.md#sec-interaction)）。",
+          "zh-CN": "绑定到节点编号的声明式交互（参见[文本与无障碍](guides/accessibility.md#sec-interaction)）。"
         },
         "keyword_only": true,
         "default": "None"
@@ -1553,7 +1553,7 @@
         "description": {
           "en": "Where the point sits, in world coordinates.",
           "zh-TW": "點的位置，使用世界座標。",
-          "zh-CN": "点的位置，使用世界座标。"
+          "zh-CN": "点的位置，使用世界坐标。"
         },
         "keyword_only": true,
         "default": "Vec2(x=0.0, y=0.0)"

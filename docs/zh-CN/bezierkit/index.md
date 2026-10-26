@@ -100,7 +100,7 @@ print(len(sample.points), "sample points")
 
 | 主题 | 页面 |
 |---|---|
-| 点、向量、参数、例外 | [几何数值对象](guides/geometry.md) |
+| 点、向量、参数、异常 | [几何数值对象](guides/geometry.md) |
 | Bernstein 基底、曲线、求值 | [Bézier 曲线](guides/curves.md) |
 | 导数、分割、反转 | [导数、分割与反转](guides/operations.md) |
 | 三次线段与分段路径 | [三次线段与路径](guides/paths.md) |
@@ -114,7 +114,7 @@ print(len(sample.points), "sample points")
 
 !!! warning "范围"
 
-    绘图样式与图形语意刻意不在这个软件包的范围内：它本身不绘图。交点、B 样条与 NURBS 属于未来的工作。
+    绘图样式与图形语义刻意不在这个软件包的范围内：它本身不绘图。交点、B 样条与 NURBS 属于未来的工作。
 
 ## 安装
 
@@ -144,7 +144,7 @@ uv add bezierkit
 - [命令行界面](cli.md)
 - [证明](project/proofs.md)
 - [近似方法的证明](project/proofs-approximation.md)
-- [更新纪录](project/changelog.md)
+- [更新记录](project/changelog.md)
 
 <!-- /agora-navigation -->
 

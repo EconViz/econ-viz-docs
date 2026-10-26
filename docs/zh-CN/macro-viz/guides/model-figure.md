@@ -11,7 +11,7 @@ seo_title: "模型与图形"
 每个主题都有两层。
 
 - *模型*是冻结的 dataclass，输入会被检查，方法回答问题：`KeynesianCross.equilibrium`、`ISLM.equilibrium`、`Solow.steady_state`。模型从不导入绘图器，输入有误时引发 `ValidationError`。
-- *比较*是 `analyze_*` 函数的回传值：基准模型、变动后的模型、各项变动的方向（`Direction.UP`、`DOWN`、`NONE`）与新均衡。入口函数有 `analyze_autonomous_shift`、`analyze_fiscal_policy`、`analyze_demand_shock`、`analyze_change` 与 `compare`。
+- *比较*是 `analyze_*` 函数的返回值：基准模型、变动后的模型、各项变动的方向（`Direction.UP`、`DOWN`、`NONE`）与新均衡。入口函数有 `analyze_autonomous_shift`、`analyze_fiscal_policy`、`analyze_demand_shock`、`analyze_change` 与 `compare`。
 - *绘图函数*在 `macro_viz.visuals`，把模型或比较转成 `mosaickit` 的 `Canvas`：`islm_canvas(shift)`、`adas_canvas(model)`。绘图函数里没有方程式，只放置模型算出的结果。
 
 ```python
@@ -48,20 +48,20 @@ adas_canvas(shock).save("adas_demand_shock.svg")
 
 <span id="sec-options"></span>
 
-单面板的绘图函数都回传 `Canvas`，并接受相同的关键字选项。在这些页面的签名中，它们以名称出现，转交给其他函数时则写成 `**options`。
+单面板的绘图函数都返回 `Canvas`，并接受相同的关键字选项。在这些页面的签名中，它们以名称出现，转交给其他函数时则写成 `**options`。
 
 <!-- api: macro_viz.guides_model_figure_1 -->
 
-连动面板的绘图函数回传 `CanvasGrid`，并以版面选项取代上述选项（参见 [连动面板](panels.md#sec-panels)）。
+连动面板的绘图函数返回 `CanvasGrid`，并以版面选项取代上述选项（参见 [连动面板](panels.md#sec-panels)）。
 
-## 套件结构
+## 软件包结构
 
 <span id="tab-layout"></span>
 
 | 位置 | 内容 |
 | --- | --- |
 | `macro_viz/<topic>/` | 模型与比较，不依赖绘图器（`keynesian`、`money`、`adas`、`islm`、`growth`、`labor`、`open_economy`、`panels`） |
-| `macro_viz/visuals/` | 回传 `Canvas` 的绘图函数；`_theory.py` 与 `_kit.py` 是共用的工具 |
+| `macro_viz/visuals/` | 返回 `Canvas` 的绘图函数；`_theory.py` 与 `_kit.py` 是共用的工具 |
 | `macro_viz/locale/labels.json` | 所有内置文本，依语言与编号索引 |
 | `macro_viz/themes.py`, `config.py` | manual 主题与 `[macro]` 设置结构 |
 | `macro_viz/animation.py` | 选用的 GIF 与随参数变化的动画 SVG |
@@ -71,7 +71,7 @@ adas_canvas(shock).save("adas_demand_shock.svg")
 
 绘图函数为每个图层指定稳定的编号，例如 `macro.islm.is`、`macro.islm.is.shifted` 或 `macro.islm.equilibrium.shifted.label`。标签表与动画都以这些编号定位：动画依编号在各帧之间对应图层（参见 [动画](animation.md#sec-animation)）。
 
-## 与其他套件的关系
+## 与其他软件包的关系
 
 - `mosaickit` 负责所有绘制：场景、图层、主题、标签位置、格线与输出。
 - `bezierkit` 提供连动面板中转动记号的曲线几何。

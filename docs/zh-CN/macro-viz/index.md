@@ -1,9 +1,9 @@
 ---
-seo_title: "绘制总体经济学图形的 Python 套件"
-description: "开源 Python 套件，绘制教科书的总体经济学图形：凯因斯十字、货币市场、AS-AD、IS-LM、梭罗成长、工资与价格设置、开放经济与连动面板。"
+seo_title: "绘制总体经济学图形的 Python 软件包"
+description: "开源 Python 软件包，绘制教科书的总体经济学图形：凯因斯十字、货币市场、AS-AD、IS-LM、梭罗成长、工资与价格设置、开放经济与连动面板。"
 ---
 
-<h1 class="ev-visually-hidden">macro-viz：绘制总体经济学图形的 Python 套件</h1>
+<h1 class="ev-visually-hidden">macro-viz：绘制总体经济学图形的 Python 软件包</h1>
 
 <p align="center">
   <img src="../../assets/macro-viz/banner.svg" alt="macro-viz" style="max-width: 480px; width: 100%; margin: 2rem 0 1rem;">
@@ -123,10 +123,10 @@ cvs.save("four_panel.png")
 uv add "macro-viz @ git+https://github.com/EconViz/macro-viz"
 ```
 
-需要 Python 3.10 以上。`--prerelease allow`、字体与选用的动画套件请见[安装](installation.md)。
+需要 Python 3.10 以上。`--prerelease allow`、字体与选用的动画软件包请见[安装](installation.md)。
 
-## 范例
+## 示例
 
-文档里每张图都附有画出它的脚本，已依主题分文件夹。一次下载全部，内含脚本加载的设置档 `econ-viz.toml`（`base = "manual"`）。
+文档里每张图都附有画出它的脚本，已依主题分文件夹。一次下载全部，内含脚本加载的配置文件 `econ-viz.toml`（`base = "manual"`）。
 
-[下载全部范例](../../assets/macro-viz/macro-viz-examples.zip){ .md-button download="" }
+[下载全部示例](../../assets/macro-viz/macro-viz-examples.zip){ .md-button download="" }

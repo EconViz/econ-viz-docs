@@ -12,7 +12,7 @@ seo_title: "凯因斯商品市场"
 
 <!-- api: macro_viz.guides_keynesian_1 -->
 
-`ConsumptionFunction(autonomous, propensity)` 是 $C = c_0 + c_1 (Y - T)$。`KeynesianCross` 加上投资、政府支出与税收；均衡解 $Y = Z$，`multiplier` 是 $1 / (1 - c_1)$。`CurvedDemand` 以任意函数（需给定区间）取代直线需求。`analyze_autonomous_shift` 回传两个均衡、变动的 `Direction` 与乘数过程的各回合。
+`ConsumptionFunction(autonomous, propensity)` 是 $C = c_0 + c_1 (Y - T)$。`KeynesianCross` 加上投资、政府支出与税收；均衡解 $Y = Z$，`multiplier` 是 $1 / (1 - c_1)$。`CurvedDemand` 以任意函数（需给定区间）取代直线需求。`analyze_autonomous_shift` 返回两个均衡、变动的 `Direction` 与乘数过程的各回合。
 
 ## 消费函数与十字
 

@@ -10,7 +10,7 @@ KineticKit 是全新而且独立的引擎。它不会导入 MosaicKit 或任何 
 
 ## 从参数扫描移植
 
-MosaicKit 的 `Animation.sweep(canvas, values)` 会产生不可变的场景帧。把每个图层描绘成以图层编号为键的 KineticKit 节点，再交给 KineticKit 在帧之间插补。
+MosaicKit 的 `Animation.sweep(canvas, values)` 会产生不可变的场景帧。把每个图层描绘成以图层编号为键的 KineticKit 节点，再交给 KineticKit 在帧之间插值。
 
 1. 替每个来源图层指定稳定的编号。
 2. 写一个描绘函数，把一个图层转成节点。

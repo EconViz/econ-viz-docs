@@ -20,7 +20,7 @@ seo_title: "独占与定价"
 
 <!-- api: micro_viz.guides_monopoly_2 -->
 
-每个需求一栏：以大括号标出 `p - MC` 的加成，需求有弹性时小、缺乏弹性时大。
+每个需求一栏：以大括号标出 `p - MC` 的加成，需求有弹性时小、缺乏弹性时大（勒纳指数为 `1 / |e|`）。
 
 <!-- api: micro_viz.guides_monopoly_3 -->
 
@@ -28,7 +28,7 @@ seo_title: "独占与定价"
 
 <!-- api: micro_viz.guides_monopoly_4 -->
 
-需求移动（细实线 `D'` 与 `MR'`）：平行移动，或以 `rotate` 绕数量轴端点转动。
+需求移动（细实线 `D'` 与 `MR'`）：平行移动，或以 `rotate` 绕数量轴端点转动，斜率改变。独占者没有供给曲线，同一价格可对应不同产量，新的最优点由 `MR' = MC` 读出。
 
 <!-- api: micro_viz.guides_monopoly_5 -->
 
@@ -506,7 +506,7 @@ def regulation_examples(
 
 <!-- api: micro_viz.guides_monopoly_19 -->
 
-完全差别订价：价格随需求到 `D = MC`，利润为需求与 MC 之间的面积。
+完全差别定价：价格随需求到 `D = MC`；利润为需求与 MC 之间的面积，其中比单一独占价格多得的部分以较深的阴影标出。
 
 <!-- api: micro_viz.guides_monopoly_20 -->
 

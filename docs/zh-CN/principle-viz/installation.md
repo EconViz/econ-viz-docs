@@ -8,7 +8,7 @@ seo_title: "安装"
 
 ## 系统需求
 
-`principle-viz` 需要 Python 3.10 以上版本 (Python 官方网站提供各操作系统的安装程序：[https://www.python.org/downloads/](https://www.python.org/downloads/)。)。唯一的运行期依赖是 `mosaickit`，它通过 `matplotlib` 绘制图形；计算部分只使用标准函数库。
+`principle-viz` 需要 Python 3.10 以上版本 (Python 官方网站提供各操作系统的安装程序：[https://www.python.org/downloads/](https://www.python.org/downloads/)。)。唯一的运行时依赖是 `mosaickit`，它通过 `matplotlib` 绘制图形；计算部分只使用标准函数库。
 
 ## 安装 `uv`
 
@@ -39,7 +39,7 @@ uv add principle-viz
 uv run python main.py
 ```
 
-将[快速开始](quickstart.md#sec-quickstart)的基本范例存为项目目录下的 `main.py`，再运行上述命令。`uv add` 记录项目依赖，`uv run` 使用该项目的 Python 环境。安装与运行必须使用同一个环境。
+将[快速开始](quickstart.md#sec-quickstart)的基本示例存为项目目录下的 `main.py`，再运行上述命令。`uv add` 记录项目依赖，`uv run` 使用该项目的 Python 环境。安装与运行必须使用同一个环境。
 
 若要固定本手册使用的版本，可在加入依赖时指定版本号：
 
@@ -88,7 +88,7 @@ uv run pytest -q
 uv run ruff check src tests examples/scripts
 ```
 
-测试要求至少 90% 的陈述式覆盖率。范例脚本会将项目图库中的所有图形写入 `examples/output/`：
+测试要求至少 90% 的陈述式覆盖率。示例脚本会将项目图库中的所有图形写入 `examples/output/`：
 
 ```bash
 uv run python examples/scripts/run_all.py

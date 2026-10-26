@@ -67,4 +67,4 @@ Animation(scene, motion).save("text.svg", width=480, height=192)
 
 只有在 GlyphKit 的权限检查允许声明的 `embedding_use`（缺省是 `EmbeddingUse.WEB`）时，才会嵌入字体。受限的字体会被拒绝；权限不明的字体也会被拒绝，除非你传入 `allow_unknown=True`，而这个决定会被记录下来。
 
-安装 KineticKit 会一并安装兼容的 GlyphKit。KineticKit 内核的导入保持延迟加载：只有 `kinetickit.integrations.glyphkit` 会导入 GlyphKit，GlyphKit 也绝不导入 KineticKit。需要文本的辅助线（例如座标轴）在没有排版引擎时会抛出 `TypographyUnavailableError`，不会自己猜一个字体。
+安装 KineticKit 会一并安装兼容的 GlyphKit。KineticKit 内核的导入保持延迟加载：只有 `kinetickit.integrations.glyphkit` 会导入 GlyphKit，GlyphKit 也绝不导入 KineticKit。需要文本的辅助线（例如坐标轴）在没有排版引擎时会抛出 `TypographyUnavailableError`，不会自己猜一个字体。

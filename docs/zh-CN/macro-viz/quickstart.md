@@ -79,6 +79,6 @@ islm_canvas(tax).save("islm_tax_increase.svg")
 ## 标题、标签与设置
 
 - `title=None` 不画标题，`title="..."` 设置标题。
-- 内置的文本（轴标题、曲线名称、点名）是语系表的标签编号；`labels={"id": "文本"}` 可取代其中任何一个（参见 [标签与位置](guides/labels.md#sec-labels)）。
+- 内置的文本（轴标题、曲线名称、点名）是语言表的标签编号；`labels={"id": "文本"}` 可取代其中任何一个（参见 [标签与位置](guides/labels.md#sec-labels)）。
 - 颜色、线宽、字体与大小来自主题与共用 `econ-viz.toml` 的 `[macro]` 表（参见 [设置](guides/settings.md#sec-settings)）；绘图代码中没有这些数值。
 - 轴长、采样点数与画布大小等数字都是绘图函数的参数。

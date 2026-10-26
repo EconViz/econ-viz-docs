@@ -12,7 +12,7 @@ seo_title: "三次线段与路径"
 
 <!-- api: agora.bezierkit.guides_paths_1 -->
 
-不可变的三次曲线，四个控制点即字段 `p0`、`p1`、`p2`、`p3`（亦可用 `control_points` 或逐一取出）。求值、微分、分割、截取与反转的方式与 `BezierCurve` 相同，但 `split()`、`segment()` 与 `reversed()` 仍回传三次线段。`segment(t, t)` 回传四个控制点都是 $B(t)$ 的退化三次曲线。
+不可变的三次曲线，四个控制点即字段 `p0`、`p1`、`p2`、`p3`（亦可用 `control_points` 或逐一取出）。求值、微分、分割、截取与反转的方式与 `BezierCurve` 相同，但 `split()`、`segment()` 与 `reversed()` 仍返回三次线段。`segment(t, t)` 返回四个控制点都是 $B(t)$ 的退化三次曲线。
 
 ## 紧密边界框
 
@@ -28,7 +28,7 @@ seo_title: "三次线段与路径"
 
     其中 $\alpha_k = \inf \lbrace x_k : x \in K\rbrace$、$\beta_k = \sup \lbrace x_k : x \in K\rbrace$。
 
-控制点凸包包含曲线（详见[凸包](curves.md#cor-hull)），但可能比曲线大得多。`bounding_box` 回传曲线本身的[轴对齐边界框](paths.md#def-bbox)所定义的方框（参见[三次曲线的紧密边界框](paths.md#fig-bbox)），其候选点来自各坐标导数的根。
+控制点凸包包含曲线（详见[凸包](curves.md#cor-hull)），但可能比曲线大得多。`bounding_box` 返回曲线本身的[轴对齐边界框](paths.md#def-bbox)所定义的方框（参见[三次曲线的紧密边界框](paths.md#fig-bbox)），其候选点来自各坐标导数的根。
 
 <span id="prop-bbox"></span>
 
@@ -54,7 +54,7 @@ seo_title: "三次线段与路径"
 
 <!-- api: agora.bezierkit.guides_paths_2 -->
 
-回传 `(low, high)` 两点，分别为曲线在各轴的最小值与最大值，由[三次曲线的边界框](paths.md#prop-bbox)的候选参数求值而得。
+返回 `(low, high)` 两点，分别为曲线在各轴的最小值与最大值，由[三次曲线的边界框](paths.md#prop-bbox)的候选参数求值而得。
 
 <span id="fig-bbox"></span>
 
@@ -70,7 +70,7 @@ seo_title: "三次线段与路径"
 
 ## 升阶
 
-升阶（详见[升阶](curves.md#prop-raise-degree)）把 $n$ 次曲线写成参数化相同的 $n + 1$ 次曲线。本套件用它把直线与二次曲线写成三次曲线，使每个绘图端都收到四个控制点。对[升阶](curves.md#prop-raise-degree)套用一次或两次，即得下列控制点。
+升阶（详见[升阶](curves.md#prop-raise-degree)）把 $n$ 次曲线写成参数化相同的 $n + 1$ 次曲线。本软件包用它把直线与二次曲线写成三次曲线，使每个绘图端都收到四个控制点。对[升阶](curves.md#prop-raise-degree)套用一次或两次，即得下列控制点。
 
 <span id="prop-elevation"></span>
 
@@ -92,7 +92,7 @@ seo_title: "三次线段与路径"
 
 <!-- api: agora.bezierkit.guides_paths_3 -->
 
-位于 `bezierkit.bezier`。依[直线与二次曲线的三次表示](paths.md#prop-elevation)将一次、二次或三次 `BezierCurve` 转为 `CubicBezierSegment`（传入线段时原样回传）；更高次数抛出 `DegreeError`。
+位于 `bezierkit.bezier`。依[直线与二次曲线的三次表示](paths.md#prop-elevation)将一次、二次或三次 `BezierCurve` 转为 `CubicBezierSegment`（传入线段时原样返回）；更高次数抛出 `DegreeError`。
 
 <!-- api: agora.bezierkit.guides_paths_4 -->
 
@@ -117,7 +117,7 @@ print(to_cubic(q).control_points)
 
 由三次线段组成的路径。相邻线段必须相接：每段的 `p3` 与下一段的 `p0` 距离不得超过 `continuity_tolerance`，封闭路径最后的 `p3` 与第一个 `p0` 亦然，否则抛出 `ValueError`。`closed` 是给导出器的信息（SVG 的 `Z`、TikZ 的 `cycle`），不会额外加入封闭线段。
 
-本套件以均匀方式将路径参数化。这是本套件的约定，并非通用概念：由 $m$ 段 $S_0, \ldots, S_{m-1}$ 组成的路径是映射
+本软件包以均匀方式将路径参数化。这是本软件包的约定，并非通用概念：由 $m$ 段 $S_0, \ldots, S_{m-1}$ 组成的路径是映射
 
 $$
 P(t) = S_k (m t - k), \quad k = \min(\left\lfloor m t \right\rfloor, m - 1), \quad t \in [0, 1].

@@ -1612,7 +1612,7 @@
         "description": {
           "en": "Overrides for built-in labels, by layer id ([Labels and layers](figures.md#sec-labels)).",
           "zh-TW": "依圖層 id 覆寫內建標籤（詳見[標籤與圖層](figures.md#sec-labels)）。",
-          "zh-CN": "依图层 id 覆盖内建标签（详见[标签与图层](figures.md#sec-labels)）。"
+          "zh-CN": "依图层 id 覆盖内置标签（详见[标签与图层](figures.md#sec-labels)）。"
         }
       },
       {
@@ -5648,7 +5648,7 @@
         "description": {
           "en": "$\\nabla F = (F_x, F_y)$, as a pair or a `Vector`. When given, straight pieces are bent into cubics that follow the curve's tangent.",
           "zh-TW": "$\\nabla F = (F_x, F_y)$，以 tuple 或 `Vector` 回傳。提供時，直線段會彎成沿曲線切線方向的三次曲線。",
-          "zh-CN": "$\\nabla F = (F_x, F_y)$，以 tuple 或 `Vector` 回传。提供时，直线段会弯成沿曲线切线方向的三次曲线。"
+          "zh-CN": "$\\nabla F = (F_x, F_y)$，以 tuple 或 `Vector` 返回。提供时，直线段会弯成沿曲线切线方向的三次曲线。"
         },
         "default": "None"
       }

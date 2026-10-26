@@ -22,7 +22,7 @@ seo_title: "不确定性与信息"
 
 <!-- api: micro_viz.guides_uncertainty_2 -->
 
-两资产组合在标准差－平均数平面上的前缘：最小变异数组合 `G` 以上的效率部分为粗线。
+两资产组合在标准差－平均数平面上的前缘：最小方差组合 `G` 以上的有效部分为粗线，无效部分为细实线。
 
 <!-- api: micro_viz.guides_uncertainty_3 -->
 
@@ -34,11 +34,11 @@ seo_title: "不确定性与信息"
 
 <!-- api: micro_viz.guides_uncertainty_5 -->
 
-风险报酬线与各投资人和它相切的无异曲线；`market_sd` 另标市场投资组合 `M`，其外是借款。
+风险报酬线与各投资人和它相切的无差异曲线；`market_sd` 另标市场投资组合 `M`，其外（借款以持有更多风险）为细实线段。
 
 <!-- api: micro_viz.guides_uncertainty_6 -->
 
-状态请求权：45 度的确定线、禀赋 `E`、每个保费率一条预算线（第一条画粗；公平保费导致完全保险）。
+状态请求权：45 度的确定线、禀赋 `E`、每个保费率一条预算线（第一条画粗；公平保费导致确定线上的完全保险，不公平保费则是部分保险），以及通过各选择的无差异曲线。
 
 <!-- api: micro_viz.guides_uncertainty_7 -->
 
@@ -381,7 +381,7 @@ def auction_examples(
 
 <!-- api: micro_viz.guides_uncertainty_13 -->
 
-奖金对申报的厂房规模 `R`，每种真实产能一条：每条在申报等于产能处最高，所以诚实申报是最适。
+奖金对申报的厂房规模 `R`，每种真实产能一条：每条在申报等于产能处最高，所以诚实申报符合激励相容。
 
 <!-- api: micro_viz.guides_uncertainty_14 -->
 
@@ -389,7 +389,7 @@ def auction_examples(
 
 <!-- api: micro_viz.guides_uncertainty_15 -->
 
-每个高品质比例一栏：高、低品质的需求 `D_H`、`D_L`，卖者的保留线 `S_H`、`S_L` 与混合需求。
+每个高品质比例一栏：高、低品质的需求 `D_H`、`D_L`，卖者的保留线 `S_H`、`S_L`，以及无法分辨品质的买者的需求 `D`。`D` 起点低于 `S_H` 时，高品质被逐出市场。
 
 <!-- api: micro_viz.guides_uncertainty_16 -->
 
@@ -459,11 +459,11 @@ def information_examples(
 
 <figure class="ev-fig" markdown>
 
-![*柠檬市场。* 高品质比例过低时，高品质被逐出市场。](../../../assets/micro-viz/information/lemons.zh-CN.svg){ .ev-figure-lg }
+![*柠檬市场。* 高质量比例过低时，高质量被逐出市场。](../../../assets/micro-viz/information/lemons.zh-CN.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/information/information.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
-<figcaption markdown>*柠檬市场。* 高品质比例过低时，高品质被逐出市场。</figcaption>
+<figcaption markdown>*柠檬市场。* 高质量比例过低时，高质量被逐出市场。</figcaption>
 
 </figure>
 

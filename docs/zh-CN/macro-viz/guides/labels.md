@@ -6,7 +6,7 @@ seo_title: "标签与位置"
 
 <span id="sec-labels"></span>
 
-## 语系表
+## 语言表
 
 `macro-viz` 放进图中的每个字都在 `src/macro_viz/locale/labels.json`，先依语言（`en`、`zh-TW`、`zh-CN`）、再依稳定的编号（`islm.curve.is`）索引。语言来自设置的 `[macro] language`。
 

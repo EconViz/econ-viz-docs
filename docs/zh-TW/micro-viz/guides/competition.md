@@ -438,7 +438,7 @@ def long_run_examples(
 
 <!-- api: micro_viz.guides_competition_17 -->
 
-遞增成本產業：進入使投入價格上升，廠商成本曲線上移，LRS 向右上傾斜。
+遞增成本產業：產業每多產出一單位，進入就使投入價格上升 `cost_shift`，所以每家廠商的成本曲線上移，LRS 向右上傾斜。
 
 <!-- api: micro_viz.guides_competition_18 -->
 

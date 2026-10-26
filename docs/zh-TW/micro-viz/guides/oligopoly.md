@@ -20,15 +20,15 @@ seo_title: "寡占與垂直關係"
 
 <!-- api: micro_viz.guides_oligopoly_2 -->
 
-`(p1, p2)` 空間中向上傾斜的價格反應曲線 `R1`、`R2`、納許價格 `N`，以及可選的勾結價格。
+`(p1, p2)` 空間中向上傾斜的價格反應曲線 `R1`、`R2`、納許價格 `N`，以及可選的使聯合利潤最大的價格 `M`。
 
 <!-- api: micro_viz.guides_oligopoly_3 -->
 
-`(Q1, Q2)` 空間中的反應曲線 `R1`、`R2` 相交於古諾點 `N`；`competitive` 與 `collusive` 另加總產量固定線。
+`(Q1, Q2)` 空間中的反應曲線 `R1`、`R2` 相交於古諾點 `N`。`competitive` 與 `collusive` 另加總產量固定線及其對稱點 `C`、`M`；`leader` 另加史塔克柏格點 `S`。
 
 <!-- api: micro_viz.guides_oligopoly_4 -->
 
-廠商 1 對各種對手產量猜測下的剩餘需求 `D1(q2)` 與 `MR1(q2)`，以及它的邊際成本。
+廠商 1 對各種對手產量猜測下的剩餘需求 `D1(q2)` 與 `MR1(q2)`，以及它的邊際成本。每個猜測使兩條曲線都向左移 `q2`。
 
 ```python
 def oligopoly_examples(
@@ -146,11 +146,11 @@ def oligopoly_examples(
 
 <!-- api: micro_viz.guides_oligopoly_7 -->
 
-市場需求 `D`、邊緣廠商供給 `S_F`，以及剩餘需求 `D_D = D - S_F`、其邊際收益與廠商的邊際成本。
+市場需求 `D`、邊緣廠商供給 `S_F`，以及剩餘需求 `D_D = D - S_F`、其邊際收益與廠商的邊際成本；廠商令 `MR = MC`，邊緣廠商在同一價格供給其餘數量。`cartel` 把名稱換成卡特爾的。
 
 <!-- api: micro_viz.guides_oligopoly_8 -->
 
-拗折需求與其邊際收益在拗折點的垂直缺口；`marginal_costs` 中每條 MC 畫成水平線。
+拗折需求與其邊際收益在拗折點的垂直缺口；`marginal_costs` 中每條 MC 畫成水平線，第一條畫粗，其餘為細實線。落在缺口內的 MC 使價格與數量停在拗折點。
 
 ```python
 def dominant_examples(
@@ -251,15 +251,15 @@ def dominant_examples(
 
 <!-- api: micro_viz.guides_oligopoly_10 -->
 
-兩個疊起來的獨占：最終需求 `D`、`NMR`（上游面對的需求）、上游邊際收益 `MR_u` 與 `MC_u`。
+兩個疊起來的獨占：最終需求 `D`、`NMR`（上游面對的需求）、上游邊際收益 `MR_u` 與 `MC_u`。數量 `Q_s` 定在 `MR_u = MC_u` 處；移轉價格 `W_s` 在 `NMR` 上讀出，最終價格 `p_s` 在 `D` 上讀出。
 
 <!-- api: micro_viz.guides_oligopoly_11 -->
 
-整合廠商令 `NMR = MC_u`：產量 `Q_i` 高於分開時的 `Q_s`，最終價格 `p_i` 較低。
+整合廠商令 `NMR = MC_u`：產量 `Q_i` 高於分開時的 `Q_s`（以標記畫出），最終價格 `p_i` 較低。
 
 <!-- api: micro_viz.guides_oligopoly_12 -->
 
-有外部市場價格 `P_m` 時，有效邊際成本在 `Q_u` 以下為 `MC_u`，之後為水平的 `P_m`。
+有外部市場價格 `P_m` 時，有效邊際成本在 `Q_u`（與 `P_m` 相交處）以下為 `MC_u`，之後為水平的 `P_m`（`kinked`）；沒有外部市場時，圖中是最適移轉價格 `P_m`，下游使用 `Q_d`，其餘 `Q_u - Q_d` 在外部出售。
 
 ```python
 def vertical_examples(

@@ -28,7 +28,7 @@ walk(box)
 
 ## 常數來自字型
 
-位移、間距、橫線粗細與運算子大小都來自字型的 MATH 表，例如 `SuperscriptShiftUp`、`SubscriptShiftDown`、`AxisHeight`、`FractionRuleThickness`、`RadicalVerticalGap` 與 `DisplayOperatorMinHeight`。每種結構如何使用它們，見[數學語法](math-grammar.md#算式如何排版)。字型沒有提供的常數，會改用以點為單位的值，而且不會再縮放第二次。
+位移、間距、橫線粗細與運算子大小都來自字型的 MATH 表，例如 `SuperscriptShiftUp`、`SubscriptShiftDown`、`AxisHeight`、`FractionRuleThickness`、`RadicalVerticalGap` 與 `DisplayOperatorMinHeight`。每種結構如何使用它們，見[數學語法](math-grammar.md#how-a-formula-is-set)。字型沒有提供的常數，會改用以點為單位的值，而且不會再縮放第二次。
 
 ## 樣式與常數的覆寫
 

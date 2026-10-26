@@ -6,7 +6,7 @@ seo_title: "无障碍与交互"
 
 <span id="sec-accessibility"></span>
 
-## 语意与减少动态
+## 语义与减少动态
 
 <!-- api: kinetickit.guides_accessibility_1 -->
 
@@ -34,7 +34,7 @@ info = AccessibilityInfo(
 )
 ```
 
-SVG 与 HTML 会保留标题、说明、稳定的对象编号与各节点的语意。HTML 另外提供可用键盘操作的控制项与依阅读顺序排列的对象清单。GIF 无法携带这些运行时的语意，所以要求 GIF 输出无障碍内容时，必须提供文本说明，并可返回代表性 PNG。
+SVG 与 HTML 会保留标题、说明、稳定的对象编号与各节点的语义。HTML 另外提供可用键盘操作的控制项与依阅读顺序排列的对象清单。GIF 无法携带这些运行时的语义，所以要求 GIF 输出无障碍内容时，必须提供文本说明，并可返回代表性 PNG。
 
 ## 交互
 

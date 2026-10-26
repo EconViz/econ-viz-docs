@@ -9,10 +9,10 @@ seo_title: "添加图形"
 要画哪些图由保存库的议题与里程碑决定。统计图与会计方块不绘制。添加一张图有五个步骤。
 
 + *模型。*把方程式放进 `macro_viz/<topic>/models.py` 的冻结 dataclass。检查输入并引发 `ValidationError`。不导入绘图器。
-+ *比较。*在 `analysis.py` 加一个 `analyze_*` 函数，回传两个模型与各项变动的方向。
++ *比较。*在 `analysis.py` 加一个 `analyze_*` 函数，返回两个模型与各项变动的方向。
 + *绘图函数。*用 `_theory.py` 的工具写 `macro_viz/visuals/<topic>.py`。里面不写任何显示文本。
 + *文本。*把每个词以稳定的编号（`islm.curve.is`）加入 `locale/labels.json` 的三种语言。
-+ *导出、范例与测试。*把名称加进 `visuals/__init__.py`，写一个从 `examples/examples.toml` 读数字的 `examples/scripts/<topic>.py`，并测试模型、参数改变会让图形改变、`title=None` 不画标题，以及没有标签盖到线。
++ *导出、示例与测试。*把名称加进 `visuals/__init__.py`，写一个从 `examples/examples.toml` 读数字的 `examples/scripts/<topic>.py`，并测试模型、参数改变会让图形改变、`title=None` 不画标题，以及没有标签盖到线。
 
 ```python
 from macro_viz.i18n import Labels
@@ -76,8 +76,8 @@ def demand_canvas(intercept, slope, x_max, *, title=None):
 - 变动后的曲线是细实线，不用虚线；平行移动用直线箭头；弯曲箭头只代表转动。
 - 点状辅助线把点接到坐标轴，轴上的记号标示它的值。
 - 只有价格 `p` 用小写；其他变量用大写斜体。缩写与点名保持原有的大小写。
-- 没有任何写死的数值：文本来自语系表，数字来自参数，颜色、线宽与字体来自主题。
-- 主题一律是白底。范例使用 `manual`。
+- 没有任何写死的数值：文本来自语言表，数字来自参数，颜色、线宽与字体来自主题。
+- 主题一律是白底。示例使用 `manual`。
 
 ## 检查
 
