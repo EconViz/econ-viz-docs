@@ -275,7 +275,7 @@ def monopoly_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Multiplant monopoly.* The plants' MC curves sum horizontally and meet MR, which fixes each plant's output.](../../assets/micro-viz/monopoly/multiplant.svg){ .ev-figure-sm }
+![*Multiplant monopoly.* The plants' MC curves sum horizontally and meet MR, which fixes each plant's output.](../../assets/micro-viz/monopoly/multiplant.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/monopoly/monopoly.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
@@ -287,7 +287,7 @@ def monopoly_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Lerner markup.* The less elastic demand is, the larger the markup (p - MC).](../../assets/micro-viz/monopoly/lerner_markup.svg){ .ev-figure-sm }
+![*Lerner markup.* The less elastic demand is, the larger the markup (p - MC).](../../assets/micro-viz/monopoly/lerner_markup.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/monopoly/monopoly.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
@@ -385,7 +385,7 @@ def monopolistic_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Excess capacity.* Output falls short of the lowest-ATC output; the gap is excess capacity.](../../assets/micro-viz/monopolistic_competition/excess_capacity.svg){ .ev-figure-sm }
+![*Excess capacity.* Output falls short of the lowest-ATC output; the gap is excess capacity.](../../assets/micro-viz/monopolistic_competition/excess_capacity.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/monopolistic_competition/monopolistic_competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
@@ -637,7 +637,7 @@ def discrimination_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Third-degree discrimination.* MR1 = MR2 = MC; the summed marginal revenue fixes total output.](../../assets/micro-viz/price_discrimination/third_degree.svg){ .ev-figure-sm }
+![*Third-degree discrimination.* MR1 = MR2 = MC; the summed marginal revenue fixes total output.](../../assets/micro-viz/price_discrimination/third_degree.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/price_discrimination/price_discrimination.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
@@ -649,7 +649,7 @@ def discrimination_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Third degree, corner.* With rising marginal cost a small market may go unserved.](../../assets/micro-viz/price_discrimination/third_degree_corner.svg){ .ev-figure-sm }
+![*Third degree, corner.* With rising marginal cost a small market may go unserved.](../../assets/micro-viz/price_discrimination/third_degree_corner.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/price_discrimination/price_discrimination.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
@@ -1092,7 +1092,7 @@ def resource_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Exhaustible resource.* Price less marginal extraction cost grows at the interest rate; the static view is beside it.](../../assets/micro-viz/exhaustible_resource/resource_price_path.svg){ .ev-figure-sm }
+![*Exhaustible resource.* Price less marginal extraction cost grows at the interest rate; the static view is beside it.](../../assets/micro-viz/exhaustible_resource/resource_price_path.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/exhaustible_resource/exhaustible_resource.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 

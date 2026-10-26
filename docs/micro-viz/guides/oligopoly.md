@@ -237,7 +237,7 @@ def dominant_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Cartel, inelastic and elastic demand.* The more elastic demand is, the less market power the cartel has.](../../assets/micro-viz/dominant_firm/cartel_elasticity.svg){ .ev-figure-sm }
+![*Cartel, inelastic and elastic demand.* The more elastic demand is, the less market power the cartel has.](../../assets/micro-viz/dominant_firm/cartel_elasticity.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/dominant_firm/dominant_firm.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 

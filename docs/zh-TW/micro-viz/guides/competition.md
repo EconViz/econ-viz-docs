@@ -191,7 +191,7 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*市場與廠商。* 市場需求決定價格，個別廠商面對水平需求線。](../../../assets/micro-viz/competition/market_and_firm.zh-TW.svg){ .ev-figure-sm }
+![*市場與廠商。* 市場需求決定價格，個別廠商面對水平需求線。](../../../assets/micro-viz/competition/market_and_firm.zh-TW.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/competition/competition.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
@@ -287,7 +287,7 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*產業供給。* 產業供給為各廠商供給的水平加總。](../../../assets/micro-viz/competition/industry_supply.zh-TW.svg){ .ev-figure-sm }
+![*產業供給。* 產業供給為各廠商供給的水平加總。](../../../assets/micro-viz/competition/industry_supply.zh-TW.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/competition/competition.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
@@ -402,7 +402,7 @@ def long_run_examples(
 
 <figure class="ev-fig" markdown>
 
-![*短期成本包絡線。* LAC 是 SAC1 至 SAC3 的包絡線；各 SAC 與 LAC 相切，SMC 通過其 SAC 的最低點。](../../../assets/micro-viz/long_run_costs/short_run_envelope.zh-TW.svg){ .ev-figure-sm }
+![*短期成本包絡線。* LAC 是 SAC1 至 SAC3 的包絡線；各 SAC 與 LAC 相切，SMC 通過其 SAC 的最低點。](../../../assets/micro-viz/long_run_costs/short_run_envelope.zh-TW.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/long_run_costs/long_run_costs.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
@@ -529,7 +529,7 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*進入。* 利潤吸引進入，產業供給右移直到價格降到最低 ATC。](../../../assets/micro-viz/long_run_competition/entry.zh-TW.svg){ .ev-figure-sm }
+![*進入。* 利潤吸引進入，產業供給右移直到價格降到最低 ATC。](../../../assets/micro-viz/long_run_competition/entry.zh-TW.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/long_run_competition/long_run_competition.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
@@ -541,7 +541,7 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*經濟租。* 成本較低的廠商在零利潤價格下仍有經濟租。](../../../assets/micro-viz/long_run_competition/economic_rent.zh-TW.svg){ .ev-figure-sm }
+![*經濟租。* 成本較低的廠商在零利潤價格下仍有經濟租。](../../../assets/micro-viz/long_run_competition/economic_rent.zh-TW.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/long_run_competition/long_run_competition.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
@@ -553,7 +553,7 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*固定成本產業。* 固定成本產業的長期供給為水平線。](../../../assets/micro-viz/long_run_competition/constant_cost.zh-TW.svg){ .ev-figure-sm }
+![*固定成本產業。* 固定成本產業的長期供給為水平線。](../../../assets/micro-viz/long_run_competition/constant_cost.zh-TW.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/long_run_competition/long_run_competition.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
@@ -565,7 +565,7 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*遞增成本產業。* 遞增成本產業的長期供給向右上傾斜。](../../../assets/micro-viz/long_run_competition/increasing_cost.zh-TW.svg){ .ev-figure-sm }
+![*遞增成本產業。* 遞增成本產業的長期供給向右上傾斜。](../../../assets/micro-viz/long_run_competition/increasing_cost.zh-TW.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/long_run_competition/long_run_competition.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 

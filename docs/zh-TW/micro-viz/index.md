@@ -1,17 +1,25 @@
 ---
-seo_title: "micro-viz：用 Python 繪製個體經濟學圖形"
-description: "micro-viz 用 Python 繪製教科書的個體經濟學模型：生產、成本、完全競爭、獨占、定價、寡占、要素市場、不確定性與資訊。"
+seo_title: "繪製廠商與市場圖形的 Python 套件"
+description: "開源 Python 套件，繪製教科書的廠商與市場圖形：生產、成本、競爭、獨占、寡占、要素市場與不確定性。"
 ---
 
-<h1 class="ev-visually-hidden">micro-viz：用 Python 繪製個體經濟學圖形</h1>
+<h1 class="ev-visually-hidden">micro-viz：繪製廠商與市場圖形的 Python 套件</h1>
 
 <p align="center">
   <img src="../../assets/micro-viz/banner.svg" alt="micro-viz" style="max-width: 480px; width: 100%; margin: 2rem 0 1rem;">
 </p>
 
-<p align="center"><em>廠商與市場的教科書分析與圖形 Python 套件。</em></p>
+<p align="center"><em>用 Python 繪製廠商與市場的教科書圖形。</em></p>
 
-`micro-viz` 負責個體經濟學的廠商端：生產、成本、市場結構、定價、要素市場、不確定性與資訊。每個模型都是有型別的物件，**不負責繪圖**；每張圖都是由模型建立的 `mosaickit` 畫布。統計資料圖與方塊加箭頭的流程圖不在範圍內。
+<p align="center">
+  <a href="https://github.com/EconViz/micro-viz"><img alt="GitHub" src="https://img.shields.io/badge/github-EconViz%2Fmicro--viz-181818?style=flat-square&labelColor=f3f3f3"></a>
+  <img alt="Python" src="https://img.shields.io/badge/python-3.10%2B-181818?style=flat-square&labelColor=f3f3f3">
+  <img alt="Status" src="https://img.shields.io/badge/status-0.2.0.dev0-181818?style=flat-square&labelColor=f3f3f3">
+</p>
+
+!!! warning "micro-viz 開發中"
+
+    micro-viz 0.2.0.dev0 尚未發布到 PyPI，請從 GitHub 安裝；第一版發布前 API 仍可能變動。
 
 ```python
 from micro_viz import (
@@ -30,26 +38,76 @@ total_product_canvas(result).save("total_product.svg")
 
 ![總產量](../../assets/micro-viz/production/total_product.zh-TW.svg){ .ev-figure-sm }
 
-## 模型與圖形
+## 功能
 
-| 模型 | 模組 | 圖形 |
-| --- | --- | --- |
-| 短期生產、成本函數、階梯成本 | `production`、`costs` | [生產與成本](guides/production-costs.md) |
-| 等產量線、成本最小化、學習與範疇、要素市場、買方獨占與工會 | `isoquant`、`production.extras`、`factors` | [投入與技術](guides/inputs.md) |
-| 完全競爭、進入與退出、長期成本 | `competition`、`entry`、`longrun` | [競爭與長期](guides/competition.md) |
-| 獨占、獨占性競爭、管制、價格歧視、關稅式定價、搭售、廣告、可耗竭資源 | `monopoly`、`monopolistic`、`regulation`、`discrimination`、`pricing`、`bundling`、`advertising`、`capital` | [獨占與定價](guides/monopoly.md) |
-| 雙占、凹折需求、主導廠商、垂直關係 | `oligopoly`、`vertical` | [寡占與垂直關係](guides/oligopoly.md) |
-| 期望效用、風險、拍賣、逆向選擇、訊號、道德危害 | `uncertainty`、`auctions`、`information` | [不確定性與資訊](guides/uncertainty.md) |
+<div class="grid cards" markdown>
 
-每個繪圖函式都接受 `title=None`，回傳 `mosaickit` 的 `Canvas`，並產生穩定的 `micro.*` 圖層編號。文字來自英文、繁體中文與簡體中文的語系表，任何一句都能用 `labels=` 取代。尺寸、線寬、顏色與字型來自主題和共用的 `econ-viz.toml`，**不寫在繪圖程式裡**。
+-   :material-chart-bell-curve: **生產與成本**
 
-!!! note "狀態"
+    短期總產量、平均產量與邊際產量、成本函式，以及階梯與折點成本。
 
-    `micro-viz` 目前是 `0.2.0.dev0`，尚未上架 PyPI；請從 GitHub 安裝（見[安裝](installation.md#sec-install)）。
+    [:octicons-arrow-right-24: 生產與成本](guides/production-costs.md)
 
-## 範圍
+-   :material-store-outline: **競爭**
 
-- `micro-viz` 負責生產者理論、市場結構、要素市場、不確定性與資訊。
-- 消費者理論與一般均衡屬於 [utility-viz](../utility-viz/index.md)。
-- 入門的供需政策圖屬於 [principle-viz](../principle-viz/index.md)。
-- 賽局理論不在這個套件內。
+    價格接受者廠商、產業供給、長期成本、進入與經濟租。
+
+    [:octicons-arrow-right-24: 競爭](guides/competition.md)
+
+-   :material-crown-outline: **獨占與定價**
+
+    獨占、管制、價格歧視、兩部定價、搭售與廣告。
+
+    [:octicons-arrow-right-24: 獨占與定價](guides/monopoly.md)
+
+-   :material-account-group-outline: **寡占與垂直關係**
+
+    古諾、史塔克柏格與柏川雙占、拗折需求、支配廠商與雙重加成。
+
+    [:octicons-arrow-right-24: 寡占與垂直關係](guides/oligopoly.md)
+
+-   :material-factory: **投入與技術**
+
+    等產量線、成本最小化、要素市場、買方獨佔與工會。
+
+    [:octicons-arrow-right-24: 投入與技術](guides/inputs.md)
+
+-   :material-dice-multiple-outline: **不確定性與資訊**
+
+    期望效用、風險、拍賣、檸檬市場、訊號與道德風險。
+
+    [:octicons-arrow-right-24: 不確定性與資訊](guides/uncertainty.md)
+
+-   :material-label-outline: **標籤與位置**
+
+    取代任何內建文字、移動標籤群組，並讓文字避開線條。
+
+    [:octicons-arrow-right-24: 標籤與位置](guides/labels.md)
+
+-   :material-tune: **設定**
+
+    由共用的 econ-viz.toml 設定顏色、線寬、字型與區域底色。
+
+    [:octicons-arrow-right-24: 設定](guides/settings.md)
+
+-   :material-play-box-multiple-outline: **動畫**
+
+    把價格、產量或移動的變化做成 SVG 或 GIF 動畫。
+
+    [:octicons-arrow-right-24: 動畫](guides/animation.md)
+
+</div>
+
+## 安裝
+
+```bash
+uv add --prerelease allow "micro-viz @ git+https://github.com/EconViz/micro-viz"
+```
+
+需要 Python 3.10 以上。uv 與選用依賴請見[安裝](installation.md)。
+
+## 範例
+
+文件裡每張圖都附有畫出它的腳本，已依主題分資料夾。一次下載全部，內含腳本載入的設定檔 `econ-viz.toml`（`base = "manual"`）。
+
+[下載全部範例](../../assets/micro-viz/micro-viz-examples.zip){ .md-button download="" }

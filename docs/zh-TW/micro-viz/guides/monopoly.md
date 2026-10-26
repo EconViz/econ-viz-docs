@@ -275,7 +275,7 @@ def monopoly_examples(
 
 <figure class="ev-fig" markdown>
 
-![*多廠房獨占。* 各廠房 MC 水平加總後與 MR 相交，並決定各廠產量。](../../../assets/micro-viz/monopoly/multiplant.zh-TW.svg){ .ev-figure-sm }
+![*多廠房獨占。* 各廠房 MC 水平加總後與 MR 相交，並決定各廠產量。](../../../assets/micro-viz/monopoly/multiplant.zh-TW.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/monopoly/monopoly.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
@@ -287,7 +287,7 @@ def monopoly_examples(
 
 <figure class="ev-fig" markdown>
 
-![*勒納加成。* 需求愈缺乏彈性，加成 (p − MC) 愈大。](../../../assets/micro-viz/monopoly/lerner_markup.zh-TW.svg){ .ev-figure-sm }
+![*勒納加成。* 需求愈缺乏彈性，加成 (p − MC) 愈大。](../../../assets/micro-viz/monopoly/lerner_markup.zh-TW.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/monopoly/monopoly.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
@@ -385,7 +385,7 @@ def monopolistic_examples(
 
 <figure class="ev-fig" markdown>
 
-![*超額產能。* 獨占性競爭的產量低於最低 ATC 的產量，差距為超額產能。](../../../assets/micro-viz/monopolistic_competition/excess_capacity.zh-TW.svg){ .ev-figure-sm }
+![*超額產能。* 獨占性競爭的產量低於最低 ATC 的產量，差距為超額產能。](../../../assets/micro-viz/monopolistic_competition/excess_capacity.zh-TW.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/monopolistic_competition/monopolistic_competition.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
@@ -637,7 +637,7 @@ def discrimination_examples(
 
 <figure class="ev-fig" markdown>
 
-![*三級差別訂價。* MR1 = MR2 = MC，加總的邊際收益決定總產量。](../../../assets/micro-viz/price_discrimination/third_degree.zh-TW.svg){ .ev-figure-sm }
+![*三級差別訂價。* MR1 = MR2 = MC，加總的邊際收益決定總產量。](../../../assets/micro-viz/price_discrimination/third_degree.zh-TW.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/price_discrimination/price_discrimination.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
@@ -649,7 +649,7 @@ def discrimination_examples(
 
 <figure class="ev-fig" markdown>
 
-![*角解。* 邊際成本上升時，小市場可能不被服務。](../../../assets/micro-viz/price_discrimination/third_degree_corner.zh-TW.svg){ .ev-figure-sm }
+![*角解。* 邊際成本上升時，小市場可能不被服務。](../../../assets/micro-viz/price_discrimination/third_degree_corner.zh-TW.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/price_discrimination/price_discrimination.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
@@ -1092,7 +1092,7 @@ def resource_examples(
 
 <figure class="ev-fig" markdown>
 
-![*可耗竭資源。* 價格減邊際開採成本以利率成長，並對應靜態需求。](../../../assets/micro-viz/exhaustible_resource/resource_price_path.zh-TW.svg){ .ev-figure-sm }
+![*可耗竭資源。* 價格減邊際開採成本以利率成長，並對應靜態需求。](../../../assets/micro-viz/exhaustible_resource/resource_price_path.zh-TW.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/exhaustible_resource/exhaustible_resource.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 

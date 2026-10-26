@@ -153,7 +153,7 @@ def uncertainty_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Utility of income.* Utility of income and the expected-utility chord for three risk attitudes.](../../assets/micro-viz/uncertainty/utility_of_income.svg){ .ev-figure-sm }
+![*Utility of income.* Utility of income and the expected-utility chord for three risk attitudes.](../../assets/micro-viz/uncertainty/utility_of_income.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/uncertainty/uncertainty.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
@@ -177,7 +177,7 @@ def uncertainty_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Risk attitude.* The more risk averse, the steeper the indifference curves.](../../assets/micro-viz/uncertainty/risk_attitude.svg){ .ev-figure-sm }
+![*Risk attitude.* The more risk averse, the steeper the indifference curves.](../../assets/micro-viz/uncertainty/risk_attitude.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/uncertainty/uncertainty.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
@@ -453,7 +453,7 @@ def information_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Pooling signal.* When the signal is cheap both types buy it, a pooling equilibrium.](../../assets/micro-viz/information/pooling.svg){ .ev-figure-sm }
+![*Pooling signal.* When the signal is cheap both types buy it, a pooling equilibrium.](../../assets/micro-viz/information/pooling.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/information/information.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
@@ -465,7 +465,7 @@ def information_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Lemons market.* When the share of high quality is too low, it is driven out of the market.](../../assets/micro-viz/information/lemons.svg){ .ev-figure-sm }
+![*Lemons market.* When the share of high quality is too low, it is driven out of the market.](../../assets/micro-viz/information/lemons.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/information/information.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
@@ -477,7 +477,7 @@ def information_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Signaling.* At a separating signal only the high-ability type buys it.](../../assets/micro-viz/information/signaling.svg){ .ev-figure-sm }
+![*Signaling.* At a separating signal only the high-ability type buys it.](../../assets/micro-viz/information/signaling.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/information/information.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
