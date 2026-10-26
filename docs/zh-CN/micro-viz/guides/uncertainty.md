@@ -153,7 +153,7 @@ def uncertainty_examples(
 
 <figure class="ev-fig" markdown>
 
-![*所得效用。* 三种风险态度的所得效用与期望效用弦。](../../../assets/micro-viz/uncertainty/utility_of_income.zh-CN.svg){ .ev-figure-sm }
+![*所得效用。* 三种风险态度的所得效用与期望效用弦。](../../../assets/micro-viz/uncertainty/utility_of_income.zh-CN.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/uncertainty/uncertainty.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
@@ -177,7 +177,7 @@ def uncertainty_examples(
 
 <figure class="ev-fig" markdown>
 
-![*风险态度。* 风险趋避愈强，无异曲线愈陡。](../../../assets/micro-viz/uncertainty/risk_attitude.zh-CN.svg){ .ev-figure-sm }
+![*风险态度。* 风险趋避愈强，无异曲线愈陡。](../../../assets/micro-viz/uncertainty/risk_attitude.zh-CN.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/uncertainty/uncertainty.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
@@ -453,7 +453,7 @@ def information_examples(
 
 <figure class="ev-fig" markdown>
 
-![*混同信号。* 信号成本低时，两类型皆购买，形成*混同均衡*。](../../../assets/micro-viz/information/pooling.zh-CN.svg){ .ev-figure-sm }
+![*混同信号。* 信号成本低时，两类型皆购买，形成*混同均衡*。](../../../assets/micro-viz/information/pooling.zh-CN.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/information/information.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
@@ -465,7 +465,7 @@ def information_examples(
 
 <figure class="ev-fig" markdown>
 
-![*柠檬市场。* 高品质比例过低时，高品质被逐出市场。](../../../assets/micro-viz/information/lemons.zh-CN.svg){ .ev-figure-sm }
+![*柠檬市场。* 高品质比例过低时，高品质被逐出市场。](../../../assets/micro-viz/information/lemons.zh-CN.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/information/information.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
@@ -477,7 +477,7 @@ def information_examples(
 
 <figure class="ev-fig" markdown>
 
-![*信号。* 分离信号只有高能力者愿意购买。](../../../assets/micro-viz/information/signaling.zh-CN.svg){ .ev-figure-sm }
+![*信号。* 分离信号只有高能力者愿意购买。](../../../assets/micro-viz/information/signaling.zh-CN.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/information/information.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 

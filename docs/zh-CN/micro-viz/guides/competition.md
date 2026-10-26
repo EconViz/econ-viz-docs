@@ -191,7 +191,7 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*市场与厂商。* 市场需求决定价格，个别厂商面对水平需求线。](../../../assets/micro-viz/competition/market_and_firm.zh-CN.svg){ .ev-figure-sm }
+![*市场与厂商。* 市场需求决定价格，个别厂商面对水平需求线。](../../../assets/micro-viz/competition/market_and_firm.zh-CN.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/competition/competition.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
@@ -287,7 +287,7 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*产业供给。* 产业供给为各厂商供给的水平加总。](../../../assets/micro-viz/competition/industry_supply.zh-CN.svg){ .ev-figure-sm }
+![*产业供给。* 产业供给为各厂商供给的水平加总。](../../../assets/micro-viz/competition/industry_supply.zh-CN.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/competition/competition.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
@@ -402,7 +402,7 @@ def long_run_examples(
 
 <figure class="ev-fig" markdown>
 
-![*短期成本包络线。* LAC 是 SAC1 至 SAC3 的包络线；各 SAC 与 LAC 相切，SMC 通过其 SAC 的最低点。](../../../assets/micro-viz/long_run_costs/short_run_envelope.zh-CN.svg){ .ev-figure-sm }
+![*短期成本包络线。* LAC 是 SAC1 至 SAC3 的包络线；各 SAC 与 LAC 相切，SMC 通过其 SAC 的最低点。](../../../assets/micro-viz/long_run_costs/short_run_envelope.zh-CN.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/long_run_costs/long_run_costs.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
@@ -529,7 +529,7 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*进入。* 利润吸引进入，产业供给右移直到价格降到最低 ATC。](../../../assets/micro-viz/long_run_competition/entry.zh-CN.svg){ .ev-figure-sm }
+![*进入。* 利润吸引进入，产业供给右移直到价格降到最低 ATC。](../../../assets/micro-viz/long_run_competition/entry.zh-CN.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/long_run_competition/long_run_competition.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
@@ -541,7 +541,7 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*经济租。* 成本较低的厂商在零利润价格下仍有经济租。](../../../assets/micro-viz/long_run_competition/economic_rent.zh-CN.svg){ .ev-figure-sm }
+![*经济租。* 成本较低的厂商在零利润价格下仍有经济租。](../../../assets/micro-viz/long_run_competition/economic_rent.zh-CN.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/long_run_competition/long_run_competition.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
@@ -553,7 +553,7 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*固定成本产业。* 固定成本产业的长期供给为水平线。](../../../assets/micro-viz/long_run_competition/constant_cost.zh-CN.svg){ .ev-figure-sm }
+![*固定成本产业。* 固定成本产业的长期供给为水平线。](../../../assets/micro-viz/long_run_competition/constant_cost.zh-CN.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/long_run_competition/long_run_competition.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
@@ -565,7 +565,7 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*递增成本产业。* 递增成本产业的长期供给向右上倾斜。](../../../assets/micro-viz/long_run_competition/increasing_cost.zh-CN.svg){ .ev-figure-sm }
+![*递增成本产业。* 递增成本产业的长期供给向右上倾斜。](../../../assets/micro-viz/long_run_competition/increasing_cost.zh-CN.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/long_run_competition/long_run_competition.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 

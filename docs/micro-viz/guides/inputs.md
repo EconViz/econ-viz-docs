@@ -173,7 +173,7 @@ def isoquant_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Returns to scale.* Along a ray, isoquants are evenly spaced under constant returns and closer under increasing returns.](../../assets/micro-viz/isoquants/returns_to_scale.svg){ .ev-figure-sm }
+![*Returns to scale.* Along a ray, isoquants are evenly spaced under constant returns and closer under increasing returns.](../../assets/micro-viz/isoquants/returns_to_scale.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/isoquants/isoquants.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
@@ -675,7 +675,7 @@ def factor_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Firm and industry demand.* Industry demand is steeper than the horizontal sum of firm demands.](../../assets/micro-viz/factor_markets/industry_demand.svg){ .ev-figure-sm }
+![*Firm and industry demand.* Industry demand is steeper than the horizontal sum of firm demands.](../../assets/micro-viz/factor_markets/industry_demand.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/factor_markets/factor_markets.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
@@ -699,7 +699,7 @@ def factor_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Market and firm supply.* Upward market supply beside the flat supply one firm faces.](../../assets/micro-viz/factor_markets/market_supply.svg){ .ev-figure-sm }
+![*Market and firm supply.* Upward market supply beside the flat supply one firm faces.](../../assets/micro-viz/factor_markets/market_supply.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/factor_markets/factor_markets.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
@@ -711,7 +711,7 @@ def factor_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Factor-market equilibrium.* A monopoly output market lowers MRP, and with it the wage and employment.](../../assets/micro-viz/factor_markets/factor_equilibrium.svg){ .ev-figure-sm }
+![*Factor-market equilibrium.* A monopoly output market lowers MRP, and with it the wage and employment.](../../assets/micro-viz/factor_markets/factor_equilibrium.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/factor_markets/factor_markets.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
@@ -842,7 +842,7 @@ def monopsony_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Competitive buyer and seller.* A competitive buyer faces a flat ME = AE; a competitive seller faces a flat MR = AR.](../../assets/micro-viz/monopsony/competitive_pair.svg){ .ev-figure-sm }
+![*Competitive buyer and seller.* A competitive buyer faces a flat ME = AE; a competitive seller faces a flat MR = AR.](../../assets/micro-viz/monopsony/competitive_pair.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/monopsony/monopsony.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
@@ -866,7 +866,7 @@ def monopsony_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Monopoly and monopsony.* Monopoly (AR, MR, MC) beside monopsony (MV, ME, AE).](../../assets/micro-viz/monopsony/monopoly_monopsony.svg){ .ev-figure-sm }
+![*Monopoly and monopsony.* Monopoly (AR, MR, MC) beside monopsony (MV, ME, AE).](../../assets/micro-viz/monopsony/monopoly_monopsony.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/monopsony/monopsony.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
@@ -878,7 +878,7 @@ def monopsony_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Supply elasticity.* The more elastic supply is, the closer ME lies to AE.](../../assets/micro-viz/monopsony/supply_elasticity.svg){ .ev-figure-sm }
+![*Supply elasticity.* The more elastic supply is, the closer ME lies to AE.](../../assets/micro-viz/monopsony/supply_elasticity.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/monopsony/monopsony.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
@@ -926,7 +926,7 @@ def monopsony_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Two-sector labor market.* A union wage cuts employment in sector 1; displaced workers lower the wage in sector 2.](../../assets/micro-viz/monopsony/two_sector.svg){ .ev-figure-sm }
+![*Two-sector labor market.* A union wage cuts employment in sector 1; displaced workers lower the wage in sector 2.](../../assets/micro-viz/monopsony/two_sector.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/monopsony/monopsony.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 

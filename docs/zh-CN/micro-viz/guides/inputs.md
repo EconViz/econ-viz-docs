@@ -173,7 +173,7 @@ def isoquant_examples(
 
 <figure class="ev-fig" markdown>
 
-![*规模报酬。* 沿射线，固定报酬下等产量线等距，规模报酬递增则愈来愈近。](../../../assets/micro-viz/isoquants/returns_to_scale.zh-CN.svg){ .ev-figure-sm }
+![*规模报酬。* 沿射线，固定报酬下等产量线等距，规模报酬递增则愈来愈近。](../../../assets/micro-viz/isoquants/returns_to_scale.zh-CN.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/isoquants/isoquants.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
@@ -675,7 +675,7 @@ def factor_examples(
 
 <figure class="ev-fig" markdown>
 
-![*厂商与产业需求。* 产业需求比厂商需求的水平加总更陡。](../../../assets/micro-viz/factor_markets/industry_demand.zh-CN.svg){ .ev-figure-sm }
+![*厂商与产业需求。* 产业需求比厂商需求的水平加总更陡。](../../../assets/micro-viz/factor_markets/industry_demand.zh-CN.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/factor_markets/factor_markets.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
@@ -699,7 +699,7 @@ def factor_examples(
 
 <figure class="ev-fig" markdown>
 
-![*市场与厂商供给。* 向上的市场供给与单一厂商面对的水平供给。](../../../assets/micro-viz/factor_markets/market_supply.zh-CN.svg){ .ev-figure-sm }
+![*市场与厂商供给。* 向上的市场供给与单一厂商面对的水平供给。](../../../assets/micro-viz/factor_markets/market_supply.zh-CN.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/factor_markets/factor_markets.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
@@ -711,7 +711,7 @@ def factor_examples(
 
 <figure class="ev-fig" markdown>
 
-![*要素市场均衡。* 产品市场独占使 MRP 较低，工资与雇用量也较低。](../../../assets/micro-viz/factor_markets/factor_equilibrium.zh-CN.svg){ .ev-figure-sm }
+![*要素市场均衡。* 产品市场独占使 MRP 较低，工资与雇用量也较低。](../../../assets/micro-viz/factor_markets/factor_equilibrium.zh-CN.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/factor_markets/factor_markets.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
@@ -842,7 +842,7 @@ def monopsony_examples(
 
 <figure class="ev-fig" markdown>
 
-![*竞争的买方与卖方。* 竞争买方面对水平的 ME = AE，竞争卖方面对水平的 MR = AR。](../../../assets/micro-viz/monopsony/competitive_pair.zh-CN.svg){ .ev-figure-sm }
+![*竞争的买方与卖方。* 竞争买方面对水平的 ME = AE，竞争卖方面对水平的 MR = AR。](../../../assets/micro-viz/monopsony/competitive_pair.zh-CN.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/monopsony/monopsony.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
@@ -866,7 +866,7 @@ def monopsony_examples(
 
 <figure class="ev-fig" markdown>
 
-![*独占与买方独占。* 独占的 AR、MR、MC 与买方独占的 MV、ME、AE 并列。](../../../assets/micro-viz/monopsony/monopoly_monopsony.zh-CN.svg){ .ev-figure-sm }
+![*独占与买方独占。* 独占的 AR、MR、MC 与买方独占的 MV、ME、AE 并列。](../../../assets/micro-viz/monopsony/monopoly_monopsony.zh-CN.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/monopsony/monopsony.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
@@ -878,7 +878,7 @@ def monopsony_examples(
 
 <figure class="ev-fig" markdown>
 
-![*供给弹性。* 供给愈有弹性，ME 愈接近 AE。](../../../assets/micro-viz/monopsony/supply_elasticity.zh-CN.svg){ .ev-figure-sm }
+![*供给弹性。* 供给愈有弹性，ME 愈接近 AE。](../../../assets/micro-viz/monopsony/supply_elasticity.zh-CN.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/monopsony/monopsony.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 
@@ -926,7 +926,7 @@ def monopsony_examples(
 
 <figure class="ev-fig" markdown>
 
-![*两部门劳动市场。* 工会工资使部门 1 就业下降，工人流入部门 2 而压低其工资。](../../../assets/micro-viz/monopsony/two_sector.zh-CN.svg){ .ev-figure-sm }
+![*两部门劳动市场。* 工会工资使部门 1 就业下降，工人流入部门 2 而压低其工资。](../../../assets/micro-viz/monopsony/two_sector.zh-CN.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/micro-viz/monopsony/monopsony.py" download aria-label="下载生图源文件"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图源文件</span></a></div>
 

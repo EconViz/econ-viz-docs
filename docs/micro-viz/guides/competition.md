@@ -191,7 +191,7 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Market and firm.* The market demand sets the price; the firm faces a horizontal demand.](../../assets/micro-viz/competition/market_and_firm.svg){ .ev-figure-sm }
+![*Market and firm.* The market demand sets the price; the firm faces a horizontal demand.](../../assets/micro-viz/competition/market_and_firm.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/competition/competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
@@ -287,7 +287,7 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Industry supply.* Industry supply is the horizontal sum of the firms' supply curves.](../../assets/micro-viz/competition/industry_supply.svg){ .ev-figure-sm }
+![*Industry supply.* Industry supply is the horizontal sum of the firms' supply curves.](../../assets/micro-viz/competition/industry_supply.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/competition/competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
@@ -402,7 +402,7 @@ def long_run_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Short-run envelope.* LAC envelops SAC1 to SAC3; each SAC touches LAC and SMC passes through the lowest point of its SAC.](../../assets/micro-viz/long_run_costs/short_run_envelope.svg){ .ev-figure-sm }
+![*Short-run envelope.* LAC envelops SAC1 to SAC3; each SAC touches LAC and SMC passes through the lowest point of its SAC.](../../assets/micro-viz/long_run_costs/short_run_envelope.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/long_run_costs/long_run_costs.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
@@ -529,7 +529,7 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Entry.* Profit draws entry; industry supply shifts right until the price falls to the lowest ATC.](../../assets/micro-viz/long_run_competition/entry.svg){ .ev-figure-sm }
+![*Entry.* Profit draws entry; industry supply shifts right until the price falls to the lowest ATC.](../../assets/micro-viz/long_run_competition/entry.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/long_run_competition/long_run_competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
@@ -541,7 +541,7 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Economic rent.* A firm with lower costs earns an economic rent at the zero-profit price.](../../assets/micro-viz/long_run_competition/economic_rent.svg){ .ev-figure-sm }
+![*Economic rent.* A firm with lower costs earns an economic rent at the zero-profit price.](../../assets/micro-viz/long_run_competition/economic_rent.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/long_run_competition/long_run_competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
@@ -553,7 +553,7 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Constant-cost industry.* The long-run supply of a constant-cost industry is horizontal.](../../assets/micro-viz/long_run_competition/constant_cost.svg){ .ev-figure-sm }
+![*Constant-cost industry.* The long-run supply of a constant-cost industry is horizontal.](../../assets/micro-viz/long_run_competition/constant_cost.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/long_run_competition/long_run_competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
@@ -565,7 +565,7 @@ def competition_examples(
 
 <figure class="ev-fig" markdown>
 
-![*Increasing-cost industry.* The long-run supply of an increasing-cost industry slopes upward.](../../assets/micro-viz/long_run_competition/increasing_cost.svg){ .ev-figure-sm }
+![*Increasing-cost industry.* The long-run supply of an increasing-cost industry slopes upward.](../../assets/micro-viz/long_run_competition/increasing_cost.svg){ .ev-figure-lg }
 
 <div class="ev-downloads"><a class="ev-download" href="../../assets/micro-viz/long_run_competition/long_run_competition.py" download aria-label="Download the source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download the source</span></a></div>
 
