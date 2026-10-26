@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-10-25T22:50:26.026881</dc:date>
+    <dc:date>2026-10-26T10:52:29.753554</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -329,26 +329,26 @@ z
    <g id="macro.labor.equilibrium.guide.x.guide">
     <path d="M 194.007273 384.48 
 L 194.007273 240.466447 
-" clip-path="url(#pc7a5822d38)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#p12981f938a)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.labor.equilibrium.guide.y.guide">
     <path d="M 54 240.466447 
 L 194.007273 240.466447 
-" clip-path="url(#pc7a5822d38)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#p12981f938a)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.labor.ws">
     <path d="M 54 78.4512 
 L 283.963636 344.5632 
-" clip-path="url(#pc7a5822d38)" style="fill: none; stroke: #8c8c8c; stroke-width: 3.5; stroke-linejoin: miter"/>
+" clip-path="url(#p12981f938a)" style="fill: none; stroke: #8c8c8c; stroke-width: 3.5; stroke-linejoin: miter"/>
    </g>
    <g id="macro.labor.ps">
     <path d="M 54 240.466447 
 L 362.016 240.466447 
-" clip-path="url(#pc7a5822d38)" style="fill: none; stroke: #1a1a1a; stroke-width: 3.5; stroke-linejoin: miter"/>
+" clip-path="url(#p12981f938a)" style="fill: none; stroke: #1a1a1a; stroke-width: 3.5; stroke-linejoin: miter"/>
    </g>
    <g id="macro.labor.equilibrium">
     <defs>
-     <path id="m46130612d0" d="M 0 3.25 
+     <path id="m4b78b1ccc2" d="M 0 3.25 
 C 0.86191 3.25 1.688635 2.907559 2.298097 2.298097 
 C 2.907559 1.688635 3.25 0.86191 3.25 0 
 C 3.25 -0.86191 2.907559 -1.688635 2.298097 -2.298097 
@@ -361,7 +361,7 @@ z
 "/>
     </defs>
     <g>
-     <use xlink:href="#m46130612d0" x="194.007273" y="240.466447" style="fill: #1a1a1a"/>
+     <use xlink:href="#m4b78b1ccc2" x="194.007273" y="240.466447" style="fill: #1a1a1a"/>
     </g>
    </g>
    <g id="macro.labor.ws.label">
@@ -515,7 +515,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="pc7a5822d38">
+  <clipPath id="p12981f938a">
    <rect x="54" y="51.84" width="334.8" height="332.64"/>
   </clipPath>
  </defs>

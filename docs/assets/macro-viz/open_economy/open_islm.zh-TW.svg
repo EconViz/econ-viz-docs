@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-10-25T22:50:29.143101</dc:date>
+    <dc:date>2026-10-26T10:52:32.779004</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -205,12 +205,12 @@ z
    <g id="macro.islm.equilibrium.guide.x.guide">
     <path d="M 263.25 384.48 
 L 263.25 231.4656 
-" clip-path="url(#pf5b7b9b555)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#pd9b980c813)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.islm.equilibrium.guide.y.guide">
     <path d="M 54 231.4656 
 L 263.25 231.4656 
-" clip-path="url(#pf5b7b9b555)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#pd9b980c813)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.islm.is">
     <path d="M 322.323466 384.48 
@@ -273,7 +273,7 @@ L 210.184005 94.011986
 L 208.181515 88.825058 
 L 206.179025 83.638129 
 L 204.176534 78.4512 
-" clip-path="url(#pf5b7b9b555)" style="fill: none; stroke: #8c8c8c; stroke-width: 3.5; stroke-linejoin: miter"/>
+" clip-path="url(#pd9b980c813)" style="fill: none; stroke: #8c8c8c; stroke-width: 3.5; stroke-linejoin: miter"/>
    </g>
    <g id="macro.islm.lm">
     <path d="M 193.751805 384.48 
@@ -336,11 +336,11 @@ L 325.680582 94.011986
 L 328.036453 88.825058 
 L 330.392324 83.638129 
 L 332.748195 78.4512 
-" clip-path="url(#pf5b7b9b555)" style="fill: none; stroke: #1a1a1a; stroke-width: 3.5; stroke-linejoin: miter"/>
+" clip-path="url(#pd9b980c813)" style="fill: none; stroke: #1a1a1a; stroke-width: 3.5; stroke-linejoin: miter"/>
    </g>
    <g id="macro.islm.equilibrium">
     <defs>
-     <path id="m7d55185be4" d="M 0 3.25 
+     <path id="mcb6c22e96f" d="M 0 3.25 
 C 0.86191 3.25 1.688635 2.907559 2.298097 2.298097 
 C 2.907559 1.688635 3.25 0.86191 3.25 0 
 C 3.25 -0.86191 2.907559 -1.688635 2.298097 -2.298097 
@@ -353,7 +353,7 @@ z
 "/>
     </defs>
     <g>
-     <use xlink:href="#m7d55185be4" x="263.25" y="231.4656" style="fill: #1a1a1a"/>
+     <use xlink:href="#mcb6c22e96f" x="263.25" y="231.4656" style="fill: #1a1a1a"/>
     </g>
    </g>
    <g id="macro.islm.is.label">
@@ -507,7 +507,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="pf5b7b9b555">
+  <clipPath id="pd9b980c813">
    <rect x="54" y="51.84" width="334.8" height="332.64"/>
   </clipPath>
  </defs>

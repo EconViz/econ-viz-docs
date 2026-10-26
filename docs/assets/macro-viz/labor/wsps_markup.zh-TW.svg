@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-10-25T22:50:26.081033</dc:date>
+    <dc:date>2026-10-26T10:52:29.801111</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -495,37 +495,37 @@ z
    <g id="macro.labor.equilibrium.guide.x.guide">
     <path d="M 175.941818 384.48 
 L 175.941818 240.466447 
-" clip-path="url(#p626233c612)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#pbc783dbe50)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.labor.equilibrium.guide.y.guide">
     <path d="M 54 240.466447 
 L 175.941818 240.466447 
-" clip-path="url(#p626233c612)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#pbc783dbe50)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.labor.equilibrium.shifted.guide.x.guide">
     <path d="M 194.007273 384.48 
 L 194.007273 264.468706 
-" clip-path="url(#p626233c612)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#pbc783dbe50)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.labor.equilibrium.shifted.guide.y.guide">
     <path d="M 54 264.468706 
 L 194.007273 264.468706 
-" clip-path="url(#p626233c612)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#pbc783dbe50)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.labor.ws">
     <path d="M 54 78.4512 
 L 254.290909 344.5632 
-" clip-path="url(#p626233c612)" style="fill: none; stroke: #8c8c8c; stroke-width: 3.5; stroke-linejoin: miter"/>
+" clip-path="url(#pbc783dbe50)" style="fill: none; stroke: #8c8c8c; stroke-width: 3.5; stroke-linejoin: miter"/>
    </g>
    <g id="macro.labor.ps">
     <path d="M 54 240.466447 
 L 362.016 240.466447 
-" clip-path="url(#p626233c612)" style="fill: none; stroke: #1a1a1a; stroke-width: 3.5; stroke-linejoin: miter"/>
+" clip-path="url(#pbc783dbe50)" style="fill: none; stroke: #1a1a1a; stroke-width: 3.5; stroke-linejoin: miter"/>
    </g>
    <g id="macro.labor.ps.shifted">
     <path d="M 54 264.468706 
 L 362.016 264.468706 
-" clip-path="url(#p626233c612)" style="fill: none; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#pbc783dbe50)" style="fill: none; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.labor.shift.ps">
     <path d="M 175.941818 240.466447 
@@ -538,7 +538,7 @@ L 173.541818 258.550672
    </g>
    <g id="macro.labor.equilibrium">
     <defs>
-     <path id="mcdc9cdbf0b" d="M 0 3.25 
+     <path id="ma29b34c26c" d="M 0 3.25 
 C 0.86191 3.25 1.688635 2.907559 2.298097 2.298097 
 C 2.907559 1.688635 3.25 0.86191 3.25 0 
 C 3.25 -0.86191 2.907559 -1.688635 2.298097 -2.298097 
@@ -551,12 +551,12 @@ z
 "/>
     </defs>
     <g>
-     <use xlink:href="#mcdc9cdbf0b" x="175.941818" y="240.466447" style="fill: #1a1a1a"/>
+     <use xlink:href="#ma29b34c26c" x="175.941818" y="240.466447" style="fill: #1a1a1a"/>
     </g>
    </g>
    <g id="macro.labor.equilibrium.shifted">
     <defs>
-     <path id="mfd50fd162c" d="M 0 3.25 
+     <path id="m1132b44749" d="M 0 3.25 
 C 0.86191 3.25 1.688635 2.907559 2.298097 2.298097 
 C 2.907559 1.688635 3.25 0.86191 3.25 0 
 C 3.25 -0.86191 2.907559 -1.688635 2.298097 -2.298097 
@@ -569,7 +569,7 @@ z
 "/>
     </defs>
     <g>
-     <use xlink:href="#mfd50fd162c" x="194.007273" y="264.468706" style="fill: #6e6e6e"/>
+     <use xlink:href="#m1132b44749" x="194.007273" y="264.468706" style="fill: #6e6e6e"/>
     </g>
    </g>
    <g id="macro.labor.ws.label">
@@ -826,7 +826,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p626233c612">
+  <clipPath id="pbc783dbe50">
    <rect x="54" y="51.84" width="334.8" height="332.64"/>
   </clipPath>
  </defs>

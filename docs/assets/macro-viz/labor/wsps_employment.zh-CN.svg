@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-10-25T22:51:04.564221</dc:date>
+    <dc:date>2026-10-26T10:53:52.279076</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -606,21 +606,21 @@ z
    <g id="macro.labor.equilibrium.guide.y.guide">
     <path d="M 54 240.466447 
 L 288.36 240.466447 
-" clip-path="url(#pa62b3c7f95)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#pcf6d340c98)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.labor.ws">
     <path d="M 223.826087 344.5632 
 L 362.016 121.655266 
-" clip-path="url(#pa62b3c7f95)" style="fill: none; stroke: #8c8c8c; stroke-width: 3.5; stroke-linejoin: miter"/>
+" clip-path="url(#pcf6d340c98)" style="fill: none; stroke: #8c8c8c; stroke-width: 3.5; stroke-linejoin: miter"/>
    </g>
    <g id="macro.labor.ps">
     <path d="M 54 240.466447 
 L 362.016 240.466447 
-" clip-path="url(#pa62b3c7f95)" style="fill: none; stroke: #1a1a1a; stroke-width: 3.5; stroke-linejoin: miter"/>
+" clip-path="url(#pcf6d340c98)" style="fill: none; stroke: #1a1a1a; stroke-width: 3.5; stroke-linejoin: miter"/>
    </g>
    <g id="macro.labor.equilibrium">
     <defs>
-     <path id="m850877adc6" d="M 0 3.25 
+     <path id="m91993cd4b2" d="M 0 3.25 
 C 0.86191 3.25 1.688635 2.907559 2.298097 2.298097 
 C 2.907559 1.688635 3.25 0.86191 3.25 0 
 C 3.25 -0.86191 2.907559 -1.688635 2.298097 -2.298097 
@@ -633,7 +633,7 @@ z
 "/>
     </defs>
     <g>
-     <use xlink:href="#m850877adc6" x="288.36" y="240.466447" style="fill: #1a1a1a"/>
+     <use xlink:href="#m91993cd4b2" x="288.36" y="240.466447" style="fill: #1a1a1a"/>
     </g>
    </g>
    <g id="macro.labor.ws.label">
@@ -787,7 +787,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="pa62b3c7f95">
+  <clipPath id="pcf6d340c98">
    <rect x="54" y="51.84" width="334.8" height="332.64"/>
   </clipPath>
  </defs>

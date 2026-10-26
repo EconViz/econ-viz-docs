@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-10-25T22:50:28.421491</dc:date>
+    <dc:date>2026-10-26T10:52:32.098698</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -386,27 +386,27 @@ z
    <g id="macro.keynesian.equilibrium.guide.x.guide">
     <path d="M 231.221939 384.48 
 L 231.221939 208.401429 
-" clip-path="url(#p39e527fbcd)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#pbf5b9c58fb)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.keynesian.equilibrium.guide.y.guide">
     <path d="M 54 208.401429 
 L 231.221939 208.401429 
-" clip-path="url(#p39e527fbcd)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#pbf5b9c58fb)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.keynesian.equilibrium.shifted.guide.x.guide">
     <path d="M 263.25 384.48 
 L 263.25 176.58 
-" clip-path="url(#p39e527fbcd)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#pbf5b9c58fb)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.keynesian.equilibrium.shifted.guide.y.guide">
     <path d="M 54 176.58 
 L 263.25 176.58 
-" clip-path="url(#p39e527fbcd)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#pbf5b9c58fb)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.open.balanced">
     <path d="M 214.140306 384.48 
 L 214.140306 225.372857 
-" clip-path="url(#p39e527fbcd)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#pbf5b9c58fb)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.keynesian.production">
     <path d="M 54 384.48 
@@ -480,7 +480,7 @@ L 349.077966 161.563162
 L 354.752542 159.307976 
 L 360.427119 157.052789 
 L 362.016 156.421337 
-" clip-path="url(#p39e527fbcd)" style="fill: none; stroke: #8c8c8c; stroke-width: 3.5; stroke-linejoin: miter"/>
+" clip-path="url(#pbf5b9c58fb)" style="fill: none; stroke: #8c8c8c; stroke-width: 3.5; stroke-linejoin: miter"/>
    </g>
    <g id="macro.keynesian.demand.shifted">
     <path d="M 54 259.74 
@@ -539,7 +539,7 @@ L 349.077966 142.470305
 L 354.752542 140.215119 
 L 360.427119 137.959932 
 L 362.016 137.32848 
-" clip-path="url(#p39e527fbcd)" style="fill: none; stroke: #8c8c8c; stroke-linejoin: miter"/>
+" clip-path="url(#pbf5b9c58fb)" style="fill: none; stroke: #8c8c8c; stroke-linejoin: miter"/>
    </g>
    <g id="macro.keynesian.shift">
     <path d="M 231.221939 208.401429 
@@ -552,7 +552,7 @@ L 233.621939 195.226605
    </g>
    <g id="macro.keynesian.equilibrium">
     <defs>
-     <path id="m5993f1e079" d="M 0 3.25 
+     <path id="m3c5ede13fb" d="M 0 3.25 
 C 0.86191 3.25 1.688635 2.907559 2.298097 2.298097 
 C 2.907559 1.688635 3.25 0.86191 3.25 0 
 C 3.25 -0.86191 2.907559 -1.688635 2.298097 -2.298097 
@@ -565,12 +565,12 @@ z
 "/>
     </defs>
     <g>
-     <use xlink:href="#m5993f1e079" x="231.221939" y="208.401429" style="fill: #1a1a1a"/>
+     <use xlink:href="#m3c5ede13fb" x="231.221939" y="208.401429" style="fill: #1a1a1a"/>
     </g>
    </g>
    <g id="macro.keynesian.equilibrium.shifted">
     <defs>
-     <path id="mb35f1f5240" d="M 0 3.25 
+     <path id="m5229bd3d51" d="M 0 3.25 
 C 0.86191 3.25 1.688635 2.907559 2.298097 2.298097 
 C 2.907559 1.688635 3.25 0.86191 3.25 0 
 C 3.25 -0.86191 2.907559 -1.688635 2.298097 -2.298097 
@@ -583,7 +583,7 @@ z
 "/>
     </defs>
     <g>
-     <use xlink:href="#mb35f1f5240" x="263.25" y="176.58" style="fill: #6e6e6e"/>
+     <use xlink:href="#m5229bd3d51" x="263.25" y="176.58" style="fill: #6e6e6e"/>
     </g>
    </g>
    <g id="macro.keynesian.demand.label">
@@ -763,7 +763,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p39e527fbcd">
+  <clipPath id="pbf5b9c58fb">
    <rect x="54" y="51.84" width="334.8" height="332.64"/>
   </clipPath>
  </defs>

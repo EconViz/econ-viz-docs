@@ -1,78 +1,132 @@
 ---
-seo_title: "macro-viz：用 Python 绘制总体经济学图形"
-description: "macro-viz 用 Python 绘制教科书的总体经济学模型：凯因斯十字、货币市场、AS-AD、IS-LM、梭罗成长、工资与价格设置、开放经济与连动面板。"
+seo_title: "绘制总体经济学图形的 Python 套件"
+description: "开源 Python 套件，绘制教科书的总体经济学图形：凯因斯十字、货币市场、AS-AD、IS-LM、梭罗成长、工资与价格设置、开放经济与连动面板。"
 ---
 
-<h1 class="ev-visually-hidden">macro-viz：用 Python 绘制总体经济学图形</h1>
+<h1 class="ev-visually-hidden">macro-viz：绘制总体经济学图形的 Python 套件</h1>
 
 <p align="center">
   <img src="../../assets/macro-viz/banner.svg" alt="macro-viz" style="max-width: 480px; width: 100%; margin: 2rem 0 1rem;">
 </p>
 
-<p align="center"><em>教科书总体经济学分析与图形的 Python 套件。</em></p>
+<p align="center"><em>用 Python 绘制教科书的总体经济学图形。</em></p>
 
-`macro-viz` 用于已给定方程序、需要分析或绘图的初级与中级总体经济学模型。每个模型是不知道如何绘图的类型化对象；每张图是由模型建出的 `mosaickit` 画布。统计数据图与会计方块图不在范围内。
+<p align="center">
+  <a href="https://github.com/EconViz/macro-viz/actions"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/EconViz/macro-viz/ci.yml?style=flat-square&label=ci&color=181818&labelColor=f3f3f3"></a>
+  <a href="https://github.com/EconViz/macro-viz"><img alt="GitHub" src="https://img.shields.io/badge/github-EconViz%2Fmacro--viz-181818?style=flat-square&labelColor=f3f3f3"></a>
+  <img alt="Python" src="https://img.shields.io/badge/python-3.10%2B-181818?style=flat-square&labelColor=f3f3f3">
+</p>
+
+!!! warning "macro-viz 目前为开发版"
+
+    macro-viz 0.2.0.dev0 尚未上架 PyPI，第一次发行前 API 可能变动。请从 GitHub 安装。
 
 ```python
-from macro_viz.keynesian import (
-    ConsumptionFunction,
-    KeynesianCross,
-    analyze_autonomous_shift,
+from macro_viz import Config
+from macro_viz.panels import (
+    IsLm,
+    LinearFunction,
+    MacroEconomy,
+    QuadraticProduction,
+    Scenario,
+    Shock,
+    Step,
 )
-from macro_viz.visuals import multiplier_canvas
+from macro_viz.visuals import four_panel_canvas
 
-model = KeynesianCross(
-    ConsumptionFunction(20, 0.6),
-    investment=20,
-    government=30,
-    taxes=20,
+Config.load("econ-viz.toml").use()
+
+economy = MacroEconomy(
+    QuadraticProduction(3.0, 0.2, 1.0),
+    LinearFunction(0.4, 0.25),
+    capital=1.0,
+    expected_price=1.0,
+    islm=IsLm(0.0, 1.0, 2.0, 0.25, 1.0),
+).calibrated(2.0)
+
+scenario = Scenario(
+    economy, (Step("A"), Step("B", Shock(money=1.4)))
 )
-shift = analyze_autonomous_shift(model, change=30)
-
-multiplier_canvas(shift).save("multiplier.svg")
+cvs = four_panel_canvas(scenario, steps=["A", "B"], extent=1.5)
+cvs.save("four_panel.png")
 ```
 
-<span id="fig-index-multiplier"></span>
+## 功能特色
 
-<figure class="ev-fig" markdown>
+<div class="grid cards" markdown>
 
-![自发性支出增加](../../assets/macro-viz/keynesian/multiplier.zh-CN.svg){ .ev-figure-sm }
+-   :material-cursor-default-click-outline: **凯因斯商品市场**
 
-<div class="ev-downloads"><a class="ev-download" href="../../assets/macro-viz/keynesian/keynesian.py" download aria-label="下载生图原始档"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下载生图原始档</span></a></div>
+    消费函数、凯因斯十字与乘数，并含弯曲需求的变形
 
-<figcaption markdown>自发性支出增加</figcaption>
+    [:octicons-arrow-right-24: 凯因斯商品市场](guides/keynesian.md)
 
-</figure>
+-   :material-cash-multiple: **货币市场**
 
-## 模型与图形
+    货币需求与供给、央行货币与零利率下限
 
-| 模型 | 模块 | 图形 |
-| --- | --- | --- |
-| 消费函数、凯因斯十字、乘数 | `keynesian` | [凯因斯商品市场](guides/keynesian.md) |
-| 货币需求与供给、央行货币、零下限 | `money` | [货币市场](guides/money.md) |
-| 总合供给与需求、冲击、中期调整 | `adas` | [总合供给与需求](guides/adas.md) |
-| IS-LM、财政与货币政策、排挤效果、预期通膨 | `islm` | [IS-LM](guides/islm.md) |
-| 梭罗成长、黄金法则、转换路径 | `growth` | [梭罗成长](guides/growth.md) |
-| 工资设置、价格设置、自然失业率 | `labor` | [自然失业率](guides/labor.md) |
-| 开放经济商品市场、利率平价、Mundell-Fleming、贬值 | `open_economy` | [开放经济](guides/open-economy.md) |
-| 连动的四面板与五面板推导 | `panels` | [连动面板](guides/panels.md) |
+    [:octicons-arrow-right-24: 货币市场](guides/money.md)
 
-每个绘图函数都回传 `mosaickit` 的 `Canvas`，并使用稳定的 `macro.*` 图层编号。文本来自英文、繁体中文与简体中文的语系表，任何一个都可以用 `labels=` 取代。尺寸、线宽、颜色与字体来自主题与共用的 `econ-viz.toml`，绘图代码中没有这些数值。
+-   :material-chart-line: **总合供给与需求**
 
-!!! note "状态"
+    AS-AD 均衡、需求与供给冲击，以及到中期的调整
 
-    `macro-viz` 版本为 `0.2.0.dev0`，尚未发布到 PyPI；请从 GitHub 安装（参见 [安装](installation.md#sec-install)）。
+    [:octicons-arrow-right-24: 总合供给与需求](guides/adas.md)
 
-## 图形的风格
+-   :material-vector-intersection: **IS-LM**
 
-- 白底黑线，如同印刷教科书；没有深色主题。
-- 只有价格 `p` 用小写；其他变量（$Y$、$R$、$W$、$N$、$K$）一律用大写斜体。
-- 变动后的曲线是细实线，名称加上撇号（`IS'`）。平行移动画成由旧点指向新曲线的直线箭头；弯曲的箭头只代表转动，也就是斜率改变。
-- 曲线名称放在线的末端，没有任何文本盖到线或其他文本。
+    财政与货币政策、排挤效果、平坦与陡峭的曲线、流动性陷阱与预期通膨
 
-## 范围
+    [:octicons-arrow-right-24: IS-LM](guides/islm.md)
 
-- `macro-viz` 负责封闭与开放经济的短期模型与成长模型。
-- 消费者理论与一般均衡属于 [utility-viz](../utility-viz/index.md)。
-- 厂商与市场属于 [micro-viz](../micro-viz/index.md)。
-- 统计图（真实数据散布图、实证时间串行）与会计方块不绘制。
+-   :material-earth: **开放经济**
+
+    净出口、利率平价、浮动汇率的 IS-LM，以及 AS-AD 中的贬值
+
+    [:octicons-arrow-right-24: 开放经济](guides/open-economy.md)
+
+-   :material-trending-up: **梭罗成长**
+
+    稳定状态、黄金法则，以及水准、对数与成长率的转换路径
+
+    [:octicons-arrow-right-24: 梭罗成长](guides/growth.md)
+
+-   :material-account-hard-hat-outline: **自然失业率**
+
+    工资设置与价格设置，以及给付、加成与生产力造成的移动
+
+    [:octicons-arrow-right-24: 自然失业率](guides/labor.md)
+
+-   :material-view-dashboard-outline: **连动面板**
+
+    四面板与五面板的推导，面板间共用的值只有一个数字，并可指定曲线移动
+
+    [:octicons-arrow-right-24: 连动面板](guides/panels.md)
+
+-   :material-play-box-multiple-outline: **动画**
+
+    以 KineticKit 把移动或调整做成 GIF 或动画 SVG
+
+    [:octicons-arrow-right-24: 动画](guides/animation.md)
+
+-   :material-tune: **设置**
+
+    从共用的 econ-viz.toml 设置颜色、线宽、字体、语言与标签微调
+
+    [:octicons-arrow-right-24: 设置](guides/settings.md)
+
+</div>
+
+## 安装
+
+```bash
+uv add "macro-viz @ git+https://github.com/EconViz/macro-viz"
+```
+
+需要 Python 3.10 以上。`--prerelease allow`、字体与选用的动画套件请见[安装](installation.md)。
+
+## 范例
+
+文档里每张图都附有画出它的脚本，已依主题分文件夹。一次下载全部，内含脚本加载的设置档 `econ-viz.toml`（`base = "manual"`）。
+
+[下载全部范例](../../assets/macro-viz/macro-viz-examples.zip){ .md-button download="" }

@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-10-25T22:50:07.462679</dc:date>
+    <dc:date>2026-10-26T10:51:31.693145</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -774,12 +774,12 @@ z
    <g id="macro.keynesian.equilibrium.guide.x.guide">
     <path d="M 400.6975 384.48 
 L 400.6975 176.58 
-" clip-path="url(#pec0d573384)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#p4a33b2f337)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.keynesian.equilibrium.guide.y.guide">
     <path d="M 191.4475 176.58 
 L 400.6975 176.58 
-" clip-path="url(#pec0d573384)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#p4a33b2f337)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.keynesian.production">
     <path d="M 191.4475 384.48 
@@ -853,11 +853,11 @@ L 486.525466 125.415458
 L 492.200042 122.032678 
 L 497.874619 118.649898 
 L 499.4635 117.70272 
-" clip-path="url(#pec0d573384)" style="fill: none; stroke: #8c8c8c; stroke-width: 3.5; stroke-linejoin: miter"/>
+" clip-path="url(#p4a33b2f337)" style="fill: none; stroke: #8c8c8c; stroke-width: 3.5; stroke-linejoin: miter"/>
    </g>
    <g id="macro.keynesian.equilibrium">
     <defs>
-     <path id="m757b47b27e" d="M 0 3.25 
+     <path id="mf085651fee" d="M 0 3.25 
 C 0.86191 3.25 1.688635 2.907559 2.298097 2.298097 
 C 2.907559 1.688635 3.25 0.86191 3.25 0 
 C 3.25 -0.86191 2.907559 -1.688635 2.298097 -2.298097 
@@ -870,7 +870,7 @@ z
 "/>
     </defs>
     <g>
-     <use xlink:href="#m757b47b27e" x="400.6975" y="176.58" style="fill: #1a1a1a"/>
+     <use xlink:href="#mf085651fee" x="400.6975" y="176.58" style="fill: #1a1a1a"/>
     </g>
    </g>
    <g id="macro.keynesian.demand.label">
@@ -955,7 +955,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="pec0d573384">
+  <clipPath id="p4a33b2f337">
    <rect x="191.4475" y="51.84" width="334.8" height="332.64"/>
   </clipPath>
  </defs>

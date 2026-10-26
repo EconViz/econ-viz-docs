@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-10-25T22:56:17.454070</dc:date>
+    <dc:date>2026-10-26T10:53:32.230852</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -323,12 +323,12 @@ z
    <g id="macro.adas.anchor.guide.x.guide">
     <path d="M 263.25 384.48 
 L 263.25 176.58 
-" clip-path="url(#p9e523aaa5c)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#pc5d9e91189)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.adas.anchor.guide.y.guide">
     <path d="M 54 176.58 
 L 263.25 176.58 
-" clip-path="url(#p9e523aaa5c)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#pc5d9e91189)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.adas.supply">
     <path d="M 54 301.32 
@@ -387,11 +387,11 @@ L 349.077966 125.415458
 L 354.752542 122.032678 
 L 360.427119 118.649898 
 L 362.016 117.70272 
-" clip-path="url(#p9e523aaa5c)" style="fill: none; stroke: #1a1a1a; stroke-width: 3.5; stroke-linejoin: miter"/>
+" clip-path="url(#pc5d9e91189)" style="fill: none; stroke: #1a1a1a; stroke-width: 3.5; stroke-linejoin: miter"/>
    </g>
    <g id="macro.adas.anchor">
     <defs>
-     <path id="ma760a1adc4" d="M 0 3.25 
+     <path id="m917d8570ab" d="M 0 3.25 
 C 0.86191 3.25 1.688635 2.907559 2.298097 2.298097 
 C 2.907559 1.688635 3.25 0.86191 3.25 0 
 C 3.25 -0.86191 2.907559 -1.688635 2.298097 -2.298097 
@@ -404,7 +404,7 @@ z
 "/>
     </defs>
     <g>
-     <use xlink:href="#ma760a1adc4" x="263.25" y="176.58" style="fill: #1a1a1a"/>
+     <use xlink:href="#m917d8570ab" x="263.25" y="176.58" style="fill: #1a1a1a"/>
     </g>
    </g>
    <g id="macro.adas.supply.label">
@@ -497,7 +497,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p9e523aaa5c">
+  <clipPath id="pc5d9e91189">
    <rect x="54" y="51.84" width="334.8" height="332.64"/>
   </clipPath>
  </defs>
