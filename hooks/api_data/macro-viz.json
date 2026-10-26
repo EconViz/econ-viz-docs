@@ -3164,7 +3164,7 @@
   "name": "save_svg",
   "anchor": "macro-viz-guides-animation-2",
   "signatures": [
-   "save_svg(builder, values, path, *, step_seconds=0.8, margin=(46.0, 40.0, 34.0, 34.0)) → Path"
+   "save_svg(builder, values, path, *, step_seconds=0.8, margin=(46.0, 40.0, 60.0, 34.0)) → Path"
   ],
   "parameters": [
    {
@@ -3227,7 +3227,7 @@
      "zh-CN": "SVG 的邊界（點）。"
     },
     "keyword_only": true,
-    "default": "(46.0, 40.0, 34.0, 34.0)"
+    "default": "(46.0, 40.0, 60.0, 34.0)"
    }
   ]
  },

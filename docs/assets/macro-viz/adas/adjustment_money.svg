@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-10-25T22:50:09.923518</dc:date>
+    <dc:date>2026-10-26T10:51:33.995967</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -364,27 +364,27 @@ z
    <g id="macro.adas.natural">
     <path d="M 231.132619 384.48 
 L 231.132619 78.4512 
-" clip-path="url(#pbc720d2f48)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#p86166cb721)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.adas.point.0.guide.y.guide">
     <path d="M 54 250.83 
 L 231.132619 250.83 
-" clip-path="url(#pbc720d2f48)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#p86166cb721)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.adas.point.1.guide.x.guide">
     <path d="M 263.25 384.48 
 L 263.25 236.290087 
-" clip-path="url(#pbc720d2f48)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#p86166cb721)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.adas.point.1.guide.y.guide">
     <path d="M 54 236.290087 
 L 263.25 236.290087 
-" clip-path="url(#pbc720d2f48)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#p86166cb721)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.adas.point.2.guide.y.guide">
     <path d="M 54 176.58 
 L 231.132619 176.58 
-" clip-path="url(#pbc720d2f48)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#p86166cb721)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.adas.demand">
     <path d="M 186.234038 78.4512 
@@ -447,7 +447,7 @@ L 305.18179 315.194892
 L 307.305857 316.138974 
 L 309.429924 317.057673 
 L 311.553991 317.952 
-" clip-path="url(#pbc720d2f48)" style="fill: none; stroke: #8c8c8c; stroke-width: 3.5; stroke-linejoin: miter"/>
+" clip-path="url(#p86166cb721)" style="fill: none; stroke: #8c8c8c; stroke-width: 3.5; stroke-linejoin: miter"/>
    </g>
    <g id="macro.adas.demand.shifted">
     <path d="M 205.573537 78.4512 
@@ -510,7 +510,7 @@ L 354.061299 302.700606
 L 356.712866 303.756885 
 L 359.364433 304.786227 
 L 362.016 305.789647 
-" clip-path="url(#pbc720d2f48)" style="fill: none; stroke: #8c8c8c; stroke-linejoin: miter"/>
+" clip-path="url(#p86166cb721)" style="fill: none; stroke: #8c8c8c; stroke-linejoin: miter"/>
    </g>
    <g id="macro.adas.supply">
     <path d="M 54 331.02 
@@ -569,7 +569,7 @@ L 349.077966 197.434767
 L 354.752542 194.865821 
 L 360.427119 192.296874 
 L 362.016 191.577569 
-" clip-path="url(#pbc720d2f48)" style="fill: none; stroke: #1a1a1a; stroke-width: 3.5; stroke-linejoin: miter"/>
+" clip-path="url(#p86166cb721)" style="fill: none; stroke: #1a1a1a; stroke-width: 3.5; stroke-linejoin: miter"/>
    </g>
    <g id="macro.adas.supply.1">
     <path d="M 54 301.32 
@@ -628,7 +628,7 @@ L 349.077966 93.520749
 L 354.752542 89.52461 
 L 360.427119 85.52847 
 L 362.016 84.409551 
-" clip-path="url(#pbc720d2f48)" style="fill: none; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#p86166cb721)" style="fill: none; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.adas.path.1">
     <path d="M 231.132619 250.83 
@@ -650,7 +650,7 @@ L 236.049679 180.655003
    </g>
    <g id="macro.adas.point.0">
     <defs>
-     <path id="mbf3e45f8da" d="M 0 3.25 
+     <path id="mb1cf112eb7" d="M 0 3.25 
 C 0.86191 3.25 1.688635 2.907559 2.298097 2.298097 
 C 2.907559 1.688635 3.25 0.86191 3.25 0 
 C 3.25 -0.86191 2.907559 -1.688635 2.298097 -2.298097 
@@ -663,12 +663,12 @@ z
 "/>
     </defs>
     <g>
-     <use xlink:href="#mbf3e45f8da" x="231.132619" y="250.83" style="fill: #1a1a1a"/>
+     <use xlink:href="#mb1cf112eb7" x="231.132619" y="250.83" style="fill: #1a1a1a"/>
     </g>
    </g>
    <g id="macro.adas.point.1">
     <defs>
-     <path id="mdfe9812ea5" d="M 0 3.25 
+     <path id="m0d9f4bb29b" d="M 0 3.25 
 C 0.86191 3.25 1.688635 2.907559 2.298097 2.298097 
 C 2.907559 1.688635 3.25 0.86191 3.25 0 
 C 3.25 -0.86191 2.907559 -1.688635 2.298097 -2.298097 
@@ -681,12 +681,12 @@ z
 "/>
     </defs>
     <g>
-     <use xlink:href="#mdfe9812ea5" x="263.25" y="236.290087" style="fill: #6e6e6e"/>
+     <use xlink:href="#m0d9f4bb29b" x="263.25" y="236.290087" style="fill: #6e6e6e"/>
     </g>
    </g>
    <g id="macro.adas.point.2">
     <g>
-     <use xlink:href="#mdfe9812ea5" x="231.132619" y="176.58" style="fill: #6e6e6e"/>
+     <use xlink:href="#m0d9f4bb29b" x="231.132619" y="176.58" style="fill: #6e6e6e"/>
     </g>
    </g>
    <g id="macro.adas.demand.label">
@@ -1054,7 +1054,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="pbc720d2f48">
+  <clipPath id="p86166cb721">
    <rect x="54" y="51.84" width="334.8" height="332.64"/>
   </clipPath>
  </defs>

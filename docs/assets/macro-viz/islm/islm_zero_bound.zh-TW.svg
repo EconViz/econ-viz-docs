@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-10-25T22:50:27.702348</dc:date>
+    <dc:date>2026-10-26T10:52:31.370368</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -167,7 +167,7 @@ z
    <g id="macro.islm.equilibrium.guide.x.guide">
     <path d="M 143.28 384.48 
 L 143.28 384.48 
-" clip-path="url(#p32c1148d84)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#p99b51fa3ba)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.islm.is">
     <path d="M 143.28 384.48 
@@ -230,7 +230,7 @@ L 100.909831 94.011986
 L 100.15322 88.825058 
 L 99.39661 83.638129 
 L 98.64 78.4512 
-" clip-path="url(#p32c1148d84)" style="fill: none; stroke: #8c8c8c; stroke-width: 3.5; stroke-linejoin: miter"/>
+" clip-path="url(#p99b51fa3ba)" style="fill: none; stroke: #8c8c8c; stroke-width: 3.5; stroke-linejoin: miter"/>
    </g>
    <g id="macro.islm.lm">
     <path d="M 54 384.48 
@@ -294,7 +294,7 @@ L 215.036908 94.011986
 L 215.521139 88.825058 
 L 216.005369 83.638129 
 L 216.4896 78.4512 
-" clip-path="url(#p32c1148d84)" style="fill: none; stroke: #1a1a1a; stroke-width: 3.5; stroke-linejoin: miter"/>
+" clip-path="url(#p99b51fa3ba)" style="fill: none; stroke: #1a1a1a; stroke-width: 3.5; stroke-linejoin: miter"/>
    </g>
    <g id="macro.islm.lm.shifted">
     <path d="M 54 384.48 
@@ -358,7 +358,7 @@ L 281.996908 94.011986
 L 282.481139 88.825058 
 L 282.965369 83.638129 
 L 283.4496 78.4512 
-" clip-path="url(#p32c1148d84)" style="fill: none; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#p99b51fa3ba)" style="fill: none; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.islm.shift">
     <path d="M 203.63328 216.16416 
@@ -371,7 +371,7 @@ L 264.675246 218.56416
    </g>
    <g id="macro.islm.equilibrium">
     <defs>
-     <path id="m56ad088853" d="M 0 3.25 
+     <path id="m8cbded638d" d="M 0 3.25 
 C 0.86191 3.25 1.688635 2.907559 2.298097 2.298097 
 C 2.907559 1.688635 3.25 0.86191 3.25 0 
 C 3.25 -0.86191 2.907559 -1.688635 2.298097 -2.298097 
@@ -384,7 +384,7 @@ z
 "/>
     </defs>
     <g>
-     <use xlink:href="#m56ad088853" x="143.28" y="384.48" style="fill: #1a1a1a"/>
+     <use xlink:href="#m8cbded638d" x="143.28" y="384.48" style="fill: #1a1a1a"/>
     </g>
    </g>
    <g id="macro.islm.is.label">
@@ -615,7 +615,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p32c1148d84">
+  <clipPath id="p99b51fa3ba">
    <rect x="54" y="51.84" width="334.8" height="332.64"/>
   </clipPath>
  </defs>

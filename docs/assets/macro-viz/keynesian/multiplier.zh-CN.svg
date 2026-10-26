@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-10-25T22:50:36.631630</dc:date>
+    <dc:date>2026-10-26T10:53:24.595739</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -346,22 +346,22 @@ z
    <g id="macro.keynesian.equilibrium.guide.x.guide">
     <path d="M 191.914773 384.48 
 L 191.914773 247.455 
-" clip-path="url(#p0187d6bc7c)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#pbc4f1eaf4a)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.keynesian.equilibrium.guide.y.guide">
     <path d="M 54 247.455 
 L 191.914773 247.455 
-" clip-path="url(#p0187d6bc7c)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#pbc4f1eaf4a)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.keynesian.equilibrium.shifted.guide.x.guide">
     <path d="M 263.25 384.48 
 L 263.25 176.58 
-" clip-path="url(#p0187d6bc7c)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#pbc4f1eaf4a)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.keynesian.equilibrium.shifted.guide.y.guide">
     <path d="M 54 176.58 
 L 263.25 176.58 
-" clip-path="url(#p0187d6bc7c)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#pbc4f1eaf4a)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.keynesian.production">
     <path d="M 54 384.48 
@@ -435,7 +435,7 @@ L 349.077966 153.765458
 L 354.752542 150.382678 
 L 360.427119 146.999898 
 L 362.016 146.05272 
-" clip-path="url(#p0187d6bc7c)" style="fill: none; stroke: #8c8c8c; stroke-width: 3.5; stroke-linejoin: miter"/>
+" clip-path="url(#pbc4f1eaf4a)" style="fill: none; stroke: #8c8c8c; stroke-width: 3.5; stroke-linejoin: miter"/>
    </g>
    <g id="macro.keynesian.demand.shifted">
     <path d="M 54 301.32 
@@ -494,15 +494,15 @@ L 349.077966 125.415458
 L 354.752542 122.032678 
 L 360.427119 118.649898 
 L 362.016 117.70272 
-" clip-path="url(#p0187d6bc7c)" style="fill: none; stroke: #8c8c8c; stroke-linejoin: miter"/>
+" clip-path="url(#pbc4f1eaf4a)" style="fill: none; stroke: #8c8c8c; stroke-linejoin: miter"/>
    </g>
    <g id="macro.keynesian.shift">
-    <path d="M 338.58 160.0236 
-Q 338.58 145.8486 338.58 132.791634 
+    <path d="M 288.36 189.9612 
+Q 288.36 175.7862 288.36 162.729234 
 " style="fill: none; stroke: #1a1a1a; stroke-linecap: round"/>
-    <path d="M 336.18 137.591634 
-L 338.58 132.791634 
-L 340.98 137.591634 
+    <path d="M 285.96 167.529234 
+L 288.36 162.729234 
+L 290.76 167.529234 
 " style="fill: none; stroke: #1a1a1a; stroke-linecap: round"/>
    </g>
    <g id="macro.keynesian.step.1.demand">
@@ -543,7 +543,7 @@ L 231.651284 204.495
    </g>
    <g id="macro.keynesian.equilibrium">
     <defs>
-     <path id="m910664304b" d="M 0 3.25 
+     <path id="m0d8ac8c003" d="M 0 3.25 
 C 0.86191 3.25 1.688635 2.907559 2.298097 2.298097 
 C 2.907559 1.688635 3.25 0.86191 3.25 0 
 C 3.25 -0.86191 2.907559 -1.688635 2.298097 -2.298097 
@@ -556,12 +556,12 @@ z
 "/>
     </defs>
     <g>
-     <use xlink:href="#m910664304b" x="191.914773" y="247.455" style="fill: #1a1a1a"/>
+     <use xlink:href="#m0d8ac8c003" x="191.914773" y="247.455" style="fill: #1a1a1a"/>
     </g>
    </g>
    <g id="macro.keynesian.equilibrium.shifted">
     <defs>
-     <path id="ma11b3cc1dd" d="M 0 3.25 
+     <path id="m3f3fedf6a1" d="M 0 3.25 
 C 0.86191 3.25 1.688635 2.907559 2.298097 2.298097 
 C 2.907559 1.688635 3.25 0.86191 3.25 0 
 C 3.25 -0.86191 2.907559 -1.688635 2.298097 -2.298097 
@@ -574,76 +574,76 @@ z
 "/>
     </defs>
     <g>
-     <use xlink:href="#ma11b3cc1dd" x="263.25" y="176.58" style="fill: #6e6e6e"/>
+     <use xlink:href="#m3f3fedf6a1" x="263.25" y="176.58" style="fill: #6e6e6e"/>
     </g>
    </g>
    <g id="macro.keynesian.step.1.b">
     <g>
-     <use xlink:href="#m910664304b" x="191.914773" y="219.105" style="fill: #1a1a1a"/>
+     <use xlink:href="#m0d8ac8c003" x="191.914773" y="219.105" style="fill: #1a1a1a"/>
     </g>
    </g>
    <g id="macro.keynesian.step.1.c">
     <g>
-     <use xlink:href="#m910664304b" x="220.448864" y="219.105" style="fill: #1a1a1a"/>
+     <use xlink:href="#m0d8ac8c003" x="220.448864" y="219.105" style="fill: #1a1a1a"/>
     </g>
    </g>
    <g id="macro.keynesian.step.2.b">
     <g>
-     <use xlink:href="#m910664304b" x="220.448864" y="202.095" style="fill: #1a1a1a"/>
+     <use xlink:href="#m0d8ac8c003" x="220.448864" y="202.095" style="fill: #1a1a1a"/>
     </g>
    </g>
    <g id="macro.keynesian.step.2.c">
     <g>
-     <use xlink:href="#m910664304b" x="237.569318" y="202.095" style="fill: #1a1a1a"/>
+     <use xlink:href="#m0d8ac8c003" x="237.569318" y="202.095" style="fill: #1a1a1a"/>
     </g>
    </g>
    <g id="macro.keynesian.shift.label">
-    <path d="M 351.835 150.6336 
-L 351.835 150.4986 
-L 347.575 140.6136 
-L 347.005 140.9136 
-L 342.67 150.7836 
-L 342.7 151.1586 
-L 346.495 151.1136 
-L 350.905 151.1586 
+    <path d="M 301.615 180.5712 
+L 301.615 180.4362 
+L 297.355 170.5512 
+L 296.785 170.8512 
+L 292.45 180.7212 
+L 292.48 181.0962 
+L 296.275 181.0512 
+L 300.685 181.0962 
 z
-M 350.125 150.2136 
-C 350.125 150.3786 349.885 150.4686 349.51 150.4986 
-L 344.53 150.4986 
-C 344.035 150.4536 343.855 150.3486 343.855 150.1086 
-C 343.855 149.9136 344.185 149.1336 344.38 148.6836 
-L 346.96 142.6086 
-L 349.825 149.3886 
-C 349.96 149.7036 350.125 150.0336 350.125 150.2136 
+M 299.905 180.1512 
+C 299.905 180.3162 299.665 180.4062 299.29 180.4362 
+L 294.31 180.4362 
+C 293.815 180.3912 293.635 180.2862 293.635 180.0462 
+C 293.635 179.8512 293.965 179.0712 294.16 178.6212 
+L 296.74 172.5462 
+L 299.605 179.3262 
+C 299.74 179.6412 299.905 179.9712 299.905 180.1512 
 z
-M 362.17 151.1586 
-L 362.17 150.7386 
-L 361.78 150.6936 
-C 361.075 150.6186 361.03 150.5886 360.94 149.9136 
-L 359.635 140.5386 
-L 358.945 140.5386 
-L 353.35 149.4336 
-C 352.825 150.2736 352.54 150.5136 352.03 150.6336 
-L 351.73 150.7086 
-L 351.73 151.1586 
-L 353.41 151.1136 
-C 353.95 151.1136 354.49 151.1286 355.015 151.1586 
-L 355.015 150.7386 
-L 354.235 150.6936 
-C 353.98 150.6786 353.77 150.5436 353.77 150.4086 
-C 353.77 150.2886 353.86 150.0936 354.16 149.5836 
-L 355.69 146.9586 
-L 359.38 146.9586 
-L 359.785 149.9586 
-C 359.8 150.0936 359.815 150.2136 359.815 150.2886 
-C 359.815 150.5286 359.59 150.6636 359.17 150.6936 
-L 358.51 150.7386 
-L 358.51 151.1586 
-L 360.34 151.1136 
+M 311.95 181.0962 
+L 311.95 180.6762 
+L 311.56 180.6312 
+C 310.855 180.5562 310.81 180.5262 310.72 179.8512 
+L 309.415 170.4762 
+L 308.725 170.4762 
+L 303.13 179.3712 
+C 302.605 180.2112 302.32 180.4512 301.81 180.5712 
+L 301.51 180.6462 
+L 301.51 181.0962 
+L 303.19 181.0512 
+C 303.73 181.0512 304.27 181.0662 304.795 181.0962 
+L 304.795 180.6762 
+L 304.015 180.6312 
+C 303.76 180.6162 303.55 180.4812 303.55 180.3462 
+C 303.55 180.2262 303.64 180.0312 303.94 179.5212 
+L 305.47 176.8962 
+L 309.16 176.8962 
+L 309.565 179.8962 
+C 309.58 180.0312 309.595 180.1512 309.595 180.2262 
+C 309.595 180.4662 309.37 180.6012 308.95 180.6312 
+L 308.29 180.6762 
+L 308.29 181.0962 
+L 310.12 181.0512 
 z
-M 359.305 146.4186 
-L 356.065 146.4186 
-L 358.75 142.0986 
+M 309.085 176.3562 
+L 305.845 176.3562 
+L 308.53 172.0362 
 z
 " style="fill: #1a1a1a"/>
    </g>
@@ -951,7 +951,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p0187d6bc7c">
+  <clipPath id="pbc4f1eaf4a">
    <rect x="54" y="51.84" width="334.8" height="332.64"/>
   </clipPath>
  </defs>

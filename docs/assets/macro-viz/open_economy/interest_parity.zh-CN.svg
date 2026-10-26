@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-10-25T22:51:19.889682</dc:date>
+    <dc:date>2026-10-26T10:54:08.242611</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -286,12 +286,12 @@ z
    <g id="macro.parity.anchor.guide.x.guide">
     <path d="M 221.4 384.48 
 L 221.4 231.4656 
-" clip-path="url(#pb57b170fbf)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#pfb373ebe57)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.parity.anchor.guide.y.guide">
     <path d="M 54 231.4656 
 L 221.4 231.4656 
-" clip-path="url(#pb57b170fbf)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#pfb373ebe57)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.parity.line">
     <path d="M 194.616 78.4512 
@@ -306,11 +306,11 @@ L 235.586441 312.511363
 L 241.261017 344.929668 
 L 246.935593 377.347973 
 L 248.184 384.48 
-" clip-path="url(#pb57b170fbf)" style="fill: none; stroke: #8c8c8c; stroke-width: 3.5; stroke-linejoin: miter"/>
+" clip-path="url(#pfb373ebe57)" style="fill: none; stroke: #8c8c8c; stroke-width: 3.5; stroke-linejoin: miter"/>
    </g>
    <g id="macro.parity.anchor">
     <defs>
-     <path id="m355589b440" d="M 0 3.25 
+     <path id="mee13d184bf" d="M 0 3.25 
 C 0.86191 3.25 1.688635 2.907559 2.298097 2.298097 
 C 2.907559 1.688635 3.25 0.86191 3.25 0 
 C 3.25 -0.86191 2.907559 -1.688635 2.298097 -2.298097 
@@ -323,7 +323,7 @@ z
 "/>
     </defs>
     <g>
-     <use xlink:href="#m355589b440" x="221.4" y="231.4656" style="fill: #1a1a1a"/>
+     <use xlink:href="#mee13d184bf" x="221.4" y="231.4656" style="fill: #1a1a1a"/>
     </g>
    </g>
    <g id="macro.parity.line.label">
@@ -414,7 +414,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="pb57b170fbf">
+  <clipPath id="pfb373ebe57">
    <rect x="54" y="51.84" width="334.8" height="332.64"/>
   </clipPath>
  </defs>

@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-10-25T22:50:15.001918</dc:date>
+    <dc:date>2026-10-26T10:51:38.839608</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -334,17 +334,17 @@ z
    <g id="macro.keynesian.equilibrium.guide.x.guide">
     <path d="M 263.25 384.48 
 L 263.25 176.58 
-" clip-path="url(#p4401043387)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#pb6552b8012)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.keynesian.equilibrium.guide.y.guide">
     <path d="M 54 176.58 
 L 263.25 176.58 
-" clip-path="url(#p4401043387)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#pb6552b8012)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.open.balanced">
     <path d="M 243.081325 384.48 
 L 243.081325 196.618554 
-" clip-path="url(#p4401043387)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#pb6552b8012)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.keynesian.production">
     <path d="M 54 384.48 
@@ -418,11 +418,11 @@ L 349.077966 142.470305
 L 354.752542 140.215119 
 L 360.427119 137.959932 
 L 362.016 137.32848 
-" clip-path="url(#p4401043387)" style="fill: none; stroke: #8c8c8c; stroke-width: 3.5; stroke-linejoin: miter"/>
+" clip-path="url(#pb6552b8012)" style="fill: none; stroke: #8c8c8c; stroke-width: 3.5; stroke-linejoin: miter"/>
    </g>
    <g id="macro.keynesian.equilibrium">
     <defs>
-     <path id="m08b0f55514" d="M 0 3.25 
+     <path id="mfb5aa02b8d" d="M 0 3.25 
 C 0.86191 3.25 1.688635 2.907559 2.298097 2.298097 
 C 2.907559 1.688635 3.25 0.86191 3.25 0 
 C 3.25 -0.86191 2.907559 -1.688635 2.298097 -2.298097 
@@ -435,7 +435,7 @@ z
 "/>
     </defs>
     <g>
-     <use xlink:href="#m08b0f55514" x="263.25" y="176.58" style="fill: #1a1a1a"/>
+     <use xlink:href="#mfb5aa02b8d" x="263.25" y="176.58" style="fill: #1a1a1a"/>
     </g>
    </g>
    <g id="macro.keynesian.demand.label">
@@ -520,7 +520,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p4401043387">
+  <clipPath id="pb6552b8012">
    <rect x="54" y="51.84" width="334.8" height="332.64"/>
   </clipPath>
  </defs>

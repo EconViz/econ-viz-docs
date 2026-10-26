@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-10-25T22:50:25.333658</dc:date>
+    <dc:date>2026-10-26T10:52:29.040748</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -292,7 +292,7 @@ L 371.776271 140.500873
 L 377.450847 136.534173 
 L 383.125424 132.568267 
 L 388.8 128.603077 
-" clip-path="url(#p95591b2923)" style="fill: none; stroke: #8c8c8c; stroke-width: 3.5; stroke-linejoin: miter"/>
+" clip-path="url(#pc354de7164)" style="fill: none; stroke: #8c8c8c; stroke-width: 3.5; stroke-linejoin: miter"/>
    </g>
    <g id="macro.growth.trend.old">
     <path d="M 54 384.48 
@@ -351,7 +351,7 @@ L 349.077966 178.622177
 L 354.752542 174.663372 
 L 360.427119 170.704568 
 L 362.016 169.596103 
-" clip-path="url(#p95591b2923)" style="fill: none; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#pc354de7164)" style="fill: none; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.growth.trend.new">
     <path d="M 54 362.17253 
@@ -410,7 +410,7 @@ L 349.077966 156.314707
 L 354.752542 152.355903 
 L 360.427119 148.397098 
 L 362.016 147.288633 
-" clip-path="url(#p95591b2923)" style="fill: none; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#pc354de7164)" style="fill: none; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="macro.growth.trend.new.label">
     <path d="M 374.5935 151.946133 
@@ -488,7 +488,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p95591b2923">
+  <clipPath id="pc354de7164">
    <rect x="54" y="51.84" width="334.8" height="332.64"/>
   </clipPath>
  </defs>

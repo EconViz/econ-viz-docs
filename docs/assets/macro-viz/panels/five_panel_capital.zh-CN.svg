@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-10-25T22:51:31.765822</dc:date>
+    <dc:date>2026-10-26T10:54:19.987533</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -353,22 +353,22 @@ L 619.192386 325.486792
    <g id="macro.panels.islm.is.0">
     <path d="M 511.016958 75.552621 
 L 665.788613 212.114943 
-" clip-path="url(#p5b3984e8e1)" style="fill: none; stroke: #1a1a1a; stroke-width: 3.5; stroke-linejoin: miter"/>
+" clip-path="url(#p6913f1aa7e)" style="fill: none; stroke: #1a1a1a; stroke-width: 3.5; stroke-linejoin: miter"/>
    </g>
    <g id="macro.panels.islm.lm.0">
     <path d="M 511.016958 198.894758 
 L 594.775359 51.086792 
-" clip-path="url(#p5b3984e8e1)" style="fill: none; stroke: #1a1a1a; stroke-width: 3.5; stroke-linejoin: miter"/>
+" clip-path="url(#p6913f1aa7e)" style="fill: none; stroke: #1a1a1a; stroke-width: 3.5; stroke-linejoin: miter"/>
    </g>
    <g id="macro.panels.islm.lm.1">
     <path d="M 572.59616 253.228989 
 L 665.788613 88.772806 
-" clip-path="url(#p5b3984e8e1)" style="fill: none; stroke: #6e6e6e; stroke-linejoin: miter"/>
+" clip-path="url(#p6913f1aa7e)" style="fill: none; stroke: #6e6e6e; stroke-linejoin: miter"/>
    </g>
    <g id="macro.panels.islm.shift.0">
     <path d="M 557.613184 116.666667 
 L 638.897731 116.666667 
-" clip-path="url(#p5b3984e8e1)" style="fill: none; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#p6913f1aa7e)" style="fill: none; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="patch_15">
     <path d="M 638.816447 116.666667 
@@ -382,7 +382,7 @@ z
    </g>
    <g id="macro.panels.islm.point.A">
     <defs>
-     <path id="ma2d8dcf21b" d="M 0 3.25 
+     <path id="m3f2e42d3ff" d="M 0 3.25 
 C 0.86191 3.25 1.688635 2.907559 2.298097 2.298097 
 C 2.907559 1.688635 3.25 0.86191 3.25 0 
 C 3.25 -0.86191 2.907559 -1.688635 2.298097 -2.298097 
@@ -395,7 +395,7 @@ z
 "/>
     </defs>
     <g>
-     <use xlink:href="#ma2d8dcf21b" x="557.613184" y="116.666667" style="fill: #1a1a1a"/>
+     <use xlink:href="#m3f2e42d3ff" x="557.613184" y="116.666667" style="fill: #1a1a1a"/>
     </g>
    </g>
    <g id="macro.panels.islm.point.A.label.leader">
@@ -405,7 +405,7 @@ L 557.613184 93.979167
    </g>
    <g id="macro.panels.islm.point.C">
     <g>
-     <use xlink:href="#ma2d8dcf21b" x="619.192386" y="171.000898" style="fill: #1a1a1a"/>
+     <use xlink:href="#m3f2e42d3ff" x="619.192386" y="171.000898" style="fill: #1a1a1a"/>
     </g>
    </g>
    <g id="macro.panels.islm.point.C.label.leader">
@@ -1314,7 +1314,7 @@ L 242.185906 506.676366
 L 245.25722 508.69924 
 L 248.328535 510.722114 
 L 251.399849 512.744987 
-" clip-path="url(#pc8b201c95a)" style="fill: none; stroke: #1a1a1a; stroke-width: 3.5; stroke-linejoin: miter"/>
+" clip-path="url(#p1ff43edf37)" style="fill: none; stroke: #1a1a1a; stroke-width: 3.5; stroke-linejoin: miter"/>
    </g>
    <g id="macro.panels.labor.labor_demand.1">
     <path d="M 150.504497 366.90566 
@@ -1351,7 +1351,7 @@ L 242.185906 457.482474
 L 245.25722 460.516785 
 L 248.328535 463.551095 
 L 251.399849 466.585406 
-" clip-path="url(#pc8b201c95a)" style="fill: none; stroke: #6e6e6e; stroke-linejoin: miter"/>
+" clip-path="url(#p1ff43edf37)" style="fill: none; stroke: #6e6e6e; stroke-linejoin: miter"/>
    </g>
    <g id="macro.panels.labor.labor_demand.2">
     <path d="M 90.238781 366.90566 
@@ -1408,7 +1408,7 @@ L 242.185906 486.998809
 L 245.25722 489.426258 
 L 248.328535 491.853706 
 L 251.399849 494.281155 
-" clip-path="url(#pc8b201c95a)" style="fill: none; stroke: #6e6e6e; stroke-linejoin: miter"/>
+" clip-path="url(#p1ff43edf37)" style="fill: none; stroke: #6e6e6e; stroke-linejoin: miter"/>
    </g>
    <g id="macro.panels.labor.labor_supply.0">
     <path d="M 70.192302 553.255912 
@@ -1471,7 +1471,7 @@ L 242.185906 411.654752
 L 245.25722 409.12616 
 L 248.328535 406.597567 
 L 251.399849 404.068975 
-" clip-path="url(#pc8b201c95a)" style="fill: none; stroke: #1a1a1a; stroke-width: 3.5; stroke-linejoin: miter"/>
+" clip-path="url(#p1ff43edf37)" style="fill: none; stroke: #1a1a1a; stroke-width: 3.5; stroke-linejoin: miter"/>
    </g>
    <g id="macro.panels.labor.shift.0">
     <path d="M 108.568338 418.671221 
@@ -1522,7 +1522,7 @@ L 145.290599 368.15448
 L 146.990124 367.707065 
 L 148.72809 367.290792 
 L 150.504497 366.90566 
-" clip-path="url(#pc8b201c95a)" style="fill: none; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#p1ff43edf37)" style="fill: none; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="patch_18">
     <path d="M 150.502721 366.906046 
@@ -1583,7 +1583,7 @@ L 134.930574 399.15645
 L 134.881973 400.139937 
 L 134.855315 401.142827 
 L 134.850599 402.165121 
-" clip-path="url(#pc8b201c95a)" style="fill: none; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#p1ff43edf37)" style="fill: none; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="patch_19">
     <path d="M 134.850604 402.164099 
@@ -1602,7 +1602,7 @@ L 251.399849 527.390993
    </g>
    <g id="macro.panels.labor.point.A">
     <g>
-     <use xlink:href="#ma2d8dcf21b" x="178.065629" y="464.444538" style="fill: #1a1a1a"/>
+     <use xlink:href="#m3f2e42d3ff" x="178.065629" y="464.444538" style="fill: #1a1a1a"/>
     </g>
    </g>
    <g id="macro.panels.labor.point.A.label.leader">
@@ -1612,7 +1612,7 @@ L 170.387076 484.620062
    </g>
    <g id="macro.panels.labor.point.B">
     <g>
-     <use xlink:href="#ma2d8dcf21b" x="216.884126" y="432.485535" style="fill: #1a1a1a"/>
+     <use xlink:href="#m3f2e42d3ff" x="216.884126" y="432.485535" style="fill: #1a1a1a"/>
     </g>
    </g>
    <g id="macro.panels.labor.point.B.label.leader">
@@ -1622,7 +1622,7 @@ L 244.934126 432.485535
    </g>
    <g id="macro.panels.labor.point.C">
     <g>
-     <use xlink:href="#ma2d8dcf21b" x="195.494342" y="450.095597" style="fill: #1a1a1a"/>
+     <use xlink:href="#m3f2e42d3ff" x="195.494342" y="450.095597" style="fill: #1a1a1a"/>
     </g>
    </g>
    <g id="macro.panels.labor.point.C.label.leader">
@@ -2881,22 +2881,22 @@ L 619.192386 467.001258
    <g id="macro.panels.adas.sras.0">
     <path d="M 511.016958 538.337192 
 L 586.481647 366.90566 
-" clip-path="url(#pa16c80c9b1)" style="fill: none; stroke: #1a1a1a; stroke-width: 3.5; stroke-linejoin: miter"/>
+" clip-path="url(#p319d58966e)" style="fill: none; stroke: #1a1a1a; stroke-width: 3.5; stroke-linejoin: miter"/>
    </g>
    <g id="macro.panels.adas.sras.1">
     <path d="M 572.59616 572.852915 
 L 663.254778 366.90566 
-" clip-path="url(#pa16c80c9b1)" style="fill: none; stroke: #6e6e6e; stroke-linejoin: miter"/>
+" clip-path="url(#p319d58966e)" style="fill: none; stroke: #6e6e6e; stroke-linejoin: miter"/>
    </g>
    <g id="macro.panels.adas.ad.0">
     <path d="M 511.016958 406.36791 
 L 665.788613 493.118882 
-" clip-path="url(#pa16c80c9b1)" style="fill: none; stroke: #1a1a1a; stroke-width: 3.5; stroke-linejoin: miter"/>
+" clip-path="url(#p319d58966e)" style="fill: none; stroke: #1a1a1a; stroke-width: 3.5; stroke-linejoin: miter"/>
    </g>
    <g id="macro.panels.adas.shift.0">
     <path d="M 557.613184 432.485535 
 L 625.173539 432.485535 
-" clip-path="url(#pa16c80c9b1)" style="fill: none; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#p319d58966e)" style="fill: none; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="patch_22">
     <path d="M 625.105978 432.485535 
@@ -2910,7 +2910,7 @@ z
    </g>
    <g id="macro.panels.adas.point.A">
     <g>
-     <use xlink:href="#ma2d8dcf21b" x="557.613184" y="432.485535" style="fill: #1a1a1a"/>
+     <use xlink:href="#m3f2e42d3ff" x="557.613184" y="432.485535" style="fill: #1a1a1a"/>
     </g>
    </g>
    <g id="macro.panels.adas.point.A.label.leader">
@@ -2920,12 +2920,12 @@ L 549.934631 412.31001
    </g>
    <g id="macro.panels.adas.point.B">
     <g>
-     <use xlink:href="#ma2d8dcf21b" x="634.386314" y="432.485535" style="fill: #1a1a1a"/>
+     <use xlink:href="#m3f2e42d3ff" x="634.386314" y="432.485535" style="fill: #1a1a1a"/>
     </g>
    </g>
    <g id="macro.panels.adas.point.C">
     <g>
-     <use xlink:href="#ma2d8dcf21b" x="619.192386" y="467.001258" style="fill: #1a1a1a"/>
+     <use xlink:href="#m3f2e42d3ff" x="619.192386" y="467.001258" style="fill: #1a1a1a"/>
     </g>
    </g>
    <g id="macro.panels.adas.point.C.label.leader">
@@ -3568,7 +3568,7 @@ L 242.185906 795.357714
 L 245.25722 794.197743 
 L 248.328535 793.061868 
 L 251.399849 791.950091 
-" clip-path="url(#p0bc7f57044)" style="fill: none; stroke: #1a1a1a; stroke-width: 3.5; stroke-linejoin: miter"/>
+" clip-path="url(#p4feaee3f64)" style="fill: none; stroke: #1a1a1a; stroke-width: 3.5; stroke-linejoin: miter"/>
    </g>
    <g id="macro.panels.production.production.1">
     <path d="M 70.192302 887.720785 
@@ -3631,7 +3631,7 @@ L 242.185906 732.595061
 L 245.25722 730.855104 
 L 248.328535 729.151293 
 L 251.399849 727.483628 
-" clip-path="url(#p0bc7f57044)" style="fill: none; stroke: #6e6e6e; stroke-linejoin: miter"/>
+" clip-path="url(#p4feaee3f64)" style="fill: none; stroke: #6e6e6e; stroke-linejoin: miter"/>
    </g>
    <g id="macro.panels.production.shift.0">
     <path d="M 251.399849 791.950091 
@@ -3682,7 +3682,7 @@ L 221.067465 749.510105
 L 219.673181 749.105375 
 L 218.247567 748.725524 
 L 216.790624 748.370555 
-" clip-path="url(#p0bc7f57044)" style="fill: none; stroke: #1a1a1a; stroke-linejoin: miter"/>
+" clip-path="url(#p4feaee3f64)" style="fill: none; stroke: #1a1a1a; stroke-linejoin: miter"/>
    </g>
    <g id="patch_25">
     <path d="M 216.792081 748.37091 
@@ -4339,16 +4339,16 @@ L 619.192386 641.30566
   </g>
  </g>
  <defs>
-  <clipPath id="p5b3984e8e1">
+  <clipPath id="p6913f1aa7e">
    <rect x="425.566189" y="9.667925" width="372.769811" height="315.818868"/>
   </clipPath>
-  <clipPath id="pc8b201c95a">
+  <clipPath id="p1ff43edf37">
    <rect x="8.064" y="325.486792" width="372.769811" height="315.818868"/>
   </clipPath>
-  <clipPath id="pa16c80c9b1">
+  <clipPath id="p319d58966e">
    <rect x="425.566189" y="325.486792" width="372.769811" height="315.818868"/>
   </clipPath>
-  <clipPath id="p0bc7f57044">
+  <clipPath id="p4feaee3f64">
    <rect x="8.064" y="641.30566" width="372.769811" height="315.818868"/>
   </clipPath>
  </defs>

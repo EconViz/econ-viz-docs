@@ -51,7 +51,7 @@ demand_x_max = 240
 demand_y_max = 2.2
 autonomous_shock = 115
 caption_government = "政府支出增加"
-caption_money = "名目貨幣減少"
+caption_money = "貨幣供給減少"
 
 [adas_animation]
 frames = 6
