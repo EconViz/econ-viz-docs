@@ -6,7 +6,7 @@ seo_title: "移植动画代码"
 
 <span id="sec-migration"></span>
 
-KineticKit 是全新而且独立的引擎。它不会导入 MosaicKit 或任何 `*-viz` 软件包，也没有兼容层。移植的意思，是通过一个小适配器，把你的对象描述成 KineticKit 节点。已移除的 MosaicKit 与 utility-viz 动画 API 不会被重新导出。
+KineticKit 是全新而且独立的引擎。它不会导入 MosaicKit 或任何 `*-viz` 软件包，也没有兼容层。移植时，通过一个小适配器，把你的对象描述成 KineticKit 节点。已移除的 MosaicKit 与 utility-viz 动画 API 不会被重新导出。
 
 ## 从参数扫描移植
 

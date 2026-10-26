@@ -51,7 +51,7 @@ Animated SVG uses SVG's vector scene model [{W3C} (2018)](../project/references.
 | GIF | `width`, `height`, `fps`, `dpi`, `loop`, `colors`, `dither`, `palette`, `disposal`, `accessibility`, `description` |
 | HTML | `width`, `height`, `packaging`, `autoplay`, `loop`, `speed`, `controls`, `fps`, `max_frames`, `title`, `description`, `lang` |
 
-`loop=True` makes an SVG repeat forever, which is what an animation on a page usually needs. A GIF repeats forever unless `loop=None`. Unknown option names raise an error.
+`loop=True` makes an SVG repeat forever. A GIF repeats forever unless `loop=None`. Unknown option names raise an error.
 
 ## GIF settings
 
@@ -63,7 +63,7 @@ The GIF part of the options: frame rate, palette, dithering, looping, disposal a
 
 Streams encoded PNG frames into a GIF without keeping every decoded frame in memory.
 
-Raster output renders one frame at a time, so memory does not grow with the duration. DPI goes up to 1200. GIF frame intervals below 10 ms are rejected. Time is spread over integer centiseconds with the error carried forward, so the total duration stays right. An expensive raster job issues `RenderCostWarning`; it does not lower the size or DPI behind your back.
+Raster output renders one frame at a time, so memory does not grow with the duration. DPI goes up to 1200. GIF frame intervals below 10 ms are rejected. Time is spread over integer centiseconds with the error carried forward, so the total duration stays right. An expensive raster job issues `RenderCostWarning`; it does not lower the size or DPI silently.
 
 ## HTML packaging
 

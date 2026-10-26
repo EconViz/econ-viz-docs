@@ -12,7 +12,7 @@ Each example uses only public KineticKit API and generic content: points, lines,
 
 <span id="sec-example-chart"></span>
 
-Bars are `Shape2D` rectangles that grow with `morph_to`, and the trend line draws itself with `draw_progress`. `Axis2D` and `Grid2D` from `kinetickit.guides` compile to ordinary nodes against the resolved layout, so they are scene content like everything else.
+Bars are `Shape2D` rectangles that grow with `morph_to`, and the trend line draws itself with `draw_progress`. `Axis2D` and `Grid2D` from `kinetickit.guides` compile to ordinary nodes against the resolved layout.
 
 ```python
 from kinetickit import ease

@@ -42,4 +42,4 @@ A regular $x,y$ lattice with height and optional colour samples for surface morp
 
 ## Morph or transition
 
-Use a `SceneTransition` cross-fade only when the objects are genuinely different; use morphing when intermediate geometry has meaning.
+Use a `SceneTransition` cross-fade only when the objects really differ; use morphing when intermediate geometry has meaning.

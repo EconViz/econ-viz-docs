@@ -15,7 +15,7 @@ description: "KineticKit builds deterministic 2D and 3D animation from immutable
 
 !!! warning "kinetickit 1.0 is in beta"
 
-    kinetickit 1.0.0b2 is a pre-release. The contracts listed in [Compatibility](compatibility.md) are meant to be stable, but they may still change between pre-releases, always with a changelog entry.
+    kinetickit 1.0.0b2 is a pre-release. The contracts in [Compatibility](compatibility.md) are meant to be stable but may change between pre-releases, always with a changelog entry.
 
 ```python
 from kinetickit import Animation, Bounds2D, Point2D, Scene2D, Vec2, ease

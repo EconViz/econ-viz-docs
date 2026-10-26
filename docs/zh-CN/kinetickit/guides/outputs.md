@@ -51,7 +51,7 @@ KineticKit 由场景、动作、交互与无障碍数据推算出的动画所需
 | GIF | `width`、`height`、`fps`、`dpi`、`loop`、`colors`、`dither`、`palette`、`disposal`、`accessibility`、`description` |
 | HTML | `width`、`height`、`packaging`、`autoplay`、`loop`、`speed`、`controls`、`fps`、`max_frames`、`title`、`description`、`lang` |
 
-`loop=True` 让 SVG 无限重播，放在网页上的动画通常需要这个。GIF 缺省无限重播，除非设成 `loop=None`。不认得的选项名称会抛出错误。
+`loop=True` 让 SVG 无限重播。GIF 缺省无限重播，除非设成 `loop=None`。不认得的选项名称会抛出错误。
 
 ## GIF 设置
 

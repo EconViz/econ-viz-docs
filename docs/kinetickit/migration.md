@@ -6,7 +6,7 @@ seo_title: "Migrating animation code"
 
 <span id="sec-migration"></span>
 
-KineticKit is a new, independent engine. It does not import MosaicKit or any `*-viz` package, and it ships no compatibility layer for them. Migration means describing your objects as KineticKit nodes through a small adapter. The removed MosaicKit and utility-viz animation APIs are not re-exported.
+KineticKit is a new, independent engine. It does not import MosaicKit or any `*-viz` package, and it ships no compatibility layer for them. To migrate, describe your objects as KineticKit nodes through a small adapter. The removed MosaicKit and utility-viz animation APIs are not re-exported.
 
 ## From a parameter sweep
 

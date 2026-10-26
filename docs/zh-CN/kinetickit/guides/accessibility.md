@@ -40,7 +40,7 @@ SVG 与 HTML 会保留标题、说明、稳定的对象编号与各节点的语�
 
 <span id="sec-interaction"></span>
 
-交互是数据。它指定某个节点上的事件，并指定要运行的动作。KineticKit 在写出任何文件之前，会拿场景的节点编号与标记逐一验证每个绑定。
+交互是数据，指定某个节点上的事件和要运行的动作。KineticKit 在写出任何文件之前，会拿场景的节点编号与标记逐一验证每个绑定。
 
 <!-- api: kinetickit.guides_accessibility_4 -->
 

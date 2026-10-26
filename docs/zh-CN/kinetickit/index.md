@@ -15,7 +15,7 @@ description: "KineticKit 用不可变的场景与动作创建确定性的 2D 与
 
 !!! warning "kinetickit 1.0 为测试版"
 
-    kinetickit 1.0.0b2 是预发行版本。[兼容性](compatibility.md)列出的契约打算保持稳定，但在预发行版本之间仍可能改变，而且一定会附上变更纪录。
+    kinetickit 1.0.0b2 是预发行版本。[兼容性](compatibility.md)列出的契约打算保持稳定，但预发行版本之间可能改变，并一定附上变更纪录。
 
 ```python
 from kinetickit import Animation, Bounds2D, Point2D, Scene2D, Vec2, ease
