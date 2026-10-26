@@ -37,21 +37,21 @@ tools (see [Chapter guide](introduction.md#tab-guide)).
 
 <span id="tab-guide"></span>
 
-| Part | Topic | Description | Section |
-| --- | --- | --- | --- |
-| Markets | Linear markets | Lines, equilibrium and shifts | [Linear markets](markets.md#sec-markets) |
-|  | Discrete markets | Unit-by-unit demand and supply schedules | [Discrete markets](discrete.md#sec-discrete) |
-|  | Market curves from individuals | Horizontal sum of individual curves | [Market curves from individuals](aggregation.md#sec-aggregation) |
-|  | Elasticity and total revenue | Point and arc elasticity, total revenue curve | [Elasticity and total revenue](elasticity.md#sec-elasticity) |
-| Policy | Welfare | Consumer surplus, producer surplus and deadweight loss | [Welfare](welfare.md#sec-welfare) |
-|  | Taxes and subsidies | Tax wedge and subsidy cost | [Taxes and subsidies](taxes.md#sec-taxes) |
-|  | Price controls | Price ceilings, price floors and shortages | [Price controls](controls.md#sec-controls) |
-| Applications | International trade | Free trade, tariffs and import quotas | [International trade](trade.md#sec-trade) |
-|  | Market failures | Externalities, common resources and public goods | [Market failures](failures.md#sec-failures) |
-|  | Labor and loanable funds | Minimum wage and government borrowing | [Labor and loanable funds](factor-markets.md#sec-factor) |
-|  | Production possibilities | Opportunity cost, growth and comparative advantage | [Production possibilities](ppf.md#sec-ppf) |
-| Tools | Figures | Labels, layers and palettes | [Figures](figures.md#sec-figures) |
-|  | Command line | Calculation results as JSON | [Command-line interface](../cli.md#sec-cli) |
+| Part | Topic | Description |
+| --- | --- | --- |
+| Markets | [Linear markets](markets.md#sec-markets) | Lines, equilibrium and shifts |
+|  | [Discrete markets](discrete.md#sec-discrete) | Unit-by-unit demand and supply schedules |
+|  | [Market curves from individuals](aggregation.md#sec-aggregation) | Horizontal sum of individual curves |
+|  | [Elasticity and total revenue](elasticity.md#sec-elasticity) | Point and arc elasticity, total revenue curve |
+| Policy | [Welfare](welfare.md#sec-welfare) | Consumer surplus, producer surplus and deadweight loss |
+|  | [Taxes and subsidies](taxes.md#sec-taxes) | Tax wedge and subsidy cost |
+|  | [Price controls](controls.md#sec-controls) | Price ceilings, price floors and shortages |
+| Applications | [International trade](trade.md#sec-trade) | Free trade, tariffs and import quotas |
+|  | [Market failures](failures.md#sec-failures) | Externalities, common resources and public goods |
+|  | [Labor and loanable funds](factor-markets.md#sec-factor) | Minimum wage and government borrowing |
+|  | [Production possibilities](ppf.md#sec-ppf) | Opportunity cost, growth and comparative advantage |
+| Tools | [Figures](figures.md#sec-figures) | Labels, layers and palettes |
+|  | [Command line](../cli.md#sec-cli) | Calculation results as JSON |
 
 On first use, read [Quick start](../quickstart.md#sec-quickstart), [Linear markets](markets.md#sec-markets) and [Figures](figures.md#sec-figures) in that
 order. Each later chapter covers one topic: the calculation first, then the

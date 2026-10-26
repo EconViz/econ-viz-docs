@@ -20,19 +20,19 @@ seo_title: "簡介"
 
 <span id="tab-guide"></span>
 
-| 主題 | 說明 | 章節 |
-| --- | --- | --- |
-| 模型與圖形 | 模型、繪圖函式、圖層編號與多欄圖如何配合 | [模型與圖形](model-figure.md#sec-model-figure) |
-| 生產與成本 | 短期生產、成本函式、階梯與折點成本 | [生產與成本](production-costs.md#sec-production-costs) |
-| 競爭 | 價格接受者廠商、產業供給、長期成本、進入 | [競爭與長期](competition.md#sec-competition) |
-| 獨占與定價 | 獨占、獨占性競爭、管制、價格歧視、兩部定價、搭售、廣告、可耗竭資源 | [獨占與定價](monopoly.md#sec-monopoly) |
-| 寡占 | 雙占、拗折需求、支配廠商、垂直關係 | [寡占與垂直關係](oligopoly.md#sec-oligopoly) |
-| 投入與技術 | 等產量線、成本最小化、學習與範疇、要素市場、買方獨佔與工會 | [投入與技術](inputs.md#sec-inputs) |
-| 不確定性與資訊 | 期望效用、風險、拍賣、逆選擇、訊號、道德風險 | [不確定性與資訊](uncertainty.md#sec-uncertainty) |
-| 設定 | `econ-viz.toml` 的 `[micro]` 表 | [設定](settings.md#sec-settings) |
-| 標籤與位置 | 語系表、取代文字、移動標籤 | [標籤與位置](labels.md#sec-labels) |
-| 新增圖形 | 模型、繪圖函式、文字、匯出、測試 | [新增圖形](adding-figure.md#sec-adding) |
-| 動畫 | 讓圖形隨參數變化 | [動畫](animation.md#sec-animation) |
+| 主題 | 說明 |
+| --- | --- |
+| [模型與圖形](model-figure.md#sec-model-figure) | 模型、繪圖函式、圖層編號與多欄圖如何配合 |
+| [生產與成本](production-costs.md#sec-production-costs) | 短期生產、成本函式、階梯與折點成本 |
+| [競爭](competition.md#sec-competition) | 價格接受者廠商、產業供給、長期成本、進入 |
+| [獨占與定價](monopoly.md#sec-monopoly) | 獨占、獨占性競爭、管制、價格歧視、兩部定價、搭售、廣告、可耗竭資源 |
+| [寡占](oligopoly.md#sec-oligopoly) | 雙占、拗折需求、支配廠商、垂直關係 |
+| [投入與技術](inputs.md#sec-inputs) | 等產量線、成本最小化、學習與範疇、要素市場、買方獨佔與工會 |
+| [不確定性與資訊](uncertainty.md#sec-uncertainty) | 期望效用、風險、拍賣、逆選擇、訊號、道德風險 |
+| [設定](settings.md#sec-settings) | `econ-viz.toml` 的 `[micro]` 表 |
+| [標籤與位置](labels.md#sec-labels) | 語系表、取代文字、移動標籤 |
+| [新增圖形](adding-figure.md#sec-adding) | 模型、繪圖函式、文字、匯出、測試 |
+| [動畫](animation.md#sec-animation) | 讓圖形隨參數變化 |
 
 初次使用時，依序閱讀 [快速開始](../quickstart.md#sec-quickstart) 與 [模型與圖形](model-figure.md#sec-model-figure)。各主題章節先說明模型，再展示圖形。
 

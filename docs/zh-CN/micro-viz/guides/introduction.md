@@ -20,19 +20,19 @@ seo_title: "简介"
 
 <span id="tab-guide"></span>
 
-| 主题 | 说明 | 章节 |
-| --- | --- | --- |
-| 模型与图形 | 模型、绘图函数、图层 ID与多栏图如何配合 | [模型与图形](model-figure.md#sec-model-figure) |
-| 生产与成本 | 短期生产、成本函数、阶梯与折点成本 | [生产与成本](production-costs.md#sec-production-costs) |
-| 竞争 | 价格接受者厂商、产业供给、长期成本、进入 | [竞争与长期](competition.md#sec-competition) |
-| 独占与定价 | 独占、独占性竞争、管制、价格歧视、两部定价、搭售、广告、可耗竭资源 | [独占与定价](monopoly.md#sec-monopoly) |
-| 寡占 | 双占、拗折需求、支配厂商、垂直关系 | [寡占与垂直关系](oligopoly.md#sec-oligopoly) |
-| 投入与技术 | 等产量线、成本最小化、学习与范畴、要素市场、买方独占与工会 | [投入与技术](inputs.md#sec-inputs) |
-| 不确定性与信息 | 期望效用、风险、拍卖、逆选择、信号、道德风险 | [不确定性与信息](uncertainty.md#sec-uncertainty) |
-| 设置 | `econ-viz.toml` 的 `[micro]` 表 | [设置](settings.md#sec-settings) |
-| 标签与位置 | 语系表、取代文本、移动标签 | [标签与位置](labels.md#sec-labels) |
-| 添加图形 | 模型、绘图函数、文本、导出、测试 | [添加图形](adding-figure.md#sec-adding) |
-| 动画 | 让图形随参数变化 | [动画](animation.md#sec-animation) |
+| 主题 | 说明 |
+| --- | --- |
+| [模型与图形](model-figure.md#sec-model-figure) | 模型、绘图函数、图层 ID与多栏图如何配合 |
+| [生产与成本](production-costs.md#sec-production-costs) | 短期生产、成本函数、阶梯与折点成本 |
+| [竞争](competition.md#sec-competition) | 价格接受者厂商、产业供给、长期成本、进入 |
+| [独占与定价](monopoly.md#sec-monopoly) | 独占、独占性竞争、管制、价格歧视、两部定价、搭售、广告、可耗竭资源 |
+| [寡占](oligopoly.md#sec-oligopoly) | 双占、拗折需求、支配厂商、垂直关系 |
+| [投入与技术](inputs.md#sec-inputs) | 等产量线、成本最小化、学习与范畴、要素市场、买方独占与工会 |
+| [不确定性与信息](uncertainty.md#sec-uncertainty) | 期望效用、风险、拍卖、逆选择、信号、道德风险 |
+| [设置](settings.md#sec-settings) | `econ-viz.toml` 的 `[micro]` 表 |
+| [标签与位置](labels.md#sec-labels) | 语系表、取代文本、移动标签 |
+| [添加图形](adding-figure.md#sec-adding) | 模型、绘图函数、文本、导出、测试 |
+| [动画](animation.md#sec-animation) | 让图形随参数变化 |
 
 初次使用时，依序阅读 [快速开始](../quickstart.md#sec-quickstart) 与 [模型与图形](model-figure.md#sec-model-figure)。各主题章节先说明模型，再展示图形。
 

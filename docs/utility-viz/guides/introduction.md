@@ -35,19 +35,19 @@ The manual is organised in four parts ([Chapter guide](introduction.md#tab-guide
 
 <span id="tab-guide"></span>
 
-| Topic | Subtopic | Description | Section |
-| --- | --- | --- | --- |
-| Drawing & export | Canvas & layers | Axes, curves, equilibria | [Canvas](canvas.md#sec-canvas) |
-|  | Figures & demand | Panels & demand | [Figures and demand diagrams](consumer.md#sec-figures) |
-|  | Themes & config | Colours, styles, config | [Themes and configuration](themes.md#sec-themes) |
-|  | Output formats | Image files and TikZ | [Export](export.md#sec-export) |
-| Models & analysis | Built-in models | Utility functions | [Core models](../models/index.md#sec-models) |
-|  | Custom & many-good | Custom, $N$ goods, scenes | [Advanced models](../models/advanced.md#sec-advanced) |
-|  | Comparative statics | Derivatives & Slutsky | [Analysis](../tools/analysis.md#sec-analysis) |
-| Animation & interaction | GIF animation | Sweeps as GIFs | [Animation](animation.md#sec-animation) |
-|  | Jupyter widgets | Sliders in notebooks | [Interactive widgets](interactive.md#sec-widgets) |
-| Other inputs | Command line | Plots from the shell | [Command-line interface](../getting-started/cli.md#sec-cli) |
-|  | LaTeX parser | Models from formulas | [LaTeX parsing](../tools/latex.md#sec-latex) |
+| Topic | Subtopic | Description |
+| --- | --- | --- |
+| Drawing & export | [Canvas & layers](canvas.md#sec-canvas) | Axes, curves, equilibria |
+|  | [Figures & demand](consumer.md#sec-figures) | Panels & demand |
+|  | [Themes & config](themes.md#sec-themes) | Colours, styles, config |
+|  | [Output formats](export.md#sec-export) | Image files and TikZ |
+| Models & analysis | [Built-in models](../models/index.md#sec-models) | Utility functions |
+|  | [Custom & many-good](../models/advanced.md#sec-advanced) | Custom, $N$ goods, scenes |
+|  | [Comparative statics](../tools/analysis.md#sec-analysis) | Derivatives & Slutsky |
+| Animation & interaction | [GIF animation](animation.md#sec-animation) | Sweeps as GIFs |
+|  | [Jupyter widgets](interactive.md#sec-widgets) | Sliders in notebooks |
+| Other inputs | [Command line](../getting-started/cli.md#sec-cli) | Plots from the shell |
+|  | [LaTeX parser](../tools/latex.md#sec-latex) | Models from formulas |
 
 On first use, read [Quick start](../getting-started/quickstart.md#sec-quickstart) and [Canvas](canvas.md#sec-canvas) in order. To look up a
 particular API, go straight to its section or to the command index.
