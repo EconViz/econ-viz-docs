@@ -52,8 +52,6 @@ seo_title: "竞争与长期"
 
 总收益、总成本与利润曲线对产量。
 
-下面是脚本中画图的函数，与图形使用相同的代码。
-
 ```python
 def competition_examples(
     output_dir: Path,
@@ -341,8 +339,6 @@ U 形 LAC，LMC 在其最低点 `C_min`（产量 `Q_e`）与之相交。
 
 `sizes` 中各厂房的 SAC 与 LAC 相切，并画出 LAC 与 LMC。
 
-下面是脚本中画图的函数，与图形使用相同的代码。
-
 ```python
 def long_run_examples(
     output_dir: Path,
@@ -451,8 +447,6 @@ LAC、LMC 与价格线：厂商在价格等于 LMC 处生产，所用厂房的 S
 <!-- api: micro_viz.guides_competition_19 -->
 
 边际厂商利润为零，成本较低的厂商（稀少优势）有租的长方形，与长期产业并列。
-
-下面是脚本中画图的函数，与图形使用相同的代码。
 
 ```python
 def competition_examples(

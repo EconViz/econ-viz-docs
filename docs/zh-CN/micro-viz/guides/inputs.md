@@ -32,8 +32,6 @@ seo_title: "投入与技术"
 
 每种技术一栏：给定产量的等产量线被一条射线截断；固定报酬下等距，规模报酬递增下愈来愈近。
 
-下面是脚本中画图的函数，与图形使用相同的代码。
-
 ```python
 def isoquant_examples(
     output_dir: Path,
@@ -211,8 +209,6 @@ def isoquant_examples(
 
 技术进步：同一 `output` 的等产量线内移（细线 `Q'`），最低成本组合落在较低的等成本在线。
 
-下面是脚本中画图的函数，与图形使用相同的代码。
-
 ```python
 def cost_examples(
     output_dir: Path,
@@ -372,8 +368,6 @@ def cost_examples(
 <!-- api: micro_viz.guides_inputs_16 -->
 
 技术进步使总产量曲在线移；基准曲线为粗线，其余为细实线；`arrow_input` 画垂直箭头。
-
-下面是脚本中画图的函数，与图形使用相同的代码。
 
 ```python
 def extension_examples(
@@ -537,8 +531,6 @@ def extension_examples(
 <!-- api: micro_viz.guides_inputs_26 -->
 
 经过同一点的短期与长期投入需求，长期更平坦。
-
-下面是脚本中画图的函数，与图形使用相同的代码。
 
 ```python
 def factor_examples(
@@ -780,8 +772,6 @@ def factor_examples(
 <!-- api: micro_viz.guides_inputs_34 -->
 
 工会在厂商劳动需求上选点：雇用量 `L`、工资总额长方形，以及高于会员供给价格的租。
-
-下面是脚本中画图的函数，与图形使用相同的代码。
 
 ```python
 def monopsony_examples(

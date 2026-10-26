@@ -34,6 +34,6 @@ The package covers six groups of topics, each with its own chapter ([Chapter gui
 | [Adding a figure](adding-figure.md#sec-adding) | Model, builder, text, export, tests |
 | [Animation](animation.md#sec-animation) | Animating a figure over a parameter |
 
-On first use, read [Quick start](../quickstart.md#sec-quickstart) and [Model and figure](model-figure.md#sec-model-figure). Each topic chapter then shows the model first and the figures second.
+On first use, read [Quick start](../quickstart.md#sec-quickstart) and [Model and figure](model-figure.md#sec-model-figure).
 
 The scripts that draw the figures of these pages come as one zip, sorted by topic: [micro-viz-examples.zip](https://econ-viz.org/assets/micro-viz/micro-viz-examples.zip).

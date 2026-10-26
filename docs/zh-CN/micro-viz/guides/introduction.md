@@ -22,7 +22,7 @@ seo_title: "简介"
 
 | 主题 | 说明 |
 | --- | --- |
-| [模型与图形](model-figure.md#sec-model-figure) | 模型、绘图函数、图层 ID与多栏图如何配合 |
+| [模型与图形](model-figure.md#sec-model-figure) | 模型、绘图函数、图层 ID 与多栏图如何配合 |
 | [生产与成本](production-costs.md#sec-production-costs) | 短期生产、成本函数、阶梯与折点成本 |
 | [竞争](competition.md#sec-competition) | 价格接受者厂商、产业供给、长期成本、进入 |
 | [独占与定价](monopoly.md#sec-monopoly) | 独占、独占性竞争、管制、价格歧视、两部定价、搭售、广告、可耗竭资源 |
@@ -34,6 +34,6 @@ seo_title: "简介"
 | [添加图形](adding-figure.md#sec-adding) | 模型、绘图函数、文本、导出、测试 |
 | [动画](animation.md#sec-animation) | 让图形随参数变化 |
 
-初次使用时，依序阅读 [快速开始](../quickstart.md#sec-quickstart) 与 [模型与图形](model-figure.md#sec-model-figure)。各主题章节先说明模型，再展示图形。
+初次使用时，依序阅读 [快速开始](../quickstart.md#sec-quickstart) 与 [模型与图形](model-figure.md#sec-model-figure)。
 
 所有图形的绘制脚本依主题整理成一个压缩包：[micro-viz-examples.zip](https://econ-viz.org/assets/micro-viz/micro-viz-examples.zip)。

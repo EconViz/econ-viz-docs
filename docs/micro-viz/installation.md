@@ -8,11 +8,11 @@ seo_title: "Installation"
 
 ## Requirements
 
-`micro-viz` requires Python 3.10 or later (The Python website provides installers for every operating system: [https://www.python.org/downloads/](https://www.python.org/downloads/).). Its only runtime dependency is `mosaickit` (1.0.0rc9 or later, below 2), which draws the figures through `matplotlib`.
+`micro-viz` requires Python 3.10 or later (the Python website provides installers for every operating system: [https://www.python.org/downloads/](https://www.python.org/downloads/)). Its only runtime dependency is `mosaickit` (1.0.0rc9 or later, below 2), which draws the figures through `matplotlib`.
 
 ## Installing `uv`
 
-The commands on these pages use `uv` (`uv` is a fast Python package and project manager by Astral that also manages Python versions. Installation and full documentation: [https://docs.astral.sh/uv/](https://docs.astral.sh/uv/).). Existing projects can keep using `pip`; the package API does not depend on the tool.
+The commands on these pages use `uv` (`uv` is a fast Python package and project manager by Astral that also manages Python versions. Installation and full documentation: [https://docs.astral.sh/uv/](https://docs.astral.sh/uv/)). Existing projects can keep using `pip`; the package API does not depend on the tool.
 
 ### macOS and Linux
 

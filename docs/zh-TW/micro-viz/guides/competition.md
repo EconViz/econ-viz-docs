@@ -52,8 +52,6 @@ seo_title: "競爭與長期"
 
 總收益、總成本與利潤曲線對產量。
 
-下面是腳本中畫圖的函式，與圖形使用相同的程式碼。
-
 ```python
 def competition_examples(
     output_dir: Path,
@@ -341,8 +339,6 @@ U 形 LAC，LMC 在其最低點 `C_min`（產量 `Q_e`）與之相交。
 
 `sizes` 中各廠房的 SAC 與 LAC 相切，並畫出 LAC 與 LMC。
 
-下面是腳本中畫圖的函式，與圖形使用相同的程式碼。
-
 ```python
 def long_run_examples(
     output_dir: Path,
@@ -451,8 +447,6 @@ LAC、LMC 與價格線：廠商在價格等於 LMC 處生產，所用廠房的 S
 <!-- api: micro_viz.guides_competition_19 -->
 
 邊際廠商利潤為零，成本較低的廠商（稀少優勢）有租的長方形，與長期產業並列。
-
-下面是腳本中畫圖的函式，與圖形使用相同的程式碼。
 
 ```python
 def competition_examples(

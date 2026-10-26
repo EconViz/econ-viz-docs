@@ -48,8 +48,6 @@ seo_title: "不确定性与信息"
 
 每个效用函数一小栏：`u(I)`、两个结果间的弦，以及弦上高于期望所得处的期望效用。
 
-下面是脚本中画图的函数，与图形使用相同的代码。
-
 ```python
 def uncertainty_examples(
     output_dir: Path,
@@ -299,8 +297,6 @@ def uncertainty_examples(
 
 两种形式下卖者的预期收益对竞标者数目：两条曲线重合（收益相等），并随人数上升。
 
-下面是脚本中画图的函数，与图形使用相同的代码。
-
 ```python
 def auction_examples(
     output_dir: Path,
@@ -402,8 +398,6 @@ def auction_examples(
 <!-- api: micro_viz.guides_uncertainty_17 -->
 
 低能力组（左）与高能力组（右）的教育成本对工资利益：在分离信号 `y*` 下只有高能力者购买。
-
-下面是脚本中画图的函数，与图形使用相同的代码。
 
 ```python
 def information_examples(

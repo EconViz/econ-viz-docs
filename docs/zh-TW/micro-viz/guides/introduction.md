@@ -34,6 +34,6 @@ seo_title: "簡介"
 | [新增圖形](adding-figure.md#sec-adding) | 模型、繪圖函式、文字、匯出、測試 |
 | [動畫](animation.md#sec-animation) | 讓圖形隨參數變化 |
 
-初次使用時，依序閱讀 [快速開始](../quickstart.md#sec-quickstart) 與 [模型與圖形](model-figure.md#sec-model-figure)。各主題章節先說明模型，再展示圖形。
+初次使用時，依序閱讀 [快速開始](../quickstart.md#sec-quickstart) 與 [模型與圖形](model-figure.md#sec-model-figure)。
 
 所有圖形的繪製腳本依主題整理成一個壓縮檔：[micro-viz-examples.zip](https://econ-viz.org/assets/micro-viz/micro-viz-examples.zip)。

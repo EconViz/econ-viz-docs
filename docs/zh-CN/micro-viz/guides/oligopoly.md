@@ -6,8 +6,6 @@ seo_title: "寡占与垂直关系"
 
 <span id="sec-oligopoly"></span>
 
-少数厂商，以及同一条供应链上不同阶段的厂商。
-
 每一节是一支示例脚本与它画出的图。脚本在示例压缩包中提供，参数可用 `--help` 查看。
 
 ## 双占
@@ -31,8 +29,6 @@ seo_title: "寡占与垂直关系"
 <!-- api: micro_viz.guides_oligopoly_4 -->
 
 厂商 1 对各种对手产量猜测下的剩余需求 `D1(q2)` 与 `MR1(q2)`，以及它的边际成本。
-
-下面是脚本中画图的函数，与图形使用相同的代码。
 
 ```python
 def oligopoly_examples(
@@ -156,8 +152,6 @@ def oligopoly_examples(
 
 拗折需求与其边际收益在拗折点的垂直缺口；`marginal_costs` 中每条 MC 画成水平线。
 
-下面是脚本中画图的函数，与图形使用相同的代码。
-
 ```python
 def dominant_examples(
     output_dir: Path,
@@ -266,8 +260,6 @@ def dominant_examples(
 <!-- api: micro_viz.guides_oligopoly_12 -->
 
 有外部市场价格 `P_m` 时，有效边际成本在 `Q_u` 以下为 `MC_u`，之后为水平的 `P_m`。
-
-下面是脚本中画图的函数，与图形使用相同的代码。
 
 ```python
 def vertical_examples(

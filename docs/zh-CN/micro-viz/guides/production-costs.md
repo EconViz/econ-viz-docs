@@ -6,8 +6,6 @@ seo_title: "生产与成本"
 
 <span id="sec-production-costs"></span>
 
-短期生产，以及由此得到的成本曲线。
-
 每一节是一支示例脚本与它画出的图。脚本在示例压缩包中提供，参数可用 `--help` 查看。
 
 ## 短期生产
@@ -27,8 +25,6 @@ seo_title: "生产与成本"
 <!-- api: micro_viz.guides_production_costs_3 -->
 
 总产量图：曲线、三个边际报酬区间与分界线。
-
-下面是脚本中画图的函数，与图形使用相同的代码。
 
 ```python
 def production_examples(
@@ -154,8 +150,6 @@ TC、VC 与 FC 对产量。
 <!-- api: micro_viz.guides_production_costs_8 -->
 
 MC、ATC、AVC 与 AFC 对产量；`curves` 可选子集。
-
-下面是脚本中画图的函数，与图形使用相同的代码。
 
 ```python
 def cost_examples(
@@ -301,8 +295,6 @@ def cost_examples(
 <!-- api: micro_viz.guides_production_costs_10 -->
 
 阶梯或折线边际成本，含容量与价格带。
-
-下面是脚本中画图的函数，与图形使用相同的代码。
 
 ```python
 def piecewise_examples(
