@@ -12,7 +12,7 @@ seo_title: "模型与图形"
 
 - *模型*是冻结的 dataclass，输入会被检查，方法回答问题：`KeynesianCross.equilibrium`、`ISLM.equilibrium`、`Solow.steady_state`。模型从不导入绘图器，输入有误时引发 `ValidationError`。
 - *比较*是 `analyze_*` 函数的回传值：基准模型、变动后的模型、各项变动的方向（`Direction.UP`、`DOWN`、`NONE`）与新均衡。入口函数有 `analyze_autonomous_shift`、`analyze_fiscal_policy`、`analyze_demand_shock`、`analyze_change` 与 `compare`。
-- *绘图函数*在 `macro_viz.visuals`，把模型或比较转成 `mosaickit` 的 `Canvas`：`islm_canvas(shift)`、`adas_canvas(model)`。绘图函数里没有方程序，只放置模型算出的结果。
+- *绘图函数*在 `macro_viz.visuals`，把模型或比较转成 `mosaickit` 的 `Canvas`：`islm_canvas(shift)`、`adas_canvas(model)`。绘图函数里没有方程式，只放置模型算出的结果。
 
 ```python
 from macro_viz.adas import (

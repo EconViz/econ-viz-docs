@@ -6,7 +6,7 @@ seo_title: "连动面板"
 
 <span id="sec-panels"></span>
 
-教科书的推导把数张图放在同一页，并以虚线链接。绘图函数把它们画在 `mosaickit` 的格在线；两个面板共用的值只有一个数字。各图对应 `four_panel.py` 与 `five_panel.py`。
+教科书的推导把数张图放在同一页，并以虚线链接。绘图函数把它们画在 `mosaickit` 的格线上；两个面板共用的值只有一个数字。各图对应 `four_panel.py` 与 `five_panel.py`。
 
 - `four_panel_canvas(scenario)` 画劳动市场、AD-AS、生产函数与 45 度线。
 - `five_panel_canvas(scenario)` 在 AD-AS 上方加入 IS-LM，使右栏共用一条 $Y$ 轴。
@@ -25,7 +25,7 @@ $$
 \text{IS: } Y = X - e R, \qquad \text{LM: } M / p = k Y - h R
 $$
 
-`Mode.SCHEMATIC`（缺省）通过解出的点画直线，如同教科书的图；`Mode.DERIVED` 画出方程序的曲线。`IsLmSketch` 为缺省情境画教科书式的直线 IS-LM，因为推导出的曲线无法给出教科书中各点的顺序。
+`Mode.SCHEMATIC`（缺省）通过解出的点画直线，如同教科书的图；`Mode.DERIVED` 画出方程式的曲线。`IsLmSketch` 为缺省情境画教科书式的直线 IS-LM，因为推导出的曲线无法给出教科书中各点的顺序。
 
 ## 价格僵固下的货币供给
 
@@ -149,7 +149,7 @@ movements = (
 </figure>
 
 
-完全推导的缺省呈现的是方程序的答案，而不是教科书中各点的顺序。
+完全推导的缺省呈现的是方程式的答案，而不是教科书中各点的顺序。
 
 ## 版面参数
 
