@@ -1,0 +1,20 @@
+# The example figures in zh-TW: Noto Serif TC for text, Pagella Math for math.
+# Settings of the example figures: the manual look (black and white, white background),
+# TeX Gyre Pagella text and math, text sizes scaled for figures set at half the text width.
+# Font files are found by examples/scripts/common.py; without them the figures use the
+# default serif face.
+
+base = "manual"
+
+[font]
+text = "serif"
+math = "texgyrepagella-math.otf"
+
+[fonts]
+serif = ["NotoSerifTC-Regular.otf", "NotoSerifTC-Bold.otf"]
+
+[macro]
+language = "zh-TW"
+
+[macro.text]
+scale = 1.5
