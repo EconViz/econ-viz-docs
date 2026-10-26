@@ -6,7 +6,7 @@ seo_title: "快速开始"
 
 <span id="sec-quickstart"></span>
 
-这个示例使用明确指定的字库。GlyphKit 只在创建字体库时读取字体字节一次，所以之后路径再怎么改，也不会影响排版结果。
+这个示例使用明确指定的字库。GlyphKit 只在创建字体库时读取字体字节一次，所以之后改了路径，也不会影响排版结果。
 
 ```python
 from glyphkit import FontLibrary, FontSource, Paragraph, TextSpan, TextStyle

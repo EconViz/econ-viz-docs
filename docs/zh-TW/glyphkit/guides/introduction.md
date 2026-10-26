@@ -16,7 +16,7 @@ GlyphKit 不會繪圖、製作動畫、建立場景、下載字型、解讀授�
 - 文字需要放進場景並製作動畫時，接到 `kinetickit`。
 - 像素、向量元素、檔案與 DPI 仍由最後的繪圖端處理。
 
-一般流程很短：建立 `FontLibrary`，用 `Paragraph` 與 `TextStyle` 描述文字，呼叫 `layout()`，再把 `TextLayout` 交給使用端。後面各章都會守住這條分工界線。
+一般流程很短：建立 `FontLibrary`，用 `Paragraph` 與 `TextStyle` 描述文字，呼叫 `layout()`，再把 `TextLayout` 交給使用端。
 
 ## 每個結果的共同點
 
