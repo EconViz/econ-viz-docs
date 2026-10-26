@@ -26,18 +26,18 @@ seo_title: "簡介"
 
 <span id="tab-guide"></span>
 
-| 主題 | 子主題 | 說明 | 章節 |
-| --- | --- | --- | --- |
-| 繪圖與匯出 | 畫布與圖層 | 座標軸、曲線與均衡點 | [Canvas 畫布](canvas.md#sec-canvas) |
-|  | 多面板圖與需求圖 | 並排比較與需求曲線 | [多面板圖與需求圖](consumer.md#sec-figures) |
-|  | 主題與設定檔 | 配色、樣式與設定檔 | [主題與設定](themes.md#sec-themes) |
-|  | 輸出格式 | 匯出圖檔與 TikZ | [匯出](export.md#sec-export) |
-| 模型與分析 | 內建模型 | 常見效用函數 | [核心模型](../models/index.md#sec-models) |
-|  | 自訂與多商品模型 | 自訂函數與多商品、場景 | [進階模型](../models/advanced.md#sec-advanced) |
-|  | 比較靜態與 Slutsky 矩陣 | 需求導數與齊次性 | [分析](../tools/analysis.md#sec-analysis) |
-| 動畫與互動 | GIF 動畫 | 參數變動的 GIF | [動畫](animation.md#sec-animation) |
-|  | Jupyter 互動元件 | 筆記本滑桿調參數 | [互動元件](interactive.md#sec-widgets) |
-| 其他輸入方式 | 命令列工具 | 使用命令列產圖 | [命令列工具](../getting-started/cli.md#sec-cli) |
-|  | LaTeX 效用函數解析 | 從算式建立模型 | [LaTeX 解析](../tools/latex.md#sec-latex) |
+| 主題 | 子主題 | 說明 |
+| --- | --- | --- |
+| 繪圖與匯出 | [畫布與圖層](canvas.md#sec-canvas) | 座標軸、曲線與均衡點 |
+|  | [多面板圖與需求圖](consumer.md#sec-figures) | 並排比較與需求曲線 |
+|  | [主題與設定檔](themes.md#sec-themes) | 配色、樣式與設定檔 |
+|  | [輸出格式](export.md#sec-export) | 匯出圖檔與 TikZ |
+| 模型與分析 | [內建模型](../models/index.md#sec-models) | 常見效用函數 |
+|  | [自訂與多商品模型](../models/advanced.md#sec-advanced) | 自訂函數與多商品、場景 |
+|  | [比較靜態與 Slutsky 矩陣](../tools/analysis.md#sec-analysis) | 需求導數與齊次性 |
+| 動畫與互動 | [GIF 動畫](animation.md#sec-animation) | 參數變動的 GIF |
+|  | [Jupyter 互動元件](interactive.md#sec-widgets) | 筆記本滑桿調參數 |
+| 其他輸入方式 | [命令列工具](../getting-started/cli.md#sec-cli) | 使用命令列產圖 |
+|  | [LaTeX 效用函數解析](../tools/latex.md#sec-latex) | 從算式建立模型 |
 
 初次使用時，依序閱讀[快速開始](../getting-started/quickstart.md#sec-quickstart)與[Canvas 畫布](canvas.md#sec-canvas)。查詢特定 API 時，可直接前往對應章節或指令索引。從 `econ-viz` 1.x 升級時，請先閱讀[從 `econ-viz` 遷移](../getting-started/installation.md#sec-migrate)。

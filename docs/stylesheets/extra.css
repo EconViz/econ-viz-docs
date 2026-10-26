@@ -591,3 +591,41 @@
   opacity: 1;
 }
 .md-typeset a.ev-download-text::before { content: "↓ "; }
+
+
+/* previous / next page at the end of the article */
+.ev-pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin: 3rem 0 1rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+}
+.ev-pager__link {
+  display: block;
+  max-width: 48%;
+  overflow: hidden;
+  color: var(--md-default-fg-color);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ev-pager__link span {
+  font-weight: 700;
+}
+.ev-pager__link--next {
+  margin-left: auto;
+  text-align: right;
+}
+.ev-pager__link:hover {
+  color: var(--md-accent-fg-color);
+}
+.md-footer .md-footer__inner {
+  display: none !important;
+}
+
+/* topics in the reading guide link to their pages */
+#tab-guide + table a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}

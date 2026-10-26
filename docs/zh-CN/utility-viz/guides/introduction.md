@@ -26,18 +26,18 @@ seo_title: "简介"
 
 <span id="tab-guide"></span>
 
-| 主题 | 子主题 | 说明 | 章节 |
-| --- | --- | --- | --- |
-| 绘图与导出 | 画布与图层 | 坐标轴、曲线与均衡点 | [Canvas 画布](canvas.md#sec-canvas) |
-|  | 多面板图与需求图 | 并排比较与需求曲线 | [多面板图与需求图](consumer.md#sec-figures) |
-|  | 主题与配置文件 | 配色、样式与配置文件 | [主题与设置](themes.md#sec-themes) |
-|  | 输出格式 | 导出图像与 TikZ | [导出](export.md#sec-export) |
-| 模型与分析 | 内置模型 | 常见效用函数 | [核心模型](../models/index.md#sec-models) |
-|  | 自定义与多商品模型 | 自定义函数与多商品、场景 | [进阶模型](../models/advanced.md#sec-advanced) |
-|  | 比较静态与 Slutsky 矩阵 | 需求导数与齐次性 | [分析](../tools/analysis.md#sec-analysis) |
-| 动画与交互 | GIF 动画 | 参数变动的 GIF | [动画](animation.md#sec-animation) |
-|  | Jupyter 交互组件 | 笔记本滑块调参数 | [交互组件](interactive.md#sec-widgets) |
-| 其他输入方式 | 命令行工具 | 使用命令行出图 | [命令行工具](../getting-started/cli.md#sec-cli) |
-|  | LaTeX 效用函数解析 | 从算式创建模型 | [LaTeX 解析](../tools/latex.md#sec-latex) |
+| 主题 | 子主题 | 说明 |
+| --- | --- | --- |
+| 绘图与导出 | [画布与图层](canvas.md#sec-canvas) | 坐标轴、曲线与均衡点 |
+|  | [多面板图与需求图](consumer.md#sec-figures) | 并排比较与需求曲线 |
+|  | [主题与配置文件](themes.md#sec-themes) | 配色、样式与配置文件 |
+|  | [输出格式](export.md#sec-export) | 导出图像与 TikZ |
+| 模型与分析 | [内置模型](../models/index.md#sec-models) | 常见效用函数 |
+|  | [自定义与多商品模型](../models/advanced.md#sec-advanced) | 自定义函数与多商品、场景 |
+|  | [比较静态与 Slutsky 矩阵](../tools/analysis.md#sec-analysis) | 需求导数与齐次性 |
+| 动画与交互 | [GIF 动画](animation.md#sec-animation) | 参数变动的 GIF |
+|  | [Jupyter 交互组件](interactive.md#sec-widgets) | 笔记本滑块调参数 |
+| 其他输入方式 | [命令行工具](../getting-started/cli.md#sec-cli) | 使用命令行出图 |
+|  | [LaTeX 效用函数解析](../tools/latex.md#sec-latex) | 从算式创建模型 |
 
 初次使用时，依次阅读[快速开始](../getting-started/quickstart.md#sec-quickstart)与[Canvas 画布](canvas.md#sec-canvas)。查询特定 API 时，可直接前往对应章节或命令索引。从 `econ-viz` 1.x 升级时，请先阅读[从 `econ-viz` 迁移](../getting-started/installation.md#sec-migrate)。

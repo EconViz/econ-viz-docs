@@ -22,21 +22,21 @@ seo_title: "簡介"
 
 <span id="tab-guide"></span>
 
-| 主題 | 子主題 | 說明 | 章節 |
-| --- | --- | --- | --- |
-| 市場 | 線性市場 | 直線、均衡與曲線移動 | [線性市場](markets.md#sec-markets) |
-|  | 離散市場 | 逐單位的需求與供給表 | [離散市場](discrete.md#sec-discrete) |
-|  | 市場曲線加總 | 個人曲線的水平加總 | [由個人加總市場曲線](aggregation.md#sec-aggregation) |
-|  | 彈性與總收益 | 點彈性、弧彈性與總收益曲線 | [彈性與總收益](elasticity.md#sec-elasticity) |
-| 政策 | 福利 | 消費者剩餘、生產者剩餘與無謂損失 | [福利](welfare.md#sec-welfare) |
-|  | 租稅與補貼 | 稅負楔差與補貼成本 | [租稅與補貼](taxes.md#sec-taxes) |
-|  | 價格管制 | 價格上限、價格下限與短缺 | [價格管制](controls.md#sec-controls) |
-| 應用 | 國際貿易 | 自由貿易、關稅與進口配額 | [國際貿易](trade.md#sec-trade) |
-|  | 市場失靈 | 外部性、共有資源與公共財 | [市場失靈](failures.md#sec-failures) |
-|  | 勞動與可貸資金 | 最低工資與政府借款 | [勞動與可貸資金](factor-markets.md#sec-factor) |
-|  | 生產可能曲線 | 機會成本、成長與比較利益 | [生產可能曲線](ppf.md#sec-ppf) |
-| 工具 | 圖形 | 標籤、圖層與配色 | [圖形](figures.md#sec-figures) |
-|  | 命令列介面 | 以 JSON 輸出計算結果 | [命令列介面](../cli.md#sec-cli) |
+| 主題 | 子主題 | 說明 |
+| --- | --- | --- |
+| 市場 | [線性市場](markets.md#sec-markets) | 直線、均衡與曲線移動 |
+|  | [離散市場](discrete.md#sec-discrete) | 逐單位的需求與供給表 |
+|  | [市場曲線加總](aggregation.md#sec-aggregation) | 個人曲線的水平加總 |
+|  | [彈性與總收益](elasticity.md#sec-elasticity) | 點彈性、弧彈性與總收益曲線 |
+| 政策 | [福利](welfare.md#sec-welfare) | 消費者剩餘、生產者剩餘與無謂損失 |
+|  | [租稅與補貼](taxes.md#sec-taxes) | 稅負楔差與補貼成本 |
+|  | [價格管制](controls.md#sec-controls) | 價格上限、價格下限與短缺 |
+| 應用 | [國際貿易](trade.md#sec-trade) | 自由貿易、關稅與進口配額 |
+|  | [市場失靈](failures.md#sec-failures) | 外部性、共有資源與公共財 |
+|  | [勞動與可貸資金](factor-markets.md#sec-factor) | 最低工資與政府借款 |
+|  | [生產可能曲線](ppf.md#sec-ppf) | 機會成本、成長與比較利益 |
+| 工具 | [圖形](figures.md#sec-figures) | 標籤、圖層與配色 |
+|  | [命令列介面](../cli.md#sec-cli) | 以 JSON 輸出計算結果 |
 
 初次使用時，依序閱讀[快速開始](../quickstart.md#sec-quickstart)、[線性市場](markets.md#sec-markets)與[圖形](figures.md#sec-figures)。之後每章說明一個主題，先介紹計算，再介紹圖形。查詢特定指令的選項時，可直接前往[命令列介面](../cli.md#sec-cli)。
 

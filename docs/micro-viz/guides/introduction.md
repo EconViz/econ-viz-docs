@@ -20,19 +20,19 @@ The package covers six groups of topics, each with its own chapter ([Chapter gui
 
 <span id="tab-guide"></span>
 
-| Topic | Description | Section |
-| --- | --- | --- |
-| Model and figure | How models, builders, layer ids and panels fit together | [Model and figure](model-figure.md#sec-model-figure) |
-| Production and costs | Short-run production, cost functions, stepped and kinked cost | [Production and costs](production-costs.md#sec-production-costs) |
-| Competition | Price-taking firms, industry supply, long-run costs, entry | [Competition and the long run](competition.md#sec-competition) |
-| Monopoly and pricing | Monopoly, monopolistic competition, regulation, discrimination, tariffs, bundling, advertising, exhaustible resources | [Monopoly and pricing](monopoly.md#sec-monopoly) |
-| Oligopoly | Duopoly, kinked demand, dominant firm, vertical chains | [Oligopoly and vertical chains](oligopoly.md#sec-oligopoly) |
-| Inputs and technology | Isoquants, cost minimisation, learning and scope, factor markets, monopsony and unions | [Inputs and technology](inputs.md#sec-inputs) |
-| Uncertainty and information | Expected utility, risk, auctions, adverse selection, signalling, moral hazard | [Uncertainty and information](uncertainty.md#sec-uncertainty) |
-| Settings | The `[micro]` tables of `econ-viz.toml` | [Settings](settings.md#sec-settings) |
-| Labels and placement | The locale table, replacing text, moving labels | [Labels and placement](labels.md#sec-labels) |
-| Adding a figure | Model, builder, text, export, tests | [Adding a figure](adding-figure.md#sec-adding) |
-| Animation | Animating a figure over a parameter | [Animation](animation.md#sec-animation) |
+| Topic | Description |
+| --- | --- |
+| [Model and figure](model-figure.md#sec-model-figure) | How models, builders, layer ids and panels fit together |
+| [Production and costs](production-costs.md#sec-production-costs) | Short-run production, cost functions, stepped and kinked cost |
+| [Competition](competition.md#sec-competition) | Price-taking firms, industry supply, long-run costs, entry |
+| [Monopoly and pricing](monopoly.md#sec-monopoly) | Monopoly, monopolistic competition, regulation, discrimination, tariffs, bundling, advertising, exhaustible resources |
+| [Oligopoly](oligopoly.md#sec-oligopoly) | Duopoly, kinked demand, dominant firm, vertical chains |
+| [Inputs and technology](inputs.md#sec-inputs) | Isoquants, cost minimisation, learning and scope, factor markets, monopsony and unions |
+| [Uncertainty and information](uncertainty.md#sec-uncertainty) | Expected utility, risk, auctions, adverse selection, signalling, moral hazard |
+| [Settings](settings.md#sec-settings) | The `[micro]` tables of `econ-viz.toml` |
+| [Labels and placement](labels.md#sec-labels) | The locale table, replacing text, moving labels |
+| [Adding a figure](adding-figure.md#sec-adding) | Model, builder, text, export, tests |
+| [Animation](animation.md#sec-animation) | Animating a figure over a parameter |
 
 On first use, read [Quick start](../quickstart.md#sec-quickstart) and [Model and figure](model-figure.md#sec-model-figure). Each topic chapter then shows the model first and the figures second.
 
