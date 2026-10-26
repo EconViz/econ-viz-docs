@@ -16,7 +16,7 @@ GlyphKit does not draw, animate, create scenes, download fonts, interpret licens
 - Use `kinetickit` when those text assets need to be placed in a scene and animated.
 - Keep the final renderer responsible for pixels, vector elements, files and DPI.
 
-The everyday workflow is short: build a `FontLibrary`, describe text with `Paragraph` and `TextStyle`, call `layout()`, then pass the `TextLayout` to a consumer. The following chapters keep that boundary in view.
+The everyday workflow is short: build a `FontLibrary`, describe text with `Paragraph` and `TextStyle`, call `layout()`, then pass the `TextLayout` to a consumer.
 
 ## What every result has in common
 
