@@ -53,7 +53,7 @@ monopoly_canvas(outcome, analysis, profit=True).save(
 | `micro_viz/locale/labels.json` | 所有內建文字，依編號與語言整理 |
 | `micro_viz/theme.py`、`config.py` | 主題與 `[micro]` 設定結構 |
 | `micro_viz/animation/` | 選用的參數動畫 |
-| `examples/scripts/` | 每個主題一支腳本；本頁的圖形 |
+| `examples/scripts/<topic>/` | 腳本，每個主題一個資料夾；本頁的圖形 |
 
 ## 圖層編號
 

@@ -65,7 +65,7 @@ Linked-panel builders return a `CanvasGrid` and take layout options instead ([Li
 | `macro_viz/locale/labels.json` | Every built-in word, by language and id |
 | `macro_viz/themes.py`, `config.py` | The manual theme and the `[macro]` settings schema |
 | `macro_viz/animation.py` | Optional GIF and animated SVG over a parameter |
-| `examples/scripts/` | One script per family; the figures of these pages |
+| `examples/scripts/<topic>/` | Scripts, one folder per topic; the figures of these pages |
 
 ## Layer ids
 

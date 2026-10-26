@@ -85,10 +85,10 @@ MANUAL_THEME.resolve("macro.movement", fallback_category="path").stroke
 
 ## 範例
 
-範例壓縮檔包含 `examples/scripts/*.py`、範例數字 `examples.toml` 與三份設定檔。每個腳本都接受 `--output`、`--config`、`--data` 與 `--suffix`；`--help` 會列出。腳本裡沒有寫死任何數字：數字來自 `examples.toml`。
+範例壓縮檔包含 `examples/scripts/<topic>/*.py`、範例數字 `examples.toml` 與三份設定檔。每個腳本都接受 `--output`、`--config`、`--data` 與 `--suffix`；`--help` 會列出。腳本裡沒有寫死任何數字：數字來自 `examples.toml`。
 
 <div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/macro-viz-examples.zip" download aria-label="下載範例"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載範例</span></a></div>
 
 ```bash
-uv run python examples/scripts/islm.py --output out --config examples/econ-viz.toml
+uv run python examples/scripts/islm/islm.py --output out --config examples/econ-viz.toml
 ```

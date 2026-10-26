@@ -33,9 +33,9 @@ wsps_canvas(model).save("wsps.svg")
 
 <figure class="ev-fig" markdown>
 
-![WS 與 PS 交於自然失業率 $u_n$](../../../assets/macro-viz/labor/wsps.zh-TW.svg){ .ev-figure-sm }
+![WS 與 PS 交於自然失業率 $u_n$](../../../assets/macro-viz/wsps/wsps.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/labor/wsps.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/wsps/wsps.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>WS 與 PS 交於自然失業率 $u_n$</figcaption>
 
@@ -63,9 +63,9 @@ wsps_canvas(compare(model, productive)).save("wsps_productivity.svg")
 
 <figure class="ev-fig" markdown>
 
-![失業給付提高使 WS 上移，自然失業率上升](../../../assets/macro-viz/labor/wsps_benefits.zh-TW.svg){ .ev-figure-sm }
+![失業給付提高使 WS 上移，自然失業率上升](../../../assets/macro-viz/wsps/wsps_benefits.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/labor/wsps.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/wsps/wsps.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>失業給付提高使 WS 上移，自然失業率上升</figcaption>
 
@@ -75,9 +75,9 @@ wsps_canvas(compare(model, productive)).save("wsps_productivity.svg")
 
 <figure class="ev-fig" markdown>
 
-![加成率提高使 PS 下移](../../../assets/macro-viz/labor/wsps_markup.zh-TW.svg){ .ev-figure-sm }
+![加成率提高使 PS 下移](../../../assets/macro-viz/wsps/wsps_markup.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/labor/wsps.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/wsps/wsps.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>加成率提高使 PS 下移</figcaption>
 
@@ -87,9 +87,9 @@ wsps_canvas(compare(model, productive)).save("wsps_productivity.svg")
 
 <figure class="ev-fig" markdown>
 
-![生產力使 WS 與 PS 同時移動](../../../assets/macro-viz/labor/wsps_productivity.zh-TW.svg){ .ev-figure-sm }
+![生產力使 WS 與 PS 同時移動](../../../assets/macro-viz/wsps/wsps_productivity.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/labor/wsps.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/wsps/wsps.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>生產力使 WS 與 PS 同時移動</figcaption>
 
@@ -99,9 +99,9 @@ wsps_canvas(compare(model, productive)).save("wsps_productivity.svg")
 
 <figure class="ev-fig" markdown>
 
-![生產力使兩者移動的幅度不同](../../../assets/macro-viz/labor/wsps_productivity_split.zh-TW.svg){ .ev-figure-sm }
+![生產力使兩者移動的幅度不同](../../../assets/macro-viz/wsps/wsps_productivity_split.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/labor/wsps.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/wsps/wsps.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>生產力使兩者移動的幅度不同</figcaption>
 
@@ -122,9 +122,9 @@ wsps_canvas(model, labor_force=100).save("wsps_employment.svg")
 
 <figure class="ev-fig" markdown>
 
-![給定 `labor_force` 時橫軸為就業 $N$，並以大括號表示失業](../../../assets/macro-viz/labor/wsps_employment.zh-TW.svg){ .ev-figure-sm }
+![給定 `labor_force` 時橫軸為就業 $N$，並以大括號表示失業](../../../assets/macro-viz/wsps/wsps_employment.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/labor/wsps.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/wsps/wsps.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>給定 `labor_force` 時橫軸為就業 $N$，並以大括號表示失業</figcaption>
 

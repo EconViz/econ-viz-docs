@@ -210,9 +210,9 @@ solow_growth_rate_canvas(path).save("solow_growth_rate.svg")
 
 <figure class="ev-fig" markdown>
 
-![儲蓄率上升，穩定狀態隨之移動](../../../assets/macro-viz/growth/solow_animation.zh-TW.svg){ .ev-figure-sm }
+![儲蓄率上升，穩定狀態隨之移動](../../../assets/macro-viz/animation/solow_animation.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/growth/growth_animation.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/animation/growth_animation.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>儲蓄率上升，穩定狀態隨之移動</figcaption>
 

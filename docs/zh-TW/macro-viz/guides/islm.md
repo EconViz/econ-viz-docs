@@ -158,9 +158,9 @@ islm_canvas(shift, x_max=300).save("islm_zero_bound.svg")
 
 <figure class="ev-fig" markdown>
 
-![利率為零時，貨幣擴張不改變產出](../../../assets/macro-viz/islm/islm_zero_bound.zh-TW.svg){ .ev-figure-sm }
+![利率為零時，貨幣擴張不改變產出](../../../assets/macro-viz/money/islm_zero_bound.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/islm/liquidity_trap.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/money/liquidity_trap.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>利率為零時，貨幣擴張不改變產出</figcaption>
 
@@ -219,9 +219,9 @@ islm_expectations_canvas(inflation).save(
 
 <figure class="ev-fig" markdown>
 
-![實質貨幣增加，LM 右移](../../../assets/macro-viz/islm/islm_animation.zh-TW.svg){ .ev-figure-sm }
+![實質貨幣增加，LM 右移](../../../assets/macro-viz/animation/islm_animation.zh-TW.svg){ .ev-figure-sm }
 
-<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/islm/islm_animation.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
+<div class="ev-downloads"><a class="ev-download" href="../../../assets/macro-viz/animation/islm_animation.py" download aria-label="下載生圖原始檔"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>下載生圖原始檔</span></a></div>
 
 <figcaption markdown>實質貨幣增加，LM 右移</figcaption>
 

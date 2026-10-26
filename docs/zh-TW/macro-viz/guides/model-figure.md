@@ -65,7 +65,7 @@ adas_canvas(shock).save("adas_demand_shock.svg")
 | `macro_viz/locale/labels.json` | 所有內建文字，依語言與編號索引 |
 | `macro_viz/themes.py`, `config.py` | manual 主題與 `[macro]` 設定結構 |
 | `macro_viz/animation.py` | 選用的 GIF 與隨參數變化的動畫 SVG |
-| `examples/scripts/` | 每個主題一個腳本；這些頁面的圖形 |
+| `examples/scripts/<topic>/` | 腳本，每個主題一個資料夾；這些頁面的圖形 |
 
 ## 圖層編號
 
