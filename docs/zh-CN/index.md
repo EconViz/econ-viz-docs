@@ -51,18 +51,6 @@ EconViz 由四个包组成：两个负责绘制经济学图形，另外两个是
 
     [:octicons-arrow-right-24: principle-viz](principle-viz/index.md)
 
--   :material-factory: **micro-viz**
-
-    厂商与市场的微观经济学模型与图形：生产、成本、竞争、垄断、定价、不确定性与信息。
-
-    ```bash
-    uv add "micro-viz @ git+https://github.com/EconViz/micro-viz"
-    ```
-
-    开发版，尚未上架 PyPI。
-
-    [:octicons-arrow-right-24: micro-viz](micro-viz/index.md)
-
 </div>
 
 ### 底层包
