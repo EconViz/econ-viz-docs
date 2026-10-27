@@ -28,7 +28,7 @@
     {% set groups = [
       {
         "label": {"en": "Economics packages", "zh-TW": "經濟學套件", "zh-CN": "经济学包"}[locale] | default("Economics packages"),
-        "members": ["utility-viz", "principle-viz", "macro-viz", "micro-viz"]
+        "members": ["utility-viz", "principle-viz", "micro-viz"]
       },
       {
         "label": {"en": "Foundation packages", "zh-TW": "底層套件", "zh-CN": "底层包"}[locale] | default("Foundation packages"),
@@ -89,7 +89,7 @@
 {% block htmltitle %}
   {% set locale = i18n_page_locale | default("en") %}
   {# the package section the page belongs to; its name replaces the site name in the tab title #}
-  {% set packages = ["utility-viz", "principle-viz", "macro-viz", "micro-viz", "mosaickit", "bezierkit", "kinetickit", "glyphkit"] %}
+  {% set packages = ["utility-viz", "principle-viz", "micro-viz", "mosaickit", "bezierkit", "kinetickit", "glyphkit"] %}
   {% set parts = page.url.split("/") if page else [] %}
   {% set first = parts[1] if parts and parts[0] in ["zh-TW", "zh-CN"] and parts | length > 1 else (parts[0] if parts else "") %}
   {% set package = first if first in packages else "" %}
