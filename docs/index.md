@@ -51,18 +51,6 @@ Two packages draw economics diagrams.
 
     [:octicons-arrow-right-24: principle-viz](principle-viz/index.md)
 
--   :material-chart-bell-curve-cumulative: **macro-viz**
-
-    Textbook macroeconomic models and diagrams: Keynesian cross, money market, AS-AD, IS-LM, Solow growth, the open economy and linked panels.
-
-    ```bash
-    uv add "macro-viz @ git+https://github.com/EconViz/macro-viz"
-    ```
-
-    Development version, not on PyPI yet.
-
-    [:octicons-arrow-right-24: macro-viz](macro-viz/index.md)
-
 -   :material-factory: **micro-viz**
 
     Textbook microeconomic models and diagrams of firms and markets: production, costs, competition, monopoly, pricing, uncertainty and information.
