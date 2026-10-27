@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="480" viewBox="0 0 480 480" role="img" lang="en" aria-labelledby="kk-title" aria-describedby="kk-desc">
+  <title id="kk-title">Reaching the goal</title>
+  <desc id="kk-desc">A dot travels to a target</desc>
+  <g id="world" transform="matrix(48 0 0 -48 0 480)">
+    <g id="a" data-kk-id="a" data-kk-kind="point" transform="translate(1 1)" role="graphics-symbol" aria-label="Start" data-kk-order="1">
+      <title>Start</title>
+      <desc>Where the motion begins</desc>
+      <path d="M1 0A1 1 0 1 0-1 0A1 1 0 1 0 1 0Z" fill="#1f2933" stroke="none" transform="scale(0.1875 0.1875)"/>
+      <animateTransform attributeName="transform" type="translate" begin="0s" dur="2s" values="1 1;8 8" keyTimes="0;1" calcMode="spline" keySplines="0 0 1 1" fill="freeze" repeatCount="indefinite"/>
+    </g>
+    <g id="b" data-kk-id="b" data-kk-kind="point" transform="translate(8 8)" role="graphics-symbol" aria-label="Goal" data-kk-order="2">
+      <title>Goal</title>
+      <path d="M1 0A1 1 0 1 0-1 0A1 1 0 1 0 1 0Z" fill="#1f2933" stroke="none" transform="scale(0.1875 0.1875)"/>
+    </g>
+  </g>
+  <script type="application/ecmascript">(function(){var s=document.currentScript.ownerSVGElement;if(window.matchMedia&amp;&amp;matchMedia("(prefers-reduced-motion: reduce)").matches&amp;&amp;s.pauseAnimations){s.pauseAnimations();s.setCurrentTime(2);}})();</script>
+</svg>

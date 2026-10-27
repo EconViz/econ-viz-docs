@@ -1,0 +1,23 @@
+{# previous / next page at the end of the article, before the comments #}
+{% if page.previous_page or page.next_page %}
+<nav class="ev-pager" aria-label="{{ lang.t('footer') }}">
+  {% if page.previous_page %}
+  <a class="ev-pager__link ev-pager__link--prev" href="{{ page.previous_page.url | url }}" rel="prev">
+    <span aria-hidden="true">&lt;</span> {{ page.previous_page.title | striptags }}
+  </a>
+  {% endif %}
+  {% if page.next_page %}
+  <a class="ev-pager__link ev-pager__link--next" href="{{ page.next_page.url | url }}" rel="next">
+    {{ page.next_page.title | striptags }} <span aria-hidden="true">&gt;</span>
+  </a>
+  {% endif %}
+</nav>
+{% endif %}
+{% if page.meta.comments != false %}
+<h2 id="__comments">{{ lang.t("meta.comments") | default("Comments") }}</h2>
+<script src="https://giscus.app/client.js" data-repo="EconViz/econ-viz-docs" data-repo-id="R_kgDORy8JWQ"
+  data-category="Announcements" data-category-id="DIC_kwDORy8JWc4C5kUA" data-mapping="pathname" data-strict="0"
+  data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="{{ i18n_page_locale | default('en') }}"
+  data-loading="lazy" crossorigin="anonymous" async>
+  </script>
+{% endif %}
